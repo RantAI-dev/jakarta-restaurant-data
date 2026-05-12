@@ -1,25 +1,31 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { type Restaurant, googleMapsUrl, mapsEmbedUrl } from "@/lib/restaurants";
+import {
+  DEFAULT_LANG,
+  STORAGE_KEY,
+  translate,
+  type Lang,
+} from "@/lib/i18n";
 
 type Props = { restaurants: Restaurant[] };
 
 const CATEGORIES = ["All", "Food", "Beverage", "Food & Beverage"] as const;
 type Category = (typeof CATEGORIES)[number];
 
-const SORTS = [
-  { id: "rating", label: "Top rated" },
-  { id: "reviews", label: "Most reviewed" },
-  { id: "name", label: "A–Z" },
-] as const;
-type SortId = (typeof SORTS)[number]["id"];
+type SortId = "rating" | "reviews" | "name";
+const SORT_KEYS: { id: SortId; tKey: string }[] = [
+  { id: "rating", tKey: "toolbar.sort.rating" },
+  { id: "reviews", tKey: "toolbar.sort.reviews" },
+  { id: "name", tKey: "toolbar.sort.name" },
+];
 
-const PRICE_LABELS: Record<Restaurant["priceRange"], string> = {
-  $: "Budget",
-  $$: "Casual",
-  $$$: "Premium",
-  $$$$: "Fine dining",
+const PRICE_T_KEYS: Record<Restaurant["priceRange"], string> = {
+  $: "card.price.$",
+  $$: "card.price.$$",
+  $$$: "card.price.$$$",
+  $$$$: "card.price.$$$$",
 };
 
 function formatReviews(n?: number): string {
@@ -30,6 +36,30 @@ function formatReviews(n?: number): string {
 }
 
 export function Dashboard({ restaurants }: Props) {
+  const [lang, setLang] = useState<Lang>(DEFAULT_LANG);
+  // Hydrate stored language preference after mount to avoid SSR mismatch.
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === "id" || stored === "en") setLang(stored);
+    } catch {}
+  }, []);
+  // Keep <html lang> in sync for accessibility / SEO.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(lang, key, vars);
+
+  const onToggleLang = () => {
+    const next: Lang = lang === "id" ? "en" : "id";
+    setLang(next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    } catch {}
+  };
+
   const [query, setQuery] = useState("");
   const [cuisine, setCuisine] = useState<string>("All");
   const [category, setCategory] = useState<Category>("All");
@@ -118,7 +148,7 @@ export function Dashboard({ restaurants }: Props) {
         });
         setDetailsOpen(true);
       } catch {
-        setRefreshError("Could not reach the verification endpoint.");
+        setRefreshError(t("verify.error"));
       }
     });
   }
@@ -126,11 +156,11 @@ export function Dashboard({ restaurants }: Props) {
   function formatRelativeCheck(iso: string): string {
     const diff = Math.max(0, Date.now() - new Date(iso).getTime());
     const s = Math.floor(diff / 1000);
-    if (s < 60) return `${s}s ago`;
+    if (s < 60) return t("verify.time_seconds", { n: s });
     const m = Math.floor(s / 60);
-    if (m < 60) return `${m}m ago`;
+    if (m < 60) return t("verify.time_minutes", { n: m });
     const h = Math.floor(m / 60);
-    return `${h}h ago`;
+    return t("verify.time_hours", { n: h });
   }
 
   return (
@@ -138,16 +168,20 @@ export function Dashboard({ restaurants }: Props) {
       {/* ── SUB-NAV (frosted parchment) ── */}
       <div className="sticky top-0 z-20 frosted border-b border-hairline">
         <div className="mx-auto max-w-[1280px] px-6 h-[52px] flex items-center justify-between gap-3">
-          <p className="apple-tagline text-ink truncate">International Cuisine Directory</p>
-          <VerifyControl
-            refreshing={refreshing}
-            result={refreshResult}
-            error={refreshError}
-            detailsOpen={detailsOpen}
-            onVerify={verify}
-            onToggleDetails={() => setDetailsOpen((v) => !v)}
-            formatRelative={formatRelativeCheck}
-          />
+          <p className="apple-tagline text-ink truncate">{t("nav.title")}</p>
+          <div className="flex items-center gap-2">
+            <LangToggle lang={lang} onToggle={onToggleLang} t={t} />
+            <VerifyControl
+              refreshing={refreshing}
+              result={refreshResult}
+              error={refreshError}
+              detailsOpen={detailsOpen}
+              onVerify={verify}
+              onToggleDetails={() => setDetailsOpen((v) => !v)}
+              formatRelative={formatRelativeCheck}
+              t={t}
+            />
+          </div>
         </div>
 
         {/* Details disclosure panel — slides open under sub-nav */}
@@ -156,6 +190,7 @@ export function Dashboard({ restaurants }: Props) {
             result={refreshResult}
             urlLabelMap={urlLabelMap}
             onClose={() => setDetailsOpen(false)}
+            t={t}
           />
         )}
       </div>
@@ -164,31 +199,32 @@ export function Dashboard({ restaurants }: Props) {
       <section className="bg-canvas">
         <div className="mx-auto max-w-[1280px] px-6 py-[80px] md:py-[120px] text-center">
           <p className="apple-caption-strong text-ink-muted-80 appear" style={{ animationDelay: "0ms" }}>
-            DINAS PARIWISATA · DKI JAKARTA
+            {t("hero.eyebrow")}
           </p>
           <h1 className="apple-hero apple-title-tight mt-3 text-ink appear" style={{ animationDelay: "80ms" }}>
-            International Cuisine.
+            {t("hero.title_a")}
             <br />
-            <span className="text-ink-muted-48">Curated for you.</span>
+            <span className="text-ink-muted-48">{t("hero.title_b")}</span>
           </h1>
           <p
             className="apple-lead mt-6 max-w-[760px] mx-auto appear"
             style={{ animationDelay: "160ms" }}
           >
-            A web-sourced register of{" "}
-            <span className="text-ink">{stats.total} restaurants and bars</span>{" "}
-            in Jakarta serving international food or beverages. Every entry
-            links to its public source — and to Google Maps.
+            {t("hero.lead_prefix")}{" "}
+            <span className="text-ink">
+              {t("hero.lead_count", { n: stats.total })}
+            </span>{" "}
+            {t("hero.lead_suffix")}
           </p>
           <div
             className="mt-9 flex items-center justify-center gap-4 appear"
             style={{ animationDelay: "240ms" }}
           >
             <a href="#directory" className="press-scale pill-primary">
-              Browse the directory
+              {t("hero.cta_browse")}
             </a>
             <a href="#sources" className="press-scale pill-secondary">
-              How this was built
+              {t("hero.cta_how")}
             </a>
           </div>
         </div>
@@ -197,14 +233,14 @@ export function Dashboard({ restaurants }: Props) {
       {/* ── STATS TILE (parchment) ── */}
       <section className="bg-parchment border-y border-hairline">
         <div className="mx-auto max-w-[1280px] px-6 py-[64px] md:py-[80px] grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
-          <Stat number={String(stats.total)} label="Establishments" />
-          <Stat number={String(stats.cuisines)} label="Cuisines covered" />
+          <Stat number={String(stats.total)} label={t("stat.establishments")} />
+          <Stat number={String(stats.cuisines)} label={t("stat.cuisines")} />
           <Stat
             number={stats.avgRating ? stats.avgRating.toFixed(2) : "—"}
-            label="Average rating"
+            label={t("stat.avg_rating")}
             small="/5"
           />
-          <Stat number={String(stats.ratedCount)} label="Publicly rated" />
+          <Stat number={String(stats.ratedCount)} label={t("stat.rated_count")} />
         </div>
       </section>
 
@@ -229,7 +265,7 @@ export function Dashboard({ restaurants }: Props) {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search Jakarta restaurants…"
+              placeholder={t("toolbar.search_placeholder")}
               className="w-full bg-canvas/95 border border-hairline rounded-full pl-12 pr-16 h-11 text-[17px] placeholder:text-ink-muted-48 focus:outline-none focus:border-primary-focus focus:ring-2 focus:ring-primary/15 transition-all"
             />
             <span className="absolute right-5 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
@@ -243,20 +279,27 @@ export function Dashboard({ restaurants }: Props) {
               value={cuisine}
               options={cuisineOptions.map((c) => ({
                 id: c,
-                label: c === "All" ? "All cuisines" : c,
+                label: c === "All" ? t("toolbar.cuisine_all") : c,
               }))}
               onChange={setCuisine}
             />
             <Segmented
               options={CATEGORIES.map((c) => ({
                 id: c,
-                label: c === "Food & Beverage" ? "Both" : c,
+                label:
+                  c === "All"
+                    ? t("toolbar.cat.all")
+                    : c === "Food"
+                    ? t("toolbar.cat.food")
+                    : c === "Beverage"
+                    ? t("toolbar.cat.beverage")
+                    : t("toolbar.cat.both"),
               }))}
               value={category}
               onChange={(v) => setCategory(v as Category)}
             />
             <Segmented
-              options={SORTS.map((s) => ({ id: s.id, label: s.label }))}
+              options={SORT_KEYS.map((s) => ({ id: s.id, label: t(s.tKey) }))}
               value={sort}
               onChange={(v) => setSort(v as SortId)}
             />
@@ -269,18 +312,18 @@ export function Dashboard({ restaurants }: Props) {
         <div className="mx-auto max-w-[1280px] px-6 py-12 md:py-16">
           {filtered.length === 0 ? (
             <div className="py-24 text-center">
-              <p className="apple-display-lg text-ink">No matches.</p>
+              <p className="apple-display-lg text-ink">{t("empty.title")}</p>
               <p className="apple-lead mt-3 text-ink-muted-48">
-                Try clearing a filter, or searching{" "}
+                {t("empty.hint")}{" "}
                 <span className="text-primary">Senopati</span>,{" "}
-                <span className="text-primary">Menteng</span>, or{" "}
+                <span className="text-primary">Menteng</span>,{" "}
                 <span className="text-primary">SCBD</span>.
               </p>
             </div>
           ) : (
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((r) => (
-                <Card key={r.id} r={r} />
+                <Card key={r.id} r={r} t={t} />
               ))}
             </ul>
           )}
@@ -291,43 +334,39 @@ export function Dashboard({ restaurants }: Props) {
       <footer id="sources" className="bg-parchment border-t border-hairline">
         <div className="mx-auto max-w-[1280px] px-6 py-16 grid md:grid-cols-12 gap-8">
           <div className="md:col-span-6">
-            <p className="apple-caption-strong text-ink">About this directory</p>
+            <p className="apple-caption-strong text-ink">{t("footer.about_title")}</p>
             <p className="apple-body mt-3 text-ink-muted-80 max-w-[60ch]">
-              Compiled from public aggregator pages (Wanderlog, TripAdvisor,
-              Chope, What's New Indonesia, NOW! Jakarta) and Google reviews.
-              Ratings and review counts are taken from those sources at the
-              time of compilation. Every card carries citation links.
-              Permanently-closed venues from those lists have been omitted.
+              {t("footer.about_body")}
             </p>
           </div>
           <div className="md:col-span-3">
-            <p className="apple-caption-strong text-ink">Inspect</p>
+            <p className="apple-caption-strong text-ink">{t("footer.inspect")}</p>
             <ul className="mt-3 space-y-2.5 apple-body">
               <li>
                 <a className="link-blue" href="/api/restaurants" target="_blank" rel="noopener noreferrer">
-                  Raw JSON ↗
+                  {t("footer.raw_json")}
                 </a>
               </li>
               <li>
                 <a className="link-blue" href="/api/refresh" target="_blank" rel="noopener noreferrer">
-                  Source liveness ↗
+                  {t("footer.source_liveness")}
                 </a>
               </li>
             </ul>
           </div>
           <div className="md:col-span-3">
-            <p className="apple-caption-strong text-ink">Coverage</p>
+            <p className="apple-caption-strong text-ink">{t("footer.coverage")}</p>
             <ul className="mt-3 space-y-2.5 apple-body text-ink-muted-80">
-              <li>{stats.total} establishments</li>
-              <li>{stats.cuisines} cuisine labels</li>
-              <li>{stats.ratedCount} with public ratings</li>
+              <li>{t("footer.coverage.estab", { n: stats.total })}</li>
+              <li>{t("footer.coverage.cuisines", { n: stats.cuisines })}</li>
+              <li>{t("footer.coverage.rated", { n: stats.ratedCount })}</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-hairline">
           <div className="mx-auto max-w-[1280px] px-6 py-5 apple-fine text-ink-muted-48 flex items-center justify-between">
-            <span>© {new Date().getUTCFullYear()} Dinas Pariwisata DKI Jakarta — directory project.</span>
-            <span>Set in SF Pro · Inter fallback.</span>
+            <span>{t("footer.copyright", { year: new Date().getUTCFullYear() })}</span>
+            <span>{t("footer.typeface")}</span>
           </div>
         </div>
       </footer>
@@ -363,7 +402,9 @@ function Stat({
 
 /* ────────────────────────  CARD  ──────────────────────── */
 
-function Card({ r }: { r: Restaurant }) {
+type TFn = (key: string, vars?: Record<string, string | number>) => string;
+
+function Card({ r, t }: { r: Restaurant; t: TFn }) {
   return (
     <li className="utility-card group bg-canvas border border-hairline rounded-apple_lg overflow-hidden flex flex-col">
       {/* Map preview — the "product image" slot per DESIGN.md store-utility-card. */}
@@ -371,7 +412,7 @@ function Card({ r }: { r: Restaurant }) {
         href={googleMapsUrl(r)}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Open ${r.name} in Google Maps`}
+        aria-label={`${t("card.open_maps")} — ${r.name}`}
         className="relative block bg-parchment border-b border-hairline overflow-hidden group/map"
       >
         <div className="aspect-[16/9] w-full">
@@ -380,82 +421,104 @@ function Card({ r }: { r: Restaurant }) {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-full pointer-events-none select-none"
-            title={`Map of ${r.name}`}
+            title={`Map — ${r.name}`}
             aria-hidden="true"
           />
         </div>
-        {/* Click-through chip floats over the map */}
         <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 bg-canvas/95 backdrop-blur border border-hairline rounded-full px-2.5 py-1 apple-fine text-ink shadow-[0_2px_8px_rgba(0,0,0,0.06)] opacity-0 group-hover/map:opacity-100 transition-opacity duration-200">
-          Open ↗
+          {t("card.open_chip")}
         </span>
       </a>
 
       <div className="p-6 flex flex-col flex-1">
-      {/* Eyebrow */}
-      <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase">
-        {r.cuisine}
-      </p>
-
-      {/* Name — the focal element. Tagline size (21/600/-0.022em), not display-lg. */}
-      <h3 className="apple-tagline apple-title-tight text-ink mt-1.5 leading-[1.15]">
-        {r.name}
-      </h3>
-
-      {/* Single line of contextual metadata: area · price */}
-      <p className="apple-caption text-ink-muted-48 mt-1">
-        {r.area}
-        <span className="mx-1.5 text-ink-muted-48/60">·</span>
-        <span className="text-ink-muted-80">{r.priceRange}</span>
-        <span className="text-ink-muted-48"> {PRICE_LABELS[r.priceRange]}</span>
-      </p>
-
-      {/* Rating — small inline row, subordinate to the name */}
-      {r.rating != null && (
-        <p className="apple-caption mt-4 flex items-center gap-1.5 text-ink">
-          <StarIcon />
-          <span className="apple-caption-strong tabular">
-            {r.rating.toFixed(1)}
-          </span>
-          {r.reviewCount != null && r.reviewCount > 0 && (
-            <span className="text-ink-muted-48">
-              · {formatReviews(r.reviewCount)} reviews
-              {r.ratingSource && ` · ${r.ratingSource}`}
-            </span>
-          )}
+        <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase">
+          {r.cuisine}
         </p>
-      )}
 
-      {/* Description */}
-      <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-3">
-        {r.description}
-      </p>
+        <h3 className="apple-tagline apple-title-tight text-ink mt-1.5 leading-[1.15]">
+          {r.name}
+        </h3>
 
-      {/* Footer links */}
-      <div className="mt-auto pt-5 flex items-center justify-between gap-4">
-        <a
-          href={googleMapsUrl(r)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="press-scale link-blue apple-caption-strong inline-flex items-center gap-1"
-        >
-          Open in Maps
-          <span aria-hidden>↗</span>
-        </a>
-        {r.sources[0] && (
+        <p className="apple-caption text-ink-muted-48 mt-1">
+          {r.area}
+          <span className="mx-1.5 text-ink-muted-48/60">·</span>
+          <span className="text-ink-muted-80">{r.priceRange}</span>
+          <span className="text-ink-muted-48"> {t(PRICE_T_KEYS[r.priceRange])}</span>
+        </p>
+
+        {r.rating != null && (
+          <p className="apple-caption mt-4 flex items-center gap-1.5 text-ink">
+            <StarIcon />
+            <span className="apple-caption-strong tabular">
+              {r.rating.toFixed(1)}
+            </span>
+            {r.reviewCount != null && r.reviewCount > 0 && (
+              <span className="text-ink-muted-48">
+                · {formatReviews(r.reviewCount)} {t("card.reviews")}
+                {r.ratingSource && ` · ${r.ratingSource}`}
+              </span>
+            )}
+          </p>
+        )}
+
+        <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-3">
+          {r.description}
+        </p>
+
+        <div className="mt-auto pt-5 flex items-center justify-between gap-4">
           <a
-            href={r.sources[0].url}
+            href={googleMapsUrl(r)}
             target="_blank"
             rel="noopener noreferrer"
-            className="press-scale link-blue apple-caption inline-flex items-center gap-1"
-            title={r.sources[0].label}
+            className="press-scale link-blue apple-caption-strong inline-flex items-center gap-1"
           >
-            Source
+            {t("card.open_maps")}
             <span aria-hidden>↗</span>
           </a>
-        )}
-      </div>
+          {r.sources[0] && (
+            <a
+              href={r.sources[0].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="press-scale link-blue apple-caption inline-flex items-center gap-1"
+              title={r.sources[0].label}
+            >
+              {t("card.source")}
+              <span aria-hidden>↗</span>
+            </a>
+          )}
+        </div>
       </div>
     </li>
+  );
+}
+
+/* ──────────────────────  LANGUAGE TOGGLE  ──────────────────── */
+
+function LangToggle({
+  lang,
+  onToggle,
+  t,
+}: {
+  lang: Lang;
+  onToggle: () => void;
+  t: TFn;
+}) {
+  return (
+    <button
+      onClick={onToggle}
+      aria-label={`Switch language to ${t("nav.switch_to")}`}
+      title={`Switch to ${t("nav.switch_to")}`}
+      className="press-scale inline-flex items-center gap-1 rounded-full border border-hairline bg-canvas px-2.5 py-1.5 hover:border-ink-muted-48 transition-colors"
+    >
+      <span className="apple-caption-strong tabular text-ink uppercase tracking-wider">
+        {lang.toUpperCase()}
+      </span>
+      <span className="apple-fine text-ink-muted-48">/</span>
+      <span className="apple-fine tabular text-ink-muted-48 uppercase tracking-wider">
+        {t("nav.switch_to")}
+      </span>
+    </button>
   );
 }
 
@@ -559,6 +622,7 @@ function VerifyControl({
   onVerify,
   onToggleDetails,
   formatRelative,
+  t,
 }: {
   refreshing: boolean;
   result: VerifyResult | null;
@@ -567,8 +631,8 @@ function VerifyControl({
   onVerify: () => void;
   onToggleDetails: () => void;
   formatRelative: (iso: string) => string;
+  t: TFn;
 }) {
-  // Initial state: a single pill that runs the check.
   if (!refreshing && !result && !error) {
     return (
       <button
@@ -576,22 +640,20 @@ function VerifyControl({
         className="press-scale pill-primary text-[14px] py-2 px-4 inline-flex items-center gap-2"
       >
         <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
-        Verify sources
+        {t("verify.idle")}
       </button>
     );
   }
 
-  // Verifying state: spinner + label.
   if (refreshing) {
     return (
       <div className="inline-flex items-center gap-2 pill-primary text-[14px] py-2 px-4 cursor-progress">
         <Spinner />
-        Verifying sources…
+        {t("verify.loading")}
       </div>
     );
   }
 
-  // Error state.
   if (error) {
     return (
       <button
@@ -600,12 +662,11 @@ function VerifyControl({
       >
         <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-500" />
         {error}
-        <span className="text-primary">Retry ↗</span>
+        <span className="text-primary">{t("verify.retry")}</span>
       </button>
     );
   }
 
-  // Result state: pill summary + Details toggle + small "Re-check" affordance.
   const r = result!;
   const allOk = r.reachable === r.totalSources;
   const someFail = r.reachable < r.totalSources && r.reachable > 0;
@@ -626,7 +687,7 @@ function VerifyControl({
         <span className="apple-caption-strong tabular text-ink">
           {r.reachable}/{r.totalSources}
         </span>
-        <span className="apple-caption text-ink-muted-48">sources live</span>
+        <span className="apple-caption text-ink-muted-48">{t("verify.sources_live")}</span>
         <span className="apple-fine text-ink-muted-48">
           · {formatRelative(r.checkedAt)}
         </span>
@@ -634,9 +695,9 @@ function VerifyControl({
       </button>
       <button
         onClick={onVerify}
-        title="Re-verify"
+        title={t("verify.reverify")}
         className="press-scale inline-flex h-7 w-7 items-center justify-center rounded-full border border-hairline bg-canvas hover:border-ink-muted-48 transition-colors"
-        aria-label="Re-verify sources"
+        aria-label={t("verify.reverify")}
       >
         <RotateIcon />
       </button>
@@ -648,10 +709,12 @@ function VerifyDetails({
   result,
   urlLabelMap,
   onClose,
+  t,
 }: {
   result: VerifyResult;
   urlLabelMap: Map<string, string>;
   onClose: () => void;
+  t: TFn;
 }) {
   const reachable = result.results.filter((x) => x.ok);
   const unreachable = result.results.filter((x) => !x.ok);
@@ -660,16 +723,18 @@ function VerifyDetails({
       <div className="mx-auto max-w-[1280px] px-6 py-5">
         <div className="flex items-center justify-between mb-3">
           <p className="apple-caption-strong text-ink">
-            Source liveness report
+            {t("verify.details.title")}
             <span className="ml-2 apple-caption text-ink-muted-48">
-              checked {new Date(result.checkedAt).toLocaleString("en-GB", {
-                hour12: false,
+              {t("verify.details.checked", {
+                date: new Date(result.checkedAt).toLocaleString("en-GB", {
+                  hour12: false,
+                }),
               })}
             </span>
           </p>
           <button
             onClick={onClose}
-            aria-label="Close details"
+            aria-label={t("verify.details.close")}
             className="press-scale inline-flex h-7 w-7 items-center justify-center rounded-full border border-hairline bg-canvas hover:border-ink-muted-48 transition-colors apple-caption"
           >
             ✕
@@ -677,20 +742,13 @@ function VerifyDetails({
         </div>
 
         <p className="apple-caption text-ink-muted-80">
-          {result.reachable === result.totalSources ? (
-            <>
-              All <b className="text-ink">{result.totalSources}</b> source pages
-              responded successfully.
-            </>
-          ) : (
-            <>
-              <b className="text-ink">{result.reachable}</b> of{" "}
-              <b className="text-ink">{result.totalSources}</b> source pages
-              responded. {unreachable.length} blocked or unreachable —
-              typically TripAdvisor / RestaurantGuru, which refuse server-side
-              bot fetches. Links still work in a browser.
-            </>
-          )}
+          {result.reachable === result.totalSources
+            ? t("verify.details.summary_ok", { total: result.totalSources })
+            : t("verify.details.summary_partial", {
+                reachable: result.reachable,
+                total: result.totalSources,
+                failed: unreachable.length,
+              })}
         </p>
 
         <div className="mt-4 grid gap-1.5 max-h-[260px] overflow-y-auto pr-1">
@@ -723,7 +781,9 @@ function VerifyDetails({
                   {row.status || "—"}
                 </span>
                 <span className="apple-fine text-ink-muted-48 text-right">
-                  {row.ok ? "OK" : "blocked"}
+                  {row.ok
+                    ? t("verify.details.status_ok")
+                    : t("verify.details.status_blocked")}
                 </span>
               </a>
             );
