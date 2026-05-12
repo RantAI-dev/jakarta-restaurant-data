@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --primary: #0066cc;
+  --primary-focus: #0071e3;
+  --primary-on-dark: #2997ff;
+  --ink: #1d1d1f;
+  --ink-muted-80: #333333;
+  --ink-muted-48: #7a7a7a;
+  --canvas: #ffffff;
+  --parchment: #f5f5f7;
+  --pearl: #fafafc;
+  --tile1: #272729;
+  --hairline: #e0e0e0;
+  --divider: #f0f0f0;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui,
+    var(--font-inter), "Helvetica Neue", sans-serif;
+  /* Apple body cadence: 17px / 1.47 / -0.374px tracking */
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* — DESIGN.md / Iteration Guide #5: display = 600 with tight tracking — */
+.apple-hero {
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.005em;
+}
+.apple-display-lg {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.002em;
+}
+.apple-lead {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: 0.007em;
+  color: var(--ink-muted-80);
+}
+.apple-tagline {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.19;
+  letter-spacing: 0.011em;
+}
+.apple-body-strong {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.022em;
+}
+.apple-body {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+}
+.apple-caption {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.016em;
+}
+.apple-caption-strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.016em;
+}
+.apple-fine {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.apple-nav-link {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* — System-wide active micro-interaction (DESIGN.md → Do/Don't) — */
+.press-scale {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease;
+}
+.press-scale:active {
+  transform: scale(0.95);
+}
+
+/* — Action Blue link — */
+.link-blue {
+  color: var(--primary);
+  transition: color 200ms ease, opacity 200ms ease;
+}
+.link-blue:hover {
+  opacity: 0.8;
+}
+
+/* — Pill primary CTA — */
+.pill-primary {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-size: 17px;
+  line-height: 1.24;
+  letter-spacing: -0.022em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pill-primary:hover {
+  background: var(--primary-focus);
+}
+.pill-primary:focus-visible {
+  outline: 2px solid var(--primary-focus);
+  outline-offset: 3px;
+}
+
+/* — Pill secondary (ghost) — */
+.pill-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  padding: 10px 21px;
+  font-size: 17px;
+  line-height: 1.24;
+  letter-spacing: -0.022em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pill-secondary:hover {
+  background: rgba(0, 102, 204, 0.06);
+}
+
+/* — Frosted sub-nav (sticky toolbar) — */
+.frosted {
+  background: rgba(245, 245, 247, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* — Card hover lift (DESIGN.md → Don't add shadows on cards; we
+   intentionally avoid drop-shadow and only tint the border) — */
+.utility-card {
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.utility-card:hover {
+  border-color: rgba(29, 29, 31, 0.18);
+}
+
+/* — Apple-tight title — */
+.apple-title-tight {
+  letter-spacing: -0.022em;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.appear {
+  animation: appear 700ms cubic-bezier(0.2, 0.65, 0.2, 1) both;
+}
