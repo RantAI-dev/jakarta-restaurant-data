@@ -16,14 +16,21 @@ export type Restaurant = {
   category: "Food" | "Beverage" | "Food & Beverage";
   area: string;
   address?: string;
-  priceRange: "$" | "$$" | "$$$" | "$$$$";
+  priceRange?: "$" | "$$" | "$$$" | "$$$$";
   priceNote?: string;
   rating?: number;            // 0–5
   reviewCount?: number;       // total reviews
   ratingSource?: "Google" | "TripAdvisor";
   highlights: string[];
-  description: string;
+  description?: string;
   sources: { label: string; url: string }[];
+  // OSM-source fields — populated for entries imported from OpenStreetMap.
+  source: "curated" | "osm";
+  lat?: number;
+  lng?: number;
+  osmId?: string;
+  phone?: string;
+  website?: string;
 };
 
 const SRC = {
@@ -58,7 +65,7 @@ const SRC = {
   wniYialos: { label: "What's New Indonesia — Yialos", url: "https://whatsnewindonesia.com/jakarta/feature/experience/yialos-grill-souvlaki-jakartas-premier-greek-mediterranean-dining" },
 };
 
-export const RESTAURANTS: Restaurant[] = [
+const CURATED: Omit<Restaurant, "source">[] = [
   // ───────── ITALIAN ─────────
   { id: "toscana", name: "Toscana", cuisine: "Italian", category: "Food & Beverage", area: "Kemang, South Jakarta", address: "Jl. Kemang Raya No.120, Mampang Prapatan", priceRange: "$$$", rating: 4.5, reviewCount: 1476, ratingSource: "Google", highlights: ["22-year Kemang pioneer", "Brick-walled trattoria", "Pasta & grilled meats"], description: "Elegant Kemang trattoria, a fine-dining pioneer for over two decades. Pasta, grilled meats and seafood in a charming brick-walled room.", sources: [SRC.wlItalian] },
   { id: "mamma-rosy", name: "Mamma Rosy", cuisine: "Italian", category: "Food & Beverage", area: "Kemang, South Jakarta", address: "Jl. Kemang Raya No.58, Mampang Prapatan", priceRange: "$$$", rating: 4.5, reviewCount: 3749, ratingSource: "Google", highlights: ["Balinese architecture meets Italian", "Family recipes by Rosa Vignolo", "Cozy terrace & bar"], description: "Balinese-Italian fusion setting in Kemang Raya. Homemade dishes from cherished family recipes by Rosa 'Mamma' Vignolo.", sources: [SRC.wlItalian] },
@@ -265,7 +272,65 @@ export const RESTAURANTS: Restaurant[] = [
   { id: "beer-garden-scbd", name: "Beer Garden SCBD", cuisine: "Craft Beer / Sports Bar", category: "Food & Beverage", area: "SCBD, South Jakarta", priceRange: "$$", highlights: ["Best Beer House award", "Sports-bar atmosphere", "International beers"], description: "Popular SCBD beer destination with branches across Jakarta; multiple Best Beer House and Best Pub/Sports Bar awards.", sources: [SRC.wniBars] },
 ];
 
+// ───────── OSM MERGE ─────────
+
+import { OSM_RESTAURANTS, type OsmRestaurant } from "./restaurants-osm";
+
+const OSM_SRC = {
+  label: "OpenStreetMap — © OSM contributors",
+  url: "https://www.openstreetmap.org/copyright",
+};
+
+function normName(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+function osmToRestaurant(o: OsmRestaurant): Restaurant {
+  return {
+    id: o.id,
+    name: o.name,
+    cuisine: o.cuisine,
+    category: o.category,
+    area: o.area,
+    address: o.address,
+    highlights: [],
+    sources: [
+      {
+        ...OSM_SRC,
+        url: `https://www.openstreetmap.org/${o.osmId}`,
+      },
+    ],
+    source: "osm",
+    lat: o.lat,
+    lng: o.lng,
+    osmId: o.osmId,
+    phone: o.phone,
+    website: o.website,
+  };
+}
+
+// Curated names take precedence; drop OSM duplicates that match by
+// normalised name. Loose match — same shop branded across branches will
+// keep the OSM entries that have distinct lat/lng.
+const curatedNameKeys = new Set(CURATED.map((c) => normName(c.name)));
+
+export const RESTAURANTS: Restaurant[] = [
+  ...CURATED.map((r) => ({ ...r, source: "curated" as const })),
+  ...OSM_RESTAURANTS.filter((o) => !curatedNameKeys.has(normName(o.name))).map(
+    osmToRestaurant
+  ),
+];
+
+// ───────── HELPERS ─────────
+
 export function googleMapsUrl(r: Restaurant): string {
+  if (r.lat != null && r.lng != null) {
+    return `https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`;
+  }
   const q = [r.name, r.address ?? r.area, "Jakarta"]
     .filter(Boolean)
     .join(", ");
@@ -273,11 +338,13 @@ export function googleMapsUrl(r: Restaurant): string {
 }
 
 /**
- * Returns a Google Maps embed URL that uses Google's public text-query
- * format — no API key needed, suitable for iframe `src`. Production use
- * should swap to the keyed Maps Embed API or Mapbox/Apple MapKit.
+ * Returns a Google Maps embed URL. Uses exact lat/lng when available
+ * (OSM entries) — otherwise falls back to a text query. No API key.
  */
 export function mapsEmbedUrl(r: Restaurant): string {
+  if (r.lat != null && r.lng != null) {
+    return `https://www.google.com/maps?q=${r.lat},${r.lng}&hl=en&z=17&output=embed`;
+  }
   const q = [r.name, r.address ?? r.area, "Jakarta"]
     .filter(Boolean)
     .join(", ");

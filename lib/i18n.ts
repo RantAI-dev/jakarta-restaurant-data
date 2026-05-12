@@ -48,6 +48,12 @@ const id: Dict = {
   "card.price.$$": "Kasual",
   "card.price.$$$": "Premium",
   "card.price.$$$$": "Fine dining",
+  "card.source_curated": "Kurasi",
+  "card.source_osm": "OSM",
+  "card.source_curated_full": "Data kurasi tangan dari halaman agregator publik",
+  "card.source_osm_full": "Data dari OpenStreetMap — © OSM contributors",
+  "card.osm_note":
+    "Data dari OpenStreetMap — beberapa detail (rating, ulasan, deskripsi) belum tersedia.",
 
   "empty.title": "Tidak ada hasil.",
   "empty.hint": "Coba hapus filter, atau cari",
@@ -123,6 +129,12 @@ const en: Dict = {
   "card.price.$$": "Casual",
   "card.price.$$$": "Premium",
   "card.price.$$$$": "Fine dining",
+  "card.source_curated": "Curated",
+  "card.source_osm": "OSM",
+  "card.source_curated_full": "Hand-curated from public aggregator pages",
+  "card.source_osm_full": "From OpenStreetMap — © OSM contributors",
+  "card.osm_note":
+    "Data from OpenStreetMap — some fields (rating, reviews, description) are not yet available.",
 
   "empty.title": "No matches.",
   "empty.hint": "Try clearing a filter, or searching",

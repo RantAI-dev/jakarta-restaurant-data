@@ -21,7 +21,9 @@ const SORT_KEYS: { id: SortId; tKey: string }[] = [
   { id: "name", tKey: "toolbar.sort.name" },
 ];
 
-const PRICE_T_KEYS: Record<Restaurant["priceRange"], string> = {
+type PriceTier = NonNullable<Restaurant["priceRange"]>;
+
+const PRICE_T_KEYS: Record<PriceTier, string> = {
   $: "card.price.$",
   $$: "card.price.$$",
   $$$: "card.price.$$$",
@@ -104,7 +106,7 @@ export function Dashboard({ restaurants }: Props) {
         r.area.toLowerCase().includes(q) ||
         (r.address?.toLowerCase().includes(q) ?? false) ||
         r.highlights.some((h) => h.toLowerCase().includes(q)) ||
-        r.description.toLowerCase().includes(q)
+        (r.description?.toLowerCase().includes(q) ?? false)
       );
     });
 
@@ -431,9 +433,27 @@ function Card({ r, t }: { r: Restaurant; t: TFn }) {
       </a>
 
       <div className="p-6 flex flex-col flex-1">
-        <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase">
-          {r.cuisine}
-        </p>
+        <div className="flex items-center justify-between gap-2">
+          <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase truncate">
+            {r.cuisine}
+          </p>
+          <span
+            className={`shrink-0 apple-fine uppercase tracking-wider px-1.5 py-0.5 rounded ${
+              r.source === "curated"
+                ? "bg-primary/10 text-primary"
+                : "bg-ink-muted-80/10 text-ink-muted-80"
+            }`}
+            title={
+              r.source === "curated"
+                ? t("card.source_curated_full")
+                : t("card.source_osm_full")
+            }
+          >
+            {r.source === "curated"
+              ? t("card.source_curated")
+              : t("card.source_osm")}
+          </span>
+        </div>
 
         <h3 className="apple-tagline apple-title-tight text-ink mt-1.5 leading-[1.15]">
           {r.name}
@@ -441,9 +461,13 @@ function Card({ r, t }: { r: Restaurant; t: TFn }) {
 
         <p className="apple-caption text-ink-muted-48 mt-1">
           {r.area}
-          <span className="mx-1.5 text-ink-muted-48/60">·</span>
-          <span className="text-ink-muted-80">{r.priceRange}</span>
-          <span className="text-ink-muted-48"> {t(PRICE_T_KEYS[r.priceRange])}</span>
+          {r.priceRange && (
+            <>
+              <span className="mx-1.5 text-ink-muted-48/60">·</span>
+              <span className="text-ink-muted-80">{r.priceRange}</span>
+              <span className="text-ink-muted-48"> {t(PRICE_T_KEYS[r.priceRange])}</span>
+            </>
+          )}
         </p>
 
         {r.rating != null && (
@@ -461,9 +485,17 @@ function Card({ r, t }: { r: Restaurant; t: TFn }) {
           </p>
         )}
 
-        <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-3">
-          {r.description}
-        </p>
+        {r.description && (
+          <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-3">
+            {r.description}
+          </p>
+        )}
+
+        {r.source === "osm" && !r.description && (
+          <p className="apple-caption text-ink-muted-48 mt-3 italic">
+            {t("card.osm_note")}
+          </p>
+        )}
 
         <div className="mt-auto pt-5 flex items-center justify-between gap-4">
           <a
