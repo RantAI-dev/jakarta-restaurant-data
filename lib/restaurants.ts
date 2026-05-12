@@ -34,7 +34,7 @@ export type Restaurant = {
   website?: string;
 };
 
-/** Stable city order for the filter — DKI Jakarta first, then Greater Jakarta. */
+/** The six administrative units of DKI Jakarta — the only cities we surface. */
 export const CITY_ORDER = [
   "Central Jakarta",
   "South Jakarta",
@@ -42,11 +42,15 @@ export const CITY_ORDER = [
   "West Jakarta",
   "East Jakarta",
   "Kepulauan Seribu",
-  "Tangerang",
-  "Bekasi",
-  "Depok",
-  "Bogor",
 ] as const;
+
+const DKI_CITIES: ReadonlySet<string> = new Set<string>([
+  ...CITY_ORDER,
+  // "Jakarta (Other)" is the curated fallback when sub-region can't be
+  // determined from area text (typically "Multiple branches" entries).
+  // Treat as DKI-presumed — they're always Jakarta-only chains.
+  "Jakarta (Other)",
+]);
 
 /** Best-effort DKI-Jakarta sub-region from a curated area string. */
 function deriveCityFromArea(area: string): string {
@@ -378,9 +382,11 @@ const ALL_OSM = OSM_RESTAURANTS.filter(
   (o) => !curatedFingerprints.has(fingerprint(o.name, o.city))
 );
 
+// DKI-only: drop curated outliers in Bodetabek (e.g. Ciputat/Tangerang)
+// and any OSM entries flagged as Tangerang/Bekasi/Depok/Bogor.
 export const RESTAURANTS: Restaurant[] = [
-  ...CURATED.map(curatedToRestaurant),
-  ...ALL_OSM.map(osmToRestaurant),
+  ...CURATED.map(curatedToRestaurant).filter((r) => DKI_CITIES.has(r.city)),
+  ...ALL_OSM.map(osmToRestaurant).filter((r) => DKI_CITIES.has(r.city)),
 ];
 
 // ───────── HELPERS ─────────

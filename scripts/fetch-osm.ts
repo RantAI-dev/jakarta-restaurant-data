@@ -14,8 +14,11 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-// Greater Jakarta bounding box (DKI + Bodetabek): south, west, north, east.
-const BBOX = "-6.5,106.55,-5.95,107.15";
+// DKI Jakarta bounding box only — 5 administrative cities plus the
+// Kepulauan Seribu regency (the chain of islands north of the mainland,
+// extending up to roughly -5.4° latitude).
+// Format: south, west, north, east.
+const BBOX = "-6.37,106.68,-5.40,106.97";
 
 const QUERY = `[out:json][timeout:300];
 (
