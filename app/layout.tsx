@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dinas Pariwisata Jakarta — International Cuisine Directory",
+  title: "Jakarta International Cuisine Directory",
   description:
     "A web-sourced register of restaurants and bars in Jakarta serving international food or beverages.",
 };

@@ -15,7 +15,7 @@ const id: Dict = {
   "nav.title": "Direktori Kuliner Internasional",
   "nav.switch_to": "EN",
 
-  "hero.eyebrow": "DINAS PARIWISATA · DKI JAKARTA",
+  "hero.eyebrow": "JAKARTA · KULINER INTERNASIONAL",
   "hero.title_a": "Kuliner Internasional.",
   "hero.title_b": "Pilihan kami untuk Anda.",
   "hero.lead_prefix": "Daftar dari",
@@ -82,7 +82,7 @@ const id: Dict = {
   "footer.coverage.cuisines": "{n} jenis kuliner",
   "footer.coverage.rated": "{n} dengan rating publik",
   "footer.copyright":
-    "© {year} Dinas Pariwisata DKI Jakarta — proyek direktori.",
+    "© {year} Jakarta Restaurant Data — proyek direktori publik.",
   "footer.typeface": "Diset dengan SF Pro · Inter sebagai cadangan.",
 };
 
@@ -90,7 +90,7 @@ const en: Dict = {
   "nav.title": "International Cuisine Directory",
   "nav.switch_to": "ID",
 
-  "hero.eyebrow": "DINAS PARIWISATA · DKI JAKARTA",
+  "hero.eyebrow": "JAKARTA · INTERNATIONAL CUISINE",
   "hero.title_a": "International Cuisine.",
   "hero.title_b": "Curated for you.",
   "hero.lead_prefix": "A web-sourced register of",
@@ -157,7 +157,7 @@ const en: Dict = {
   "footer.coverage.cuisines": "{n} cuisine labels",
   "footer.coverage.rated": "{n} with public ratings",
   "footer.copyright":
-    "© {year} Dinas Pariwisata DKI Jakarta — directory project.",
+    "© {year} Jakarta Restaurant Data — public directory project.",
   "footer.typeface": "Set in SF Pro · Inter fallback.",
 };
 
