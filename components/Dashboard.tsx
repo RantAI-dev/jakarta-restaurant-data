@@ -64,6 +64,7 @@ export function Dashboard({ restaurants }: Props) {
 
   const [query, setQuery] = useState("");
   const [cuisine, setCuisine] = useState<string>("All");
+  const [city, setCity] = useState<string>("All");
   const [category, setCategory] = useState<Category>("All");
   const [sort, setSort] = useState<SortId>("rating");
   const [refreshing, startRefresh] = useTransition();
@@ -94,10 +95,36 @@ export function Dashboard({ restaurants }: Props) {
     return ["All", ...Array.from(set).sort()];
   }, [restaurants]);
 
+  // DKI Jakarta sub-regions first, then Greater-Jakarta cities, alphabetical
+  // fallback. Mirrors lib/restaurants.ts → CITY_ORDER without re-importing.
+  const cityOptions = useMemo(() => {
+    const ORDER = [
+      "Central Jakarta",
+      "South Jakarta",
+      "North Jakarta",
+      "West Jakarta",
+      "East Jakarta",
+      "Kepulauan Seribu",
+      "Tangerang",
+      "Bekasi",
+      "Depok",
+      "Bogor",
+    ];
+    const present = new Set<string>();
+    restaurants.forEach((r) => present.add(r.city));
+    const ordered: string[] = [];
+    for (const c of ORDER) if (present.has(c)) ordered.push(c);
+    for (const c of [...present].sort()) {
+      if (!ordered.includes(c)) ordered.push(c);
+    }
+    return ["All", ...ordered];
+  }, [restaurants]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = restaurants.filter((r) => {
       if (cuisine !== "All" && r.cuisine !== cuisine) return false;
+      if (city !== "All" && r.city !== city) return false;
       if (category !== "All" && r.category !== category) return false;
       if (!q) return true;
       return (
@@ -119,7 +146,7 @@ export function Dashboard({ restaurants }: Props) {
       sorted.sort((a, b) => a.name.localeCompare(b.name));
     }
     return sorted;
-  }, [restaurants, query, cuisine, category, sort]);
+  }, [restaurants, query, cuisine, city, category, sort]);
 
   const stats = useMemo(() => {
     const cuisines = new Set(restaurants.map((r) => r.cuisine)).size;
@@ -276,6 +303,15 @@ export function Dashboard({ restaurants }: Props) {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <Pill
+              renderAs="select"
+              value={city}
+              options={cityOptions.map((c) => ({
+                id: c,
+                label: c === "All" ? t("toolbar.city_all") : t(`city.${c}`),
+              }))}
+              onChange={setCity}
+            />
             <Pill
               renderAs="select"
               value={cuisine}

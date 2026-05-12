@@ -189,6 +189,7 @@ type OsmRestaurant = {
   cuisine: string;
   category: "Food" | "Beverage" | "Food & Beverage";
   area: string;
+  city: string;
   address?: string;
   lat: number;
   lng: number;
@@ -242,6 +243,53 @@ function pickArea(tags: Record<string, string>): string {
   const city = tags["addr:city"] ?? "Jakarta";
   if (suburb) return `${suburb}, ${city}`;
   return city;
+}
+
+/** Maps DKI Jakarta sub-region from address tags or geographic coords. */
+function pickCity(tags: Record<string, string>, lat: number, lng: number): string {
+  const direct = (tags["addr:city"] ?? tags["addr:city_district"] ?? "").toLowerCase();
+  if (direct.includes("kepulauan seribu") || direct.includes("thousand")) {
+    return "Kepulauan Seribu";
+  }
+  if (direct.includes("jakarta selatan") || direct.includes("south jakarta")) {
+    return "South Jakarta";
+  }
+  if (direct.includes("jakarta utara") || direct.includes("north jakarta")) {
+    return "North Jakarta";
+  }
+  if (direct.includes("jakarta pusat") || direct.includes("central jakarta")) {
+    return "Central Jakarta";
+  }
+  if (direct.includes("jakarta barat") || direct.includes("west jakarta")) {
+    return "West Jakarta";
+  }
+  if (direct.includes("jakarta timur") || direct.includes("east jakarta")) {
+    return "East Jakarta";
+  }
+  // Outside DKI but within Greater Jakarta bbox.
+  if (direct.includes("tangerang")) return "Tangerang";
+  if (direct.includes("bekasi")) return "Bekasi";
+  if (direct.includes("depok")) return "Depok";
+  if (direct.includes("bogor")) return "Bogor";
+
+  // Fall back to lat/lng classification when addr:city is generic ("Jakarta")
+  // or missing. Boundaries below are approximate and tuned to the centre
+  // of each DKI Jakarta administrative city.
+  if (lat > -6.05) return lng > 106.85 ? "North Jakarta" : "North Jakarta";
+  if (lat > -6.16) {
+    if (lng < 106.77) return "West Jakarta";
+    if (lng > 106.90) return "North Jakarta";
+    return "North Jakarta";
+  }
+  if (lat > -6.22) {
+    if (lng < 106.79) return "West Jakarta";
+    if (lng > 106.89) return "East Jakarta";
+    return "Central Jakarta";
+  }
+  // Southern half.
+  if (lng < 106.78) return "West Jakarta";
+  if (lng > 106.89) return "East Jakarta";
+  return "South Jakarta";
 }
 
 function slug(s: string): string {
@@ -302,6 +350,7 @@ async function main() {
       cuisine,
       category: pickCategory(tags),
       area: pickArea(tags),
+      city: pickCity(tags, lat, lng),
       address: pickAddress(tags),
       lat,
       lng,
@@ -344,6 +393,7 @@ export type OsmRestaurant = {
   cuisine: string;
   category: "Food" | "Beverage" | "Food & Beverage";
   area: string;
+  city: string;
   address?: string;
   lat: number;
   lng: number;

@@ -15,6 +15,7 @@ export type Restaurant = {
   cuisine: string;
   category: "Food" | "Beverage" | "Food & Beverage";
   area: string;
+  city: string;               // DKI Jakarta sub-region or Greater-Jakarta city
   address?: string;
   priceRange?: "$" | "$$" | "$$$" | "$$$$";
   priceNote?: string;
@@ -32,6 +33,47 @@ export type Restaurant = {
   phone?: string;
   website?: string;
 };
+
+/** Stable city order for the filter — DKI Jakarta first, then Greater Jakarta. */
+export const CITY_ORDER = [
+  "Central Jakarta",
+  "South Jakarta",
+  "North Jakarta",
+  "West Jakarta",
+  "East Jakarta",
+  "Kepulauan Seribu",
+  "Tangerang",
+  "Bekasi",
+  "Depok",
+  "Bogor",
+] as const;
+
+/** Best-effort DKI-Jakarta sub-region from a curated area string. */
+function deriveCityFromArea(area: string): string {
+  const a = area.toLowerCase();
+  if (a.includes("kepulauan seribu") || a.includes("thousand islands")) return "Kepulauan Seribu";
+  if (a.includes("south jakarta") || a.includes("jakarta selatan")) return "South Jakarta";
+  if (a.includes("central jakarta") || a.includes("jakarta pusat")) return "Central Jakarta";
+  if (a.includes("north jakarta") || a.includes("jakarta utara")) return "North Jakarta";
+  if (a.includes("west jakarta") || a.includes("jakarta barat")) return "West Jakarta";
+  if (a.includes("east jakarta") || a.includes("jakarta timur")) return "East Jakarta";
+  if (a.includes("tangerang")) return "Tangerang";
+  if (a.includes("bekasi")) return "Bekasi";
+  if (a.includes("depok")) return "Depok";
+  if (a.includes("bogor")) return "Bogor";
+  // Curated entries often use neighbourhood-only labels — guess by district name.
+  const SOUTH = ["senopati", "kemang", "scbd", "kebayoran", "mega kuningan", "casablanca", "setiabudi", "gunawarman", "kuningan", "panglima polim", "tebet", "cilandak", "bintaro", "pondok indah"];
+  const CENTRAL = ["thamrin", "menteng", "senayan", "sudirman", "tanah abang", "plaza indonesia", "kemayoran", "matraman", "gondangdia"];
+  const NORTH = ["kelapa gading", "pluit", "pik", "penjaringan", "pantai indah kapuk", "ancol"];
+  const WEST = ["grogol", "petamburan", "glodok", "kembangan", "puri", "taman sari"];
+  const EAST = ["jatinegara", "kramat jati", "condet"];
+  if (SOUTH.some((k) => a.includes(k))) return "South Jakarta";
+  if (CENTRAL.some((k) => a.includes(k))) return "Central Jakarta";
+  if (NORTH.some((k) => a.includes(k))) return "North Jakarta";
+  if (WEST.some((k) => a.includes(k))) return "West Jakarta";
+  if (EAST.some((k) => a.includes(k))) return "East Jakarta";
+  return "Jakarta (Other)";
+}
 
 const SRC = {
   wlFineDining: { label: "Wanderlog — Fine Dining Jakarta", url: "https://wanderlog.com/list/geoCategory/1524810/best-fine-dining-restaurants-in-jakarta" },
@@ -65,7 +107,7 @@ const SRC = {
   wniYialos: { label: "What's New Indonesia — Yialos", url: "https://whatsnewindonesia.com/jakarta/feature/experience/yialos-grill-souvlaki-jakartas-premier-greek-mediterranean-dining" },
 };
 
-const CURATED: Omit<Restaurant, "source">[] = [
+const CURATED: Omit<Restaurant, "source" | "city">[] = [
   // ───────── ITALIAN ─────────
   { id: "toscana", name: "Toscana", cuisine: "Italian", category: "Food & Beverage", area: "Kemang, South Jakarta", address: "Jl. Kemang Raya No.120, Mampang Prapatan", priceRange: "$$$", rating: 4.5, reviewCount: 1476, ratingSource: "Google", highlights: ["22-year Kemang pioneer", "Brick-walled trattoria", "Pasta & grilled meats"], description: "Elegant Kemang trattoria, a fine-dining pioneer for over two decades. Pasta, grilled meats and seafood in a charming brick-walled room.", sources: [SRC.wlItalian] },
   { id: "mamma-rosy", name: "Mamma Rosy", cuisine: "Italian", category: "Food & Beverage", area: "Kemang, South Jakarta", address: "Jl. Kemang Raya No.58, Mampang Prapatan", priceRange: "$$$", rating: 4.5, reviewCount: 3749, ratingSource: "Google", highlights: ["Balinese architecture meets Italian", "Family recipes by Rosa Vignolo", "Cozy terrace & bar"], description: "Balinese-Italian fusion setting in Kemang Raya. Homemade dishes from cherished family recipes by Rosa 'Mamma' Vignolo.", sources: [SRC.wlItalian] },
@@ -296,6 +338,7 @@ function osmToRestaurant(o: OsmRestaurant): Restaurant {
     cuisine: o.cuisine,
     category: o.category,
     area: o.area,
+    city: o.city,
     address: o.address,
     highlights: [],
     sources: [
@@ -313,16 +356,31 @@ function osmToRestaurant(o: OsmRestaurant): Restaurant {
   };
 }
 
-// Curated names take precedence; drop OSM duplicates that match by
-// normalised name. Loose match — same shop branded across branches will
-// keep the OSM entries that have distinct lat/lng.
-const curatedNameKeys = new Set(CURATED.map((c) => normName(c.name)));
+/** Wraps a curated entry with derived `city` and the `source` discriminator. */
+function curatedToRestaurant(r: Omit<Restaurant, "source" | "city">): Restaurant {
+  return { ...r, city: deriveCityFromArea(r.area), source: "curated" };
+}
+
+// Dedup fingerprint: name + city. This drops OSM duplicates of curated
+// venues in the same district while preserving distinct chain branches
+// (e.g. Pizza Marzano at KK Mall vs at Plaza Indonesia stay separate
+// because they're in different DKI sub-regions). For OSM-internal dedup,
+// fetch-osm.ts already collapses entries sharing name + ~111m coords.
+function fingerprint(name: string, city: string): string {
+  return `${normName(name)}|${city.toLowerCase()}`;
+}
+
+const curatedFingerprints = new Set(
+  CURATED.map((c) => fingerprint(c.name, deriveCityFromArea(c.area)))
+);
+
+const ALL_OSM = OSM_RESTAURANTS.filter(
+  (o) => !curatedFingerprints.has(fingerprint(o.name, o.city))
+);
 
 export const RESTAURANTS: Restaurant[] = [
-  ...CURATED.map((r) => ({ ...r, source: "curated" as const })),
-  ...OSM_RESTAURANTS.filter((o) => !curatedNameKeys.has(normName(o.name))).map(
-    osmToRestaurant
-  ),
+  ...CURATED.map(curatedToRestaurant),
+  ...ALL_OSM.map(osmToRestaurant),
 ];
 
 // ───────── HELPERS ─────────
@@ -357,4 +415,15 @@ export function getCuisineList(): string[] {
 
 export function getAreaList(): string[] {
   return Array.from(new Set(RESTAURANTS.map((r) => r.area))).sort();
+}
+
+/** Cities present in the dataset, ordered DKI-first then alphabetical. */
+export function getCityList(): string[] {
+  const present = new Set(RESTAURANTS.map((r) => r.city));
+  const ordered: string[] = [];
+  for (const c of CITY_ORDER) if (present.has(c)) ordered.push(c);
+  for (const c of [...present].sort()) {
+    if (!ordered.includes(c)) ordered.push(c);
+  }
+  return ordered;
 }
