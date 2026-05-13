@@ -258,11 +258,19 @@ function isInsideDKI(lat: number, lng: number): boolean {
   if (lat >= -5.95 && lat <= -5.30 && lng >= 106.40 && lng <= 106.80) {
     return true;
   }
-  // Mainland DKI bbox.
-  if (lat >= -6.37 && lat <= -6.04 && lng >= 106.715 && lng <= 106.975) {
-    // Clip the NW corner: PIK 2 / Kosambi sits in Tangerang Regency
-    // at roughly lat > -6.08 and lng < 106.72 inside this bbox.
+  // Mainland DKI bbox (slightly tightened from 106.975 → 106.96 east).
+  if (lat >= -6.37 && lat <= -6.04 && lng >= 106.715 && lng <= 106.96) {
+    // Clip NW corner: PIK 2 / Kosambi sits in Tangerang Regency at
+    // roughly lat > -6.08 and lng < 106.72 inside this bbox.
     if (lat > -6.08 && lng < 106.72) return false;
+    // Clip S strip: UI Depok / Kukusan / Pondok Cina sits at
+    // roughly lat < -6.355 in the central longitude band.
+    if (lat < -6.355 && lng < 106.87) return false;
+    // Clip E strip: Bekasi west border (Bintara/Pekayon/Bintara Jaya/
+    // Pondok Gede) sits at lng > 106.945 in northern lat band.
+    if (lng > 106.945 && lat < -6.15 && lat > -6.30) return false;
+    // Clip SE corner: Cibubur/Setu/Ciangsana edge of DKI/Bekasi/Bogor.
+    if (lat < -6.34 && lng > 106.945) return false;
     return true;
   }
   return false;
@@ -284,7 +292,10 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("margonda") ||
     blob.includes("depok") ||
     blob.includes("beji") ||
-    blob.includes("cinere")
+    blob.includes("cinere") ||
+    blob.includes("kukusan") ||
+    blob.includes("pondok cina") ||
+    blob.includes("tanah baru, depok")
   ) return "Depok";
   if (
     blob.includes("tangerang") ||
@@ -306,12 +317,26 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
   if (
     blob.includes("bekasi") ||
     blob.includes("cikarang") ||
-    blob.includes("cibitung")
+    blob.includes("cibitung") ||
+    blob.includes("pondok gede") ||
+    blob.includes("jatibening") ||
+    blob.includes("jatiwarna") ||
+    blob.includes("jatiasih") ||
+    blob.includes("jati asih") ||
+    blob.includes("bintara") ||
+    blob.includes("kranji") ||
+    blob.includes("pekayon") ||
+    blob.includes("harapan indah") ||
+    blob.includes("galaxy bekasi") ||
+    blob.includes("kemang pratama")
   ) return "Bekasi";
   if (
     blob.includes("bogor") ||
     blob.includes("sentul") ||
-    blob.includes("cibinong")
+    blob.includes("cibinong") ||
+    blob.includes("ciangsana") ||
+    blob.includes("cileungsi") ||
+    blob.includes("gunung putri")
   ) return "Bogor";
   return null;
 }
