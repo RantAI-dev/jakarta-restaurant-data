@@ -76,6 +76,21 @@ export function Dashboard({ restaurants }: Props) {
   const [city, setCity] = useState<string>("All");
   const [category, setCategory] = useState<Category>("All");
   const [sort, setSort] = useState<SortId>("rating");
+  const [viewMode, setViewMode] = useState<"cards" | "rows">("cards");
+
+  // Persist the view-mode preference across sessions.
+  useEffect(() => {
+    try {
+      const v = window.localStorage.getItem("dpj.view");
+      if (v === "cards" || v === "rows") setViewMode(v);
+    } catch {}
+  }, []);
+  function onSetViewMode(v: "cards" | "rows") {
+    setViewMode(v);
+    try {
+      window.localStorage.setItem("dpj.view", v);
+    } catch {}
+  }
   const [refreshing, startRefresh] = useTransition();
   const [refreshResult, setRefreshResult] = useState<{
     checkedAt: string;
@@ -351,6 +366,7 @@ export function Dashboard({ restaurants }: Props) {
                 {filtered.length}/{restaurants.length}
               </span>
             </div>
+            <ViewToggle value={viewMode} onChange={onSetViewMode} t={t} />
             <ExportButton
               onExport={exportRestaurants}
               label={t("export.csv")}
@@ -403,9 +419,9 @@ export function Dashboard({ restaurants }: Props) {
         </div>
       </section>
 
-      {/* ── DIRECTORY GRID (white) ── */}
+      {/* ── DIRECTORY (cards or rows depending on view mode) ── */}
       <section id="directory" className="bg-canvas">
-        <div className="mx-auto max-w-[1280px] px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-[1280px] px-6 py-10 md:py-14">
           {filtered.length === 0 ? (
             <div className="py-24 text-center">
               <p className="apple-display-lg text-ink">{t("empty.title")}</p>
@@ -416,12 +432,14 @@ export function Dashboard({ restaurants }: Props) {
                 <span className="text-primary">SCBD</span>.
               </p>
             </div>
-          ) : (
+          ) : viewMode === "cards" ? (
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((r) => (
                 <Card key={r.id} r={r} t={t} />
               ))}
             </ul>
+          ) : (
+            <ListView restaurants={filtered} t={t} />
           )}
         </div>
       </section>
@@ -973,5 +991,201 @@ function RotateIcon() {
         d="M12 5V2L7 6l5 4V7c2.76 0 5 2.24 5 5a5 5 0 0 1-9.58 2H5.34A7 7 0 1 0 12 5z"
       />
     </svg>
+  );
+}
+
+/* ──────────────────────  VIEW TOGGLE  ──────────────────── */
+
+function ViewToggle({
+  value,
+  onChange,
+  t,
+}: {
+  value: "cards" | "rows";
+  onChange: (v: "cards" | "rows") => void;
+  t: TFn;
+}) {
+  return (
+    <div
+      className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full"
+      role="radiogroup"
+      aria-label="View mode"
+    >
+      <button
+        role="radio"
+        aria-checked={value === "cards"}
+        onClick={() => onChange("cards")}
+        className={`press-scale rounded-full px-3 py-1.5 apple-caption-strong inline-flex items-center gap-1.5 ${
+          value === "cards"
+            ? "bg-ink text-white"
+            : "text-ink-muted-80 hover:text-ink"
+        }`}
+      >
+        <CardsIcon />
+        <span className="hidden sm:inline">{t("view.cards")}</span>
+      </button>
+      <button
+        role="radio"
+        aria-checked={value === "rows"}
+        onClick={() => onChange("rows")}
+        className={`press-scale rounded-full px-3 py-1.5 apple-caption-strong inline-flex items-center gap-1.5 ${
+          value === "rows"
+            ? "bg-ink text-white"
+            : "text-ink-muted-80 hover:text-ink"
+        }`}
+      >
+        <ListIcon />
+        <span className="hidden sm:inline">{t("view.rows")}</span>
+      </button>
+    </div>
+  );
+}
+
+function CardsIcon() {
+  return (
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true">
+      <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="9" y="1.5" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="1.5" y="9" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="9" y="9" width="5.5" height="5.5" rx="1" fill="none" stroke="currentColor" strokeWidth="1.4" />
+    </svg>
+  );
+}
+
+function ListIcon() {
+  return (
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true">
+      <line x1="2" y1="4" x2="14" y2="4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="2" y1="12" x2="14" y2="12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/* ──────────────────────  LIST VIEW  ──────────────────── */
+
+function ListView({
+  restaurants,
+  t,
+}: {
+  restaurants: Restaurant[];
+  t: TFn;
+}) {
+  return (
+    <div className="border border-hairline rounded-apple_lg overflow-hidden bg-canvas">
+      {/* Sticky header row */}
+      <div className="hidden md:grid grid-cols-[44px_minmax(0,1fr)_180px_120px_70px_120px] items-center gap-3 px-4 py-3 bg-paper border-b border-hairline atlas-mono text-ink-muted-48">
+        <span className="text-right">#</span>
+        <span>{t("list.header.place")}</span>
+        <span className="text-right">{t("list.header.rating")}</span>
+        <span>{t("list.header.cuisine")}</span>
+        <span className="text-right">{t("list.header.price")}</span>
+        <span className="text-right">{t("list.header.actions")}</span>
+      </div>
+      <ol>
+        {restaurants.map((r, i) => (
+          <ListRow key={r.id} r={r} index={i + 1} t={t} />
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function ListRow({
+  r,
+  index,
+  t,
+}: {
+  r: Restaurant;
+  index: number;
+  t: TFn;
+}) {
+  return (
+    <li className="grid grid-cols-[44px_minmax(0,1fr)] md:grid-cols-[44px_minmax(0,1fr)_180px_120px_70px_120px] items-center gap-3 px-4 py-3.5 border-b border-divider hover:bg-paper transition-colors">
+      <span className="atlas-mono text-ink-muted-48 tabular text-right">
+        {String(index).padStart(3, "0")}
+      </span>
+
+      {/* Place */}
+      <div className="min-w-0">
+        <div className="flex items-center gap-2">
+          <span className="apple-body-strong text-ink truncate">{r.name}</span>
+          <span
+            className={`shrink-0 apple-fine uppercase tracking-wider px-1.5 py-0.5 rounded ${
+              r.source === "curated"
+                ? "bg-[color:var(--accent-bg)] text-[color:var(--accent)]"
+                : "bg-ink-muted-80/10 text-ink-muted-80"
+            }`}
+          >
+            {r.source === "curated"
+              ? t("card.source_curated")
+              : t("card.source_osm")}
+          </span>
+        </div>
+        <p className="apple-fine text-ink-muted-48 truncate mt-0.5 md:hidden">
+          {r.cuisine} · {r.area}
+        </p>
+        <p className="apple-fine text-ink-muted-48 truncate mt-0.5 hidden md:block">
+          {r.area}
+        </p>
+      </div>
+
+      {/* Rating (md+) */}
+      <div className="hidden md:flex items-baseline justify-end gap-1.5">
+        {r.rating != null ? (
+          <>
+            <StarIcon />
+            <span className="apple-caption-strong tabular text-ink">
+              {r.rating.toFixed(1)}
+            </span>
+            {r.reviewCount != null && r.reviewCount > 0 && (
+              <span className="apple-fine tabular text-ink-muted-48">
+                · {formatReviews(r.reviewCount)}
+              </span>
+            )}
+          </>
+        ) : (
+          <span className="apple-fine text-ink-muted-48">—</span>
+        )}
+      </div>
+
+      {/* Cuisine (md+) */}
+      <span className="hidden md:block apple-caption text-ink-muted-80 truncate">
+        {r.cuisine}
+      </span>
+
+      {/* Price (md+) */}
+      <span className="hidden md:block text-right">
+        {r.priceRange ? (
+          <span className="apple-caption-strong text-[color:var(--accent)] tabular">
+            {r.priceRange}
+          </span>
+        ) : (
+          <span className="apple-fine text-ink-muted-48">—</span>
+        )}
+      </span>
+
+      {/* Actions (md+) */}
+      <div className="hidden md:flex items-center justify-end gap-3 apple-fine">
+        <a
+          href={googleMapsUrl(r)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-blue inline-flex items-center gap-0.5 apple-caption-strong"
+        >
+          Maps <span aria-hidden>↗</span>
+        </a>
+        {r.sources[0] && (
+          <a
+            href={r.sources[0].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-blue inline-flex items-center gap-0.5"
+          >
+            {t("card.source")} <span aria-hidden>↗</span>
+          </a>
+        )}
+      </div>
+    </li>
   );
 }
