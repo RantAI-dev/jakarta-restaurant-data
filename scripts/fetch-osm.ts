@@ -215,6 +215,23 @@ function pickCuisine(tag: string | undefined): string | null {
   return null;
 }
 
+/** Reject venues whose name signals Indonesian local cuisine even
+ *  when their OSM cuisine tag is generic ("asian", "international").
+ *  Padang, sate, soto, warung, warteg — these are local. */
+function nameLooksLocal(name: string): boolean {
+  const n = name.toLowerCase();
+  if (/\bpadang\b/.test(n)) return true;
+  if (/\bwarung\b/.test(n)) return true;
+  if (/\bwarteg\b/.test(n)) return true;
+  if (/\bsate\b/.test(n)) return true;
+  if (/\bsoto\b/.test(n)) return true;
+  if (/\bmartabak\b/.test(n)) return true;
+  if (/\bnasi goreng\b/.test(n)) return true;
+  if (/\bgudeg\b/.test(n)) return true;
+  if (/\brendang\b/.test(n)) return true;
+  return false;
+}
+
 function pickCategory(tags: Record<string, string>): OsmRestaurant["category"] {
   const a = tags.amenity ?? "";
   if (a === "bar" || a === "pub") return "Beverage";
@@ -259,30 +276,30 @@ function isInsideDKI(lat: number, lng: number): boolean {
     return true;
   }
   // Mainland DKI bbox (slightly tightened from 106.975 → 106.96 east).
-  if (lat >= -6.37 && lat <= -6.04 && lng >= 106.715 && lng <= 106.96) {
-    // Clip NW corner: PIK 2 / Kosambi sits in Tangerang Regency at
-    // roughly lat > -6.08 and lng < 106.72 inside this bbox.
-    if (lat > -6.08 && lng < 106.72) return false;
-    // Clip S strip: UI Depok / Kukusan / Pondok Cina sits at
-    // roughly lat < -6.355 in the central longitude band.
-    if (lat < -6.355 && lng < 106.87) return false;
-    // Clip E strip: Bekasi west border (Bintara/Pekayon/Pondok Gede/
-    // Jakasampurna). Tightened from 106.945 → 106.93 in central lat
-    // band because Bekasi Barat extends further west than first
-    // assumed; Pulo Gadung (DKI) stays at lng < 106.93.
+  if (lat >= -6.37 && lat <= -6.04 && lng >= 106.72 && lng <= 106.96) {
+    // Clip NW corner: PIK 2 / Dadap / Kosambi sit in Tangerang
+    // Regency. Pier 503 at -6.089/106.73 → widen to 106.74.
+    if (lat > -6.10 && lng < 106.74) return false;
+    // Clip S strip: UI Depok / Kukusan / Pondok Cina / Tugu Cimanggis /
+    // Burger Bangor at Tugu sits at lat < -6.34 in lng 106.80..106.88.
+    if (lat < -6.34 && lng > 106.80 && lng < 106.88) return false;
+    // Clip E strip: Bekasi west border (Bintara/Pekayon/Jakasampurna/
+    // Pondok Gede). 106.93 cut in central lat band, 106.945 in north.
     if (lng > 106.93 && lat < -6.20 && lat > -6.30) return false;
     if (lng > 106.945 && lat < -6.15 && lat > -6.20) return false;
     // Clip SE corner: Cibubur/Setu/Ciangsana edge of DKI/Bekasi/Bogor.
     if (lat < -6.34 && lng > 106.945) return false;
-    // Clip S-central strip: Cimanggis (Depok) extends north to about
-    // -6.365 in the lng 106.86 to 106.90 range. Pondok Ranggon DKI
-    // sits east of this at lng > 106.90.
+    // Clip S-central: Cimanggis Depok extends north to -6.365 in
+    // lng 106.86..106.90 range.
     if (lat < -6.365 && lng > 106.86 && lng < 106.90) return false;
     // Clip SW corner: Pondok Aren / Pondok Cabe / Bintaro Sektor /
-    // Pamulang sit in Tangerang Selatan at roughly lat < -6.265 and
-    // lng < 106.77. Lebak Bulus (DKI Selatan) at lng ~106.778 stays
-    // just east of this cut.
-    if (lat < -6.265 && lng < 106.77) return false;
+    // Pamulang / Pondok Betung / Jurang Mangu — Tangerang Selatan.
+    // Lebak Bulus (DKI) sits east at lng ~106.778.
+    if (lat < -6.255 && lng < 106.77) return false;
+    // Clip W strip: Cipadu / Larangan / Karang Mulya — Kota Tangerang.
+    // Widened from 106.725 → 106.73 and lat band -6.18..-6.24 →
+    // -6.17..-6.24 to catch McDonald's at Cipadu (-6.231/106.728).
+    if (lng < 106.73 && lat > -6.24 && lat < -6.17) return false;
     return true;
   }
   return false;
@@ -334,7 +351,18 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("cabe raya") ||
     blob.includes("universitas terbuka") ||
     blob.includes("rempoa") ||
-    blob.includes("banten city")
+    blob.includes("banten city") ||
+    blob.includes("jurang mangu") ||
+    blob.includes("pondok betung") ||
+    blob.includes("pd. betung") ||
+    blob.includes("pd betung") ||
+    blob.includes("cipadu") ||
+    blob.includes("larangan indah") ||
+    blob.includes("larangan utara") ||
+    blob.includes("larangan selatan") ||
+    blob.includes("karang mulya") ||
+    blob.includes("karang tengah") ||
+    blob.includes("dadap")
   ) return "Tangerang";
   if (
     blob.includes("bekasi") ||
@@ -356,7 +384,13 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("pondok melati") ||
     blob.includes("jakasampurna") ||
     blob.includes("jaka sampurna") ||
-    blob.includes("jaka mulya")
+    blob.includes("jaka mulya") ||
+    blob.includes("jatimelati") ||
+    blob.includes("jati melati") ||
+    blob.includes("jaticempaka") ||
+    blob.includes("jati cempaka") ||
+    blob.includes("jatibening") ||
+    blob.includes("jati bening")
   ) return "Bekasi";
   if (
     blob.includes("bogor") ||
@@ -485,6 +519,9 @@ async function main() {
 
     const cuisine = pickCuisine(tags.cuisine);
     if (!cuisine) continue;
+
+    // Drop venues with clearly-local names regardless of cuisine tag.
+    if (nameLooksLocal(rawName)) continue;
 
     const lat = el.lat ?? el.center?.lat;
     const lng = el.lon ?? el.center?.lon;
