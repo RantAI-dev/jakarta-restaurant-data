@@ -700,13 +700,19 @@ function VerifyControl({
   formatRelative: (iso: string) => string;
   t: TFn;
 }) {
+  // Compact pill — matches the height of neighbouring nav controls
+  // (Daftar/Peta tabs, lang toggle). The default `.pill-primary` is
+  // sized for hero CTAs; here we want sub-nav rhythm.
+  const compactBase =
+    "press-scale inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 apple-caption-strong";
+
   if (!refreshing && !result && !error) {
     return (
       <button
         onClick={onVerify}
-        className="press-scale pill-primary text-[14px] py-2 px-4 inline-flex items-center gap-2"
+        className={`${compactBase} bg-[color:var(--accent)] text-white hover:bg-[color:var(--accent-deep)]`}
       >
-        <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-200" />
         {t("verify.idle")}
       </button>
     );
@@ -714,7 +720,9 @@ function VerifyControl({
 
   if (refreshing) {
     return (
-      <div className="inline-flex items-center gap-2 pill-primary text-[14px] py-2 px-4 cursor-progress">
+      <div
+        className={`${compactBase} bg-[color:var(--accent)] text-white cursor-progress`}
+      >
         <Spinner />
         {t("verify.loading")}
       </div>
