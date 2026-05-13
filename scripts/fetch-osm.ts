@@ -248,8 +248,38 @@ function pickArea(tags: Record<string, string>): string {
   return city;
 }
 
+/** Hard geographic gate — returns true only for coordinates that fall
+ *  inside actual DKI Jakarta administrative boundaries. The Overpass
+ *  bbox is a rectangle so it picks up neighbouring Tangerang/Bekasi/
+ *  Depok corners; this function trims them.
+ */
+function isInsideDKI(lat: number, lng: number): boolean {
+  // Kepulauan Seribu — islands extending north into the Java Sea.
+  if (lat >= -5.95 && lat <= -5.30 && lng >= 106.40 && lng <= 106.80) {
+    return true;
+  }
+  // Mainland DKI bbox.
+  if (lat >= -6.37 && lat <= -6.04 && lng >= 106.715 && lng <= 106.975) {
+    // Clip the NW corner: PIK 2 / Kosambi sits in Tangerang Regency
+    // at roughly lat > -6.08 and lng < 106.72 inside this bbox.
+    if (lat > -6.08 && lng < 106.72) return false;
+    return true;
+  }
+  return false;
+}
+
 /** Maps DKI Jakarta sub-region from address tags or geographic coords. */
 function pickCity(tags: Record<string, string>, lat: number, lng: number): string {
+  // Coordinate-first gate — overrides any wrong addr:city tags such as
+  // PIK 2 venues that mistakenly carry addr:city = "Jakarta".
+  if (!isInsideDKI(lat, lng)) {
+    if (lat > -6.08 && lng < 106.72) return "Tangerang (PIK 2 / Kosambi)";
+    if (lng < 106.715) return "Tangerang";
+    if (lat < -6.37) return "Tangerang Selatan / Depok";
+    if (lng > 106.975) return "Bekasi";
+    return "Outside DKI";
+  }
+
   const direct = (tags["addr:city"] ?? tags["addr:city_district"] ?? "").toLowerCase();
   if (direct.includes("kepulauan seribu") || direct.includes("thousand")) {
     return "Kepulauan Seribu";
