@@ -289,29 +289,27 @@ export function MapView() {
   );
 }
 
-function ViewToggle({ current, t }: { current: "list" | "map"; t: (k: string) => string }) {
+function ViewToggle({ current, t }: { current: "list" | "map" | "golf"; t: (k: string) => string }) {
+  const tabs: { id: typeof current; href: string; label: string }[] = [
+    { id: "list", href: "/", label: t("nav.view_list") },
+    { id: "map", href: "/map", label: t("nav.view_map") },
+    { id: "golf", href: "/golf", label: t("nav.view_golf") },
+  ];
   return (
     <div className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full">
-      <Link
-        href="/"
-        className={`press-scale rounded-full px-3 py-1 apple-caption-strong ${
-          current === "list"
-            ? "bg-ink text-white"
-            : "text-ink-muted-80 hover:text-ink"
-        }`}
-      >
-        {t("nav.view_list")}
-      </Link>
-      <Link
-        href="/map"
-        className={`press-scale rounded-full px-3 py-1 apple-caption-strong ${
-          current === "map"
-            ? "bg-ink text-white"
-            : "text-ink-muted-80 hover:text-ink"
-        }`}
-      >
-        {t("nav.view_map")}
-      </Link>
+      {tabs.map((tab) => (
+        <Link
+          key={tab.id}
+          href={tab.href}
+          className={`press-scale rounded-full px-3 py-1 apple-caption-strong ${
+            current === tab.id
+              ? "bg-ink text-white"
+              : "text-ink-muted-80 hover:text-ink"
+          }`}
+        >
+          {tab.label}
+        </Link>
+      ))}
     </div>
   );
 }

@@ -210,6 +210,12 @@ export function Dashboard({ restaurants }: Props) {
               >
                 {t("nav.view_map")}
               </Link>
+              <Link
+                href="/golf"
+                className="press-scale rounded-full px-3 py-1 apple-caption-strong text-ink-muted-80 hover:text-ink"
+              >
+                {t("nav.view_golf")}
+              </Link>
             </div>
             <LangToggle lang={lang} onToggle={onToggleLang} t={t} />
             <VerifyControl
