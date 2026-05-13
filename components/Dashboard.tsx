@@ -272,17 +272,20 @@ export function Dashboard({ restaurants }: Props) {
         </div>
       </section>
 
-      {/* ── TOOLBAR (parchment frosted, sticky under sub-nav) ── */}
+      {/* ── TOOLBAR (frosted, sticky under sub-nav) ──
+       *  Two clean rows so the search field always gets full width and
+       *  the filter chips align without squishing.
+       */}
       <section
         id="filters"
-        className="sticky top-[56px] z-10 frosted border-b border-hairline"
+        className="sticky top-[56px] z-10 frosted"
       >
-        <div className="mx-auto max-w-[1280px] px-6 py-4 flex flex-col lg:flex-row gap-3 lg:items-center lg:gap-5">
-          {/* Search pill */}
-          <div className="flex-1 relative">
+        <div className="mx-auto max-w-[1280px] px-6 py-3 space-y-3">
+          {/* Row 1 — search, full width */}
+          <div className="relative">
             <svg
               viewBox="0 0 24 24"
-              className="absolute left-5 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted-48"
+              className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted-48"
               aria-hidden
             >
               <path
@@ -294,14 +297,15 @@ export function Dashboard({ restaurants }: Props) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("toolbar.search_placeholder")}
-              className="w-full bg-canvas/95 border border-hairline rounded-full pl-12 pr-16 h-11 text-[17px] placeholder:text-ink-muted-48 focus:outline-none focus:border-primary-focus focus:ring-2 focus:ring-primary/15 transition-all"
+              className="w-full bg-canvas border border-hairline rounded-lg pl-11 pr-16 h-10 text-[14px] placeholder:text-ink-muted-48 focus:outline-none focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--accent-ring)] transition-all"
             />
-            <span className="absolute right-5 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
               {filtered.length}/{restaurants.length}
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          {/* Row 2 — filters */}
+          <div className="flex flex-wrap items-center gap-2">
             <Pill
               renderAs="select"
               value={city}
@@ -320,6 +324,7 @@ export function Dashboard({ restaurants }: Props) {
               }))}
               onChange={setCuisine}
             />
+            <span className="hidden md:inline-block h-5 w-px bg-hairline mx-1" />
             <Segmented
               options={CATEGORIES.map((c) => ({
                 id: c,
@@ -335,6 +340,7 @@ export function Dashboard({ restaurants }: Props) {
               value={category}
               onChange={(v) => setCategory(v as Category)}
             />
+            <span className="hidden md:inline-block h-5 w-px bg-hairline mx-1" />
             <Segmented
               options={SORT_KEYS.map((s) => ({ id: s.id, label: t(s.tKey) }))}
               value={sort}
