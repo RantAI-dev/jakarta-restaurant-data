@@ -1,21 +1,36 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Newsreader, Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-// Inter loaded as the open-source fallback for SF Pro on non-Apple platforms,
-// per DESIGN.md → "Note on Font Substitutes". The CSS stack puts
-// `-apple-system, BlinkMacSystemFont, system-ui` first so macOS/iOS/Safari
-// resolves to the real SF Pro Display / SF Pro Text.
-const inter = Inter({
+// Newsreader: variable serif by Production Type — opsz from 6 → 72,
+// italic with character. Carries the entire editorial voice.
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-display",
+  style: ["normal", "italic"],
+  display: "swap",
+  axes: ["opsz"],
+});
+
+// Geist: workhorse modern grotesque for body UI.
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  adjustFontFallback: false,
+});
+
+// JetBrains Mono: coordinates, indices, tabular numerals.
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Jakarta International Cuisine Directory",
+  title: "Jakarta Atlas — Restaurants & Golf",
   description:
-    "A web-sourced register of restaurants and bars in Jakarta serving international food or beverages.",
+    "A cartographic register of restaurants serving international cuisine and golf courses inside the borders of DKI Jakarta.",
 };
 
 export default function RootLayout({
@@ -27,7 +42,7 @@ export default function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={inter.variable}
+      className={`${newsreader.variable} ${geist.variable} ${jetbrains.variable}`}
     >
       <body suppressHydrationWarning>{children}</body>
     </html>

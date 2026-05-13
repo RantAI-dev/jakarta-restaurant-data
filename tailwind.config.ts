@@ -8,58 +8,60 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Apple's recommended stack: SF Pro on Apple devices, Inter elsewhere.
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "system-ui",
-          "var(--font-inter)",
-          "Helvetica Neue",
-          "sans-serif",
-        ],
-        display: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "system-ui",
-          "var(--font-inter)",
-          "Helvetica Neue",
-          "sans-serif",
-        ],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       colors: {
-        // — Brand / accent —
-        primary: "#0066cc",
-        "primary-focus": "#0071e3",
-        "primary-on-dark": "#2997ff",
-        // — Ink —
-        ink: "#1d1d1f",
-        "ink-muted-80": "#333333",
-        "ink-muted-48": "#7a7a7a",
-        "body-muted": "#cccccc",
-        // — Surfaces —
-        canvas: "#ffffff",
-        parchment: "#f5f5f7",
-        pearl: "#fafafc",
-        tile1: "#272729",
-        tile2: "#2a2a2c",
-        tile3: "#252527",
+        // — Atlas surfaces —
+        paper: "#F4EFE3",
+        "paper-deep": "#EBE3D2",
+        "paper-light": "#FAF7EE",
+        canvas: "#FCFAF4",
+        parchment: "#F4EFE3",
+        pearl: "#FAF7EE",
+        // — Inks —
+        ink: "#0F1419",
+        "ink-muted-80": "#2A2F35",
+        "ink-muted-48": "#6E6E68",
+        "body-muted": "#9C988F",
         // — Lines —
-        hairline: "#e0e0e0",
-        divider: "#f0f0f0",
+        hairline: "rgba(15, 20, 25, 0.14)",
+        divider: "rgba(15, 20, 25, 0.06)",
+        // — Section accents (compass-rose red for restaurants, fairway
+        //   green for golf, gold neutral for the brand mark). The
+        //   --accent CSS variable swaps per data-section in globals.css. —
+        "accent-rest": "#A0392E",
+        "accent-rest-deep": "#6B2018",
+        "accent-rest-soft": "#D87A6F",
+        "accent-golf": "#2E5D3C",
+        "accent-golf-deep": "#15331F",
+        "accent-golf-soft": "#7AAE85",
+        gold: "#C8A14B",
+        "gold-deep": "#9F7D34",
+        // — Back-compat aliases that resolve to the active section accent —
+        primary: "var(--accent)",
+        "primary-focus": "var(--accent-deep)",
+        "primary-on-dark": "var(--accent-soft)",
+        // — Dark tile (used sparingly, e.g. hero accents) —
+        tile1: "#1A1E22",
+        tile2: "#222629",
       },
       letterSpacing: {
         tight2: "-0.005em",
-        appletight: "-0.0067em",  // ~ -0.374px @ 56px
-        applehero: "-0.005em",
+        editorial: "-0.022em",
       },
       borderRadius: {
-        apple_sm: "8px",
-        apple_md: "11px",
-        apple_lg: "18px",
+        apple_sm: "6px",
+        apple_md: "10px",
+        apple_lg: "14px",
       },
       boxShadow: {
-        // The single product-shadow from DESIGN.md — used sparingly.
-        product: "0 5px 30px rgba(0, 0, 0, 0.22)",
+        product: "0 8px 36px rgba(15, 20, 25, 0.10)",
+      },
+      backgroundImage: {
+        grain:
+          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.08 0 0 0 0 0.10 0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
       },
     },
   },

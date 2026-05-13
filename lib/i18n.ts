@@ -12,11 +12,41 @@ export const STORAGE_KEY = "dpj.lang";
 export type Dict = Record<string, string>;
 
 const id: Dict = {
-  "nav.title": "Direktori Kuliner Internasional",
+  "nav.title": "Restoran Internasional",
   "nav.switch_to": "EN",
   "nav.view_list": "Daftar",
   "nav.view_map": "Peta",
   "nav.view_golf": "Golf",
+  "nav.section_restaurants": "Restoran",
+  "nav.section_golf": "Golf",
+
+  "home.eyebrow": "BUKU ATLAS · DKI JAKARTA",
+  "home.title_a": "Sebuah register kartografis,",
+  "home.title_b": "dalam dua jilid",
+  "home.lead":
+    "Jakarta Atlas adalah catatan tempat — restoran yang menyajikan masakan internasional, dan lapangan golf — yang beroperasi di dalam batas administratif DKI Jakarta. Setiap entri membawa koordinat dan tautan ke sumbernya.",
+  "home.stat_venues": "Tempat",
+  "home.stat_cuisines": "Jenis kuliner",
+  "home.stat_courses": "Lapangan",
+  "home.stat_curated": "Kurasi",
+  "home.stat_holes": "Total holes",
+  "home.vol1_kicker": "JILID I · RESTORAN",
+  "home.vol1_title": "Kuliner Internasional",
+  "home.vol1_subtitle": "Dari resto hingga rooftop",
+  "home.vol1_description":
+    "Restoran dan bar di lima kota DKI Jakarta plus Kepulauan Seribu yang menyajikan masakan atau minuman internasional. Tersusun berdasarkan rating dan disilangkan dengan data OpenStreetMap.",
+  "home.vol1_cta": "Buka direktori restoran",
+  "home.vol2_kicker": "JILID II · GOLF",
+  "home.vol2_title": "Lapangan Golf",
+  "home.vol2_subtitle": "Setiap lapangan, setiap range",
+  "home.vol2_description":
+    "Setiap lapangan golf bersertifikat di DKI Jakarta — dari Jakarta Golf Club tahun 1872 hingga Topgolf modern — beserta lokasi, jumlah hole, desainer, dan tahun berdiri.",
+  "home.vol2_cta": "Buka peta golf",
+  "home.footer_about":
+    "Data tempat dikumpulkan dari OpenStreetMap, Wanderlog, TripAdvisor, What's New Indonesia, dan situs resmi masing-masing tempat. Permintaan koreksi: lewat GitHub.",
+  "home.footer_inspect": "INSPECT",
+  "home.footer_colophon": "DICETAK DENGAN",
+
   "map.pins_label": "titik di peta",
   "map.legend":
     "Tampilan peta menunjukkan setiap restoran dengan koordinat. Klik titik untuk melihat detail; klik cluster untuk zoom. Hanya entri dengan lokasi geografis yang muncul di sini.",
@@ -46,6 +76,8 @@ const id: Dict = {
   "golf.website": "Website",
   "golf.footer_source":
     "Lokasi: OpenStreetMap. Detail lapangan: Wanderlog, What's New Indonesia, GolfLux, Deemples Golf, Leading Courses.",
+  "golf.legend_pins":
+    "Angka di pin = jumlah hole. DR = driving range. TG = Topgolf.",
 
   "hero.eyebrow": "JAKARTA · KULINER INTERNASIONAL",
   "hero.title_a": "Kuliner Internasional.",
@@ -137,11 +169,41 @@ const id: Dict = {
 };
 
 const en: Dict = {
-  "nav.title": "International Cuisine Directory",
+  "nav.title": "International Restaurants",
   "nav.switch_to": "ID",
   "nav.view_list": "List",
   "nav.view_map": "Map",
   "nav.view_golf": "Golf",
+  "nav.section_restaurants": "Restaurants",
+  "nav.section_golf": "Golf",
+
+  "home.eyebrow": "GAZETTEER · DKI JAKARTA",
+  "home.title_a": "A cartographic register,",
+  "home.title_b": "in two volumes",
+  "home.lead":
+    "Jakarta Atlas is a record of places — restaurants serving international cuisine and golf courses — operating inside the administrative borders of DKI Jakarta. Every entry carries coordinates and a citation back to its source.",
+  "home.stat_venues": "Venues",
+  "home.stat_cuisines": "Cuisines",
+  "home.stat_courses": "Courses",
+  "home.stat_curated": "Curated",
+  "home.stat_holes": "Total holes",
+  "home.vol1_kicker": "VOL. I · RESTAURANTS",
+  "home.vol1_title": "International Cuisine",
+  "home.vol1_subtitle": "From dining rooms to rooftops",
+  "home.vol1_description":
+    "Restaurants and bars across the five DKI Jakarta cities and Kepulauan Seribu serving international food or beverages. Curated by rating, then cross-referenced with OpenStreetMap.",
+  "home.vol1_cta": "Open the restaurants directory",
+  "home.vol2_kicker": "VOL. II · GOLF",
+  "home.vol2_title": "Golf Courses",
+  "home.vol2_subtitle": "Every course, every range",
+  "home.vol2_description":
+    "Every sanctioned golf course inside DKI Jakarta — from the 1872 Jakarta Golf Club to modern Topgolf — with location, hole count, designer, and year founded.",
+  "home.vol2_cta": "Open the golf map",
+  "home.footer_about":
+    "Place data drawn from OpenStreetMap, Wanderlog, TripAdvisor, What's New Indonesia and each venue's official site. Correction requests: open an issue on GitHub.",
+  "home.footer_inspect": "INSPECT",
+  "home.footer_colophon": "SET IN",
+
   "map.pins_label": "pins on map",
   "map.legend":
     "Map view shows every restaurant that has coordinates. Click a pin for details; click a cluster to zoom in. Only entries with geographic location appear here.",
@@ -171,6 +233,8 @@ const en: Dict = {
   "golf.website": "Website",
   "golf.footer_source":
     "Locations: OpenStreetMap. Course details: Wanderlog, What's New Indonesia, GolfLux, Deemples Golf, Leading Courses.",
+  "golf.legend_pins":
+    "Number on pin = hole count. DR = driving range. TG = Topgolf.",
 
   "hero.eyebrow": "JAKARTA · INTERNATIONAL CUISINE",
   "hero.title_a": "International Cuisine.",
