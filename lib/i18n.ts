@@ -14,6 +14,11 @@ export type Dict = Record<string, string>;
 const id: Dict = {
   "nav.title": "Direktori Kuliner Internasional",
   "nav.switch_to": "EN",
+  "nav.view_list": "Daftar",
+  "nav.view_map": "Peta",
+  "map.pins_label": "titik di peta",
+  "map.legend":
+    "Tampilan peta menunjukkan setiap restoran dengan koordinat. Klik titik untuk melihat detail; klik cluster untuk zoom. Hanya entri dengan lokasi geografis yang muncul di sini.",
 
   "hero.eyebrow": "JAKARTA · KULINER INTERNASIONAL",
   "hero.title_a": "Kuliner Internasional.",
@@ -107,6 +112,11 @@ const id: Dict = {
 const en: Dict = {
   "nav.title": "International Cuisine Directory",
   "nav.switch_to": "ID",
+  "nav.view_list": "List",
+  "nav.view_map": "Map",
+  "map.pins_label": "pins on map",
+  "map.legend":
+    "Map view shows every restaurant that has coordinates. Click a pin for details; click a cluster to zoom in. Only entries with geographic location appear here.",
 
   "hero.eyebrow": "JAKARTA · INTERNATIONAL CUISINE",
   "hero.title_a": "International Cuisine.",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState, useTransition } from "react";
+import Link from "next/link";
 import { type Restaurant, googleMapsUrl, mapsEmbedUrl } from "@/lib/restaurants";
 import {
   DEFAULT_LANG,
@@ -199,6 +200,17 @@ export function Dashboard({ restaurants }: Props) {
         <div className="mx-auto max-w-[1280px] px-6 h-[52px] flex items-center justify-between gap-3">
           <p className="apple-tagline text-ink truncate">{t("nav.title")}</p>
           <div className="flex items-center gap-2">
+            <div className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full">
+              <span className="press-scale rounded-full px-3 py-1 apple-caption-strong bg-ink text-white">
+                {t("nav.view_list")}
+              </span>
+              <Link
+                href="/map"
+                className="press-scale rounded-full px-3 py-1 apple-caption-strong text-ink-muted-80 hover:text-ink"
+              >
+                {t("nav.view_map")}
+              </Link>
+            </div>
             <LangToggle lang={lang} onToggle={onToggleLang} t={t} />
             <VerifyControl
               refreshing={refreshing}
