@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Civic-green rounded square — matches the in-app accent. -->
+  <rect width="32" height="32" rx="7" fill="#0E7C42"/>
+
+  <g fill="#ffffff">
+    <!-- N/S diamond (vertical compass spar) -->
+    <path d="M16 4 L18.4 16 L16 28 L13.6 16 Z"/>
+    <!-- E/W diamond (horizontal compass spar) -->
+    <path d="M4 16 L16 13.6 L28 16 L16 18.4 Z"/>
+    <!-- Diagonal ordinal dots — read as a compass rose at larger sizes,
+         anti-alias to nothing at favicon scale. -->
+    <circle cx="22.5" cy="9.5" r="0.9" opacity="0.55"/>
+    <circle cx="22.5" cy="22.5" r="0.9" opacity="0.55"/>
+    <circle cx="9.5" cy="22.5" r="0.9" opacity="0.55"/>
+    <circle cx="9.5" cy="9.5" r="0.9" opacity="0.55"/>
+    <!-- Centre pinhole (the green of the bg shows through) -->
+    <circle cx="16" cy="16" r="1.5" fill="#0E7C42"/>
+  </g>
+</svg>
