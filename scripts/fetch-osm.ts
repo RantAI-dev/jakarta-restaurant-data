@@ -268,8 +268,61 @@ function isInsideDKI(lat: number, lng: number): boolean {
   return false;
 }
 
+/** Catches entries whose lat/lng land inside the DKI bbox but whose
+ *  street/area/city tags clearly belong to neighbouring municipalities
+ *  (Margonda → Depok, BSD → Tangerang, etc.). Returns the non-DKI
+ *  label or null. */
+function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
+  const blob = (
+    (tags["addr:street"] ?? "") +
+    " " + (tags["addr:city"] ?? "") +
+    " " + (tags["addr:suburb"] ?? "") +
+    " " + (tags["addr:full"] ?? "") +
+    " " + (tags["addr:district"] ?? "")
+  ).toLowerCase();
+  if (
+    blob.includes("margonda") ||
+    blob.includes("depok") ||
+    blob.includes("beji") ||
+    blob.includes("cinere")
+  ) return "Depok";
+  if (
+    blob.includes("tangerang") ||
+    blob.includes("tangsel") ||
+    blob.includes("kosambi") ||
+    blob.includes("bsd") ||
+    blob.includes("bumi serpong") ||
+    blob.includes("gading serpong") ||
+    blob.includes("karawaci") ||
+    blob.includes("alam sutera") ||
+    blob.includes("pondok cabe") ||
+    blob.includes("pamulang") ||
+    blob.includes("ciputat") ||
+    blob.includes("serpong") ||
+    blob.includes("citra raya") ||
+    blob.includes("pasar kemis") ||
+    blob.includes("bintaro jaya")
+  ) return "Tangerang";
+  if (
+    blob.includes("bekasi") ||
+    blob.includes("cikarang") ||
+    blob.includes("cibitung")
+  ) return "Bekasi";
+  if (
+    blob.includes("bogor") ||
+    blob.includes("sentul") ||
+    blob.includes("cibinong")
+  ) return "Bogor";
+  return null;
+}
+
 /** Maps DKI Jakarta sub-region from address tags or geographic coords. */
 function pickCity(tags: Record<string, string>, lat: number, lng: number): string {
+  // Address-text blacklist first — catches venues whose coords squeeze
+  // inside the DKI bbox but whose street name says Depok/Tangerang/etc.
+  const adminOverride = addressTagSaysNonDKI(tags);
+  if (adminOverride) return adminOverride;
+
   // Coordinate-first gate — overrides any wrong addr:city tags such as
   // PIK 2 venues that mistakenly carry addr:city = "Jakarta".
   if (!isInsideDKI(lat, lng)) {
