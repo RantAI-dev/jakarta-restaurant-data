@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useState, useTransition } from "react";
 import Link from "next/link";
 import { AtlasNav, LangToggle as AtlasLangToggle } from "@/components/atlas/AtlasNav";
+import { ExportButton } from "@/components/atlas/ExportButton";
 import { type Restaurant, googleMapsUrl, mapsEmbedUrl } from "@/lib/restaurants";
+import { type CsvColumn, downloadCsv, toCsv, dateStamp } from "@/lib/export";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -164,6 +166,41 @@ export function Dashboard({ restaurants }: Props) {
       avgRating: avg,
     };
   }, [restaurants]);
+
+  function exportToCsv() {
+    if (filtered.length === 0) {
+      alert(t("export.empty_rows"));
+      return;
+    }
+    const columns: CsvColumn<Restaurant>[] = [
+      { header: "No", value: (_r, i) => i + 1 },
+      { header: "Nama", value: (r) => r.name },
+      { header: "Kuliner", value: (r) => r.cuisine },
+      { header: "Kategori", value: (r) => r.category },
+      { header: "Kota", value: (r) => r.city },
+      { header: "Area", value: (r) => r.area },
+      { header: "Alamat", value: (r) => r.address ?? "" },
+      { header: "Rating", value: (r) => r.rating ?? "" },
+      { header: "Jumlah Ulasan", value: (r) => r.reviewCount ?? "" },
+      { header: "Sumber Rating", value: (r) => r.ratingSource ?? "" },
+      { header: "Tier Harga", value: (r) => r.priceRange ?? "" },
+      { header: "Catatan Harga", value: (r) => r.priceNote ?? "" },
+      { header: "Highlights", value: (r) => r.highlights.join(" · ") },
+      { header: "Deskripsi", value: (r) => r.description ?? "" },
+      { header: "Tipe Data", value: (r) => r.source },
+      { header: "Lat", value: (r) => r.lat ?? "" },
+      { header: "Lng", value: (r) => r.lng ?? "" },
+      { header: "Telepon", value: (r) => r.phone ?? "" },
+      { header: "Website", value: (r) => r.website ?? "" },
+      { header: "Google Maps", value: (r) => googleMapsUrl(r) },
+      {
+        header: "Sumber",
+        value: (r) => r.sources.map((s) => `${s.label} <${s.url}>`).join(" | "),
+      },
+    ];
+    const csv = toCsv(filtered, columns);
+    downloadCsv(`jakarta-atlas-restoran-${dateStamp()}.csv`, csv);
+  }
 
   function verify() {
     setRefreshError(null);
@@ -346,6 +383,9 @@ export function Dashboard({ restaurants }: Props) {
               value={sort}
               onChange={(v) => setSort(v as SortId)}
             />
+            <div className="ml-auto">
+              <ExportButton onClick={exportToCsv} label={t("export.csv")} />
+            </div>
           </div>
         </div>
       </section>

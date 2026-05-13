@@ -8,7 +8,9 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import { AtlasNav, LangToggle } from "@/components/atlas/AtlasNav";
+import { ExportButton } from "@/components/atlas/ExportButton";
 import { GOLF_COURSES, golfMapsUrl, type GolfCourse } from "@/lib/golf";
+import { type CsvColumn, downloadCsv, toCsv, dateStamp } from "@/lib/export";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -210,6 +212,38 @@ export function GolfView() {
     } catch {}
   }
 
+  function exportToCsv() {
+    if (filtered.length === 0) {
+      alert(t("export.empty_rows"));
+      return;
+    }
+    const columns: CsvColumn<GolfCourse>[] = [
+      { header: "No", value: (_g, i) => i + 1 },
+      { header: "Nama", value: (g) => g.name },
+      { header: "Jenis", value: (g) => g.kind },
+      { header: "Jumlah Hole", value: (g) => g.holes ?? "" },
+      { header: "Par", value: (g) => g.par ?? "" },
+      { header: "Desainer", value: (g) => g.designer ?? "" },
+      { header: "Tahun Berdiri", value: (g) => g.established ?? "" },
+      { header: "Akses", value: (g) => g.membership ?? "" },
+      { header: "Kota", value: (g) => g.city },
+      { header: "Area", value: (g) => g.area },
+      { header: "Alamat", value: (g) => g.address ?? "" },
+      { header: "Lat", value: (g) => g.lat },
+      { header: "Lng", value: (g) => g.lng },
+      { header: "Website", value: (g) => g.website ?? "" },
+      { header: "Google Maps", value: (g) => golfMapsUrl(g) },
+      { header: "Deskripsi", value: (g) => g.description ?? "" },
+      { header: "Highlights", value: (g) => g.highlights.join(" · ") },
+      {
+        header: "Sumber",
+        value: (g) => g.sources.map((s) => `${s.label} <${s.url}>`).join(" | "),
+      },
+    ];
+    const csv = toCsv(filtered, columns);
+    downloadCsv(`jakarta-atlas-golf-${dateStamp()}.csv`, csv);
+  }
+
   return (
     <main data-section="golf" className="min-h-screen flex flex-col bg-paper">
       <AtlasNav
@@ -284,6 +318,7 @@ export function GolfView() {
           <span className="ml-auto atlas-mono text-ink-muted-48">
             {filtered.length}/{GOLF_COURSES.length} · {t("map.pins_label")}
           </span>
+          <ExportButton onClick={exportToCsv} label={t("export.csv")} />
         </div>
       </section>
 

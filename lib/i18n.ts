@@ -14,6 +14,8 @@ export type Dict = Record<string, string>;
 const id: Dict = {
   "nav.title": "Restoran Internasional",
   "nav.switch_to": "EN",
+  "export.csv": "Ekspor Excel",
+  "export.empty_rows": "Tidak ada data untuk diekspor — coba longgarkan filter.",
   "nav.view_list": "Daftar",
   "nav.view_map": "Peta",
   "nav.view_golf": "Golf",
@@ -170,6 +172,8 @@ const id: Dict = {
 const en: Dict = {
   "nav.title": "International Restaurants",
   "nav.switch_to": "ID",
+  "export.csv": "Export to Excel",
+  "export.empty_rows": "Nothing to export — try loosening the filters.",
   "nav.view_list": "List",
   "nav.view_map": "Map",
   "nav.view_golf": "Golf",
