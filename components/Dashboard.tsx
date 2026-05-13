@@ -328,27 +328,33 @@ export function Dashboard({ restaurants }: Props) {
         className="sticky top-[56px] z-10 frosted"
       >
         <div className="mx-auto max-w-[1280px] px-6 py-3 space-y-3">
-          {/* Row 1 — search, full width */}
-          <div className="relative">
-            <svg
-              viewBox="0 0 24 24"
-              className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted-48"
-              aria-hidden
-            >
-              <path
-                fill="currentColor"
-                d="M10 18a8 8 0 1 1 5.293-1.707l4.207 4.207-1.414 1.414-4.207-4.207A7.96 7.96 0 0 1 10 18zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+          {/* Row 1 — search + count chip + export (single line) */}
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1 min-w-0">
+              <svg
+                viewBox="0 0 24 24"
+                className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted-48"
+                aria-hidden
+              >
+                <path
+                  fill="currentColor"
+                  d="M10 18a8 8 0 1 1 5.293-1.707l4.207 4.207-1.414 1.414-4.207-4.207A7.96 7.96 0 0 1 10 18zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                />
+              </svg>
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t("toolbar.search_placeholder")}
+                className="w-full bg-canvas border border-hairline rounded-lg pl-11 pr-16 h-10 text-[14px] placeholder:text-ink-muted-48 focus:outline-none focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--accent-ring)] transition-all"
               />
-            </svg>
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={t("toolbar.search_placeholder")}
-              className="w-full bg-canvas border border-hairline rounded-lg pl-11 pr-16 h-10 text-[14px] placeholder:text-ink-muted-48 focus:outline-none focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--accent-ring)] transition-all"
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
+                {filtered.length}/{restaurants.length}
+              </span>
+            </div>
+            <ExportButton
+              onExport={exportRestaurants}
+              label={t("export.csv")}
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
-              {filtered.length}/{restaurants.length}
-            </span>
           </div>
 
           {/* Row 2 — filters */}
@@ -393,12 +399,6 @@ export function Dashboard({ restaurants }: Props) {
               value={sort}
               onChange={(v) => setSort(v as SortId)}
             />
-            <div className="ml-auto">
-              <ExportButton
-                onExport={exportRestaurants}
-                label={t("export.csv")}
-              />
-            </div>
           </div>
         </div>
       </section>
