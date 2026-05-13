@@ -31,14 +31,10 @@ const config: Config = {
         // — Lines —
         hairline: "#E2E8F0",
         divider: "#F1F5F9",
-        // — Section accents (DKI Jakarta civic blue for restaurants
-        //   default; deep green for golf via data-section='golf') —
-        "accent-rest": "#0E4DA4",
-        "accent-rest-deep": "#093878",
-        "accent-rest-soft": "#4980D4",
-        "accent-golf": "#0E7C42",
-        "accent-golf-deep": "#0A5E32",
-        "accent-golf-soft": "#3FA972",
+        // — Single civic-green accent for the whole site. —
+        accent: "#0E7C42",
+        "accent-deep": "#0A5E32",
+        "accent-soft": "#3FA972",
         gold: "#D4A53D",
         // — Back-compat aliases that resolve to the active section accent —
         primary: "var(--accent)",

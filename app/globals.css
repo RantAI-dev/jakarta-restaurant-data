@@ -21,276 +21,280 @@
   --rule: #e2e8f0;
   --rule-strong: #cbd5e1;
   --divider: #f1f5f9;
-  /* Section accents — default = restaurants (DKI Jakarta civic blue) */
-  --accent: #0e4da4;
-  --accent-deep: #093878;
-  --accent-soft: #4980d4;
-  --accent-bg: rgba(14, 77, 164, 0.08);
-  --accent-ring: rgba(14, 77, 164, 0.20);
-  /* Gold neutral (brand mark + small accents) */
-  --gold: #d4a53d;
-}
-
-/* Golf section flips accent to deep civic green */
-[data-section="golf"] {
+  /* Single accent — civic green for every section */
   --accent: #0e7c42;
   --accent-deep: #0a5e32;
   --accent-soft: #3fa972;
   --accent-bg: rgba(14, 124, 66, 0.08);
   --accent-ring: rgba(14, 124, 66, 0.20);
+  /* Gold neutral (brand mark + small accents) */
+  --gold: #d4a53d;
 }
 
-html,
-body {
-  min-height: 100%;
-  background: var(--canvas);
-  color: var(--ink);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-  letter-spacing: -0.005em;
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont,
+      system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+  }
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ────────────────────────  TYPE SCALE  ────────────────────────
+ * Components layer so Tailwind utility classes (text-white,
+ * text-ink, etc.) can override the colour preset on active states.
+ */
+@layer components {
+  .atlas-display,
+  .apple-hero {
+    font-family: var(--font-sans);
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.024em;
+  }
+
+  .atlas-display-lg,
+  .apple-display-lg {
+    font-family: var(--font-sans);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+  }
+
+  .atlas-display-md {
+    font-family: var(--font-sans);
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.014em;
+  }
+
+  .atlas-tagline,
+  .apple-tagline {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.010em;
+  }
+
+  .atlas-lead,
+  .apple-lead {
+    font-family: var(--font-sans);
+    font-size: clamp(16px, 1.4vw, 18px);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    color: var(--ink-muted-80);
+  }
+
+  /* The wordmark's "Atlas" — the only place Newsreader italic appears. */
+  .atlas-italic {
+    font-family: var(--font-wordmark);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .apple-body-strong {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.010em;
+  }
+
+  .apple-body {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+
+  .apple-caption,
+  .atlas-caption {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink-muted-80);
+  }
+
+  .apple-caption-strong {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+
+  .apple-fine,
+  .atlas-fine {
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  .atlas-mono,
+  .apple-nav-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .atlas-coord {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-muted-48);
+  }
+
+  .atlas-title-tight,
+  .apple-title-tight {
+    letter-spacing: -0.022em;
+  }
+
+  /* ────────────  Interactive primitives  ──────────── */
+
+  .press-scale {
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 180ms ease, color 180ms ease,
+      border-color 180ms ease, box-shadow 180ms ease;
+  }
+  .press-scale:active {
+    transform: scale(0.97);
+  }
+
+  .link-blue {
+    color: var(--accent);
+    transition: color 180ms ease, opacity 180ms ease;
+  }
+  .link-blue:hover {
+    color: var(--accent-deep);
+  }
+
+  .pill-primary {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  }
+  .pill-primary:hover {
+    background: var(--accent-deep);
+    box-shadow: 0 4px 12px rgba(14, 124, 66, 0.20);
+  }
+  .pill-primary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .pill-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 11px 21px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pill-secondary:hover {
+    background: var(--accent-bg);
+  }
+
+  .frosted {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* Cards — Smart City clean: white surface, hairline border, lift on hover. */
+  .utility-card {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease,
+      transform 180ms ease;
+    overflow: hidden;
+  }
+  .utility-card:hover {
+    border-color: rgba(14, 124, 66, 0.30);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08),
+      0 2px 4px rgba(15, 23, 42, 0.04);
+  }
+
+  .hairline-rule {
+    border-color: var(--hairline);
+  }
+
+  /* Compass rose spin on home page hover. */
+  .compass-on-hover:hover .compass-rose-svg {
+    animation: compass-spin 8s linear infinite;
+  }
 }
 
-::selection {
-  background: var(--accent);
-  color: #fff;
+/* ────────────────────────  UTILITY ALIASES  ──────────────────────── */
+@layer utilities {
+  .bg-canvas { background: var(--canvas); }
+  .bg-parchment { background: var(--paper); }
+  .bg-paper { background: var(--paper); }
+  .bg-paper-deep { background: var(--paper-deep); }
+  .bg-pearl { background: var(--pearl); }
+  .text-ink { color: var(--ink); }
+  .text-ink-muted-80 { color: var(--ink-muted-80); }
+  .text-ink-muted-48 { color: var(--ink-muted-48); }
+  .text-body-muted { color: var(--body-muted); }
+  .text-primary { color: var(--accent); }
+  .bg-primary { background: var(--accent); }
+  .bg-primary-focus { background: var(--accent-deep); }
+  .border-hairline { border-color: var(--hairline); }
+  .border-divider { border-color: var(--divider); }
+  .border-primary-focus { border-color: var(--accent-deep); }
+  .text-primary-focus { color: var(--accent-deep); }
+  .focus\:border-primary-focus:focus { border-color: var(--accent-deep); }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 }
 
-a {
-  color: inherit;
-}
+/* ────────────────────────  KEYFRAMES  ──────────────────────── */
 
-/* ────────────────────────  TYPE SCALE  ──────────────────────── */
-
-.atlas-display,
-.apple-hero {
-  font-family: var(--font-sans);
-  font-size: clamp(36px, 6vw, 64px);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.024em;
-}
-
-.atlas-display-lg,
-.apple-display-lg {
-  font-family: var(--font-sans);
-  font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.018em;
-}
-
-.atlas-display-md {
-  font-family: var(--font-sans);
-  font-size: clamp(22px, 2.2vw, 28px);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.014em;
-}
-
-.atlas-tagline,
-.apple-tagline {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.010em;
-}
-
-.atlas-lead,
-.apple-lead {
-  font-family: var(--font-sans);
-  font-size: clamp(16px, 1.4vw, 18px);
-  font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: -0.005em;
-  color: var(--ink-muted-80);
-}
-
-/* The wordmark's "Atlas" — the only place Newsreader italic appears. */
-.atlas-italic {
-  font-family: var(--font-wordmark);
-  font-style: italic;
-  font-weight: 500;
-}
-
-.apple-body-strong {
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.010em;
-}
-
-.apple-body {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: -0.005em;
-}
-
-.apple-caption,
-.atlas-caption {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: -0.005em;
-  color: var(--ink-muted-80);
-}
-
-.apple-caption-strong {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.005em;
-}
-
-.apple-fine,
-.atlas-fine {
-  font-size: 11.5px;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0;
-}
-
-.atlas-mono,
-.apple-nav-link {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.atlas-coord {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-muted-48);
-}
-
-.atlas-title-tight,
-.apple-title-tight {
-  letter-spacing: -0.022em;
-}
-
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
-
-/* ────────────────────────  COMPONENTS  ──────────────────────── */
-
-.press-scale {
-  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 180ms ease, color 180ms ease, border-color 180ms ease,
-    box-shadow 180ms ease;
-}
-.press-scale:active {
-  transform: scale(0.97);
-}
-
-.link-blue {
-  color: var(--accent);
-  transition: color 180ms ease, opacity 180ms ease;
-}
-.link-blue:hover {
-  color: var(--accent-deep);
-}
-
-.pill-primary {
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  padding: 12px 22px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
-}
-.pill-primary:hover {
-  background: var(--accent-deep);
-  box-shadow: 0 4px 12px rgba(14, 77, 164, 0.20);
-}
-.pill-primary:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-.pill-secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  padding: 11px 21px;
-  font-size: 14px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.pill-secondary:hover {
-  background: var(--accent-bg);
-}
-
-.frosted {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--hairline);
-}
-
-/* Cards — Smart City clean: white surface, hairline border, lift on hover. */
-.utility-card {
-  background: var(--canvas);
-  border: 1px solid var(--hairline);
-  border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
-  transition: border-color 180ms ease, box-shadow 180ms ease,
-    transform 180ms ease;
-  overflow: hidden;
-}
-.utility-card:hover {
-  border-color: rgba(14, 77, 164, 0.30);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08),
-    0 2px 4px rgba(15, 23, 42, 0.04);
-}
-
-/* Visual aliases */
-.bg-canvas { background: var(--canvas); }
-.bg-parchment { background: var(--paper); }
-.bg-paper { background: var(--paper); }
-.bg-paper-deep { background: var(--paper-deep); }
-.bg-pearl { background: var(--pearl); }
-.text-ink { color: var(--ink); }
-.text-ink-muted-80 { color: var(--ink-muted-80); }
-.text-ink-muted-48 { color: var(--ink-muted-48); }
-.text-body-muted { color: var(--body-muted); }
-.text-primary { color: var(--accent); }
-.bg-primary { background: var(--accent); }
-.bg-primary-focus { background: var(--accent-deep); }
-.border-hairline { border-color: var(--hairline); }
-.border-divider { border-color: var(--divider); }
-.border-primary-focus { border-color: var(--accent-deep); }
-.text-primary-focus { color: var(--accent-deep); }
-.focus\:border-primary-focus:focus { border-color: var(--accent-deep); }
-
-.hairline-rule {
-  border-color: var(--hairline);
-}
-
-/* Restrained reveal — masthead only. */
 @keyframes appear {
   from {
     opacity: 0;
@@ -305,16 +309,13 @@ a {
   animation: appear 600ms cubic-bezier(0.2, 0.65, 0.2, 1) both;
 }
 
-/* Compass rose spin on home page hover. */
 @keyframes compass-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.compass-on-hover:hover .compass-rose-svg {
-  animation: compass-spin 8s linear infinite;
-}
 
-/* Leaflet popup — Smart City clean white card */
+/* ────────────────────────  LEAFLET OVERRIDES  ──────────────────────── */
+
 .leaflet-popup-content-wrapper {
   background: var(--canvas) !important;
   border: 1px solid var(--hairline) !important;
