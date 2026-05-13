@@ -148,12 +148,15 @@ export function MapView() {
       preferCanvas: true,
     }).setView([-6.2, 106.85], 11);
 
+    // CartoDB Voyager — modern civic-tech basemap with subtle pastel
+    // colours, clean typography, no API key required.
     L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
       {
-        maxZoom: 19,
+        maxZoom: 20,
+        subdomains: "abcd",
         attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
       }
     ).addTo(map);
 

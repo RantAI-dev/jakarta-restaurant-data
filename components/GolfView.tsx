@@ -146,21 +146,16 @@ export function GolfView() {
       preferCanvas: true,
       scrollWheelZoom: true,
     }).setView([-6.2, 106.85], 11);
+    // CartoDB Voyager — same modern basemap used on the restaurants
+    // map for visual consistency. Subtle pastel colours don't compete
+    // with the prominent custom hole-count pins.
     L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
+      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
       {
-        maxZoom: 19,
+        maxZoom: 20,
+        subdomains: "abcd",
         attribution:
           '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
-    // A second label layer on top — keeps tiles muted but readable.
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 19,
-        pane: "shadowPane",
-        opacity: 0.85,
       }
     ).addTo(map);
     mapRef.current = map;

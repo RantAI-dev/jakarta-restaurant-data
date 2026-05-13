@@ -372,7 +372,11 @@ async function main() {
     if (typeof lat !== "number" || typeof lng !== "number") continue;
 
     const name = rawName.trim();
-    const dedupKey = `${slug(name)}|${lat.toFixed(3)}|${lng.toFixed(3)}`;
+    const city = pickCity(tags, lat, lng);
+    // Collapse same-chain branches inside the same DKI sub-region: a
+    // McDonald's directory entry per DKI city is plenty — 60 entries
+    // per city is noise. First occurrence within (name, city) wins.
+    const dedupKey = `${slug(name)}|${city}`;
     if (seen.has(dedupKey)) continue;
     seen.add(dedupKey);
 
@@ -383,7 +387,7 @@ async function main() {
       cuisine,
       category: pickCategory(tags),
       area: pickArea(tags),
-      city: pickCity(tags, lat, lng),
+      city,
       address: pickAddress(tags),
       lat,
       lng,
