@@ -86,6 +86,8 @@ const id: Dict = {
     "Lokasi: OpenStreetMap. Detail lapangan: Wanderlog, What's New Indonesia, GolfLux, Deemples Golf, Leading Courses.",
   "golf.legend_pins":
     "Angka di pin = jumlah hole. DR = driving range. TG = Topgolf.",
+  "golf.selected_label": "TERPILIH",
+  "golf.clear_selection": "Hapus pilihan",
 
   "hero.eyebrow": "JAKARTA · KULINER INTERNASIONAL",
   "hero.title_a": "Kuliner Internasional.",
@@ -251,6 +253,8 @@ const en: Dict = {
     "Locations: OpenStreetMap. Course details: Wanderlog, What's New Indonesia, GolfLux, Deemples Golf, Leading Courses.",
   "golf.legend_pins":
     "Number on pin = hole count. DR = driving range. TG = Topgolf.",
+  "golf.selected_label": "SELECTED",
+  "golf.clear_selection": "Clear selection",
 
   "hero.eyebrow": "JAKARTA · INTERNATIONAL CUISINE",
   "hero.title_a": "International Cuisine.",

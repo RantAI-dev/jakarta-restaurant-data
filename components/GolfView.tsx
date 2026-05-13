@@ -42,10 +42,12 @@ const ACCESS_COLOR: Record<NonNullable<GolfCourse["membership"]>, string> = {
   Resort: "#8B5A2B",
 };
 
-/** Builds a circular SVG pin showing the hole count (or "DR"/"TG" for ranges). */
+/** Builds a circular SVG pin showing the hole count (or "DR"/"TG" for ranges).
+ *  When selected, the pin grows 36 → 54 px, gets a 3 px white border,
+ *  switches to the deep-accent fill, and gains a semi-transparent halo. */
 function buildPinIcon(g: GolfCourse, isSelected: boolean): L.DivIcon {
   const colour = isSelected
-    ? "#15331F"
+    ? "#0A5E32"
     : ACCESS_COLOR[g.membership ?? "Public"] ?? "#2E5D3C";
   const label =
     g.kind === "Course"
@@ -53,25 +55,30 @@ function buildPinIcon(g: GolfCourse, isSelected: boolean): L.DivIcon {
       : g.kind === "Topgolf"
       ? "TG"
       : "DR";
-  const size = isSelected ? 44 : 36;
-  const fontSize = isSelected ? 14 : 12;
+  const size = isSelected ? 54 : 36;
+  const fontSize = isSelected ? 16 : 12;
+  const border = isSelected ? "3px solid #FCFAF4" : "2.5px solid #FCFAF4";
+  const halo = isSelected
+    ? "0 0 0 8px rgba(14,124,66,0.22), 0 0 0 14px rgba(14,124,66,0.10), 0 8px 20px rgba(15,20,25,0.45)"
+    : "0 4px 12px rgba(15,20,25,0.35)";
   return L.divIcon({
     html: `<div style="
       width: ${size}px;
       height: ${size}px;
       background: ${colour};
-      border: 2.5px solid #FCFAF4;
+      border: ${border};
       border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(15,20,25,0.35);
+      box-shadow: ${halo};
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-family: var(--font-mono);
-      font-weight: 600;
+      font-weight: 700;
       font-size: ${fontSize}px;
       letter-spacing: 0.02em;
-      transition: all 200ms ease;
+      transition: all 220ms cubic-bezier(0.2, 0.65, 0.2, 1);
+      ${isSelected ? "z-index: 1000; position: relative;" : ""}
     ">${label}</div>`,
     className: "",
     iconSize: [size, size],
@@ -346,6 +353,23 @@ export function GolfView() {
 
         {/* List rail */}
         <aside className="overflow-y-auto bg-paper" style={{ maxHeight: "calc(100vh - 56px - 200px)" }}>
+          {selectedId && (
+            <div className="sticky top-0 z-10 bg-[color:var(--accent)] text-white px-5 md:px-6 py-3 shadow-[0_2px_8px_rgba(15,20,25,0.10)] flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <p className="atlas-mono opacity-80">{t("golf.selected_label")}</p>
+                <p className="apple-body-strong truncate">
+                  {filtered.find((g) => g.id === selectedId)?.name ?? ""}
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedId(null)}
+                aria-label={t("golf.clear_selection")}
+                className="press-scale shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          )}
           <ol className="divide-y divide-hairline">
             {filtered.map((g, i) => (
               <CourseRow
@@ -416,10 +440,18 @@ function CourseRow({
     <li
       ref={refSetter}
       onClick={onClick}
-      className={`group cursor-pointer px-5 md:px-6 py-5 transition-colors hover:bg-canvas ${
-        selected ? "bg-canvas" : ""
+      className={`group cursor-pointer relative px-5 md:px-6 py-5 transition-all hover:bg-canvas ${
+        selected
+          ? "bg-[color:var(--accent-bg)] pl-6 md:pl-7"
+          : ""
       }`}
     >
+      {selected && (
+        <span
+          aria-hidden
+          className="absolute left-0 top-0 bottom-0 w-1 bg-[color:var(--accent)]"
+        />
+      )}
       <div className="flex items-baseline gap-3">
         <span className="atlas-mono text-ink-muted-48 tabular w-7">
           {String(index).padStart(2, "0")}
