@@ -4,58 +4,52 @@
 
 :root {
   color-scheme: light;
-  /* Surfaces */
-  --paper: #f4efe3;
-  --paper-deep: #ebe3d2;
-  --paper-light: #faf7ee;
-  --canvas: #fcfaf4;
-  --pearl: #faf7ee;
+  /* Surfaces — Smart City clean */
+  --canvas: #ffffff;
+  --paper: #f8fafc;
+  --paper-deep: #f1f5f9;
+  --paper-light: #fafbfc;
+  --parchment: #f8fafc;
+  --pearl: #fafbfc;
   /* Inks */
-  --ink: #0f1419;
-  --ink-muted-80: #2a2f35;
-  --ink-muted-48: #6e6e68;
-  --body-muted: #9c988f;
+  --ink: #0f172a;
+  --ink-muted-80: #1e293b;
+  --ink-muted-48: #64748b;
+  --body-muted: #94a3b8;
   /* Lines */
-  --hairline: rgba(15, 20, 25, 0.14);
-  --rule: rgba(15, 20, 25, 0.10);
-  --rule-strong: rgba(15, 20, 25, 0.22);
-  --divider: rgba(15, 20, 25, 0.06);
-  /* Section accents — default = restaurants (compass-rose red) */
-  --accent: #a0392e;
-  --accent-deep: #6b2018;
-  --accent-soft: #d87a6f;
-  --accent-bg: rgba(160, 57, 46, 0.08);
-  --accent-ring: rgba(160, 57, 46, 0.18);
-  /* Gold neutral (brand mark + decorative) */
-  --gold: #c8a14b;
-  --gold-deep: #9f7d34;
+  --hairline: #e2e8f0;
+  --rule: #e2e8f0;
+  --rule-strong: #cbd5e1;
+  --divider: #f1f5f9;
+  /* Section accents — default = restaurants (DKI Jakarta civic blue) */
+  --accent: #0e4da4;
+  --accent-deep: #093878;
+  --accent-soft: #4980d4;
+  --accent-bg: rgba(14, 77, 164, 0.08);
+  --accent-ring: rgba(14, 77, 164, 0.20);
+  /* Gold neutral (brand mark + small accents) */
+  --gold: #d4a53d;
 }
 
-/* When a tree carries data-section="golf", flip the active accent so the
-   entire UI shifts to fairway green without per-component overrides. */
+/* Golf section flips accent to deep civic green */
 [data-section="golf"] {
-  --accent: #2e5d3c;
-  --accent-deep: #15331f;
-  --accent-soft: #7aae85;
-  --accent-bg: rgba(46, 93, 60, 0.08);
-  --accent-ring: rgba(46, 93, 60, 0.20);
+  --accent: #0e7c42;
+  --accent-deep: #0a5e32;
+  --accent-soft: #3fa972;
+  --accent-bg: rgba(14, 124, 66, 0.08);
+  --accent-ring: rgba(14, 124, 66, 0.20);
 }
 
 html,
 body {
   min-height: 100%;
-  background: var(--paper);
+  background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.55;
   letter-spacing: -0.005em;
-  font-feature-settings: "ss01", "cv11";
-  /* Subtle paper grain — invisible at a glance, gives the page a tooth. */
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.08 0 0 0 0 0.10 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
-    radial-gradient(ellipse at top, rgba(200, 161, 75, 0.04), transparent 60%);
 }
 
 * {
@@ -76,64 +70,65 @@ a {
 
 .atlas-display,
 .apple-hero {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 96px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.025em;
-  font-feature-settings: "ss01", "ss03", "liga", "dlig";
+  font-family: var(--font-sans);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.024em;
 }
 
 .atlas-display-lg,
 .apple-display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 4vw, 48px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.022em;
-}
-
-.atlas-display-md {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 2.6vw, 32px);
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.018em;
 }
 
+.atlas-display-md {
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.014em;
+}
+
 .atlas-tagline,
 .apple-tagline {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.012em;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.010em;
 }
 
 .atlas-lead,
 .apple-lead {
-  font-family: var(--font-display);
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.4vw, 18px);
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.008em;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
   color: var(--ink-muted-80);
 }
 
+/* The wordmark's "Atlas" — the only place Newsreader italic appears. */
 .atlas-italic {
-  font-family: var(--font-display);
+  font-family: var(--font-wordmark);
   font-style: italic;
+  font-weight: 500;
 }
 
 .apple-body-strong {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.012em;
+  line-height: 1.4;
+  letter-spacing: -0.010em;
 }
 
 .apple-body {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: -0.005em;
@@ -141,7 +136,7 @@ a {
 
 .apple-caption,
 .atlas-caption {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.45;
   letter-spacing: -0.005em;
@@ -149,7 +144,7 @@ a {
 }
 
 .apple-caption-strong {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.005em;
@@ -159,8 +154,8 @@ a {
 .atlas-fine {
   font-size: 11.5px;
   font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: 0.01em;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 
 .atlas-mono,
@@ -169,13 +164,13 @@ a {
   font-size: 11px;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .atlas-coord {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
@@ -194,36 +189,39 @@ a {
 /* ────────────────────────  COMPONENTS  ──────────────────────── */
 
 .press-scale {
-  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 180ms ease, color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 .press-scale:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .link-blue {
   color: var(--accent);
-  transition: color 200ms ease, opacity 200ms ease;
+  transition: color 180ms ease, opacity 180ms ease;
 }
 .link-blue:hover {
-  opacity: 0.78;
+  color: var(--accent-deep);
 }
 
 .pill-primary {
   background: var(--accent);
   color: #fff;
-  border-radius: 9999px;
+  border-radius: 8px;
   padding: 12px 22px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.005em;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   border: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
 }
 .pill-primary:hover {
   background: var(--accent-deep);
+  box-shadow: 0 4px 12px rgba(14, 77, 164, 0.20);
 }
 .pill-primary:focus-visible {
   outline: 2px solid var(--accent);
@@ -234,10 +232,10 @@ a {
   background: transparent;
   color: var(--accent);
   border: 1px solid var(--accent);
-  border-radius: 9999px;
+  border-radius: 8px;
   padding: 11px 21px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -247,25 +245,29 @@ a {
 }
 
 .frosted {
-  background: rgba(244, 239, 227, 0.78);
-  backdrop-filter: saturate(180%) blur(18px);
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--hairline);
 }
 
-/* Utility cards — hairline border, no shadow, hover deepens border. */
+/* Cards — Smart City clean: white surface, hairline border, lift on hover. */
 .utility-card {
   background: var(--canvas);
   border: 1px solid var(--hairline);
-  border-radius: 14px;
-  transition: border-color 200ms ease, transform 200ms ease;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
   overflow: hidden;
 }
 .utility-card:hover {
-  border-color: rgba(15, 20, 25, 0.30);
+  border-color: rgba(14, 77, 164, 0.30);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08),
+    0 2px 4px rgba(15, 23, 42, 0.04);
 }
 
-/* Apple-classic visual aliases for the existing pages (kept so the existing
-   restaurant + map pages pick up the new look without per-component edits). */
+/* Visual aliases */
 .bg-canvas { background: var(--canvas); }
 .bg-parchment { background: var(--paper); }
 .bg-paper { background: var(--paper); }
@@ -284,16 +286,15 @@ a {
 .text-primary-focus { color: var(--accent-deep); }
 .focus\:border-primary-focus:focus { border-color: var(--accent-deep); }
 
-/* Standalone visual primitives */
 .hairline-rule {
   border-color: var(--hairline);
 }
 
-/* Single load-time reveal — restrained, masthead only. */
+/* Restrained reveal — masthead only. */
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -301,7 +302,7 @@ a {
   }
 }
 .appear {
-  animation: appear 800ms cubic-bezier(0.2, 0.65, 0.2, 1) both;
+  animation: appear 600ms cubic-bezier(0.2, 0.65, 0.2, 1) both;
 }
 
 /* Compass rose spin on home page hover. */
@@ -313,17 +314,17 @@ a {
   animation: compass-spin 8s linear infinite;
 }
 
-/* Leaflet popup styling — override defaults to match atlas palette. */
+/* Leaflet popup — Smart City clean white card */
 .leaflet-popup-content-wrapper {
   background: var(--canvas) !important;
   border: 1px solid var(--hairline) !important;
   border-radius: 10px !important;
-  box-shadow: 0 8px 24px rgba(15, 20, 25, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12) !important;
 }
 .leaflet-popup-tip {
   background: var(--canvas) !important;
 }
 .leaflet-container {
-  background: var(--paper) !important;
+  background: #EFF3F8 !important;
   font-family: var(--font-sans), system-ui, sans-serif !important;
 }

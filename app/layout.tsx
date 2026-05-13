@@ -1,36 +1,42 @@
 import type { Metadata } from "next";
-import { Newsreader, Geist, JetBrains_Mono } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Newsreader,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
 
-// Newsreader: variable serif by Production Type — opsz from 6 → 72,
-// italic with character. Carries the entire editorial voice.
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-display",
-  style: ["normal", "italic"],
-  display: "swap",
-  axes: ["opsz"],
-});
-
-// Geist: workhorse modern grotesque for body UI.
-const geist = Geist({
+// Plus Jakarta Sans — designed by Tokotype specifically for Jakarta city
+// branding. Carries all UI typography in this app (headings + body).
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  adjustFontFallback: false,
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-// JetBrains Mono: coordinates, indices, tabular numerals.
+// Newsreader kept ONLY for the "Atlas" italic in the wordmark. One word,
+// loaded with style: italic + a single weight to minimise payload.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-wordmark",
+  style: ["italic"],
+  weight: ["500"],
+  display: "swap",
+});
+
+// JetBrains Mono — coordinates, indices, tabular numerals.
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Jakarta Atlas — Restaurants & Golf",
+  title: "Jakarta Atlas — Restoran & Golf",
   description:
-    "A cartographic register of restaurants serving international cuisine and golf courses inside the borders of DKI Jakarta.",
+    "Direktori tempat di DKI Jakarta: restoran internasional dan lapangan golf, dengan koordinat dan sumber data publik.",
 };
 
 export default function RootLayout({
@@ -42,7 +48,7 @@ export default function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${newsreader.variable} ${geist.variable} ${jetbrains.variable}`}
+      className={`${jakarta.variable} ${newsreader.variable} ${jetbrains.variable}`}
     >
       <body suppressHydrationWarning>{children}</body>
     </html>

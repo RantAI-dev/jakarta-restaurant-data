@@ -46,28 +46,33 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col">
-      {/* ── HEADER STRIP — minimal masthead with brand and lang toggle ── */}
-      <header className="border-b border-hairline">
-        <div className="mx-auto max-w-[1320px] px-6 h-[56px] flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="text-ink">
+    <main className="min-h-screen flex flex-col bg-canvas">
+      {/* ── HEADER ── */}
+      <header className="border-b border-hairline bg-canvas">
+        <div className="mx-auto max-w-[1320px] px-6 h-[60px] flex items-center justify-between">
+          <Link href="/" className="compass-on-hover flex items-center gap-2.5">
+            <span className="text-[color:var(--accent)]">
               <CompassRose size={26} />
             </span>
             <div className="flex items-baseline gap-1.5">
               <span className="atlas-mono text-ink">JAKARTA</span>
-              <span className="atlas-italic text-[18px] leading-none text-ink">
+              <span className="atlas-italic text-[19px] leading-none text-ink">
                 Atlas
               </span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="atlas-mono text-ink-muted-48 hidden md:inline">
-              Edition I · May 2026
-            </span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <nav className="hidden sm:flex items-center gap-5 apple-caption-strong">
+              <Link href="/restaurants" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
+                {t("nav.section_restaurants")}
+              </Link>
+              <Link href="/golf" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
+                {t("nav.section_golf")}
+              </Link>
+            </nav>
             <button
               onClick={onToggleLang}
-              className="press-scale inline-flex items-center gap-1 rounded-full border border-hairline bg-canvas px-2.5 py-1.5 hover:border-ink-muted-48 transition-colors"
+              className="press-scale inline-flex items-center gap-1 rounded-md border border-hairline bg-canvas px-2.5 py-1.5 hover:border-ink-muted-48 transition-colors"
             >
               <span className="apple-caption-strong tabular text-ink uppercase tracking-wider">
                 {lang.toUpperCase()}
@@ -81,11 +86,20 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* ── MASTHEAD ── */}
-      <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1320px] px-6 pt-16 md:pt-24 pb-16 md:pb-24">
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-canvas border-b border-hairline">
+        {/* Subtle gradient backdrop — civic-tech feel */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 0%, var(--accent), transparent 50%), radial-gradient(circle at 80% 100%, var(--accent), transparent 50%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-[1320px] px-6 pt-16 pb-20 md:pt-24 md:pb-28">
           <div className="flex items-center gap-3 appear">
-            <span className="atlas-mono text-ink-muted-48">
+            <span className="atlas-mono text-[color:var(--accent)]">
               {t("home.eyebrow")}
             </span>
             <span className="flex-1 border-t border-hairline" />
@@ -93,122 +107,145 @@ export default function HomePage() {
           </div>
 
           <h1
-            className="atlas-display text-ink mt-8 appear"
-            style={{ animationDelay: "120ms" }}
+            className="atlas-display text-ink mt-8 appear max-w-[18ch]"
+            style={{ animationDelay: "100ms" }}
           >
-            {t("home.title_a")}
-            <br />
-            <span className="atlas-italic text-[color:var(--accent)]">
+            {t("home.title_a")}{" "}
+            <span className="text-[color:var(--accent)]">
               {t("home.title_b")}
             </span>
-            <span className="text-ink-muted-48">.</span>
           </h1>
 
-          <div
-            className="mt-10 grid md:grid-cols-12 gap-6 appear"
-            style={{ animationDelay: "240ms" }}
+          <p
+            className="atlas-lead mt-6 max-w-[64ch] appear"
+            style={{ animationDelay: "180ms" }}
           >
-            <p className="md:col-span-7 atlas-lead">
-              {t("home.lead")}
-            </p>
+            {t("home.lead")}
+          </p>
 
-            <dl className="md:col-span-5 md:border-l md:border-hairline md:pl-6 grid grid-cols-3 gap-y-1">
-              <Stat
-                label={t("home.stat_venues")}
-                value={String(restaurantStats.total + golfStats.total)}
-              />
-              <Stat
-                label={t("home.stat_cuisines")}
-                value={String(restaurantStats.cuisines)}
-              />
-              <Stat label={t("home.stat_courses")} value={String(golfStats.courses)} />
-            </dl>
+          <dl
+            className="mt-10 grid grid-cols-3 gap-x-6 gap-y-2 max-w-[640px] appear"
+            style={{ animationDelay: "260ms" }}
+          >
+            <HeroStat
+              value={String(restaurantStats.total + golfStats.total)}
+              label={t("home.stat_venues")}
+            />
+            <HeroStat
+              value={String(restaurantStats.cuisines)}
+              label={t("home.stat_cuisines")}
+            />
+            <HeroStat
+              value={String(golfStats.courses)}
+              label={t("home.stat_courses")}
+            />
+          </dl>
+        </div>
+      </section>
+
+      {/* ── SECTION CARDS ── */}
+      <section className="bg-paper py-14 md:py-20 border-b border-hairline">
+        <div className="mx-auto max-w-[1320px] px-6">
+          <p className="atlas-mono text-ink-muted-48 mb-6">
+            {t("home.choose_section")}
+          </p>
+          <div className="grid md:grid-cols-2 gap-5">
+            <SectionCard
+              href="/restaurants"
+              accent="rest"
+              icon={<KnifeForkGlyph />}
+              kicker={t("home.vol1_kicker_short")}
+              title={t("home.vol1_title")}
+              description={t("home.vol1_description")}
+              stats={[
+                {
+                  label: t("home.stat_venues"),
+                  value: String(restaurantStats.total),
+                },
+                {
+                  label: t("home.stat_curated"),
+                  value: String(restaurantStats.curated),
+                },
+                {
+                  label: t("home.stat_cuisines"),
+                  value: String(restaurantStats.cuisines),
+                },
+              ]}
+              cta={t("home.vol1_cta")}
+            />
+            <SectionCard
+              href="/golf"
+              accent="golf"
+              icon={<GolfFlagGlyph />}
+              kicker={t("home.vol2_kicker_short")}
+              title={t("home.vol2_title")}
+              description={t("home.vol2_description")}
+              stats={[
+                {
+                  label: t("home.stat_venues"),
+                  value: String(golfStats.total),
+                },
+                {
+                  label: t("home.stat_courses"),
+                  value: String(golfStats.courses),
+                },
+                {
+                  label: t("home.stat_holes"),
+                  value: String(golfStats.holes),
+                },
+              ]}
+              cta={t("home.vol2_cta")}
+            />
           </div>
         </div>
       </section>
 
-      {/* ── TWO-VOLUME GATEWAY ── */}
-      <section className="flex-1 grid md:grid-cols-2 border-b border-hairline">
-        {/* VOL I — Restaurants */}
-        <div data-section="restaurants" className="group">
-          <SectionTile
-            href="/restaurants"
-            volume="I"
-            kicker={t("home.vol1_kicker")}
-            title={t("home.vol1_title")}
-            subtitle={t("home.vol1_subtitle")}
-            description={t("home.vol1_description")}
-            stats={[
-              { label: t("home.stat_venues"), value: String(restaurantStats.total) },
-              { label: t("home.stat_curated"), value: String(restaurantStats.curated) },
-              {
-                label: t("home.stat_cuisines"),
-                value: String(restaurantStats.cuisines),
-              },
-            ]}
-            cta={t("home.vol1_cta")}
-            accentVar="--accent"
-            sectionClass="bg-paper-light"
-            icon={<KnifeForkGlyph />}
-          />
-        </div>
-
-        {/* VOL II — Golf */}
-        <div
-          data-section="golf"
-          className="group border-t md:border-t-0 md:border-l border-hairline"
-        >
-          <SectionTile
-            href="/golf"
-            volume="II"
-            kicker={t("home.vol2_kicker")}
-            title={t("home.vol2_title")}
-            subtitle={t("home.vol2_subtitle")}
-            description={t("home.vol2_description")}
-            stats={[
-              { label: t("home.stat_venues"), value: String(golfStats.total) },
-              { label: t("home.stat_courses"), value: String(golfStats.courses) },
-              { label: t("home.stat_holes"), value: String(golfStats.holes) },
-            ]}
-            cta={t("home.vol2_cta")}
-            accentVar="--accent"
-            sectionClass="bg-paper-deep"
-            icon={<GolfFlagGlyph />}
-          />
-        </div>
-      </section>
-
-      {/* ── COLOPHON / FOOTER ── */}
-      <footer className="bg-paper">
-        <div className="mx-auto max-w-[1320px] px-6 py-10 grid md:grid-cols-3 gap-6 atlas-caption">
-          <p className="text-ink-muted-80 max-w-[44ch]">
-            {t("home.footer_about")}
-          </p>
+      {/* ── FOOTER ── */}
+      <footer className="bg-canvas">
+        <div className="mx-auto max-w-[1320px] px-6 py-10 grid md:grid-cols-3 gap-8 atlas-caption">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[color:var(--accent)]">
+                <CompassRose size={20} />
+              </span>
+              <div className="flex items-baseline gap-1">
+                <span className="atlas-mono text-ink">JAKARTA</span>
+                <span className="atlas-italic text-[14px] leading-none text-ink">
+                  Atlas
+                </span>
+              </div>
+            </div>
+            <p className="text-ink-muted-80 max-w-[44ch]">
+              {t("home.footer_about")}
+            </p>
+          </div>
           <div className="space-y-1.5">
-            <p className="atlas-mono text-ink">{t("home.footer_inspect")}</p>
+            <p className="atlas-mono text-ink mb-2">{t("home.footer_inspect")}</p>
             <ul className="space-y-1">
               <li>
-                <Link href="/api/restaurants" className="text-ink-muted-80 hover:text-ink underline decoration-hairline underline-offset-4">
+                <Link
+                  href="/api/restaurants"
+                  className="text-ink-muted-80 hover:text-[color:var(--accent)]"
+                >
                   /api/restaurants
                 </Link>
               </li>
               <li>
-                <Link href="/api/refresh" className="text-ink-muted-80 hover:text-ink underline decoration-hairline underline-offset-4">
+                <Link
+                  href="/api/refresh"
+                  className="text-ink-muted-80 hover:text-[color:var(--accent)]"
+                >
                   /api/refresh
                 </Link>
               </li>
             </ul>
           </div>
           <div className="md:text-right space-y-1">
-            <p className="atlas-mono text-ink">{t("home.footer_colophon")}</p>
-            <p className="text-ink-muted-80">
-              <span className="atlas-italic">Newsreader</span> ·{" "}
-              <span>Geist</span> ·{" "}
-              <span className="font-mono">JetBrains Mono</span>
+            <p className="atlas-mono text-ink mb-2">
+              {t("home.footer_colophon")}
             </p>
-            <p className="text-ink-muted-48 atlas-fine">
-              © 2026 Jakarta Atlas
-            </p>
+            <p className="text-ink-muted-80">Plus Jakarta Sans · JetBrains Mono</p>
+            <p className="text-ink-muted-48 atlas-fine">© 2026 Jakarta Atlas</p>
           </div>
         </div>
       </footer>
@@ -216,67 +253,56 @@ export default function HomePage() {
   );
 }
 
-/* ──────────────────  STAT INLINE  ────────────────── */
+/* ──────────────────  HERO STAT  ────────────────── */
 
-function Stat({ label, value }: { label: string; value: string }) {
+function HeroStat({ value, label }: { value: string; label: string }) {
   return (
     <div>
       <dt className="atlas-mono text-ink-muted-48">{label}</dt>
-      <dd className="atlas-display-md text-ink tabular mt-0.5">{value}</dd>
+      <dd className="atlas-display-md text-ink tabular mt-1.5">{value}</dd>
     </div>
   );
 }
 
-/* ──────────────────  SECTION TILE  ────────────────── */
+/* ──────────────────  SECTION CARD  ────────────────── */
 
-function SectionTile({
+function SectionCard({
   href,
-  volume,
+  accent,
+  icon,
   kicker,
   title,
-  subtitle,
   description,
   stats,
   cta,
-  sectionClass,
-  icon,
 }: {
   href: string;
-  volume: string;
+  accent: "rest" | "golf";
+  icon: React.ReactNode;
   kicker: string;
   title: string;
-  subtitle: string;
   description: string;
   stats: { label: string; value: string }[];
   cta: string;
-  accentVar: string;
-  sectionClass: string;
-  icon: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
-      className={`relative block px-6 md:px-12 py-14 md:py-20 transition-colors hover:[--accent-bg:rgba(15,20,25,0.04)] hover:bg-[var(--accent-bg)] ${sectionClass}`}
+      data-section={accent === "rest" ? "restaurants" : "golf"}
+      className="group utility-card relative block p-7 md:p-9 hover:-translate-y-0.5"
     >
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start justify-between gap-4 mb-5">
+        <div className="text-[color:var(--accent)]">{icon}</div>
         <span className="atlas-mono text-ink-muted-48">{kicker}</span>
-        <span className="atlas-mono text-ink-muted-48">
-          VOL.&nbsp;
-          <span className="text-[color:var(--accent)]">{volume}</span>
-        </span>
       </div>
 
-      <div className="mt-8 mb-6 text-[color:var(--accent)]">{icon}</div>
+      <h2 className="atlas-display-lg text-ink">{title}</h2>
 
-      <h2 className="atlas-display text-ink leading-[0.95]">
-        {title}
-        <br />
-        <span className="atlas-italic text-ink-muted-48">{subtitle}</span>
-      </h2>
+      <p className="apple-body mt-3 text-ink-muted-80 max-w-[42ch]">
+        {description}
+      </p>
 
-      <p className="atlas-lead mt-6 max-w-[42ch]">{description}</p>
-
-      <dl className="mt-8 grid grid-cols-3 gap-x-4 border-t border-hairline pt-5 max-w-[440px]">
+      <dl className="mt-7 grid grid-cols-3 gap-x-4 pt-5 border-t border-hairline">
         {stats.map((s) => (
           <div key={s.label}>
             <dt className="atlas-mono text-ink-muted-48">{s.label}</dt>
@@ -287,8 +313,8 @@ function SectionTile({
         ))}
       </dl>
 
-      <div className="mt-10 flex items-center gap-3">
-        <span className="pill-primary press-scale">
+      <div className="mt-8 flex items-center justify-between gap-3">
+        <span className="apple-caption-strong text-[color:var(--accent)] inline-flex items-center gap-1.5 group-hover:gap-2 transition-all">
           {cta}
           <span aria-hidden>→</span>
         </span>
@@ -301,81 +327,28 @@ function SectionTile({
 
 function KnifeForkGlyph() {
   return (
-    <svg viewBox="0 0 40 40" width="48" height="48" aria-hidden="true">
-      {/* Fork */}
-      <line
-        x1="11"
-        y1="6"
-        x2="11"
-        y2="22"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        opacity="0.6"
-      />
-      <line x1="8" y1="6" x2="8" y2="13" stroke="currentColor" strokeWidth="1" />
-      <line x1="11" y1="6" x2="11" y2="13" stroke="currentColor" strokeWidth="1" />
-      <line x1="14" y1="6" x2="14" y2="13" stroke="currentColor" strokeWidth="1" />
-      <path
-        d="M8 13 Q8 16 11 16 Q14 16 14 13"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        fill="none"
-      />
-      <line
-        x1="11"
-        y1="16"
-        x2="11"
-        y2="34"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      {/* Knife */}
-      <path
-        d="M28 6 Q24 14 24 24 L28 24 L28 6 Z"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      <line
-        x1="28"
-        y1="24"
-        x2="28"
-        y2="34"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
+    <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+      <rect x="0" y="0" width="40" height="40" rx="10" fill="currentColor" opacity="0.10" />
+      <line x1="11" y1="11" x2="11" y2="22" stroke="currentColor" strokeWidth="1.4" />
+      <line x1="11" y1="11" x2="11" y2="16" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="14" y1="11" x2="14" y2="16" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M8 16 Q8 19 11 19 Q14 19 14 16" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <line x1="11" y1="19" x2="11" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M28 11 Q24 16 24 25 L28 25 L28 11 Z" fill="currentColor" />
+      <line x1="28" y1="25" x2="28" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
 function GolfFlagGlyph() {
   return (
-    <svg viewBox="0 0 40 40" width="48" height="48" aria-hidden="true">
-      {/* Pole */}
-      <line
-        x1="14"
-        y1="4"
-        x2="14"
-        y2="32"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      {/* Flag */}
-      <path
-        d="M14 6 L30 9 L26 12 L30 15 L14 18 Z"
-        fill="currentColor"
-        opacity="0.85"
-      />
-      {/* Ground line + ball */}
-      <line
-        x1="6"
-        y1="32"
-        x2="34"
-        y2="32"
-        stroke="currentColor"
-        strokeWidth="0.6"
-        opacity="0.5"
-      />
-      <circle cx="22" cy="30" r="2" fill="none" stroke="currentColor" strokeWidth="1" />
+    <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+      <rect x="0" y="0" width="40" height="40" rx="10" fill="currentColor" opacity="0.10" />
+      <line x1="13" y1="9" x2="13" y2="30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M13 11 L28 14 L25 17 L28 20 L13 22 Z" fill="currentColor" />
+      <line x1="7" y1="30" x2="33" y2="30" stroke="currentColor" strokeWidth="0.8" opacity="0.6" />
+      <circle cx="22" cy="29" r="2" fill="currentColor" opacity="0.6" />
     </svg>
   );
 }
