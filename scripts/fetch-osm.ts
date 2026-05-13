@@ -335,6 +335,19 @@ function slug(s: string): string {
     .slice(0, 60);
 }
 
+/** Aggressive name normalisation for dedup — collapses smart-quote
+ *  variants ("McDonald's" vs "McDonald’s"), spacing variants
+ *  ("Mc Donald's"), and case differences ("MIXUE" vs "mixue") to a
+ *  single canonical key. Used together with coordinate proximity. */
+function normNameForDedup(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[‘’“”]/g, "")
+    .replace(/[^a-z0-9]+/g, "");
+}
+
 async function main() {
   console.log("→ Querying Overpass…");
   const body = "data=" + encodeURIComponent(QUERY);
@@ -373,10 +386,12 @@ async function main() {
 
     const name = rawName.trim();
     const city = pickCity(tags, lat, lng);
-    // Collapse same-chain branches inside the same DKI sub-region: a
-    // McDonald's directory entry per DKI city is plenty — 60 entries
-    // per city is noise. First occurrence within (name, city) wins.
-    const dedupKey = `${slug(name)}|${city}`;
+    // Real duplicate detection: same restaurant tagged twice. Match by
+    // aggressively-normalised name (catches smart-quote and spacing
+    // variants like 'McDonald’s' vs 'Mc Donald's' vs 'McDonalds') at
+    // ~111m coordinate proximity (3-decimal lat/lng rounding). Distinct
+    // chain branches at different locations stay separate.
+    const dedupKey = `${normNameForDedup(name)}|${lat.toFixed(3)}|${lng.toFixed(3)}`;
     if (seen.has(dedupKey)) continue;
     seen.add(dedupKey);
 
