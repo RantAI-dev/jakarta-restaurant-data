@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { AtlasNav, LangToggle } from "@/components/atlas/AtlasNav";
 import L, { type Map as LeafletMap, type Marker } from "leaflet";
 import "leaflet.markercluster";
 import "leaflet/dist/leaflet.css";
@@ -204,31 +205,13 @@ export function MapView() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-canvas">
-      {/* SUB-NAV */}
-      <div className="frosted border-b border-hairline z-20">
-        <div className="mx-auto max-w-[1280px] px-6 h-[52px] flex items-center justify-between gap-3">
-          <Link href="/" className="apple-tagline text-ink truncate hover:text-primary transition-colors">
-            {t("nav.title")}
-          </Link>
-          <div className="flex items-center gap-2">
-            <ViewToggle current="map" t={t} />
-            <button
-              onClick={onToggleLang}
-              className="press-scale inline-flex items-center gap-1 rounded-full border border-hairline bg-canvas px-2.5 py-1.5 hover:border-ink-muted-48 transition-colors"
-              aria-label={`Switch to ${t("nav.switch_to")}`}
-            >
-              <span className="apple-caption-strong tabular text-ink uppercase tracking-wider">
-                {lang.toUpperCase()}
-              </span>
-              <span className="apple-fine text-ink-muted-48">/</span>
-              <span className="apple-fine tabular text-ink-muted-48 uppercase tracking-wider">
-                {t("nav.switch_to")}
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
+    <main className="min-h-screen flex flex-col bg-paper">
+      <AtlasNav
+        section="restaurants"
+        view="map"
+        t={t}
+        langToggle={<LangToggle lang={lang} onToggle={onToggleLang} t={t} />}
+      />
 
       {/* FILTER STRIP */}
       <div className="frosted border-b border-hairline z-10">

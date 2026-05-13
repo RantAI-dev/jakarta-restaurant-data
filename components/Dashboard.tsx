@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useTransition } from "react";
 import Link from "next/link";
+import { AtlasNav, LangToggle as AtlasLangToggle } from "@/components/atlas/AtlasNav";
 import { type Restaurant, googleMapsUrl, mapsEmbedUrl } from "@/lib/restaurants";
 import {
   DEFAULT_LANG,
@@ -195,52 +196,32 @@ export function Dashboard({ restaurants }: Props) {
 
   return (
     <main className="min-h-screen bg-canvas">
-      {/* ── SUB-NAV (frosted parchment) ── */}
-      <div className="sticky top-0 z-20 frosted border-b border-hairline">
-        <div className="mx-auto max-w-[1280px] px-6 h-[52px] flex items-center justify-between gap-3">
-          <p className="apple-tagline text-ink truncate">{t("nav.title")}</p>
-          <div className="flex items-center gap-2">
-            <div className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full">
-              <span className="press-scale rounded-full px-3 py-1 apple-caption-strong bg-ink text-white">
-                {t("nav.view_list")}
-              </span>
-              <Link
-                href="/map"
-                className="press-scale rounded-full px-3 py-1 apple-caption-strong text-ink-muted-80 hover:text-ink"
-              >
-                {t("nav.view_map")}
-              </Link>
-              <Link
-                href="/golf"
-                className="press-scale rounded-full px-3 py-1 apple-caption-strong text-ink-muted-80 hover:text-ink"
-              >
-                {t("nav.view_golf")}
-              </Link>
-            </div>
-            <LangToggle lang={lang} onToggle={onToggleLang} t={t} />
-            <VerifyControl
-              refreshing={refreshing}
-              result={refreshResult}
-              error={refreshError}
-              detailsOpen={detailsOpen}
-              onVerify={verify}
-              onToggleDetails={() => setDetailsOpen((v) => !v)}
-              formatRelative={formatRelativeCheck}
-              t={t}
-            />
-          </div>
-        </div>
-
-        {/* Details disclosure panel — slides open under sub-nav */}
-        {detailsOpen && refreshResult && (
-          <VerifyDetails
+      <AtlasNav
+        section="restaurants"
+        view="list"
+        t={t}
+        langToggle={<AtlasLangToggle lang={lang} onToggle={onToggleLang} t={t} />}
+        rightSlot={
+          <VerifyControl
+            refreshing={refreshing}
             result={refreshResult}
-            urlLabelMap={urlLabelMap}
-            onClose={() => setDetailsOpen(false)}
+            error={refreshError}
+            detailsOpen={detailsOpen}
+            onVerify={verify}
+            onToggleDetails={() => setDetailsOpen((v) => !v)}
+            formatRelative={formatRelativeCheck}
             t={t}
           />
-        )}
-      </div>
+        }
+      />
+      {detailsOpen && refreshResult && (
+        <VerifyDetails
+          result={refreshResult}
+          urlLabelMap={urlLabelMap}
+          onClose={() => setDetailsOpen(false)}
+          t={t}
+        />
+      )}
 
       {/* ── HERO TILE (white, full-bleed) ── */}
       <section className="bg-canvas">
@@ -294,7 +275,7 @@ export function Dashboard({ restaurants }: Props) {
       {/* ── TOOLBAR (parchment frosted, sticky under sub-nav) ── */}
       <section
         id="filters"
-        className="sticky top-[52px] z-10 frosted border-b border-hairline"
+        className="sticky top-[56px] z-10 frosted border-b border-hairline"
       >
         <div className="mx-auto max-w-[1280px] px-6 py-4 flex flex-col lg:flex-row gap-3 lg:items-center lg:gap-5">
           {/* Search pill */}

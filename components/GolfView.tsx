@@ -1,19 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
-import L, { type Map as LeafletMap } from "leaflet";
+import L, { type Map as LeafletMap, type Marker as LeafletMarker } from "leaflet";
 import "leaflet.markercluster";
 import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
-import {
-  GOLF_COURSES,
-  golfMapsUrl,
-  golfMapsEmbedUrl,
-  type GolfCourse,
-} from "@/lib/golf";
+import { AtlasNav, LangToggle } from "@/components/atlas/AtlasNav";
+import { GOLF_COURSES, golfMapsUrl, type GolfCourse } from "@/lib/golf";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -21,7 +16,6 @@ import {
   type Lang,
 } from "@/lib/i18n";
 
-// Same Leaflet icon-path fix used in MapView.
 type IconDefaultProto = L.Icon.Default & { _getIconUrl?: unknown };
 delete (L.Icon.Default.prototype as IconDefaultProto)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -34,42 +28,60 @@ L.Icon.Default.mergeOptions({
 const KIND_FILTERS = ["All", "Course", "Driving Range", "Topgolf"] as const;
 type KindFilter = (typeof KIND_FILTERS)[number];
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
+const ACCESS_COLOR: Record<NonNullable<GolfCourse["membership"]>, string> = {
+  Public: "#2E5D3C",
+  "Semi-private": "#C8A14B",
+  Members: "#1A3A5A",
+  Resort: "#8B5A2B",
+};
 
-function popupHTML(g: GolfCourse, t: (k: string) => string): string {
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;min-width:240px;max-width:280px;">
-    <span style="font-size:10px;color:#0066cc;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">${escapeHtml(
-      g.kind
-    )}${g.holes ? ` · ${g.holes} ${t("golf.holes")}` : ""}</span>
-    <div style="font-size:17px;font-weight:600;color:#1d1d1f;margin-top:4px;line-height:1.2;">${escapeHtml(
-      g.name
-    )}</div>
-    <div style="font-size:13px;color:#7a7a7a;margin-top:2px;">${escapeHtml(
-      g.area
-    )}</div>
-    <a href="${golfMapsUrl(
-      g
-    )}" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:10px;color:#0066cc;font-size:13px;text-decoration:none;">${escapeHtml(
-    t("card.open_maps")
-  )} ↗</a>
-  </div>`;
+/** Builds a circular SVG pin showing the hole count (or "DR"/"TG" for ranges). */
+function buildPinIcon(g: GolfCourse, isSelected: boolean): L.DivIcon {
+  const colour = isSelected
+    ? "#15331F"
+    : ACCESS_COLOR[g.membership ?? "Public"] ?? "#2E5D3C";
+  const label =
+    g.kind === "Course"
+      ? String(g.holes ?? "?")
+      : g.kind === "Topgolf"
+      ? "TG"
+      : "DR";
+  const size = isSelected ? 44 : 36;
+  const fontSize = isSelected ? 14 : 12;
+  return L.divIcon({
+    html: `<div style="
+      width: ${size}px;
+      height: ${size}px;
+      background: ${colour};
+      border: 2.5px solid #FCFAF4;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(15,20,25,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: ${fontSize}px;
+      letter-spacing: 0.02em;
+      transition: all 200ms ease;
+    ">${label}</div>`,
+    className: "",
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
 }
 
 export function GolfView() {
   const [lang, setLang] = useState<Lang>(DEFAULT_LANG);
   const [city, setCity] = useState<string>("All");
   const [kind, setKind] = useState<KindFilter>("All");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const mapHostRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
-  const clusterRef = useRef<L.LayerGroup | null>(null);
+  const markersRef = useRef<Map<string, LeafletMarker>>(new Map());
+  const cardRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
   useEffect(() => {
     try {
@@ -94,9 +106,6 @@ export function GolfView() {
     GOLF_COURSES.forEach((g) => present.add(g.city));
     const ordered: string[] = [];
     for (const c of ORDER) if (present.has(c)) ordered.push(c);
-    for (const c of [...present].sort()) {
-      if (!ordered.includes(c)) ordered.push(c);
-    }
     return ["All", ...ordered];
   }, []);
 
@@ -122,18 +131,31 @@ export function GolfView() {
     };
   }, []);
 
-  // Init overview map once.
+  // Init map once.
   useEffect(() => {
     if (!mapHostRef.current || mapRef.current) return;
     const map = L.map(mapHostRef.current, {
       zoomControl: true,
       preferCanvas: true,
+      scrollWheelZoom: true,
     }).setView([-6.2, 106.85], 11);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
+      {
+        maxZoom: 19,
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
+      }
+    ).addTo(map);
+    // A second label layer on top — keeps tiles muted but readable.
+    L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png",
+      {
+        maxZoom: 19,
+        pane: "shadowPane",
+        opacity: 0.85,
+      }
+    ).addTo(map);
     mapRef.current = map;
     return () => {
       map.remove();
@@ -141,32 +163,44 @@ export function GolfView() {
     };
   }, []);
 
-  // Re-cluster when filters change.
+  // Re-render markers when filter or selection changes.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
-    if (clusterRef.current) {
-      map.removeLayer(clusterRef.current);
-      clusterRef.current = null;
-    }
-    type ClusterModule = typeof L & {
-      markerClusterGroup: (opts?: Record<string, unknown>) => L.LayerGroup;
-    };
-    const cluster = (L as ClusterModule).markerClusterGroup({
-      chunkedLoading: true,
-      maxClusterRadius: 40,
-      spiderfyOnMaxZoom: true,
-      showCoverageOnHover: false,
-    });
+    // Clear old markers.
+    markersRef.current.forEach((m) => m.remove());
+    markersRef.current.clear();
+
     for (const g of filtered) {
-      const m = L.marker([g.lat, g.lng]);
-      m.bindPopup(popupHTML(g, t), { maxWidth: 300, autoPan: true });
-      cluster.addLayer(m);
+      const m = L.marker([g.lat, g.lng], {
+        icon: buildPinIcon(g, g.id === selectedId),
+        riseOnHover: true,
+      });
+      m.on("click", () => {
+        setSelectedId(g.id);
+        // Scroll the right-rail card into view.
+        const el = cardRefs.current.get(g.id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+      m.addTo(map);
+      markersRef.current.set(g.id, m);
     }
-    map.addLayer(cluster);
-    clusterRef.current = cluster;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, lang]);
+  }, [filtered, selectedId]);
+
+  function onCardClick(g: GolfCourse) {
+    setSelectedId(g.id);
+    const map = mapRef.current;
+    if (map) {
+      map.flyTo([g.lat, g.lng], 15, { duration: 0.8 });
+      // Pop the popup for that pin.
+      const marker = markersRef.current.get(g.id);
+      if (marker) {
+        marker.openPopup?.();
+      }
+    }
+  }
 
   function onToggleLang() {
     const next: Lang = lang === "id" ? "en" : "id";
@@ -177,145 +211,123 @@ export function GolfView() {
   }
 
   return (
-    <main className="min-h-screen bg-canvas">
-      {/* SUB-NAV */}
-      <div className="sticky top-0 z-20 frosted border-b border-hairline">
-        <div className="mx-auto max-w-[1280px] px-6 h-[52px] flex items-center justify-between gap-3">
-          <Link
-            href="/"
-            className="apple-tagline text-ink truncate hover:text-primary transition-colors"
-          >
-            {t("golf.page_title")}
-          </Link>
-          <div className="flex items-center gap-2">
-            <SectionTabs current="golf" t={t} />
-            <button
-              onClick={onToggleLang}
-              className="press-scale inline-flex items-center gap-1 rounded-full border border-hairline bg-canvas px-2.5 py-1.5 hover:border-ink-muted-48 transition-colors"
-              aria-label={`Switch to ${t("nav.switch_to")}`}
-            >
-              <span className="apple-caption-strong tabular text-ink uppercase tracking-wider">
-                {lang.toUpperCase()}
-              </span>
-              <span className="apple-fine text-ink-muted-48">/</span>
-              <span className="apple-fine tabular text-ink-muted-48 uppercase tracking-wider">
-                {t("nav.switch_to")}
-              </span>
-            </button>
+    <main data-section="golf" className="min-h-screen flex flex-col bg-paper">
+      <AtlasNav
+        section="golf"
+        t={t}
+        langToggle={<LangToggle lang={lang} onToggle={onToggleLang} t={t} />}
+      />
+
+      {/* HERO STRIP — slim, editorial */}
+      <section className="border-b border-hairline bg-paper">
+        <div className="mx-auto max-w-[1320px] px-6 py-10 md:py-14">
+          <div className="flex items-center gap-3">
+            <span className="atlas-mono text-ink-muted-48">
+              {t("home.vol2_kicker")}
+            </span>
+            <span className="flex-1 border-t border-hairline" />
+            <span className="atlas-coord">JAKARTA · 6 KOTA</span>
           </div>
-        </div>
-      </div>
-
-      {/* HERO + STATS */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1280px] px-6 py-[64px] md:py-[96px] text-center">
-          <p className="apple-caption-strong text-ink-muted-80 appear">
-            DKI JAKARTA · {t("golf.eyebrow")}
-          </p>
-          <h1
-            className="apple-hero apple-title-tight mt-3 text-ink appear"
-            style={{ animationDelay: "80ms" }}
-          >
-            {t("golf.title_a")}
-            <br />
-            <span className="text-ink-muted-48">{t("golf.title_b")}</span>
-          </h1>
-          <p
-            className="apple-lead mt-5 max-w-[700px] mx-auto appear"
-            style={{ animationDelay: "160ms" }}
-          >
-            {t("golf.lead_prefix")}{" "}
-            <span className="text-ink">
-              {t("golf.lead_count", {
-                courses: stats.courses,
-                ranges: stats.ranges,
-              })}
-            </span>{" "}
-            {t("golf.lead_suffix")}
-          </p>
-
-          <dl className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 max-w-[900px] mx-auto">
-            <Stat number={String(stats.total)} label={t("golf.stat_total")} />
-            <Stat number={String(stats.courses)} label={t("golf.stat_courses")} />
-            <Stat number={String(stats.ranges)} label={t("golf.stat_ranges")} />
-            <Stat number={String(stats.totalHoles)} label={t("golf.stat_holes")} />
-          </dl>
+          <div className="mt-6 grid md:grid-cols-12 gap-8 items-end">
+            <h1 className="atlas-display text-ink md:col-span-7">
+              {t("golf.title_a")}{" "}
+              <span className="atlas-italic text-[color:var(--accent)]">
+                {t("golf.title_b")}
+              </span>
+            </h1>
+            <dl className="md:col-span-5 grid grid-cols-4 gap-x-4 gap-y-1 border-l-0 md:border-l md:border-hairline md:pl-6">
+              <StatTile label={t("golf.stat_total")} value={String(stats.total)} />
+              <StatTile label={t("golf.stat_courses")} value={String(stats.courses)} />
+              <StatTile label={t("golf.stat_ranges")} value={String(stats.ranges)} />
+              <StatTile label={t("golf.stat_holes")} value={String(stats.totalHoles)} />
+            </dl>
+          </div>
         </div>
       </section>
 
-      {/* OVERVIEW MAP */}
-      <section className="bg-parchment border-y border-hairline">
-        <div className="mx-auto max-w-[1280px] px-6 py-10">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <p className="apple-caption-strong text-ink">
-              {t("golf.map_heading")}
-            </p>
-            <div className="flex items-center gap-3">
-              <select
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className="appearance-none press-scale bg-canvas border border-hairline rounded-full h-9 pl-4 pr-9 apple-caption text-ink-muted-80 hover:text-ink focus:outline-none focus:border-primary-focus transition-colors cursor-pointer"
+      {/* FILTER STRIP */}
+      <section className="frosted border-b border-hairline">
+        <div className="mx-auto max-w-[1320px] px-6 py-3 flex flex-wrap items-center gap-3">
+          <span className="atlas-mono text-ink-muted-48">FILTER ·</span>
+          <select
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="appearance-none press-scale bg-canvas border border-hairline rounded-full h-9 pl-4 pr-9 apple-caption text-ink-muted-80 hover:text-ink focus:outline-none cursor-pointer"
+          >
+            {cityOptions.map((c) => (
+              <option key={c} value={c}>
+                {c === "All" ? t("toolbar.city_all") : t(`city.${c}`)}
+              </option>
+            ))}
+          </select>
+          <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full">
+            {KIND_FILTERS.map((k) => (
+              <button
+                key={k}
+                onClick={() => setKind(k)}
+                className={`press-scale rounded-full px-3 py-1 apple-caption ${
+                  kind === k
+                    ? "bg-[color:var(--accent)] text-white"
+                    : "text-ink-muted-80 hover:text-ink"
+                }`}
               >
-                {cityOptions.map((c) => (
-                  <option key={c} value={c}>
-                    {c === "All" ? t("toolbar.city_all") : t(`city.${c}`)}
-                  </option>
-                ))}
-              </select>
-              <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full">
-                {KIND_FILTERS.map((k) => (
-                  <button
-                    key={k}
-                    onClick={() => setKind(k)}
-                    className={`press-scale rounded-full px-3 py-1 apple-caption ${
-                      kind === k
-                        ? "bg-primary text-white"
-                        : "text-ink-muted-80 hover:text-ink"
-                    }`}
-                  >
-                    {k === "All"
-                      ? t("toolbar.cat.all")
-                      : k === "Course"
-                      ? t("golf.kind_course")
-                      : k === "Driving Range"
-                      ? t("golf.kind_range")
-                      : t("golf.kind_topgolf")}
-                  </button>
-                ))}
-              </div>
-            </div>
+                {k === "All"
+                  ? t("toolbar.cat.all")
+                  : k === "Course"
+                  ? t("golf.kind_course")
+                  : k === "Driving Range"
+                  ? t("golf.kind_range")
+                  : t("golf.kind_topgolf")}
+              </button>
+            ))}
           </div>
-          <div
-            ref={mapHostRef}
-            className="w-full rounded-apple_lg border border-hairline bg-canvas overflow-hidden"
-            style={{ height: "440px" }}
-          />
-          <p className="apple-fine text-ink-muted-48 mt-2">
-            {filtered.length} {t("map.pins_label")}
-          </p>
+          <span className="ml-auto atlas-mono text-ink-muted-48">
+            {filtered.length}/{GOLF_COURSES.length} · {t("map.pins_label")}
+          </span>
         </div>
       </section>
 
-      {/* LIST */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1280px] px-6 py-12 md:py-16">
-          {filtered.length === 0 ? (
-            <p className="apple-display-lg text-ink text-center">
-              {t("empty.title")}
-            </p>
-          ) : (
-            <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((g) => (
-                <GolfCard key={g.id} g={g} t={t} />
-              ))}
-            </ul>
-          )}
+      {/* SPLIT LAYOUT: map (60%) + list (40%) */}
+      <section className="flex-1 grid md:grid-cols-[1.5fr_1fr] min-h-0">
+        {/* Map */}
+        <div className="relative border-b md:border-b-0 md:border-r border-hairline">
+          <div ref={mapHostRef} className="absolute inset-0" style={{ minHeight: "60vh" }} />
+          {/* Legend */}
+          <div className="absolute bottom-4 left-4 z-[400] bg-canvas/95 backdrop-blur border border-hairline rounded-md p-3 atlas-fine text-ink-muted-80 max-w-[260px]">
+            <p className="atlas-mono text-ink mb-2">LEGEND</p>
+            <div className="space-y-1.5">
+              <LegendRow color={ACCESS_COLOR["Public"]} label={t("golf.access_public")} />
+              <LegendRow color={ACCESS_COLOR["Semi-private"]} label={t("golf.access_semi")} />
+              <LegendRow color={ACCESS_COLOR["Members"]} label={t("golf.access_members")} />
+            </div>
+            <p className="text-ink-muted-48 mt-2">{t("golf.legend_pins")}</p>
+          </div>
         </div>
+
+        {/* List rail */}
+        <aside className="overflow-y-auto bg-paper" style={{ maxHeight: "calc(100vh - 56px - 200px)" }}>
+          <ol className="divide-y divide-hairline">
+            {filtered.map((g, i) => (
+              <CourseRow
+                key={g.id}
+                g={g}
+                index={i + 1}
+                t={t}
+                selected={g.id === selectedId}
+                onClick={() => onCardClick(g)}
+                refSetter={(el) => {
+                  if (el) cardRefs.current.set(g.id, el);
+                  else cardRefs.current.delete(g.id);
+                }}
+              />
+            ))}
+          </ol>
+        </aside>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-parchment border-t border-hairline">
-        <div className="mx-auto max-w-[1280px] px-6 py-10 apple-fine text-ink-muted-48 flex items-center justify-between flex-wrap gap-2">
+      <footer className="border-t border-hairline bg-paper">
+        <div className="mx-auto max-w-[1320px] px-6 py-5 atlas-fine text-ink-muted-48 flex flex-wrap items-center justify-between gap-2">
           <span>{t("golf.footer_source")}</span>
           <span>{t("footer.typeface")}</span>
         </div>
@@ -324,145 +336,107 @@ export function GolfView() {
   );
 }
 
-function SectionTabs({
-  current,
-  t,
-}: {
-  current: "list" | "map" | "golf";
-  t: (k: string) => string;
-}) {
-  const tabs: { id: typeof current; href: string; label: string }[] = [
-    { id: "list", href: "/", label: t("nav.view_list") },
-    { id: "map", href: "/map", label: t("nav.view_map") },
-    { id: "golf", href: "/golf", label: t("nav.view_golf") },
-  ];
-  return (
-    <div className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full">
-      {tabs.map((tab) => (
-        <Link
-          key={tab.id}
-          href={tab.href}
-          className={`press-scale rounded-full px-3 py-1 apple-caption-strong ${
-            current === tab.id
-              ? "bg-ink text-white"
-              : "text-ink-muted-80 hover:text-ink"
-          }`}
-        >
-          {tab.label}
-        </Link>
-      ))}
-    </div>
-  );
-}
-
-function Stat({ number, label }: { number: string; label: string }) {
+function StatTile({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="apple-hero apple-title-tight text-ink tabular">
-        {number}
-      </div>
-      <p className="apple-caption text-ink-muted-80 mt-1">{label}</p>
+      <dt className="atlas-mono text-ink-muted-48">{label}</dt>
+      <dd className="atlas-display-md text-ink tabular mt-1">{value}</dd>
     </div>
   );
 }
 
-function GolfCard({
+function LegendRow({ color, label }: { color: string; label: string }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span
+        className="inline-block h-3 w-3 rounded-full border border-canvas"
+        style={{ background: color }}
+      />
+      <span>{label}</span>
+    </div>
+  );
+}
+
+function CourseRow({
   g,
+  index,
   t,
+  selected,
+  onClick,
+  refSetter,
 }: {
   g: GolfCourse;
+  index: number;
   t: (k: string, vars?: Record<string, string | number>) => string;
+  selected: boolean;
+  onClick: () => void;
+  refSetter: (el: HTMLLIElement | null) => void;
 }) {
   return (
-    <li className="utility-card group bg-canvas border border-hairline rounded-apple_lg overflow-hidden flex flex-col">
-      <a
-        href={golfMapsUrl(g)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative block bg-parchment border-b border-hairline overflow-hidden group/map"
-      >
-        <div className="aspect-[16/9] w-full">
-          <iframe
-            src={golfMapsEmbedUrl(g)}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full pointer-events-none select-none"
-            title={`Map — ${g.name}`}
-            aria-hidden="true"
-          />
-        </div>
-        <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 bg-canvas/95 backdrop-blur border border-hairline rounded-full px-2.5 py-1 apple-fine text-ink opacity-0 group-hover/map:opacity-100 transition-opacity">
-          {t("card.open_chip")}
+    <li
+      ref={refSetter}
+      onClick={onClick}
+      className={`group cursor-pointer px-5 md:px-6 py-5 transition-colors hover:bg-canvas ${
+        selected ? "bg-canvas" : ""
+      }`}
+    >
+      <div className="flex items-baseline gap-3">
+        <span className="atlas-mono text-ink-muted-48 tabular w-7">
+          {String(index).padStart(2, "0")}
         </span>
-      </a>
-
-      <div className="p-6 flex flex-col flex-1">
-        <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase">
+        <span className="atlas-mono text-[color:var(--accent)]">
           {g.kind === "Course"
-            ? `${t("golf.kind_course")}${g.holes ? ` · ${g.holes} ${t("golf.holes")}` : ""}${g.par ? ` · Par ${g.par}` : ""}`
+            ? `${g.holes ?? "?"} ${t("golf.holes").toUpperCase()}${g.par ? ` · PAR ${g.par}` : ""}`
             : g.kind === "Driving Range"
-            ? t("golf.kind_range")
-            : t("golf.kind_topgolf")}
-        </p>
-        <h3 className="apple-tagline apple-title-tight text-ink mt-1.5 leading-[1.15]">
-          {g.name}
-        </h3>
-        <p className="apple-caption text-ink-muted-48 mt-1">
-          {g.area}
-          {g.membership && (
-            <>
-              <span className="mx-1.5 text-ink-muted-48/60">·</span>
-              <span className="text-ink-muted-80">
-                {g.membership === "Public"
-                  ? t("golf.access_public")
-                  : g.membership === "Members"
-                  ? t("golf.access_members")
-                  : g.membership === "Semi-private"
-                  ? t("golf.access_semi")
-                  : t("golf.access_resort")}
-              </span>
-            </>
+            ? t("golf.kind_range").toUpperCase()
+            : "TOPGOLF"}
+        </span>
+        {g.membership && (
+          <span className="ml-auto atlas-mono text-ink-muted-48">
+            {g.membership === "Public"
+              ? t("golf.access_public")
+              : g.membership === "Members"
+              ? t("golf.access_members")
+              : g.membership === "Semi-private"
+              ? t("golf.access_semi")
+              : t("golf.access_resort")}
+          </span>
+        )}
+      </div>
+      <h3 className="atlas-display-md text-ink mt-1.5 leading-[1.1]">
+        {g.name}
+      </h3>
+      <p className="apple-caption text-ink-muted-80 mt-1">{g.area}</p>
+      {g.designer && (
+        <p className="apple-caption text-ink-muted-80 mt-2">
+          <span className="text-ink-muted-48">{t("golf.designer")}: </span>
+          {g.designer}
+          {g.established && (
+            <span className="text-ink-muted-48"> · {t("golf.est")} {g.established}</span>
           )}
         </p>
-
-        {g.designer && (
-          <p className="apple-caption mt-3 text-ink">
-            <span className="text-ink-muted-48">{t("golf.designer")}: </span>
-            {g.designer}
-            {g.established && (
-              <span className="text-ink-muted-48"> · {t("golf.est")} {g.established}</span>
-            )}
-          </p>
-        )}
-
-        {g.description && (
-          <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-3">
-            {g.description}
-          </p>
-        )}
-
-        <div className="mt-auto pt-5 flex items-center justify-between gap-4">
+      )}
+      <div className="mt-3 flex items-center gap-4 atlas-mono">
+        <a
+          href={golfMapsUrl(g)}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="link-blue normal-case tracking-normal text-[12px]"
+        >
+          {t("card.open_maps")} →
+        </a>
+        {g.website && (
           <a
-            href={golfMapsUrl(g)}
+            href={g.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="press-scale link-blue apple-caption-strong inline-flex items-center gap-1"
+            onClick={(e) => e.stopPropagation()}
+            className="link-blue normal-case tracking-normal text-[12px]"
           >
-            {t("card.open_maps")}
-            <span aria-hidden>↗</span>
+            {t("golf.website")} ↗
           </a>
-          {g.website && (
-            <a
-              href={g.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="press-scale link-blue apple-caption inline-flex items-center gap-1"
-            >
-              {t("golf.website")}
-              <span aria-hidden>↗</span>
-            </a>
-          )}
-        </div>
+        )}
       </div>
     </li>
   );
