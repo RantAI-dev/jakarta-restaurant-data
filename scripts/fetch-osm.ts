@@ -271,6 +271,11 @@ function isInsideDKI(lat: number, lng: number): boolean {
     if (lng > 106.945 && lat < -6.15 && lat > -6.30) return false;
     // Clip SE corner: Cibubur/Setu/Ciangsana edge of DKI/Bekasi/Bogor.
     if (lat < -6.34 && lng > 106.945) return false;
+    // Clip SW corner: Pondok Aren / Pondok Cabe / Bintaro Sektor /
+    // Pamulang sit in Tangerang Selatan at roughly lat < -6.265 and
+    // lng < 106.77. Lebak Bulus (DKI Selatan) at lng ~106.778 stays
+    // just east of this cut.
+    if (lat < -6.265 && lng < 106.77) return false;
     return true;
   }
   return false;
@@ -312,7 +317,14 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("serpong") ||
     blob.includes("citra raya") ||
     blob.includes("pasar kemis") ||
-    blob.includes("bintaro jaya")
+    blob.includes("bintaro jaya") ||
+    blob.includes("bintaro utama") ||
+    blob.includes("bintaro sektor") ||
+    blob.includes("pondok aren") ||
+    blob.includes("cabe raya") ||
+    blob.includes("universitas terbuka") ||
+    blob.includes("rempoa") ||
+    blob.includes("banten city")
   ) return "Tangerang";
   if (
     blob.includes("bekasi") ||
@@ -328,7 +340,10 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("pekayon") ||
     blob.includes("harapan indah") ||
     blob.includes("galaxy bekasi") ||
-    blob.includes("kemang pratama")
+    blob.includes("kemang pratama") ||
+    blob.includes("radar auri") ||
+    blob.includes("jatirahayu") ||
+    blob.includes("pondok melati")
   ) return "Bekasi";
   if (
     blob.includes("bogor") ||
