@@ -266,11 +266,18 @@ function isInsideDKI(lat: number, lng: number): boolean {
     // Clip S strip: UI Depok / Kukusan / Pondok Cina sits at
     // roughly lat < -6.355 in the central longitude band.
     if (lat < -6.355 && lng < 106.87) return false;
-    // Clip E strip: Bekasi west border (Bintara/Pekayon/Bintara Jaya/
-    // Pondok Gede) sits at lng > 106.945 in northern lat band.
-    if (lng > 106.945 && lat < -6.15 && lat > -6.30) return false;
+    // Clip E strip: Bekasi west border (Bintara/Pekayon/Pondok Gede/
+    // Jakasampurna). Tightened from 106.945 → 106.93 in central lat
+    // band because Bekasi Barat extends further west than first
+    // assumed; Pulo Gadung (DKI) stays at lng < 106.93.
+    if (lng > 106.93 && lat < -6.20 && lat > -6.30) return false;
+    if (lng > 106.945 && lat < -6.15 && lat > -6.20) return false;
     // Clip SE corner: Cibubur/Setu/Ciangsana edge of DKI/Bekasi/Bogor.
     if (lat < -6.34 && lng > 106.945) return false;
+    // Clip S-central strip: Cimanggis (Depok) extends north to about
+    // -6.365 in the lng 106.86 to 106.90 range. Pondok Ranggon DKI
+    // sits east of this at lng > 106.90.
+    if (lat < -6.365 && lng > 106.86 && lng < 106.90) return false;
     // Clip SW corner: Pondok Aren / Pondok Cabe / Bintaro Sektor /
     // Pamulang sit in Tangerang Selatan at roughly lat < -6.265 and
     // lng < 106.77. Lebak Bulus (DKI Selatan) at lng ~106.778 stays
@@ -300,7 +307,10 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("cinere") ||
     blob.includes("kukusan") ||
     blob.includes("pondok cina") ||
-    blob.includes("tanah baru, depok")
+    blob.includes("tanah baru, depok") ||
+    blob.includes("cimanggis") ||
+    blob.includes("tapos") ||
+    blob.includes("sukmajaya")
   ) return "Depok";
   if (
     blob.includes("tangerang") ||
@@ -343,7 +353,10 @@ function addressTagSaysNonDKI(tags: Record<string, string>): string | null {
     blob.includes("kemang pratama") ||
     blob.includes("radar auri") ||
     blob.includes("jatirahayu") ||
-    blob.includes("pondok melati")
+    blob.includes("pondok melati") ||
+    blob.includes("jakasampurna") ||
+    blob.includes("jaka sampurna") ||
+    blob.includes("jaka mulya")
   ) return "Bekasi";
   if (
     blob.includes("bogor") ||
