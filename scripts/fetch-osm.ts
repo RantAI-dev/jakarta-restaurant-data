@@ -281,8 +281,10 @@ function isInsideDKI(lat: number, lng: number): boolean {
     // Regency. Pier 503 at -6.089/106.73 → widen to 106.74.
     if (lat > -6.10 && lng < 106.74) return false;
     // Clip S strip: UI Depok / Kukusan / Pondok Cina / Tugu Cimanggis /
-    // Burger Bangor at Tugu sits at lat < -6.34 in lng 106.80..106.88.
-    if (lat < -6.34 && lng > 106.80 && lng < 106.88) return false;
+    // Burger Bangor / Startup UFO Burger Cibubur — anything south of
+    // -6.34 in lng band 106.80..106.90. Subsumes the old Cimanggis
+    // cut.
+    if (lat < -6.34 && lng > 106.80 && lng < 106.90) return false;
     // Clip E strip: Bekasi west border (Bintara/Pekayon/Jakasampurna/
     // Pondok Gede). 106.93 cut in central lat band, 106.945 in north.
     if (lng > 106.93 && lat < -6.20 && lat > -6.30) return false;
