@@ -5,7 +5,12 @@ import Link from "next/link";
 import { AtlasNav, LangToggle as AtlasLangToggle } from "@/components/atlas/AtlasNav";
 import { ExportButton } from "@/components/atlas/ExportButton";
 import { type Restaurant, googleMapsUrl, mapsEmbedUrl } from "@/lib/restaurants";
-import { type CsvColumn, downloadCsv, toCsv, dateStamp } from "@/lib/export";
+import {
+  type CsvColumn,
+  type ExportFormat,
+  dateStamp,
+  downloadSpreadsheet,
+} from "@/lib/export";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -167,7 +172,7 @@ export function Dashboard({ restaurants }: Props) {
     };
   }, [restaurants]);
 
-  function exportToCsv() {
+  async function exportRestaurants(format: ExportFormat) {
     if (filtered.length === 0) {
       alert(t("export.empty_rows"));
       return;
@@ -198,8 +203,13 @@ export function Dashboard({ restaurants }: Props) {
         value: (r) => r.sources.map((s) => `${s.label} <${s.url}>`).join(" | "),
       },
     ];
-    const csv = toCsv(filtered, columns);
-    downloadCsv(`jakarta-atlas-restoran-${dateStamp()}.csv`, csv);
+    await downloadSpreadsheet(
+      `jakarta-atlas-restoran-${dateStamp()}`,
+      filtered,
+      columns,
+      format,
+      "Restoran"
+    );
   }
 
   function verify() {
@@ -384,7 +394,10 @@ export function Dashboard({ restaurants }: Props) {
               onChange={(v) => setSort(v as SortId)}
             />
             <div className="ml-auto">
-              <ExportButton onClick={exportToCsv} label={t("export.csv")} />
+              <ExportButton
+                onExport={exportRestaurants}
+                label={t("export.csv")}
+              />
             </div>
           </div>
         </div>

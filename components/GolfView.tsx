@@ -10,7 +10,12 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import { AtlasNav, LangToggle } from "@/components/atlas/AtlasNav";
 import { ExportButton } from "@/components/atlas/ExportButton";
 import { GOLF_COURSES, golfMapsUrl, type GolfCourse } from "@/lib/golf";
-import { type CsvColumn, downloadCsv, toCsv, dateStamp } from "@/lib/export";
+import {
+  type CsvColumn,
+  type ExportFormat,
+  dateStamp,
+  downloadSpreadsheet,
+} from "@/lib/export";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -212,7 +217,7 @@ export function GolfView() {
     } catch {}
   }
 
-  function exportToCsv() {
+  async function exportGolf(format: ExportFormat) {
     if (filtered.length === 0) {
       alert(t("export.empty_rows"));
       return;
@@ -240,8 +245,13 @@ export function GolfView() {
         value: (g) => g.sources.map((s) => `${s.label} <${s.url}>`).join(" | "),
       },
     ];
-    const csv = toCsv(filtered, columns);
-    downloadCsv(`jakarta-atlas-golf-${dateStamp()}.csv`, csv);
+    await downloadSpreadsheet(
+      `jakarta-atlas-golf-${dateStamp()}`,
+      filtered,
+      columns,
+      format,
+      "Golf"
+    );
   }
 
   return (
@@ -318,7 +328,7 @@ export function GolfView() {
           <span className="ml-auto atlas-mono text-ink-muted-48">
             {filtered.length}/{GOLF_COURSES.length} · {t("map.pins_label")}
           </span>
-          <ExportButton onClick={exportToCsv} label={t("export.csv")} />
+          <ExportButton onExport={exportGolf} label={t("export.csv")} />
         </div>
       </section>
 
