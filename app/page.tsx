@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CompassRose } from "@/components/atlas/CompassRose";
 import { RESTAURANTS } from "@/lib/restaurants";
 import { GOLF_COURSES } from "@/lib/golf";
+import { gciStats } from "@/lib/gci";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -45,6 +46,8 @@ export default function HomePage() {
     holes: GOLF_COURSES.reduce((s, g) => s + (g.holes ?? 0), 0),
   };
 
+  const gci = gciStats();
+
   return (
     <main className="min-h-screen flex flex-col bg-canvas">
       {/* ── HEADER ── */}
@@ -68,6 +71,9 @@ export default function HomePage() {
               </Link>
               <Link href="/golf" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
                 {t("nav.section_golf")}
+              </Link>
+              <Link href="/gci" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
+                {t("nav.section_gci")}
               </Link>
             </nav>
             <button
@@ -149,7 +155,7 @@ export default function HomePage() {
           <p className="atlas-mono text-ink-muted-48 mb-6">
             {t("home.choose_section")}
           </p>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-3 gap-5">
             <SectionCard
               href="/restaurants"
               accent="rest"
@@ -195,6 +201,20 @@ export default function HomePage() {
                 },
               ]}
               cta={t("home.vol2_cta")}
+            />
+            <SectionCard
+              href="/gci"
+              accent="gci"
+              icon={<GciGlyph />}
+              kicker="GCI · GLOBAL CITY INDEX"
+              title="Restoran GCI"
+              description="Pendataan restoran kelas atas & kuliner internasional untuk Global City Index — restoran hotel bintang 3 & 4 dan resto & cafe se-Jakarta. Ekspor langsung ke format Google Sheet."
+              stats={[
+                { label: "ENTRI", value: String(gci.total) },
+                { label: "HOTEL", value: String(gci.hotel) },
+                { label: "CAFE", value: String(gci.cafe) },
+              ]}
+              cta="Buka pendataan GCI"
             />
           </div>
         </div>
@@ -277,7 +297,7 @@ function SectionCard({
   cta,
 }: {
   href: string;
-  accent: "rest" | "golf";
+  accent: "rest" | "golf" | "gci";
   icon: React.ReactNode;
   kicker: string;
   title: string;
@@ -288,7 +308,9 @@ function SectionCard({
   return (
     <Link
       href={href}
-      data-section={accent === "rest" ? "restaurants" : "golf"}
+      data-section={
+        accent === "rest" ? "restaurants" : accent === "golf" ? "golf" : "gci"
+      }
       className="group utility-card relative block p-7 md:p-9 hover:-translate-y-0.5"
     >
       <div className="flex items-start justify-between gap-4 mb-5">
@@ -337,6 +359,19 @@ function KnifeForkGlyph() {
       <line x1="11" y1="19" x2="11" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M28 11 Q24 16 24 25 L28 25 L28 11 Z" fill="currentColor" />
       <line x1="28" y1="25" x2="28" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function GciGlyph() {
+  return (
+    <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+      <rect x="0" y="0" width="40" height="40" rx="10" fill="currentColor" opacity="0.10" />
+      <circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M20 9 a11 11 0 0 1 0 22" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="9" y1="20" x2="31" y2="20" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M20 9 q5 11 0 22 q-5 -11 0 -22" fill="none" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M14 24 l3.5 -4 2.5 2.5 4 -5.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

@@ -28,6 +28,7 @@ const id: Dict = {
   "nav.view_golf": "Golf",
   "nav.section_restaurants": "Restoran",
   "nav.section_golf": "Golf",
+  "nav.section_gci": "GCI",
 
   "home.eyebrow": "DIREKTORI DKI JAKARTA",
   "home.title_a": "Direktori tempat",
@@ -195,6 +196,7 @@ const en: Dict = {
   "nav.view_golf": "Golf",
   "nav.section_restaurants": "Restaurants",
   "nav.section_golf": "Golf",
+  "nav.section_gci": "GCI",
 
   "home.eyebrow": "DKI JAKARTA DIRECTORY",
   "home.title_a": "A place directory",
