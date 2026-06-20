@@ -208,7 +208,7 @@ export default function HomePage() {
               icon={<GciGlyph />}
               kicker="GCI · GLOBAL CITY INDEX"
               title="Restoran GCI"
-              description="Pendataan restoran kelas atas & kuliner internasional untuk Global City Index — restoran hotel bintang 3 & 4 dan resto & cafe se-Jakarta. Ekspor langsung ke format Google Sheet."
+              description="Pendataan seluruh restoran & cafe se-Jakarta (termasuk restoran hotel bintang 3 & 4) untuk Global City Index. Ekspor langsung ke format Google Sheet."
               stats={[
                 { label: "ENTRI", value: String(gci.total) },
                 { label: "HOTEL", value: String(gci.hotel) },

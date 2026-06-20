@@ -149,15 +149,15 @@ export function GciView() {
           <div className="mt-6 grid md:grid-cols-12 gap-8 items-end">
             <div className="md:col-span-7">
               <h1 className="atlas-display text-ink">
-                Pendataan{" "}
+                Restoran{" "}
                 <span className="atlas-italic text-[color:var(--accent)]">
-                  Restoran Kelas Atas
+                  GCI
                 </span>
               </h1>
               <p className="apple-body mt-4 text-ink-muted-80 max-w-[60ch]">
-                Inventarisasi restoran kelas atas &amp; keberagaman kuliner
-                internasional di Jakarta — restoran hotel bintang 3 &amp; 4,
-                serta restoran &amp; cafe di seluruh Jakarta.
+                Inventarisasi seluruh restoran &amp; cafe di Jakarta beserta
+                keberagaman kuliner internasional — termasuk restoran hotel
+                bintang 3 &amp; 4 — untuk Global City Index.
               </p>
             </div>
             <dl className="md:col-span-5 grid grid-cols-4 gap-x-4 gap-y-1 md:border-l md:border-hairline md:pl-6">
