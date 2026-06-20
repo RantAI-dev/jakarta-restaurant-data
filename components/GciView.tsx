@@ -9,6 +9,7 @@ import {
   TIER_ORDER,
   CITY_ORDER,
   gciMapsUrl,
+  gciAddress,
   gciStats,
   type GciRestaurant,
   type GciTier,
@@ -77,7 +78,7 @@ export function GciView() {
       if (src === "Belum ada rating" && r.rating !== undefined) return false;
       if (
         needle &&
-        !`${r.name} ${r.cuisine} ${r.area} ${r.hotel ?? ""}`
+        !`${r.name} ${r.cuisine} ${r.area} ${r.address ?? ""} ${r.hotel ?? ""}`
           .toLowerCase()
           .includes(needle)
       )
@@ -109,11 +110,13 @@ export function GciView() {
       { header: "No.", value: (_r, i) => i + 1 },
       { header: "Nama", value: (r) => r.name },
       { header: "Jenis Cuisine", value: (r) => r.cuisine },
-      { header: "Area", value: (r) => r.area },
+      { header: "Alamat", value: (r) => gciAddress(r) },
       { header: "Rating", value: (r) => (r.rating !== undefined ? fmtRating(r.rating) : "") },
       { header: "Jumlah Ulasan", value: (r) => r.reviewCount ?? "" },
       { header: "Sumber Rating", value: (r) => r.ratingSource },
       // ── kolom bantu (boleh dihapus sebelum submit) ──
+      // Area (kawasan) disembunyikan dari kolom utama, datanya tetap disimpan di sini.
+      { header: "Area", value: (r) => r.area },
       { header: "Tier", value: (r) => r.tier },
       { header: "Hotel", value: (r) => r.hotel ?? "" },
       { header: "Catatan", value: (r) => (r.needsVerify ? "Perlu verifikasi angka" : "") },
@@ -258,7 +261,7 @@ export function GciView() {
                   <Th className="w-12 text-right pr-3">No.</Th>
                   <Th>Nama</Th>
                   <Th>Jenis Cuisine</Th>
-                  <Th>Area</Th>
+                  <Th>Alamat</Th>
                   <Th className="text-right">Rating</Th>
                   <Th className="text-right">Jumlah Ulasan</Th>
                   <Th>Sumber</Th>
@@ -292,8 +295,8 @@ export function GciView() {
                     <td className="px-3 py-3 align-top apple-caption text-ink-muted-80">
                       {r.cuisine}
                     </td>
-                    <td className="px-3 py-3 align-top apple-caption text-ink-muted-80">
-                      {r.area}
+                    <td className="px-3 py-3 align-top apple-caption text-ink-muted-80 max-w-[280px]">
+                      {gciAddress(r)}
                     </td>
                     <td className="px-3 py-3 align-top text-right atlas-mono tabular text-ink">
                       {fmtRating(r.rating)}

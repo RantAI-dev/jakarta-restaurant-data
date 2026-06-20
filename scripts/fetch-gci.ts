@@ -69,11 +69,36 @@ type GciOsm = {
   cuisine: string;
   area: string;
   city: string; // Indonesian sub-region
+  /** Street address composed from OSM addr:* tags ("" when OSM has none). */
+  address: string;
   tier: Tier;
   hotel?: string;
   lat: number;
   lng: number;
 };
+
+/** Compose a human address from OSM addr:* tags. Returns "" when OSM has no
+ *  street-level data (Indonesian OSM coverage is patchy) so the consumer can
+ *  fall back to the kawasan/city. Never invents data. */
+function buildAddress(tags: Record<string, string>): string {
+  const street = tags["addr:street"]?.trim();
+  const hn = tags["addr:housenumber"]?.trim();
+  const suburb = (
+    tags["addr:suburb"] ??
+    tags["addr:city_district"] ??
+    tags["addr:neighbourhood"] ??
+    ""
+  ).trim();
+  const city = tags["addr:city"]?.trim();
+  const postcode = tags["addr:postcode"]?.trim();
+  const parts: string[] = [];
+  if (street) parts.push(hn ? `${street} No. ${hn}` : street);
+  if (suburb) parts.push(suburb);
+  if (city) parts.push(city);
+  if (postcode) parts.push(postcode);
+  // Require at least a street for it to count as an "address".
+  return street ? parts.join(", ") : "";
+}
 
 /** Prettify a raw OSM cuisine tag → "Italian", "Sea Food" etc. Keeps the
  *  first listed cuisine; returns "—" when absent. */
@@ -251,6 +276,7 @@ async function main() {
       cuisine,
       area: pickArea(tags),
       city: pickCity(tags, lat, lng),
+      address: buildAddress(tags),
       tier,
       hotel,
       lat: Number(lat.toFixed(6)),
@@ -289,6 +315,7 @@ export type GciOsm = {
   cuisine: string;
   area: string;
   city: string;
+  address: string;
   tier: "Hotel ★4" | "Hotel ★3" | "Restoran" | "Cafe";
   hotel?: string;
   lat: number;

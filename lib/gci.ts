@@ -21,6 +21,7 @@
 
 import { GCI_OSM } from "./gci-osm";
 import { GCI_RATINGS } from "./gci-ratings";
+import { GCI_ADDRESSES } from "./gci-addresses";
 
 export type GciTier =
   | "Hotel ★5"
@@ -44,8 +45,11 @@ export type GciRestaurant = {
   name: string;
   /** Kolom "Jenis Cuisine" */
   cuisine: string;
-  /** Kolom "Area" */
+  /** Kawasan + sub-wilayah (mis. "SCBD, Jakarta Selatan") — fallback bila
+   *  alamat jalan tidak tersedia. */
   area: string;
+  /** Kolom "Alamat" — alamat jalan dari OSM addr:* (kosong bila OSM tak punya). */
+  address?: string;
   /** Sub-wilayah DKI (diturunkan dari area) */
   city: string;
   /** Hotel induk bila restoran berada di dalam hotel */
@@ -107,6 +111,11 @@ export function gciMapsUrl(r: GciRestaurant): string {
   }
   const q = encodeURIComponent(`${r.name} ${r.area} Jakarta`);
   return `https://www.google.com/maps/search/?api=1&query=${q}`;
+}
+
+/** Isi kolom "Alamat": alamat jalan bila ada, jika tidak fallback ke kawasan. */
+export function gciAddress(r: GciRestaurant): string {
+  return r.address && r.address.trim() ? r.address : r.area;
 }
 
 type Seed = Omit<GciRestaurant, "city" | "ratingSource" | "source"> & {
@@ -244,6 +253,32 @@ const CURATED_HOTEL_KEYS = new Set(
   )
 );
 
+// Pinjam alamat OSM untuk entri kurasi (kurasi tak punya alamat jalan sendiri).
+// Cocokkan via Google place_id (paling akurat) lalu nama; untuk restoran di
+// hotel, pakai nama hotel induk karena alamatnya ada di baris hotel OSM.
+// Tidak pernah mengarang — bila OSM tak punya alamat, biarkan kosong (fallback
+// ke kawasan/area saat ditampilkan).
+const OSM_ADDR_BY_PID = new Map<string, string>();
+const OSM_ADDR_BY_NAME = new Map<string, string>();
+for (const o of GCI_OSM) {
+  if (!o.address) continue;
+  const pid = GCI_RATINGS[o.id]?.placeId;
+  if (pid && !OSM_ADDR_BY_PID.has(pid)) OSM_ADDR_BY_PID.set(pid, o.address);
+  const k = nameKey(o.name);
+  // Simpan alamat terpanjang (paling lengkap) per nama.
+  const prev = OSM_ADDR_BY_NAME.get(k);
+  if (!prev || o.address.length > prev.length) OSM_ADDR_BY_NAME.set(k, o.address);
+}
+for (const r of CURATED) {
+  const google = GCI_ADDRESSES[r.id]?.address; // alamat Google (paling akurat)
+  const byPid = r.placeId ? OSM_ADDR_BY_PID.get(r.placeId) : undefined;
+  const byName = OSM_ADDR_BY_NAME.get(nameKey(r.name));
+  const byHotel = r.hotel
+    ? OSM_ADDR_BY_NAME.get(nameKey(r.hotel.replace(/\s*\(★\d\)\s*$/, "")))
+    : undefined;
+  r.address = google ?? byPid ?? byName ?? byHotel ?? undefined;
+}
+
 // Entri massal dari OpenStreetMap — semua restoran & cafe + hotel ★3/★4.
 const OSM: GciRestaurant[] = GCI_OSM.filter((o) => {
   if (CURATED_KEYS.has(nameKey(o.name))) return false; // sudah ada di kurasi
@@ -258,6 +293,8 @@ const OSM: GciRestaurant[] = GCI_OSM.filter((o) => {
     name: o.name,
     cuisine: o.cuisine,
     area: o.area,
+    // Alamat asli Google (Places) lebih akurat; fallback ke addr:* OSM.
+    address: GCI_ADDRESSES[o.id]?.address ?? (o.address || undefined),
     city: o.city,
     hotel: o.hotel,
     tier: o.tier,
