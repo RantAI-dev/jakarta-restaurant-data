@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { CompassRose } from "./CompassRose";
 
-export type Section = "restaurants" | "golf" | "gci" | "home";
+export type Section = "restaurants" | "golf" | "gci" | "events" | "home";
 export type View = "list" | "map";
 
 export function AtlasNav({
@@ -61,6 +61,14 @@ export function AtlasNav({
             href="/gci"
             active={section === "gci"}
             label={t("nav.section_gci")}
+          />
+          <span className="mx-2 text-hairline" aria-hidden>
+            ·
+          </span>
+          <SectionLink
+            href="/events"
+            active={section === "events"}
+            label={t("nav.section_events")}
           />
         </nav>
 

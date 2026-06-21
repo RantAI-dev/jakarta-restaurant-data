@@ -6,6 +6,7 @@ import { CompassRose } from "@/components/atlas/CompassRose";
 import { RESTAURANTS } from "@/lib/restaurants";
 import { GOLF_COURSES } from "@/lib/golf";
 import { gciStats } from "@/lib/gci";
+import { eventStats } from "@/lib/events";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -47,6 +48,7 @@ export default function HomePage() {
   };
 
   const gci = gciStats();
+  const events = eventStats();
 
   return (
     <main className="min-h-screen flex flex-col bg-canvas">
@@ -74,6 +76,9 @@ export default function HomePage() {
               </Link>
               <Link href="/gci" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
                 {t("nav.section_gci")}
+              </Link>
+              <Link href="/events" className="text-ink-muted-80 hover:text-[color:var(--accent)] transition-colors">
+                {t("nav.section_events")}
               </Link>
             </nav>
             <button
@@ -155,7 +160,7 @@ export default function HomePage() {
           <p className="atlas-mono text-ink-muted-48 mb-6">
             {t("home.choose_section")}
           </p>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <SectionCard
               href="/restaurants"
               accent="rest"
@@ -215,6 +220,20 @@ export default function HomePage() {
                 { label: "CAFE", value: String(gci.cafe) },
               ]}
               cta="Buka pendataan GCI"
+            />
+            <SectionCard
+              href="/events"
+              accent="events"
+              icon={<EventsGlyph />}
+              kicker="GCI · GLOBAL CITY INDEX"
+              title="Pertunjukan & Budaya"
+              description="Pendataan pertunjukan musik internasional & nasional serta acara budaya besar di Jakarta sepanjang 2025 — konser, festival, tari, teater, seni rupa, film — untuk Global City Index."
+              stats={[
+                { label: "EVENT", value: String(events.total) },
+                { label: "KONSER", value: String(events.konser) },
+                { label: "BUDAYA", value: String(events.budaya) },
+              ]}
+              cta="Buka pendataan Pertunjukan"
             />
           </div>
         </div>
@@ -297,7 +316,7 @@ function SectionCard({
   cta,
 }: {
   href: string;
-  accent: "rest" | "golf" | "gci";
+  accent: "rest" | "golf" | "gci" | "events";
   icon: React.ReactNode;
   kicker: string;
   title: string;
@@ -309,7 +328,13 @@ function SectionCard({
     <Link
       href={href}
       data-section={
-        accent === "rest" ? "restaurants" : accent === "golf" ? "golf" : "gci"
+        accent === "rest"
+          ? "restaurants"
+          : accent === "golf"
+          ? "golf"
+          : accent === "events"
+          ? "events"
+          : "gci"
       }
       className="group utility-card relative block p-7 md:p-9 hover:-translate-y-0.5"
     >
@@ -372,6 +397,21 @@ function GciGlyph() {
       <line x1="9" y1="20" x2="31" y2="20" stroke="currentColor" strokeWidth="1.2" />
       <path d="M20 9 q5 11 0 22 q-5 -11 0 -22" fill="none" stroke="currentColor" strokeWidth="1.2" />
       <path d="M14 24 l3.5 -4 2.5 2.5 4 -5.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function EventsGlyph() {
+  return (
+    <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+      <rect x="0" y="0" width="40" height="40" rx="10" fill="currentColor" opacity="0.10" />
+      {/* music note */}
+      <path d="M17 11 L28 9 L28 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="14" cy="26" r="3.4" fill="currentColor" />
+      <circle cx="25" cy="24" r="3.4" fill="currentColor" />
+      <line x1="17" y1="11" x2="17" y2="26" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      {/* spark / event accent */}
+      <path d="M10 12 l1 2.5 2.5 1 -2.5 1 -1 2.5 -1 -2.5 -2.5 -1 2.5 -1 z" fill="currentColor" opacity="0.7" />
     </svg>
   );
 }
