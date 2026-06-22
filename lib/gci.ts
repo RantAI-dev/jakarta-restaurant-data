@@ -22,6 +22,7 @@
 import { GCI_OSM } from "./gci-osm";
 import { GCI_RATINGS } from "./gci-ratings";
 import { GCI_ADDRESSES } from "./gci-addresses";
+import { GCI_PRICELEVELS } from "./gci-pricelevels";
 
 export type GciTier =
   | "Hotel ★5"
@@ -67,6 +68,10 @@ export type GciRestaurant = {
   lng?: number;
   /** Google Place ID (bila rating berhasil di-resolve) — untuk link Maps akurat & dedup. */
   placeId?: string;
+  /** Tingkat harga ($–$$$$). Lihat lib/gci-pricelevels.ts. */
+  priceLevel?: "$" | "$$" | "$$$" | "$$$$";
+  /** Asal price level: Google Places, reuse lokal, atau perkiraan editorial. */
+  priceSource?: "Google" | "local" | "editorial";
   /** true bila angka rating/ulasan masih perlu diverifikasi tim */
   needsVerify?: boolean;
 };
@@ -228,6 +233,8 @@ const CURATED: GciRestaurant[] = SEED.map((s) => {
     ratingSource:
       s.rating !== undefined || rt?.found ? ("Google" as const) : undefined,
     placeId: rt?.found ? rt.placeId : undefined,
+    priceLevel: GCI_PRICELEVELS[s.id]?.priceLevel,
+    priceSource: GCI_PRICELEVELS[s.id]?.source,
     source: "curated" as const,
     city: deriveCity(s.area),
   };
@@ -306,6 +313,8 @@ const OSM: GciRestaurant[] = GCI_OSM.filter((o) => {
     reviewCount: rt?.found ? rt.reviewCount : undefined,
     ratingSource: rt?.found ? ("Google" as const) : undefined,
     placeId: rt?.found ? rt.placeId : undefined,
+    priceLevel: GCI_PRICELEVELS[o.id]?.priceLevel,
+    priceSource: GCI_PRICELEVELS[o.id]?.source,
   };
 });
 

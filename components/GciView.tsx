@@ -117,6 +117,7 @@ export function GciView() {
       // ── kolom bantu (boleh dihapus sebelum submit) ──
       // Area (kawasan) disembunyikan dari kolom utama, datanya tetap disimpan di sini.
       { header: "Area", value: (r) => r.area },
+      { header: "Tingkat Harga", value: (r) => (r.priceLevel ? (r.priceSource === "editorial" ? `${r.priceLevel} (perkiraan)` : r.priceLevel) : "") },
       { header: "Tier", value: (r) => r.tier },
       { header: "Hotel", value: (r) => r.hotel ?? "" },
       { header: "Catatan", value: (r) => (r.needsVerify ? "Perlu verifikasi angka" : "") },
@@ -262,6 +263,7 @@ export function GciView() {
                   <Th>Nama</Th>
                   <Th>Jenis Cuisine</Th>
                   <Th>Alamat</Th>
+                  <Th className="text-center">Harga</Th>
                   <Th className="text-right">Rating</Th>
                   <Th className="text-right">Jumlah Ulasan</Th>
                   <Th>Sumber</Th>
@@ -298,6 +300,17 @@ export function GciView() {
                     <td className="px-3 py-3 align-top apple-caption text-ink-muted-80 max-w-[280px]">
                       {gciAddress(r)}
                     </td>
+                    <td className="px-3 py-3 align-top text-center atlas-mono tabular text-ink-muted-80">
+                      {r.priceLevel ?? "—"}
+                      {r.priceLevel && r.priceSource === "editorial" && (
+                        <span
+                          title="Perkiraan editorial — Google tidak punya data harga untuk venue ini"
+                          className="text-[color:var(--accent)]"
+                        >
+                          {" "}*
+                        </span>
+                      )}
+                    </td>
                     <td className="px-3 py-3 align-top text-right atlas-mono tabular text-ink">
                       {fmtRating(r.rating)}
                       {r.needsVerify && (
@@ -323,7 +336,7 @@ export function GciView() {
                 {filtered.length === 0 && (
                   <tr>
                     <td
-                      colSpan={8}
+                      colSpan={9}
                       className="px-3 py-12 text-center apple-caption text-ink-muted-48"
                     >
                       Tidak ada entri yang cocok dengan filter.
