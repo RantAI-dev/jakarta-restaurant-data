@@ -227,7 +227,7 @@ export default function HomePage() {
               icon={<EventsGlyph />}
               kicker="GCI · GLOBAL CITY INDEX"
               title="Pertunjukan & Budaya"
-              description="Pendataan pertunjukan musik internasional & nasional serta acara budaya besar di Jakarta sepanjang 2025 — konser, festival, tari, teater, seni rupa, film — untuk Global City Index."
+              description="Pendataan pertunjukan musik internasional & nasional serta acara budaya besar di Jakarta sepanjang 2025–2026 — konser, festival, tari, teater, seni rupa, film — untuk Global City Index."
               stats={[
                 { label: "EVENT", value: String(events.total) },
                 { label: "KONSER", value: String(events.konser) },

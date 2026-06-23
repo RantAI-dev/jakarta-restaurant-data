@@ -27,11 +27,21 @@ import {
 const CAT_FILTERS = ["Semua", ...EVENT_CATEGORIES] as const;
 type CatFilter = (typeof CAT_FILTERS)[number];
 
+const YEAR_FILTERS = ["Semua", "2025", "2026"] as const;
+type YearFilter = (typeof YEAR_FILTERS)[number];
+
+/** Tahun penyelenggaraan dari string tanggal (ambil tahun pertama yang muncul). */
+function eventYear(e: GciEvent): string {
+  const m = e.date.match(/(20\d{2})/);
+  return m ? m[1] : "";
+}
+
 const PAGE = 200;
 
 export function EventsView() {
   const [lang, setLang] = useState<Lang>(DEFAULT_LANG);
   const [cat, setCat] = useState<CatFilter>("Semua");
+  const [year, setYear] = useState<YearFilter>("Semua");
   const [q, setQ] = useState("");
   const [visible, setVisible] = useState(PAGE);
 
@@ -45,11 +55,15 @@ export function EventsView() {
     } catch {}
   }
 
-  const stats = useMemo(() => eventStats(), []);
+  const stats = useMemo(
+    () => eventStats(year === "Semua" ? undefined : year),
+    [year]
+  );
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return GCI_EVENTS.filter((e) => {
+      if (year !== "Semua" && eventYear(e) !== year) return false;
       if (cat !== "Semua" && e.category !== cat) return false;
       if (
         needle &&
@@ -60,11 +74,11 @@ export function EventsView() {
         return false;
       return true;
     });
-  }, [cat, q]);
+  }, [cat, year, q]);
 
   useEffect(() => {
     setVisible(PAGE);
-  }, [cat, q]);
+  }, [cat, year, q]);
 
   const paged = filtered.slice(0, visible);
 
@@ -86,12 +100,13 @@ export function EventsView() {
       // ── kolom bantu (boleh dihapus sebelum submit) ──
       { header: "Sumber", value: (e) => e.source },
     ];
+    const yearTag = year === "Semua" ? "2025-2026" : year;
     await downloadSpreadsheet(
-      `data-pertunjukan-GCI-jakarta-2025-${dateStamp()}`,
+      `data-pertunjukan-GCI-jakarta-${yearTag}-${dateStamp()}`,
       filtered,
       columns,
       format,
-      "Pertunjukan GCI 2025"
+      `Pertunjukan GCI ${yearTag}`
     );
   }
 
@@ -111,7 +126,7 @@ export function EventsView() {
               GLOBAL CITY INDEX · DISPAREKRAF DKI
             </span>
             <span className="flex-1 border-t border-hairline" />
-            <span className="atlas-coord">TAHUN 2025</span>
+            <span className="atlas-coord">TAHUN 2025–2026</span>
           </div>
           <div className="mt-6 grid md:grid-cols-12 gap-8 items-end">
             <div className="md:col-span-7">
@@ -123,7 +138,7 @@ export function EventsView() {
               </h1>
               <p className="apple-body mt-4 text-ink-muted-80 max-w-[62ch]">
                 Inventarisasi pertunjukan musik internasional &amp; nasional
-                serta acara budaya besar di Jakarta sepanjang 2025 — konser,
+                serta acara budaya besar di Jakarta sepanjang 2025–2026 — konser,
                 festival, seni tari, teater, orkestra, seni rupa, dan film —
                 untuk Global City Index.
               </p>
@@ -142,6 +157,22 @@ export function EventsView() {
       <section className="frosted border-b border-hairline sticky top-[56px] z-20">
         <div className="mx-auto max-w-[1320px] px-6 py-3 flex flex-wrap items-center gap-3">
           <span className="atlas-mono text-ink-muted-48">FILTER ·</span>
+
+          <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full">
+            {YEAR_FILTERS.map((y) => (
+              <button
+                key={y}
+                onClick={() => setYear(y)}
+                className={`press-scale rounded-full px-3 py-1 apple-caption whitespace-nowrap ${
+                  year === y
+                    ? "bg-[color:var(--accent)] text-white"
+                    : "text-ink-muted-80 hover:text-ink"
+                }`}
+              >
+                {y === "Semua" ? "Semua tahun" : y}
+              </button>
+            ))}
+          </div>
 
           <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full flex-wrap">
             {CAT_FILTERS.map((k) => (
