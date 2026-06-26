@@ -381,5 +381,53 @@ export const GCI_HOTEL_RESTOS: Record<string, { name: string; source: string }> 
   "osm-w-155112978": {
     "name": "Margot Café",
     "source": "https://www.qraved.com/jakarta/margot-cafe-margot-hotel-menteng"
+  },
+  "osm-n-6187462999": {
+    "name": "sTREATs Restaurant",
+    "source": "https://www.tripadvisor.com/Hotel_Review-g294229-d4562833-Reviews-Ibis_Styles_Jakarta_Gajah_Mada-Jakarta_Java.html"
+  },
+  "osm-n-6063583430": {
+    "name": "Great Room",
+    "source": "https://www.ihg.com/holidayinnexpress/hotels/us/en/jakarta/jktjm/hoteldetail"
+  },
+  "osm-w-481927901": {
+    "name": "Wok'N'Tok",
+    "source": "https://yellohotelharmoni.com/dining/wokntok-restaurant/"
+  },
+  "osm-w-488404265": {
+    "name": "Saleroku Restaurant",
+    "source": "https://www.tripadvisor.com/Hotel_Review-g294229-d590461-Reviews-Sofyan_Hotel_Cut_Meutia-Jakarta_Java.html"
+  },
+  "osm-w-490837351": {
+    "name": "sTREATs Restaurant",
+    "source": "https://all.accor.com/hotel/8448/index.en.shtml"
+  },
+  "osm-n-13736295077": {
+    "name": "Great Room",
+    "source": "https://www.ihg.com/holidayinnexpress/hotels/us/en/jakarta/jktwh/hoteldetail"
+  },
+  "osm-w-380531360": {
+    "name": "Great Room",
+    "source": "https://www.bridestory.com/id/store/great-room-restoran-holiday-inn-express-jakarta-wahid-hasyim-eb76"
+  },
+  "osm-w-526041486": {
+    "name": "Noodles Now",
+    "source": "https://www.traveloka.com/en-sg/hotel/indonesia/hotel-neo-kebayoran-jakarta-by-aston-3000020001336"
+  },
+  "osm-n-4154902642": {
+    "name": "Lime Restaurant",
+    "source": "https://www.favehotels.com/en/hotel/facilities/71/favehotel-ltc-glodok"
+  },
+  "osm-n-4146911672": {
+    "name": "Kopi Oey",
+    "source": "https://www.jakartahotels.net/favehotel-melawai.en.html"
+  },
+  "osm-n-4244063985": {
+    "name": "MaxBistro",
+    "source": "https://www.qraved.com/jakarta/maxbistro-maxone-hotel-rawamangun"
+  },
+  "osm-n-13361120901": {
+    "name": "Balé-Balé",
+    "source": "https://dprimahotel.com/dprimahotel-harmoni-jakarta/dining/bale-bale-lounge-3/"
   }
 };
