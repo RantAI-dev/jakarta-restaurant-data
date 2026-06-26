@@ -23,6 +23,7 @@ import { GCI_OSM } from "./gci-osm";
 import { GCI_RATINGS } from "./gci-ratings";
 import { GCI_ADDRESSES } from "./gci-addresses";
 import { GCI_PRICELEVELS } from "./gci-pricelevels";
+import { GCI_HOTEL_RESTOS } from "./gci-hotel-restos";
 
 export type GciTier =
   | "Hotel ★5"
@@ -295,15 +296,18 @@ const OSM: GciRestaurant[] = GCI_OSM.filter((o) => {
   return true;
 }).map((o) => {
   const rt = GCI_RATINGS[o.id];
+  // Nama restoran di dalam hotel (hasil crawl per-hotel) supaya kolom Nama bukan
+  // sekadar nama hotel; nama hotel asli dipindah ke field `hotel` (subbaris).
+  const resto = GCI_HOTEL_RESTOS[o.id]?.name;
   return {
     id: o.id,
-    name: o.name,
+    name: resto ?? o.name,
     cuisine: o.cuisine,
     area: o.area,
     // Alamat asli Google (Places) lebih akurat; fallback ke addr:* OSM.
     address: GCI_ADDRESSES[o.id]?.address ?? (o.address || undefined),
     city: o.city,
-    hotel: o.hotel,
+    hotel: resto ? o.hotel ?? o.name : o.hotel,
     tier: o.tier,
     source: "osm" as const,
     lat: o.lat,
