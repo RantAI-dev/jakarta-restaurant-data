@@ -1,0 +1,2831 @@
+[
+{
+"id": 9238,
+"title": "Jumlah Usaha Penyediaan Akomodasi Pariwisata yang Memiliki Perizinan",
+"description": "Jumlah usaha penyediaan akomodasi pariwisata yang memiliki perizinan.",
+"slug": "jumlah-usaha-penyediaan-akomodasi-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"usaha pariwisata",
+"usaha penyediaan akomodasi pariwisata",
+"akomodasi pariwisata",
+"perizinan",
+"pariwisata"
+],
+"views": 1315,
+"datasetCount": 1,
+"createdAt": "2024-03-26 07:40:45",
+"updatedAt": "2026-07-06T01:16:05.000000Z"
+},
+{
+"id": 9239,
+"title": "Jumlah Usaha Jasa Perjalanan Wisata Pariwisata yang Memiliki Perizinan",
+"description": "Data ini merupakan data yang berisi data jumlah usaha jasa perjalanan wisata yang memiliki Nomor Induk Berusaha (NIB) di Jakarta.",
+"slug": "jumlah-usaha-jasa-perjalanan-wisata-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"usaha jasa perjalanan wisata",
+"pariwisata",
+"perizinan"
+],
+"views": 1017,
+"datasetCount": 1,
+"createdAt": "2024-03-26 07:56:08",
+"updatedAt": "2026-07-06T01:14:21.000000Z"
+},
+{
+"id": 10132,
+"title": "Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke Tourist Information Center (TIC) Provinsi DKI Jakarta",
+"description": "Dataset ini merupakan data rekapitulasi wisatawan lokal dan mancanegara pengunjung TIC yang dikelola dan disediakan oleh Dinas Pariwisata dan Ekonomi Kreatif Provinsi DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-nusantara-dan-wisatawan-mancanegara-ke-tourist-information-center-tic-provinsi-dki-jakarta",
+"tags": [
+"Wisatawan Nusantara",
+"Wisatawan Mancanegara ",
+"Tourist Information Center (TIC)",
+"pariwisata"
+],
+"views": 705,
+"datasetCount": 1,
+"createdAt": "2025-02-26 11:11:10",
+"updatedAt": "2026-07-02T02:15:38.000000Z"
+},
+{
+"id": 8914,
+"title": "Jumlah Pengunjung e-Tourism",
+"description": "Data ini berisikan data Jumlah Pengunjung e-Tourism yang terdari jumlah Pengunjung Website dan Medsos, Jumlah kunjungan pada website resmi ditambah jumlah suka dan komentar pada unggahan di media sosial resmi Dinas Pariwisata dan Ekonomi Kreatif beserta jajarannya.",
+"slug": "jumlah-pengunjung-e-tourism",
+"tags": [
+"Pengunjung",
+"e-Tourism",
+"wisatawan",
+"pariwisata"
+],
+"views": 459,
+"datasetCount": 1,
+"createdAt": "2024-02-29 15:03:43",
+"updatedAt": "2026-07-02T02:15:13.000000Z"
+},
+{
+"id": 10128,
+"title": "Jumlah Kunjungan Wisatawan ke Obyek Wisata Menurut Lokasi di Provinsi DKI Jakarta",
+"description": "Dataset ini merupakan data yang berisi jumlah wisatawan pada masing-masing 29 objek wisata di Provinsi DKI Jakarta",
+"slug": "jumlah-kunjungan-wisatawan-ke-obyek-wisata-menurut-lokasi-di-provinsi-dki-jakarta",
+"tags": [
+"kunjungan",
+"wisatawan",
+"obyek wisata",
+"pariwisata"
+],
+"views": 1138,
+"datasetCount": 1,
+"createdAt": "2025-02-26 10:57:51",
+"updatedAt": "2026-07-02T02:14:34.000000Z"
+},
+{
+"id": 9017,
+"title": "Data Pendapatan Asli Daerah (PAD) Sektor Pariwisata",
+"description": "Data Pendapatan Asli Daerah (PAD) Sektor Pariwisata berisikan Data kontribusi sektor pariwisata pada PAD Provinsi DKI Jakarta",
+"slug": "data-pendapatan-asli-daerah-pad-sektor-pariwisata",
+"tags": [
+"pendapatan asli daerah",
+"pariwisata"
+],
+"views": 773,
+"datasetCount": 1,
+"createdAt": "2024-03-04 15:46:52",
+"updatedAt": "2026-07-02T02:10:13.000000Z"
+},
+{
+"id": 9263,
+"title": "Data Jumlah Wisatawan Mancanegara Berdasarkan Kebangsaan",
+"description": "Data ini berisikan data kunjungan wisatawan mancanegara ditinjau dari kebangsaannya dan merupakan kelanjutan dari data kunjungan wisatawan mancanegara ditinjau dari kebangsaannya tahun 2023.",
+"slug": "data-jumlah-wisatawan-mancanegara-berdasarkan-kebangsaan",
+"tags": [
+"wisatawan mancanegara",
+"kebangsaan",
+"kunjungan",
+"pariwisata"
+],
+"views": 946,
+"datasetCount": 1,
+"createdAt": "2024-03-28 09:19:57",
+"updatedAt": "2026-07-02T02:09:27.000000Z"
+},
+{
+"id": 9241,
+"title": "Data Rata-rata Tingkat Hunian Kamar pada Hotel Berbintang di Provinsi DKI Jakarta",
+"description": "Data ini berisikan Tingkat Penghunian Kamar Hotel Bintang Menurut Klasifikasi Hotel di Jakarta yang merupakan data lanjutan dari dataset Data Rata-rata Tingkat Hunian Kamar pada Hotel Berbintang di DKI Jakarta Tahun 2023",
+"slug": "data-rata-rata-tingkat-hunian-kamar-pada-hotel-berbintang-di-provinsi-dki-jakarta",
+"tags": [
+"Tingkat Penghunian Kamar",
+"Hotel Berbintang",
+"hotel",
+"pariwisata"
+],
+"views": 589,
+"datasetCount": 1,
+"createdAt": "2024-03-26 08:55:54",
+"updatedAt": "2026-07-02T02:06:23.000000Z"
+},
+{
+"id": 9231,
+"title": "Jumlah Usaha Penyelenggaraan Kegiatan Hiburan dan Rekreasi Pariwisata yang Memiliki Perizinan",
+"description": "Jumlah Usaha Penyelenggaraan Kegiatan Hiburan dan Rekreasi Pariwisata yang Memiliki Perizinan",
+"slug": "jumlah-usaha-penyelenggaraan-kegiatan-hiburan-dan-rekreasi-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"Usaha Penyelenggaraan Kegiatan Hiburan dan Rekreasi Pariwisata",
+"hiburan",
+"rekreasi",
+"pariwisata",
+"perizinan"
+],
+"views": 1236,
+"datasetCount": 1,
+"createdAt": "2024-03-25 14:01:31",
+"updatedAt": "2026-07-02T02:05:03.000000Z"
+},
+{
+"id": 9226,
+"title": "Jumlah Usaha SPA yang Memiliki Perizinan",
+"description": "Data ini berisikan data jumlah usaha spa yang memiliki perizinan berupa Nomor Induk Berusaha (NIB) di DKI Jakarta",
+"slug": "jumlah-usaha-spa-yang-memiliki-perizinan",
+"tags": [
+"usaha spa",
+"pariwisata",
+"perizinan"
+],
+"views": 467,
+"datasetCount": 1,
+"createdAt": "2024-03-25 11:42:56",
+"updatedAt": "2026-07-02T02:03:17.000000Z"
+},
+{
+"id": 10483,
+"title": "Jumlah Restoran per Kelurahan",
+"description": "Data ini berisikan data jumlah usaha restoran yang memiliki perizinan.",
+"slug": "jumlah-restoran-per-kelurahan",
+"tags": [
+"Restoran"
+],
+"views": 479,
+"datasetCount": 1,
+"createdAt": "2025-06-25 08:19:37",
+"updatedAt": "2026-07-02T02:00:47.000000Z"
+},
+{
+"id": 8760,
+"title": "Data Rata-rata Lama Menginap Wisatawan Mancanegara dan Wisatawan Nusantara pada Hotel Berbintang di Provinsi DKI Jakarta",
+"description": "Data Rata-Rata Lama Menginap Tamu asing dan domestik yang menginap di hotel bintang di DKI Jakarta. Data ini merupakan data lanjutan dari Data Rata-rata Lama Menginap Wisatawan Mancanegara pada Hotel Berbintang di DKI Jakarta",
+"slug": "data-rata-rata-lama-menginap-wisatawan-mancanegara-dan-wisatawan-nusantara-pada-hotel-berbintang-di-provinsi-dki-jakarta",
+"tags": [
+"rata-rata lama menginap",
+"wisatawan mancanegara",
+"wisatawan nusantara",
+"hotel bintang"
+],
+"views": 465,
+"datasetCount": 1,
+"createdAt": "2024-02-20 07:17:15",
+"updatedAt": "2026-07-02T01:56:00.000000Z"
+},
+{
+"id": 9240,
+"title": "Jumlah Usaha Jasa Makanan dan Minuman Pariwisata yang Memiliki Perizinan",
+"description": "Jumlah usaha jasa makanan dan minuman yang memiliki perizinan.",
+"slug": "jumlah-usaha-jasa-makanan-dan-minuman-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"usaha jasa makanan dan minuman",
+"pariwisata",
+"perizinanan"
+],
+"views": 3463,
+"datasetCount": 1,
+"createdAt": "2024-03-26 08:03:21",
+"updatedAt": "2026-07-02T01:54:07.000000Z"
+},
+{
+"id": 9228,
+"title": "Jumlah Usaha Penyelenggaraan Pertemuan, Perjalanan Insentif, Konferensi dan Pameran Pariwisata yang Memiliki Perizinan",
+"description": "Data ini merupakan data yang berisi Jumlah Usaha Penyelenggaraan Pertemuan, Perjalanan Insentif, Konferensi dan Pameran Pariwisata yang Memiliki Perizinan yakni berupa Nomor Induk Berusaha (NIB) di DKI Jakarta.",
+"slug": "jumlah-usaha-penyelenggaraan-pertemuan-perjalanan-insentif-konferensi-dan-pameran-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"usaha penyelenggaraan pertemuan",
+"MICE",
+"konferensi",
+"pameran",
+"perjalanan insentif",
+"perizinan",
+"pariwisata"
+],
+"views": 1057,
+"datasetCount": 1,
+"createdAt": "2024-03-25 13:34:15",
+"updatedAt": "2026-07-02T01:20:35.000000Z"
+},
+{
+"id": 11125,
+"title": "Jumlah Realisasi Investasi Pariwisata",
+"description": "Jumlah Realisasi Investasi Pariwisata di Provinsi DKI Jakarta",
+"slug": "jumlah-realisasi-investasi-pariwisata",
+"tags": [
+"pariwisata",
+"investasi",
+"perizinan"
+],
+"views": 24,
+"datasetCount": 1,
+"createdAt": "2026-05-25 14:03:20",
+"updatedAt": "2026-06-12T03:32:40.000000Z"
+},
+{
+"id": 11061,
+"title": "Data Seni Pertunjukan dan Visual",
+"description": "Data pertunjukan musik internasional dan event internasional di Jakarta dalam setahun",
+"slug": "data-seni-pertunjukan-dan-visual",
+"tags": [
+"Seni pertunjukan dan visual",
+"event"
+],
+"views": 56,
+"datasetCount": 1,
+"createdAt": "2026-04-29 10:23:22",
+"updatedAt": "2026-05-13T02:57:05.000000Z"
+},
+{
+"id": 9422,
+"title": "Nilai Kepuasan Pengunjung Objek Wisata",
+"description": "Data ini berisikan nilai rata-rata hasil survey kepuasan pengunjung yang dilakukan oleh Dinas Pariwisata dan Ekonomi Kreatif setiap tahun terhadap objek wisata. Lokasi objek wisata yang disurvey sama setiap tahunnya. Pengukuran tingkat kepuasan pengunjung menggunakan skala 1-100.",
+"slug": "nilai-kepuasan-pengunjung-objek-wisata",
+"tags": [
+"nilai kepuasan",
+"pengunjung",
+"objek wisata",
+"pariwisata",
+"survei"
+],
+"views": 452,
+"datasetCount": 1,
+"createdAt": "2024-04-22 15:36:39",
+"updatedAt": "2026-05-13T01:26:29.000000Z"
+},
+{
+"id": 10899,
+"title": "Jumlah Pelaku Usaha Pariwisata dan Ekonomi Kreatif yang Difasilitasi Terkait Industri Halal dan Ekonomi Syariah",
+"description": "Jumlah pelaku usaha pariwisata dan ekonomi kreatif yang difasilitasi terkait industri halal dan ekonomi syariah ramah muslim",
+"slug": "jumlah-pelaku-usaha-pariwisata-dan-ekonomi-kreatif-yang-difasilitasi-terkait-industri-halal-dan-ekonomi-syariah",
+"tags": [
+"pariwisata",
+"wisata ramah muslim",
+"industri halal dan ekonomi syariah",
+"ekonomi kreatif"
+],
+"views": 38,
+"datasetCount": 1,
+"createdAt": "2026-04-01 10:54:49",
+"updatedAt": "2026-04-20T13:59:56.000000Z"
+},
+{
+"id": 10944,
+"title": "Data Rekomendasi Penyelenggaraan Pertunjukan Musik",
+"description": "Data Pemberian Rekomendasi Penyelenggaraan Pertunjukan Musik berisikan data pemberian dukungan kepada penyelenggara pertunjukan musik yang dilaksanakan",
+"slug": "data-rekomendasi-penyelenggaraan-pertunjukan-musik",
+"tags": [
+"Pertunjukan musi"
+],
+"views": 55,
+"datasetCount": 1,
+"createdAt": "2026-04-08 20:01:53",
+"updatedAt": "2026-04-20T08:39:08.000000Z"
+},
+{
+"id": 10897,
+"title": "Rata-rata Pengeluaran Kunjungan Wisatawan",
+"description": "Rata-rata nilai uang yang dikeluarkan/dibayarkan untuk memperoleh barang konsumsi dan jasa",
+"slug": "rata-rata-pengeluaran-kunjungan-wisatawan",
+"tags": [
+"pariwisata",
+"spending wisatawan",
+"rata-rata pengeluaran wisawatawan"
+],
+"views": 47,
+"datasetCount": 1,
+"createdAt": "2026-04-01 10:46:24",
+"updatedAt": "2026-04-20T08:38:17.000000Z"
+},
+{
+"id": 10898,
+"title": "Daftar Dokumen Standar Layanan dan Pengelolaan di Sektor Pariwisata",
+"description": "Daftar Dokumen standar layanan dan pengelolaan di sektor pariwisata",
+"slug": "daftar-dokumen-standar-layanan-dan-pengelolaan-di-sektor-pariwisata",
+"tags": [
+"pariwisata",
+"standar layanan",
+"dokumen"
+],
+"views": 22,
+"datasetCount": 1,
+"createdAt": "2026-04-01 10:51:59",
+"updatedAt": "2026-04-20T08:37:08.000000Z"
+},
+{
+"id": 10920,
+"title": "Persentase Tingkat Pengaruh Wisata Belanja/Kuliner/Malam sebagai Alasan Utama Berwisata",
+"description": "proporsi (dalam bentuk persentase) dari total wisatawan yang menyatakan bahwa kegiatan belanja, kuliner (mencicipi makanan dan minuman), atau hiburan malam adalah motif atau tujuan utama mereka melakukan perjalanan wisata ke suatu destinasi",
+"slug": "persentase-tingkat-pengaruh-wisata-belanjakulinermalam-sebagai-alasan-utama-berwisata",
+"tags": [
+"pariwisata",
+"kuliner",
+"wisata belanja"
+],
+"views": 38,
+"datasetCount": 1,
+"createdAt": "2026-04-02 19:51:08",
+"updatedAt": "2026-04-17T07:13:46.000000Z"
+},
+{
+"id": 10275,
+"title": "Jumlah Pendidikan dan Pelatihan Pemasaran Digital",
+"description": "Dataset jumlah pendidikan dan pelatihan pemasaran digital berisikan data kegiatan diklat pemasaran digital yang diperuntukan kepada pelaku usaha pariwisata dan ekonomi kreatif dengan atau tanpa ada sertifikat",
+"slug": "jumlah-pendidikan-dan-pelatihan-pemasaran-digital",
+"tags": [
+"diklat pemasaran digital",
+"perekonomian"
+],
+"views": 187,
+"datasetCount": 1,
+"createdAt": "2025-04-09 08:28:53",
+"updatedAt": "2026-04-17T05:16:37.000000Z"
+},
+{
+"id": 10276,
+"title": "Jumlah Fasilitasi Kegiatan Peningkatan Kapasitas dan Sertifikasi Kompetensi pada Pelaku Ekonomi Kreatif",
+"description": "Jumlah Fasilitasi Kegiatan Peningkatan Kapasitas dan Sertifikasi Kompetensi pada Pelaku Ekonomi Kreatif berisikan data kegiatan fasilitasi yang dilaksanakan untuk meningkatkan kapasitas dan sertifikasi kompetensi pelaku ekonomi kreatif",
+"slug": "jumlah-fasilitasi-kegiatan-peningkatan-kapasitas-dan-sertifikasi-kompetensi-pada-pelaku-ekonomi-kreatif",
+"tags": [
+"sertifikasi",
+"kompetensi",
+"ekonomi kreatif"
+],
+"views": 203,
+"datasetCount": 1,
+"createdAt": "2025-04-09 08:41:12",
+"updatedAt": "2026-04-17T05:14:47.000000Z"
+},
+{
+"id": 10156,
+"title": "Data Kabupaten/Kota Kreatif yang Dikembangkan",
+"description": "Data ini berisikan kabupaten/kota yang termasuk dalam program kabupaten dan kota kreatif",
+"slug": "data-kabupatenkota-kreatif-yang-dikembangkan",
+"tags": [
+"kota kreatif",
+"pariwisata"
+],
+"views": 218,
+"datasetCount": 1,
+"createdAt": "2025-02-28 15:09:07",
+"updatedAt": "2026-03-27T03:16:22.000000Z"
+},
+{
+"id": 10130,
+"title": "Jumlah Data Statistik Pariwisata dan Ekonomi Kreatif yang Tersedia dalam Format Database",
+"description": "Dataset ini berisikan pubilkasi/laporan statistik pariwisata dan ekonomi kreatif meliputi:\r\n  (1) Publikasi/Laporan Statistik Wisatawan Nusantara (Pengelola Destinasi)\r\n  (2) Publikasi/Laporan Statistik Wisatawan Mancanegara (BPS);\r\n  (3) Publikasi/Laporan jumlah penyelenggaraan event pariwisata dan ekonomi kreatif;\r\n  (4) Publikasi pelatihan pariwisata dan ekonomi kreatif",
+"slug": "jumlah-data-statistik-pariwisata-dan-ekonomi-kreatif-yang-tersedia-dalam-format-database",
+"tags": [
+"Publikasi",
+"data statistik",
+"pariwisata",
+"ekonomi kreatif"
+],
+"views": 324,
+"datasetCount": 1,
+"createdAt": "2025-02-26 11:03:37",
+"updatedAt": "2026-03-25T09:16:57.000000Z"
+},
+{
+"id": 6360,
+"title": "Jumlah Wisatawan",
+"description": "Jumlah wisatawan mancanegara (jumlah semua wisatawan mancanegara yang tiba di Jakarta melalui bandara dan pelabuhan dengan sumber data BPS Jakarta). Data ini sewaktu-waktu bisa berubah karena adanya perubahan dari sumber data Badan Pusat Statistik",
+"slug": "jumlah-wisatawan",
+"tags": [
+"pariwisata",
+"wisatawan"
+],
+"views": 388,
+"datasetCount": 1,
+"createdAt": "2023-08-30 08:34:42",
+"updatedAt": "2026-03-25T09:15:12.000000Z"
+},
+{
+"id": 9735,
+"title": "Jumlah Pengunjung Event",
+"description": "Dataset ini berisikan data jumlah pengunjung event yang diselenggarakan, atau diikuti oleh Dinas Pariwisata dan Ekonomi Kreatif baik di dalam maupun luar Jakarta",
+"slug": "jumlah-pengunjung-event",
+"tags": [
+"pariwisata",
+"event",
+"jumlah pengunjung"
+],
+"views": 680,
+"datasetCount": 1,
+"createdAt": "2024-07-25 07:33:57",
+"updatedAt": "2026-02-19T01:16:56.000000Z"
+},
+{
+"id": 9752,
+"title": "Persentase Pertumbuhan Produk Domestik Regional Bruto (PDRB) Sektor Pariwisata (Akomodasi dan Makan Minum)",
+"description": "Dataset ini berisikan data persentase pertumbuhan PDRB menurut Lapangan Usaha Penyediaan Akomodasi dan Makan Minum",
+"slug": "persentase-pertumbuhan-produk-domestik-regional-bruto-pdrb-sektor-pariwisata-akomodasi-dan-makan-minum",
+"tags": [
+"PDRB ",
+"Produk Domestik Regional Bruto",
+"pariwisata",
+"Akomodasi dan Makan Minum"
+],
+"views": 392,
+"datasetCount": 1,
+"createdAt": "2024-07-29 09:14:17",
+"updatedAt": "2026-02-18T06:34:19.000000Z"
+},
+{
+"id": 9983,
+"title": "Data Destinasi Pariwisata yang Memiliki Aksesibilitas, Amenitas, atau Atraksi",
+"description": "Dataset ini merupakan data destinasi pariwisata yang memiliki aksesibilitas, amenitas, atau atraksi",
+"slug": "data-destinasi-pariwisata-yang-memiliki-aksesibilitas-amenitas-atau-atraksi",
+"tags": [
+"Aksesibilitas",
+"Amenitas",
+"Atraksi",
+"Pariwisata ",
+"Destinasi Pariwisata"
+],
+"views": 400,
+"datasetCount": 1,
+"createdAt": "2025-01-30 16:34:58",
+"updatedAt": "2026-02-13T05:25:50.000000Z"
+},
+{
+"id": 9984,
+"title": "Data Desa Wisata",
+"description": "Dataset ini memiliki Indikator desa wisata yang diperhitungkan berdasarkan kategori di seluruh provinsi yang bersumber data dari Kementerian Pariwisata dan Ekonomi Kreatif/Badan Pariwisata dan Ekonomi Kreatif.",
+"slug": "data-desa-wisata",
+"tags": [
+"Desa Wisata",
+"pariwisata"
+],
+"views": 396,
+"datasetCount": 1,
+"createdAt": "2025-01-30 16:40:49",
+"updatedAt": "2026-02-13T05:24:51.000000Z"
+},
+{
+"id": 9980,
+"title": "Jumlah Penyelenggaraan Event",
+"description": "Indikator Jumlah Penyelenggaraan Event yang berskala daerah, nasional maupun internasional yang diselenggarakan di suatu provinsi. Data yang digunakan bersumber dari Kementerian Pariwisata dan Ekonomi Kreatif/Badan Pariwisata dan Ekonomi Kreatif serta Pemerintah Daerah.",
+"slug": "jumlah-penyelenggaraan-event",
+"tags": [
+"event",
+"pariwisata",
+"ekonomi kreatif"
+],
+"views": 335,
+"datasetCount": 1,
+"createdAt": "2025-01-30 11:09:10",
+"updatedAt": "2026-02-13T05:24:01.000000Z"
+},
+{
+"id": 9893,
+"title": "Jumlah Usaha Ekonomi Kreatif",
+"description": "Jumlah usaha ekonomi kreatif yang terdaftar di dalam direktori pelaku ekonomi kreatif",
+"slug": "jumlah-usaha-ekonomi-kreatif",
+"tags": [
+"ekonomi kreatif",
+"jumlah usaha"
+],
+"views": 367,
+"datasetCount": 1,
+"createdAt": "2024-12-24 07:17:55",
+"updatedAt": "2026-01-15T02:43:39.000000Z"
+},
+{
+"id": 9883,
+"title": "Persentase Pertumbuhan Usaha Ekonomi Kreatif di Provinsi DKI Jakarta",
+"description": "Dataset ini berisikan Persentase Pertumbuhan Usaha Ekonomi Kreatif di Provinsi DKI Jakarta",
+"slug": "persentase-pertumbuhan-usaha-ekonomi-kreatif-di-provinsi-dki-jakarta",
+"tags": [
+"Persentase Pertumbuhan Usaha Ekonomi Kreatif",
+"Provinsi DKI Jakarta"
+],
+"views": 274,
+"datasetCount": 1,
+"createdAt": "2024-12-20 16:06:46",
+"updatedAt": "2026-01-15T02:38:31.000000Z"
+},
+{
+"id": 10680,
+"title": "Jumlah Tenaga Kerja Pariwisata dan Ekonomi Kreatif yang Tersertifikasi",
+"description": "Jumlah tenaga kerja sektor pariwisata dan ekonomi kreatif yang lulus sertifikasi profesi oleh Lembaga Sertifikasi Profesi (LSP) melalui fasilitasi yang diberikan oleh Dinas Pariwisata dan Ekonomi Kreatif.",
+"slug": "jumlah-tenaga-kerja-pariwisata-dan-ekonomi-kreatif-yang-tersertifikasi",
+"tags": [
+"pariwisata",
+"tenaga kerja",
+"ekonomi kreatif"
+],
+"views": 376,
+"datasetCount": 1,
+"createdAt": "2026-01-07 14:40:35",
+"updatedAt": "2026-01-15T02:07:56.000000Z"
+},
+{
+"id": 8208,
+"title": "Jumlah Produk/Jasa Ekonomi Kreatif yang Didaftarkan Kekayaan Intelektualnya",
+"description": "Dataset ini berisikan data jumlah produk/jasa ekonomi kreatif yang didaftarkan kekayaan intelektualnya",
+"slug": "jumlah-produkjasa-ekonomi-kreatif-yang-didaftarkan-kekayaan-intelektualnya",
+"tags": [
+"produk",
+"ekonomi kreatif",
+"pariwisata"
+],
+"views": 380,
+"datasetCount": 1,
+"createdAt": "2024-01-02 08:18:48",
+"updatedAt": "2026-01-15T02:04:59.000000Z"
+},
+{
+"id": 9946,
+"title": "Nilai Ketertarikan Masyarakat Terhadap Pariwisata Provinsi DKI Jakarta",
+"description": "Nilai ketertarikan terhadap antara lain namun tidak terbatas pada event promosi serta produk promosi pariwisata DKI Jakarta",
+"slug": "nilai-ketertarikan-masyarakat-terhadap-pariwisata-provinsi-dki-jakarta",
+"tags": [
+"Ketertarikan Masyarakat",
+"Citra Pariwisata",
+"Pariwisata",
+"Event",
+"promosi pariwisata"
+],
+"views": 306,
+"datasetCount": 1,
+"createdAt": "2025-01-09 08:17:33",
+"updatedAt": "2026-01-14T09:56:32.000000Z"
+},
+{
+"id": 9423,
+"title": "Indeks Kepuasan Layanan Penunjang Urusan Pemerintahan Daerah pada Dinas Pariwisata dan Ekonomi Kreatif",
+"description": "Indeks kepuasan layanan penunjang urusan pemerintah daerah provinsi berdasarkan hasil survey kepuasan pelayanan, dengan nilai persepsi : Indeks 1 = 25,00 – 64,99 (tidak baik); Indeks 2 = 65,00 – 76,60 (kurang baik); Indeks 3 = 76,61 – 88,30 (baik); Indeks 4 = 88,31 – 100,00 (sangat baik).",
+"slug": "indeks-kepuasan-layanan-penunjang-urusan-pemerintahan-daerah-pada-dinas-pariwisata-dan-ekonomi-kreatif",
+"tags": [
+"indeks",
+"survei kepuasan",
+"layanan",
+"penunjang urusan",
+"pariwisata"
+],
+"views": 414,
+"datasetCount": 1,
+"createdAt": "2024-04-22 16:14:13",
+"updatedAt": "2025-11-14T03:44:07.000000Z"
+},
+{
+"id": 8892,
+"title": "Jumlah Kunjungan Wisatawan ke Obyek Wisata Unggulan Menurut Lokasi di Provinsi DKI Jakarta Tahun 2024",
+"description": "Data berikut ini berisikan data Jumlah Kunjungan Wisatawan ke Obyek Wisata Unggulan Menurut Lokasi di DKI Jakarta. Jumlah Wisatawan yang dimaksud yakni dihitung berdasarkan pada masing-masing objek wisata unggulan Jakarta yakni, Taman Impian Jaya Ancol, Monumen Nasional, Kawasan Kota Tua, Kepulauan Seribu, Taman Margasatwa Ragunan",
+"slug": "jumlah-kunjungan-wisatawan-ke-obyek-wisata-unggulan-menurut-lokasi-di-provinsi-dki-jakarta-tahun-2024",
+"tags": [
+"kunjungan",
+"wisatawan",
+"obyek wisata unggulan",
+"pariwisata"
+],
+"views": 773,
+"datasetCount": 1,
+"createdAt": "2024-02-28 14:36:45",
+"updatedAt": "2025-06-18T06:33:01.000000Z"
+},
+{
+"id": 8403,
+"title": "Jumlah Kunjungan Wisatawan ke Obyek Wisata Unggulan Menurut Lokasi di DKI Jakarta Tahun 2023",
+"description": "Jumlah Kunjungan Wisatawan ke Obyek Wisata Unggulan Menurut Lokasi di DKI Jakarta",
+"slug": "jumlah-kunjungan-wisatawan-ke-obyek-wisata-unggulan-menurut-lokasi-di-dki-jakarta-tahun-2023",
+"tags": [
+"destinasi wisata",
+"pariwisata",
+"Jakarta"
+],
+"views": 222,
+"datasetCount": 1,
+"createdAt": "2024-01-26 11:26:28",
+"updatedAt": "2025-06-18T06:32:35.000000Z"
+},
+{
+"id": 8209,
+"title": "Jumlah Tenaga Kerja Pariwisata dan Ekonomi Kreatif yang Tersertifikasi Tahun 2023 dan 2024",
+"description": "Dataset ini berisikan data jumlah tenaga kerja sektor pariwisata dan ekonomi kreatif yang lulus sertifikasi profesi oleh Lembaga Sertifikasi Profesi (LSP) melalui fasilitasi yang diberikan oleh Dinas Pariwisata dan Ekonomi Kreatif",
+"slug": "jumlah-tenaga-kerja-pariwisata-dan-ekonomi-kreatif-yang-tersertifikasi-tahun-2023-dan-2024",
+"tags": [
+"pariwisata",
+"tenaga kerja",
+"ekonomi kreatif"
+],
+"views": 230,
+"datasetCount": 1,
+"createdAt": "2024-01-02 08:31:42",
+"updatedAt": "2025-05-15T08:56:47.000000Z"
+},
+{
+"id": 10304,
+"title": "Data Pemberian Rekomendasi Penyelenggaraan Pertunjukan Musik",
+"description": "Data Pemberian Rekomendasi Penyelenggaraan Pertunjukan Musik berisikan data pemberian dukungan kepada penyelenggara pertunjukan musik yang dilaksanakan",
+"slug": "data-pemberian-rekomendasi-penyelenggaraan-pertunjukan-musik",
+"tags": [
+"pertunjukan musik",
+"konser"
+],
+"views": 251,
+"datasetCount": 1,
+"createdAt": "2025-04-11 15:52:11",
+"updatedAt": "2025-04-29T13:03:06.000000Z"
+},
+{
+"id": 8912,
+"title": "Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke Tourist Information Center (TIC) Provinsi DKI Jakarta Tahun 2024",
+"description": "Data ini berisikan Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke Tourist Information Center (TIC) Provinsi DKI Jakarta di mana data ini melakukan rekapitulasi data Wisatawan Lokal dan Mancanegara Pengunjung TIC yang dikelola dan disediakan oleh Dinas Pariwisata dan Ekonomi Kreatif Provinsi DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-nusantara-dan-wisatawan-mancanegara-ke-tourist-information-center-tic-provinsi-dki-jakarta-tahun-2024",
+"tags": [
+"Wisatawan Nusantara",
+"Wisatawan Mancanegara",
+"Tourist Information Center (TIC)",
+"pariwisata"
+],
+"views": 293,
+"datasetCount": 1,
+"createdAt": "2024-02-29 14:49:13",
+"updatedAt": "2025-02-20T03:29:19.000000Z"
+},
+{
+"id": 8214,
+"title": "Jumlah Usaha Ekonomi Kreatif Tahun 2023",
+"description": "Dataset ini berisikan data jumlah usaha ekonomi kreatif yang terdaftar di dalam direktori pelaku ekonomi kreatif",
+"slug": "jumlah-usaha-ekonomi-kreatif-tahun-2023",
+"tags": [
+"usaha ekonomi kreatif",
+"pariwisata"
+],
+"views": 173,
+"datasetCount": 1,
+"createdAt": "2024-01-02 09:44:22",
+"updatedAt": "2024-12-23T09:03:50.000000Z"
+},
+{
+"id": 3932,
+"title": "Jumlah Pengunjung e-Tourism Tahun 2023",
+"description": "Data berupa Jumlah kunjungan pada website resmi disparekraf.jakarta.go.id dan jakarta-tourism.go.id ditambah jumlah suka dan komentar pada unggahan di media sosial resmi yang dikelola oleh Dinas Pariwisata dan Ekonomi Kreatif yaitu @disparekrafdki dan @jakarta_tourism",
+"slug": "jumlah-pengunjung-e-tourism-tahun-2023",
+"tags": [
+"e-tourism",
+"sosial media",
+"jakarta tourism",
+"disparekraf"
+],
+"views": 176,
+"datasetCount": 1,
+"createdAt": "2023-03-31 14:06:07",
+"updatedAt": "2024-10-01T07:13:30.000000Z"
+},
+{
+"id": 4779,
+"title": "Nilai Kepuasan Pengunjung Objek Wisata Tahun 2023",
+"description": "Data ini berdasarkan hasil Survei Kepuasan Masyarakat. Rata-rata hasil survey kepuasan pengunjung yang dilakukan oleh Dinas Pariwisata dan Ekonomi Kreatif setiap tahun terhadap objek wisata. Lokasi objek wisata yang disurvey sama setiap tahunnya. Pengukuran tingkat kepuasan pengunjung menggunakan skala 1-100.",
+"slug": "nilai-kepuasan-pengunjung-objek-wisata-tahun-2023",
+"tags": [
+"nilai kepuasan",
+"pengunjung",
+"objek wisata"
+],
+"views": 480,
+"datasetCount": 1,
+"createdAt": "2023-05-11 13:27:52",
+"updatedAt": "2024-09-30T03:53:28.000000Z"
+},
+{
+"id": 536,
+"title": "Data Kunjungan Wisatawan Nusantara DKI Jakarta",
+"description": "Dataset ini berisi mengenai data kunjungan wisatawan nusantara DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-nusantara-dki-jakarta",
+"tags": [
+"2014",
+"Kunjungan Wisatawan Nusantara",
+"DKI JAKARTA",
+"Dataset"
+],
+"views": 279,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:15:28",
+"updatedAt": "2024-09-18T02:48:14.000000Z"
+},
+{
+"id": 696,
+"title": "Data Penerimaan Pendapatan Asli Daerah DKI Jakarta",
+"description": "Dataset ini berisi mengenai data penerimaan pendataan asli daerah DKI Jakarta",
+"slug": "data-penerimaan-pendapatan-asli-daerah-dki-jakarta",
+"tags": [
+"Dataset",
+"Pendapatan Asli Daerah",
+"DKI JAKARTA"
+],
+"views": 226,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:16:15",
+"updatedAt": "2024-09-18T02:38:55.000000Z"
+},
+{
+"id": 472,
+"title": "Data Usaha Jasa Makanan Minuman Food Court",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Makanan Minuman Jenis Usaha Food Court Di DKI Jakarta Tahun 2014",
+"slug": "data-usaha-jasa-makanan-minuman-food-court",
+"tags": [
+"2014",
+"Jasa Makanan dan Minuman",
+"Food Court",
+"DKI JAKARTA"
+],
+"views": 312,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:41:29",
+"updatedAt": "2024-09-18T02:24:14.000000Z"
+},
+{
+"id": 333,
+"title": "Data Usaha Jasa Akomodasi Di DKI Jakarta Tahun 2014",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Akomodasi Jenis Usaha Hotel Bintang Di DKI Jakarta Tahun 2014",
+"slug": "data-usaha-jasa-akomodasi-di-dki-jakarta-tahun-2014",
+"tags": [
+"Jasa Akomodasi",
+"Data Usaha",
+"Usaha Jasa Akomodasi"
+],
+"views": 162,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:13:59",
+"updatedAt": "2024-09-18T02:03:19.000000Z"
+},
+{
+"id": 4688,
+"title": "Persentase Pertumbuhan PDRB Sektor Pariwisata (Akomodasi dan Makan Minum) Tahun 2023",
+"description": "Data ini merupakan data terkait Persentase Pertumbuhan PDRB menurut Lapangan Usaha Penyediaan Akomodasi dan Makan Minum yang dihimpun dari Badan Pusat Statistik. \r\nNilai Rupiah PDRB dalam Milyar",
+"slug": "persentase-pertumbuhan-pdrb-sektor-pariwisata-akomodasi-dan-makan-minum-tahun-2023",
+"tags": [
+"pdrb"
+],
+"views": 162,
+"datasetCount": 1,
+"createdAt": "2023-05-05 16:17:19",
+"updatedAt": "2024-09-12T07:29:03.000000Z"
+},
+{
+"id": 4656,
+"title": "Jumlah Pengunjung Event Tahun 2023",
+"description": "Data berupa Jumlah pengunjung event yang diselenggarakan, difasilitasi, maupun diikuti oleh Dinas Pariwisata dan Ekonomi Kreatif.",
+"slug": "jumlah-pengunjung-event-tahun-2023",
+"tags": [
+"event",
+"pengunjung"
+],
+"views": 241,
+"datasetCount": 1,
+"createdAt": "2023-05-05 09:19:01",
+"updatedAt": "2024-05-13T05:54:24.000000Z"
+},
+{
+"id": 8213,
+"title": "Persentase Pertumbuhan Usaha Ekonomi Kreatif di DKI Jakarta Tahun 2023",
+"description": "Dataset ini berisikan data pertumbuhan usaha ekonomi kreatif di DKI Jakarta. Pertumbuhan usaha ekonomi kreatif dapat dilihat dari omset, proxy dari konsumsi, dan/atau proxy dari produksi.",
+"slug": "persentase-pertumbuhan-usaha-ekonomi-kreatif-di-dki-jakarta-tahun-2023",
+"tags": [
+"pertumbuhan",
+"usaha",
+"ekonomi kreatif",
+"pariwisata"
+],
+"views": 170,
+"datasetCount": 1,
+"createdAt": "2024-01-02 08:53:54",
+"updatedAt": "2024-04-29T08:44:57.000000Z"
+},
+{
+"id": 8207,
+"title": "Nilai Ketertarikan Masyarakat Terhadap Pariwisata DKI Jakarta Tahun 2023",
+"description": "Dataset ini berisikan data survey nilai ketertarikan masyarakat terhadap pariwisata DKI Jakarta antara lain namun tidak terbatas pada event promosi, publikasi dan jumlah media digital yang dimiliki Disparekraf sebagai wadah promosi, serta produk promosi pariwisata DKI Jakarta.",
+"slug": "nilai-ketertarikan-masyarakat-terhadap-pariwisata-dki-jakarta-tahun-2023",
+"tags": [
+"Pariwisata",
+"Ketertarikan Masyarakat"
+],
+"views": 156,
+"datasetCount": 1,
+"createdAt": "2024-01-02 07:58:29",
+"updatedAt": "2024-04-29T08:03:38.000000Z"
+},
+{
+"id": 3585,
+"title": "Data Jumlah Wisatawan Mancanegara Berdasarkan Kebangsaan Tahun 2023",
+"description": "Data kunjungan wisatawan mancanegara ditinjau dari kebangsaannya melalui 2 pintu masuk yaitu Bandara Soekarno Hatta dan Bandara Halim Perdana Kusuma. Data ini sewaktu-waktu bisa berubah karena adanya perubahan dari sumber data Badan Pusat Statistik",
+"slug": "data-jumlah-wisatawan-mancanegara-berdasarkan-kebangsaan-tahun-2023",
+"tags": [
+"kunjungan",
+"wisatawan mancanegara"
+],
+"views": 150,
+"datasetCount": 1,
+"createdAt": "2023-03-16 10:23:50",
+"updatedAt": "2024-03-28T02:08:01.000000Z"
+},
+{
+"id": 3768,
+"title": "Data Rata-rata Tingkat Hunian Kamar pada Hotel Berbintang di DKI Jakarta Tahun 2023",
+"description": "Data Tingkat Penghunian Kamar Hotel Bintang Menurut Klasifikasi Hotel yaitu Hotel Bintang 1, Bintang 2, Bintang 3, Bintang 4 dan Bintang 5 yang di DKI Jakarta menurut Badan Pusat Statistik",
+"slug": "data-rata-rata-tingkat-hunian-kamar-pada-hotel-berbintang-di-dki-jakarta-tahun-2023",
+"tags": [
+"Tingkat Penghunian Kamar",
+"Tingkat Penghunian Hotel",
+"Hotel"
+],
+"views": 152,
+"datasetCount": 1,
+"createdAt": "2023-03-28 08:57:01",
+"updatedAt": "2024-03-26T01:45:32.000000Z"
+},
+{
+"id": 403,
+"title": "Data Rata-Rata Tingkat Hunian Kamar Pada Hotel Berbintang di Provinsi DKI Jakarta Tahun 2011-2018",
+"description": "Dataset ini berisi mengenai Data Rata-Rata Tingkat Hunian Kamar Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"slug": "data-rata-rata-tingkat-hunian-kamar-pada-hotel-berbintang-di-provinsi-dki-jakarta-tahun-2011-2018",
+"tags": [
+"2014",
+"Hotel Berbintang",
+"DKI Jakarta"
+],
+"views": 128,
+"datasetCount": 1,
+"createdAt": "2022-12-28 07:00:37",
+"updatedAt": "2024-03-26T01:44:25.000000Z"
+},
+{
+"id": 4706,
+"title": "Jumlah Usaha Pariwisata yang Memiliki Perizinan",
+"description": "Data ini berisi data jumlah usaha pariwisata yang memiliki Nomor Induk Berusaha (NIB).",
+"slug": "jumlah-usaha-pariwisata-yang-memiliki-perizinan",
+"tags": [
+"pariwisata",
+"usaha pariwisata",
+"KBLI",
+"usaha pariwisata KBLI"
+],
+"views": 254,
+"datasetCount": 1,
+"createdAt": "2023-05-08 11:21:40",
+"updatedAt": "2024-03-22T05:06:10.000000Z"
+},
+{
+"id": 6341,
+"title": "Data Industri Pariwisata",
+"description": "Dataset ini berisikan Data Industri Pariwisata dengan Data Usaha daya tarik wisata (bidang usaha daya tarik wisata)",
+"slug": "data-industri-pariwisata",
+"tags": [
+"KBLI",
+"Industri Pariwisata",
+"TDUP",
+"NIB"
+],
+"views": 346,
+"datasetCount": 1,
+"createdAt": "2023-08-03 09:57:41",
+"updatedAt": "2024-03-22T05:04:52.000000Z"
+},
+{
+"id": 4655,
+"title": "Indeks Kepuasan Layanan Penunjang Urusan Pemerintahan Daerah Dinas Pariwisata dan Ekonomi Kreatif Tahun 2023",
+"description": "Indeks kepuasan layanan penunjang urusan pemerintah daerah provinsi berdasarkan hasil survey kepuasan pelayanan, dengan nilai persepsi : Indeks 1 = 25,00 – 64,99 (tidak baik); Indeks 2 = 65,00 – 76,60 (kurang baik); Indeks 3 = 76,61 – 88,30 (baik); Indeks 4 = 88,31 – 100,00 (sangat baik).\r\n\r\nCatatan : untuk TW I tidak dilaksanakan",
+"slug": "indeks-kepuasan-layanan-penunjang-urusan-pemerintahan-daerah-dinas-pariwisata-dan-ekonomi-kreatif-tahun-2023",
+"tags": [
+"survei",
+"kepuasan layanan"
+],
+"views": 302,
+"datasetCount": 1,
+"createdAt": "2023-05-05 09:09:54",
+"updatedAt": "2024-03-20T04:39:54.000000Z"
+},
+{
+"id": 3608,
+"title": "Data Pendapatan Asli Daerah (PAD) Sektor Pariwisata Tahun 2023",
+"description": "Data kontribusi sektor pariwisata diantaranya pajak hotel, pajak restoran, pajak hiburan pada PAD Provinsi DKI Jakarta",
+"slug": "data-pendapatan-asli-daerah-pad-sektor-pariwisata-tahun-2023",
+"tags": [
+"PAD",
+"sektor pariwisata",
+"pajak hotel",
+"pajak hiburan",
+"pajak restoran"
+],
+"views": 211,
+"datasetCount": 1,
+"createdAt": "2023-03-17 10:13:53",
+"updatedAt": "2024-03-04T09:00:55.000000Z"
+},
+{
+"id": 3623,
+"title": "Data Rata-rata Lama Menginap Wisatawan Mancanegara pada Hotel Berbintang di DKI Jakarta",
+"description": "Data Rata-rata Lama Menginap Tamu asing yang menginap di hotel bintang di DKI Jakarta berdasarkan klasifikasinya yaitu Bintang 5, Bintang 4, Bintang 3, Bintang 2, dan Bintang 1.",
+"slug": "data-rata-rata-lama-menginap-wisatawan-mancanegara-pada-hotel-berbintang-di-dki-jakarta",
+"tags": [
+"lama menginap",
+"wisatawan mancanegara",
+"hotel berbintang"
+],
+"views": 187,
+"datasetCount": 1,
+"createdAt": "2023-03-17 16:15:55",
+"updatedAt": "2024-02-29T10:06:01.000000Z"
+},
+{
+"id": 3605,
+"title": "Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke TIC DKI Jakarta Tahun 2023",
+"description": "Data Rekapitulasi Wisatawan Lokal dan Mancanegara Pengunjung TIC yang dikelola dan disediakan oleh Dinas Pariwisata dan Ekonomi Kreatif Provinsi DKI Jakarta yaitu, Djakarta Theater, Bandara Soekarno Hatta, Bandara Halim Perdana Kusuma, Monumen Nasional, TIC Mobile, Kota Tua, dan Stasiun Gambir",
+"slug": "data-kunjungan-wisatawan-nusantara-dan-wisatawan-mancanegara-ke-tic-dki-jakarta-tahun-2023",
+"tags": [
+"Tourist Information Center",
+"wisatawan",
+"mancanegara"
+],
+"views": 193,
+"datasetCount": 1,
+"createdAt": "2023-03-16 15:15:45",
+"updatedAt": "2024-02-29T04:00:02.000000Z"
+},
+{
+"id": 4710,
+"title": "Data Resto, Cafe dan Cakes",
+"description": "Dataset ini berisikan data jumlah usaha resto, cafe, dan cakes yang berlokasi di DKI Jakarta",
+"slug": "data-resto-cafe-dan-cakes",
+"tags": [
+"usaha pariwisata",
+"kbli",
+"usaha pariwisata kbli",
+"resto",
+"cafe",
+"cakes"
+],
+"views": 538,
+"datasetCount": 1,
+"createdAt": "2023-05-08 14:56:20",
+"updatedAt": "2024-02-21T05:08:20.000000Z"
+},
+{
+"id": 8421,
+"title": "jumlah usaha pariwisata bidang hiburan dan rekreasi menurut jenis usaha di DKI Jakarta",
+"description": "jumlah usaha pariwisata bidang hiburan dan rekreasi menurut jenis usaha di DKI Jakarta",
+"slug": "jumlah-usaha-pariwisata-bidang-hiburan-dan-rekreasi-menurut-jenis-usaha-di-dki-jakarta",
+"tags": [
+"pariwisata"
+],
+"views": 259,
+"datasetCount": 1,
+"createdAt": "2024-01-29 17:36:15",
+"updatedAt": "2024-02-06T03:20:36.000000Z"
+},
+{
+"id": 8422,
+"title": "jumlah usaha pariwisata bidang rumah makan dan kantin menurut kecamatan di DKI Jakarta",
+"description": "jumlah usaha pariwisata bidang rumah makan dan kantin menurut kecamatan di DKI Jakarta",
+"slug": "jumlah-usaha-pariwisata-bidang-rumah-makan-dan-kantin-menurut-kecamatan-di-dki-jakarta",
+"tags": [
+"pariwisata",
+"rumah makan",
+"kantin",
+"usaha pariwisata"
+],
+"views": 340,
+"datasetCount": 1,
+"createdAt": "2024-01-29 17:41:25",
+"updatedAt": "2024-02-06T03:19:44.000000Z"
+},
+{
+"id": 8212,
+"title": "Data Sumber Daya Manusia (SDM) yang Bekerja di Bidang Industri Pariwisata",
+"description": "Dataset ini berisikan Data Sumber Daya Manusia yang bekerja di sektor industri pariwisata",
+"slug": "data-sumber-daya-manusia-sdm-yang-bekerja-di-bidang-industri-pariwisata",
+"tags": [
+"sumber daya manusia",
+"pariwisata",
+"industri pariwisata"
+],
+"views": 206,
+"datasetCount": 1,
+"createdAt": "2024-01-02 08:46:19",
+"updatedAt": "2024-01-26T08:34:42.000000Z"
+},
+{
+"id": 8230,
+"title": "Data Usaha Hiburan dan Rekreasi di DKI Jakarta",
+"description": "Dataset ini berisikan data usaha pariwisata bidang usaha Hiburan dan Rekreasi di DKI Jakarta",
+"slug": "data-usaha-hiburan-dan-rekreasi-di-dki-jakarta",
+"tags": [
+"usaha pariwisata",
+"hiburan",
+"rekreasi",
+"pariwisata"
+],
+"views": 432,
+"datasetCount": 1,
+"createdAt": "2024-01-03 11:05:45",
+"updatedAt": "2024-01-26T08:23:48.000000Z"
+},
+{
+"id": 8211,
+"title": "Data Golf",
+"description": "Data lokasi lapangan golf yang ada di DKI Jakarta",
+"slug": "data-golf",
+"tags": [
+"Golf",
+"pariwisata"
+],
+"views": 144,
+"datasetCount": 1,
+"createdAt": "2024-01-02 08:36:40",
+"updatedAt": "2024-01-26T08:19:36.000000Z"
+},
+{
+"id": 7060,
+"title": "Data Usaha Hiburan Dan Rekreasi Di DKI Jakarta 2018",
+"description": "Data mengenai Usaha Hiburan Dan Rekreasl Di Provinsi DKI Jakarta Tahun 2006-2018.",
+"slug": "data-usaha-hiburan-dan-rekreasi-di-dki-jakarta-2018",
+"tags": [
+"2008",
+"2010",
+"hiburan"
+],
+"views": 155,
+"datasetCount": 1,
+"createdAt": "2023-10-09 13:32:43",
+"updatedAt": "2024-01-03T01:36:19.000000Z"
+},
+{
+"id": 3568,
+"title": "Data Jumlah Rekapitulasi Usaha dan Kamar Hotel",
+"description": "Data ini berisi Jumlah Rekapitulasi Usaha pariwisata bidang usaha penyediaan akomodasi jenis hotel dan jumlah kamar yang ada di DKI Jakarta",
+"slug": "data-jumlah-rekapitulasi-usaha-dan-kamar-hotel",
+"tags": [
+"jumlah kamar",
+"usaha pariwisata"
+],
+"views": 282,
+"datasetCount": 1,
+"createdAt": "2023-03-15 15:31:08",
+"updatedAt": "2023-12-29T07:48:39.000000Z"
+},
+{
+"id": 7297,
+"title": "Data Penyelenggaraan Event Pariwisata dan Budaya DKI Jakarta",
+"description": "Data mengenai Penyelenggaraan Event Pariwisata dan Budaya DKI Jakarta Tahun 2014.",
+"slug": "data-penyelenggaraan-event-pariwisata-dan-budaya-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Event",
+"Budaya"
+],
+"views": 219,
+"datasetCount": 1,
+"createdAt": "2023-10-26 15:33:17",
+"updatedAt": "2023-12-20T08:44:29.000000Z"
+},
+{
+"id": 7294,
+"title": "Data Event Pariwisata dan Kebudayaan DKI Jakarta 2011-2019",
+"description": "Data ini Berisi Mengenai Data Event Pariwisata dan Kebudayaan DKI Jakarta",
+"slug": "data-event-pariwisata-dan-kebudayaan-dki-jakarta-2011-2019",
+"tags": [
+"Pariwisata",
+"Kebudayaan",
+"Event"
+],
+"views": 247,
+"datasetCount": 1,
+"createdAt": "2023-10-26 14:41:13",
+"updatedAt": "2023-12-20T08:44:14.000000Z"
+},
+{
+"id": 286,
+"title": "Data Inbound Outbound Melalui Pintu Soekarno Hatta DKI Jakarta",
+"description": "Data mengenai Inbound Outbound Melalui Pintu Soekarno Hatta DKI Jakarta Tahun 2014.",
+"slug": "data-inbound-outbound-melalui-pintu-soekarno-hatta-dki-jakarta",
+"tags": [
+"2014",
+"Penumpang",
+"Soekarno Hatta",
+"DKI JAKARTA"
+],
+"views": 126,
+"datasetCount": 1,
+"createdAt": "2022-12-27 08:19:45",
+"updatedAt": "2023-12-20T08:43:36.000000Z"
+},
+{
+"id": 7043,
+"title": "Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke TIC DKI Jakarta Tahun 2018",
+"description": "Data ini berisi mengenai Data Kunjungan Wisatawan Nusantara dan Mancanegara Ke Lokasi Tourist Information Center",
+"slug": "data-kunjungan-wisatawan-nusantara-dan-wisatawan-mancanegara-ke-tic-dki-jakarta-tahun-2018",
+"tags": [
+"Pariwisata",
+"DKI Jakarta"
+],
+"views": 150,
+"datasetCount": 1,
+"createdAt": "2023-10-06 16:22:23",
+"updatedAt": "2023-12-19T01:34:31.000000Z"
+},
+{
+"id": 7477,
+"title": "Data Pengunjung TIC Bandara Soetta UPT Pusat Pengembangan Dan Pelayanan Informasi Pariwisata DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Pengunjung TIC Bandara Soetta Upt Pusat Pengembangan Dan Pelayanan Informasi Pariwisata DKI Jakarta",
+"slug": "data-pengunjung-tic-bandara-soetta-upt-pusat-pengembangan-dan-pelayanan-informasi-pariwisata-dki-jakarta",
+"tags": [
+"Data Pengunjung TIC Bandara Soetta",
+"Pengunjung",
+"UPT Pusat Pengembangan dan Pelayanan Informasi Pariwisata",
+"TIC Bandara Soetta"
+],
+"views": 177,
+"datasetCount": 1,
+"createdAt": "2023-11-27 14:55:57",
+"updatedAt": "2023-12-08T08:20:17.000000Z"
+},
+{
+"id": 7518,
+"title": "Data Pengunjung TIC UPT Pusat Pengembangan Dan Pelayanan Informasi Pariwisata",
+"description": "Dataset ini berisi mengenai Data Pengunjung TIC Monas Upt Pusat Pengembangan Dan Pelayanan Informasi Pariwisata Dki Jakarta",
+"slug": "data-pengunjung-tic-upt-pusat-pengembangan-dan-pelayanan-informasi-pariwisata",
+"tags": [
+"Pengunjung TIC",
+"UPT Pusat Pengembangan",
+"Pusat Pelayanan Informasi Pariwisata"
+],
+"views": 151,
+"datasetCount": 1,
+"createdAt": "2023-12-01 07:27:19",
+"updatedAt": "2023-12-06T08:54:05.000000Z"
+},
+{
+"id": 7516,
+"title": "Data Pengunjung Tourist Information Center TIC Up Kawasan Kota Tua DKI Jakarta",
+"description": "Dataset ini berisi mengenai data pengunjung Tourist Information Center TIC Up Kawasan Kota Tua DKI Jakarta",
+"slug": "data-pengunjung-tourist-information-center-tic-up-kawasan-kota-tua-dki-jakarta",
+"tags": [
+"Pengunjung",
+"Tourist Information Center",
+"TIC",
+"Kota Tua"
+],
+"views": 305,
+"datasetCount": 1,
+"createdAt": "2023-11-30 12:14:23",
+"updatedAt": "2023-11-30T05:17:09.000000Z"
+},
+{
+"id": 7515,
+"title": "Data Jumlah Kunjungan Dan Pertumbuhan Wisatawan Mancanegara ke Indonesia berdasarkan Wilayah",
+"description": "Dataset ini berisi mengenai Jumlah Kunjungan Dan Pertumbuhan Wisatawan Mancanegara ke Indonesia",
+"slug": "data-jumlah-kunjungan-dan-pertumbuhan-wisatawan-mancanegara-ke-indonesia-berdasarkan-wilayah",
+"tags": [
+"Jumlah",
+"Jumlah Kunjungan",
+"Pertumbuhan",
+"Wisatawan Mancanegara",
+"Pertumbuhan Wisatawan"
+],
+"views": 185,
+"datasetCount": 1,
+"createdAt": "2023-11-30 11:39:18",
+"updatedAt": "2023-11-30T05:17:04.000000Z"
+},
+{
+"id": 7514,
+"title": "Data Jumlah Kunjungan Dan Pertumbuhan Wisatawan Mancanegara ke Indonesia berdasarkan Bulan",
+"description": "Dataset ini berisi mengenai Jumlah Kunjungan Dan Pertumbuhan Wisatawan Mancanegara ke Indonesia",
+"slug": "data-jumlah-kunjungan-dan-pertumbuhan-wisatawan-mancanegara-ke-indonesia-berdasarkan-bulan",
+"tags": [
+"Jumlah",
+"Jumlah Kunjungan",
+"Pertumbuhan",
+"Pertumbuhan Wisata",
+"Mancanegara"
+],
+"views": 209,
+"datasetCount": 1,
+"createdAt": "2023-11-30 11:29:42",
+"updatedAt": "2023-11-30T05:16:58.000000Z"
+},
+{
+"id": 7509,
+"title": "Data Rata-Rata Lama Menginap Wisman Di Hotel Berbintang Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Rata-Rata Lama Menginap Wisman Di Hotel Berbintang Di DKI Jakarta",
+"slug": "data-rata-rata-lama-menginap-wisman-di-hotel-berbintang-di-dki-jakarta",
+"tags": [
+"Rata-Rata",
+"Lama Menginap",
+"Hotel Berbintang"
+],
+"views": 134,
+"datasetCount": 1,
+"createdAt": "2023-11-30 10:48:43",
+"updatedAt": "2023-11-30T04:12:25.000000Z"
+},
+{
+"id": 7510,
+"title": "Data Target Kunjungan Wisata Mancanegara ke Jakarta",
+"description": "Data ini berisi mengenai Data Target Kunjungan Wisata Mancanegara ke Jakarta",
+"slug": "data-target-kunjungan-wisata-mancanegara-ke-jakarta",
+"tags": [
+"Target",
+"Target Kunjungan",
+"Wisata",
+"Wisata Mancanegara"
+],
+"views": 151,
+"datasetCount": 1,
+"createdAt": "2023-11-30 10:58:06",
+"updatedAt": "2023-11-30T04:12:18.000000Z"
+},
+{
+"id": 7511,
+"title": "Data Jumlah Peserta Pelatihan Profesi Kepariwisataan di Provinsi DKI Jakarta",
+"description": "Data ini Berisi Mengenai Data Jumlah Peserta Pelatihan Profesi Kepariwisataan di Provinsi DKI Jakarta",
+"slug": "data-jumlah-peserta-pelatihan-profesi-kepariwisataan-di-provinsi-dki-jakarta",
+"tags": [
+"Jumlah Peserta",
+"Peserta Pelatihan",
+"Profesi",
+"Profesi Kepariwisataan"
+],
+"views": 200,
+"datasetCount": 1,
+"createdAt": "2023-11-30 11:05:47",
+"updatedAt": "2023-11-30T04:12:11.000000Z"
+},
+{
+"id": 264,
+"title": "Kunjungan Wisatawan Mancanegara Ke DKI Jakarta Menurut Pintu Masuk Tahun 2015",
+"description": "Dataset ini menampilkan Data Kunjungan Wisatawan Mancanegara Ke DKI Jakarta menurut 3 Pintu Masuk Yaitu Bandara Udara Soekarno Hatta, Pelabuhan Tanjung Priok dan Bandara Udara Halim Perdana Kusuma Tahun 2015.",
+"slug": "kunjungan-wisatawan-mancanegara-ke-dki-jakarta-menurut-pintu-masuk-tahun-2015",
+"tags": [
+"Kunjungan",
+"Wisatawan Mancanegara",
+"Pintu Masuk"
+],
+"views": 160,
+"datasetCount": 1,
+"createdAt": "2022-12-27 07:28:46",
+"updatedAt": "2023-11-30T02:00:29.000000Z"
+},
+{
+"id": 7501,
+"title": "Data Jumlah Kunjungan Wisman Ke Indonesia Berdasarkan Pintu Masuk Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Jumlah Kunjungan Wisman Ke Indonesia Berdasarkan Pintu Masuk Di DKI Jakarta",
+"slug": "data-jumlah-kunjungan-wisman-ke-indonesia-berdasarkan-pintu-masuk-di-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Wisatawan Mancanegara",
+"Wisman"
+],
+"views": 179,
+"datasetCount": 1,
+"createdAt": "2023-11-29 11:02:47",
+"updatedAt": "2023-11-29T04:09:29.000000Z"
+},
+{
+"id": 541,
+"title": "Data Stakeholder Pariwisata DKI Jakarta",
+"description": "Dataset ini berisi mengenai data stakeholder pariwisata DKI Jakarta Pemerintahan Provinsi DKI Jakarta",
+"slug": "data-stakeholder-pariwisata-dki-jakarta",
+"tags": [
+"Stakeholder",
+"Pariwisata",
+"Stakeholder Pariwisata"
+],
+"views": 97,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:22:32",
+"updatedAt": "2023-11-27T07:16:32.000000Z"
+},
+{
+"id": 7436,
+"title": "Data PAD Pariwisata DKI Jakarta Tahun 2010",
+"description": "Dataset ini berisi mengenai Data PAD Pariwisata DKI Jakarta Tahun 2010",
+"slug": "data-pad-pariwisata-dki-jakarta-tahun-2010",
+"tags": [
+"Data",
+"PAD",
+"Pariwisata",
+"DKI",
+"Jakarta",
+"Tahun",
+"2010"
+],
+"views": 152,
+"datasetCount": 1,
+"createdAt": "2023-11-22 14:40:01",
+"updatedAt": "2023-11-22T07:41:52.000000Z"
+},
+{
+"id": 7416,
+"title": "Data Pengunjung TIC Kota Tua UPT Pusat Pengembangan Dan Pelayanan Informasi Pariwisata Dki Jakarta",
+"description": "Dataset ini berisi mengenai Data Pengunjung TIC Kota Tua Upt Pusat Pengembangan Dan Pelayanan Informasi Pariwisata Dki Jakarta",
+"slug": "data-pengunjung-tic-kota-tua-upt-pusat-pengembangan-dan-pelayanan-informasi-pariwisata-dki-jakarta",
+"tags": [
+"Data",
+"Pengunjung",
+"TIC",
+"Kota",
+"Tua",
+"UPT",
+"Pusat",
+"Pengembangan",
+"Dan",
+"Pelayanan",
+"Informasi",
+"Pariwisata",
+"Dki",
+"Jakarta"
+],
+"views": 197,
+"datasetCount": 1,
+"createdAt": "2023-11-21 10:13:42",
+"updatedAt": "2023-11-21T03:21:56.000000Z"
+},
+{
+"id": 7414,
+"title": "Data Pengunjung TIC Jakarta Theter UPT Pusat Pengembangan Dan Pelayanan Informasi Pariwisata DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Pengunjung TIC Jakarta Theter Upt Pusat Pengembangan Dan Pelayanan Informasi Pariwisata Dki Jakarta",
+"slug": "data-pengunjung-tic-jakarta-theter-upt-pusat-pengembangan-dan-pelayanan-informasi-pariwisata-dki-jakarta",
+"tags": [
+"Data",
+"Pengunjung",
+"TIC",
+"Jakarta",
+"Theter",
+"UPT",
+"Pusat",
+"Pengembangan",
+"Dan",
+"Pelayanan",
+"Informasi",
+"Pariwisata",
+"DKI",
+"Jakarta"
+],
+"views": 165,
+"datasetCount": 1,
+"createdAt": "2023-11-20 15:01:46",
+"updatedAt": "2023-11-21T02:37:28.000000Z"
+},
+{
+"id": 7409,
+"title": "Data Jumlah Kunjungan Wisman Indonesia Jakarta Dan Share Wisman Jakarta Terhadap Indonesia Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Jumlah Kunjungan Wisman Indonesia Jakarta Dan Share Wisman Jakarta Terhadap Indonesia Di DKI Jakarta",
+"slug": "data-jumlah-kunjungan-wisman-indonesia-jakarta-dan-share-wisman-jakarta-terhadap-indonesia-di-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Wisatawan Mancanegara",
+"Kunjungan"
+],
+"views": 142,
+"datasetCount": 1,
+"createdAt": "2023-11-20 13:23:10",
+"updatedAt": "2023-11-20T06:27:14.000000Z"
+},
+{
+"id": 7403,
+"title": "Data Penyelenggaraan Event Pariwisata dan Budaya DKI Jakarta 2015",
+"description": "Data ini menyediakan Informasi Tentang Penyelenggaraan Event Pariwisata dan Budaya DKI Jakarta.",
+"slug": "data-penyelenggaraan-event-pariwisata-dan-budaya-dki-jakarta-2015",
+"tags": [
+"Data",
+"Penyelenggaraan",
+"Event",
+"Pariwisata",
+"dan",
+"Budaya",
+"DKI",
+"Jakarta",
+"2015"
+],
+"views": 213,
+"datasetCount": 1,
+"createdAt": "2023-11-20 09:13:13",
+"updatedAt": "2023-11-20T02:16:34.000000Z"
+},
+{
+"id": 7396,
+"title": "Data Penerimaan Retribusi Daerah Dinas Pariwisata Kebudayaan Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Penerimaan Retribusi Daerah Dinas Pariwisata Kebudayaan Provinsi DKI Jakarta",
+"slug": "data-penerimaan-retribusi-daerah-dinas-pariwisata-kebudayaan-provinsi-dki-jakarta",
+"tags": [
+"Data",
+"Penerimaan",
+"Retribusi",
+"Daerah",
+"Dinas",
+"Pariwisata",
+"Kebudayaan",
+"Provinsi",
+"DKI",
+"Jakarta"
+],
+"views": 149,
+"datasetCount": 1,
+"createdAt": "2023-11-17 14:32:04",
+"updatedAt": "2023-11-17T07:34:39.000000Z"
+},
+{
+"id": 7317,
+"title": "Data Rata-Rata Lama Menginap Wisatawan Nusantara Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Rata-Rata Lama Menginap Wisatawan Nusantara Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"slug": "data-rata-rata-lama-menginap-wisatawan-nusantara-pada-hotel-berbintang-di-provinsi-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Wisatawan Nusantara",
+"Hotel Berbintang"
+],
+"views": 187,
+"datasetCount": 1,
+"createdAt": "2023-11-07 14:18:35",
+"updatedAt": "2023-11-16T08:48:49.000000Z"
+},
+{
+"id": 7346,
+"title": "Data Potensi Daya Tarik Wisata Unggulan Provinsi DKI Jakarta",
+"description": "Dataset ini menampilkan daftar tempat wisata yang menjadi potensi Data Tarik Wisata (DTW) Unggulan Provinsi DKI Jakarta.",
+"slug": "data-potensi-daya-tarik-wisata-unggulan-provinsi-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Daya Tarik Wisata",
+"Potensi",
+"Unggulan"
+],
+"views": 159,
+"datasetCount": 1,
+"createdAt": "2023-11-09 10:03:47",
+"updatedAt": "2023-11-16T08:48:00.000000Z"
+},
+{
+"id": 7045,
+"title": "Data Jumlah Kunjungan Wisatawan Mancanegara Tahun 2020",
+"description": "Data ini berisi Data Jumlah Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta Tahun 2020",
+"slug": "data-jumlah-kunjungan-wisatawan-mancanegara-tahun-2020",
+"tags": [
+"Pariwisata",
+"Wisatawan Mancanegara",
+"Wisman"
+],
+"views": 142,
+"datasetCount": 1,
+"createdAt": "2023-10-07 15:26:30",
+"updatedAt": "2023-11-16T07:38:15.000000Z"
+},
+{
+"id": 7323,
+"title": "Data Proyeksi Penerimaan Devisa Dari Wisman Dan Akumulasi Belanja Wisatawan Nusantara",
+"description": "Dataset ini berisi Data Proyeksi Peneriamaan Devisa Dari Wisman Dan Akumulasi Belanja Wisnus Tahun 2001-2007",
+"slug": "data-proyeksi-penerimaan-devisa-dari-wisman-dan-akumulasi-belanja-wisatawan-nusantara",
+"tags": [
+"Pariwisata",
+"Penerimaan Negara",
+"Wisatawan Mancanegara",
+"Wisatawan Nusantara",
+"Devisa"
+],
+"views": 126,
+"datasetCount": 1,
+"createdAt": "2023-11-07 15:47:48",
+"updatedAt": "2023-11-16T07:35:50.000000Z"
+},
+{
+"id": 6878,
+"title": "Jumlah Wisatawan Nusantara 2019",
+"description": "Data ini Berisi Mengenai Data Jumlah Kunjungan Wisatawan Nusantara Ke Destinasi Wisata di Jakarta Tahun 2019",
+"slug": "jumlah-wisatawan-nusantara-2019",
+"tags": [
+"Pariwisata",
+"KPI",
+"KPI 2019"
+],
+"views": 179,
+"datasetCount": 1,
+"createdAt": "2023-10-02 16:58:48",
+"updatedAt": "2023-11-16T07:29:48.000000Z"
+},
+{
+"id": 394,
+"title": "Jumlah Wisatawan Nusantara Tahun 2018",
+"description": "Data ini berisi mengenai data kunjungan wisatawan nusantara ke Provinsi DKI Jakarta",
+"slug": "jumlah-wisatawan-nusantara-tahun-2018",
+"tags": [
+"2018",
+"Kunjungan Wisatawan",
+"DKI JAKARTA"
+],
+"views": 142,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:34:59",
+"updatedAt": "2023-11-16T07:22:57.000000Z"
+},
+{
+"id": 6876,
+"title": "Data Kunjungan Daya Tarik Wisata di Provinsi DKI Jakarta",
+"description": "Data Ini berisi mengenai Kunjungan Wisatawan Nusantara beberapa Destinasi yang menjadi daya tarik Wisata di Jakarta",
+"slug": "data-kunjungan-daya-tarik-wisata-di-provinsi-dki-jakarta",
+"tags": [
+"Destinasi Wisata",
+"Pariwisata",
+"DKI Jakarta"
+],
+"views": 181,
+"datasetCount": 1,
+"createdAt": "2023-10-02 16:47:20",
+"updatedAt": "2023-11-16T07:22:42.000000Z"
+},
+{
+"id": 7362,
+"title": "Data Jumlah Tamu Yang Menginap Di Graha Wisata Provinsi DKI Jakarta",
+"description": "Data ini Berisi mengenai Data Jumlah Tamu yang Menginap di Graha Wisata Provinsi DKI Jakarta.",
+"slug": "data-jumlah-tamu-yang-menginap-di-graha-wisata-provinsi-dki-jakarta",
+"tags": [
+"Pariwisata"
+],
+"views": 121,
+"datasetCount": 1,
+"createdAt": "2023-11-09 15:45:06",
+"updatedAt": "2023-11-16T07:22:21.000000Z"
+},
+{
+"id": 7354,
+"title": "Data Program Sub Program Dan Komponen Kegiatan Kepariwisataan Di DKI Jakarta",
+"description": "Data Mengenai Program Sub Program Dan Komponen Kegiatan Kepariwisataan Di DKI Jakarta Tahun 2010.",
+"slug": "data-program-sub-program-dan-komponen-kegiatan-kepariwisataan-di-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Kegiatan Kepariwisataan"
+],
+"views": 126,
+"datasetCount": 1,
+"createdAt": "2023-11-09 13:51:35",
+"updatedAt": "2023-11-16T07:21:41.000000Z"
+},
+{
+"id": 7371,
+"title": "Data Kegiatan Promosi DKI Jakarta",
+"description": "Dataset ini berisi tentang Data Kegiatan Promosi DKI Jakarta",
+"slug": "data-kegiatan-promosi-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Promosi"
+],
+"views": 125,
+"datasetCount": 1,
+"createdAt": "2023-11-10 15:56:51",
+"updatedAt": "2023-11-16T07:20:15.000000Z"
+},
+{
+"id": 7372,
+"title": "Data Kegiatan Promosi DKI Jakarta 2011-2015",
+"description": "Data Kegiatan Promosi DKI Jakarta",
+"slug": "data-kegiatan-promosi-dki-jakarta-2011-2015",
+"tags": [
+"Pariwisata",
+"Promosi"
+],
+"views": 166,
+"datasetCount": 1,
+"createdAt": "2023-11-10 16:02:52",
+"updatedAt": "2023-11-16T07:20:07.000000Z"
+},
+{
+"id": 7343,
+"title": "Data Rekap Pendistribusian Brosur Pariwisata Bulan Januari s/d Desember DKI Jakarta",
+"description": "Dataset ini berisi mengenai Rekap Pendistribusian Brosur Pariwisata Bulan Januari sd Desember DKI Jakarta",
+"slug": "data-rekap-pendistribusian-brosur-pariwisata-bulan-januari-sd-desember-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Brosur",
+"Distribusi"
+],
+"views": 125,
+"datasetCount": 1,
+"createdAt": "2023-11-09 09:40:06",
+"updatedAt": "2023-11-16T07:17:56.000000Z"
+},
+{
+"id": 7046,
+"title": "Data Pelatihan Profesi Kepariwisataan DKI Jakarta",
+"description": "Data Mengenai Pelatihan Profesi Kepariwisataan yang diselenggarakan oleh DISPARBUD DKI Jakarta pada Tahun 2006 s.d Tahun 2014.",
+"slug": "data-pelatihan-profesi-kepariwisataan-dki-jakarta",
+"tags": [
+"Kepariwisataan",
+"Pelatihan",
+"Profesi",
+"DKI Jakarta"
+],
+"views": 130,
+"datasetCount": 1,
+"createdAt": "2023-10-07 15:36:09",
+"updatedAt": "2023-11-16T07:16:35.000000Z"
+},
+{
+"id": 7351,
+"title": "Data Kunjungan Wisatawan Nusantara ke Destinasi Wisata di Provinsi DKI Jakarta",
+"description": "Data ini berisi mengenai jumlah wisatawan nusantara ke destinasi wisata di DKI Jakarta.",
+"slug": "data-kunjungan-wisatawan-nusantara-ke-destinasi-wisata-di-provinsi-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Wisatawan Nusantara",
+"Destinasi Wisata"
+],
+"views": 480,
+"datasetCount": 1,
+"createdAt": "2023-11-09 11:05:26",
+"updatedAt": "2023-11-16T07:16:08.000000Z"
+},
+{
+"id": 7353,
+"title": "Data Jumlah Usaha Akomodasi Dan Tenaga Kerja Di DKI Jakarta",
+"description": "Data mengenai Jumlah Usaha Akomodasi Dan Tenaga Kerja Di 5 Wilayah Kota Administrasi Provinsi DKI Jakarta Tahun 2010",
+"slug": "data-jumlah-usaha-akomodasi-dan-tenaga-kerja-di-dki-jakarta",
+"tags": [
+"Pariwisata",
+"Usaha Akomodasi",
+"Tenaga Kerja"
+],
+"views": 132,
+"datasetCount": 1,
+"createdAt": "2023-11-09 13:43:58",
+"updatedAt": "2023-11-16T07:15:12.000000Z"
+},
+{
+"id": 6866,
+"title": "Data Jumlah Kunjungan Wisatawan Mancanegara ke Destinasi Wisata di Provinsi DKI Jakarta Tahun 2021",
+"description": "Data ini berisi mengenai jumlah wisatawan mancanegara ke destinasi wisata di DKI Jakarta.",
+"slug": "data-jumlah-kunjungan-wisatawan-mancanegara-ke-destinasi-wisata-di-provinsi-dki-jakarta-tahun-2021",
+"tags": [
+"Wisatawan",
+"Wisatawan Mancanegara"
+],
+"views": 258,
+"datasetCount": 1,
+"createdAt": "2023-10-02 15:01:25",
+"updatedAt": "2023-11-16T07:14:39.000000Z"
+},
+{
+"id": 7275,
+"title": "Data Industri Pariwisata DKI Jakarta 2014",
+"description": "Dataset ini berisi mengenai data industri pariwisata DKI Jakarta",
+"slug": "data-industri-pariwisata-dki-jakarta-2014",
+"tags": [
+"Pariwisata",
+"Data Industri",
+"2014"
+],
+"views": 165,
+"datasetCount": 1,
+"createdAt": "2023-10-23 23:11:51",
+"updatedAt": "2023-11-16T04:33:28.000000Z"
+},
+{
+"id": 7319,
+"title": "Data Rata-rata Lama Menginap Wisatawan Nusantara Pada Hotel Berbintang di Provinsi DKI Jakarta Berdasarkan Jenis Hotel",
+"description": "data-rata-rata-lama-menginap-wisatawan-nusantara-pada-hotel-berbintang-di-dki-jakarta",
+"slug": "data-rata-rata-lama-menginap-wisatawan-nusantara-pada-hotel-berbintang-di-provinsi-dki-jakarta-berdasarkan-jenis-hotel",
+"tags": [
+"Pariwisata",
+"Wisatawan Nusantara",
+"Hotel"
+],
+"views": 210,
+"datasetCount": 1,
+"createdAt": "2023-11-07 14:53:44",
+"updatedAt": "2023-11-09T07:35:51.000000Z"
+},
+{
+"id": 7082,
+"title": "Jumlah E-Tourism",
+"description": "Data ini Berisi Mengenai Data Jumlah E-Tourism di Provinsi DKI Jakarta",
+"slug": "jumlah-e-tourism",
+"tags": [
+"e-torurism"
+],
+"views": 125,
+"datasetCount": 1,
+"createdAt": "2023-10-10 11:40:43",
+"updatedAt": "2023-10-10T05:28:43.000000Z"
+},
+{
+"id": 7063,
+"title": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta Tahun 2018",
+"description": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-mancanegara-ke-provinsi-dki-jakarta-tahun-2018",
+"tags": [
+"wisatawan",
+"mancanegara"
+],
+"views": 127,
+"datasetCount": 1,
+"createdAt": "2023-10-09 13:54:44",
+"updatedAt": "2023-10-10T04:36:52.000000Z"
+},
+{
+"id": 7065,
+"title": "Data Wisatawan Mancanegara Ke DKI Jakarta",
+"description": "Data mengenai Wisatawan Mancanegara yang Datang ke DKI Jakarta Tahun 2014.",
+"slug": "data-wisatawan-mancanegara-ke-dki-jakarta",
+"tags": [
+"wisatawan",
+"mancanegara"
+],
+"views": 143,
+"datasetCount": 1,
+"createdAt": "2023-10-09 14:47:58",
+"updatedAt": "2023-10-10T04:36:48.000000Z"
+},
+{
+"id": 7066,
+"title": "Data Usaha Jasa Makanan Minuman Jenis Usaha Cafetaria Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Makanan Minuman Jenis Usaha Cafetaria Di DKI Jakarta Tahun 2014",
+"slug": "data-usaha-jasa-makanan-minuman-jenis-usaha-cafetaria-di-dki-jakarta",
+"tags": [
+"jenis",
+"usaha",
+"cafetaria"
+],
+"views": 210,
+"datasetCount": 1,
+"createdAt": "2023-10-09 14:58:14",
+"updatedAt": "2023-10-10T04:36:30.000000Z"
+},
+{
+"id": 7071,
+"title": "Data Rata-Rata Lama Menginap Wisatawan Mancanegara Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Rata-Rata Lama Menginap Wisatawan Mancanegara Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"slug": "data-rata-rata-lama-menginap-wisatawan-mancanegara-pada-hotel-berbintang-di-provinsi-dki-jakarta",
+"tags": [
+"wisatawan",
+"mancanegara"
+],
+"views": 165,
+"datasetCount": 1,
+"createdAt": "2023-10-10 08:58:24",
+"updatedAt": "2023-10-10T04:36:24.000000Z"
+},
+{
+"id": 7072,
+"title": "Data Usaha Pariwisata Bidang Penyediaan Makanan Dan Minuman Di DKI Jakarta",
+"description": "Data mengenai Usaha Pariwisata Bidang Penyediaan Makanan dan Minuman di DKI Jakarta Tahun 2014.",
+"slug": "data-usaha-pariwisata-bidang-penyediaan-makanan-dan-minuman-di-dki-jakarta",
+"tags": [
+"bidang",
+"penyediaan",
+"makanan",
+"dan",
+"minuman"
+],
+"views": 170,
+"datasetCount": 1,
+"createdAt": "2023-10-10 09:14:49",
+"updatedAt": "2023-10-10T04:36:21.000000Z"
+},
+{
+"id": 7075,
+"title": "Data Jumlah Kunjungan Wisatawan Mancanegara Tahun 2019",
+"description": "Data ini berisi Data Jumlah Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta Tahun 2019",
+"slug": "data-jumlah-kunjungan-wisatawan-mancanegara-tahun-2019",
+"tags": [
+"wisatawan",
+"2019",
+"manvanegara"
+],
+"views": 147,
+"datasetCount": 1,
+"createdAt": "2023-10-10 09:30:26",
+"updatedAt": "2023-10-10T04:36:01.000000Z"
+},
+{
+"id": 7078,
+"title": "Data Wiswan Per Kebangsaan DKI Jakarta",
+"description": "Data mengenai Wisatawan Mancanegara Per Kebangsaan DKI Jakarta Bulan Maret 2015.",
+"slug": "data-wiswan-per-kebangsaan-dki-jakarta",
+"tags": [
+"wiswan",
+"2015"
+],
+"views": 125,
+"datasetCount": 1,
+"createdAt": "2023-10-10 11:08:01",
+"updatedAt": "2023-10-10T04:35:56.000000Z"
+},
+{
+"id": 7080,
+"title": "Data Jumlah Usaha Pariwisata Bidang Hiburan dan Rekreasi Menurut Jenis Usaha dan Kecamatan",
+"description": "Data Jumlah Usaha Pariwisata Bidang Hiburan dan Rekreasi Menurut Jenis Usaha dan Kecamatan.",
+"slug": "data-jumlah-usaha-pariwisata-bidang-hiburan-dan-rekreasi-menurut-jenis-usaha-dan-kecamatan",
+"tags": [
+"pariwisata",
+"dda",
+"usaha"
+],
+"views": 265,
+"datasetCount": 1,
+"createdAt": "2023-10-10 11:21:19",
+"updatedAt": "2023-10-10T04:23:49.000000Z"
+},
+{
+"id": 2076,
+"title": "Data Usaha Jasa Makanan Minuman Jenis Usaha Cafetaria Di DKI Jakarta.",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Makanan Minuman Jenis Usaha Cafetaria Di DKI Jakarta.",
+"slug": "data-usaha-jasa-makanan-minuman-jenis-usaha-cafetaria-di-dki-jakarta-titik",
+"tags": [
+"Jasa Makanan dan Minuman",
+"Data Usaha",
+"Cafetaria",
+"DKI JAKARTA"
+],
+"views": 286,
+"datasetCount": 1,
+"createdAt": "2023-01-25 03:03:15",
+"updatedAt": "2023-01-31T07:30:07.000000Z"
+},
+{
+"id": 2081,
+"title": "Data Rata-Rata Lama Menginap Wisatawan Mancanegara Pada Hotel Berbintang di Provinsi DKI Jakarta.",
+"description": "Dataset ini berisi mengenai Data Rata-Rata Lama Menginap Wisatawan Mancanegara Pada Hotel Berbintang di Provinsi DKI Jakarta",
+"slug": "data-rata-rata-lama-menginap-wisatawan-mancanegara-pada-hotel-berbintang-di-provinsi-dki-jakarta-titik",
+"tags": [
+"Wisatawan Mancanegara",
+"Hotel Berbintang",
+"Lama Menginap"
+],
+"views": 178,
+"datasetCount": 1,
+"createdAt": "2023-01-25 03:12:51",
+"updatedAt": "2023-01-31T07:30:02.000000Z"
+},
+{
+"id": 2086,
+"title": "Data Usaha Pariwisata Bidang Penyediaan Makanan Dan Minuman Di DKI Jakarta.",
+"description": "Data mengenai Usaha Pariwisata Bidang Penyediaan Makanan dan Minuman di DKI Jakarta.",
+"slug": "data-usaha-pariwisata-bidang-penyediaan-makanan-dan-minuman-di-dki-jakarta-titik",
+"tags": [
+"Penyediaan Makanan dan Minuman",
+"DKI JAKARTA"
+],
+"views": 218,
+"datasetCount": 1,
+"createdAt": "2023-01-25 03:31:11",
+"updatedAt": "2023-01-31T07:29:59.000000Z"
+},
+{
+"id": 2091,
+"title": "Data Wiswan Per Kebangsaan DKI Jakarta.",
+"description": "Data mengenai Wisatawan Mancanegara Per Kebangsaan DKI Jakarta.",
+"slug": "data-wiswan-per-kebangsaan-dki-jakarta-titik",
+"tags": [
+"Wisatawan Mancanegara",
+"DKI JAKARTA"
+],
+"views": 125,
+"datasetCount": 1,
+"createdAt": "2023-01-25 03:55:40",
+"updatedAt": "2023-01-31T07:29:56.000000Z"
+},
+{
+"id": 2098,
+"title": "Data Jumlah Usaha Pariwisata Bidang Hiburan dan Rekreasi Menurut Jenis Usaha dan Kecamatan.",
+"description": "Data Jumlah Usaha Pariwisata Bidang Hiburan dan Rekreasi Menurut Jenis Usaha dan Kecamatan.",
+"slug": "data-jumlah-usaha-pariwisata-bidang-hiburan-dan-rekreasi-menurut-jenis-usaha-dan-kecamatan-titik",
+"tags": [
+"hiburan dan rekreasi",
+"data usaha pariwisata",
+"USaha"
+],
+"views": 399,
+"datasetCount": 1,
+"createdAt": "2023-01-25 04:33:08",
+"updatedAt": "2023-01-31T07:29:53.000000Z"
+},
+{
+"id": 2100,
+"title": "Jumlah E-Tourism.",
+"description": "Data ini Berisi Mengenai Data Jumlah E-Tourism di Provinsi DKI Jakarta.",
+"slug": "jumlah-e-tourism-titik",
+"tags": [
+"KPI",
+"Pariwisata"
+],
+"views": 133,
+"datasetCount": 1,
+"createdAt": "2023-01-25 04:46:23",
+"updatedAt": "2023-01-31T07:29:49.000000Z"
+},
+{
+"id": 2162,
+"title": "Data Kunjungan Wisata Mancanegara Ke DKI Jakarta Melalui 3 Pintu Masuk Soekarno Hatta Tanjung Priok Halim Perdana Kusumah",
+"description": "Dataset ini berisi mengenai Data Kunjungan Wisata Mancanegara Ke DKI Jakarta Melalui 3 Pintu Masuk (Soekarno Hatta, Tanjung Priok, dan Halim Perdana Kusumah).",
+"slug": "data-kunjungan-wisata-mancanegara-ke-dki-jakarta-melalui-3-pintu-masuk-soekarno-hatta-tanjung-priok-halim-perdana-kusumah",
+"tags": [
+"Kunjungan Wisatawan Mancanegara",
+"Pintu Masuk",
+"DKI JAKARTA"
+],
+"views": 145,
+"datasetCount": 1,
+"createdAt": "2023-01-26 03:12:18",
+"updatedAt": "2023-01-31T07:19:05.000000Z"
+},
+{
+"id": 2225,
+"title": "Data Pengunjung Museum Menurut Jenis Museum di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi Data Pengunjung Museum Menurut Jenis Museum di Provinsi DKI Jakarta.",
+"slug": "data-pengunjung-museum-menurut-jenis-museum-di-provinsi-dki-jakarta",
+"tags": [
+"pengunjung museum",
+"DKI JAKARTA"
+],
+"views": 261,
+"datasetCount": 1,
+"createdAt": "2023-01-27 03:35:38",
+"updatedAt": "2023-01-31T07:17:38.000000Z"
+},
+{
+"id": 2065,
+"title": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta.",
+"description": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-mancanegara-ke-provinsi-dki-jakarta",
+"tags": [
+"Wisatawan Mancanegara",
+"Jumlah Kunjungan Wisman"
+],
+"views": 147,
+"datasetCount": 1,
+"createdAt": "2023-01-25 02:12:07",
+"updatedAt": "2023-01-31T07:17:31.000000Z"
+},
+{
+"id": 2309,
+"title": "Data Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke TIC DKI Jakarta.",
+"description": "Data ini berisi mengenai Data Kunjungan Wisatawan Nusantara dan Mancanegara Ke Lokasi Tourist Information Center.",
+"slug": "data-kunjungan-wisatawan-nusantara-dan-wisatawan-mancanegara-ke-tic-dki-jakarta-titik",
+"tags": [
+"Tourist Information Center",
+"wisatawan nusantara",
+"Wisatawan Mancanegara"
+],
+"views": 167,
+"datasetCount": 1,
+"createdAt": "2023-01-30 11:12:54",
+"updatedAt": "2023-01-31T07:17:27.000000Z"
+},
+{
+"id": 707,
+"title": "Data Kunjungan Wisatawan Mancanegara ke Jakarta",
+"description": "Data ini Berisi Mengenai Data Kunjungan Wisatawan Mancanegara ke Jakarta",
+"slug": "data-kunjungan-wisatawan-mancanegara-ke-jakarta",
+"tags": [
+"Wisatawan Mancanegara",
+"DKI JAKARTA",
+"2018"
+],
+"views": 166,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:41:58",
+"updatedAt": "2023-01-19T02:33:35.000000Z"
+},
+{
+"id": 706,
+"title": "Data Kategori Event Jakarta di DKI Jakarta",
+"description": "Data ini berisi mengenai Data Event di DKI Jakarta",
+"slug": "data-kategori-event-jakarta-di-dki-jakarta",
+"tags": [
+"2019",
+"Event",
+"DKI JAKARTA"
+],
+"views": 276,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:38:43",
+"updatedAt": "2023-01-18T20:35:45.000000Z"
+},
+{
+"id": 704,
+"title": "Data Jumlah Kunjungan Wisawatan Nusantara ke Taman Marga Satwa Ragunan",
+"description": "Data ini Berisi Mengenai Data Jumlah Kunjungan Wisawatan Nusantara ke Taman Marga Satwa Ragunan",
+"slug": "data-jumlah-kunjungan-wisawatan-nusantara-ke-taman-marga-satwa-ragunan",
+"tags": [
+"suaka margasatwa",
+"DKI JAKARTA",
+"wisatawan nusantara"
+],
+"views": 161,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:29:09",
+"updatedAt": "2023-01-18T20:35:42.000000Z"
+},
+{
+"id": 703,
+"title": "Data Jumlah Usaha Wisata Di DKI Jakarta",
+"description": "Dataset ini berisi Data Jumlah Usaha Wisata Di Provinsi DKI Jakarta",
+"slug": "data-jumlah-usaha-wisata-di-dki-jakarta",
+"tags": [
+"2010",
+"Graha Wisata",
+"DKI JAKARTA"
+],
+"views": 141,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:26:12",
+"updatedAt": "2023-01-18T20:35:38.000000Z"
+},
+{
+"id": 698,
+"title": "Data Usaha Pariwisata Bidang Usaha Penyediaan Akomodasi Di DKI Jakarta",
+"description": "Data mengenai Usaha Pariwisata Bidang Usaha Penyediaan Akomodasi di DKI Jakarta Tahun 2014.",
+"slug": "data-usaha-pariwisata-bidang-usaha-penyediaan-akomodasi-di-dki-jakarta",
+"tags": [
+"2014",
+"data usaha pariwisata",
+"Jasa Akomodasi",
+"DKI JAKARTA"
+],
+"views": 149,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:20:59",
+"updatedAt": "2023-01-18T20:34:36.000000Z"
+},
+{
+"id": 697,
+"title": "Data Lokasi Pusat Pelayanan Informasi Pariwisata Di DKI Jakarta",
+"description": "Dataset ini berisi tentang Data Lokasi Pusat Pelayanan Informasi Pariwisata Di DKI Jakarta",
+"slug": "data-lokasi-pusat-pelayanan-informasi-pariwisata-di-dki-jakarta",
+"tags": [
+"Dataset",
+"Pelayanan Informasi",
+"Pariwisata",
+"DKI JAKARTA"
+],
+"views": 145,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:18:08",
+"updatedAt": "2023-01-18T20:34:32.000000Z"
+},
+{
+"id": 695,
+"title": "Data Usaha Jasa Travel Jenis Usaha Biro Perjalanan Wisata DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Travel Jenis Usaha Biro Perjalanan Wisata DKI Jakarta",
+"slug": "data-usaha-jasa-travel-jenis-usaha-biro-perjalanan-wisata-dki-jakarta",
+"tags": [
+"Data Usaha",
+"Jasa Travel",
+"Biro Perjalanan Wisata",
+"DKI JAKARTA"
+],
+"views": 253,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:13:28",
+"updatedAt": "2023-01-18T20:34:25.000000Z"
+},
+{
+"id": 687,
+"title": "Data Jumlah SDM Industri Pariwisata Bersertifikat Tahun 2019",
+"description": "Data ini menyajikan jumlah SDM Industri Pariwisata bersertifikat tahun 2019.",
+"slug": "data-jumlah-sdm-industri-pariwisata-bersertifikat-tahun-2019",
+"tags": [
+"2019",
+"sdm",
+"izin usaha pariwisata"
+],
+"views": 139,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:58:21",
+"updatedAt": "2023-01-18T20:30:22.000000Z"
+},
+{
+"id": 686,
+"title": "Data Kunjungan Wisman Ke Jakarta Melalui Pintu Soekarno Hatta Berdasarkan Kebangsaan",
+"description": "Dataset ini berisi mengenai Data Kunjungan Wisman Ke Jakarta Melalui Pintu Soekarno Hatta Berdasarkan Kebangsaan",
+"slug": "data-kunjungan-wisman-ke-jakarta-melalui-pintu-soekarno-hatta-berdasarkan-kebangsaan",
+"tags": [
+"Kunjungan",
+"Wisman",
+"DKI JAKARTA",
+"Soekarno Hatta"
+],
+"views": 131,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:55:46",
+"updatedAt": "2023-01-18T20:27:37.000000Z"
+},
+{
+"id": 691,
+"title": "Data Jumlah Kunjungan Wisman Ke DKI Jakarta",
+"description": "Data mengenai rekap jumlah Kunjungan Wisatawan Mancanegara ke Jakarta pada Tahun 2002 - 2010.",
+"slug": "data-jumlah-kunjungan-wisman-ke-dki-jakarta",
+"tags": [
+"2002",
+"2010",
+"Wisatawan Mancanegara",
+"DKI JAKARTA"
+],
+"views": 131,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:06:24",
+"updatedAt": "2023-01-18T20:27:32.000000Z"
+},
+{
+"id": 690,
+"title": "Rata-Rata Lama Tinggal Wisatawan Mancanegara Di DKI Jakarta",
+"description": "Data mengenai Rata-Rata Lama Tinggal Wisman per Kunjungan Menurut Kawasan Negara Tempat Tinggal dan Pintu Keluar Tahun 2009.",
+"slug": "rata-rata-lama-tinggal-wisatawan-mancanegara-di-dki-jakarta",
+"tags": [
+"Wisman",
+"2009",
+"Pariwisata"
+],
+"views": 140,
+"datasetCount": 1,
+"createdAt": "2022-12-29 08:03:43",
+"updatedAt": "2023-01-18T20:27:28.000000Z"
+},
+{
+"id": 659,
+"title": "Data Kunjungan Daya Tarik Wisata Provinsi DKI Jakarta",
+"description": "Data mengenai Kunjungan Daya Tarik Wisata Provinsi DKI Jakarta",
+"slug": "data-kunjungan-daya-tarik-wisata-provinsi-dki-jakarta",
+"tags": [
+"Kunjungan Wisatawan",
+"dayatarikwisata",
+"DKI JAKARTA"
+],
+"views": 187,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:33:05",
+"updatedAt": "2023-01-18T20:23:29.000000Z"
+},
+{
+"id": 654,
+"title": "Data Rencana Narasumber RDPU DKI Jakarta",
+"description": "Dataset ini berisi mengenai data rencana narasumber RDPU DKI Jakarta",
+"slug": "data-rencana-narasumber-rdpu-dki-jakarta",
+"tags": [
+"RDPU",
+"DKI JAKARTA",
+"Rencana Narasumber"
+],
+"views": 119,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:28:20",
+"updatedAt": "2023-01-18T20:23:25.000000Z"
+},
+{
+"id": 648,
+"title": "Data Toko Serba Ada (TOSERBA) DKI Jakarta",
+"description": "Dataset ini berisi tentang Data Toko Serba Ada (TOSERBA) DKI Jakarta Bulan April 2015",
+"slug": "data-toko-serba-ada-toserba-dki-jakarta",
+"tags": [
+"2015",
+"Toserba",
+"DKI JAKARTA"
+],
+"views": 155,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:19:42",
+"updatedAt": "2023-01-18T20:23:22.000000Z"
+},
+{
+"id": 618,
+"title": "Data Jumlah Kunjungan Wisatawan Nusantara ke Kepulauan Seribu",
+"description": "Data ini Berisi Mengenai Data Jumlah Kunjungan Wisawatan Nusantara ke Kepulauan Seribu",
+"slug": "data-jumlah-kunjungan-wisatawan-nusantara-ke-kepulauan-seribu",
+"tags": [
+"Kepulauan Seribu",
+"wisatawan nusantara",
+"2019"
+],
+"views": 229,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:06:04",
+"updatedAt": "2023-01-18T20:22:42.000000Z"
+},
+{
+"id": 615,
+"title": "Data Pengunjung TIC Tourist Information Center Bali",
+"description": "Data ini Berisi Mengenai Data Jumlah Pengunjung TIC ( Tourist Information Center ) Bali.",
+"slug": "data-pengunjung-tic-tourist-information-center-bali",
+"tags": [
+"Tourist Information Center",
+"Bali",
+"Jumlah Kunjungan"
+],
+"views": 1076,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:02:40",
+"updatedAt": "2023-01-18T20:22:38.000000Z"
+},
+{
+"id": 613,
+"title": "Data Kategori Event Jakarta Perbulan",
+"description": "Data ini berisi Mengenai Data Kategori Event Jakarta Perbulan.",
+"slug": "data-kategori-event-jakarta-perbulan",
+"tags": [
+"Event",
+"Jakarta"
+],
+"views": 351,
+"datasetCount": 1,
+"createdAt": "2022-12-29 07:00:47",
+"updatedAt": "2023-01-18T20:22:34.000000Z"
+},
+{
+"id": 604,
+"title": "Data Statistik Wisata Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai statistik wisata di Provinsi DKI Jakarta",
+"slug": "data-statistik-wisata-provinsi-dki-jakarta",
+"tags": [
+"DKI JAKARTA",
+"2019",
+"destinasi wisata"
+],
+"views": 164,
+"datasetCount": 1,
+"createdAt": "2022-12-29 06:49:45",
+"updatedAt": "2023-01-18T20:21:40.000000Z"
+},
+{
+"id": 632,
+"title": "Data Jumlah Kunjungan Wisawatan Nusantara ke Taman Impian Jaya Ancol",
+"description": "Data Jumlah Kunjungan Wisawatan Nusantara ke Taman Impian Jaya Ancol",
+"slug": "data-jumlah-kunjungan-wisawatan-nusantara-ke-taman-impian-jaya-ancol",
+"tags": [
+"Taman Impian Jaya Ancol",
+"wisatawan nusantara"
+],
+"views": 173,
+"datasetCount": 1,
+"createdAt": "2022-12-29 06:47:18",
+"updatedAt": "2023-01-18T20:21:36.000000Z"
+},
+{
+"id": 587,
+"title": "Data Jumlah Industri Pariwisata di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi tentang Jumlah Industri Pariwisata di Provinsi DKI Jakarta.",
+"slug": "data-jumlah-industri-pariwisata-di-provinsi-dki-jakarta",
+"tags": [
+"DKI JAKARTA",
+"Pariwisata"
+],
+"views": 159,
+"datasetCount": 1,
+"createdAt": "2022-12-29 04:39:32",
+"updatedAt": "2023-01-18T20:20:56.000000Z"
+},
+{
+"id": 594,
+"title": "Data Jumlah Kunjungan wisatawan Nusantara ke Taman Mini Indonesia Indah",
+"description": "Data Jumlah Kunjungan wisatawan Nusantara ke Taman Mini Indonesia Indah",
+"slug": "data-jumlah-kunjungan-wisatawan-nusantara-ke-taman-mini-indonesia-indah",
+"tags": [
+"Taman Mini Indonesia Indah",
+"wisatawan nusantara"
+],
+"views": 161,
+"datasetCount": 1,
+"createdAt": "2022-12-29 04:47:28",
+"updatedAt": "2023-01-18T20:20:52.000000Z"
+},
+{
+"id": 602,
+"title": "Data Usaha Jasa Travel Jenis Usaha Gerai Travel Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Travel Jenis Usaha Gerai Travel Di DKI Jakarta Tahun 2015",
+"slug": "data-usaha-jasa-travel-jenis-usaha-gerai-travel-di-dki-jakarta",
+"tags": [
+"USaha",
+"Jasa Travel",
+"DKI JAKARTA",
+"2015"
+],
+"views": 136,
+"datasetCount": 1,
+"createdAt": "2022-12-29 06:35:17",
+"updatedAt": "2023-01-18T20:20:47.000000Z"
+},
+{
+"id": 570,
+"title": "Data Jumlah Kunjungan dan Pertumbuhan Wisatawan Mancanegara di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi tentang Pertumbuhan Jumlah Kunjungan dan Pertumbuhan Wisatawan Mancanegara di Provinsi DKI Jakarta.",
+"slug": "data-jumlah-kunjungan-dan-pertumbuhan-wisatawan-mancanegara-di-provinsi-dki-jakarta",
+"tags": [
+"2010",
+"Pertumbuhan",
+"Wisatawan Mancanegara",
+"DKI JAKARTA"
+],
+"views": 150,
+"datasetCount": 1,
+"createdAt": "2022-12-29 04:14:51",
+"updatedAt": "2023-01-18T20:11:26.000000Z"
+},
+{
+"id": 565,
+"title": "Data Pelatihan Tenaga Kerja Profesi Kepariwisataan Di DKI Jakarta",
+"description": "Dataset ini berisi Data Pelatihan Tenaga Kerja Profesi Kepariwisataan Di DKI Jakarta yang dilaksanakan oleh Dinas Pariwisata dan Kebudayaan DKI Jakarta.",
+"slug": "data-pelatihan-tenaga-kerja-profesi-kepariwisataan-di-dki-jakarta",
+"tags": [
+"Data Pelatihan Tenaga kerja Profesi Kepariwisataan di DKI Jakarta",
+"2015",
+"2010",
+"2002"
+],
+"views": 215,
+"datasetCount": 1,
+"createdAt": "2022-12-29 04:03:16",
+"updatedAt": "2023-01-18T20:11:16.000000Z"
+},
+{
+"id": 555,
+"title": "Data Jumlah Wisatawan Pengunjung Museum",
+"description": "Dataset ini merupakan rekap jumlah Kunjungan Wisatawan Nusantara dan Wisatawan Mancanegara ke Museum Museum dilingkungan Dinas Pariwisata dan Kebudayaan Provinsi DKI Jakarta.",
+"slug": "data-jumlah-wisatawan-pengunjung-museum",
+"tags": [
+"wisatawan nusantara",
+"Wisatawan Mancanegara",
+"Museum",
+"DKI JAKARTA"
+],
+"views": 447,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:45:20",
+"updatedAt": "2023-01-18T20:09:57.000000Z"
+},
+{
+"id": 497,
+"title": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta Tahun 2020 Melalui 2 Pintu Masuk",
+"description": "Data Kunjungan Wisatawan Mancanegara ke Provinsi DKI Jakarta Tahun 2020 Melalui 2 Pintu Masuk.",
+"slug": "data-kunjungan-wisatawan-mancanegara-ke-provinsi-dki-jakarta-tahun-2020-melalui-2-pintu-masuk",
+"tags": [
+"2020",
+"Wisatawan Mancanegara",
+"DKI JAKARTA",
+"Pintu Masuk"
+],
+"views": 144,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:38:12",
+"updatedAt": "2023-01-18T20:09:29.000000Z"
+},
+{
+"id": 543,
+"title": "Jumlah Wisatawan Nusantara Tahun 2020",
+"description": "Data ini Berisi Mengenai Data Jumlah Kunjungan Wisatawan Nusantara Ke Destinasi Wisata di Jakarta Tahun 2020",
+"slug": "jumlah-wisatawan-nusantara-tahun-2020",
+"tags": [
+"2020",
+"wisatawan nusantara",
+"destinasi wisata",
+"DKI JAKARTA"
+],
+"views": 199,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:28:17",
+"updatedAt": "2023-01-18T20:07:16.000000Z"
+},
+{
+"id": 535,
+"title": "Data Usaha Jasa Travel Jenis Usaha Cabang Biro Perjalanan Wisata Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Travel Jenis Usaha Cabang Biro Perjalanan Wisata Di DKI Jakarta Tahun 2015",
+"slug": "data-usaha-jasa-travel-jenis-usaha-cabang-biro-perjalanan-wisata-di-dki-jakarta",
+"tags": [
+"2015",
+"Biro Perjalanan Wisata",
+"DKI JAKARTA",
+"Jasa Travel"
+],
+"views": 168,
+"datasetCount": 1,
+"createdAt": "2022-12-29 03:10:20",
+"updatedAt": "2023-01-18T20:05:04.000000Z"
+},
+{
+"id": 482,
+"title": "Data Kunjungan Wisatawan Mancanegara Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai data kunjungan wisatawan mancanegara  Provinsi DKI Jakarta",
+"slug": "data-kunjungan-wisatawan-mancanegara-provinsi-dki-jakarta",
+"tags": [
+"2014",
+"DATA",
+"DKI JAKARTA",
+"Kunjungan Wisatawan Mancanegara"
+],
+"views": 140,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:59:44",
+"updatedAt": "2023-01-18T20:04:22.000000Z"
+},
+{
+"id": 481,
+"title": "Data Pengunjung Tourist Information Center TIC Up Museum Tekstil DKI Jakarta",
+"description": "Dataset ini berisi mengenai data pengunjung tourist information center TIC Up museum tekstil DKI Jakarta",
+"slug": "data-pengunjung-tourist-information-center-tic-up-museum-tekstil-dki-jakarta",
+"tags": [
+"Museum Tekstil",
+"DKI JAKARTA",
+"Information Tourist Center",
+"2014",
+"2015"
+],
+"views": 139,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:52:44",
+"updatedAt": "2023-01-18T20:04:18.000000Z"
+},
+{
+"id": 456,
+"title": "Jumlah Industri Pariwisata yang memiliki TDUP (Tanda Daftar Usaha Pariwisata)",
+"description": "Data ini Berisi Mengenai Data Jumlah Industri Pariwisata yang Memiliki TDUP (Tanda Daftar Usaha Pariwisata)",
+"slug": "jumlah-industri-pariwisata-yang-memiliki-tdup-tanda-daftar-usaha-pariwisata",
+"tags": [
+"Dinas pariwasata dan kebudayaan",
+"Tanda Daftar Perusahaan"
+],
+"views": 157,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:36:56",
+"updatedAt": "2023-01-18T20:03:33.000000Z"
+},
+{
+"id": 471,
+"title": "Data Perpasaran Swasta Pasar Swalayan Provinsi DKI Jakarta",
+"description": "Dataset ini berisi tentang Data Perpasaran Swasta Pasar Swalayan Provinsi DKI Jakarta",
+"slug": "data-perpasaran-swasta-pasar-swalayan-provinsi-dki-jakarta",
+"tags": [
+"Data Perpasaran",
+"Pasar Swalayan",
+"DKI JAKARTA",
+"Swasta"
+],
+"views": 157,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:32:40",
+"updatedAt": "2023-01-18T20:03:30.000000Z"
+},
+{
+"id": 467,
+"title": "Data Jumlah Usaha Jasa Di DKI Jakarta",
+"description": "Data Mengenai Jumlah Usaha Jasa Konvensi, Insentif, Pameran Dan Impresariat Tahun 2006-2010.",
+"slug": "data-jumlah-usaha-jasa-di-dki-jakarta",
+"tags": [
+"2006",
+"2007",
+"2008",
+"2009",
+"2010",
+"jasa konvensi",
+"Pameran",
+"jasa insentif",
+"jasa impresariat"
+],
+"views": 155,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:26:16",
+"updatedAt": "2023-01-18T20:03:21.000000Z"
+},
+{
+"id": 462,
+"title": "Data Usaha Jasa Makanan Minuman Jenis Usaha Bar Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Makanan Minuman Jenis Usaha Bar Di DKI Jakarta Tahun 2014",
+"slug": "data-usaha-jasa-makanan-minuman-jenis-usaha-bar-di-dki-jakarta",
+"tags": [
+"Jasa Makanan dan Minuman",
+"Bar",
+"DKI JAKARTA",
+"2014"
+],
+"views": 238,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:15:52",
+"updatedAt": "2023-01-18T20:02:10.000000Z"
+},
+{
+"id": 449,
+"title": "Data Penerimaan Pendapatan Asli Daerah (PAD) Sektor Pariwisata Pemerintah Provinsi DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Penerimaan Pendapatan Aset Daerah (PAD) Sektor Pariwisata Pemerintah Provinsi DKI Jakarta",
+"slug": "data-penerimaan-pendapatan-asli-daerah-pad-sektor-pariwisata-pemerintah-provinsi-dki-jakarta",
+"tags": [
+"2002",
+"2011",
+"DKI JAKARTA",
+"Pariwisata"
+],
+"views": 218,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:11:55",
+"updatedAt": "2023-01-18T20:02:05.000000Z"
+},
+{
+"id": 444,
+"title": "Data Jumlah Kunjungan dan Ranking Wisatawan Mancanegara Ke Provinsi DKI Jakarta Melalui Pintu Soekarno Hatta Berdasarkan Kebangsaan",
+"description": "Data ini Berisi Mengenai Data Jumlah Kunjungan dan Ranking Wisatawan Mancanegara Ke Provinsi DKI Jakarta Melalui Pintu Soekarno Hatta Berdasarkan Kebangsaan.",
+"slug": "data-jumlah-kunjungan-dan-ranking-wisatawan-mancanegara-ke-provinsi-dki-jakarta-melalui-pintu-soekarno-hatta-berdasarkan-kebangsaan",
+"tags": [
+"DKI JAKARTA",
+"Kunjungan Wisatawan"
+],
+"views": 160,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:04:24",
+"updatedAt": "2023-01-18T20:01:39.000000Z"
+},
+{
+"id": 418,
+"title": "Data Daftar Kegiatan Pameran Di DKI Jakarta",
+"description": "Data Mengenai Daftar Kegiatan Pameran Di Jakarta Tahun 2010.",
+"slug": "data-daftar-kegiatan-pameran-di-dki-jakarta",
+"tags": [
+"Data Kegiatan Pameran DKI Jakarta",
+"2010"
+],
+"views": 133,
+"datasetCount": 1,
+"createdAt": "2022-12-28 08:00:11",
+"updatedAt": "2023-01-18T20:01:36.000000Z"
+},
+{
+"id": 439,
+"title": "Data Kegiatan Pameran DKI Jakarta",
+"description": "Data ini berisi mengenai Data Kegiatan Pameran DKI Jakarta 2011",
+"slug": "data-kegiatan-pameran-dki-jakarta",
+"tags": [
+"2011",
+"2012",
+"2013",
+"2014",
+"2015",
+"2016",
+"Data Kegiatan Pameran DKI Jakarta"
+],
+"views": 166,
+"datasetCount": 1,
+"createdAt": "2022-12-28 07:53:02",
+"updatedAt": "2023-01-18T20:01:32.000000Z"
+},
+{
+"id": 435,
+"title": "Data Pengunjung Tourist Information Service TIS Bandara Soekarno Hatta DKI Jakarta",
+"description": "Dataset ini berisi mengenai data pengunjung tourist information Service TIS Bandara Soekarno Hatta DKI Jakarta",
+"slug": "data-pengunjung-tourist-information-service-tis-bandara-soekarno-hatta-dki-jakarta",
+"tags": [
+"2013",
+"2014",
+"2015",
+"Bandara Soekarno Hata",
+"DKI JAKARTA",
+"Data Pengunjung",
+"Tourist Information Center"
+],
+"views": 161,
+"datasetCount": 1,
+"createdAt": "2022-12-28 07:50:22",
+"updatedAt": "2023-01-18T20:00:41.000000Z"
+},
+{
+"id": 423,
+"title": "Data Jumlah Kunjungan Wisatawan Mancanegara ke Destinasi Wisata di Provinsi DKI Jakarta Tahun 2020",
+"description": "Data ini berisi mengenai jumlah wisatawan mancanegara ke destinasi wisata di DKI Jakarta.",
+"slug": "data-jumlah-kunjungan-wisatawan-mancanegara-ke-destinasi-wisata-di-provinsi-dki-jakarta-tahun-2020",
+"tags": [
+"mancanegara",
+"Wisatawan",
+"DKI JAKARTA"
+],
+"views": 198,
+"datasetCount": 1,
+"createdAt": "2022-12-28 07:29:45",
+"updatedAt": "2023-01-18T20:00:32.000000Z"
+},
+{
+"id": 422,
+"title": "Data Pengunjung Tourist Information Center TIC DjakartaTheatre DKI Jakarta",
+"description": "Dataset ini berisi mengenai data pengunjung Tourist Information Center TIC Djakarta Theatre DKI Jakarta",
+"slug": "data-pengunjung-tourist-information-center-tic-djakartatheatre-dki-jakarta",
+"tags": [
+"2014",
+"Tourist Information Center",
+"Djakarta Theatre",
+"DKI JAKARTA"
+],
+"views": 157,
+"datasetCount": 1,
+"createdAt": "2022-12-28 07:24:15",
+"updatedAt": "2023-01-18T20:00:23.000000Z"
+},
+{
+"id": 340,
+"title": "Data Usaha Jasa Akomodasi Jenis Usaha Motel Di DKI Jakarta",
+"description": "Dataset ini berisi mengenai Data Usaha Jasa Akomodasi Jenis Usaha Motel Di DKI Jakarta Tahun 2014",
+"slug": "data-usaha-jasa-akomodasi-jenis-usaha-motel-di-dki-jakarta",
+"tags": [
+"2014",
+"usaha akomodasi",
+"Jenis Hotel",
+"DKI JAKARTA"
+],
+"views": 136,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:52:31",
+"updatedAt": "2023-01-18T19:56:16.000000Z"
+},
+{
+"id": 336,
+"title": "Data Presentase Jumlah Wisatawan Mancanegara Dan Wisatawan Nusantara Di DKI Jakarta",
+"description": "Data Mengenai Jumlah Wisatawan Mancanegara dan Wisatawan Nusantara di DKI Jakarta Menurut Moda Transportasi Tahun 1996-2000",
+"slug": "data-presentase-jumlah-wisatawan-mancanegara-dan-wisatawan-nusantara-di-dki-jakarta",
+"tags": [
+"2000",
+"1996",
+"Kunjungan Wisatawan Mancanegara",
+"Kunjungan Wisatawan Nusantara",
+"DKI JAKARTA",
+"moda transportasi"
+],
+"views": 204,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:44:23",
+"updatedAt": "2023-01-18T19:55:34.000000Z"
+},
+{
+"id": 398,
+"title": "Data Jumlah Penyedia Pelayanan Makanan Dan Minum Di DKI Jakarta",
+"description": "Data Mengenai Jumlah Usaha Penyediaan Pelayanan Makanan Dan Minuman Di Jakarta Tahun 2006-2010.",
+"slug": "data-jumlah-penyedia-pelayanan-makanan-dan-minum-di-dki-jakarta",
+"tags": [
+"Jenis pelayanan",
+"makanan dan minuman",
+"DKI JAKARTA"
+],
+"views": 164,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:40:40",
+"updatedAt": "2023-01-18T19:55:29.000000Z"
+},
+{
+"id": 395,
+"title": "Data Potensi Dan Masalah Pengembangan Pariwisata Di Provinsi DKI Jakarta",
+"description": "Dataset ini berisi tentang Potensi dan Masalah Pengembangan Pariwisata Di Provinsi DKI Jakarta.",
+"slug": "data-potensi-dan-masalah-pengembangan-pariwisata-di-provinsi-dki-jakarta",
+"tags": [
+"2010",
+"DKI JAKARTA",
+"masalah pengembangan",
+"Pariwisata"
+],
+"views": 134,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:37:38",
+"updatedAt": "2023-01-18T19:55:25.000000Z"
+},
+{
+"id": 391,
+"title": "Data Usaha Jasa Akomodasi Hotel Bintang",
+"description": "Dataset ini merupakan kumpulan daftar nama hotel berbintang dan hotel non bintang yang ada di DKI Jakarta.",
+"slug": "data-usaha-jasa-akomodasi-hotel-bintang",
+"tags": [
+"daftar hotel",
+"Hotel Berbintang",
+"hotel non bintang",
+"DKI JAKARTA"
+],
+"views": 306,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:32:09",
+"updatedAt": "2023-01-18T19:54:00.000000Z"
+},
+{
+"id": 335,
+"title": "Data Kunjungan Tamu Graha Wisata TMII dan Ragunan Berdasarkan Status Tamu",
+"description": "Dataset ini berisi tentang Data Kunjungan Tamu Graha Wisata TMII dan Ragunan Berdasarkan Status Tamu.",
+"slug": "data-kunjungan-tamu-graha-wisata-tmii-dan-ragunan-berdasarkan-status-tamu",
+"tags": [
+"Graha Wisata",
+"Taman Mini Indonesia Indah",
+"graha wisata"
+],
+"views": 158,
+"datasetCount": 1,
+"createdAt": "2022-12-28 06:17:35",
+"updatedAt": "2023-01-18T19:53:47.000000Z"
+},
+{
+"id": 378,
+"title": "Data Jumlah Usaha Jasa Pariwisata",
+"description": "Data ini Berisi Mengenai Data Jumlah Usaha Jasa Pariwisata",
+"slug": "data-jumlah-usaha-jasa-pariwisata",
+"tags": [
+"Dinas Pariwisata dan Kebudayaan",
+"Usaha Jasa Pariwisata"
+],
+"views": 182,
+"datasetCount": 1,
+"createdAt": "2022-12-28 05:02:20",
+"updatedAt": "2023-01-18T19:52:57.000000Z"
+},
+{
+"id": 375,
+"title": "Data Usaha Jasa Makanan Dan Minuman Jenis Usaha Restoran Di DKI Jakarta",
+"description": "Dataset ini berisi Data Usaha Jasa Makanan dan Minuman Jenis Usaha Restoran Di DKI Jakarta",
+"slug": "data-usaha-jasa-makanan-dan-minuman-jenis-usaha-restoran-di-dki-jakarta",
+"tags": [
+"2014",
+"Data Usaha",
+"Jasa Makanan dan Minuman",
+"Restoran",
+"DKI JAKARTA"
+],
+"views": 1435,
+"datasetCount": 1,
+"createdAt": "2022-12-28 04:59:35",
+"updatedAt": "2023-01-18T19:52:30.000000Z"
+},
+{
+"id": 373,
+"title": "Data Jumlah Hotel Berbintang dan Non Bintang di Provinsi DKI Jakarta Tahun 2020",
+"description": "Data Mengenai Jumlah Hotel Bintang dan Non Bintang di Provinsi DKI Jakarta Tahun 2020",
+"slug": "data-jumlah-hotel-berbintang-dan-non-bintang-di-provinsi-dki-jakarta-tahun-2020",
+"tags": [
+"Disparekraf",
+"hotel bintang",
+"hotel non bintang",
+"DKI JAKARTA",
+"2020"
+],
+"views": 262,
+"datasetCount": 1,
+"createdAt": "2022-12-28 04:53:57",
+"updatedAt": "2023-01-18T19:52:13.000000Z"
+},
+{
+"id": 371,
+"title": "Data Kegiatan Pemberdayaan Masyarakat Di DKI Jakarta",
+"description": "Dataset ini berisi Data Kegiatan Pemberdayaan Masyarakat Di DKI Jakarta",
+"slug": "data-kegiatan-pemberdayaan-masyarakat-di-dki-jakarta",
+"tags": [
+"2010",
+"DKI JAKARTA",
+"Kegiatan",
+"masyarakat",
+"Pemberdayaan"
+],
+"views": 136,
+"datasetCount": 1,
+"createdAt": "2022-12-28 04:47:15",
+"updatedAt": "2023-01-18T19:49:31.000000Z"
+},
+{
+"id": 283,
+"title": "Data Rekap Pengunjung Tourist Information Center (TIC) Djakarta Theatre",
+"description": "Dataset ini berisi mengenai Data Rekap Pengunjung Tourist Information Center (TIC) Djakarta Theatre",
+"slug": "data-rekap-pengunjung-tourist-information-center-tic-djakarta-theatre",
+"tags": [
+"2007",
+"2008",
+"2009",
+"2010",
+"2011",
+"2012",
+"DATA",
+"Djakarta Theatre",
+"DKI JAKARTA",
+"Pengunjung",
+"Tourist Information Center"
+],
+"views": 234,
+"datasetCount": 1,
+"createdAt": "2022-12-27 08:15:48",
+"updatedAt": "2023-01-18T19:15:10.000000Z"
+},
+{
+"id": 270,
+"title": "Data Pengunjung Tourist Information Center TIC Up Monumen Nasional DKI Jakarta",
+"description": "Dataset ini berisi mengenai data pengunjung tourist information center TIC Up monumen nasional DKI Jakarta",
+"slug": "data-pengunjung-tourist-information-center-tic-up-monumen-nasional-dki-jakarta",
+"tags": [
+"2014",
+"2015",
+"Data Pengunjung",
+"Monumen Nasional"
+],
+"views": 196,
+"datasetCount": 1,
+"createdAt": "2022-12-27 07:47:14",
+"updatedAt": "2023-01-18T19:14:53.000000Z"
+}
+]

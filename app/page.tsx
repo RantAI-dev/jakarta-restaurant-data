@@ -160,6 +160,38 @@ export default function HomePage() {
           <p className="atlas-mono text-ink-muted-48 mb-6">
             {t("home.choose_section")}
           </p>
+          {/* ── SDI — Sumber primer (Dinas Pariwisata) ── */}
+          <Link
+            href="/sdi"
+            className="group utility-card relative block p-7 md:p-9 mb-5 hover:-translate-y-0.5"
+            style={{ borderColor: "#0f3d7a" }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div className="flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logo-jakarta.png" alt="Logo Jakarta" className="h-12 w-auto" />
+                <div>
+                  <span className="atlas-mono" style={{ color: "#0f3d7a" }}>
+                    SDI · SATU DATA JAKARTA · SUMBER PRIMER
+                  </span>
+                  <h2 className="atlas-display-lg text-ink mt-1">
+                    Katalog Data Pariwisata &amp; Ekonomi Kreatif
+                  </h2>
+                  <p className="apple-body mt-2 text-ink-muted-80 max-w-[60ch]">
+                    182 dataset resmi Dinas Pariwisata & Ekraf, langsung dari
+                    Satu Data Jakarta — ditampilkan sebagai tabel (fokus tahap awal).
+                  </p>
+                </div>
+              </div>
+              <span
+                className="apple-caption-strong inline-flex items-center gap-1.5 group-hover:gap-2 transition-all whitespace-nowrap"
+                style={{ color: "#0f3d7a" }}
+              >
+                Buka dashboard SDI <span aria-hidden>→</span>
+              </span>
+            </div>
+          </Link>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <SectionCard
               href="/restaurants"
