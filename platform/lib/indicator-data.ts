@@ -1,0 +1,47 @@
+import { db, schema } from "@/lib/db";
+import { eq, asc } from "drizzle-orm";
+import { INDICATORS } from "@/lib/gci/indicators";
+
+const { dataset, datasetSync, record } = schema;
+
+/** Semua baris (data JSON) sebuah dataset dari DB, terurut. */
+export async function rowsFor(slug: string): Promise<Record<string, unknown>[]> {
+  const rs = await db
+    .select()
+    .from(record)
+    .where(eq(record.slug, slug))
+    .orderBy(asc(record.ordinal));
+  return rs.map((r) => r.data as Record<string, unknown>);
+}
+
+/** Dataset tersync yang cocok kata kunci sebuah indikator (paling berisi dulu). */
+export async function datasetsFor(
+  code: string
+): Promise<{ slug: string; title: string; total: number }[]> {
+  const ind = INDICATORS.find((i) => i.code === code);
+  if (!ind || !ind.match.length) return [];
+  const cat = await db
+    .select({ slug: dataset.slug, title: dataset.title })
+    .from(dataset);
+  const syncs = new Map(
+    (
+      await db
+        .select({ slug: datasetSync.slug, total: datasetSync.total })
+        .from(datasetSync)
+    ).map((s) => [s.slug, s.total ?? 0])
+  );
+  return cat
+    .filter((d) => ind.match.some((kw) => d.title.toLowerCase().includes(kw)))
+    .map((d) => ({ ...d, total: syncs.get(d.slug) ?? 0 }))
+    .filter((d) => d.total > 0)
+    .sort((a, b) => b.total - a.total);
+}
+
+/** Ambil baris dataset utama (paling berisi) sebuah indikator + judulnya. */
+export async function primaryData(
+  code: string
+): Promise<{ title: string; slug: string; rows: Record<string, unknown>[] } | null> {
+  const ds = await datasetsFor(code);
+  if (!ds.length) return null;
+  return { title: ds[0].title, slug: ds[0].slug, rows: await rowsFor(ds[0].slug) };
+}

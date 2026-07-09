@@ -79,7 +79,13 @@ export function FrameworkView({
                       <tr key={x.code} className="border-t border-slate-100 align-top">
                         <td className="px-4 py-3 text-slate-400 tabular-nums">{x.code}</td>
                         <td className="px-4 py-3">
-                          <div className="font-medium text-slate-800">{x.name}</div>
+                          <Link
+                            href={`/${x.framework.toLowerCase()}/${x.code}`}
+                            className="font-medium text-slate-800 hover:underline"
+                            style={{ color: NAVY }}
+                          >
+                            {x.name}
+                          </Link>
                           <div className="text-[12px] text-slate-400">{x.group}</div>
                         </td>
                         <td className="px-4 py-3">
