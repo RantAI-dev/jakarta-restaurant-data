@@ -1,0 +1,28 @@
+{
+  "name": "dispar-data-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3031",
+    "build": "next build",
+    "start": "next start -p 3031",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "next": "15.0.7",
+    "postgres": "^3.4.9",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.31.10",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,10 @@
+Framework	Dimensi/Fungsi	Kelompok	Kode	Indikator	Ukuran/Definisi	Pemilik Data (OPD)	Data Dispar	Readiness	Catatan
+GCI	Cultural Experience	Cultural	CE5	Event olahraga besar	Jumlah event olahraga internasional	Dispora	Tidak	Gap	Lintas-OPD (Dispora)
+GCI	Cultural Experience	Cultural	CE6	Sister city	Jumlah kota kembar	Biro Kerja Sama Daerah	Tidak	Gap	Lintas-OPD (Biro KSD)
+GCI	Human Capital	Akses	HC-VISA	Kemudahan masuk (visa/entry)	Kebijakan visa on arrival / bebas visa	Imigrasi (nasional)	Tidak	Gap	Lintas-instansi; relevan arus wisatawan
+GPCI	Cultural Interaction	Volume of Interaction	CI-FR	Jumlah penduduk asing (Foreign Residents)	Jumlah ekspatriat menetap	Disdukcapil / Imigrasi	Tidak	Gap	Lintas-OPD
+GPCI	Cultural Interaction	Facilities for Visitors	CI-ST	Jumlah stadion	Number of stadiums	Dispora	Tidak	Gap	Lintas-OPD (Dispora)
+GPCI	Accessibility	International	AC-DF	Kota dengan penerbangan langsung internasional	Cities with direct int'l flights	Dishub / AP II	Tidak	Gap	Lintas-OPD; konektivitas wisata
+GPCI	Accessibility	International	AC-AP	Jumlah penumpang udara	Number of air passengers	AP II / Dishub	Tidak	Gap	Lintas-OPD; proksi arus wisatawan via bandara (Dispar punya TIC Bandara)
+GPCI	Accessibility	International	AC-AR	Kedatangan/keberangkatan bandara	Airport arrivals/departures	AP II	Tidak	Gap	Lintas-OPD
+GPCI	Accessibility	International	AC-TT	Waktu tempuh ke bandara	Travel time to airport	Dishub	Tidak	Gap	Lintas-OPD
