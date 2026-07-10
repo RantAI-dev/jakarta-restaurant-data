@@ -1,57 +1,60 @@
 import Link from "next/link";
-import { SDI_DATASETS, sdiStats } from "@/lib/sdi";
+import { sdiStats } from "@/lib/sdi";
 import { secondaryDatasets } from "@/lib/secondary";
+import { computeReadiness } from "@/lib/gci/readiness";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
 const GOLD = "#e8a33d";
 
-export default function HomePage() {
-  const stats = sdiStats();
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const s = sdiStats();
+  const r = await computeReadiness();
+  const gci = r.filter((x) => x.framework === "GCI");
+  const gpci = r.filter((x) => x.framework === "GPCI");
+  const ready = (a: typeof r) => a.filter((x) => x.status === "ready").length;
+
   const secondary = secondaryDatasets();
-  const secondaryRows = secondary.reduce((s, d) => s + d.rows, 0);
+  const secondaryTotalRows = secondary.reduce((a, d) => a + d.rows, 0);
+
+  const MENUS = [
+    {
+      href: "/sdi",
+      title: "Katalog",
+      desc: `${s.total} dataset primer SDI + ${secondary.length} sekunder`,
+      stat: `${s.total} dataset`,
+    },
+    {
+      href: "/gci",
+      title: "GCI",
+      desc: "Kearney Global Cities Index — readiness pariwisata",
+      stat: `${ready(gci)}/${gci.length} ready`,
+    },
+    {
+      href: "/gpci",
+      title: "GPCI",
+      desc: "Mori Global Power City Index — readiness pariwisata",
+      stat: `${ready(gpci)}/${gpci.length} ready`,
+    },
+    {
+      href: "/atlas",
+      title: "Atlas",
+      desc: "Data sekunder pendataan lapangan (GCI)",
+      stat: `${secondaryTotalRows.toLocaleString("id-ID")} baris`,
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
-      <header style={{ background: NAVY }} className="text-white">
-        <div className="mx-auto max-w-[1320px] px-6 h-[76px] flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo-jakarta.png"
-              alt="Logo Jakarta"
-              className="h-11 w-auto bg-white rounded-md p-1"
-            />
-            <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-[15px]">
-                Dinas Pariwisata &amp; Ekonomi Kreatif
-              </div>
-              <div className="text-[12px] text-white/70">
-                Provinsi DKI Jakarta · Platform Data
-              </div>
-            </div>
-          </div>
-          <nav className="flex items-center gap-5 text-[13px] font-medium text-white/85">
-            <Link href="/dashboard" className="hover:text-white transition-colors">
-              Dashboard
-            </Link>
-            <Link href="/readiness" className="hover:text-white transition-colors">
-              Readiness GCI/GPCI
-            </Link>
-            <Link href="/sdi" className="hover:text-white transition-colors">
-              Katalog Data →
-            </Link>
-          </nav>
-        </div>
-      </header>
-
       <section
         style={{
           background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)`,
         }}
         className="text-white"
       >
-        <div className="mx-auto max-w-[1320px] px-6 pt-16 pb-20">
+        <div className="mx-auto max-w-[1320px] px-6 pt-16 pb-14">
           <div className="text-[12px] font-mono uppercase tracking-widest text-white/60">
             <span style={{ color: GOLD }}>●</span> Dashboard Visualisasi Data
             Terkonsolidasi
@@ -61,60 +64,36 @@ export default function HomePage() {
             <span style={{ color: GOLD }}>&amp; Ekonomi Kreatif</span> Jakarta
           </h1>
           <p className="mt-4 text-white/75 max-w-[68ch] text-[16px]">
-            Menyatukan data primer dari Satu Data Jakarta dengan data sekunder
-            pendataan lapangan, diarahkan untuk memenuhi indikator Global City
-            Index (GCI) &amp; GPCI.
+            Empat pintu masuk ke data Dispar — katalog SDI, readiness GCI/GPCI,
+            dan pendataan lapangan. Memilih menu untuk membuka visualisasi.
           </p>
-
-          <div className="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-[560px]">
-            <Stat label="DATASET PRIMER" value={String(stats.total)} />
-            <Stat label="DATASET SEKUNDER" value={String(secondary.length)} />
-            <Stat
-              label="BARIS DATA SEKUNDER"
-              value={secondaryRows.toLocaleString("id-ID")}
-            />
-          </div>
-
-          <div className="mt-10">
-            <Link
-              href="/sdi"
-              className="inline-flex items-center gap-2 bg-white text-[15px] font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
-              style={{ color: NAVY }}
-            >
-              Buka Katalog Data →
-            </Link>
-          </div>
         </div>
       </section>
 
-      <footer className="mx-auto max-w-[1320px] px-6 py-10 text-[13px] text-slate-500">
-        <p>
-          Sumber primer: Satu Data Indonesia — Jakarta ·{" "}
-          <a
-            href="https://satudata.jakarta.go.id"
-            target="_blank"
-            rel="noreferrer"
-            className="underline"
-          >
-            satudata.jakarta.go.id
-          </a>
-          . Data sekunder: pendataan Jakarta Atlas (GCI).
-        </p>
-        <p className="mt-1 text-slate-400">
-          © 2026 Dinas Pariwisata &amp; Ekonomi Kreatif Provinsi DKI Jakarta
-        </p>
-      </footer>
+      <section className="mx-auto max-w-[1320px] px-6 py-10 pb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {MENUS.map((m) => (
+            <Link
+              key={m.href}
+              href={m.href}
+              className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 hover:-translate-y-0.5 transition-transform"
+            >
+              <div className="text-[18px] font-bold text-slate-800">
+                {m.title}
+              </div>
+              <p className="text-[13px] text-slate-500 mt-1 min-h-[40px]">
+                {m.desc}
+              </p>
+              <div
+                className="mt-4 text-[13px] font-semibold"
+                style={{ color: NAVY }}
+              >
+                {m.stat} →
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </main>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-lg bg-white/10 border border-white/15 px-4 py-3">
-      <div className="text-[11px] font-mono tracking-wider text-white/60">
-        {label}
-      </div>
-      <div className="text-[24px] font-bold tabular-nums mt-1">{value}</div>
-    </div>
   );
 }

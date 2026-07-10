@@ -14,6 +14,8 @@ export type IndicatorResult = Indicator & {
   status: Readiness;
   datasets: { slug: string; title: string; total: number }[];
   latest: { label: string; value: number; datasetSlug: string } | null;
+  /** Seri periode→nilai (maks 24 titik) untuk chart tren. */
+  trend: { label: string; value: number }[];
 };
 
 const num = (v: unknown): number | null => {
@@ -68,11 +70,14 @@ export async function computeReadiness(): Promise<IndicatorResult[]> {
     }
 
     let latest: IndicatorResult["latest"] = null;
+    let trend: IndicatorResult["trend"] = [];
     if (withData.length > 0) {
       try {
         latest = await latestValue(withData[0].slug, ind.measure);
+        trend = await trendSeries(withData[0].slug, ind.measure);
       } catch {
         latest = null;
+        trend = [];
       }
     }
 
@@ -83,6 +88,7 @@ export async function computeReadiness(): Promise<IndicatorResult[]> {
         .slice(0, 5)
         .map((d) => ({ slug: d.slug, title: d.title, total: d.total })),
       latest,
+      trend,
     });
   }
   return results;
@@ -126,4 +132,43 @@ async function latestValue(
       return { label: String(r[labelCol.key] ?? ""), value: v, datasetSlug: slug };
   }
   return null;
+}
+
+/** Seri tren (label periode → value) dari sebuah dataset, max 24 titik terakhir. */
+async function trendSeries(
+  slug: string,
+  measure: string | null
+): Promise<IndicatorResult["trend"]> {
+  const cols = await db
+    .select()
+    .from(datasetColumn)
+    .where(eq(datasetColumn.slug, slug))
+    .orderBy(asc(datasetColumn.ordinal));
+  const rows = (
+    await db.select().from(record).where(eq(record.slug, slug))
+  ).map((r) => r.data as Record<string, unknown>);
+  if (!rows.length || !cols.length) return [];
+
+  const labelRe = /periode|tahun|bulan|tanggal/i;
+  const measureRe = measure
+    ? new RegExp(measure, "i")
+    : /jumlah|total|nilai|kunjungan|pengunjung|wisatawan|kamar|realisasi|persen|rata/i;
+  const isNum = (key: string) =>
+    rows.filter((r) => num(r[key]) !== null).length >= rows.length * 0.9;
+
+  const valueCol =
+    cols.find(
+      (c) => measureRe.test(c.key) && !labelRe.test(c.key) && isNum(c.key)
+    ) ?? cols.find((c) => !labelRe.test(c.key) && isNum(c.key));
+  if (!valueCol) return [];
+  const labelCol = cols.find((c) => labelRe.test(c.key)) ?? cols[0];
+
+  return rows
+    .map((r) => ({
+      label: String(r[labelCol.key] ?? ""),
+      value: num(r[valueCol.key]) ?? 0,
+    }))
+    .filter((b) => b.label !== "")
+    .sort((a, b) => a.label.localeCompare(b.label))
+    .slice(-24);
 }

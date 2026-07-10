@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Nav } from "./Nav";
+import { BarChart } from "./BarChart";
 import type { IndicatorResult } from "@/lib/gci/readiness";
 
 const NAVY = "#0f3d7a";
@@ -30,8 +30,6 @@ export function FrameworkView({
 
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
-      <Nav />
-
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
@@ -125,15 +123,71 @@ export function FrameworkView({
           </div>
         </div>
 
-        {/* ---- SLOT TODO (agent — Plan 6) ---- */}
-        <TodoSlot
-          title="📊 Chart tren per indikator"
-          desc="Untuk tiap indikator yang punya nilai (data-ada), render chart tren per periode dari record dataset pengisi. Lihat Plan 6 Task 3/4 + komponen BarChart."
-        />
-        <TodoSlot
-          title="🔴 Aksi menutup gap"
-          desc="Daftar indikator Gap/Partial + aksi konkret (kolom Catatan di sheet) + OPD tujuan permintaan data. Lihat Plan 6."
-        />
+        {/* ---- Chart tren per indikator (Plan 6 Task 3) ---- */}
+        {rows.filter((x) => x.trend && x.trend.length > 1).length > 0 && (
+          <div>
+            <h2 className="text-[16px] font-bold text-slate-800 mb-3">
+              Tren indikator
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {rows
+                .filter((x) => x.trend && x.trend.length > 1)
+                .map((x) => (
+                  <div
+                    key={x.code}
+                    className="bg-white rounded-xl border border-slate-200 shadow-sm p-5"
+                  >
+                    <div className="text-[13px] font-semibold text-slate-700 mb-3">
+                      {x.name}
+                    </div>
+                    <BarChart data={x.trend} />
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+
+        {/* ---- Panel aksi gap (Plan 6 Task 4) ---- */}
+        {rows.filter((x) => x.status !== "ready").length > 0 && (
+          <div>
+            <h2 className="text-[16px] font-bold text-slate-800 mb-3">
+              Aksi menutup gap (
+              {rows.filter((x) => x.status !== "ready").length})
+            </h2>
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm divide-y divide-slate-100">
+              {rows
+                .filter((x) => x.status !== "ready")
+                .map((x) => {
+                  const st = STATUS[x.status];
+                  return (
+                    <div
+                      key={x.code}
+                      className="px-5 py-3 flex items-start gap-3"
+                    >
+                      <span
+                        className="text-[11px] font-semibold px-2 py-0.5 rounded-full mt-0.5"
+                        style={{
+                          background: st.bg,
+                          color: st.fg,
+                        }}
+                      >
+                        {st.label}
+                      </span>
+                      <div>
+                        <div className="text-[14px] font-medium text-slate-800">
+                          {x.name}
+                        </div>
+                        <div className="text-[12px] text-slate-500">
+                          {x.note || "—"} ·{" "}
+                          <span className="text-slate-400">{x.owner}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        )}
       </section>
     </main>
   );
@@ -147,18 +201,6 @@ function Card({ label, value, dot }: { label: string; value: string; dot?: strin
         {label}
       </div>
       <div className="text-[22px] font-bold tabular-nums mt-1">{value}</div>
-    </div>
-  );
-}
-
-function TodoSlot({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div className="rounded-xl border-2 border-dashed border-slate-300 bg-white/50 p-6">
-      <div className="text-[14px] font-semibold text-slate-600">{title}</div>
-      <div className="text-[13px] text-slate-500 mt-1 max-w-[70ch]">{desc}</div>
-      <div className="mt-2 text-[11px] font-mono uppercase tracking-wider text-slate-400">
-        TODO · scaffold slot
-      </div>
     </div>
   );
 }

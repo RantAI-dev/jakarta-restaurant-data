@@ -141,33 +141,6 @@ export default function DatasetDetailPage({
 
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
-      <header style={{ background: NAVY }} className="text-white">
-        <div className="mx-auto max-w-[1320px] px-6 h-[76px] flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo-jakarta.png"
-              alt="Logo Jakarta"
-              className="h-11 w-auto bg-white rounded-md p-1"
-            />
-            <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-[15px]">
-                Dinas Pariwisata &amp; Ekonomi Kreatif
-              </div>
-              <div className="text-[12px] text-white/70">
-                Provinsi DKI Jakarta · Dashboard Visualisasi Data
-              </div>
-            </div>
-          </div>
-          <Link
-            href="/sdi"
-            className="text-[13px] font-medium text-white/85 hover:text-white transition-colors"
-          >
-            ← Katalog Data
-          </Link>
-        </div>
-      </header>
-
       <section
         style={{
           background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)`,

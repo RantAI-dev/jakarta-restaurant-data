@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Nav } from "@/components/Nav";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
@@ -9,8 +8,8 @@ const GOLD = "#e8a33d";
  * ATLAS — data sekunder (pendataan lapangan GCI) dibangun ULANG di dalam platform
  * dengan style kita (bukan link keluar).
  *
- * STATUS: SCAFFOLD. Kerangka + kartu placeholder. Agent mengisi datanya —
- * lihat Plan 6 Task 5 (strategi akses data Atlas + view Restoran/Event/Golf).
+ * Halaman detail tiap section hidup di /atlas/[section] — menarik data
+ * langsung dari Atlas app via endpoint JSON.
  */
 
 const SECTIONS = [
@@ -37,8 +36,6 @@ const SECTIONS = [
 export default function AtlasPage() {
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
-      <Nav />
-
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
@@ -74,21 +71,16 @@ export default function AtlasPage() {
                 className="mt-4 text-[13px] font-medium"
                 style={{ color: NAVY }}
               >
-                Lihat data → <span className="text-slate-400">(TODO Plan 6)</span>
+                Lihat data →
               </Link>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border-2 border-dashed border-slate-300 bg-white/50 p-6">
-          <div className="text-[14px] font-semibold text-slate-600">
-            🏗️ Scaffold — dibangun agent (Plan 6 Task 5)
-          </div>
-          <div className="text-[13px] text-slate-500 mt-1 max-w-[80ch]">
-            Halaman detail tiap section (<code>/atlas/[section]</code>) + tabel
-            data + filter/search, styling seragam platform. Strategi akses data
-            (impor dari app Atlas root / fetch API / snapshot) dibahas di Plan 6.
-          </div>
+        <div className="mt-8 rounded-xl border border-slate-200 bg-white p-5 text-[13px] text-slate-600">
+          Halaman detail tiap section (<code>/atlas/[section]</code>) sudah jadi
+          — menarik data langsung dari Jakarta Atlas via endpoint JSON (
+          <code>/api/gci</code>, <code>/api/events</code>, <code>/api/golf</code>).
         </div>
       </section>
     </main>
