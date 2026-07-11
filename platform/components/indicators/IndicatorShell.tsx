@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Nav } from "@/components/Nav";
 import { INDICATORS } from "@/lib/gci/indicators";
 
 const NAVY = "#0f3d7a";
@@ -20,7 +19,6 @@ export function IndicatorShell({
   const fw = ind?.framework ?? "GCI";
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
-      <Nav />
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
