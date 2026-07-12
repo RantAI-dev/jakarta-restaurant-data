@@ -2,7 +2,7 @@
 
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
-import type { Point } from "@/lib/agg";
+import { fmtPeriode, type Point } from "@/lib/agg";
 
 const NAVY = "#0f3d7a";
 const idfmt = (v: number) => v.toLocaleString("id-ID");
@@ -17,21 +17,33 @@ export function LineTrend({ data }: { data: Point[] }) {
     );
 
   const option = {
-    grid: { left: 6, right: 16, top: 16, bottom: 6, containLabel: true },
+    grid: { left: 6, right: 30, top: 16, bottom: 24, containLabel: true },
     tooltip: {
       trigger: "axis",
-      valueFormatter: (v: number) => idfmt(v),
+      valueFormatter: (v: number) => idfmt(v) + " kunjungan",
     },
     xAxis: {
       type: "category",
+      name: "Periode",
+      nameLocation: "middle",
+      nameGap: 34,
+      nameTextStyle: { color: "#94a3b8", fontSize: 11 },
       data: data.map((d) => d.label),
       boundaryGap: false,
-      axisLabel: { color: "#94a3b8", fontSize: 11 },
+      axisLabel: {
+        color: "#94a3b8",
+        fontSize: 11,
+        hideOverlap: true,
+        showMaxLabel: true,
+        formatter: (v: string) => fmtPeriode(v),
+      },
       axisLine: { lineStyle: { color: "#e2e8f0" } },
       axisTick: { show: false },
     },
     yAxis: {
       type: "value",
+      name: "Kunjungan",
+      nameTextStyle: { color: "#94a3b8", fontSize: 11, align: "left" },
       axisLabel: { color: "#94a3b8", formatter: (v: number) => idfmt(v) },
       splitLine: { lineStyle: { color: "#eef2f7" } },
     },

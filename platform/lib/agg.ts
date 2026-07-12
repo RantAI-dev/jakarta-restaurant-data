@@ -46,3 +46,14 @@ export function topN(arr: Point[], n = 10): Point[] {
 export function total(arr: Point[]): number {
   return arr.reduce((s, x) => s + x.value, 0);
 }
+
+const BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+/** Format label periode: "201801" -> "Jan 2018"; "2024" tetap "2024". */
+export function fmtPeriode(s: string): string {
+  const m = /^(\d{4})(\d{2})$/.exec(String(s ?? ""));
+  if (m) {
+    const mo = Number(m[2]);
+    if (mo >= 1 && mo <= 12) return `${BULAN[mo - 1]} ${m[1]}`;
+  }
+  return String(s ?? "");
+}

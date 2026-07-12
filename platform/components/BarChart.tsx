@@ -2,6 +2,7 @@
 
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
+import { fmtPeriode } from "@/lib/agg";
 
 export type Bar = { label: string; value: number };
 const NAVY = "#0f3d7a";
@@ -12,12 +13,18 @@ export function BarChart({ data }: { data: Bar[] }) {
   if (!data.length) return null;
 
   const option = {
-    grid: { left: 6, right: 12, top: 16, bottom: 6, containLabel: true },
+    grid: { left: 6, right: 24, top: 16, bottom: 6, containLabel: true },
     tooltip: { trigger: "axis", valueFormatter: (v: number) => idfmt(v) },
     xAxis: {
       type: "category",
       data: data.map((d) => d.label),
-      axisLabel: { color: "#94a3b8", fontSize: 11, hideOverlap: true },
+      axisLabel: {
+        color: "#94a3b8",
+        fontSize: 11,
+        hideOverlap: true,
+        showMaxLabel: true,
+        formatter: (v: string) => fmtPeriode(v),
+      },
       axisLine: { lineStyle: { color: "#e2e8f0" } },
       axisTick: { show: false },
     },
