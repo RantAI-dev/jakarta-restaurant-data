@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { byPeriod, idNum } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -8,7 +8,7 @@ import { GroupedLines } from "@/components/charts/GroupedLines";
  *  Pakai idNum() — occupancy disimpan dengan koma desimal ("51,85").
  */
 export default async function CiLhView() {
-  const d = await primaryData("CI-LH");
+  const d = await pickData("CI-LH", ["jenis_hotel", "rata_rata"]);
   const rows = d?.rows ?? [];
   const byHotel = new Map<string, Record<string, unknown>[]>();
   for (const r of rows) {

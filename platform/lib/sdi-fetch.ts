@@ -73,19 +73,30 @@ export async function fetchSdiDetail(
     signal
   );
 
-  const table = await post(
-    "get-table-data",
-    {
-      page_url: slug,
-      kategori: "dataset",
-      page: 1,
-      per_page: 1000,
-      sort_field: null,
-      sort_order: "asc",
-      filters: {},
-    },
-    signal
-  );
+  // get-table-data dipaginasi — SDI membatasi ~5000 baris/halaman; sebagian
+  // registry (akomodasi, MICE, dll) punya puluhan ribu baris.
+  const PER = 5000;
+  const allRows: Record<string, unknown>[] = [];
+  let tableTotal = 0;
+  for (let page = 1; page <= 25; page++) {
+    const table = await post(
+      "get-table-data",
+      {
+        page_url: slug,
+        kategori: "dataset",
+        page,
+        per_page: PER,
+        sort_field: null,
+        sort_order: "asc",
+        filters: {},
+      },
+      signal
+    );
+    const chunk = Array.isArray(table?.data) ? table.data : [];
+    tableTotal = Number(table?.total ?? tableTotal) || tableTotal;
+    allRows.push(...chunk);
+    if (chunk.length < PER || allRows.length >= tableTotal) break;
+  }
 
   const meta = detail?.data ?? {};
   const komponen: {
@@ -112,7 +123,7 @@ export async function fetchSdiDetail(
       type: k.tipe_data_komponen ?? null,
       description: k.desc_komponen ?? null,
     })),
-    rows: Array.isArray(table?.data) ? table.data : [],
-    total: table?.total ?? 0,
+    rows: allRows,
+    total: tableTotal,
   };
 }
