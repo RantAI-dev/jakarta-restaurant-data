@@ -1,33 +1,46 @@
-export type Bar = { label: string; value: number };
+"use client";
 
-/** Chart batang sederhana tanpa library — tinggi bar relatif ke nilai maks. */
+import ReactECharts from "echarts-for-react";
+import * as echarts from "echarts";
+
+export type Bar = { label: string; value: number };
+const NAVY = "#0f3d7a";
+const idfmt = (v: number) => v.toLocaleString("id-ID");
+
+/** Bar vertikal per periode (ECharts). Dipakai tren framework & detail dataset. */
 export function BarChart({ data }: { data: Bar[] }) {
   if (!data.length) return null;
-  const max = Math.max(...data.map((d) => d.value), 1);
-  return (
-    <div className="flex items-end gap-1 h-64 border-l border-b border-slate-200 pl-2">
-      {data.map((d, i) => (
-        <div
-          key={i}
-          className="flex-1 flex flex-col items-center justify-end h-full group min-w-0"
-        >
-          <div className="text-[10px] text-slate-500 mb-1 opacity-0 group-hover:opacity-100 whitespace-nowrap">
-            {d.value.toLocaleString("id-ID")}
-          </div>
-          <div
-            className="w-full rounded-t"
-            style={{
-              height: `${(d.value / max) * 100}%`,
-              minHeight: 2,
-              background: "#0f3d7a",
-            }}
-            title={`${d.label}: ${d.value.toLocaleString("id-ID")}`}
-          />
-          <div className="text-[10px] text-slate-500 mt-1 truncate max-w-full w-full text-center">
-            {d.label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+
+  const option = {
+    grid: { left: 6, right: 12, top: 16, bottom: 6, containLabel: true },
+    tooltip: { trigger: "axis", valueFormatter: (v: number) => idfmt(v) },
+    xAxis: {
+      type: "category",
+      data: data.map((d) => d.label),
+      axisLabel: { color: "#94a3b8", fontSize: 11, hideOverlap: true },
+      axisLine: { lineStyle: { color: "#e2e8f0" } },
+      axisTick: { show: false },
+    },
+    yAxis: {
+      type: "value",
+      axisLabel: { color: "#94a3b8", formatter: (v: number) => idfmt(v) },
+      splitLine: { lineStyle: { color: "#eef2f7" } },
+    },
+    series: [
+      {
+        type: "bar",
+        data: data.map((d) => d.value),
+        barMaxWidth: 28,
+        itemStyle: {
+          borderRadius: [4, 4, 0, 0],
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: "#1b5aa8" },
+            { offset: 1, color: NAVY },
+          ]),
+        },
+      },
+    ],
+  };
+
+  return <ReactECharts option={option} style={{ height: 240 }} notMerge lazyUpdate />;
 }
