@@ -56,11 +56,28 @@ export async function pickData(
   requiredCols: string[]
 ): Promise<{ title: string; slug: string; rows: Record<string, unknown>[] } | null> {
   const ds = await datasetsFor(code);
+  const cand: {
+    title: string;
+    slug: string;
+    rows: Record<string, unknown>[];
+    maxP: string;
+    total: number;
+  }[] = [];
   for (const d of ds) {
     const rows = await rowsFor(d.slug);
     if (rows.length && requiredCols.every((c) => c in (rows[0] as object))) {
-      return { title: d.title, slug: d.slug, rows };
+      const maxP = rows.reduce((m, r) => {
+        const p = String((r as Record<string, unknown>).periode_data ?? "");
+        return p > m ? p : m;
+      }, "");
+      cand.push({ title: d.title, slug: d.slug, rows, maxP, total: d.total });
     }
+  }
+  if (cand.length) {
+    // Prioritas: periode terbaru dulu, lalu jumlah baris terbanyak.
+    cand.sort((a, b) => b.maxP.localeCompare(a.maxP) || b.total - a.total);
+    const c = cand[0];
+    return { title: c.title, slug: c.slug, rows: c.rows };
   }
   if (!ds.length) return null;
   return { title: ds[0].title, slug: ds[0].slug, rows: await rowsFor(ds[0].slug) };
