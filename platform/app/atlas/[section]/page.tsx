@@ -261,7 +261,11 @@ export default function AtlasSectionPage({
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
-      .then((j) => alive && setRows(Array.isArray(j.rows) ? j.rows : []))
+      .then((j) => {
+        // Atlas API: /api/{gci,events,golf} pakai `rows`; /api/restaurants pakai `items`.
+        const arr = Array.isArray(j.rows) ? j.rows : Array.isArray(j.items) ? j.items : [];
+        if (alive) setRows(arr);
+      })
       .catch((e) => alive && setError(`Gagal menarik data Atlas: ${e.message}`))
       .finally(() => alive && setLoading(false));
     return () => {
