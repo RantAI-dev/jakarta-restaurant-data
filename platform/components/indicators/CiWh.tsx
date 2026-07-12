@@ -30,7 +30,7 @@ export default async function CiWhView() {
   const wisman = groupSum(filtered, "jenis_wisatawan", "jumlah_kunjungan");
 
   return (
-    <IndicatorShell code="CI-WH" source={d?.title}>
+    <IndicatorShell code="CI-WH" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(byObyek)} />
         <KpiStat label="Obyek heritage" value={byObyek.length} />

@@ -30,7 +30,7 @@ export default async function CiMuView() {
   const wisman = groupSum(filtered, "jenis_wisatawan", "jumlah_kunjungan");
 
   return (
-    <IndicatorShell code="CI-MU" source={d?.title}>
+    <IndicatorShell code="CI-MU" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(byObyek)} />
         <KpiStat label="Museum" value={byObyek.length} />

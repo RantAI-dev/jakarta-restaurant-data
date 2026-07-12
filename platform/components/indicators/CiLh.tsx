@@ -26,7 +26,7 @@ export default async function CiLhView() {
   const latest5 = star5 ? idNum(star5.rata_rata) : null;
 
   return (
-    <IndicatorShell code="CI-LH" source={d?.title}>
+    <IndicatorShell code="CI-LH" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Jenis hotel" value={byHotel.size} />
         <KpiStat label="Baris data" value={rows.length} />

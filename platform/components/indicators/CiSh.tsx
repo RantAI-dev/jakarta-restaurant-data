@@ -15,7 +15,7 @@ export default async function CiShView() {
   const wisman = groupSum(rows, "jenis_wisatawan", "rata_rata");
 
   return (
-    <IndicatorShell code="CI-SH" source={d?.title}>
+    <IndicatorShell code="CI-SH" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total responden" value={total(groupSum(rows, "asal_negara", "jumlah_responden"))} />
         <KpiStat label="Negara asal" value={perNegara.length} />

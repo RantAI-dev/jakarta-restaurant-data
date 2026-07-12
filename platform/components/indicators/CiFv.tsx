@@ -16,7 +16,10 @@ export default async function CiFvView() {
   const perNegara = topN(groupSum(nd?.rows ?? [], "kebangsaan", "jumlah_kunjungan"), 12);
 
   return (
-    <IndicatorShell code="CI-FV" source={d?.title}>
+    <IndicatorShell
+      code="CI-FV"
+      sources={[d, nd].filter(Boolean).map((x) => ({ slug: x!.slug, title: x!.title }))}
+    >
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(trend)} />
         <KpiStat label="Lokasi TIC" value={perLokasi.length} />

@@ -14,7 +14,7 @@ export default async function CiDiView() {
   const grand = total(perWilayah);
 
   return (
-    <IndicatorShell code="CI-DI" source={d?.title}>
+    <IndicatorShell code="CI-DI" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total usaha kuliner" value={grand} />
         <KpiStat label="Wilayah" value={perWilayah.length} />

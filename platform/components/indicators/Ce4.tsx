@@ -31,7 +31,7 @@ export default async function Ce4View() {
   const wisman = groupSum(filtered, "jenis_wisatawan", "jumlah_kunjungan");
 
   return (
-    <IndicatorShell code="CE4" source={d?.title}>
+    <IndicatorShell code="CE4" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(byObyek)} />
         <KpiStat label="Obyek wisata" value={byObyek.length} />

@@ -17,7 +17,7 @@ export default async function CiThView() {
     .slice(0, 20);
 
   return (
-    <IndicatorShell code="CI-TH" source={d?.title}>
+    <IndicatorShell code="CI-TH" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total pertunjukan" value={rows.length} />
         <KpiStat label="Venue unik" value={new Set(rows.map((r) => r.nama_venue)).size} />

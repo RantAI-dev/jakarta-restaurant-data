@@ -17,7 +17,10 @@ export default async function Ce1View() {
   const perNegara = topN(groupSum(nd?.rows ?? [], "kebangsaan", "jumlah_kunjungan"), 12);
 
   return (
-    <IndicatorShell code="CE1" source={d?.title}>
+    <IndicatorShell
+      code="CE1"
+      sources={[d, nd].filter(Boolean).map((x) => ({ slug: x!.slug, title: x!.title }))}
+    >
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(trend)} />
         <KpiStat label="Lokasi TIC" value={perLokasi.length} />

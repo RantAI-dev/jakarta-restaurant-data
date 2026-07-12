@@ -17,7 +17,7 @@ export default async function CiHrView() {
   const perKota = groupCount(rows, "kabupaten_atau_kota").sort((a, b) => b.value - a.value);
 
   return (
-    <IndicatorShell code="CI-HR" source={d?.title}>
+    <IndicatorShell code="CI-HR" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total usaha akomodasi" value={rows.length} />
         <KpiStat label="Jenis (KBLI)" value={new Set(rows.map((r) => r.uraian_kbli)).size} />

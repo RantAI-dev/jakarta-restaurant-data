@@ -1,23 +1,46 @@
 import Link from "next/link";
+import { inArray } from "drizzle-orm";
 import { INDICATORS } from "@/lib/gci/indicators";
 import { IndexContext } from "./IndexContext";
+import { db, schema } from "@/lib/db";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
 const GOLD = "#e8a33d";
 
-/** Kerangka halaman detail indikator: Nav + title band (dari katalog indikator). */
-export function IndicatorShell({
+type Source = { slug: string; title: string };
+
+/** Kerangka halaman detail indikator: title band (sumber clickable + tier) + konteks indeks. */
+export async function IndicatorShell({
   code,
   source,
+  sources = [],
   children,
 }: {
   code: string;
+  /** Fallback teks (indikator gap tanpa dataset). */
   source?: string;
+  /** Dataset sumber yang dipakai (clickable ke katalog). Boleh > 1. */
+  sources?: Source[];
   children: React.ReactNode;
 }) {
   const ind = INDICATORS.find((i) => i.code === code);
   const fw = ind?.framework ?? "GCI";
+
+  // Tier (primer/sekunder) tiap dataset dari tabel `dataset`.
+  const tierMap = new Map<string, string>();
+  if (sources.length) {
+    try {
+      const rows = await db
+        .select({ slug: schema.dataset.slug, tier: schema.dataset.tier })
+        .from(schema.dataset)
+        .where(inArray(schema.dataset.slug, sources.map((s) => s.slug)));
+      for (const r of rows) tierMap.set(r.slug, r.tier);
+    } catch {
+      /* DB belum siap → default primer */
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
       <section
@@ -39,18 +62,55 @@ export function IndicatorShell({
               {ind.definition}
             </p>
           )}
-          {source && (
+
+          {sources.length > 0 ? (
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px]">
+              <span className="text-white/50">
+                Sumber data{sources.length > 1 ? ` (${sources.length})` : ""}:
+              </span>
+              {sources.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/sdi/${s.slug}`}
+                  className="inline-flex items-center gap-1.5 hover:underline"
+                  style={{ color: GOLD }}
+                >
+                  {s.title}
+                  <TierBadge tier={tierMap.get(s.slug) ?? "primer"} />
+                  <span aria-hidden className="text-white/40">
+                    ↗
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : source ? (
             <p className="mt-2 text-[12px]" style={{ color: GOLD }}>
               Sumber: {source}
             </p>
-          )}
+          ) : null}
         </div>
       </section>
+
       <section className="mx-auto max-w-[1320px] px-6 py-8 pb-20 space-y-8">
         <IndexContext code={code} />
         {children}
       </section>
     </main>
+  );
+}
+
+function TierBadge({ tier }: { tier: string }) {
+  const primer = tier !== "sekunder";
+  return (
+    <span
+      className="text-[9px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded"
+      style={{
+        background: primer ? "rgba(255,255,255,0.18)" : "rgba(232,163,61,0.28)",
+        color: "#fff",
+      }}
+    >
+      {primer ? "Primer" : "Sekunder"}
+    </span>
   );
 }
 

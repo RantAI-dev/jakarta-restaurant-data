@@ -13,7 +13,7 @@ export default async function CiNlView() {
   const perKota = groupCount(rows, "kabupaten_atau_kota").sort((a, b) => b.value - a.value);
 
   return (
-    <IndicatorShell code="CI-NL" source={d?.title}>
+    <IndicatorShell code="CI-NL" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total usaha hiburan" value={rows.length} />
         <KpiStat label="Jenis (KBLI)" value={new Set(rows.map((r) => r.uraian_kbli)).size} />

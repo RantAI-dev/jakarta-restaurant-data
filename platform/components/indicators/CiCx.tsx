@@ -14,7 +14,7 @@ export default async function CiCxView() {
   const grand = total(perWilayah);
 
   return (
-    <IndicatorShell code="CI-CX" source={d?.title}>
+    <IndicatorShell code="CI-CX" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total usaha ekraf" value={grand} />
         <KpiStat label="Wilayah" value={perWilayah.length} />

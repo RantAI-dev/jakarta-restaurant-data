@@ -13,7 +13,7 @@ export default async function BaMiceView() {
   const perKota = groupCount(rows, "kabupaten_atau_kota").sort((a, b) => b.value - a.value);
 
   return (
-    <IndicatorShell code="BA-MICE" source={d?.title}>
+    <IndicatorShell code="BA-MICE" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total usaha MICE" value={rows.length} />
         <KpiStat label="Jenis (KBLI)" value={new Set(rows.map((r) => r.uraian_kbli)).size} />

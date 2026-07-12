@@ -17,7 +17,7 @@ export default async function CiCeView() {
     .slice(0, 20);
 
   return (
-    <IndicatorShell code="CI-CE" source={d?.title}>
+    <IndicatorShell code="CI-CE" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total event" value={rows.length} />
         <KpiStat label="Venue unik" value={new Set(rows.map((r) => r.nama_venue)).size} />

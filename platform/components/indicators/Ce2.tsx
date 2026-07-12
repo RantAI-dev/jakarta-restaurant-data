@@ -17,7 +17,7 @@ export default async function Ce2View() {
   const grand = total(perWilayah);
 
   return (
-    <IndicatorShell code="CE2" source={d?.title}>
+    <IndicatorShell code="CE2" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total restoran" value={grand} />
         <KpiStat label="Wilayah" value={perWilayah.length} />
