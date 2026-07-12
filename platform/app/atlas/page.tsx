@@ -5,31 +5,34 @@ const NAVY_DEEP = "#0a2b57";
 const GOLD = "#e8a33d";
 
 /**
- * ATLAS — data sekunder (pendataan lapangan GCI) dibangun ULANG di dalam platform
- * dengan style kita (bukan link keluar).
- *
- * Halaman detail tiap section hidup di /atlas/[section] — menarik data
- * langsung dari Atlas app via endpoint JSON.
+ * ATLAS — data sekunder (pendataan lapangan GCI) di dalam platform, gaya kita.
+ * 4 section 1:1 dengan Jakarta Atlas; detail di /atlas/[section] menarik data
+ * dari Atlas app via endpoint JSON.
  */
-
 const SECTIONS = [
   {
-    key: "restoran",
-    title: "Restoran & Kafe GCI",
-    desc: "Pendataan restoran & kafe se-Jakarta (termasuk restoran hotel bintang 3–4) untuk Global City Index.",
-    hint: "≈ 2.577 baris",
+    key: "gci",
+    title: "Restoran GCI",
+    desc: "Seluruh restoran & kafe se-Jakarta (termasuk restoran hotel bintang 3–4) untuk Global City Index — dengan tier, rating, harga.",
+    hint: "≈ 2.577 entri",
+  },
+  {
+    key: "restaurants",
+    title: "Direktori Restoran",
+    desc: "Restoran & kafe pilihan Jakarta dengan sumber sitasi publik terverifikasi.",
+    hint: "≈ 604 entri",
   },
   {
     key: "pertunjukan",
     title: "Pertunjukan & Budaya",
     desc: "Konser, festival, tari, teater, seni rupa, film 2025–2026.",
-    hint: "≈ 308 baris",
+    hint: "≈ 308 entri",
   },
   {
     key: "golf",
     title: "Lapangan Golf",
     desc: "Lapangan & driving range golf di Jakarta dan sekitarnya.",
-    hint: "≈ 14 baris",
+    hint: "≈ 14 entri",
   },
 ];
 
@@ -40,47 +43,36 @@ export default function AtlasPage() {
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
       >
-        <div className="mx-auto max-w-[1320px] px-6 pt-8 pb-10">
+        <div className="mx-auto max-w-[1320px] px-6 pt-9 pb-12">
           <div className="text-[12px] font-mono uppercase tracking-widest text-white/60">
             <span style={{ color: GOLD }}>●</span> Data Sekunder · Pendataan Lapangan
           </div>
-          <h1 className="mt-3 text-[28px] md:text-[36px] font-bold tracking-tight">
+          <h1 className="mt-3 text-[32px] md:text-[42px] font-bold tracking-tight">
             Jakarta Atlas
           </h1>
-          <p className="mt-2 text-white/70 max-w-[80ch] text-[14px]">
+          <p className="mt-3 text-white/70 max-w-[70ch] text-[15px]">
             Data hasil pendataan lapangan (GCI) yang melengkapi data primer SDI —
-            dibangun ulang di dalam platform dengan tampilan seragam.
+            ditampilkan di dalam platform dengan tampilan seragam.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-[1320px] px-6 py-8 pb-20">
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {SECTIONS.map((s) => (
-            <div
+            <Link
               key={s.key}
-              className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col"
+              href={`/atlas/${s.key}`}
+              className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col hover:-translate-y-0.5 transition-transform"
             >
-              <div className="text-[15px] font-semibold text-slate-800">
-                {s.title}
-              </div>
+              <div className="text-[16px] font-semibold text-slate-800">{s.title}</div>
               <p className="text-[13px] text-slate-500 mt-1 flex-1">{s.desc}</p>
               <div className="text-[12px] text-slate-400 mt-3">{s.hint}</div>
-              <Link
-                href={`/atlas/${s.key}`}
-                className="mt-4 text-[13px] font-medium"
-                style={{ color: NAVY }}
-              >
+              <div className="mt-3 text-[13px] font-medium" style={{ color: NAVY }}>
                 Lihat data →
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
-        </div>
-
-        <div className="mt-8 rounded-xl border border-slate-200 bg-white p-5 text-[13px] text-slate-600">
-          Halaman detail tiap section (<code>/atlas/[section]</code>) sudah jadi
-          — menarik data langsung dari Jakarta Atlas via endpoint JSON (
-          <code>/api/gci</code>, <code>/api/events</code>, <code>/api/golf</code>).
         </div>
       </section>
     </main>
