@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { INDICATORS } from "@/lib/gci/indicators";
+import { IndexContext } from "./IndexContext";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
@@ -46,6 +47,7 @@ export function IndicatorShell({
         </div>
       </section>
       <section className="mx-auto max-w-[1320px] px-6 py-8 pb-20 space-y-8">
+        <IndexContext code={code} />
         {children}
       </section>
     </main>
