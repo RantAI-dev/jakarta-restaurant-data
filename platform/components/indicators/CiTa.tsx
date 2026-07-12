@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { groupSum, byPeriod, topN, total, idNum } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -10,7 +10,7 @@ import type { MapPoint } from "@/components/charts/PointMap";
 
 /** CI-TA — Tourist Attractions (archetype A: peta titik, semua obyek). */
 export default async function CiTaView() {
-  const d = await primaryData("CI-TA");
+  const d = await pickData("CI-TA", ["obyek_wisata", "jumlah_kunjungan"]);
   const rows = d?.rows ?? [];
   const byObyek = topN(groupSum(rows, "obyek_wisata", "jumlah_kunjungan"), 15);
   const trend = byPeriod(rows, "periode_data", "jumlah_kunjungan");

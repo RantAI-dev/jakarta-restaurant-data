@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { byPeriod, groupCount } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -7,7 +7,7 @@ import { LineTrend } from "@/components/charts/LineTrend";
 
 /** CI-CE — Cultural Events (archetype E: event list). */
 export default async function CiCeView() {
-  const d = await primaryData("CI-CE");
+  const d = await pickData("CI-CE", ["nama_venue"]);
   const rows = d?.rows ?? [];
   const trend = byPeriod(rows, "periode_data");
   const topVenue = groupCount(rows, "nama_venue").sort((a, b) => b.value - a.value).slice(0, 12);

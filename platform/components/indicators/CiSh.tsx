@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { groupSum, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -7,7 +7,7 @@ import { Donut } from "@/components/charts/Donut";
 
 /** CI-SH — Shopping attractiveness (archetype G: survei pengeluaran). */
 export default async function CiShView() {
-  const d = await primaryData("CI-SH");
+  const d = await pickData("CI-SH", ["asal_negara", "rata_rata"]);
   const rows = d?.rows ?? [];
   const perNegara = groupSum(rows, "asal_negara", "rata_rata")
     .sort((a, b) => b.value - a.value)

@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { groupSum, topN, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -7,7 +7,7 @@ import { RankedList } from "@/components/charts/RankedList";
 
 /** CI-CX — Cultural Content Export (archetype C: breakdown wilayah). */
 export default async function CiCxView() {
-  const d = await primaryData("CI-CX");
+  const d = await pickData("CI-CX", ["wilayah", "jumlah"]);
   const rows = d?.rows ?? [];
   const perWilayah = groupSum(rows, "wilayah", "jumlah").sort((a, b) => b.value - a.value);
   const perKecamatan = topN(groupSum(rows, "kecamatan", "jumlah"), 12);

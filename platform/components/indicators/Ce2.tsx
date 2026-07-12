@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { groupSum, topN, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -10,7 +10,7 @@ import { RankedList } from "@/components/charts/RankedList";
  * Dataset: Jumlah Restoran per Kelurahan (wilayah, kecamatan, kelurahan, jumlah).
  */
 export default async function Ce2View() {
-  const d = await primaryData("CE2");
+  const d = await pickData("CE2", ["wilayah", "jumlah"]);
   const rows = d?.rows ?? [];
   const perWilayah = groupSum(rows, "wilayah", "jumlah").sort((a, b) => b.value - a.value);
   const perKecamatan = topN(groupSum(rows, "kecamatan", "jumlah"), 12);

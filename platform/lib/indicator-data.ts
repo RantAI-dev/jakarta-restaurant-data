@@ -45,3 +45,23 @@ export async function primaryData(
   if (!ds.length) return null;
   return { title: ds[0].title, slug: ds[0].slug, rows: await rowsFor(ds[0].slug) };
 }
+
+/**
+ * Pilih dataset yang BENAR-BENAR punya kolom yang dibutuhkan komponen
+ * (bukan sekadar yang barisnya terbanyak). Menghindari kepilihnya dataset
+ * registry saat komponen butuh tabel agregat. Fallback: dataset terbesar.
+ */
+export async function pickData(
+  code: string,
+  requiredCols: string[]
+): Promise<{ title: string; slug: string; rows: Record<string, unknown>[] } | null> {
+  const ds = await datasetsFor(code);
+  for (const d of ds) {
+    const rows = await rowsFor(d.slug);
+    if (rows.length && requiredCols.every((c) => c in (rows[0] as object))) {
+      return { title: d.title, slug: d.slug, rows };
+    }
+  }
+  if (!ds.length) return null;
+  return { title: ds[0].title, slug: ds[0].slug, rows: await rowsFor(ds[0].slug) };
+}

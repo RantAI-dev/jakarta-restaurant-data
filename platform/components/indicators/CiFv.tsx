@@ -1,4 +1,4 @@
-import { primaryData } from "@/lib/indicator-data";
+import { pickData } from "@/lib/indicator-data";
 import { groupSum, byPeriod, topN, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
 import { KpiStat } from "@/components/charts/KpiStat";
@@ -8,11 +8,12 @@ import { LineTrend } from "@/components/charts/LineTrend";
 
 /** CI-FV — Foreign Visitors (archetype B: tren + lokasi). */
 export default async function CiFvView() {
-  const d = await primaryData("CI-FV");
+  const d = await pickData("CI-FV", ["lokasi", "jumlah"]);
   const rows = d?.rows ?? [];
   const trend = byPeriod(rows, "periode_data", "jumlah");
   const perLokasi = groupSum(rows, "lokasi", "jumlah").sort((a, b) => b.value - a.value);
-  const perNegara = topN(groupSum(rows, "asal_negara", "jumlah"), 12);
+  const nd = await pickData("CI-FV", ["kebangsaan", "jumlah_kunjungan"]);
+  const perNegara = topN(groupSum(nd?.rows ?? [], "kebangsaan", "jumlah_kunjungan"), 12);
 
   return (
     <IndicatorShell code="CI-FV" source={d?.title}>
