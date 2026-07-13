@@ -5,6 +5,7 @@ import {
   text,
   jsonb,
   timestamp,
+  doublePrecision,
   index,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
@@ -52,6 +53,42 @@ export const datasetSync = pgTable("dataset_sync", {
   kontak: text("kontak"),
   author: text("author"),
   sumberData: jsonb("sumber_data").$type<string[]>().default([]),
+  total: integer("total").notNull().default(0),
+  syncedAt: timestamp("synced_at").notNull().defaultNow(),
+});
+
+/**
+ * Data Atlas (sekunder — hasil pendataan lapangan GCI) di dalam DB platform.
+ * Sumber tetap array in-code (lib/gci, lib/events, lib/golf, lib/restaurants);
+ * tabel ini menyalin data itu agar bisa di-query bersama data primer SDI.
+ * kind: 'gci' | 'events' | 'golf' | 'restaurants'.
+ */
+export const atlasRecord = pgTable(
+  "atlas_record",
+  {
+    id: serial("id").primaryKey(),
+    kind: text("kind").notNull(),
+    extId: text("ext_id").notNull(),
+    name: text("name").notNull(),
+    category: text("category"),
+    area: text("area"),
+    city: text("city"),
+    lat: doublePrecision("lat"),
+    lng: doublePrecision("lng"),
+    data: jsonb("data").notNull(),
+    syncedAt: timestamp("synced_at").notNull().defaultNow(),
+  },
+  (t) => ({
+    kindIdx: index("atlas_record_kind_idx").on(t.kind),
+    kindExtId: uniqueIndex("atlas_record_kind_ext_id").on(t.kind, t.extId),
+  })
+);
+
+/** Ringkasan per kind Atlas (untuk katalog & badge jumlah). */
+export const atlasDataset = pgTable("atlas_dataset", {
+  kind: text("kind").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").default(""),
   total: integer("total").notNull().default(0),
   syncedAt: timestamp("synced_at").notNull().defaultNow(),
 });
