@@ -1,5 +1,5 @@
 import { db, schema } from "@/lib/db";
-import { eq, asc } from "drizzle-orm";
+import { asc, eq, inArray } from "drizzle-orm";
 import { INDICATORS } from "@/lib/gci/indicators";
 import { getReportRaw } from "@/lib/report-store";
 
@@ -28,13 +28,20 @@ export async function rowsFor(slug: string): Promise<Row[]> {
   return rowsForRaw(slug);
 }
 
-/** Kunci kolom sebuah dataset dari `datasetColumn` — MURAH (tanpa load baris). */
-async function columnKeys(slug: string): Promise<Set<string>> {
+/** Peta slug→kunci-kolom untuk beberapa dataset SEKALIGUS (satu query). */
+async function columnKeysFor(slugs: string[]): Promise<Map<string, Set<string>>> {
+  const map = new Map<string, Set<string>>();
+  if (!slugs.length) return map;
   const cols = await db
-    .select({ key: datasetColumn.key })
+    .select({ slug: datasetColumn.slug, key: datasetColumn.key })
     .from(datasetColumn)
-    .where(eq(datasetColumn.slug, slug));
-  return new Set(cols.map((c) => c.key));
+    .where(inArray(datasetColumn.slug, slugs));
+  for (const c of cols) {
+    let set = map.get(c.slug);
+    if (!set) map.set(c.slug, (set = new Set()));
+    set.add(c.key);
+  }
+  return map;
 }
 
 /** Dataset tersync yang cocok kata kunci sebuah indikator (paling berisi dulu). */
@@ -80,6 +87,8 @@ export async function pickData(
   requiredCols: string[]
 ): Promise<{ title: string; slug: string; rows: Row[] } | null> {
   const ds = await datasetsFor(code);
+  if (!ds.length) return null;
+  const keyMap = await columnKeysFor(ds.map((d) => d.slug)); // satu query untuk semua
   const cand: {
     title: string;
     slug: string;
@@ -88,7 +97,7 @@ export async function pickData(
     total: number;
   }[] = [];
   for (const d of ds) {
-    const keys = await columnKeys(d.slug);
+    const keys = keyMap.get(d.slug) ?? new Set<string>();
     if (!requiredCols.every((c) => keys.has(c))) continue; // saring tanpa load baris
     const rows = await rowsFor(d.slug);
     if (!rows.length) continue;
