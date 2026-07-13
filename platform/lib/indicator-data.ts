@@ -1,17 +1,40 @@
 import { db, schema } from "@/lib/db";
 import { eq, asc } from "drizzle-orm";
 import { INDICATORS } from "@/lib/gci/indicators";
+import { getReportRaw } from "@/lib/report-store";
 
-const { dataset, datasetSync, record } = schema;
+const { dataset, datasetSync, datasetColumn, record } = schema;
 
-/** Semua baris (data JSON) sebuah dataset dari DB, terurut. */
-export async function rowsFor(slug: string): Promise<Record<string, unknown>[]> {
+type Row = Record<string, unknown>;
+
+/** Baris mentah (scan tabel `record`) — dipakai saat build report / fallback. */
+export async function rowsForRaw(slug: string): Promise<Row[]> {
   const rs = await db
     .select()
     .from(record)
     .where(eq(record.slug, slug))
     .orderBy(asc(record.ordinal));
-  return rs.map((r) => r.data as Record<string, unknown>);
+  return rs.map((r) => r.data as Row);
+}
+
+/**
+ * Baris dataset untuk komponen indikator. Baca dari report snapshot
+ * (`rows:<slug>`, diisi cron) — satu baris JSON, cepat. Fallback ke scan
+ * `record` bila belum ke-snapshot.
+ */
+export async function rowsFor(slug: string): Promise<Row[]> {
+  const cached = await getReportRaw<Row[]>(`rows:${slug}`);
+  if (cached?.data) return cached.data;
+  return rowsForRaw(slug);
+}
+
+/** Kunci kolom sebuah dataset dari `datasetColumn` — MURAH (tanpa load baris). */
+async function columnKeys(slug: string): Promise<Set<string>> {
+  const cols = await db
+    .select({ key: datasetColumn.key })
+    .from(datasetColumn)
+    .where(eq(datasetColumn.slug, slug));
+  return new Set(cols.map((c) => c.key));
 }
 
 /** Dataset tersync yang cocok kata kunci sebuah indikator (paling berisi dulu). */
@@ -40,38 +63,40 @@ export async function datasetsFor(
 /** Ambil baris dataset utama (paling berisi) sebuah indikator + judulnya. */
 export async function primaryData(
   code: string
-): Promise<{ title: string; slug: string; rows: Record<string, unknown>[] } | null> {
+): Promise<{ title: string; slug: string; rows: Row[] } | null> {
   const ds = await datasetsFor(code);
   if (!ds.length) return null;
   return { title: ds[0].title, slug: ds[0].slug, rows: await rowsFor(ds[0].slug) };
 }
 
 /**
- * Pilih dataset yang BENAR-BENAR punya kolom yang dibutuhkan komponen
- * (bukan sekadar yang barisnya terbanyak). Menghindari kepilihnya dataset
- * registry saat komponen butuh tabel agregat. Fallback: dataset terbesar.
+ * Pilih dataset yang BENAR-BENAR punya kolom yang dibutuhkan komponen.
+ * Cek kolom lewat `datasetColumn` DULU (murah) — dataset besar seperti registry
+ * yang tak punya kolom agregat langsung tersaring, TIDAK di-load barisnya.
+ * Baru muat baris (dari snapshot) untuk kandidat yang lolos. Fallback: terbesar.
  */
 export async function pickData(
   code: string,
   requiredCols: string[]
-): Promise<{ title: string; slug: string; rows: Record<string, unknown>[] } | null> {
+): Promise<{ title: string; slug: string; rows: Row[] } | null> {
   const ds = await datasetsFor(code);
   const cand: {
     title: string;
     slug: string;
-    rows: Record<string, unknown>[];
+    rows: Row[];
     maxP: string;
     total: number;
   }[] = [];
   for (const d of ds) {
+    const keys = await columnKeys(d.slug);
+    if (!requiredCols.every((c) => keys.has(c))) continue; // saring tanpa load baris
     const rows = await rowsFor(d.slug);
-    if (rows.length && requiredCols.every((c) => c in (rows[0] as object))) {
-      const maxP = rows.reduce((m, r) => {
-        const p = String((r as Record<string, unknown>).periode_data ?? "");
-        return p > m ? p : m;
-      }, "");
-      cand.push({ title: d.title, slug: d.slug, rows, maxP, total: d.total });
-    }
+    if (!rows.length) continue;
+    const maxP = rows.reduce((m, r) => {
+      const p = String((r as Row).periode_data ?? "");
+      return p > m ? p : m;
+    }, "");
+    cand.push({ title: d.title, slug: d.slug, rows, maxP, total: d.total });
   }
   if (cand.length) {
     // Prioritas: periode terbaru dulu, lalu jumlah baris terbanyak.

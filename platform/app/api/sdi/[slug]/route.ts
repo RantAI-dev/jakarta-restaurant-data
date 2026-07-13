@@ -1,25 +1,36 @@
 import { NextResponse } from "next/server";
+import { and, asc, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/lib/db";
-import { asc, eq } from "drizzle-orm";
 import { fetchSdiDetail } from "@/lib/sdi-fetch";
 
 const { datasetColumn, record, datasetSync } = schema;
 
-// Isi dataset besar (registry bisa 25k baris) → cache di CDN Vercel. Tanpa ini,
-// tiap buka dataset menarik ulang seluruh tabel dari Neon (boros egress).
+// Halaman dataset di-cache CDN Vercel (kecuali saat ada query pencarian).
 const CDN_CACHE = {
   "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
 };
 
+const DEFAULT_LIMIT = 50;
+const MAX_LIMIT = 200;
+
 /**
- * Detail + isi tabel satu dataset SDI.
- * Baca dari Neon dulu; kalau dataset belum tersync, fallback fetch live SDI.
+ * Detail + isi tabel satu dataset SDI — DI-PAGINASI (offset/limit) + pencarian
+ * server (q) agar tidak menarik/merender 25k baris sekaligus.
+ * Baca dari Neon dulu; kalau belum tersync, fallback fetch live SDI.
+ *   ?offset=0&limit=50&q=term
  */
 export async function GET(
-  _req: Request,
+  req: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
+  const url = new URL(req.url);
+  const offset = Math.max(0, parseInt(url.searchParams.get("offset") || "0", 10) || 0);
+  const limit = Math.min(
+    MAX_LIMIT,
+    Math.max(1, parseInt(url.searchParams.get("limit") || String(DEFAULT_LIMIT), 10) || DEFAULT_LIMIT)
+  );
+  const q = (url.searchParams.get("q") || "").trim();
 
   // 1) Coba dari DB.
   try {
@@ -30,46 +41,71 @@ export async function GET(
       .orderBy(asc(datasetColumn.ordinal));
 
     if (cols.length) {
-      const rows = await db
-        .select()
+      const cond = q
+        ? and(
+            eq(record.slug, slug),
+            sql`${record.data}::text ILIKE ${"%" + q + "%"}`
+          )
+        : eq(record.slug, slug);
+
+      const pageRows = await db
+        .select({ data: record.data })
         .from(record)
-        .where(eq(record.slug, slug))
-        .orderBy(asc(record.ordinal));
+        .where(cond)
+        .orderBy(asc(record.ordinal))
+        .limit(limit)
+        .offset(offset);
+
+      const [{ cnt }] = await db
+        .select({ cnt: sql<number>`count(*)::int` })
+        .from(record)
+        .where(cond);
+
       const sync = await db
         .select()
         .from(datasetSync)
         .where(eq(datasetSync.slug, slug));
 
-      return NextResponse.json({
-        source: "db",
-        slug,
-        title: sync[0]?.title ?? slug,
-        description: sync[0]?.description ?? "",
-        sumberData: sync[0]?.sumberData ?? [],
-        frekuensi: sync[0]?.frekuensi ?? null,
-        satuan: sync[0]?.satuan ?? null,
-        klasifikasi: sync[0]?.klasifikasi ?? null,
-        kontak: sync[0]?.kontak ?? null,
-        author: sync[0]?.author ?? null,
-        columns: cols.map((c) => ({
-          key: c.key,
-          desc: c.description,
-          type: c.type,
-        })),
-        rows: rows.map((r) => r.data),
-        total: sync[0]?.total ?? rows.length,
-      }, { headers: CDN_CACHE });
+      return NextResponse.json(
+        {
+          source: "db",
+          slug,
+          title: sync[0]?.title ?? slug,
+          description: sync[0]?.description ?? "",
+          sumberData: sync[0]?.sumberData ?? [],
+          frekuensi: sync[0]?.frekuensi ?? null,
+          satuan: sync[0]?.satuan ?? null,
+          klasifikasi: sync[0]?.klasifikasi ?? null,
+          kontak: sync[0]?.kontak ?? null,
+          author: sync[0]?.author ?? null,
+          columns: cols.map((c) => ({ key: c.key, desc: c.description, type: c.type })),
+          rows: pageRows.map((r) => r.data),
+          total: sync[0]?.total ?? cnt, // total dataset penuh
+          count: cnt, // total yang cocok filter q (untuk paginasi)
+          offset,
+          limit,
+        },
+        { headers: q ? undefined : CDN_CACHE }
+      );
     }
   } catch {
     // DB error → jatuh ke fallback live di bawah.
   }
 
-  // 2) Fallback: fetch live dari SDI.
+  // 2) Fallback: fetch live dari SDI (paginasi di memori).
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 25000);
   try {
     const d = await fetchSdiDetail(slug, controller.signal);
     clearTimeout(timer);
+    const term = q.toLowerCase();
+    const all = term
+      ? d.rows.filter((r) =>
+          Object.values(r as Record<string, unknown>).some((v) =>
+            String(v ?? "").toLowerCase().includes(term)
+          )
+        )
+      : d.rows;
     return NextResponse.json({
       source: "live",
       slug,
@@ -81,13 +117,12 @@ export async function GET(
       klasifikasi: d.klasifikasi,
       kontak: d.kontak,
       author: d.author,
-      columns: d.columns.map((c) => ({
-        key: c.key,
-        desc: c.description,
-        type: c.type,
-      })),
-      rows: d.rows,
+      columns: d.columns.map((c) => ({ key: c.key, desc: c.description, type: c.type })),
+      rows: all.slice(offset, offset + limit),
       total: d.total,
+      count: all.length,
+      offset,
+      limit,
     });
   } catch (e) {
     clearTimeout(timer);

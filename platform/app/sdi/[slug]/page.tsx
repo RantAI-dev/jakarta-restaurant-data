@@ -1,30 +1,27 @@
 "use client";
 
-import { use, useEffect, useMemo, useState } from "react";
+import { use, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { BarChart, type Bar } from "@/components/BarChart";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
 const GOLD = "#e8a33d";
+const PAGE = 50;
 
 type Column = { key: string; desc: string | null; type: string | null };
-type DatasetDetail = {
+type Row = Record<string, unknown>;
+type DatasetMeta = {
   slug: string;
   title: string;
   description: string;
   sumberData: string[];
   frekuensi: string | null;
   satuan: string | null;
-  klasifikasi: string | null;
-  kontak: string | null;
-  author: string | null;
   columns: Column[];
-  rows: Record<string, unknown>[];
   total: number;
 };
 
-// Kolom internal SDI yang disembunyikan (bukan data substansi).
 const HIDDEN = new Set([
   "id",
   "user_id",
@@ -38,9 +35,7 @@ const HIDDEN = new Set([
 ]);
 
 function humanize(key: string) {
-  return key
-    .replace(/_/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export default function DatasetDetailPage({
@@ -49,72 +44,114 @@ export default function DatasetDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = use(params);
-  const [data, setData] = useState<DatasetDetail | null>(null);
+
+  const [meta, setMeta] = useState<DatasetMeta | null>(null);
+  const [rows, setRows] = useState<Row[]>([]);
+  const [count, setCount] = useState(0); // baris cocok filter aktif
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true); // muat awal
+  const [loadingMore, setLoadingMore] = useState(false);
+
   const [q, setQ] = useState("");
+  const [debouncedQ, setDebouncedQ] = useState("");
 
+  // Debounce input pencarian → query server.
   useEffect(() => {
-    let alive = true;
-    fetch(`/api/sdi/${slug}`)
-      .then((r) => r.json())
-      .then((json) => {
-        if (!alive) return;
-        if (json.error) setError(json.error);
-        else setData(json);
-      })
-      .catch(() => alive && setError("Gagal memuat data"));
-    return () => {
-      alive = false;
-    };
-  }, [slug]);
+    const t = setTimeout(() => setDebouncedQ(q.trim()), 350);
+    return () => clearTimeout(t);
+  }, [q]);
 
-  // Kolom yang ditampilkan: pakai definisi komponen dari SDI; kalau kosong,
-  // fallback ke kolom baris minus kolom internal.
+  // Muat satu halaman. reset=true → ganti (untuk slug/pencarian baru).
+  const load = useCallback(
+    async (reset: boolean, curLen: number) => {
+      const offset = reset ? 0 : curLen;
+      if (reset) setLoading(true);
+      else setLoadingMore(true);
+      try {
+        const res = await fetch(
+          `/api/sdi/${slug}?offset=${offset}&limit=${PAGE}&q=${encodeURIComponent(debouncedQ)}`
+        );
+        const json = await res.json();
+        if (json.error) {
+          setError(json.error);
+          return;
+        }
+        setError(null);
+        setCount(json.count ?? json.total ?? 0);
+        setMeta({
+          slug: json.slug,
+          title: json.title,
+          description: json.description,
+          sumberData: json.sumberData ?? [],
+          frekuensi: json.frekuensi,
+          satuan: json.satuan,
+          columns: json.columns ?? [],
+          total: json.total ?? 0,
+        });
+        setRows((prev) => (reset ? json.rows : [...prev, ...json.rows]));
+      } catch {
+        setError("Gagal memuat data");
+      } finally {
+        setLoading(false);
+        setLoadingMore(false);
+      }
+    },
+    [slug, debouncedQ]
+  );
+
+  // Muat awal / saat slug atau pencarian berubah.
+  useEffect(() => {
+    setRows([]);
+    load(true, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug, debouncedQ]);
+
+  // Lazy-load saat sentinel terlihat.
+  const hasMore = rows.length < count;
+  const sentinel = useRef<HTMLDivElement | null>(null);
+  const rowsLenRef = useRef(rows.length);
+  rowsLenRef.current = rows.length;
+  useEffect(() => {
+    const el = sentinel.current;
+    if (!el || !hasMore || loading) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !loadingMore) {
+          load(false, rowsLenRef.current);
+        }
+      },
+      { rootMargin: "600px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, loading, loadingMore, load]);
+
   const columns = useMemo<Column[]>(() => {
-    if (!data) return [];
-    if (data.columns.length) return data.columns;
-    const first = data.rows[0] ?? {};
+    if (!meta) return [];
+    if (meta.columns.length) return meta.columns;
+    const first = rows[0] ?? {};
     return Object.keys(first)
       .filter((k) => !HIDDEN.has(k))
       .map((k) => ({ key: k, desc: null, type: null }));
-  }, [data]);
+  }, [meta, rows]);
 
-  const rows = useMemo(() => {
-    if (!data) return [];
-    const term = q.trim().toLowerCase();
-    if (!term) return data.rows;
-    return data.rows.filter((row) =>
-      columns.some((c) =>
-        String(row[c.key] ?? "").toLowerCase().includes(term)
-      )
-    );
-  }, [data, q, columns]);
-
+  // Chart cepat dari baris yang termuat (stabil: hanya 30 pertama dipakai).
   const chart = useMemo<Bar[] | null>(() => {
-    if (!data || !data.rows.length || !columns.length) return null;
-    // Numerik HANYA jika seluruh string murni angka (bukan teks yang kebetulan
-    // memuat angka, mis. nama event "2025 Festival").
+    if (!rows.length || !columns.length) return null;
     const num = (v: unknown) => {
       const s = String(v ?? "").trim();
       if (!/^-?\d+(\.\d+)?$/.test(s)) return null;
       const n = Number(s);
       return Number.isFinite(n) ? n : null;
     };
-    // Kolom "benar-benar numerik" = ≥90% baris terparse angka (hindari kolom
-    // teks yang kebetulan mengandung angka terpilih jadi nilai).
     const isNumericCol = (key: string) =>
-      data.rows.filter((r) => num(r[key]) !== null).length >=
-      data.rows.length * 0.9;
-    // Label = kolom periode/nama/kategori dulu; kalau tak ada, kolom non-numerik
-    // pertama; terakhir kolom pertama. (Hindari kolom periode kepilih jadi nilai.)
+      rows.filter((r) => num(r[key]) !== null).length >= rows.length * 0.9;
     const labelRe =
       /periode|tahun|bulan|tanggal|waktu|nama|kategori|jenis|wilayah|lokasi/i;
     const labelCol =
       columns.find((c) => labelRe.test(c.key)) ??
       columns.find((c) => !isNumericCol(c.key)) ??
       columns[0];
-    // Value = kolom numerik yang NAMANYA seperti ukuran (whitelist) — hindari
-    // kolom kode/klasifikasi/sekuens (kbli, nomor, id) yang kebetulan numerik.
     const measureRe =
       /jumlah|total|nilai|pajak|pendapatan|kunjungan|pengunjung|wisatawan|follower|realisasi|persen|rata|rerata|capaian|target|skor|nominal|pad|retribusi|okupansi|hunian|tingkat|volume|kapasitas|penghasilan|pemasukan|pdrb|belanja|anggaran|pertumbuhan|kamar|tamu/i;
     const valueCol = columns.find(
@@ -125,26 +162,23 @@ export default function DatasetDetailPage({
         isNumericCol(c.key)
     );
     if (!valueCol) return null;
-    const bars = data.rows
+    const bars = rows
       .map((r) => ({
         label: String(r[labelCol.key] ?? ""),
         value: num(r[valueCol.key]) ?? 0,
       }))
       .filter((b) => b.label !== "")
       .slice(0, 30);
-    // Buang chart degenerate: terlalu sedikit, semua nol, atau datar.
     const vals = bars.map((b) => b.value);
     if (bars.length < 2 || Math.max(...vals) === 0) return null;
     if (Math.max(...vals) === Math.min(...vals)) return null;
     return bars;
-  }, [data, columns]);
+  }, [rows, columns]);
 
   return (
     <main className="min-h-screen bg-[#f4f6fa]">
       <section
-        style={{
-          background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)`,
-        }}
+        style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
       >
         <div className="mx-auto max-w-[1320px] px-6 pt-7 pb-10">
@@ -155,22 +189,20 @@ export default function DatasetDetailPage({
             ← Katalog Pariwisata &amp; Ekraf
           </Link>
           <h1 className="mt-3 text-[26px] md:text-[32px] font-bold tracking-tight max-w-[30ch]">
-            {data?.title ?? humanize(slug)}
+            {meta?.title ?? humanize(slug)}
           </h1>
-          {data?.description && (
+          {meta?.description && (
             <p className="mt-2 text-white/75 max-w-[75ch] text-[15px]">
-              {data.description}
+              {meta.description}
             </p>
           )}
-          {data && (
+          {meta && (
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-white/80">
-              <Meta label="Baris data" value={String(data.total)} />
-              {data.satuan && <Meta label="Satuan" value={data.satuan} />}
-              {data.frekuensi && (
-                <Meta label="Frekuensi" value={data.frekuensi} />
-              )}
-              {data.sumberData?.length > 0 && (
-                <Meta label="Sumber" value={data.sumberData.join(", ")} />
+              <Meta label="Baris data" value={meta.total.toLocaleString("id-ID")} />
+              {meta.satuan && <Meta label="Satuan" value={meta.satuan} />}
+              {meta.frekuensi && <Meta label="Frekuensi" value={meta.frekuensi} />}
+              {meta.sumberData?.length > 0 && (
+                <Meta label="Sumber" value={meta.sumberData.join(", ")} />
               )}
             </div>
           )}
@@ -193,7 +225,7 @@ export default function DatasetDetailPage({
           </div>
         )}
 
-        {!data && !error && (
+        {loading && !error && (
           <div className="bg-white rounded-xl border border-slate-200 p-16 text-center text-slate-400">
             Memuat data dari Satu Data Jakarta…
           </div>
@@ -208,7 +240,7 @@ export default function DatasetDetailPage({
           </div>
         )}
 
-        {data && (
+        {meta && !loading && (
           <>
             <div className="flex items-center justify-between gap-3 mb-4">
               <input
@@ -218,7 +250,8 @@ export default function DatasetDetailPage({
                 className="w-full max-w-sm rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-[14px] outline-none focus:border-[#0f3d7a] transition-colors"
               />
               <span className="text-[13px] text-slate-500 tabular-nums whitespace-nowrap">
-                {rows.length} / {data.rows.length} baris
+                {rows.length.toLocaleString("id-ID")} / {count.toLocaleString("id-ID")} baris
+                {debouncedQ && " (hasil pencarian)"}
               </span>
             </div>
 
@@ -248,14 +281,9 @@ export default function DatasetDetailPage({
                         key={i}
                         className="border-t border-slate-100 hover:bg-slate-50 transition-colors"
                       >
-                        <td className="px-4 py-3 text-slate-400 tabular-nums">
-                          {i + 1}
-                        </td>
+                        <td className="px-4 py-3 text-slate-400 tabular-nums">{i + 1}</td>
                         {columns.map((c) => (
-                          <td
-                            key={c.key}
-                            className="px-4 py-3 text-slate-700 tabular-nums"
-                          >
+                          <td key={c.key} className="px-4 py-3 text-slate-700 tabular-nums">
                             {fmtCell(row[c.key])}
                           </td>
                         ))}
@@ -274,10 +302,21 @@ export default function DatasetDetailPage({
                   </tbody>
                 </table>
               </div>
+
+              {/* Sentinel lazy-load + indikator */}
+              {hasMore && (
+                <div
+                  ref={sentinel}
+                  className="py-5 text-center text-[13px] text-slate-400 border-t border-slate-100"
+                >
+                  {loadingMore ? "Memuat baris berikutnya…" : "Gulir untuk memuat lebih banyak"}
+                </div>
+              )}
             </div>
 
             <p className="text-[12px] text-slate-400 mt-4">
-              Sumber: Satu Data Indonesia — Jakarta ·{" "}
+              Menampilkan {rows.length.toLocaleString("id-ID")} dari{" "}
+              {count.toLocaleString("id-ID")} baris · Sumber: Satu Data Indonesia — Jakarta ·{" "}
               <a
                 href={`https://satudata.jakarta.go.id/open-data/${slug}`}
                 target="_blank"
@@ -297,9 +336,7 @@ export default function DatasetDetailPage({
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <span>
-      <span className="text-white/50 uppercase text-[11px] tracking-wider">
-        {label}:{" "}
-      </span>
+      <span className="text-white/50 uppercase text-[11px] tracking-wider">{label}: </span>
       <span className="font-medium" style={{ color: GOLD }}>
         {value}
       </span>
@@ -310,7 +347,6 @@ function Meta({ label, value }: { label: string; value: string }) {
 function fmtCell(v: unknown): string {
   if (v === null || v === undefined || v === "") return "—";
   const s = String(v);
-  // Format angka besar biar kebaca (mis. rupiah).
   if (/^\d{4,}$/.test(s)) {
     const n = Number(s);
     if (!isNaN(n) && s.length > 4) return n.toLocaleString("id-ID");
