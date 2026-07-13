@@ -42,11 +42,9 @@ export default async function HomePage() {
   const r = await computeReadiness();
   const gci = r.filter((x) => x.framework === "GCI");
   const gpci = r.filter((x) => x.framework === "GPCI");
-  const ready = (a: typeof r) => a.filter((x) => x.status === "ready").length;
 
   const secondary = secondaryDatasets();
   const secondaryTotalRows = secondary.reduce((a, d) => a + d.rows, 0);
-  const readyTotal = ready(gci) + ready(gpci);
   const indTotal = gci.length + gpci.length;
 
   const MENUS = [
@@ -62,14 +60,14 @@ export default async function HomePage() {
       no: "02",
       title: "GCI",
       desc: "Kearney Global Cities Index — kesiapan indikator pariwisata.",
-      stat: `${ready(gci)}/${gci.length} indikator siap`,
+      stat: `${gci.length} indikator`,
     },
     {
       href: "/gpci",
       no: "03",
       title: "GPCI",
       desc: "Mori Global Power City Index — kesiapan indikator pariwisata.",
-      stat: `${ready(gpci)}/${gpci.length} indikator siap`,
+      stat: `${gpci.length} indikator`,
     },
     {
       href: "/atlas",
@@ -83,8 +81,8 @@ export default async function HomePage() {
   const STATS = [
     { value: s.total.toLocaleString("id-ID"), label: "Dataset primer SDI" },
     { value: secondaryTotalRows.toLocaleString("id-ID"), label: "Baris pendataan lapangan" },
+    { value: indTotal.toLocaleString("id-ID"), label: "Indikator GCI · GPCI dipantau" },
     { value: "2", label: "Indeks global (GCI · GPCI)" },
-    { value: `${readyTotal}/${indTotal}`, label: "Indikator siap tayang" },
   ];
 
   return (
