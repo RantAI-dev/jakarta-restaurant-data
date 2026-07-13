@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { sdiStats } from "@/lib/sdi";
 import { secondaryDatasets } from "@/lib/secondary";
-import { computeReadiness } from "@/lib/gci/readiness";
+import { INDICATORS } from "@/lib/gci/indicators";
 
 const NAVY = "#0f3d7a";
 const GOLD = "#e8a33d";
 
-export const dynamic = "force-dynamic";
+// Statis — semua angka dari data in-code (INDICATORS / sdi / secondary),
+// tidak menyentuh DB sama sekali. Nol egress Neon untuk beranda.
 
 /** Ikon garis inline (stroke = currentColor) per menu. */
 const ICONS: Record<string, React.ReactNode> = {
@@ -37,15 +38,14 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export default async function HomePage() {
+export default function HomePage() {
   const s = sdiStats();
-  const r = await computeReadiness();
-  const gci = r.filter((x) => x.framework === "GCI");
-  const gpci = r.filter((x) => x.framework === "GPCI");
+  const gciCount = INDICATORS.filter((i) => i.framework === "GCI").length;
+  const gpciCount = INDICATORS.filter((i) => i.framework === "GPCI").length;
 
   const secondary = secondaryDatasets();
   const secondaryTotalRows = secondary.reduce((a, d) => a + d.rows, 0);
-  const indTotal = gci.length + gpci.length;
+  const indTotal = gciCount + gpciCount;
 
   const MENUS = [
     {
@@ -60,14 +60,14 @@ export default async function HomePage() {
       no: "02",
       title: "GCI",
       desc: "Kearney Global Cities Index — kesiapan indikator pariwisata.",
-      stat: `${gci.length} indikator`,
+      stat: `${gciCount} indikator`,
     },
     {
       href: "/gpci",
       no: "03",
       title: "GPCI",
       desc: "Mori Global Power City Index — kesiapan indikator pariwisata.",
-      stat: `${gpci.length} indikator`,
+      stat: `${gpciCount} indikator`,
     },
     {
       href: "/atlas",

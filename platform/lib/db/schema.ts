@@ -84,6 +84,17 @@ export const atlasRecord = pgTable(
   })
 );
 
+/**
+ * Snapshot laporan terprecompute (readiness, stat, dsb.) — diisi oleh job
+ * terjadwal (cron) / setelah sync, dibaca murah oleh halaman. Menghindari
+ * scan tabel `record` yang besar pada tiap request (hemat egress DB).
+ */
+export const report = pgTable("report", {
+  key: text("key").primaryKey(),
+  data: jsonb("data").notNull(),
+  generatedAt: timestamp("generated_at").notNull().defaultNow(),
+});
+
 /** Ringkasan per kind Atlas (untuk katalog & badge jumlah). */
 export const atlasDataset = pgTable("atlas_dataset", {
   kind: text("kind").primaryKey(),

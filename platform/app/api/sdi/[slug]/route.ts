@@ -5,6 +5,12 @@ import { fetchSdiDetail } from "@/lib/sdi-fetch";
 
 const { datasetColumn, record, datasetSync } = schema;
 
+// Isi dataset besar (registry bisa 25k baris) → cache di CDN Vercel. Tanpa ini,
+// tiap buka dataset menarik ulang seluruh tabel dari Neon (boros egress).
+const CDN_CACHE = {
+  "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+};
+
 /**
  * Detail + isi tabel satu dataset SDI.
  * Baca dari Neon dulu; kalau dataset belum tersync, fallback fetch live SDI.
@@ -52,7 +58,7 @@ export async function GET(
         })),
         rows: rows.map((r) => r.data),
         total: sync[0]?.total ?? rows.length,
-      });
+      }, { headers: CDN_CACHE });
     }
   } catch {
     // DB error → jatuh ke fallback live di bawah.

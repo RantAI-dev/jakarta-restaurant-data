@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { INDICATORS } from "@/lib/gci/indicators";
 import { INDICATOR_VIEWS, IndicatorFallback } from "@/components/indicators/registry";
 
-export const dynamic = "force-dynamic";
+// ISR: render bespoke view (pickData) paling banyak sekali per 24 jam per
+// indikator, lalu dilayani dari cache. Tidak scan `record` tiap request.
+export const revalidate = 86400;
 
 export default async function GciIndicatorPage({
   params,

@@ -5,6 +5,11 @@ import { SDI_DATASETS, fetchSdiLive, type SdiDataset } from "@/lib/sdi";
 
 const { dataset } = schema;
 
+// Katalog jarang berubah → cache di CDN Vercel; navigasi ulang tak menyentuh DB.
+const CDN_CACHE = {
+  "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+};
+
 /**
  * Katalog dataset primer Dinas Pariwisata.
  * Default: baca dari DB (tabel dataset). Fallback: snapshot statis.
@@ -49,15 +54,17 @@ export async function GET(req: Request) {
         createdAt: r.createdAt,
         updatedAt: r.updatedAt,
       }));
-      return NextResponse.json({ source: "db", count: datasets.length, datasets });
+      return NextResponse.json(
+        { source: "db", count: datasets.length, datasets },
+        { headers: CDN_CACHE }
+      );
     }
   } catch {
     // jatuh ke statis
   }
 
-  return NextResponse.json({
-    source: "snapshot",
-    count: SDI_DATASETS.length,
-    datasets: SDI_DATASETS,
-  });
+  return NextResponse.json(
+    { source: "snapshot", count: SDI_DATASETS.length, datasets: SDI_DATASETS },
+    { headers: CDN_CACHE }
+  );
 }
