@@ -4,9 +4,9 @@ import { use, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { BarChart, type Bar } from "@/components/BarChart";
 
-const NAVY = "#0f3d7a";
-const NAVY_DEEP = "#0a2b57";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const NAVY_DEEP = "#c9531a";
+const GOLD = "#f0a13a";
 const PAGE = 50;
 
 type Column = { key: string; desc: string | null; type: string | null };
@@ -176,7 +176,7 @@ export default function DatasetDetailPage({
   }, [rows, columns]);
 
   return (
-    <main className="min-h-screen bg-[#f4f6fa]">
+    <main className="min-h-screen bg-[#faf6f2]">
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
@@ -247,7 +247,7 @@ export default function DatasetDetailPage({
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Cari di dalam data…"
-                className="w-full max-w-sm rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-[14px] outline-none focus:border-[#0f3d7a] transition-colors"
+                className="w-full max-w-sm rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-[14px] outline-none focus:border-[#ed6b23] transition-colors"
               />
               <span className="text-[13px] text-slate-500 tabular-nums whitespace-nowrap">
                 {rows.length.toLocaleString("id-ID")} / {count.toLocaleString("id-ID")} baris

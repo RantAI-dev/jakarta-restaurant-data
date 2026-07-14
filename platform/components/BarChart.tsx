@@ -5,7 +5,7 @@ import * as echarts from "echarts";
 import { fmtPeriode } from "@/lib/agg";
 
 export type Bar = { label: string; value: number };
-const NAVY = "#0f3d7a";
+const NAVY = "#ed6b23";
 const idfmt = (v: number) => v.toLocaleString("id-ID");
 
 /** Bar vertikal per periode (ECharts). Dipakai tren framework & detail dataset. */

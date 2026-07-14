@@ -45,7 +45,7 @@ export function IndexContext({ code }: { code: string }) {
           </div>
           <div className="flex justify-between gap-3">
             <span className="text-slate-500">Frontier ({b.frontier.city})</span>
-            <span className="font-semibold text-right" style={{ color: "#0f3d7a" }}>
+            <span className="font-semibold text-right" style={{ color: "#ed6b23" }}>
               {b.frontier.value}
             </span>
           </div>

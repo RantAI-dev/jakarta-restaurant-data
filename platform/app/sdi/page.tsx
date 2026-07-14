@@ -11,9 +11,9 @@ import {
 } from "@/lib/sdi";
 import { secondaryDatasets } from "@/lib/secondary";
 
-const NAVY = "#0f3d7a";
-const NAVY_DEEP = "#0a2b57";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const NAVY_DEEP = "#c9531a";
+const GOLD = "#f0a13a";
 const GREEN = "#0e7c42";
 
 type Tier = "primer" | "sekunder";
@@ -114,7 +114,7 @@ export default function SdiPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f6fa]">
+    <main className="min-h-screen bg-[#faf6f2]">
       {/* ── TITLE BAND ── */}
       <section
         style={{
@@ -164,7 +164,7 @@ export default function SdiPage() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Cari dataset, deskripsi, sumber, atau tag…"
-            className="flex-1 rounded-lg border border-slate-300 bg-slate-50 px-4 py-2.5 text-[14px] outline-none focus:border-[#0f3d7a] focus:bg-white transition-colors"
+            className="flex-1 rounded-lg border border-slate-300 bg-slate-50 px-4 py-2.5 text-[14px] outline-none focus:border-[#ed6b23] focus:bg-white transition-colors"
           />
           {/* Segmented filter tier */}
           <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1">

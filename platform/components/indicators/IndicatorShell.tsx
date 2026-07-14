@@ -4,9 +4,9 @@ import { INDICATORS } from "@/lib/gci/indicators";
 import { IndexContext } from "./IndexContext";
 import { db, schema } from "@/lib/db";
 
-const NAVY = "#0f3d7a";
-const NAVY_DEEP = "#0a2b57";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const NAVY_DEEP = "#c9531a";
+const GOLD = "#f0a13a";
 
 type Source = { slug: string; title: string };
 
@@ -42,7 +42,7 @@ export async function IndicatorShell({
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f6fa]">
+    <main className="min-h-screen bg-[#faf6f2]">
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"
@@ -105,7 +105,7 @@ function TierBadge({ tier }: { tier: string }) {
     <span
       className="text-[9px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded"
       style={{
-        background: primer ? "rgba(255,255,255,0.18)" : "rgba(232,163,61,0.28)",
+        background: primer ? "rgba(255,255,255,0.18)" : "rgba(240, 161, 58,0.28)",
         color: "#fff",
       }}
     >

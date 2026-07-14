@@ -3,7 +3,7 @@
 import ReactECharts from "echarts-for-react";
 import type { Point } from "@/lib/agg";
 
-const NAVY = "#0f3d7a";
+const NAVY = "#ed6b23";
 const idfmt = (v: number) => v.toLocaleString("id-ID");
 
 /** Bar horizontal (ECharts) untuk breakdown kategori/wilayah. */

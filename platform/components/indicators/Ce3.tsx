@@ -1,6 +1,7 @@
 import { primaryData } from "@/lib/indicator-data";
 import { byPeriod, groupCount } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
+import { MomNote } from "./MomNote";
 import { KpiStat } from "@/components/charts/KpiStat";
 import { RankedList } from "@/components/charts/RankedList";
 import { LineTrend } from "@/components/charts/LineTrend";
@@ -18,6 +19,12 @@ export default async function Ce3View() {
 
   return (
     <IndicatorShell code="CE3" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
+      <MomNote>
+        Kearney hanya mengakui event seni/pertunjukan yang menghadirkan artis{" "}
+        <b>Top 10 Global Chart</b> (Billboard/Spotify) selama <b>5 tahun berturut-turut</b>.
+        Perlu tabel terpisah daftar artis global sebagai acuan/rekomendasi
+        penyelenggaraan event musik di Jakarta.
+      </MomNote>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total event" value={rows.length} />
         <KpiStat label="Venue unik" value={new Set(rows.map((r) => r.nama_venue)).size} />

@@ -3,7 +3,7 @@
 import ReactECharts from "echarts-for-react";
 import type { Point } from "@/lib/agg";
 
-const PALETTE = ["#0f3d7a", "#e8a33d", "#0e7c42", "#b3261e", "#7c3aed", "#0891b2", "#64748b"];
+const PALETTE = ["#ed6b23", "#f0a13a", "#0e7c42", "#b3261e", "#7c3aed", "#0891b2", "#64748b"];
 const idfmt = (v: number) => v.toLocaleString("id-ID");
 
 /** Proporsi (donut ECharts). */

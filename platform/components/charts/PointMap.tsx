@@ -69,7 +69,7 @@ export function PointMap({ points }: { points: MapPoint[] }) {
             key={`${p.lat}-${p.lng}-${i}`}
             center={[p.lat, p.lng]}
             radius={radiusFor(p.value)}
-            pathOptions={{ color: "#0f3d7a", fillColor: "#0f3d7a", fillOpacity: 0.5 }}
+            pathOptions={{ color: "#ed6b23", fillColor: "#ed6b23", fillOpacity: 0.5 }}
           >
             <Popup>
               <div style={{ fontSize: 12 }}>

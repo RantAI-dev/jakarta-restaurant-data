@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-const NAVY = "#0f3d7a";
+const ORANGE = "#ed6b23";
+const INK = "#33302b";
 
 const ITEMS = [
   { href: "/sdi", label: "Katalog" },
@@ -14,22 +15,24 @@ const ITEMS = [
 
 /**
  * Navigasi global 4-menu: Katalog · GCI · GPCI · Atlas.
- * Dipakai di semua halaman (idealnya via app/layout.tsx — lihat Plan 6 Task 1).
+ * Tema: dominan putih + aksen oranye (branding enjoy.jakarta.id).
  */
 export function Nav() {
   const path = usePathname() || "/";
   const router = useRouter();
   const showBack = path !== "/";
   return (
-    <header style={{ background: NAVY }} className="text-white">
-      <div className="mx-auto max-w-[1320px] px-6 h-[76px] flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-[#ece6df]">
+      {/* Aksen oranye tipis di atas — identitas enjoy.jakarta */}
+      <div style={{ height: 3, background: ORANGE }} />
+      <div className="mx-auto max-w-[1320px] px-6 h-[74px] flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 min-w-0">
           {/* Kembali — global, ke halaman sebelumnya. Sembunyi di beranda. */}
           {showBack && (
             <button
               onClick={() => router.back()}
               aria-label="Kembali ke halaman sebelumnya"
-              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg pl-1.5 pr-2.5 py-2 text-[13px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="shrink-0 inline-flex items-center gap-1.5 rounded-lg pl-1.5 pr-2.5 py-2 text-[13px] font-medium text-[#6b6459] hover:text-[#1c1a17] hover:bg-black/[0.04] transition-colors"
             >
               <svg
                 width="16"
@@ -52,13 +55,13 @@ export function Nav() {
             <img
               src="/logo-jakarta.png"
               alt="Logo Jakarta"
-              className="h-11 w-auto bg-white rounded-md p-1"
+              className="h-11 w-auto"
             />
             <div className="leading-tight hidden sm:block">
-              <div className="font-semibold tracking-tight text-[15px]">
+              <div className="font-semibold tracking-tight text-[15px] text-[#1c1a17]">
                 Dinas Pariwisata &amp; Ekonomi Kreatif
               </div>
-              <div className="text-[12px] text-white/70">
+              <div className="text-[12px] text-[#9c948a]">
                 Provinsi DKI Jakarta · Platform Data
               </div>
             </div>
@@ -75,8 +78,8 @@ export function Nav() {
                 className="px-3.5 py-2 rounded-lg transition-colors"
                 style={
                   active
-                    ? { background: "rgba(255,255,255,0.16)", color: "#fff" }
-                    : { color: "rgba(255,255,255,0.82)" }
+                    ? { background: ORANGE, color: "#fff" }
+                    : { color: INK }
                 }
               >
                 {it.label}

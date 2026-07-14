@@ -2,9 +2,9 @@ import Link from "next/link";
 import { BarChart } from "./BarChart";
 import type { IndicatorResult } from "@/lib/gci/readiness";
 
-const NAVY = "#0f3d7a";
-const NAVY_DEEP = "#0a2b57";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const NAVY_DEEP = "#c9531a";
+const GOLD = "#f0a13a";
 const STATUS: Record<string, { label: string; bg: string; fg: string }> = {
   ready: { label: "Ready", bg: "#e8f5ee", fg: "#0e7c42" },
   partial: { label: "Partial", bg: "#fff6e9", fg: "#b5651d" },
@@ -29,7 +29,7 @@ export function FrameworkView({
   const ada = rows.filter((r) => r.dataAvailable).length;
 
   return (
-    <main className="min-h-screen bg-[#f4f6fa]">
+    <main className="min-h-screen bg-[#faf6f2]">
       <section
         style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
         className="text-white"

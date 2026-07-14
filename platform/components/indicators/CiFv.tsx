@@ -1,6 +1,7 @@
 import { pickData } from "@/lib/indicator-data";
 import { groupSum, byPeriod, topN, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
+import { MomNote } from "./MomNote";
 import { KpiStat } from "@/components/charts/KpiStat";
 import { BarBreakdown } from "@/components/charts/BarBreakdown";
 import { RankedList } from "@/components/charts/RankedList";
@@ -20,6 +21,11 @@ export default async function CiFvView() {
       code="CI-FV"
       sources={[d, nd].filter(Boolean).map((x) => ({ slug: x!.slug, title: x!.title }))}
     >
+      <MomNote>
+        Fokus visualisasi: total wisatawan <b>per bulan</b> dan <b>per pintu masuk</b>,
+        tidak hanya per kebangsaan. Data BPS perlu pembersihan karena klasifikasi negara
+        sering tidak konsisten.
+      </MomNote>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total kunjungan" value={total(trend)} />
         <KpiStat label="Lokasi TIC" value={perLokasi.length} />

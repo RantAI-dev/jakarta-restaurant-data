@@ -1,6 +1,7 @@
 import { pickData } from "@/lib/indicator-data";
 import { groupSum, topN, total } from "@/lib/agg";
 import { IndicatorShell, Block } from "./IndicatorShell";
+import { MomNote } from "./MomNote";
 import { KpiStat } from "@/components/charts/KpiStat";
 import { BarBreakdown } from "@/components/charts/BarBreakdown";
 import { RankedList } from "@/components/charts/RankedList";
@@ -18,6 +19,12 @@ export default async function Ce2View() {
 
   return (
     <IndicatorShell code="CE2" sources={d ? [{ slug: d.slug, title: d.title }] : []}>
+      <MomNote>
+        Kearney sementara hanya mengakui data restoran <b>Michelin Star</b> &amp;{" "}
+        <b>TripAdvisor</b>; data Google belum diakui. Karena belum ada Michelin Star di
+        Jakarta, tim memakai &amp; <b>memisahkan data TripAdvisor</b> agar sewaktu-waktu
+        siap diekspor Bappeda.
+      </MomNote>
       <div className="grid sm:grid-cols-3 gap-4">
         <KpiStat label="Total restoran" value={grand} />
         <KpiStat label="Wilayah" value={perWilayah.length} />

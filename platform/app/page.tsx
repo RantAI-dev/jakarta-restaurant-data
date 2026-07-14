@@ -3,8 +3,8 @@ import { sdiStats } from "@/lib/sdi";
 import { secondaryDatasets } from "@/lib/secondary";
 import { INDICATORS } from "@/lib/gci/indicators";
 
-const NAVY = "#0f3d7a";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const GOLD = "#f0a13a";
 
 // Statis — semua angka dari data in-code (INDICATORS / sdi / secondary),
 // tidak menyentuh DB sama sekali. Nol egress Neon untuk beranda.
@@ -59,7 +59,7 @@ export default function HomePage() {
       href: "/gci",
       no: "02",
       title: "GCI",
-      desc: "Kearney Global Cities Index — kesiapan indikator pariwisata.",
+      desc: "Kearney Global Cities Index — prioritas indikator competitiveness.",
       stat: `${gciCount} indikator`,
     },
     {
@@ -92,7 +92,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(1100px 420px at 88% -12%, rgba(232,163,61,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(59,110,165,0.40), transparent 62%), linear-gradient(180deg, #0a2b57 0%, ${NAVY} 100%)`,
+            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(244, 160, 107,0.40), transparent 62%), linear-gradient(180deg, #c9531a 0%, ${NAVY} 100%)`,
           }}
         />
         {/* dot-grid texture */}
@@ -183,7 +183,14 @@ export default function HomePage() {
                   </svg>
                 </span>
               </div>
-              <div className="mt-5 atlas-display-md text-ink">{m.title}</div>
+              <div className="mt-5 flex items-center gap-2">
+                <span className="atlas-display-md text-ink">{m.title}</span>
+                {m.href === "/gci" && (
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-white bg-[#ed6b23] rounded px-1.5 py-0.5">
+                    Prioritas
+                  </span>
+                )}
+              </div>
               <p className="mt-2 apple-caption min-h-[42px] text-ink-muted-48">
                 {m.desc}
               </p>

@@ -6,29 +6,29 @@
   color-scheme: light;
   /* Surfaces */
   --canvas: #ffffff;
-  --paper: #f4f6fa;
-  --paper-deep: #f1f5f9;
-  --paper-light: #fafbfc;
-  --parchment: #f4f6fa;
-  --pearl: #fafbfc;
+  --paper: #faf6f2;
+  --paper-deep: #f4ede6;
+  --paper-light: #fdfbf9;
+  --parchment: #faf6f2;
+  --pearl: #fdfbf9;
   /* Inks */
-  --ink: #0f172a;
-  --ink-muted-80: #1e293b;
-  --ink-muted-48: #64748b;
-  --body-muted: #94a3b8;
+  --ink: #1c1a17;
+  --ink-muted-80: #33302b;
+  --ink-muted-48: #6b6459;
+  --body-muted: #9c948a;
   /* Lines */
-  --hairline: #e2e8f0;
-  --rule: #e2e8f0;
-  --rule-strong: #cbd5e1;
-  --divider: #f1f5f9;
-  /* Accent — Dispar navy (design system platform) */
-  --accent: #0f3d7a;
-  --accent-deep: #0a2b57;
-  --accent-soft: #3b6ea5;
-  --accent-bg: rgba(15, 61, 122, 0.08);
-  --accent-ring: rgba(15, 61, 122, 0.2);
-  /* Gold accent */
-  --gold: #e8a33d;
+  --hairline: #ece6df;
+  --rule: #ece6df;
+  --rule-strong: #d8cec3;
+  --divider: #f3ede6;
+  /* Accent — Dispar oranye (branding enjoy.jakarta.id) */
+  --accent: #ed6b23;
+  --accent-deep: #c9531a;
+  --accent-soft: #f4a06b;
+  --accent-bg: rgba(237, 107, 35, 0.08);
+  --accent-ring: rgba(237, 107, 35, 0.22);
+  /* Secondary warm accent */
+  --gold: #f0a13a;
   /* Fonts (sans di-set layout via next/font; mono fallback stack) */
   --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, monospace;
   --font-wordmark: var(--font-sans), Georgia, serif;
@@ -176,7 +176,7 @@
     overflow: hidden;
   }
   .utility-card:hover {
-    border-color: rgba(15, 61, 122, 0.3);
+    border-color: rgba(237, 107, 35, 0.3);
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
   }
   .hairline-rule {
@@ -225,6 +225,6 @@
   background: var(--canvas) !important;
 }
 .leaflet-container {
-  background: #eff3f8 !important;
+  background: #f6f1ec !important;
   font-family: var(--font-sans), system-ui, sans-serif !important;
 }

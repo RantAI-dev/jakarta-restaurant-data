@@ -4,7 +4,7 @@ import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
 import { fmtPeriode, type Point } from "@/lib/agg";
 
-const NAVY = "#0f3d7a";
+const NAVY = "#ed6b23";
 const idfmt = (v: number) => v.toLocaleString("id-ID");
 
 /** Tren per periode (ECharts area line). */
@@ -58,8 +58,8 @@ export function LineTrend({ data }: { data: Point[] }) {
         itemStyle: { color: NAVY },
         areaStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: "rgba(15,61,122,0.28)" },
-            { offset: 1, color: "rgba(15,61,122,0.02)" },
+            { offset: 0, color: "rgba(237, 107, 35,0.28)" },
+            { offset: 1, color: "rgba(237, 107, 35,0.02)" },
           ]),
         },
       },

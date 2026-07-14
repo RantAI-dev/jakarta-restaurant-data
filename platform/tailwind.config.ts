@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: "#0f3d7a", deep: "#0a2b57" },
-        gold: "#e8a33d",
+        navy: { DEFAULT: "#ed6b23", deep: "#c9531a" }, orange: { DEFAULT: "#ed6b23", deep: "#c9531a", soft: "#f4a06b" },
+        gold: "#f0a13a",
         civic: "#0e7c42",
       },
       fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const NAVY = "#0f3d7a";
-const GOLD = "#e8a33d";
+const NAVY = "#ed6b23";
+const GOLD = "#f0a13a";
 
 /**
  * ATLAS — data sekunder (pendataan lapangan GCI) di dalam platform, gaya kita.
@@ -84,7 +84,7 @@ export default function AtlasPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(1100px 420px at 88% -12%, rgba(232,163,61,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(59,110,165,0.40), transparent 62%), linear-gradient(180deg, #0a2b57 0%, ${NAVY} 100%)`,
+            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(244, 160, 107,0.40), transparent 62%), linear-gradient(180deg, #c9531a 0%, ${NAVY} 100%)`,
           }}
         />
         <div
