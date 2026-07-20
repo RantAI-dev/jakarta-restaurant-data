@@ -10,12 +10,24 @@ export type SecondaryDataset = {
   tags: string[];
   rows: number;
   href: string;
+  /** true = tautan ke app Atlas eksternal; false = halaman detail internal /sdi. */
+  external?: boolean;
 };
 
 export const ATLAS_BASE = "https://jakarta-restaurant-data.vercel.app";
 
 export function secondaryDatasets(): SecondaryDataset[] {
   return [
+    {
+      id: "sec-event-visitor",
+      title: "Jumlah Pengunjung Event Jakarta 2026",
+      description:
+        "Jumlah pengunjung event pariwisata & ekraf DKI Jakarta (Semester I 2026), diperkaya alamat, titik koordinat (lat/lon), dan sumber alamat via geocoding.",
+      tags: ["event", "pengunjung", "pariwisata", "geocoded", "sekunder"],
+      rows: 804,
+      href: "/sdi/jumlah-pengunjung-event-2026",
+      external: false,
+    },
     {
       id: "sec-gci-resto",
       title: "Restoran & Kafe GCI Jakarta",

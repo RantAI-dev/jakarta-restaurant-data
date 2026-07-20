@@ -47,10 +47,10 @@ function buildCatalog(sdi: SdiDataset[]): CatalogRow[] {
     description: s.description,
     tags: s.tags,
     tier: "sekunder",
-    source: "Jakarta Atlas",
+    source: s.external === false ? "Dinas Pariwisata & Ekraf DKI Jakarta" : "Jakarta Atlas",
     size: `${s.rows.toLocaleString("id-ID")} baris`,
     href: s.href,
-    external: true,
+    external: s.external ?? true,
   }));
   return [...primer, ...sekunder];
 }
