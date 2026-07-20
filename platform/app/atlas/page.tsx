@@ -84,7 +84,7 @@ export default function AtlasPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(244, 160, 107,0.40), transparent 62%), linear-gradient(180deg, #c9531a 0%, ${NAVY} 100%)`,
+            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.14), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(237, 107, 35,0.22), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)`,
           }}
         />
         <div

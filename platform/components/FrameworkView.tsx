@@ -3,7 +3,9 @@ import { BarChart } from "./BarChart";
 import type { IndicatorResult } from "@/lib/gci/readiness";
 
 const NAVY = "#ed6b23";
-const NAVY_DEEP = "#c9531a";
+const LINK = "#2563eb";
+const HERO =
+  "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
 const GOLD = "#f0a13a";
 const STATUS: Record<string, { label: string; bg: string; fg: string }> = {
   ready: { label: "Ready", bg: "#e8f5ee", fg: "#0e7c42" },
@@ -31,7 +33,7 @@ export function FrameworkView({
   return (
     <main className="min-h-screen bg-[#faf6f2]">
       <section
-        style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
+        style={{ background: HERO }}
         className="text-white"
       >
         <div className="mx-auto max-w-[1320px] px-6 pt-8 pb-10">
@@ -62,7 +64,7 @@ export function FrameworkView({
             <div className="overflow-x-auto">
               <table className="w-full text-[14px]">
                 <thead>
-                  <tr style={{ background: NAVY }} className="text-white text-left text-[12px] uppercase tracking-wider">
+                  <tr style={{ background: "#2a2521" }} className="text-white text-left text-[12px] uppercase tracking-wider">
                     <th className="px-4 py-3 font-semibold w-16">Kode</th>
                     <th className="px-4 py-3 font-semibold">Indikator</th>
                     <th className="px-4 py-3 font-semibold w-24">Status</th>
@@ -95,7 +97,7 @@ export function FrameworkView({
                           {x.datasets.length ? (
                             <div className="flex flex-col gap-1">
                               {x.datasets.map((d) => (
-                                <Link key={d.slug} href={`/sdi/${d.slug}`} className="text-[13px] hover:underline" style={{ color: NAVY }}>
+                                <Link key={d.slug} href={`/sdi/${d.slug}`} className="text-[13px] hover:underline" style={{ color: LINK }}>
                                   {d.title}
                                 </Link>
                               ))}

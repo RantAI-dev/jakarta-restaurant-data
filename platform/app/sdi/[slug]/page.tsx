@@ -5,8 +5,8 @@ import Link from "next/link";
 import { BarChart, type Bar } from "@/components/BarChart";
 
 const NAVY = "#ed6b23";
-const NAVY_DEEP = "#c9531a";
 const GOLD = "#f0a13a";
+const HERO = "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
 const PAGE = 50;
 
 type Column = { key: string; desc: string | null; type: string | null };
@@ -178,7 +178,7 @@ export default function DatasetDetailPage({
   return (
     <main className="min-h-screen bg-[#faf6f2]">
       <section
-        style={{ background: `linear-gradient(180deg, ${NAVY_DEEP} 0%, ${NAVY} 100%)` }}
+        style={{ background: HERO }}
         className="text-white"
       >
         <div className="mx-auto max-w-[1320px] px-6 pt-7 pb-10">

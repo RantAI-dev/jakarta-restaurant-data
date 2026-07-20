@@ -29,6 +29,12 @@
   --accent-ring: rgba(237, 107, 35, 0.22);
   /* Secondary warm accent */
   --gold: #f0a13a;
+  /* Hyperlink biru — standar, agar tautan mudah dikenali */
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+  /* Hero gelap (charcoal hangat) — orange dipakai hanya sebagai aksen */
+  --hero: radial-gradient(900px 320px at 88% -25%, rgba(237, 107, 35, 0.28), transparent 62%),
+    linear-gradient(160deg, #2a2521 0%, #16130f 100%);
   /* Fonts (sans di-set layout via next/font; mono fallback stack) */
   --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, monospace;
   --font-wordmark: var(--font-sans), Georgia, serif;
@@ -201,6 +207,8 @@
   .text-ink-muted-48\/60 { color: color-mix(in srgb, var(--ink-muted-48) 60%, transparent); }
   .text-body-muted { color: var(--body-muted); }
   .text-primary { color: var(--accent); }
+  .text-link { color: var(--link); }
+  .bg-hero { background: var(--hero); }
   .bg-primary { background: var(--accent); }
   .bg-primary\/10 { background: var(--accent-bg); }
   .border-hairline { border-color: var(--hairline); }

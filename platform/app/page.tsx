@@ -92,7 +92,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.16), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(244, 160, 107,0.40), transparent 62%), linear-gradient(180deg, #c9531a 0%, ${NAVY} 100%)`,
+            background: `radial-gradient(1100px 420px at 88% -12%, rgba(240, 161, 58,0.14), transparent 60%), radial-gradient(760px 460px at 6% 118%, rgba(237, 107, 35,0.22), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)`,
           }}
         />
         {/* dot-grid texture */}
@@ -195,7 +195,7 @@ export default function HomePage() {
                 {m.desc}
               </p>
               <div className="mt-5 flex items-center justify-between border-t border-hairline pt-4">
-                <span className="apple-caption-strong" style={{ color: NAVY }}>
+                <span className="apple-caption-strong text-ink-muted-80">
                   {m.stat}
                 </span>
                 <span
