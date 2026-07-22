@@ -1,0 +1,46 @@
+# Stack self-host Platform Data Dispar — dijalankan sebagai Portainer Git stack.
+# DB fresh (diseed dari script lokal) → lepas dari Neon. App di-build dari Dockerfile.
+services:
+  dispar-db:
+    image: postgres:16-alpine
+    container_name: dispar-db
+    environment:
+      POSTGRES_USER: dispar
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: dispar
+    volumes:
+      - dispar_db_data:/var/lib/postgresql/data
+    ports:
+      # diekspos ke host untuk seeding awal dari mesin dev (5432 sudah dipakai wa-assistant-db)
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dispar -d dispar"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    networks: [disparnet]
+
+  dispar-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dispar-app
+    environment:
+      DATABASE_URL: postgres://dispar:${DB_PASSWORD}@dispar-db:5432/dispar
+      SYNC_SECRET: ${SYNC_SECRET}
+      NODE_ENV: production
+    ports:
+      - "3031:3000"
+    depends_on:
+      dispar-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [disparnet]
+
+volumes:
+  dispar_db_data:
+
+networks:
+  disparnet:
+    driver: bridge
