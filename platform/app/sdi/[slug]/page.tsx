@@ -284,7 +284,7 @@ export default function DatasetDetailPage({
                         <td className="px-4 py-3 text-slate-400 tabular-nums">{i + 1}</td>
                         {columns.map((c) => (
                           <td key={c.key} className="px-4 py-3 text-slate-700 tabular-nums">
-                            {fmtCell(row[c.key])}
+                            {renderCell(c.key, row[c.key])}
                           </td>
                         ))}
                       </tr>
@@ -342,6 +342,34 @@ function Meta({ label, value }: { label: string; value: string }) {
       </span>
     </span>
   );
+}
+
+/** Render sel: URL → link biru yang bisa diklik; selain itu teks biasa. */
+function renderCell(key: string, v: unknown) {
+  if (v === null || v === undefined || v === "") return "—";
+  const s = String(v);
+  if (/^https?:\/\//i.test(s)) {
+    const k = key.toLowerCase();
+    const label = k === "gmaps"
+      ? "Peta ↗"
+      : k.includes("tripadvisor")
+      ? "TripAdvisor ↗"
+      : k === "sumber" || k.includes("url")
+      ? "Sumber ↗"
+      : "Buka ↗";
+    return (
+      <a
+        href={s}
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: "#2563eb" }}
+        className="hover:underline whitespace-nowrap font-medium"
+      >
+        {label}
+      </a>
+    );
+  }
+  return fmtCell(v);
 }
 
 function fmtCell(v: unknown): string {
