@@ -38,6 +38,18 @@ services:
     restart: unless-stopped
     networks: [disparnet]
 
+  # Cloudflare Tunnel — expose app ke internet tanpa buka port di router.
+  # Pakai host network agar Service URL "localhost:13031" (di dashboard CF) valid.
+  # Token diisi via Portainer stack Env CF_TUNNEL_TOKEN (JANGAN commit tokennya).
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: dispar-cloudflared
+    command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
+    network_mode: host
+    restart: unless-stopped
+    depends_on:
+      - dispar-app
+
 volumes:
   dispar_db_data:
 
