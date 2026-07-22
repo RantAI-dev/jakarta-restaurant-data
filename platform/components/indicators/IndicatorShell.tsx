@@ -7,6 +7,8 @@ import { db, schema } from "@/lib/db";
 const HERO =
   "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
 const GOLD = "#f0a13a";
+// Hyperlink biru — versi terang agar terbaca di atas hero gelap.
+const LINK = "#8ab4ff";
 
 type Source = { slug: string; title: string };
 
@@ -73,7 +75,7 @@ export async function IndicatorShell({
                   key={s.slug}
                   href={`/sdi/${s.slug}`}
                   className="inline-flex items-center gap-1.5 hover:underline"
-                  style={{ color: GOLD }}
+                  style={{ color: LINK }}
                 >
                   {s.title}
                   <TierBadge tier={tierMap.get(s.slug) ?? "primer"} />

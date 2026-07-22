@@ -320,7 +320,7 @@ export default function SdiPage() {
         <p className="text-[12px] text-slate-400 mt-4">
           <span className="inline-flex items-center gap-1.5 mr-4">
             <TierBadge tier="primer" /> = Satu Data Jakarta (
-            <a href={SDI_PORTAL} target="_blank" rel="noreferrer" className="underline">
+            <a href={SDI_PORTAL} target="_blank" rel="noreferrer" className="underline" style={{ color: LINK }}>
               satudata.jakarta.go.id
             </a>
             )

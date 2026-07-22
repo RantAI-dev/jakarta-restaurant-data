@@ -2,7 +2,6 @@ import Link from "next/link";
 import { BarChart } from "./BarChart";
 import type { IndicatorResult } from "@/lib/gci/readiness";
 
-const NAVY = "#ed6b23";
 const LINK = "#2563eb";
 const HERO =
   "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
@@ -81,8 +80,8 @@ export function FrameworkView({
                         <td className="px-4 py-3">
                           <Link
                             href={`/${x.framework.toLowerCase()}/${x.code}`}
-                            className="font-medium text-slate-800 hover:underline"
-                            style={{ color: NAVY }}
+                            className="font-medium hover:underline"
+                            style={{ color: LINK }}
                           >
                             {x.name}
                           </Link>
