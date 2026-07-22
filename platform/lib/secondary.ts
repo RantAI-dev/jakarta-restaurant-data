@@ -74,7 +74,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Restoran/rumah makan & sentra Zona KHAS di DKI Jakarta tersertifikasi halal (BPJPH/LPPOM MUI) — profil, titik koordinat, dan nomor sertifikat halal bila tersedia.",
       tags: ["halal", "restoran", "kuliner", "zona-khas", "ramah-muslim", "sekunder"],
-      rows: 114,
+      rows: 134,
       href: "/sdi/restoran-halal-jakarta",
       external: false,
     },
@@ -84,7 +84,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Hotel syariah & ramah muslim DKI Jakarta (arah kiblat, musholla, tempat wudhu, restoran halal) — profil, koordinat, dan nomor sertifikat halal restoran bila tersedia.",
       tags: ["halal", "hotel", "ramah-muslim", "pariwisata", "sekunder"],
-      rows: 29,
+      rows: 49,
       href: "/sdi/hotel-ramah-muslim-jakarta",
       external: false,
     },
@@ -94,7 +94,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Inovasi, program unggulan, dan praktik baik pendukung wisatawan muslim — desa/kampung wisata ramah muslim, kampung halal, aplikasi digital, event/festival, branding, paket wisata.",
       tags: ["halal", "inovasi", "program", "ramah-muslim", "sekunder"],
-      rows: 29,
+      rows: 43,
       href: "/sdi/inovasi-wisata-ramah-muslim-jakarta",
       external: false,
     },
@@ -104,7 +104,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Mall/pusat perbelanjaan DKI Jakarta dengan fasilitas ramah muslim (musholla, tempat wudhu, restoran halal, toko produk halal) — profil, koordinat, dan foto fasilitas bila tersedia.",
       tags: ["halal", "mall", "fasilitas", "ramah-muslim", "sekunder"],
-      rows: 28,
+      rows: 43,
       href: "/sdi/mall-ramah-muslim-jakarta",
       external: false,
     },
@@ -114,7 +114,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Rumah Potong Hewan/Unggas (RPH/RPU) tersertifikasi halal di DKI Jakarta — profil, pengelola, koordinat, dan nomor sertifikat halal bila tersedia.",
       tags: ["halal", "rph", "ramah-muslim", "sekunder"],
-      rows: 12,
+      rows: 16,
       href: "/sdi/rph-halal-jakarta",
       external: false,
     },
@@ -124,7 +124,7 @@ export function secondaryDatasets(): SecondaryDataset[] {
       description:
         "Produk kreatif makanan/UMKM kuliner asal DKI Jakarta yang tersertifikasi halal — profil, penyelenggara, dan nomor sertifikat halal bila tersedia.",
       tags: ["halal", "produk", "ekraf", "kuliner", "sekunder"],
-      rows: 12,
+      rows: 24,
       href: "/sdi/produk-kreatif-makanan-halal-jakarta",
       external: false,
     },
