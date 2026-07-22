@@ -7,8 +7,16 @@ import { fmtPeriode, type Point } from "@/lib/agg";
 const NAVY = "#ed6b23";
 const idfmt = (v: number) => v.toLocaleString("id-ID");
 
-/** Tren per periode (ECharts area line). */
-export function LineTrend({ data }: { data: Point[] }) {
+/** Tren per periode (ECharts area line). `unit`/`yName` bisa disesuaikan. */
+export function LineTrend({
+  data,
+  unit = "kunjungan",
+  yName = "Kunjungan",
+}: {
+  data: Point[];
+  unit?: string;
+  yName?: string;
+}) {
   if (data.length < 2)
     return (
       <div className="text-[13px] text-slate-400 py-6 text-center">
@@ -20,7 +28,7 @@ export function LineTrend({ data }: { data: Point[] }) {
     grid: { left: 6, right: 30, top: 16, bottom: 24, containLabel: true },
     tooltip: {
       trigger: "axis",
-      valueFormatter: (v: number) => idfmt(v) + " kunjungan",
+      valueFormatter: (v: number) => idfmt(v) + " " + unit,
     },
     xAxis: {
       type: "category",
@@ -42,7 +50,7 @@ export function LineTrend({ data }: { data: Point[] }) {
     },
     yAxis: {
       type: "value",
-      name: "Kunjungan",
+      name: yName,
       nameTextStyle: { color: "#94a3b8", fontSize: 11, align: "left" },
       axisLabel: { color: "#94a3b8", formatter: (v: number) => idfmt(v) },
       splitLine: { lineStyle: { color: "#eef2f7" } },

@@ -1,0 +1,3587 @@
+{
+"JAKARTA (POS BLOC, MONAS, BLOK M)": {
+"alamat": "Blok M BCA, Jalan Panglima Polim Raya, Kebayoran Baru, Jakarta, Jawa, Indonesia",
+"lat": "-6.2444643",
+"lon": "106.7981332",
+"match": "photon (review)",
+"query": "photon:JAKARTA (POS BLOC, MONAS, BLOK M) -> Blok M BCA"
+},
+"HALO NIKO RESTAURANT": {
+"alamat": "Halo Niko, Jalan Mega Kuningan Barat I, Mega Kuningan, Kuningan Timur, Setiabudi, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12950, Indonesia",
+"lat": "-6.2323137",
+"lon": "106.8283991",
+"match": "exact",
+"query": "HALO NIKO RESTAURANT"
+},
+"JAKARTA (POS BLOC, CHANDRA NAYA, HOUSE OF TUGU)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (POS BLOC, CHANDRA NAYA, HOUSE OF TUGU), Indonesia"
+},
+"AREA GLODOK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "AREA GLODOK, Jakarta, Indonesia"
+},
+"GANDARIA CITY": {
+"alamat": "Gandaria City, Kebayoran Lama Utara, Kebayoran Lama, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.2439607",
+"lon": "106.7836570",
+"match": "exact",
+"query": "GANDARIA CITY"
+},
+"JAKARTA (MONAS)": {
+"alamat": "Monumen Nasional, Jalan Medan Merdeka Utara, RW 02, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10110, Indonesia",
+"lat": "-6.1754024",
+"lon": "106.8271692",
+"match": "exact",
+"query": "JAKARTA (MONAS)"
+},
+"INDONESIA ARENA": {
+"alamat": "Indonesia Arena, Jalan Gerbang Pemuda, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2148291",
+"lon": "106.8005215",
+"match": "exact",
+"query": "INDONESIA ARENA"
+},
+"JAKARTA (MONAS, JAKARTA AQUARIUM, BUNDARAN HI)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (MONAS, JAKARTA AQUARIUM, BUNDARAN HI), Indonesia"
+},
+"BUNDARAN HOTEL INDONESIA": {
+"alamat": "Bundaran Hotel Indonesia, RW 05, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1949853",
+"lon": "106.8226741",
+"match": "exact",
+"query": "BUNDARAN HOTEL INDONESIA"
+},
+"JIEXPO KEMAYORAN": {
+"alamat": "JIEXPO Kemayoran, Jalan Pesanggrahan Raya, Jakarta International Expo, Pademangan Timur, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14410, Indonesia",
+"lat": "-6.1448357",
+"lon": "106.8486625",
+"match": "exact",
+"query": "JIEXPO KEMAYORAN"
+},
+"JICC": {
+"alamat": "Japonské informační a kulturní centrum, 458/1, Hellichova, Malá Strana, obvod Praha 1, Praha, 118 00, Česko",
+"lat": "50.0841942",
+"lon": "14.4060907",
+"match": "exact",
+"query": "JICC"
+},
+"BALAI AGUNG, BALAIKOTA": {
+"alamat": "Balaikota Depok, Depok, Jawa Barat, Indonesia",
+"lat": "-6.3942215",
+"lon": "106.821797",
+"match": "photon (review)",
+"query": "photon:BALAI AGUNG, BALAIKOTA -> Balaikota Depok"
+},
+"MASJID ISTIQLAL DAN BUNDARAN HI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MASJID ISTIQLAL DAN BUNDARAN HI, Jakarta, Indonesia"
+},
+"MASJID RAMLIE MUSOFA, MASJID CUT MEUTIA, BUNDARAN HI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MASJID RAMLIE MUSOFA, MASJID CUT MEUTIA, BUNDARAN HI, Jakarta, Indonesia"
+},
+"TAMAN MINI INDONESIA INDAH": {
+"alamat": "Taman Mini Indonesia Indah, Jalan Hankam, RW 02, Ceger, Cipayung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13820, Indonesia",
+"lat": "-6.3026341",
+"lon": "106.8952962",
+"match": "exact",
+"query": "TAMAN MINI INDONESIA INDAH"
+},
+"TAVIA HOTEL, ANCOL, JAKARTA AQUARIUM SAFARI, JALAN KEBON SIRIH": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "TAVIA HOTEL, ANCOL, JAKARTA AQUARIUM SAFARI, JALAN KEBON SIRIH, Indonesia"
+},
+"JAKARTA PAVILLION DAN BAMBOO FOREST BOULEVARD, TMII": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA PAVILLION DAN BAMBOO FOREST BOULEVARD, TMII, Indonesia"
+},
+"DUSIT THANI PATTAYA, THAILAND": {
+"alamat": "Dusit Thani College Pattaya, 382/2, ถนนสุขุมวิท, ตำบลนาเกลือ, เมืองพัทยา, หนองปลาไหล, อำเภอบางละมุง, จังหวัดชลบุรี, 20150, ประเทศไทย",
+"lat": "12.9632643",
+"lon": "100.9109153",
+"match": "exact",
+"query": "DUSIT THANI PATTAYA, THAILAND"
+},
+"GOR CIRACAS": {
+"alamat": "GOR Ciracas, Jalan Raya Bogor, RW 01, Ciracas, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13770, Indonesia",
+"lat": "-6.3252438",
+"lon": "106.8640866",
+"match": "exact",
+"query": "GOR CIRACAS"
+},
+"PULAU ONRUST DAN SEPA": {
+"alamat": "Pusat Budidaya dan Konservasi Laut Balai Benih Ikan Laur (BBIL), Jalan Tidung Timur, Kepulauan Seribu Selatan, DKI Jakarta, Jawa, Indonesia",
+"lat": "-5.801208",
+"lon": "106.5055292",
+"match": "photon (review)",
+"query": "photon:PULAU ONRUST DAN SEPA -> Pusat Budidaya dan Konservasi Laut Balai Benih Ikan Laur (BBIL)"
+},
+"JAKARTA (GELORA BUNG KARNO, SENAYAN, PACIFIC PLACE)": {
+"alamat": "Stadion Utama Gelora Bung Karno, Jalan Lingkar Stadion, Tanah Abang, Jakarta, Jawa, Indonesia",
+"lat": "-6.218612",
+"lon": "106.8025541",
+"match": "photon (review)",
+"query": "photon:JAKARTA (GELORA BUNG KARNO, SENAYAN, PAC -> Stadion Utama Gelora Bung Karno"
+},
+"AREA GLODOK DAN KOTA TUA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "AREA GLODOK DAN KOTA TUA, Jakarta, Indonesia"
+},
+"PULAU MACAN DAN PULAU SEPA, KEPULAUAN SERIBU": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PULAU MACAN DAN PULAU SEPA, KEPULAUAN SERIBU, Jakarta, Indonesia"
+},
+"PULAU SEPA, KEPULAUAN SERIBU": {
+"alamat": "Pulau Sepa Barat, Kepulauan Seribu, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-5.5755733",
+"lon": "106.5811078",
+"match": "exact",
+"query": "PULAU SEPA, KEPULAUAN SERIBU"
+},
+"DKI JAKARTA": {
+"alamat": "Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.1754049",
+"lon": "106.8271680",
+"match": "exact",
+"query": "DKI JAKARTA"
+},
+"JAKARTA (OPEN TOP TOUR RATU PLAZA - BUNDARAN HI - ISTIQLAL, KOTA TUA)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (OPEN TOP TOUR RATU PLAZA - BUNDARAN HI - ISTIQLAL, KOTA TUA), Indonesia"
+},
+"JAKARTA (TUGU KUNSTRKING PALEIS)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (TUGU KUNSTRKING PALEIS), Indonesia"
+},
+"LOCOMOTIVE PLAZA DAN BAMBOO FOREST BOULEVARD, TMII": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LOCOMOTIVE PLAZA DAN BAMBOO FOREST BOULEVARD, TMII, Jakarta, Indonesia"
+},
+"PULAU ONRUST DAN PAYUNG": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PULAU ONRUST DAN PAYUNG, Jakarta, Indonesia"
+},
+"STASIUN MRT CIPETE, BLOK M, DAN BUNDARAN HI DAN MUSEUM WAYANG DI KOTA TUA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "STASIUN MRT CIPETE, BLOK M, DAN BUNDARAN HI DAN MUSEUM WAYANG DI KOTA TUA, Jakarta, Indonesia"
+},
+"DUKUNGAN MC DAN ABANG NONE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "DUKUNGAN MC DAN ABANG NONE, Jakarta, Indonesia"
+},
+"KORIDOR JL HR RASUNA SAID : PEDESTRIAN PLAZA FESTIVAL DAN THE PLAZA AT PLAZA FESTIVAL": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "KORIDOR JL HR RASUNA SAID : PEDESTRIAN PLAZA FESTIVAL DAN THE PLAZA AT PLAZA FESTIVAL, Jakarta, Indonesia"
+},
+"ATRIUM MAL KOTA KASABLANKA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ATRIUM MAL KOTA KASABLANKA, Jakarta, Indonesia"
+},
+"COPENHAGEN CITY HALL SQUARE, DENMARK": {
+"alamat": "Rådhuspladsen, Kødbyen, København, Region Hovedstaden, Danmark",
+"lat": "55.6760623",
+"lon": "12.5689089",
+"match": "photon (review)",
+"query": "photon:COPENHAGEN CITY HALL SQUARE, DENMARK -> Rådhuspladsen"
+},
+"KEDUTAAN BESAR PALESTINA": {
+"alamat": "Kedutaan besar Palestina, 64, Jalan Ambarawa, RW 02, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.2023914",
+"lon": "106.8429280",
+"match": "exact",
+"query": "KEDUTAAN BESAR PALESTINA"
+},
+"MESSE FRANKFURT": {
+"alamat": "Messe Frankfurt, Friedrich-Ebert-Anlage, Westend Süd, Innenstadt 2, Frankfurt am Main, Hessen, 60327, Deutschland",
+"lat": "50.1115781",
+"lon": "8.6444501",
+"match": "exact",
+"query": "MESSE FRANKFURT"
+},
+"PULAU KELOR DAN PAYUNG": {
+"alamat": "Kelompok Masyarakat Pengawas Suku Dinas Perikanan dan Kelautan, Jalan Dermaga Utama, Kepulauan Seribu Utara, Jakarta, Jawa, Indonesia",
+"lat": "-5.7374539",
+"lon": "106.6016299",
+"match": "photon (review)",
+"query": "photon:PULAU KELOR DAN PAYUNG -> Kelompok Masyarakat Pengawas Suku Dinas Perikanan dan Kelautan"
+},
+"JAKARTA (SARINAH, MUSEUM SEJARAH, MUSEUM TEKSTIL)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (SARINAH, MUSEUM SEJARAH, MUSEUM TEKSTIL), Indonesia"
+},
+"HOTEL NIKKO, XIAMEN, CHINA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HOTEL NIKKO, XIAMEN, CHINA, Jakarta, Indonesia"
+},
+"SWISSOTEL GRAND HOTEL, SHANGHAI, CHINA": {
+"alamat": "上海宏安瑞士大酒店, 1, 愚园路, 永源浜, 静安寺街道, 静安区, 上海市, 200040, 中国",
+"lat": "31.2265385",
+"lon": "121.4424463",
+"match": "exact",
+"query": "SWISSOTEL GRAND HOTEL, SHANGHAI, CHINA"
+},
+"GEDUNG KESENIAN JAKARTA & POS BLOC": {
+"alamat": "Gedung Pos Ibukota, Jalan Kesenian, Sawah Besar, Jakarta, Jawa, Indonesia",
+"lat": "-6.167935",
+"lon": "106.8349761",
+"match": "photon (review)",
+"query": "photon:GEDUNG KESENIAN JAKARTA & POS BLOC -> Gedung Pos Ibukota"
+},
+"SHANGHAI WORLD EXPO EXHIBITION & CONVENTION CENTER": {
+"alamat": "上海世博展览馆, 上南路, 上钢新村街道, 周家渡, 浦东新区, 上海市, 200126, 中国",
+"lat": "31.1844954",
+"lon": "121.4854823",
+"match": "exact",
+"query": "SHANGHAI WORLD EXPO EXHIBITION & CONVENTION CENTER"
+},
+"BALI INTERNATIONAL CONVENTION CENTER (BICC) NUSA DUA BALI": {
+"alamat": "Bali Nusa Dua Convention Center, Jalan Nusa Dua, Benoa, Benoa, Kuta Selatan, Kabupaten Badung, Bali, Indonesia, Bali, Indonesia",
+"lat": "-8.7960663",
+"lon": "115.2259078",
+"match": "photon (review)",
+"query": "photon:BALI INTERNATIONAL CONVENTION CENTER (BI -> Bali Nusa Dua Convention Center"
+},
+"JAKARTA (BUNDARAN HI, MONAS, PIK, BLOK M)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JAKARTA (BUNDARAN HI, MONAS, PIK, BLOK M), Indonesia"
+},
+"TAMAN ISMAIL MARZUKI": {
+"alamat": "Taman Ismail Marzuki, 73, Jalan Cikini Raya, RW 02, Cikini, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10330, Indonesia",
+"lat": "-6.1891550",
+"lon": "106.8398854",
+"match": "exact",
+"query": "TAMAN ISMAIL MARZUKI"
+},
+"TAMAN BENDERA PUSAKA": {
+"alamat": "Taman Bendera Pusaka, Kramat Pela, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.2451636",
+"lon": "106.7946126",
+"match": "exact",
+"query": "TAMAN BENDERA PUSAKA"
+},
+"MONUMEN NASIONAL": {
+"alamat": "Monumen Nasional, Jalan Medan Merdeka Utara, RW 02, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10110, Indonesia",
+"lat": "-6.1754024",
+"lon": "106.8271692",
+"match": "exact",
+"query": "MONUMEN NASIONAL"
+},
+"PLAZA SELATAN MONAS": {
+"alamat": "Monas Selatan, Gambir, Jakarta, Jawa, Indonesia",
+"lat": "-6.1780578",
+"lon": "106.8274441",
+"match": "photon (review)",
+"query": "photon:PLAZA SELATAN MONAS -> Monas Selatan"
+},
+"SYMPHONY OF THE SEA DAN PANTAI LAGOON, ANCOL": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SYMPHONY OF THE SEA DAN PANTAI LAGOON, ANCOL, Jakarta, Indonesia"
+},
+"JAKARTA": {
+"alamat": "Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.1754049",
+"lon": "106.8271680",
+"match": "exact",
+"query": "JAKARTA"
+},
+"AA MARAMIS": {
+"alamat": "Gedung AA Maramis, Jalan Masuk ke DJPB, RW 08, Pasar Baru, Sawah Besar, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10710, Indonesia",
+"lat": "-6.1692103",
+"lon": "106.8371333",
+"match": "exact",
+"query": "AA MARAMIS"
+},
+"CREATIVE FUTURE LAB BUILDING": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "CREATIVE FUTURE LAB BUILDING, Jakarta, Indonesia"
+},
+"PLAZA KEONG MAS, TMII": {
+"alamat": "Plaza Keong Emas, Cipayung, Jakarta, Jawa, Indonesia",
+"lat": "-6.3044697",
+"lon": "106.8901485",
+"match": "photon (review)",
+"query": "photon:PLAZA KEONG MAS, TMII -> Plaza Keong Emas"
+},
+"BALAIKOTA DKI JAKARTA": {
+"alamat": "Jakarta, Jawa, Indonesia",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "photon (review)",
+"query": "photon:BALAIKOTA DKI JAKARTA -> Jakarta"
+},
+"BURSA EFEK INDONESIA (IDX), JAKARTA": {
+"alamat": "Bursa Efek Jakarta, Jalan Jend. Sudirman, Kebayoran Baru, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2236851",
+"lon": "106.8086123",
+"match": "photon (review)",
+"query": "photon:BURSA EFEK INDONESIA (IDX), JAKARTA -> Bursa Efek Jakarta"
+},
+"KANTOR WALIKOTA": {
+"alamat": "Kantor Walikota, Jalan R.E Martadinata, Kertak Baru Ilir, Banjarmasin Tengah, Banjarmasin, Kalimantan Selatan, Kalimantan, 70112, Indonesia",
+"lat": "-3.3279490",
+"lon": "114.5888522",
+"match": "exact",
+"query": "KANTOR WALIKOTA"
+},
+"TIM": {
+"alamat": "городское поселение Тим, Тимский район, Курская область, Центральный федеральный округ, Россия",
+"lat": "51.6217460",
+"lon": "37.1225780",
+"match": "exact",
+"query": "TIM"
+},
+"SARINAH": {
+"alamat": "Sarinah, 11, Jalan Mohammad Husni Thamrin, RW 04, Gondangdia, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1877169",
+"lon": "106.8237557",
+"match": "exact",
+"query": "SARINAH"
+},
+"ANJUNGAN SARINAH": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ANJUNGAN SARINAH, Jakarta, Indonesia"
+},
+"GPIB IMMANUEL JAKARTA": {
+"alamat": "GPIB Immanuel, Jalan Pejambon, RW 01, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10110, Indonesia",
+"lat": "-6.1767064",
+"lon": "106.8321321",
+"match": "exact",
+"query": "GPIB IMMANUEL JAKARTA"
+},
+"ISTORA SENAYAN, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN NO.1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.220338",
+"lon": "106.8057496",
+"match": "seni-bounded",
+"query": "seni:ISTORA SENAYAN, JAKARTA"
+},
+"HUTAN KOTA GELORA BUNG KARNO": {
+"alamat": "Hutan Kota Gelora Bung Karno, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2223003",
+"lon": "106.8068460",
+"match": "exact",
+"query": "HUTAN KOTA GELORA BUNG KARNO"
+},
+"BALAI KARTINI EXPO": {
+"alamat": "Balai Kartini, Jl. Jendral Gatot Subroto Kav. 37, Setiabudi, Setiabudi, South Jakarta, Jawa, Indonesia",
+"lat": "-6.2346168",
+"lon": "106.825379",
+"match": "photon (review)",
+"query": "photon:BALAI KARTINI EXPO -> Balai Kartini"
+},
+"JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10270 RT. 01 RW. 03 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10270 RT. 01 RW. 03 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270, Indonesia"
+},
+"STADION MADYA, GELORA BUNG KARNO": {
+"alamat": "Stadion Madya Gelora Bung Karno, Jalan Plaza Barat, Tanah Abang, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2172813",
+"lon": "106.7995084",
+"match": "photon (review)",
+"query": "photon:STADION MADYA, GELORA BUNG KARNO -> Stadion Madya Gelora Bung Karno"
+},
+"PIAZZA, GANDARIA CITY": {
+"alamat": "Gandaria City, Kebayoran Lama, Jakarta, Jawa, Indonesia",
+"lat": "-6.2439607",
+"lon": "106.783657",
+"match": "photon (review)",
+"query": "photon:PIAZZA, GANDARIA CITY -> Gandaria City"
+},
+"THE CASABLANCA HALL": {
+"alamat": "The Body Shop, Casablanca, Pondok Jaya, Tangerang Selatan, Banten, Indonesia",
+"lat": "-6.2771576",
+"lon": "106.7204218",
+"match": "photon (review)",
+"query": "photon:THE CASABLANCA HALL -> The Body Shop"
+},
+"JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA RT. 1 RW. 3 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA RT. 1 RW. 3 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270, Indonesia"
+},
+"GEDUNG SERBAGUNA SENAYAN": {
+"alamat": "Gedung Serbaguna, Jalan Rengas Elok 1, Cakung, Jakarta, Jawa, Indonesia",
+"lat": "-6.1945977",
+"lon": "106.9403165",
+"match": "photon (review)",
+"query": "photon:GEDUNG SERBAGUNA SENAYAN -> Gedung Serbaguna"
+},
+"BALAI SARBINI - JL. JEND. SUDIRMAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BALAI SARBINI - JL. JEND. SUDIRMAN, Jakarta, Indonesia"
+},
+"BERANDA SARINAH": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BERANDA SARINAH, Jakarta, Indonesia"
+},
+"JL PINTU SATU SENAYAN GELORA BUNG KARNO RT. 001 RW. 003 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL PINTU SATU SENAYAN GELORA BUNG KARNO RT. 001 RW. 003 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270, Indonesia"
+},
+"CIPUTRA ARTPRENEUR LT.13": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "CIPUTRA ARTPRENEUR LT.13, Jakarta, Indonesia"
+},
+"PLAZA TIMUR GBK SENAYAN": {
+"alamat": "Toko Kopi TUKU - GBK Senayan, Jalan Plaza Selatan, Tanah Abang, Jakarta, Jawa, Indonesia",
+"lat": "-6.2218904",
+"lon": "106.8045591",
+"match": "photon (review)",
+"query": "photon:PLAZA TIMUR GBK SENAYAN -> Toko Kopi TUKU - GBK Senayan"
+},
+"JAKARTA INTERNATIONAL VELODROME": {
+"alamat": "JL. BALAP SEPEDA NO.35, RW.6, JATI, KEC. PULO GADUNG, KOTA JAKARTA TIMUR, DAERAH KHUSUS IBUKOTA JAKARTA 13220, INDONESIA",
+"lat": "-6.190896",
+"lon": "106.8901012",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL VELODROME"
+},
+"THE HALL BALLROOM SENAYAN CITY": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "THE HALL BALLROOM SENAYAN CITY, Jakarta, Indonesia"
+},
+"RITZ CARLTON PASIFIC PLACE GRAND BALL ROOM": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "RITZ CARLTON PASIFIC PLACE GRAND BALL ROOM, Jakarta, Indonesia"
+},
+"STADION TENNIS INDOOR SENAYAN RT. 001 RW. 001 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "STADION TENNIS INDOOR SENAYAN RT. 001 RW. 001 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270, Indonesia"
+},
+"LOTTE SHOPPING AVENUE LT 4 UNIT 4F 11": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LOTTE SHOPPING AVENUE LT 4 UNIT 4F 11, Jakarta, Indonesia"
+},
+"JL. STADION SENAYAN, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA RT. 01 RW. 03 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. STADION SENAYAN, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA RT. 01 RW. 03 GELORA, TANAH ABANG, KOTA JAKARTA PUSAT, DKI JAKARTA KODE POS 10270, Indonesia"
+},
+"PULAU SATU SENAYAN PARK": {
+"alamat": "SD Negeri Pulau Pari 01, SMP Negeri Satu Atap, Kepulauan Seribu Selatan, DKI Jakarta, Jawa, Indonesia",
+"lat": "-5.8578562",
+"lon": "106.6197332",
+"match": "photon (review)",
+"query": "photon:PULAU SATU SENAYAN PARK -> SD Negeri Pulau Pari 01, SMP Negeri Satu Atap"
+},
+"JL. SALIHARA NO. 16 RT. 11 RW. 3 PASAR MINGGU, PASAR MINGGU, KOTA JAKARTA SELATAN, DKI JAKARTA KODE POS 12520": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. SALIHARA NO. 16 RT. 11 RW. 3 PASAR MINGGU, PASAR MINGGU, KOTA JAKARTA SELATAN, DKI JAKARTA KODE POS 12520, Indonesia"
+},
+"JL. SALIHARA NO. 16 RT. 11 RW. 3 PASAR MINGGU, PASAR MINGGU, KOTA JAKARTA SELATAN, DKI JAKARTA KODE POS 12521": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. SALIHARA NO. 16 RT. 11 RW. 3 PASAR MINGGU, PASAR MINGGU, KOTA JAKARTA SELATAN, DKI JAKARTA KODE POS 12521, Indonesia"
+},
+"M BLOC SPACE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "M BLOC SPACE, Jakarta, Indonesia"
+},
+"ASSEMBLY HALL (JAKARTA INTERNATIONAL CONVENTION CENTER)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ASSEMBLY HALL (JAKARTA INTERNATIONAL CONVENTION CENTER), Indonesia"
+},
+"JICC SENAYAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JICC SENAYAN, Jakarta, Indonesia"
+},
+"KOMUNITAS SALIHARA ARTS CENTER (TEATER)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "KOMUNITAS SALIHARA ARTS CENTER (TEATER), Jakarta, Indonesia"
+},
+"EX HANGGAR PANCORAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "EX HANGGAR PANCORAN, Jakarta, Indonesia"
+},
+"LEVEL 4, PLAZA SENAYAN": {
+"alamat": "Apartemen Plaza Senayan, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2238464",
+"lon": "106.8006353",
+"match": "exact",
+"query": "LEVEL 4, PLAZA SENAYAN"
+},
+"TEATER KECIL TAMAN ISMAIL MARZUKI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "TEATER KECIL TAMAN ISMAIL MARZUKI, Jakarta, Indonesia"
+},
+"\"HALL A DAN HALL B, JAKARTA INTERNATIONAL CONVENTION CENTER (JICC)\"": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "\"HALL A DAN HALL B, JAKARTA INTERNATIONAL CONVENTION CENTER (JICC)\", Indonesia"
+},
+"GREAT HALL - POS BLOC JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GREAT HALL - POS BLOC JAKARTA, Indonesia"
+},
+"GRAHA BHAKTI BUDAYA, TAMAN ISMAIL MARZUKI JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GRAHA BHAKTI BUDAYA, TAMAN ISMAIL MARZUKI JAKARTA, Indonesia"
+},
+"GAMBIR EXPO": {
+"alamat": "Gambir Expo, Jalan Pesanggrahan Raya, Jakarta International Expo, Pademangan Timur, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14410, Indonesia",
+"lat": "-6.1439727",
+"lon": "106.8470793",
+"match": "exact",
+"query": "GAMBIR EXPO"
+},
+"INDOOR OUTLET HW SUPERHOUSE SATRIO": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "INDOOR OUTLET HW SUPERHOUSE SATRIO, Jakarta, Indonesia"
+},
+"M BLOK SPACE": {
+"alamat": "RUCI Art Space, 2, Jalan Melawai VIII, RW 01, Melawai, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12130, Indonesia",
+"lat": "-6.2446409",
+"lon": "106.7986229",
+"match": "exact",
+"query": "M BLOK SPACE"
+},
+"STADION SEPAK BOLA LAPANGAN BANTENG": {
+"alamat": "Parkir Lapangan Sepak Bola, Setu, Tangerang Selatan, Banten, Indonesia",
+"lat": "-6.3535187",
+"lon": "106.6769928",
+"match": "photon (review)",
+"query": "photon:STADION SEPAK BOLA LAPANGAN BANTENG -> Parkir Lapangan Sepak Bola"
+},
+"PLATARAN MASJI CUT MEUTIA": {
+"alamat": "Masjid Cut Meutia, Jalan Cut Meutia, Menteng, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.187256",
+"lon": "106.8333757",
+"match": "photon (review)",
+"query": "photon:PLATARAN MASJI CUT MEUTIA -> Masjid Cut Meutia"
+},
+"KOMUNITAS SALIHARA ARTS CENTER ( GALERI )": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "KOMUNITAS SALIHARA ARTS CENTER ( GALERI ), Jakarta, Indonesia"
+},
+"MAIN ATRIUM DAN PROMNADE H&M MALL GANDARIA CITY": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MAIN ATRIUM DAN PROMNADE H&M MALL GANDARIA CITY, Jakarta, Indonesia"
+},
+"ARENA PEKAN RAYA JAKARTA": {
+"alamat": "Box sports arena, Jalan Pluit Raya, Penjaringan, Jakarta, Jawa, Indonesia",
+"lat": "-6.1272797",
+"lon": "106.7984888",
+"match": "photon (review)",
+"query": "photon:ARENA PEKAN RAYA JAKARTA -> Box sports arena"
+},
+"SWASANA BRIN THAMRIN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SWASANA BRIN THAMRIN, Jakarta, Indonesia"
+},
+"TAMAN MENTENG": {
+"alamat": "Taman Menteng, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1959974",
+"lon": "106.8295739",
+"match": "exact",
+"query": "TAMAN MENTENG"
+},
+"PLAZA UTARA GBK": {
+"alamat": "Toko Kopi TUKU - GBK Senayan, Jalan Plaza Selatan, Tanah Abang, Jakarta, Jawa, Indonesia",
+"lat": "-6.2218904",
+"lon": "106.8045591",
+"match": "photon (review)",
+"query": "photon:PLAZA UTARA GBK -> Toko Kopi TUKU - GBK Senayan"
+},
+"SOEHANNA HALL": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SOEHANNA HALL, Jakarta, Indonesia"
+},
+"SYMPHONY OF THE SEA, PANTAI LAGOON, PANTAI FESTIVAL": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SYMPHONY OF THE SEA, PANTAI LAGOON, PANTAI FESTIVAL, Jakarta, Indonesia"
+},
+"POOLSIDE, GRAND HYATT JAKARTA": {
+"alamat": "Grand Hyatt Jakarta, Jl. M.H. Thamrin, Menteng, Central Jakara, Jawa, Indonesia",
+"lat": "-6.1938028",
+"lon": "106.8224472",
+"match": "photon (review)",
+"query": "photon:POOLSIDE, GRAND HYATT JAKARTA -> Grand Hyatt Jakarta"
+},
+"HW SUPERHOUSE SATRIO": {
+"alamat": "HW Super House, Jl. Prof. DR. Satrio No.Kav.6, Kuningan, Karet Kuningan, Kecamatan Setiabudi, South Jakarta 1940, Setiabudi, Jakarta, Jawa, Indonesia",
+"lat": "-6.2224717",
+"lon": "106.822221",
+"match": "photon (review)",
+"query": "photon:HW SUPERHOUSE SATRIO -> HW Super House"
+},
+"GRAHA BHAKTI BUDAYA": {
+"alamat": "Graha Bhakti Budaya, 73, Jalan Cikini Raya, RW 05, Cikini, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10330, Indonesia",
+"lat": "-6.1891826",
+"lon": "106.8399501",
+"match": "exact",
+"query": "GRAHA BHAKTI BUDAYA"
+},
+"TEATER BESAR, TAMAN ISMAIL MARZUKI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "TEATER BESAR, TAMAN ISMAIL MARZUKI, Jakarta, Indonesia"
+},
+"JAKARTA INTERNATIONAL CONVENTION CENTER": {
+"alamat": "JL. GATOT SUBROTO, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2143949",
+"lon": "106.807103",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL CONVENTION CENTER"
+},
+"BALAI KARTINI": {
+"alamat": "Balai Kartini, Jalan Jenderal Gatot Subroto, RW 03, Kuningan Timur, Setiabudi, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12950, Indonesia",
+"lat": "-6.2346168",
+"lon": "106.8253790",
+"match": "exact",
+"query": "BALAI KARTINI"
+},
+"GRAHA BIP BUILDING, LE PRIVE (EX DRAGON FLY)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GRAHA BIP BUILDING, LE PRIVE (EX DRAGON FLY), Jakarta, Indonesia"
+},
+"CIPUTRA ARTPRENEUR": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "CIPUTRA ARTPRENEUR, Jakarta, Indonesia"
+},
+"STADION MADYA GBK": {
+"alamat": "Stadion Madya Gelora Bung Karno, Jalan Plaza Barat, Tanah Abang, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2172813",
+"lon": "106.7995084",
+"match": "photon (review)",
+"query": "photon:STADION MADYA GBK -> Stadion Madya Gelora Bung Karno"
+},
+"LAPANGAN TEMBAK YONIF 201 JAYA YUDHA TNI AD": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LAPANGAN TEMBAK YONIF 201 JAYA YUDHA TNI AD, Jakarta, Indonesia"
+},
+"PULAU SATU DAN DOME SENAYAN PARK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PULAU SATU DAN DOME SENAYAN PARK, Jakarta, Indonesia"
+},
+"BALAI SARBINI, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN NO.KAV. 50 1, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10220",
+"lat": "-6.2143949",
+"lon": "106.807103",
+"match": "seni-bounded",
+"query": "seni:BALAI SARBINI, JAKARTA"
+},
+"TENNIS INDOOR SENAYAN GBK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "TENNIS INDOOR SENAYAN GBK, Jakarta, Indonesia"
+},
+"PARKIRAN AQUATIC GBK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PARKIRAN AQUATIC GBK, Jakarta, Indonesia"
+},
+"YAMAHA MUSIC CENTER BUILDING, SD NOTRE DAME & AULA MAFTUCHAH YUSUF UNJ, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "YAMAHA MUSIC CENTER BUILDING, SD NOTRE DAME & AULA MAFTUCHAH YUSUF UNJ, JAKARTA, Indonesia"
+},
+"BALAI KARTINI, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO NO.6 KAV. 37, RT.6/RW.3, KUNINGAN, KUNINGAN TIM., KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12950",
+"lat": "-6.2346168",
+"lon": "106.825379",
+"match": "seni-bounded",
+"query": "seni:BALAI KARTINI, JAKARTA"
+},
+"MAIN ATRIUM KOREA 360 LOTTE MALL, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV. 3-5, KUNINGAN, KARET KUNINGAN, SETIABUDI, SOUTH JAKARTA CITY, JAKARTA 12940",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM KOREA 360 LOTTE MALL, JAKART"
+},
+"BENGKEL SPACE, JAKARTA": {
+"alamat": "QRF5+72R, FAIRGROUNDS SCBD LOT 14, JL. JEND. SUDIRMAN KAV 52-53, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2820105",
+"lon": "106.7917546",
+"match": "seni-bounded",
+"query": "seni:BENGKEL SPACE, JAKARTA"
+},
+"LAPANGAN HOCKEY, PLAZA FESTIVAL JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LAPANGAN HOCKEY, PLAZA FESTIVAL JAKARTA, Indonesia"
+},
+"ZOO SCBD, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53 NO.LOT 14, SENAYAN, KEC. KBY. BARU, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2236851",
+"lon": "106.8086123",
+"match": "seni-bounded",
+"query": "seni:ZOO SCBD, JAKARTA"
+},
+"JAKARTA INTERNATIONAL EXPO KEMAYORAN": {
+"alamat": "Halte JIEXPO Kemayoran, Jalan Pesanggrahan Raya, Jakarta International Expo, Pademangan Timur, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14410, Indonesia",
+"lat": "-6.1448308",
+"lon": "106.8486600",
+"match": "exact",
+"query": "JAKARTA INTERNATIONAL EXPO KEMAYORAN"
+},
+"BEACH CITY INTERNATIONAL STADIUM, JAKARTA": {
+"alamat": "BEACH CITY INTERNATIONAL STADIUM, JL. KW. WISATA ANCOL, ANCOL, PADEMANGAN, NORTH JAKARTA CITY, JAKARTA 14430",
+"lat": "-6.117558",
+"lon": "106.8581403",
+"match": "seni-bounded",
+"query": "seni:BEACH CITY INTERNATIONAL STADIUM, JAKART"
+},
+"KRAPELA, JAKARTA": {
+"alamat": "ROW, JL. BULUNGAN NO.9 9 LT.5, KRAMAT PELA, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12130",
+"lat": "-6.2453904",
+"lon": "106.7975834",
+"match": "seni-bounded",
+"query": "seni:KRAPELA, JAKARTA"
+},
+"JAKARTA CONCERT HALL": {
+"alamat": "INEWS TOWER, 14TH - 15TH FLOOR, RW.7, KB. SIRIH, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10340",
+"lat": "-6.2153417",
+"lon": "106.8072728",
+"match": "seni-bounded",
+"query": "seni:JAKARTA CONCERT HALL"
+},
+"ISTORA SENAYAN – JAKARTA": {
+"alamat": "Istana Olahraga Gelora Bung Karno, Jalan Plaza Selatan, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2203380",
+"lon": "106.8057496",
+"match": "exact",
+"query": "ISTORA SENAYAN – JAKARTA"
+},
+"GANDARIA CITY MALL, JAKARTA": {
+"alamat": "Gandaria City, Jalan Sultan Iskandar Muda, Gandaria City, Kebayoran Lama Utara, Kebayoran Lama, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12240, Indonesia",
+"lat": "-6.2442757",
+"lon": "106.7834863",
+"match": "exact",
+"query": "GANDARIA CITY MALL, JAKARTA"
+},
+"AM LOUNGE, JAKARTA": {
+"alamat": "Barna KTV and Lounge Jakarta, Jalan Hajjah R. Rasuna Said, Setiabudi, South Jakarta, DKI Jakarta, Indonesia",
+"lat": "-6.2154984",
+"lon": "106.8299553",
+"match": "photon (review)",
+"query": "photon:AM LOUNGE, JAKARTA -> Barna KTV and Lounge Jakarta"
+},
+"LE CIRQUE, JAKARTA": {
+"alamat": "Mal Ciputra Jakarta (Citraland), Jalan Letjen S Parman, Grogol Petamburan, Jakarta Barat, DKI Jakarta, Indonesia",
+"lat": "-6.1682283",
+"lon": "106.7866379",
+"match": "photon (review)",
+"query": "photon:LE CIRQUE, JAKARTA -> Mal Ciputra Jakarta (Citraland)"
+},
+"BLACK OWL PIK": {
+"alamat": "Black Owl, Jalan Hampton Square, Rawa Buaya, Medang, Banten, Indonesia",
+"lat": "-6.2670381",
+"lon": "106.617534",
+"match": "photon (review)",
+"query": "photon:BLACK OWL PIK -> Black Owl"
+},
+"SKYE, JAKARTA": {
+"alamat": "Skye, Jalan Teluk Betung, RW 05, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1968181",
+"lon": "106.8226374",
+"match": "exact",
+"query": "SKYE, JAKARTA"
+},
+"56 BOUTIQUE BAR JAKARTA": {
+"alamat": "Bellagio Boutique Mall, Jalan Mega Kuningan Barat III, Setiabudi, East Kuningan, Central Jakarta, Jawa, Indonesia",
+"lat": "-6.2274301",
+"lon": "106.8243968",
+"match": "photon (review)",
+"query": "photon:56 BOUTIQUE BAR JAKARTA -> Bellagio Boutique Mall"
+},
+"ROSE GUNAWARMAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ROSE GUNAWARMAN, Jakarta, Indonesia"
+},
+"TENNIS INDOOR SENAYAN, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN BLOK B, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2132051",
+"lon": "106.7980208",
+"match": "seni-bounded",
+"query": "seni:TENNIS INDOOR SENAYAN, JAKARTA"
+},
+"THE H CLUB SCBD": {
+"alamat": "The H Club, Jalan Tulodong Bawah X, SCBD, Senayan, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12190, Indonesia",
+"lat": "-6.2276515",
+"lon": "106.8111613",
+"match": "exact",
+"query": "THE H CLUB SCBD"
+},
+"W SUPERCLUB GATSU": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "W SUPERCLUB GATSU, Jakarta, Indonesia"
+},
+"GRAND BALLROOM THE RITZ CARLTON PACIFIC PLACE JAKARTA": {
+"alamat": "The Ritz-Carlton Jakarta, Pacific Place, Sudirman Central Business District Southway, Kebayoran Baru, Jakarta, Jawa, Indonesia",
+"lat": "-6.224099",
+"lon": "106.8098744",
+"match": "photon (review)",
+"query": "photon:GRAND BALLROOM THE RITZ CARLTON PACIFIC  -> The Ritz-Carlton Jakarta, Pacific Place"
+},
+"IZZY SOCIAL CLUB": {
+"alamat": "JL. GUNAWARMAN NO.41, FOURTH FLOOR, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12180",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:IZZY SOCIAL CLUB"
+},
+"FIFTY SIX BOUTIQUE BAR": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "FIFTY SIX BOUTIQUE BAR, Jakarta, Indonesia"
+},
+"SUPERHOUSE SATRIO, JAKARTA": {
+"alamat": "Jalan Profesor Doktor Satrio, Setiabudi, Jakarta, Jawa, Indonesia",
+"lat": "-6.2231301",
+"lon": "106.8225964",
+"match": "photon (review)",
+"query": "photon:SUPERHOUSE SATRIO, JAKARTA -> Jalan Profesor Doktor Satrio"
+},
+"SWILLHOUSE, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SWILLHOUSE, JAKARTA, Indonesia"
+},
+"BABYLON GARDEN AFFAIR": {
+"alamat": "Babelan Garden City, Sukamekar, Jawa Barat, Indonesia",
+"lat": "-6.1271446",
+"lon": "107.0496047",
+"match": "photon (review)",
+"query": "photon:BABYLON GARDEN AFFAIR -> Babelan Garden City"
+},
+"MAIN ATRIUM, LOTTE MALL, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MAIN ATRIUM, LOTTE MALL, JAKARTA, Indonesia"
+},
+"ROSE GUNAWARMAN JAKARTA": {
+"alamat": "Jalan Taman Gunawarman Timur, Kebayoran Baru, Jakarta, Jawa, Indonesia",
+"lat": "-6.2344927",
+"lon": "106.8073841",
+"match": "photon (review)",
+"query": "photon:ROSE GUNAWARMAN JAKARTA -> Jalan Taman Gunawarman Timur"
+},
+"VAULT JAKARTA": {
+"alamat": "MULTIVISION TOWER, 25TH FLOOR (LANTAI 25, JL. KUNINGAN MULIA LOT 9B, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12980",
+"lat": "-6.1784189",
+"lon": "106.7803598",
+"match": "seni-bounded",
+"query": "seni:VAULT JAKARTA"
+},
+"BARTIGA JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BARTIGA JAKARTA, Indonesia"
+},
+"BATS SHANGRI-LA, JAKARTA": {
+"alamat": "Nishimura, Shangri-La Jakarta, Jalan Karet Pasar Baru Timur 2, Tanah Abang, Jakarta, Jawa, Indonesia",
+"lat": "-6.2030373",
+"lon": "106.8188955",
+"match": "photon (review)",
+"query": "photon:BATS SHANGRI-LA, JAKARTA -> Nishimura, Shangri-La Jakarta"
+},
+"PFN HERITAGE OTISTA, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PFN HERITAGE OTISTA, JAKARTA, Indonesia"
+},
+"BABYLON GARDEN AFFAIR, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BABYLON GARDEN AFFAIR, JAKARTA, Indonesia"
+},
+"KSYE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "KSYE, Jakarta, Indonesia"
+},
+"BENGKEL SCBD": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BENGKEL SCBD, Jakarta, Indonesia"
+},
+"ADIDAS LANTAI 2, PACIFIC PLACE MALL, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ADIDAS LANTAI 2, PACIFIC PLACE MALL, JAKARTA, Indonesia"
+},
+"PATS X SUDIRMAN, JAKARTA": {
+"alamat": "Harris Suites fX Sudirman - Jakarta, Jl. Jend Sudirman, Tanah Abang, Senayan, Central Jakarta, Jawa, Indonesia",
+"lat": "-6.2253018",
+"lon": "106.8038892",
+"match": "photon (review)",
+"query": "photon:PATS X SUDIRMAN, JAKARTA -> Harris Suites fX Sudirman - Jakarta"
+},
+"ATRIUM LIPPO MALL NUSANTARA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ATRIUM LIPPO MALL NUSANTARA, Jakarta, Indonesia"
+},
+"SWEELEE STORE PONDOK INDAH, JAKARTA": {
+"alamat": "Cold Stone Creamery, Jalan Pondok Indah Blok II-B Pondok Indah, Kebayoran Lama, Jakarta Selatan, Jawa, Indonesia",
+"lat": "-6.266125",
+"lon": "106.784804",
+"match": "photon (review)",
+"query": "photon:SWEELEE STORE PONDOK INDAH, JAKARTA -> Cold Stone Creamery"
+},
+"LIL TIGER PIK": {
+"alamat": "RUKAN GOLF ISLAND BOULEVARD, JL. PANTAI INDAH KAPUK NO.1, RT.000/RW.000, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14460",
+"lat": "-6.0927028",
+"lon": "106.7448466",
+"match": "seni-bounded",
+"query": "seni:LIL TIGER PIK"
+},
+"ISTORA SENAYAN JAKARTA": {
+"alamat": "Istana Olahraga Gelora Bung Karno, Jalan Plaza Selatan, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2203380",
+"lon": "106.8057496",
+"match": "exact",
+"query": "ISTORA SENAYAN JAKARTA"
+},
+"GEDUNG BASKET HALL, GBK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GEDUNG BASKET HALL, GBK, Jakarta, Indonesia"
+},
+"THE KASABLANKA HALL, MALL KOTA KASABLANKA LANTAI 3": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "THE KASABLANKA HALL, MALL KOTA KASABLANKA LANTAI 3, Jakarta, Indonesia"
+},
+"INDONESIA ARENA JAKARTA": {
+"alamat": "Indonesia Arena, Jalan Gerbang Pemuda, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2148291",
+"lon": "106.8005215",
+"match": "exact",
+"query": "INDONESIA ARENA JAKARTA"
+},
+"GRAHA BIP BUILDING , LE PRIVE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GRAHA BIP BUILDING , LE PRIVE, Jakarta, Indonesia"
+},
+"STADION UTAMA GELORA BUNG KARNO": {
+"alamat": "Stadion Utama Gelora Bung Karno, Jalan Lingkar Stadion, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2186120",
+"lon": "106.8025541",
+"match": "exact",
+"query": "STADION UTAMA GELORA BUNG KARNO"
+},
+"GLITZ INCLUSIVE, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GLITZ INCLUSIVE, JAKARTA, Indonesia"
+},
+"LTX SCBD, JAKARTA": {
+"alamat": "Ltx Lil Tiger X, Sudirman Central Business District Westway, RW 01, Senayan, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12190, Indonesia",
+"lat": "-6.2273000",
+"lon": "106.8110350",
+"match": "exact",
+"query": "LTX SCBD, JAKARTA"
+},
+"JIEP PULOMAS, JAKARTA": {
+"alamat": "Pulomas, Jalan Raya Kayu Putih, Pulo Gadung, Jakarta, Jawa, Indonesia",
+"lat": "-6.1773105",
+"lon": "106.8933929",
+"match": "photon (review)",
+"query": "photon:JIEP PULOMAS, JAKARTA -> Pulomas"
+},
+"THE KASABLANKA HALL": {
+"alamat": "The Food Hall, Riverside Boulevard, Salembaran Jati, Banten, Indonesia",
+"lat": "-6.0596056",
+"lon": "106.6920634",
+"match": "photon (review)",
+"query": "photon:THE KASABLANKA HALL -> The Food Hall"
+},
+"EPIWALK DAN EPICENTRUM XXI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "EPIWALK DAN EPICENTRUM XXI, Jakarta, Indonesia"
+},
+"LIL TIGER PIK, JAKARTA": {
+"alamat": "HW Golden Tiger PIK, The Piano 7, Jakarta Utara, Jakarta, Jawa, Indonesia",
+"lat": "-6.0927028",
+"lon": "106.7448466",
+"match": "photon (review)",
+"query": "photon:LIL TIGER PIK, JAKARTA -> HW Golden Tiger PIK"
+},
+"TEATER BESAR TAMAN ISMAIL MARZUKI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "TEATER BESAR TAMAN ISMAIL MARZUKI, Jakarta, Indonesia"
+},
+"IZZY SOCIAL CLUB , JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "IZZY SOCIAL CLUB , JAKARTA, Indonesia"
+},
+"THE H CLUB SCBD, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53 JL. SCBD NO.LOT 19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190 JAKARTA",
+"lat": "-6.2276515",
+"lon": "106.8111613",
+"match": "seni-bounded",
+"query": "seni:THE H CLUB SCBD, JAKARTA"
+},
+"FOS JAKARTA": {
+"alamat": "Jakarta Nanyang School, Jalan Sekolah Foresta, Lengkong Ulama, Tangerang, Banten, Indonesia",
+"lat": "-6.2873084",
+"lon": "106.6504464",
+"match": "photon (review)",
+"query": "photon:FOS JAKARTA -> Jakarta Nanyang School"
+},
+"FIFTY SIX BOUTIQUE JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "FIFTY SIX BOUTIQUE JAKARTA, Indonesia"
+},
+"MAIN ATRIUM EAST MALL LEVEL 1 – GRAND INDONESIA, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MAIN ATRIUM EAST MALL LEVEL 1 – GRAND INDONESIA, JAKARTA, Indonesia"
+},
+"BENGKEL SPACE SCBD, JAKARTA": {
+"alamat": "QRF5+72R, FAIRGROUNDS SCBD LOT 14, JL. JEND. SUDIRMAN KAV 52-53, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.227896",
+"lon": "106.8058911",
+"match": "seni-bounded",
+"query": "seni:BENGKEL SPACE SCBD, JAKARTA"
+},
+"ISTORA SENAYAN": {
+"alamat": "Istana Olahraga Gelora Bung Karno, Jalan Plaza Selatan, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2203380",
+"lon": "106.8057496",
+"match": "exact",
+"query": "ISTORA SENAYAN"
+},
+"HALL A & HALL B": {
+"alamat": "Hall A, Hall B, Foor Path [ICT], Hayin Banki, Kaduna North, Kaduna, Nigeria",
+"lat": "10.6116849",
+"lon": "7.4401615",
+"match": "exact",
+"query": "HALL A & HALL B"
+},
+"JAKARTA INTERNASIONAL CONVENTION CENTER": {
+"alamat": "Balai Sidang Jakarta Convention Center, Jalan Bendungan Jati Luhur, Tanah Abang, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2143949",
+"lon": "106.807103",
+"match": "photon (review)",
+"query": "photon:JAKARTA INTERNASIONAL CONVENTION CENTER -> Balai Sidang Jakarta Convention Center"
+},
+"SANCTUARY AUDITORIUM, CBN HALL, MENARA KUNINGAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SANCTUARY AUDITORIUM, CBN HALL, MENARA KUNINGAN, Jakarta, Indonesia"
+},
+"PARKIR SELATAN & PLAZA TENGGARA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PARKIR SELATAN & PLAZA TENGGARA, Jakarta, Indonesia"
+},
+"BENGKEL SPACE SCBD": {
+"alamat": "UnionSPACE - SCBD District 8, Jakarta Selatan, Jalan Senopati, Kebayoran Baru, DKI Jakarta, Jakarta Selatan, Indonesia",
+"lat": "-6.227896",
+"lon": "106.8058911",
+"match": "photon (review)",
+"query": "photon:BENGKEL SPACE SCBD -> UnionSPACE - SCBD District 8, Jakarta Selatan"
+},
+"LE PRIVE GEDUNG GRAHA BIP, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LE PRIVE GEDUNG GRAHA BIP, JAKARTA, Indonesia"
+},
+"PIC CREATIVE SPACE, WISMA STACO": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PIC CREATIVE SPACE, WISMA STACO, Jakarta, Indonesia"
+},
+"COMA – MBLOC SPACE, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "COMA – MBLOC SPACE, JAKARTA, Indonesia"
+},
+"LOTTE MALL JAKARTA": {
+"alamat": "Lotte Mall, Kav 4-5, Jalan Profesor Doktor Hamka, RW 04, Karet Kuningan, Setiabudi, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12940, Indonesia",
+"lat": "-6.2243466",
+"lon": "106.8232570",
+"match": "exact",
+"query": "LOTTE MALL JAKARTA"
+},
+"TOBA DREAM, JAKARTA": {
+"alamat": "JL. DR. SAHARJO NO.90, MENTENG ATAS, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12850",
+"lat": "-6.2159937",
+"lon": "106.8435074",
+"match": "seni-bounded",
+"query": "seni:TOBA DREAM, JAKARTA"
+},
+"FOOGU BAR, JAKARTA": {
+"alamat": "JL. GUNAWARMAN NO.79, RW. BAR., KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12110",
+"lat": "-6.161569",
+"lon": "106.7438905",
+"match": "seni-bounded",
+"query": "seni:FOOGU BAR, JAKARTA"
+},
+"SWEE LEE STORE PONDOK INDAH": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SWEE LEE STORE PONDOK INDAH, Jakarta, Indonesia"
+},
+"H CLUB SCBD JAKARTA": {
+"alamat": "The H Club, Jalan Tulodong Bawah X, SCBD, Senayan, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12190, Indonesia",
+"lat": "-6.2276515",
+"lon": "106.8111613",
+"match": "exact",
+"query": "H CLUB SCBD JAKARTA"
+},
+"BLACK OWL PIK JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "BLACK OWL PIK JAKARTA, Indonesia"
+},
+"ZOO SCBD JAKARTA": {
+"alamat": "Bursa Efek Jakarta, Jalan Jend. Sudirman, Kebayoran Baru, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2236851",
+"lon": "106.8086123",
+"match": "photon (review)",
+"query": "photon:ZOO SCBD JAKARTA -> Bursa Efek Jakarta"
+},
+"INDONESIA ARENA, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2148291",
+"lon": "106.8005215",
+"match": "seni-bounded",
+"query": "seni:INDONESIA ARENA, JAKARTA"
+},
+"THE MUSIC HALL-GRHA PENGHARAPAN BUILDING, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "THE MUSIC HALL-GRHA PENGHARAPAN BUILDING, JAKARTA, Indonesia"
+},
+"56 BOUTIQUE BA": {
+"alamat": "Kirana Boutique Office, Kelapa Gading Timur, Kelapa Gading, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14240, Indonesia",
+"lat": "-6.1739412",
+"lon": "106.8956534",
+"match": "exact",
+"query": "56 BOUTIQUE BA"
+},
+"SING SING PIK": {
+"alamat": "Sing Asri Residence 2, Sawah Lama, Tangerang Selatan, Banten, Indonesia",
+"lat": "-6.2994346",
+"lon": "106.7323107",
+"match": "photon (review)",
+"query": "photon:SING SING PIK -> Sing Asri Residence 2"
+},
+"TEMBAK LANGIT KEMANG, JAKARTA": {
+"alamat": "Posyandu Kenanga & Posyandu Kerapu I, Jalan Lapangan Tembak, Pasar Minggu, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2978666",
+"lon": "106.80775",
+"match": "photon (review)",
+"query": "photon:TEMBAK LANGIT KEMANG, JAKARTA -> Posyandu Kenanga & Posyandu Kerapu I"
+},
+"THE MUSIC HALL, GRHA PENGHARAPAN BUILDING": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "THE MUSIC HALL, GRHA PENGHARAPAN BUILDING, Jakarta, Indonesia"
+},
+"AULA SIMFONIA JAKARTA": {
+"alamat": "JL. INDUSTRI RAYA NO.KAV.1 BLOK B14, PADEMANGAN TIM., KEC. KEMAYORAN, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10610",
+"lat": "-6.1531428",
+"lon": "106.843288",
+"match": "seni-bounded",
+"query": "seni:AULA SIMFONIA JAKARTA"
+},
+"FIFTY SIX BOUTIQUE BAR JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "FIFTY SIX BOUTIQUE BAR JAKARTA, Indonesia"
+},
+"SWILLHOUSE JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SWILLHOUSE JAKARTA, Indonesia"
+},
+"ATRIUM GANDARIA CITY": {
+"alamat": "Gandaria City, Kebayoran Lama, Jakarta, Jawa, Indonesia",
+"lat": "-6.2439607",
+"lon": "106.783657",
+"match": "photon (review)",
+"query": "photon:ATRIUM GANDARIA CITY -> Gandaria City"
+},
+"MAIN ATRIUM GANDARIA CITY": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MAIN ATRIUM GANDARIA CITY, Jakarta, Indonesia"
+},
+"HUTAN KOTA GBK": {
+"alamat": "Hutan Kota Kemayoran, Pademangan, Jakarta, Jawa, Indonesia",
+"lat": "-6.1362085",
+"lon": "106.8477031",
+"match": "photon (review)",
+"query": "photon:HUTAN KOTA GBK -> Hutan Kota Kemayoran"
+},
+"THE KASABLANCA HALL": {
+"alamat": "The Food Hall, Riverside Boulevard, Salembaran Jati, Banten, Indonesia",
+"lat": "-6.0596056",
+"lon": "106.6920634",
+"match": "photon (review)",
+"query": "photon:THE KASABLANCA HALL -> The Food Hall"
+},
+"PLAZA PARKIR TIMUR GBK": {
+"alamat": "Parkir IS Plaza, Jalan Pramuka, Matraman, Jakarta, Jawa, Indonesia",
+"lat": "-6.1927707",
+"lon": "106.8669968",
+"match": "photon (review)",
+"query": "photon:PLAZA PARKIR TIMUR GBK -> Parkir IS Plaza"
+},
+"DEHENG HOUSE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "DEHENG HOUSE, Jakarta, Indonesia"
+},
+"CONVENTION HALL SMESCO, JAKARTA": {
+"alamat": "Hall A Jakarta Convention Centre, Jalan Jenderal Gatot Subroto, Tanah Abang, Jakarta, Jawa, Indonesia",
+"lat": "-6.2153417",
+"lon": "106.8072728",
+"match": "photon (review)",
+"query": "photon:CONVENTION HALL SMESCO, JAKARTA -> Hall A Jakarta Convention Centre"
+},
+"PREMIUM OUTDOOR AREA, SENAYAN CITY (DEPAN SCTV TOWER)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PREMIUM OUTDOOR AREA, SENAYAN CITY (DEPAN SCTV TOWER), Jakarta, Indonesia"
+},
+"PULAU SATU, SENAYAN PARK": {
+"alamat": "SD Negeri Pulau Pari 01, SMP Negeri Satu Atap, Kepulauan Seribu Selatan, DKI Jakarta, Jawa, Indonesia",
+"lat": "-5.8578562",
+"lon": "106.6197332",
+"match": "photon (review)",
+"query": "photon:PULAU SATU, SENAYAN PARK -> SD Negeri Pulau Pari 01, SMP Negeri Satu Atap"
+},
+"PLAZA BARAT GBK": {
+"alamat": "Lapangan Tenis Gelora Bung Karno (GBK), Jalan Plaza Barat, RW 01, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2192928",
+"lon": "106.7995339",
+"match": "exact",
+"query": "PLAZA BARAT GBK"
+},
+"KELAB MALAM (INDOOR)": {
+"alamat": "PAUD Sedap Malam, Gang Masjid At Taufiq, Ciracas, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.3498737",
+"lon": "106.8888255",
+"match": "photon (review)",
+"query": "photon:KELAB MALAM (INDOOR) -> PAUD Sedap Malam"
+},
+"THEATER CIPUTRA ARTPRENEUR, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO KAV. 3-5 CIPUTRA WORLD 1, RETAIL PODIUM, RT.18/RW.4, KUNINGAN, KARET KUNINGAN, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:THEATER CIPUTRA ARTPRENEUR, JAKARTA"
+},
+"JAKARTA CONVENTION CENTER JAKARTA": {
+"alamat": "Balai Sidang Jakarta Convention Center, Jalan Tol Dalam Kota Jakarta, RW 02, Bendungan Hilir, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2143949",
+"lon": "106.8071030",
+"match": "exact",
+"query": "JAKARTA CONVENTION CENTER JAKARTA"
+},
+"PURI INDAH MALL, JAKARTA": {
+"alamat": "JL. PURI AGUNG NO.1, KEMBANGAN SEL., KEC. KEMBANGAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11610",
+"lat": "-6.1882573",
+"lon": "106.7338886",
+"match": "seni-bounded",
+"query": "seni:PURI INDAH MALL, JAKARTA"
+},
+"PONDOK INDAH MALL, JAKARTA": {
+"alamat": "Pondok Indah Mall 1, Jalan Metro Pondok Indah, Pondok Indah, Pondok Pinang, Kebayoran Lama, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12310, Indonesia",
+"lat": "-6.2653276",
+"lon": "106.7846567",
+"match": "exact",
+"query": "PONDOK INDAH MALL, JAKARTA"
+},
+"CENTRAL PARK MALL JAKARTA": {
+"alamat": "Central Park Mall, Kav.28, Jalan Podomoro Avenue, RW 05, Tanjung Duren Selatan, Grogol Petamburan, Jakarta Barat, Daerah Khusus Ibukota Jakarta, 11470, Indonesia",
+"lat": "-6.1773182",
+"lon": "106.7914969",
+"match": "exact",
+"query": "CENTRAL PARK MALL JAKARTA"
+},
+"MBLOC SPACE, JAKARTA": {
+"alamat": "M-Bloc, Kebayoran Baru, Jakarta, Jawa, Indonesia",
+"lat": "-6.2416888",
+"lon": "106.798763",
+"match": "photon (review)",
+"query": "photon:MBLOC SPACE, JAKARTA -> M-Bloc"
+},
+"GEDUNG BASKET DAN ANEKA LAPANGAN, JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GEDUNG BASKET DAN ANEKA LAPANGAN, JAKARTA, Indonesia"
+},
+"GRAND INDONESIA, JAKARTA": {
+"alamat": "JL. MH THAMRIN NO.1, MENTENG, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10310",
+"lat": "-6.1957601",
+"lon": "106.8214547",
+"match": "seni-bounded",
+"query": "seni:GRAND INDONESIA, JAKARTA"
+},
+"PLAZA SENAYAN, JAKARTA": {
+"alamat": "JL. ASIA AFRIKA NO.8, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.225584",
+"lon": "106.7995999",
+"match": "seni-bounded",
+"query": "seni:PLAZA SENAYAN, JAKARTA"
+},
+"SENAYAN CITY JAKARTA": {
+"alamat": "Senayan City, Jalan Asia Afrika, RW 02, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10270, Indonesia",
+"lat": "-6.2273396",
+"lon": "106.7972463",
+"match": "exact",
+"query": "SENAYAN CITY JAKARTA"
+},
+"MAIN ATRIUM KOREA 360, LOTTE MALL JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV. 3-5, KUNINGAN, KARET KUNINGAN, SETIABUDI, SOUTH JAKARTA CITY, JAKARTA 12940",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM KOREA 360, LOTTE MALL JAKART"
+},
+"GRAND ATRIUM DAN MOSAIC WALK KOTA KASABLANKA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GRAND ATRIUM DAN MOSAIC WALK KOTA KASABLANKA, Jakarta, Indonesia"
+},
+"CIPUTRA ARTPRENEUR JAKARTA": {
+"alamat": "Mal Ciputra Jakarta (Citraland), Jalan Letjen S Parman, Grogol Petamburan, Jakarta Barat, DKI Jakarta, Indonesia",
+"lat": "-6.1682283",
+"lon": "106.7866379",
+"match": "photon (review)",
+"query": "photon:CIPUTRA ARTPRENEUR JAKARTA -> Mal Ciputra Jakarta (Citraland)"
+},
+"GLITZ INCLUSIVE": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GLITZ INCLUSIVE, Jakarta, Indonesia"
+},
+"GRAND INDONESIA WEST MALL, LEVEL 3A (FOUNTAIN ATRIUM)": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GRAND INDONESIA WEST MALL, LEVEL 3A (FOUNTAIN ATRIUM), Jakarta, Indonesia"
+},
+"FAIRMONT HOTEL": {
+"alamat": "Fairmont Hotel, Mehdi Hüseyn küçəsi, Bayıl, Səbail rayonu, 1066, Azərbaycan",
+"lat": "40.3594368",
+"lon": "49.8267722",
+"match": "exact",
+"query": "FAIRMONT HOTEL"
+},
+"LAGUNA ATRIUM & TRIBECA PARK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LAGUNA ATRIUM & TRIBECA PARK, Jakarta, Indonesia"
+},
+"HOTEL THE ST. REGIS JAKARTA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HOTEL THE ST. REGIS JAKARTA, Indonesia"
+},
+"THE KASABLANKA HALL, JAKARTA": {
+"alamat": "KOTA KASABLANKA, JL. RAYA CASABLANCA NO.RAYA LT. 3, RT.3/RW.14, MENTENG DALAM, KEC. TEBET, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12870",
+"lat": "-6.265507",
+"lon": "106.7824981",
+"match": "seni-bounded",
+"query": "seni:THE KASABLANKA HALL, JAKARTA"
+},
+"BEACH CITY INTERNATIONAL STADIUM": {
+"alamat": "Ancol Beach City Mall, Pasir Putih Raya, Kawasan Wisata Ancol, Ancol, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14430, Indonesia",
+"lat": "-6.1175580",
+"lon": "106.8581403",
+"match": "exact",
+"query": "BEACH CITY INTERNATIONAL STADIUM"
+},
+"PLAZA FESTIVAL KUNINGAN JAKARTA SELATAN": {
+"alamat": "Plaza Festival, Jalan Epicentrum Utama Raya, RW 05, Karet Kuningan, Setiabudi, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12960, Indonesia",
+"lat": "-6.2201952",
+"lon": "106.8332719",
+"match": "exact",
+"query": "PLAZA FESTIVAL KUNINGAN JAKARTA SELATAN"
+},
+"KOTA TUA": {
+"alamat": "Stare Miasto, Toruń, województwo kujawsko-pomorskie, 87-113, Polska",
+"lat": "53.0101441",
+"lon": "18.6046731",
+"match": "exact",
+"query": "KOTA TUA"
+},
+"SARINAH, HBKB": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "SARINAH, HBKB, Jakarta, Indonesia"
+},
+"BLOK M HUB": {
+"alamat": "Liberta Hub Blok M Jakarta, Jalan Palatehan, Blok K, Melawai, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12160, Indonesia",
+"lat": "-6.2428786",
+"lon": "106.8020766",
+"match": "exact",
+"query": "BLOK M HUB"
+},
+"MASJID CUT MEUTIA JAKARTA PUSAT": {
+"alamat": "Masjid Cut Meutia, Jalan Cut Meutia, RW 05, Cikini, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10340, Indonesia",
+"lat": "-6.1872560",
+"lon": "106.8333757",
+"match": "exact",
+"query": "MASJID CUT MEUTIA JAKARTA PUSAT"
+},
+"BUNDARAN HI": {
+"alamat": "Bundaran Hotel Indonesia, RW 05, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1949853",
+"lon": "106.8226741",
+"match": "exact",
+"query": "BUNDARAN HI"
+},
+"GANG MENTJOS PASEBAN": {
+"alamat": "Warung Jamu Bukti Mentjos, Jalan Salemba Tengah, Senen, DKI Jakarta, Indonesia",
+"lat": "-6.1932259",
+"lon": "106.8538986",
+"match": "photon (review)",
+"query": "photon:GANG MENTJOS PASEBAN -> Warung Jamu Bukti Mentjos"
+},
+"PERPUSTAKAAN JAKARTA": {
+"alamat": "Perpustakaan, Jalan Deposito I, RW 08, Menteng Dalam, Tebet, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12870, Indonesia",
+"lat": "-6.2394391",
+"lon": "106.8420928",
+"match": "exact",
+"query": "PERPUSTAKAAN JAKARTA"
+},
+"PUSAT GROSIR TANAH ABANG": {
+"alamat": "Pintu Masuk Utama Pusat Grosir Metro Tanah Abang, No.189, Jalan Kyai Haji Wahid Hasyim, RW 05, Kebon Kacang, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10230, Indonesia",
+"lat": "-6.1873357",
+"lon": "106.8163688",
+"match": "exact",
+"query": "PUSAT GROSIR TANAH ABANG"
+},
+"PLAZA SARINAH THAMRIN": {
+"alamat": "Sarinah, Jalan M.H. Thamrin, Menteng, Jakarta, Jawa, Indonesia",
+"lat": "-6.1877169",
+"lon": "106.8237557",
+"match": "photon (review)",
+"query": "photon:PLAZA SARINAH THAMRIN -> Sarinah"
+},
+"KANTOR WALIKOTA JAKARTA PUSAT": {
+"alamat": "Kantor Walikota Jakarta Pusat, Jalan Tanah Abang I, RW 08, Petojo Selatan, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10160, Indonesia",
+"lat": "-6.1732369",
+"lon": "106.8187656",
+"match": "exact",
+"query": "KANTOR WALIKOTA JAKARTA PUSAT"
+},
+"JL. SADAR RAYA RT 001 RW 005 KELURAHAN CIGANJUR, KECAMATAN JAGAKARSA, JAKARTA SELATAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. SADAR RAYA RT 001 RW 005 KELURAHAN CIGANJUR, KECAMATAN JAGAKARSA, JAKARTA SELATAN, Indonesia"
+},
+"HALAMAN PANTI NUGRAHA, JL. BANGO RAYA NO.45 8, RT.8/RW.3, PD. LABU, KEC. CILANDAK, KOTA JAKARTA, SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12450": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HALAMAN PANTI NUGRAHA, JL. BANGO RAYA NO.45 8, RT.8/RW.3, PD. LABU, KEC. CILANDAK, KOTA JAKARTA, SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12450, Indonesia"
+},
+"LAPANGAN TRAINING PALAPA, KELURAHAN PASAR MINGGU": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LAPANGAN TRAINING PALAPA, KELURAHAN PASAR MINGGU, Jakarta, Indonesia"
+},
+"JL. KECAPI RT 013 RW 05, KEL. JAGAKARSA, KEC. JAGAKARSA, JAKARTA SELATAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JL. KECAPI RT 013 RW 05, KEL. JAGAKARSA, KEC. JAGAKARSA, JAKARTA SELATAN, Indonesia"
+},
+"KANTOR KELURAHAN CILANDAK BARAT": {
+"alamat": "Kantor Kelurahan Cipete Selatan, Jalan Palem, Cilandak, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2740794",
+"lon": "106.7988081",
+"match": "photon (review)",
+"query": "photon:KANTOR KELURAHAN CILANDAK BARAT -> Kantor Kelurahan Cipete Selatan"
+},
+"JALAN PURI INDAH RAYA, KEL. KEMBANGAN SELATAN, KEC. KEMBANGAN, KOTA ADMINISTRASI JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JALAN PURI INDAH RAYA, KEL. KEMBANGAN SELATAN, KEC. KEMBANGAN, KOTA ADMINISTRASI JAKARTA BARAT, Indonesia"
+},
+"RUANG ALI SADIKIN BLOK A LANTAI DASAR KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT JL. RAYA KEMBANGAN NO.2 JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "RUANG ALI SADIKIN BLOK A LANTAI DASAR KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT JL. RAYA KEMBANGAN NO.2 JAKARTA BARAT, Indonesia"
+},
+"JL. SULAIMAN RAWA BELONG, KEC. KEBON JERUK JAKARTA BARAT": {
+"alamat": "Pasar Bunga Rawa Belong, Jalan Sulaiman, Kebon Jeruk, West Jakarta, Jawa, Indonesia",
+"lat": "-6.2061853",
+"lon": "106.7778522",
+"match": "photon (review)",
+"query": "photon:JL. SULAIMAN RAWA BELONG, KEC. KEBON JER -> Pasar Bunga Rawa Belong"
+},
+"RUANG M. HUSNI THAMRIN LT. 2, GEDUNG BLOK B KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT JL. KEMBANGAN RAYA NO. 2 KEMBANGAN SELATAN JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "RUANG M. HUSNI THAMRIN LT. 2, GEDUNG BLOK B KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT JL. KEMBANGAN RAYA NO. 2 KEMBANGAN SELATAN JAKARTA BARAT, Indonesia"
+},
+"BUNDARAN HOTEL INDONESIA JAKARTA PUSAT": {
+"alamat": "Bundaran Hotel Indonesia, RW 05, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10310, Indonesia",
+"lat": "-6.1949853",
+"lon": "106.8226741",
+"match": "exact",
+"query": "BUNDARAN HOTEL INDONESIA JAKARTA PUSAT"
+},
+"COFFEE WALK LIPPO MALL PURI, JL. PURI INDAH RAYA, KEMBANGAN, JAKARTA BARAT": {
+"alamat": "Lippo Mall Puri 2 Alternative Entrance/ Exit, Jl. Puri Indah Raya Blok U 1,, Kembangan, Puri Indah, Kembangan, West Jakarta, Jawa, Indonesia",
+"lat": "-6.1869209",
+"lon": "106.7395077",
+"match": "photon (review)",
+"query": "photon:COFFEE WALK LIPPO MALL PURI, JL. PURI IN -> Lippo Mall Puri 2 Alternative Entrance/ Exit"
+},
+"MAIN ATRIUM CENTRAL PARK MALL KOMPLEKS PODOMORO CITY, JL. LETJEN S. PARMAN KAV. 28, TANJUNG DUREN SELATAN, GROGOL PETAMBURAN, JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MAIN ATRIUM CENTRAL PARK MALL KOMPLEKS PODOMORO CITY, JL. LETJEN S. PARMAN KAV. 28, TANJUNG DUREN SELATAN, GROGOL PETAMBURAN, JAKARTA BARAT, Indonesia"
+},
+"LANTAI 2 BLOK A KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LANTAI 2 BLOK A KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT, Indonesia"
+},
+"HALAMAN PARKIR SELATAN KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HALAMAN PARKIR SELATAN KANTOR WALIKOTA KOTA ADMINISTRASI JAKARTA BARAT, Indonesia"
+},
+"HALAMAN PLAZA KOTA TUA, JAKARTA BARAT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HALAMAN PLAZA KOTA TUA, JAKARTA BARAT, Indonesia"
+},
+"AULA KANTOR KEJAKSAAN KOTA ADM. JAKARTA BARAT": {
+"alamat": "Aula PMI Kota Adm. Jakarta Barat, Jl Perdana No 12 RT 001 RW 01, Grogol Petamburan, Jakarta, DKI Jakarta, Indonesia",
+"lat": "-6.151917",
+"lon": "106.775199",
+"match": "photon (review)",
+"query": "photon:AULA KANTOR KEJAKSAAN KOTA ADM. JAKARTA  -> Aula PMI Kota Adm. Jakarta Barat"
+},
+"RUANG MH THAMRIN": {
+"alamat": "Kantor Dinas Pekerjaan Umum & Penataan Ruang, Jalan MH Thamrin, Bone, Watampone, Sulawesi Selatan, 92712, Indonesia",
+"lat": "-4.5427133",
+"lon": "120.3407572",
+"match": "exact",
+"query": "RUANG MH THAMRIN"
+},
+"PECINAN GLODOK": {
+"alamat": "Taman Kantor Kelurahan Glodok, Glodok, Taman Sari, Jakarta Barat, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.1461844",
+"lon": "106.8131774",
+"match": "exact",
+"query": "PECINAN GLODOK"
+},
+"CENTRAL PARK 2": {
+"alamat": "Central Park 2, NHA, Talomo Proper, Talomo District, Davao City, Davao Region, 8023, Philippines",
+"lat": "7.0529026",
+"lon": "125.5582304",
+"match": "exact",
+"query": "CENTRAL PARK 2"
+},
+"KEC. PALMERAH": {
+"alamat": "Sekretariat Parisada Hindu Dharma Indonesa Pusat, Jl. Anggrek Neli Murni Blok A, No.3, RT.002/RW.001, Kel. Kemanggisan, Kec. Palmerah, Jakarta Barat, Jalan Anggrek Neli Murni VII, Slipi Jaya, Kemanggisan, Palmerah, Jakarta Barat, Daerah Khusus Ibukota Jakarta, 11480, Indonesia",
+"lat": "-6.1836168",
+"lon": "106.7952140",
+"match": "exact",
+"query": "KEC. PALMERAH"
+},
+"ASTON KARTIKA GROGOL HOTEL": {
+"alamat": "Aston Kartika Grogol Hotel & Conference Center, Jalan Kyai Tapa, RW 16, Tomang, Grogol Petamburan, Jakarta Barat, Daerah Khusus Ibukota Jakarta, 11450, Indonesia",
+"lat": "-6.1672029",
+"lon": "106.7922225",
+"match": "exact",
+"query": "ASTON KARTIKA GROGOL HOTEL"
+},
+"TAMAN MAKAM PAHLAWAN JAKARTA BARAT": {
+"alamat": "Taman Makam Pahlawan Kalibata, Pancoran, Jakarta, Jawa, Indonesia",
+"lat": "-6.2575949",
+"lon": "106.8463388",
+"match": "photon (review)",
+"query": "photon:TAMAN MAKAM PAHLAWAN JAKARTA BARAT -> Taman Makam Pahlawan Kalibata"
+},
+"HALAMAN KANTOR KELURAHAN SEMANAN": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HALAMAN KANTOR KELURAHAN SEMANAN, Jakarta, Indonesia"
+},
+"MUSEUM BAHARI": {
+"alamat": "Museum Bahari, Jalan Pasar Ikan, RW 04, Penjaringan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14470, Indonesia",
+"lat": "-6.1268288",
+"lon": "106.8083185",
+"match": "exact",
+"query": "MUSEUM BAHARI"
+},
+"PENJARINGAN, JAKARTA UTARA": {
+"alamat": "Penjaringan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.1172651",
+"lon": "106.7674334",
+"match": "exact",
+"query": "PENJARINGAN, JAKARTA UTARA"
+},
+"LAPANGAN BANTENG": {
+"alamat": "Taman Monas, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta, 10110, Indonesia",
+"lat": "-6.1766538",
+"lon": "106.8265303",
+"match": "exact",
+"query": "LAPANGAN BANTENG"
+},
+"HALAMAN PLAZA BARAT WALIKOTA JAKARTA UTARA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HALAMAN PLAZA BARAT WALIKOTA JAKARTA UTARA, Indonesia"
+},
+"JALAN RASUNDA SAID KUNINGAN": {
+"alamat": "Jalan Terusan Kuningan Hajjah R. Rasuna Said, Setiabudi, Jakarta, Jawa, Indonesia",
+"lat": "-6.2367064",
+"lon": "106.8271735",
+"match": "photon (review)",
+"query": "photon:JALAN RASUNDA SAID KUNINGAN -> Jalan Terusan Kuningan Hajjah R. Rasuna Said"
+},
+"WILAYAH JAKARTA UTARA": {
+"alamat": "Wilayah KKP, RW 11, Pluit, Penjaringan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14440, Indonesia",
+"lat": "-6.1051752",
+"lon": "106.7709221",
+"match": "exact",
+"query": "WILAYAH JAKARTA UTARA"
+},
+"RUANG BAHARI LANTAI 14 WALIKOTA JAKARTA UTARA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "RUANG BAHARI LANTAI 14 WALIKOTA JAKARTA UTARA, Indonesia"
+},
+"ANCOL": {
+"alamat": "Ancol, Laksamana RE Martadinata, RW 10, Ancol, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14430, Indonesia",
+"lat": "-6.1281150",
+"lon": "106.8451374",
+"match": "exact",
+"query": "ANCOL"
+},
+"MALL ARTHA GADING": {
+"alamat": "Mall Artha Gading, No.1, Jalan Artha Gading Selatan, RW 21, Kelapa Gading Barat, Kelapa Gading, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14240, Indonesia",
+"lat": "-6.1451585",
+"lon": "106.8914384",
+"match": "exact",
+"query": "MALL ARTHA GADING"
+},
+"PLUMPANG SEMPER, KOJA, JAKARTA UTARA": {
+"alamat": "Suku Dinas Tenaga Kerja dan Transmigrasi Jakarta Utara, Jalan Plumpang Semper, RW 02, Tugu Selatan, Koja, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14260, Indonesia",
+"lat": "-6.1301980",
+"lon": "106.9172638",
+"match": "exact",
+"query": "PLUMPANG SEMPER, KOJA, JAKARTA UTARA"
+},
+"STASIUN KRL JIS": {
+"alamat": "Stasiun KRL Universitas Indonesia, Jalan Prof. Dr. Mr. Supomo, Pondok Cina, Depok, Jawa Barat, Indonesia",
+"lat": "-6.3609966",
+"lon": "106.8314946",
+"match": "photon (review)",
+"query": "photon:STASIUN KRL JIS -> Stasiun KRL Universitas Indonesia"
+},
+"HOTEL MERCURE ANCOL JAKARTA UTARA": {
+"alamat": "Mercure Hotel Ancol, Pantai Indah, Kawasan Wisata Ancol, Ancol, Pademangan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14430, Indonesia",
+"lat": "-6.1223774",
+"lon": "106.8365693",
+"match": "exact",
+"query": "HOTEL MERCURE ANCOL JAKARTA UTARA"
+},
+"PEDESTIAN GRAND HYATT BUNDERAN HI": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PEDESTIAN GRAND HYATT BUNDERAN HI, Jakarta, Indonesia"
+},
+"SUNSET PIER PANTAI INDAH KAPUK": {
+"alamat": "Pier 503, Jalan Pejapi, Jakarta Utara, Jakarta, Jawa, Indonesia",
+"lat": "-6.0891638",
+"lon": "106.7302077",
+"match": "photon (review)",
+"query": "photon:SUNSET PIER PANTAI INDAH KAPUK -> Pier 503"
+},
+"MILLENIUM ATRIUM MALL, MALL ARTHA GADING": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "MILLENIUM ATRIUM MALL, MALL ARTHA GADING, Jakarta, Indonesia"
+},
+"PANTAI LAGOON ANCOL": {
+"alamat": "Ancol, Pantai Indah, Pademangan, Jakarta, Jawa, Indonesia",
+"lat": "-6.1251475",
+"lon": "106.8415554",
+"match": "photon (review)",
+"query": "photon:PANTAI LAGOON ANCOL -> Ancol"
+},
+"BATAVIA PIK": {
+"alamat": "Pantai Indah Kapuk, Kamal Muara, Penjaringan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14470, Indonesia",
+"lat": "-6.1089154",
+"lon": "106.7392466",
+"match": "exact",
+"query": "BATAVIA PIK"
+},
+"HOTEL IBIS STYLE SUNTER": {
+"alamat": "Ibis Styles Hotels Sunter, Jalan Danau Sunter Utara, Tanjung Priok, Jakarta, Jawa, Indonesia",
+"lat": "-6.1405268",
+"lon": "106.8858643",
+"match": "photon (review)",
+"query": "photon:HOTEL IBIS STYLE SUNTER -> Ibis Styles Hotels Sunter"
+},
+"PLAZA BARAT WALIKOTA JAKARTA UTARA": {
+"alamat": "Plaza Pasifik, Kelapa Gading, Jakarta, Jawa, Indonesia",
+"lat": "-6.1527366",
+"lon": "106.8942249",
+"match": "photon (review)",
+"query": "photon:PLAZA BARAT WALIKOTA JAKARTA UTARA -> Plaza Pasifik"
+},
+"HOMEGROUNS SIGNATURE PLUIT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "HOMEGROUNS SIGNATURE PLUIT, Jakarta, Indonesia"
+},
+"GOR RAWABADAK": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "GOR RAWABADAK, Jakarta, Indonesia"
+},
+"MALL CIPINANG INDAH": {
+"alamat": "Cipinang Indah Mall, Jalan Cendrawasih, RW 04, Pondok Bambu, Duren Sawit, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13420, Indonesia",
+"lat": "-6.2386007",
+"lon": "106.8940805",
+"match": "exact",
+"query": "MALL CIPINANG INDAH"
+},
+"TMII": {
+"alamat": "Taman Mini Indonesia Indah, Jalan Taman Mini I, Taman Mini Indonesia Indah (TMII), Cipayung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13830, Indonesia",
+"lat": "-6.3026341",
+"lon": "106.8952962",
+"match": "exact",
+"query": "TMII"
+},
+"JL. TIPAR CAKUNG JAKARTA TIMUR": {
+"alamat": "Jalan Akses Tipar Cakung, RW 08, Cakung Barat, Cakung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13910, Indonesia",
+"lat": "-6.1704110",
+"lon": "106.9391288",
+"match": "exact",
+"query": "JL. TIPAR CAKUNG JAKARTA TIMUR"
+},
+"KANTOR WALIKOTA JAKARTA TIMUR": {
+"alamat": "Kantor Walikota Jakarta Timur, Jalan Doktor Sumarno Dalam, RW 08, Pulo Gebang, Cakung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13460, Indonesia",
+"lat": "-6.2140146",
+"lon": "106.9447183",
+"match": "exact",
+"query": "KANTOR WALIKOTA JAKARTA TIMUR"
+},
+"PUSKESMAS PONDOK RANGGON": {
+"alamat": "Puskesmas Pondok Ranggon, Jalan Beringin, RW 04, Pondok Ranggon, Cipayung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13860, Indonesia",
+"lat": "-6.3475672",
+"lon": "106.9145246",
+"match": "exact",
+"query": "PUSKESMAS PONDOK RANGGON"
+},
+"OLD SHANGHAI SEDAYU CITY": {
+"alamat": "Parkir Old Shanghai, Jalan Abbey Avenue, Sedayu City, Rawa Terate, Cakung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 14250, Indonesia",
+"lat": "-6.1664645",
+"lon": "106.9244280",
+"match": "exact",
+"query": "OLD SHANGHAI SEDAYU CITY"
+},
+"AGRO WISATA CILANGKAP, KEC. CIPAYUNG": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "AGRO WISATA CILANGKAP, KEC. CIPAYUNG, Jakarta, Indonesia"
+},
+"JL. PEMUDA RAWAMANGUN": {
+"alamat": "Jalan Pramuka, RW 14, Rawamangun, Pulo Gadung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13120, Indonesia",
+"lat": "-6.1924387",
+"lon": "106.8750675",
+"match": "exact",
+"query": "JL. PEMUDA RAWAMANGUN"
+},
+"VELODROME, RAWAMANGUN": {
+"alamat": "Velodrome, Jalan Balap Sepeda, RW 01, Jati, Pulo Gadung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 10710, Indonesia",
+"lat": "-6.1921316",
+"lon": "106.8911771",
+"match": "exact",
+"query": "VELODROME, RAWAMANGUN"
+},
+"PINTU AIR MALAKA, BKT": {
+"alamat": "Pintu Air BKT, DKI Jakarta, Jawa Barat, Indonesia",
+"lat": "-6.1092044",
+"lon": "106.9694913",
+"match": "photon (review)",
+"query": "photon:PINTU AIR MALAKA, BKT -> Pintu Air BKT"
+},
+"HALAMAN KANTOR WALIKOTA JAKARTA TIMUR": {
+"alamat": "Kantor Walikota Jakarta Timur, Gang Senan I, Cakung, DKI Jakarta, Jawa, Indonesia",
+"lat": "-6.2140146",
+"lon": "106.9447183",
+"match": "photon (review)",
+"query": "photon:HALAMAN KANTOR WALIKOTA JAKARTA TIMUR -> Kantor Walikota Jakarta Timur"
+},
+"MALL CIJANTUNG": {
+"alamat": "Mall Graha Cijantung, Jalan Pendidikan I, RW 04, Cijantung, Pasar Rebo, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13770, Indonesia",
+"lat": "-6.3121510",
+"lon": "106.8619111",
+"match": "exact",
+"query": "MALL CIJANTUNG"
+},
+"PINTU AIR MALAKA, KBT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PINTU AIR MALAKA, KBT, Jakarta, Indonesia"
+},
+"TAMAN PHINISI, P. UNTUNG JAWA": {
+"alamat": "Taman Arsa, Jalan Mindi, Kepulauan Seribu Selatan, Jakarta, Jawa, Indonesia",
+"lat": "-5.9787651",
+"lon": "106.7057363",
+"match": "photon (review)",
+"query": "photon:TAMAN PHINISI, P. UNTUNG JAWA -> Taman Arsa"
+},
+"JALUR PEDESTRIAN DEPAN HOTEL GRAND HYATT": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "JALUR PEDESTRIAN DEPAN HOTEL GRAND HYATT, Jakarta, Indonesia"
+},
+"AMPHITHEATER JEMBATAN CINTA, PULAU TIDUNG": {
+"alamat": "Jembatan Cinta, Jalan Tidung Timur, Kepulauan Seribu Selatan, Jakarta, Jawa, Indonesia",
+"lat": "-5.8032919",
+"lon": "106.5141971",
+"match": "photon (review)",
+"query": "photon:AMPHITHEATER JEMBATAN CINTA, PULAU TIDUN -> Jembatan Cinta"
+},
+"PANTAI PASIR PERAWAN, PULAU PARI": {
+"alamat": "Pantai Pasir Perawan, Pulau Pari, Kepulauan Seribu Selatan, Kepulauan Seribu, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-5.8548840",
+"lon": "106.6229379",
+"match": "exact",
+"query": "PANTAI PASIR PERAWAN, PULAU PARI"
+},
+"PLAZA KABUPATEN, PULAU PRAMUKA": {
+"alamat": "Dermaga Utama Pulau Pramuka, Jalan Plaza, RW 04, Pulau Panggang, Kepulauan Seribu Utara, Kepulauan Seribu, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-5.7441694",
+"lon": "106.6128161",
+"match": "exact",
+"query": "PLAZA KABUPATEN, PULAU PRAMUKA"
+},
+"DERMAGA UTAMA PULAU HARAPAN": {
+"alamat": "Dermaga Utama Pulau Harapan, Jalan Pantai Utara Harapan, RW 02, Pulau Harapan, Kepulauan Seribu Utara, Kepulauan Seribu, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-5.6501280",
+"lon": "106.5783122",
+"match": "exact",
+"query": "DERMAGA UTAMA PULAU HARAPAN"
+},
+"LAPANGAN KELURAHAN PULAU PARI, PULAU LANCANG": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "LAPANGAN KELURAHAN PULAU PARI, PULAU LANCANG, Jakarta, Indonesia"
+},
+"HALAMAN KELURAHAN PULAU HARAPAN": {
+"alamat": "Puskesmas Kelurahan Harapan, Jalan H. Mahyin, Kepulauan Seribu Utara, DKI Jakarta, Jawa, Indonesia",
+"lat": "-5.6526489",
+"lon": "106.577862",
+"match": "photon (review)",
+"query": "photon:HALAMAN KELURAHAN PULAU HARAPAN -> Puskesmas Kelurahan Harapan"
+},
+"BAYWALK MALL, PLUIT, JAKARTA UTARA": {
+"alamat": "Baywalk Mall, Jalan Mandala Bahari, RW 10, Pluit, Penjaringan, Jakarta Utara, Daerah Khusus Ibukota Jakarta, 14450, Indonesia",
+"lat": "-6.1079134",
+"lon": "106.7796191",
+"match": "exact",
+"query": "BAYWALK MALL, PLUIT, JAKARTA UTARA"
+},
+"PULAU ONRUST, TIDUNG, PAYUNG": {
+"alamat": "Pulau Payung Kecil, Kepulauan Seribu Selatan, Jakarta, Jawa, Indonesia",
+"lat": "-5.814254",
+"lon": "106.5496221",
+"match": "photon (review)",
+"query": "photon:PULAU ONRUST, TIDUNG, PAYUNG -> Pulau Payung Kecil"
+},
+"TAMAN JEMBATAN CINTA, PULAU TIDUNG": {
+"alamat": "Jembatan Cinta, Jalan Tidung Timur, Kepulauan Seribu Selatan, Jakarta, Jawa, Indonesia",
+"lat": "-5.8032919",
+"lon": "106.5141971",
+"match": "photon (review)",
+"query": "photon:TAMAN JEMBATAN CINTA, PULAU TIDUNG -> Jembatan Cinta"
+},
+"TAMAN FATAHILLAH": {
+"alamat": "Taman Fatahillah, RW 06, Pinangsia, Taman Sari, Jakarta Barat, Daerah Khusus Ibukota Jakarta, Indonesia",
+"lat": "-6.1347198",
+"lon": "106.8132342",
+"match": "exact",
+"query": "TAMAN FATAHILLAH"
+},
+"UNIT PENGELOLA KAWASAN KOTA TUA": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "UNIT PENGELOLA KAWASAN KOTA TUA, Jakarta, Indonesia"
+},
+"JALAN LADA": {
+"alamat": "Jalan Lada, RW 06, Pinangsia, Taman Sari, Jakarta Barat, Daerah Khusus Ibukota Jakarta, 11110, Indonesia",
+"lat": "-6.1367005",
+"lon": "106.8144062",
+"match": "exact",
+"query": "JALAN LADA"
+},
+"ANJUNGAN DKI JAKARTA, TMII": {
+"alamat": "Anjungan DKI Jakarta, Taman Mini, Taman Mini Indonesia Indah (TMII), Cipayung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13810, Indonesia",
+"lat": "-6.3024897",
+"lon": "106.8932815",
+"match": "exact",
+"query": "ANJUNGAN DKI JAKARTA, TMII"
+},
+"PANGGUNG BUDAYA, TMII": {
+"alamat": "Rumah Adat Panggung, Taman Mini, Cipayung, Jakarta, Jawa, Indonesia",
+"lat": "-6.3022243",
+"lon": "106.8945189",
+"match": "photon (review)",
+"query": "photon:PANGGUNG BUDAYA, TMII -> Rumah Adat Panggung"
+},
+"ANJUNGAN DKI JAKATA DAN BOULEVARD BAMBOO TMII": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "ANJUNGAN DKI JAKATA DAN BOULEVARD BAMBOO TMII, Jakarta, Indonesia"
+},
+"PLAZA LOKOMOTIF & BOULEVARD BAMBOO TMII": {
+"alamat": "",
+"lat": "",
+"lon": "",
+"match": "NOT FOUND",
+"query": "PLAZA LOKOMOTIF & BOULEVARD BAMBOO TMII, Jakarta, Indonesia"
+},
+"LAPANGAN ISTANA ANAK-ANAK INDONESIA": {
+"alamat": "Lapangan Bermain Istana Anak, Jalan Taman Mini, Taman Mini Indonesia Indah (TMII), Cipayung, Jakarta Timur, Daerah Khusus Ibukota Jakarta, 13810, Indonesia",
+"lat": "-6.3014517",
+"lon": "106.9000191",
+"match": "exact",
+"query": "LAPANGAN ISTANA ANAK-ANAK INDONESIA"
+},
+"HALAL::BERBAGAI CABANG SE-DKI JAKARTA (RATUSAN GERAI)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::BERBAGAI CABANG SE-DKI JAKARTA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::BERBAGAI CABANG DI JAKARTA (TERMASUK FATMAWATI JAKARTA SELATAN, PLAZA SEMANGGI JAKARTA PUSAT)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JAKARTA": {
+"lat": "-6.1754049",
+"lon": "106.8271680"
+},
+"HALAL::SEKITAR MASJID JAMI' MATRAMAN, KELURAHAN MATRAMAN, JAKARTA PUSAT": {
+"lat": "",
+"lon": ""
+},
+"HALAL::DKI JAKARTA (SALAH SATU DARI 12 PROVINSI PILOT NASIONAL)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::DKI JAKARTA": {
+"lat": "-6.1754049",
+"lon": "106.8271680"
+},
+"HALAL::KAWASAN CAKUNG, JAKARTA TIMUR": {
+"lat": "-6.2062205",
+"lon": "106.9155386"
+},
+"HALAL::TERSEBAR DI JAKARTA (BERBAGAI GERAI)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::TERSEBAR DI SELURUH DKI JAKARTA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::TERSEBAR DI SELURUH DKI JAKARTA (387 GERAI DI INDONESIA)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PASAR JAYA KOJA BARU, JL. KRAMAT JAYA GANG 8F, NO. 44 BLOK A NO. 16, TUGU UTARA, KOJA, JAKARTA UTARA, DKI JAKARTA 14260": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PERUMAHAN CIPINANG INDAH 1 BLOK M1 NO. 16, CIPINANG MUARA, JATINEGARA, JAKARTA TIMUR, DKI JAKARTA 13420": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JL. KAYUMANIS 10 GANG SUKUN 9 NO. 25, PISANGAN BARU, MATRAMAN, JAKARTA TIMUR, DKI JAKARTA 13110": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JL. LETJEN S. PARMAN, TANJUNG DUREN SELATAN, GROGOL PETAMBURAN, JAKARTA BARAT, DKI JAKARTA 11470": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JL. LETJEN S. PARMAN KAV. 87, KOTA BAMBU UTARA, PALMERAH, JAKARTA BARAT, DKI JAKARTA 11420": {
+"lat": "",
+"lon": ""
+},
+"HALAL::DKI JAKARTA (LOKASI SPESIFIK TIDAK DISEBUTKAN)": {
+"lat": "",
+"lon": ""
+},
+"HALAL::DUBAI WORLD TRADE CENTRE, DUBAI (PROMOSI PASAR TIMUR TENGAH), JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PROGRAM WAJIB SERTIFIKASI HALAL SEKTOR PARIWISATA OKTOBER 2026, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JL. SWADARMA RAYA NO. 69, RT.7/RW.3, SRENGSENG, KEC. KEMBANGAN, JAKARTA BARAT 11630": {
+"lat": "",
+"lon": ""
+},
+"HALAL::LOKBIN PASAR MINGGU, JAKARTA SELATAN": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JLN. BELANAK 2 UJUNG RT.02/01 NO.57, KALIMALANG, JAKARTA TIMUR": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JL. HADIAH UTAMA 2B BLOK F1 NO. 1452B, JELAMBAR, GROGOL PETAMBURAN, JAKARTA BARAT": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PINTU 2, KOMPLEK GUDANG PELURU, BLOK 10 NO. 565D, JL. ASEM BARIS RAYA, TEBET, JAKARTA SELATAN": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PASAR MINGGU, JAKARTA SELATAN": {
+"lat": "-6.2833322",
+"lon": "106.8448558"
+},
+"HALAL::BIR PLETOK BANG ISRA, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::NGRAMU, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::DELTA MAHARDIKA JAVACRISPY, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::JAMU OMAH ELOK-SEHATERA, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::KRIUK KENTANG KAKAK, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::ASE KOPI, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL::PULAU PARI, KEPULAUAN SERIBU SELATAN, JAKARTA, INDONESIA": {
+"lat": "-5.8591134",
+"lon": "106.6163519"
+},
+"HALAL::SORGHUMKU – GULA SORGUM BUBUK, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::BERBAGAI CABANG SE-DKI JAKARTA (RATUSAN GERAI)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::BERBAGAI CABANG SE-DKI JAKARTA": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::BERBAGAI CABANG DI JAKARTA (TERMASUK FATMAWATI JAKARTA SELATAN, PLAZA SEMANGGI JAKARTA PUSAT)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::SEKITAR MASJID JAMI' MATRAMAN, KELURAHAN MATRAMAN, JAKARTA PUSAT": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::DKI JAKARTA (SALAH SATU DARI 12 PROVINSI PILOT NASIONAL)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::TERSEBAR DI JAKARTA (BERBAGAI GERAI)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::TERSEBAR DI SELURUH DKI JAKARTA": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::TERSEBAR DI SELURUH DKI JAKARTA (387 GERAI DI INDONESIA)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::PASAR JAYA KOJA BARU, JL. KRAMAT JAYA GANG 8F, NO. 44 BLOK A NO. 16, TUGU UTARA, KOJA, JAKARTA UTARA, DKI JAKARTA 14260": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::PERUMAHAN CIPINANG INDAH 1 BLOK M1 NO. 16, CIPINANG MUARA, JATINEGARA, JAKARTA TIMUR, DKI JAKARTA 13420": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::JL. KAYUMANIS 10 GANG SUKUN 9 NO. 25, PISANGAN BARU, MATRAMAN, JAKARTA TIMUR, DKI JAKARTA 13110": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::JL. LETJEN S. PARMAN, TANJUNG DUREN SELATAN, GROGOL PETAMBURAN, JAKARTA BARAT, DKI JAKARTA 11470": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::JL. LETJEN S. PARMAN KAV. 87, KOTA BAMBU UTARA, PALMERAH, JAKARTA BARAT, DKI JAKARTA 11420": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::DKI JAKARTA (LOKASI SPESIFIK TIDAK DISEBUTKAN)": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::DUBAI WORLD TRADE CENTRE, DUBAI (PROMOSI PASAR TIMUR TENGAH), JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::PROGRAM WAJIB SERTIFIKASI HALAL SEKTOR PARIWISATA OKTOBER 2026, JAKARTA, INDONESIA": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::JL. SWADARMA RAYA NO. 69, RT.7/RW.3, SRENGSENG, KEC. KEMBANGAN, JAKARTA BARAT 11630": {
+"lat": "",
+"lon": ""
+},
+"HALAL2::LOKBIN PASAR MINGGU, JAKARTA SELATAN": {
+"lat": "",
+"lon": ""
+},
+"25HOURS HOTEL JAKARTA THE ODDBIRD-BALLROOM, JAKARTA": {
+"alamat": "JL. JENDERAL SUDIRMAN NO.28, 8, LOT, KEC. KBY. BARU, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:25HOURS HOTEL JAKARTA THE ODDBIRD-BALLRO"
+},
+"56 BOUTIQUE BAR, JAKARTA": {
+"alamat": "JL. SURYO NO.56, RW. BAR., KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12180",
+"lat": "-6.2274301",
+"lon": "106.8243968",
+"match": "seni-bounded",
+"query": "seni:56 BOUTIQUE BAR, JAKARTA"
+},
+"ADIDAS STORE PACIFIC PLACE SBCD, JAKARTA": {
+"alamat": "UNIT #12, PACIFIC PLACE JAKARTA, JL. JEND. SUDIRMAN KAV 52-53 2ND FLOOR, SENAYAN, KEBAYORAN BARU, SOUTH JAKARTA CITY, JAKARTA 12190",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:ADIDAS STORE PACIFIC PLACE SBCD, JAKARTA"
+},
+"AEON MALL GARDEN CITY, JAKARTA": {
+"alamat": "JL. JKT GARDEN CITY BOULEVARD NO.1, RT.8/RW.6, CAKUNG TIM., KEC. CAKUNG, KOTA JAKARTA TIMUR, DAERAH KHUSUS IBUKOTA JAKARTA 13910",
+"lat": "-6.1726928",
+"lon": "106.9523687",
+"match": "seni-bounded",
+"query": "seni:AEON MALL GARDEN CITY, JAKARTA"
+},
+"AM LOUNGE SCBD, JAKARTA": {
+"alamat": "ÉLYSÉE SCBD JL. SCBD NO.21 2ND FLOOR, RT.7/RW.1, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2240872",
+"lon": "106.8095394",
+"match": "seni-bounded",
+"query": "seni:AM LOUNGE SCBD, JAKARTA"
+},
+"AMBYAR SUPERCLUB, JAKARTA": {
+"alamat": "JL. CIKINI RAYA NO.8, CIKINI, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10330",
+"lat": "-6.3052577",
+"lon": "106.802955",
+"match": "seni-bounded",
+"query": "seni:AMBYAR SUPERCLUB, JAKARTA"
+},
+"ANCOL, TMII, SEKOLAH GLOBAL MANDIRI CIBUBUR": {
+"alamat": "PERUMAHAN LEGENDA WISATA CIBUBUR JL. ALTERNATIF TRANS YOGI KM.6 CIBUBUR, WANAHERANG, KEC. GN. PUTRI, KABUPATEN BOGOR, JAWA BARAT 16965",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:ANCOL, TMII, SEKOLAH GLOBAL MANDIRI CIBU"
+},
+"ASSEMBLY HALL, JAKARTA INTERNATIONAL CONVENTION CENTER": {
+"alamat": "QRM4+VPP, JL. GERBANG PEMUDA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2139189",
+"lon": "106.8067183",
+"match": "seni-bounded",
+"query": "seni:ASSEMBLY HALL, JAKARTA INTERNATIONAL CON"
+},
+"ATRIUM 2 LIPPO MALL PURI, JAKARTA": {
+"alamat": "JL. PURI INDAH RAYA, RT.3/RW.2, KEMBANGAN SEL., KEC. KEMBANGAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11610",
+"lat": "-6.1869209",
+"lon": "106.7395077",
+"match": "seni-bounded",
+"query": "seni:ATRIUM 2 LIPPO MALL PURI, JAKARTA"
+},
+"ATRIUM GROUND FLOOR THE PARK PEJATEN, JAKARTA": {
+"alamat": "JL. WARUNG JATI BARAT NO.39, RT.1/RW.5, JATI PADANG, PS. MINGGU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12540",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:ATRIUM GROUND FLOOR THE PARK PEJATEN, JA"
+},
+"ATRIUM MALL CIPUTRA, JAKARTA": {
+"alamat": "JL. LETJEN S. PARMAN, RT.11/RW.1, TJ. DUREN UTARA, KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "-6.1682283",
+"lon": "106.7866379",
+"match": "seni-bounded",
+"query": "seni:ATRIUM MALL CIPUTRA, JAKARTA"
+},
+"BALAI SARBINI HALL, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN NO.KAV. 50 1, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10220",
+"lat": "-6.1663065",
+"lon": "106.8400688",
+"match": "seni-bounded",
+"query": "seni:BALAI SARBINI HALL, JAKARTA"
+},
+"BALI UNITED - JAKARTA": {
+"alamat": "JL. DURI UTAMA RAYA NO.43, RT.11/RW.7, DURI KEPA, KEC. KB. JERUK, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11510",
+"lat": "-6.1816593",
+"lon": "106.7676049",
+"match": "seni-bounded",
+"query": "seni:BALI UNITED - JAKARTA"
+},
+"BALI UNITED STUDIO, JAKARTA": {
+"alamat": "JL. DURI UTAMA RAYA NO.43, RT.11/RW.7, DURI KEPA, KEC. KB. JERUK, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11510",
+"lat": "-6.1816593",
+"lon": "106.7676049",
+"match": "seni-bounded",
+"query": "seni:BALI UNITED STUDIO, JAKARTA"
+},
+"BALLROOM GRAND MERCURE HOTEL HARMONI, JAKARTA": {
+"alamat": "HAYAM WURUK ST NO.36 37, RT.14/RW.1, KEBON KELAPA, GAMBIR, JAKARTA, 10120",
+"lat": "-6.1601449",
+"lon": "106.8199518",
+"match": "seni-bounded",
+"query": "seni:BALLROOM GRAND MERCURE HOTEL HARMONI, JA"
+},
+"BALLROOM HOTEL PULLMAN CENTRAL PARK, JAKARTA": {
+"alamat": "PODOMORO CITY JL. LET. JEND S PARMAN KAV 28, JAKARTA BARAT, JAKARTA, 11470",
+"lat": "-6.1785631",
+"lon": "106.7890427",
+"match": "seni-bounded",
+"query": "seni:BALLROOM HOTEL PULLMAN CENTRAL PARK, JAK"
+},
+"BASKET HALL, GBK, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN NO.1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2152987",
+"lon": "106.7982194",
+"match": "seni-bounded",
+"query": "seni:BASKET HALL, GBK, JAKARTA"
+},
+"BATEK THEATRE BALAI KARTINI, JAKARTA": {
+"alamat": "BALAI KARTINI, JL. GATOT SUBROTO NO.KAV. 37, RT.6/RW.3, KUNINGAN, KUNINGAN TIM., KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12950",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:BATEK THEATRE BALAI KARTINI, JAKARTA"
+},
+"BEBOP BAR + KITCHEN, JAKARTA": {
+"alamat": "JL. SENOPATI NO.61, RT.8/RW.4, SELONG, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12110",
+"lat": "-6.2308686",
+"lon": "106.80762",
+"match": "seni-bounded",
+"query": "seni:BEBOP BAR + KITCHEN, JAKARTA"
+},
+"BENGKEL SCBD, JAKARTA": {
+"alamat": "QRF5+72R, FAIRGROUNDS SCBD LOT 14, JL. JEND. SUDIRMAN KAV 52-53, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2236851",
+"lon": "106.8086123",
+"match": "seni-bounded",
+"query": "seni:BENGKEL SCBD, JAKARTA"
+},
+"BENGKEL SPACE FAIRGROUND SCBD, JAKARTA": {
+"alamat": "QRF5+72R, FAIRGROUNDS SCBD LOT 14, JL. JEND. SUDIRMAN KAV 52-53, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:BENGKEL SPACE FAIRGROUND SCBD, JAKARTA"
+},
+"BLACK OWL PIK, JAKARTA": {
+"alamat": "GOLF ISLAND BEACH THEME PARK, JL. PANTAI INDAH KAPUK NO.71-77, KAMAL MUARA, DKI JAKARTA 14470",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:BLACK OWL PIK, JAKARTA"
+},
+"BOCA RESTO & LOUNGE, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO KAV. II NO.3, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "-6.2240872",
+"lon": "106.8095394",
+"match": "seni-bounded",
+"query": "seni:BOCA RESTO & LOUNGE, JAKARTA"
+},
+"BOCA RICA LOUNGE, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO KAV. II NO.3, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "-6.1458323",
+"lon": "106.8963381",
+"match": "seni-bounded",
+"query": "seni:BOCA RICA LOUNGE, JAKARTA"
+},
+"BOCA RICA, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO KAV. II NO.3, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "-6.2059862",
+"lon": "106.8215327",
+"match": "seni-bounded",
+"query": "seni:BOCA RICA, JAKARTA"
+},
+"BOCA, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO KAV. II NO.3, RT.1/RW.4, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:BOCA, JAKARTA"
+},
+"BOTTEGA VENETA SENAYAN CITY, JAKARTA": {
+"alamat": "JL. ASIA AFRIKA NO.19 1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:BOTTEGA VENETA SENAYAN CITY, JAKARTA"
+},
+"BULUNGAN, JAKARTA": {
+"alamat": "JL. BULUNGAN NO.1, RT.11/RW.7, KRAMAT PELA, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12130",
+"lat": "-6.2417268",
+"lon": "106.7961084",
+"match": "seni-bounded",
+"query": "seni:BULUNGAN, JAKARTA"
+},
+"CARNAVAL ANCOL. JAKARTA": {
+"alamat": "VVM4+CWG, JL. PANTAI KARNAVAL ANCOL, ANCOL, KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14430",
+"lat": "-6.1171393",
+"lon": "106.8562171",
+"match": "seni-bounded",
+"query": "seni:CARNAVAL ANCOL. JAKARTA"
+},
+"CGV FX JAKARTA BASKETBALL COURT DAN MAIN ATRIUM LOTTE AVENUE, JAKARTA": {
+"alamat": "1 FX SUDIRMAN, JL. JENDERAL SUDIRMAN NO.25, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:CGV FX JAKARTA BASKETBALL COURT DAN MAIN"
+},
+"CHAO CHAO ROOFTOP": {
+"alamat": "SCBD LOT 11, JL. JEND. SUDIRMAN, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12910",
+"lat": "-6.1916497",
+"lon": "106.8778411",
+"match": "seni-bounded",
+"query": "seni:CHAO CHAO ROOFTOP"
+},
+"CIPUTRA ARTPRENEUR, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO KAV. 3-5 CIPUTRA WORLD 1, RETAIL PODIUM, RT.18/RW.4, KUNINGAN, KARET KUNINGAN, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.1682283",
+"lon": "106.7866379",
+"match": "seni-bounded",
+"query": "seni:CIPUTRA ARTPRENEUR, JAKARTA"
+},
+"CLUB 36, JAKARTA": {
+"alamat": "THE JAYAKARTA SP JAKARTA HOTEL & SPA JALAN HAYAM WURUK 126 GLODOK, RT.2/RW.6, MANGGA BESAR, KEC. TAMAN SARI, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11180",
+"lat": "-6.1773756",
+"lon": "106.956401",
+"match": "seni-bounded",
+"query": "seni:CLUB 36, JAKARTA"
+},
+"DEHENG HOUSE, JAKARTA": {
+"alamat": "DEHENG HOUSE, JL. TAMAN KEMANG NO.32, RT.14/RW.1, BANGKA, KEC. MAMPANG PRPT., KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12150",
+"lat": "-6.1773756",
+"lon": "106.956401",
+"match": "seni-bounded",
+"query": "seni:DEHENG HOUSE, JAKARTA"
+},
+"DIA LO GUE ART SPACE": {
+"alamat": "JL. KEMANG SEL. NO.99A, RT.1/RW.2, BANGKA, KEC. MAMPANG PRPT., KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12730",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:DIA LO GUE ART SPACE"
+},
+"DIOR BOUTIQUE PLAZA INDONESIA, JAKARTA": {
+"alamat": "PLAZA INDONESIA, JL. M.H. THAMRIN NO.28-30 1ST FLOOR #G179, GONDANGDIA, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10350",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:DIOR BOUTIQUE PLAZA INDONESIA, JAKARTA"
+},
+"DOME SENAYAN PARK, JAKARTA": {
+"alamat": "JL. GERBANG PEMUDA NO.3, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2125204",
+"lon": "106.8038602",
+"match": "seni-bounded",
+"query": "seni:DOME SENAYAN PARK, JAKARTA"
+},
+"ECOPARK ANCOL, JAKARTA": {
+"alamat": "JL. LODAN TIMUR NO.7, RW.10, ANCOL, KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14430",
+"lat": "-6.1256263",
+"lon": "106.8365421",
+"match": "seni-bounded",
+"query": "seni:ECOPARK ANCOL, JAKARTA"
+},
+"ECOVENTION HALL ANCOL, JAKARTA": {
+"alamat": "JL. LODAN TIMUR NO.7, RW.10, ANCOL, KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14430",
+"lat": "-6.1273977",
+"lon": "106.8373374",
+"match": "seni-bounded",
+"query": "seni:ECOVENTION HALL ANCOL, JAKARTA"
+},
+"EPICENTRUM XXI, JAKARTA": {
+"alamat": "JL. H. R. RASUNA SAID, RT.2/RW.5, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.2168013",
+"lon": "106.8347521",
+"match": "seni-bounded",
+"query": "seni:EPICENTRUM XXI, JAKARTA"
+},
+"GAMBIR EXPO KEMAYORAN, JAKARTA": {
+"alamat": "VR4W+GQH, JL. BENYAMIN SUAEB, PADEMANGAN TIM., KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "-6.1439727",
+"lon": "106.8470793",
+"match": "seni-bounded",
+"query": "seni:GAMBIR EXPO KEMAYORAN, JAKARTA"
+},
+"GAMBIR EXPO KEMAYORAN, OS & HALL D2, JAKARTA": {
+"alamat": "VR4W+GQH, JL. BENYAMIN SUAEB, PADEMANGAN TIM., KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:GAMBIR EXPO KEMAYORAN, OS & HALL D2, JAK"
+},
+"GAMBIR EXPO, JAKARTA": {
+"alamat": "VR4W+GQH, JL. BENYAMIN SUAEB, PADEMANGAN TIM., KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "-6.1439727",
+"lon": "106.8470793",
+"match": "seni-bounded",
+"query": "seni:GAMBIR EXPO, JAKARTA"
+},
+"GAMBIR EXPO, JAKARTA & OPEN SPACE": {
+"alamat": "VR4W+GQH, JL. BENYAMIN SUAEB, PADEMANGAN TIM., KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:GAMBIR EXPO, JAKARTA & OPEN SPACE"
+},
+"GEDUNG GRAHA BHAKTI BUDAYA, TAMAN ISMAIL MARZUKI, JAKARTA": {
+"alamat": "TAMAN ISMAIL MARZUKI, NO. 73, JL. CIKINI IX, RT.8/RW.2, CIKINI, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10330",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:GEDUNG GRAHA BHAKTI BUDAYA, TAMAN ISMAIL"
+},
+"GEDUNG KESENIAN JAKARTA": {
+"alamat": "PASAR BARU, SAWAH BESAR, CENTRAL JAKARTA CITY, JAKARTA 10710",
+"lat": "-6.1617641",
+"lon": "106.8325253",
+"match": "seni-bounded",
+"query": "seni:GEDUNG KESENIAN JAKARTA"
+},
+"GEDUNG PUSAT PERFILMAN H USMAR ISMAIL, JAKARTA": {
+"alamat": "JL. HR RASUNA SAID KAV C-22 SETIABUDI SETIABUDI JAKARTA SELATAN DKI JAKARTA GEDUNG PUSAT PERFILMAN H. USMAR ISMAIL RT.2, RW.5, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12920",
+"lat": "-6.2220883",
+"lon": "106.8330961",
+"match": "seni-bounded",
+"query": "seni:GEDUNG PUSAT PERFILMAN H USMAR ISMAIL, J"
+},
+"GELORA BUNG KARNO MAIN STADIUM, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.218612",
+"lon": "106.8025541",
+"match": "seni-bounded",
+"query": "seni:GELORA BUNG KARNO MAIN STADIUM, JAKARTA"
+},
+"GRAND ATRIUM MALL KOTA KASABLANKA, JAKARTA": {
+"alamat": "KOTA KASABLANKA, JL. RAYA CASABLANCA G FLOOR, RT.16/RW.5, MENTENG DALAM, TEBET, SOUTH JAKARTA CITY, JAKARTA 12960",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:GRAND ATRIUM MALL KOTA KASABLANKA, JAKAR"
+},
+"GRAND THEATRE JAKARTA INTERNATIONAL EXPO KEMAYORAN JAKARTA": {
+"alamat": "VR3W+3C4, JALAN HAJI BENYAMIN SUEB ARENA JIEXPO KEMAYORAN KELURAHAN :, ARENA PEKAN RAYA JKT - KEMAYORAN, JL. H. BENYAMIN SUEB, RW.10, PADEMANGAN TIM., KEC. KEMAYORAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 10620",
+"lat": "-6.1482077",
+"lon": "106.8462039",
+"match": "seni-bounded",
+"query": "seni:GRAND THEATRE JAKARTA INTERNATIONAL EXPO"
+},
+"GRAND THEATRE JIEXPO, JAKARTA": {
+"alamat": "VR3W+3C4, JALAN HAJI BENYAMIN SUEB ARENA JIEXPO KEMAYORAN KELURAHAN :, ARENA PEKAN RAYA JKT - KEMAYORAN, JL. H. BENYAMIN SUEB, RW.10, PADEMANGAN TIM., KEC. KEMAYORAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 10620",
+"lat": "-6.1480466",
+"lon": "106.8472548",
+"match": "seni-bounded",
+"query": "seni:GRAND THEATRE JIEXPO, JAKARTA"
+},
+"H BAR SCBD, JAKARTA": {
+"alamat": "JL. ARAH SENOPATI/DISTRICT VIII JL. SCBD NO.19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2262633",
+"lon": "106.8096779",
+"match": "seni-bounded",
+"query": "seni:H BAR SCBD, JAKARTA"
+},
+"H CLUB, JAKARTA": {
+"alamat": "JL. ARAH SENOPATI/DISTRICT VIII JL. SCBD NO.19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190A",
+"lat": "-6.2276515",
+"lon": "106.8111613",
+"match": "seni-bounded",
+"query": "seni:H CLUB, JAKARTA"
+},
+"H LIST SCBD, JAKARTA": {
+"alamat": "JL. ARAH SENOPATI/DISTRICT VIII JL. SCBD NO.19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2262633",
+"lon": "106.8096779",
+"match": "seni-bounded",
+"query": "seni:H LIST SCBD, JAKARTA"
+},
+"H SHOW SCBD": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53 JL. SCBD NO.LOT 19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190 JAKARTA",
+"lat": "-6.2262633",
+"lon": "106.8096779",
+"match": "seni-bounded",
+"query": "seni:H SHOW SCBD"
+},
+"HALL A-B, OUTDOOR HALL B JICC SENAYAN, JAKARTA": {
+"alamat": "QRP4+HJP, JL. GATOT SUBROTO, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:HALL A-B, OUTDOOR HALL B JICC SENAYAN, J"
+},
+"HALL BASKET GBK, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN NO.1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2152987",
+"lon": "106.7982194",
+"match": "seni-bounded",
+"query": "seni:HALL BASKET GBK, JAKARTA"
+},
+"HALL D2 JIEXPO KEMAYORAN, JAKARTA": {
+"alamat": "JL. RAJAWALI SELATAN RAYA NO.6, PADEMANGAN TIM., KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "-6.1470116",
+"lon": "106.8468234",
+"match": "seni-bounded",
+"query": "seni:HALL D2 JIEXPO KEMAYORAN, JAKARTA"
+},
+"HARMONI EXCHANGE, JAKARTA": {
+"alamat": "JL. HAYAM WURUK VI NO.6, RT.6/RW.2, LANTAI, RW.3, KB. KLP., KECAMATAN GAMBIR, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10120",
+"lat": "-6.1643157",
+"lon": "106.8207105",
+"match": "seni-bounded",
+"query": "seni:HARMONI EXCHANGE, JAKARTA"
+},
+"HASAKA BLOK M, JAKARTA": {
+"alamat": "JL. MELAWAI VIII NO.3, RT.3/RW.1, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.2428786",
+"lon": "106.8020766",
+"match": "seni-bounded",
+"query": "seni:HASAKA BLOK M, JAKARTA"
+},
+"HASAKA, JAKARTA": {
+"alamat": "JL. MELAWAI VIII NO.3, RT.3/RW.1, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:HASAKA, JAKARTA"
+},
+"HATS BAR JAKARTA": {
+"alamat": "JL. ISKANDARSYAH I NO.9, RT.5/RW.2, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.161569",
+"lon": "106.7438905",
+"match": "seni-bounded",
+"query": "seni:HATS BAR JAKARTA"
+},
+"HOTEL INDONESIA KEMPINSKI, JAKARTA": {
+"alamat": "JL. M.H. THAMRIN NO.1, MENTENG, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10310",
+"lat": "-6.195729",
+"lon": "106.8224515",
+"match": "seni-bounded",
+"query": "seni:HOTEL INDONESIA KEMPINSKI, JAKARTA"
+},
+"HOTEL MONOPOLI, JAKARTA": {
+"alamat": "JL. TAMAN KEMANG NO.12, RT.14/RW.1, BANGKA, KEC. MAMPANG PRPT., KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12730",
+"lat": "-6.2561274",
+"lon": "106.8099206",
+"match": "seni-bounded",
+"query": "seni:HOTEL MONOPOLI, JAKARTA"
+},
+"HOTEL MULIA JAKARTA": {
+"alamat": "JALAN ASIA AFRIKA SENAYAN, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2137333",
+"lon": "106.7960585",
+"match": "seni-bounded",
+"query": "seni:HOTEL MULIA JAKARTA"
+},
+"HOTEL PULLMAN CENTRAL PARK, JAKARTA": {
+"alamat": "PODOMORO CITY JL. LET. JEND S PARMAN KAV 28, JAKARTA BARAT, JAKARTA, 11470",
+"lat": "-6.1785631",
+"lon": "106.7890427",
+"match": "seni-bounded",
+"query": "seni:HOTEL PULLMAN CENTRAL PARK, JAKARTA"
+},
+"IZZY SOCIAL CLUB, JAKARTA": {
+"alamat": "JL. GUNAWARMAN NO.41, FOURTH FLOOR, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12180",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:IZZY SOCIAL CLUB, JAKARTA"
+},
+"JAKARTA CONCERT HALL, INEWS TOWER, 14TH - 15TH FLOOR": {
+"alamat": "INEWS TOWER, 14TH - 15TH FLOOR, RW.7, KB. SIRIH, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10340",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:JAKARTA CONCERT HALL, INEWS TOWER, 14TH "
+},
+"JAKARTA INTERNATIONAL CONVENTION CENTER (PLENARY HALL & LOBBY PLENARY)": {
+"alamat": "JL. GATOT SUBROTO, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:JAKARTA INTERNATIONAL CONVENTION CENTER "
+},
+"JAKARTA INTERNATIONAL CONVENTION CENTER, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2143949",
+"lon": "106.807103",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL CONVENTION CENTER,"
+},
+"JAKARTA INTERNATIONAL EXPO (JIEXPO), JAKARTA": {
+"alamat": "GEDUNG PUSAT NIAGA, ARENA JIEXPO, JL. BENYAMIN SUAEB, KEC. KEMAYORAN, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10720",
+"lat": "-6.1457858",
+"lon": "106.8462134",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL EXPO (JIEXPO), JAK"
+},
+"JAKARTA INTERNATIONAL EXPO, JAKARTA": {
+"alamat": "RW.10, PADEMANGAN TIMUR, PADEMANGAN, CENTRAL JAKARTA CITY, JAKARTA 14410",
+"lat": "-6.1321958",
+"lon": "106.8455021",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL EXPO, JAKARTA"
+},
+"JAKARTA INTERNATIONAL STADIUM": {
+"alamat": "PAPANGGO, KEC. TJ. PRIOK, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA",
+"lat": "-6.1406513",
+"lon": "106.8720954",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL STADIUM"
+},
+"JAKARTA INTERNATIONAL STADIUM (JIS), JAKARTA": {
+"alamat": "PAPANGGO, KEC. TJ. PRIOK, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA",
+"lat": "-6.1406513",
+"lon": "106.8720954",
+"match": "seni-bounded",
+"query": "seni:JAKARTA INTERNATIONAL STADIUM (JIS), JAK"
+},
+"JICC JAKARTA": {
+"alamat": "JL. GATOT SUBROTO, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:JICC JAKARTA"
+},
+"JIEXPO GRAND THEATRE, JAKARTA": {
+"alamat": "VR3W+3C4, JALAN HAJI BENYAMIN SUEB ARENA JIEXPO KEMAYORAN KELURAHAN :, ARENA PEKAN RAYA JKT - KEMAYORAN, JL. H. BENYAMIN SUEB, RW.10, PADEMANGAN TIM., KEC. KEMAYORAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 10620",
+"lat": "-6.1480466",
+"lon": "106.8472548",
+"match": "seni-bounded",
+"query": "seni:JIEXPO GRAND THEATRE, JAKARTA"
+},
+"JIEXPO KEMAYORAN JAKARTA": {
+"alamat": "RW.10, PADEMANGAN TIMUR, PADEMANGAN, CENTRAL JAKARTA CITY, JAKARTA 14410",
+"lat": "-6.1321958",
+"lon": "106.8455021",
+"match": "seni-bounded",
+"query": "seni:JIEXPO KEMAYORAN JAKARTA"
+},
+"JIEXPO KEMAYORAN, JAKARTA": {
+"alamat": "RW.10, PADEMANGAN TIM., KEC. PADEMANGAN, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 14410",
+"lat": "-6.1448357",
+"lon": "106.8486625",
+"match": "seni-bounded",
+"query": "seni:JIEXPO KEMAYORAN, JAKARTA"
+},
+"JIEXPO THEATRE JAKARTA": {
+"alamat": "VR3W+3C4, JALAN HAJI BENYAMIN SUEB ARENA JIEXPO KEMAYORAN KELURAHAN :, ARENA PEKAN RAYA JKT - KEMAYORAN, JL. H. BENYAMIN SUEB, RW.10, PADEMANGAN TIM., KEC. KEMAYORAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 10620",
+"lat": "-6.1480466",
+"lon": "106.8472548",
+"match": "seni-bounded",
+"query": "seni:JIEXPO THEATRE JAKARTA"
+},
+"KASABLANKA HALL, JAKARTA": {
+"alamat": "KOTA KASABLANKA, JL. RAYA CASABLANCA NO.RAYA LT. 3, RT.3/RW.14, MENTENG DALAM, KEC. TEBET, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12870",
+"lat": "-6.2222517",
+"lon": "106.8444189",
+"match": "seni-bounded",
+"query": "seni:KASABLANKA HALL, JAKARTA"
+},
+"KEMPINSKI GRAND BALLROOM, JAKARTA": {
+"alamat": "JL. KEBON KACANG RAYA BLOK D6, KB. KACANG, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10230",
+"lat": "-6.3032641",
+"lon": "106.8871353",
+"match": "seni-bounded",
+"query": "seni:KEMPINSKI GRAND BALLROOM, JAKARTA"
+},
+"KUNINGAN CITY BALLROOM, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.18, KUNINGAN, KARET KUNINGAN, KUNINGAN, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940, INDONESIA",
+"lat": "-6.2273802",
+"lon": "106.8243943",
+"match": "seni-bounded",
+"query": "seni:KUNINGAN CITY BALLROOM, JAKARTA"
+},
+"KYRO RESTO & BAR": {
+"alamat": "PACIFIC PLACE MALL, JL. JEND. SUDIRMAN KAV 52-53 UNIT G-05 GROUND LEVEL, SENAYAN, KEBAYORAN BARU, SOUTH JAKARTA CITY, JAKARTA 12190",
+"lat": "-6.184055",
+"lon": "106.8303978",
+"match": "seni-bounded",
+"query": "seni:KYRO RESTO & BAR"
+},
+"LAGUNA ATRIUM CENTRAL PARK MALL, JAKARTA": {
+"alamat": "JL. LETJEN S. PARMAN NO.RT.12 12, RT.12/RW.1, TJ. DUREN SEL., KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "-6.1770469",
+"lon": "106.7901705",
+"match": "seni-bounded",
+"query": "seni:LAGUNA ATRIUM CENTRAL PARK MALL, JAKARTA"
+},
+"LAPANGAN HOCKEY, PLAZA FESTIVAL JAKARTA SELATAN": {
+"alamat": "JL. H. R. RASUNA SAID NO.22 KAV. C, RT.2/RW.5, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.2210777",
+"lon": "106.8332552",
+"match": "seni-bounded",
+"query": "seni:LAPANGAN HOCKEY, PLAZA FESTIVAL JAKARTA "
+},
+"LAVVA BAR, JAKARTA": {
+"alamat": "LEVEL P4 PLAZA SENAYAN, JL. ASIA AFRIKA NO.8, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.161569",
+"lon": "106.7438905",
+"match": "seni-bounded",
+"query": "seni:LAVVA BAR, JAKARTA"
+},
+"LE PRRIVE GEDUNG GRAHA BIP, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO NO.23, RT.2/RW.2, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:LE PRRIVE GEDUNG GRAHA BIP, JAKARTA"
+},
+"LIL TIGER X, SCBD": {
+"alamat": "KAWASAN SCBD, JL. JEND. SUDIRMAN KAV 52-53 NO.LOT 19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2273",
+"lon": "106.811035",
+"match": "seni-bounded",
+"query": "seni:LIL TIGER X, SCBD"
+},
+"LOTTE ALLEY, LOTTE MALL JAKARTA": {
+"alamat": "LOTTE MALL, JL. PROF. DR. SATRIO NO.KAV 3-4 LG FLOOR, KUNINGAN, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.2243158",
+"lon": "106.8228332",
+"match": "seni-bounded",
+"query": "seni:LOTTE ALLEY, LOTTE MALL JAKARTA"
+},
+"LOTTE MALL, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV 3, RT.17/RW.4, KUNINGAN, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.2243466",
+"lon": "106.823257",
+"match": "seni-bounded",
+"query": "seni:LOTTE MALL, JAKARTA"
+},
+"LOTTE SHOPPING AVENUE MALL, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV 3, RT.17/RW.4, KUNINGAN, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "-6.2243466",
+"lon": "106.823257",
+"match": "seni-bounded",
+"query": "seni:LOTTE SHOPPING AVENUE MALL, JAKARTA"
+},
+"LUCY IN THE SKY FAIRGOUND SCBD, JAKARTA": {
+"alamat": "FAIRGROUNDS BUILDING, JL. JEND. SUDIRMAN KAV 52-53 NO.LOT 14, RT.5/RW.3, SENAYAN, KEBAYORAN BARU, SOUTH JAKARTA CITY, JAKARTA 12190",
+"lat": "-6.2267713",
+"lon": "106.8069544",
+"match": "seni-bounded",
+"query": "seni:LUCY IN THE SKY FAIRGOUND SCBD, JAKARTA"
+},
+"LUCY IN THE SKY SCBD, JAKARTA": {
+"alamat": "FAIRGROUNDS BUILDING, JL. JEND. SUDIRMAN KAV 52-53 NO.LOT 14, RT.5/RW.3, SENAYAN, KEBAYORAN BARU, SOUTH JAKARTA CITY, JAKARTA 12190",
+"lat": "-6.2267713",
+"lon": "106.8069544",
+"match": "seni-bounded",
+"query": "seni:LUCY IN THE SKY SCBD, JAKARTA"
+},
+"LYN SKYLOUNG PIK 2, JAKARTA": {
+"alamat": "SOHO RODEO DRIVE.10-15, EBONY II FLOOR R, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14470",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:LYN SKYLOUNG PIK 2, JAKARTA"
+},
+"LYN SKYLOUNGE PIK 2, JAKARTA": {
+"alamat": "SOHO RODEO DRIVE.10-15, EBONY II FLOOR R, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14470",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:LYN SKYLOUNGE PIK 2, JAKARTA"
+},
+"LYN SKYLOUNGE, JAKARTA": {
+"alamat": "SOHO RODEO DRIVE.10-15, EBONY II FLOOR R, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14470",
+"lat": "-6.1688638",
+"lon": "106.8111407",
+"match": "seni-bounded",
+"query": "seni:LYN SKYLOUNGE, JAKARTA"
+},
+"M BLOC, JAKARTA": {
+"alamat": "JL. PANGLIMA POLIM NO.37, RT.1/RW.1, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.2416888",
+"lon": "106.798763",
+"match": "seni-bounded",
+"query": "seni:M BLOC, JAKARTA"
+},
+"M-BLOC SPACE, JAKARTA": {
+"alamat": "JL. PANGLIMA POLIM NO.37, RT.1/RW.1, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.2107296",
+"lon": "106.8155126",
+"match": "seni-bounded",
+"query": "seni:M-BLOC SPACE, JAKARTA"
+},
+"MAHAKA SQUARE KELAPA GADING": {
+"alamat": "JL. RAYA KELAPA NIAS NO.6, RT.8/RW.6, KLP. GADING BAR., KEC. KLP. GADING, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14240",
+"lat": "-6.149748",
+"lon": "106.9029813",
+"match": "seni-bounded",
+"query": "seni:MAHAKA SQUARE KELAPA GADING"
+},
+"MAIN ATRIUM MALL CIPUTRA JAKARTA": {
+"alamat": "LETJEN S. PARMAN ST, RT.11/RW.1, NORTH TANJUNG DUREN, GROGOL PETAMBURAN, WEST JAKARTA CITY, JAKARTA 11470",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM MALL CIPUTRA JAKARTA"
+},
+"MAIN ATRIUM, LIPPO MALL NUSANTARA, JAKARTA": {
+"alamat": "KAWASAN BISNIS GRANADHA, JL. JEND. SUDIRMAN NO.KAV. 50, KARET SEMANGGI, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12930",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM, LIPPO MALL NUSANTARA, JAKAR"
+},
+"MAIN ATRIUM-GF, LOTTE MALL JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV 3, RT.17/RW.4, KUNINGAN, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12940",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM-GF, LOTTE MALL JAKARTA"
+},
+"MAIN ATRIUM/KOREA 360 LOTTE MALL, JAKARTA": {
+"alamat": "JL. PROF. DR. SATRIO NO.KAV. 3-5, KUNINGAN, KARET KUNINGAN, SETIABUDI, SOUTH JAKARTA CITY, JAKARTA 12940",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MAIN ATRIUM/KOREA 360 LOTTE MALL, JAKART"
+},
+"MAKMUR BAHAGIA, JAKARTA": {
+"alamat": "JL. KEMANG RAYA NO.8B, BANGKA, KEC. MAMPANG PRPT., JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12730",
+"lat": "-6.2107288",
+"lon": "106.7362085",
+"match": "seni-bounded",
+"query": "seni:MAKMUR BAHAGIA, JAKARTA"
+},
+"MALL KOTA KASABLANKA, JAKARTA": {
+"alamat": "JL. RAYA CASABLANCA NO.KAV 88, MENTENG DALAM, KEC. TEBET, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12870",
+"lat": "-6.2232551",
+"lon": "106.8426972",
+"match": "seni-bounded",
+"query": "seni:MALL KOTA KASABLANKA, JAKARTA"
+},
+"MALL OF INDONESIA, MAIN ATRIUM GF, JAKARTA": {
+"alamat": "MALL OF INDONESIA, JL. BOULEVARD BAR. RAYA UNIT : GF LOBBY 7, RT.18/RW.8, WEST KELAPA GADING, KELAPA GADING, NORTH JAKARTA CITY, JAKARTA 14240",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MALL OF INDONESIA, MAIN ATRIUM GF, JAKAR"
+},
+"MANTRA PIK, JAKARTA": {
+"alamat": "SHIPYARD UNIT 18, KAWASAN PANTAI KITA, JALAN PEJAPI, KAMAL MUARA, KECAMATAN PENJARINGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14470",
+"lat": "-6.0871212",
+"lon": "106.7295807",
+"match": "seni-bounded",
+"query": "seni:MANTRA PIK, JAKARTA"
+},
+"MARGOT BAR, JAKARTA": {
+"alamat": "JL. PANGLIMA POLIM V NO.6 A, RT.1/RW.6, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.161569",
+"lon": "106.7438905",
+"match": "seni-bounded",
+"query": "seni:MARGOT BAR, JAKARTA"
+},
+"MGP SPACE SCBD PARK, JAKARTA": {
+"alamat": "SCBD PARK, JL. JEND. SUDIRMAN KAV 52-53, SENAYAN, KEBAYORAN BARU, SOUTH JAKARTA CITY, JAKARTA 12190",
+"lat": "-6.2247671",
+"lon": "106.8098512",
+"match": "seni-bounded",
+"query": "seni:MGP SPACE SCBD PARK, JAKARTA"
+},
+"MINI ATRIUM GANDARIA CITY, JAKARTA": {
+"alamat": "JL. SULTAN ISKANDAR MUDA, KBY. LAMA UTARA, KEC. KEBAYORAN LAMA, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12240",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MINI ATRIUM GANDARIA CITY, JAKARTA"
+},
+"MINQ, JAKARTA": {
+"alamat": "JL. SURYO NO.36, RT.10/RW.3, RW. BAR., JAKARTA, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12180",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:MINQ, JAKARTA"
+},
+"MNC CONFERENCE HALL - INEWS TOWER, JAKARTA": {
+"alamat": "INEWS TOWER 3RD FLOOR, MNC CENTER, RT.15/RW.7, KB. SIRIH, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10340",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MNC CONFERENCE HALL - INEWS TOWER, JAKAR"
+},
+"MOA BAR & LOUNGE, JAKARTA": {
+"alamat": "JL. PANGERAN ANTASARI NO.9B, RT.6/RW.1, CIPETE SEL., KEC. CILANDAK, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12410",
+"lat": "-6.2329679",
+"lon": "106.8117494",
+"match": "seni-bounded",
+"query": "seni:MOA BAR & LOUNGE, JAKARTA"
+},
+"MOA BAR, JAKARTA": {
+"alamat": "JL. PANGERAN ANTASARI NO.9-B 13, RT.3/RW.6, CIPETE SEL., KEC. CILANDAK, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12510",
+"lat": "-6.161569",
+"lon": "106.7438905",
+"match": "seni-bounded",
+"query": "seni:MOA BAR, JAKARTA"
+},
+"MUSRO CLUB & LOUNGE , BOROBUDUR HOTEL JAKARTA": {
+"alamat": "JL. LAP. BANTENG SELATAN NO.1, PS. BARU, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10710",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:MUSRO CLUB & LOUNGE , BOROBUDUR HOTEL JA"
+},
+"NAFIRI CONVENTION HALL CENTRAL PARK, JAKARTA": {
+"alamat": "JL. LETJEN S. PARMAN NO.28 12, RT.12/RW.6, TJ. DUREN SEL., KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "-6.2153417",
+"lon": "106.8072728",
+"match": "seni-bounded",
+"query": "seni:NAFIRI CONVENTION HALL CENTRAL PARK, JAK"
+},
+"NARESWARA BALLROOM - SMESCO JAKARTA": {
+"alamat": "SME TOWER, GEDUNG SMECO, JL. GATOT SUBROTO NO.KAV. 94 LT. 4, RT.11/RW.3, PANCORAN, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12780",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:NARESWARA BALLROOM - SMESCO JAKARTA"
+},
+"PANTAI CARNAVAL ANCOL, JAKARTA": {
+"alamat": "VVM4+CWG, JL. PANTAI KARNAVAL ANCOL, ANCOL, KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14430",
+"lat": "-6.1171393",
+"lon": "106.8562171",
+"match": "seni-bounded",
+"query": "seni:PANTAI CARNAVAL ANCOL, JAKARTA"
+},
+"PANTAI CARNAVAL ANCOL. JAKARTA": {
+"alamat": "VVM4+CWG, JL. PANTAI KARNAVAL ANCOL, ANCOL, KEC. PADEMANGAN, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14430",
+"lat": "-6.1171393",
+"lon": "106.8562171",
+"match": "seni-bounded",
+"query": "seni:PANTAI CARNAVAL ANCOL. JAKARTA"
+},
+"PANTJA BAR, JAKARTA": {
+"alamat": "JL. SENOPATI NO.37, SENAYAN, KEC. KBY. BARU, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2309016",
+"lon": "106.8090951",
+"match": "seni-bounded",
+"query": "seni:PANTJA BAR, JAKARTA"
+},
+"PAULANER BRAUHOUSE RESTAURANT HOTEL INDONESIA KEMPINSKI, JAKARTA": {
+"alamat": "JL. M.H. THAMRIN NO.1, MENTENG, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10310",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:PAULANER BRAUHOUSE RESTAURANT HOTEL INDO"
+},
+"PLAZA PARKIR TIMUR SENAYAN, JAKARTA": {
+"alamat": "QRJ4+MPV, JL. STADION SENAYAN, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.2169697",
+"lon": "106.8076442",
+"match": "seni-bounded",
+"query": "seni:PLAZA PARKIR TIMUR SENAYAN, JAKARTA"
+},
+"PLENARY HALL JICC SENAYAN, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO NO.1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:PLENARY HALL JICC SENAYAN, JAKARTA"
+},
+"PONDOK INDAH MALL 2, JAKARTA": {
+"alamat": "JL. METRO PONDOK INDAH, PD. PINANG, KEC. KEBAYORAN LAMA, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12310",
+"lat": "-6.2686805",
+"lon": "106.7718064",
+"match": "seni-bounded",
+"query": "seni:PONDOK INDAH MALL 2, JAKARTA"
+},
+"POS BLOC, JAKARTA": {
+"alamat": "JL. POS NO.2, PS. BARU, KECAMATAN SAWAH BESAR, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10710",
+"lat": "-6.166904",
+"lon": "106.8335014",
+"match": "seni-bounded",
+"query": "seni:POS BLOC, JAKARTA"
+},
+"ROSE, JAKARTA": {
+"alamat": "JL. SULAIMAN NO.79 A 6, RT.6/RW.3, SUKABUMI UTARA, KEC. KB. JERUK, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11540",
+"lat": "-6.3500878",
+"lon": "106.8681658",
+"match": "seni-bounded",
+"query": "seni:ROSE, JAKARTA"
+},
+"ROSSI MUSIK, JAKARTA": {
+"alamat": "JL. RS. FATMAWATI RAYA NO.30 1, RT.1/RW.10, CILANDAK BAR., KEC. CILANDAK, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12430",
+"lat": "-6.1687738",
+"lon": "106.8571749",
+"match": "seni-bounded",
+"query": "seni:ROSSI MUSIK, JAKARTA"
+},
+"RUMAH SARWONO": {
+"alamat": "JL. RAYA PASAR MINGGU NO.KM 18,2, RT.12/RW.1, PEJATEN TIMUR, PS. MINGGU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12510",
+"lat": "-6.1376751",
+"lon": "106.9027606",
+"match": "seni-bounded",
+"query": "seni:RUMAH SARWONO"
+},
+"SECTOR JAKARTA": {
+"alamat": "JL. MERPATI IV NO.8 BLOK P3, RT.6/RW.8, BINTARO, KEC. PESANGGRAHAN, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12330",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:SECTOR JAKARTA"
+},
+"SHANGHAI CLUB LOKASARI, JAKARTA": {
+"alamat": "JL. RAYA MANGGA BESAR NO.81, TANGKI, KEC. TAMAN SARI, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11170",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:SHANGHAI CLUB LOKASARI, JAKARTA"
+},
+"SHANGRI-LA HOTEL, JAKARTA": {
+"alamat": "SHANGRI-LA JAKARTA, KOTA BNI, JL. JENDERAL SUDIRMAN NO.KAV. 1, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10220",
+"lat": "-6.2031083",
+"lon": "106.8188516",
+"match": "seni-bounded",
+"query": "seni:SHANGRI-LA HOTEL, JAKARTA"
+},
+"SKYGARDEN DAN SKYBRIDGE SENAYAN PARK, JAKARTA": {
+"alamat": "JL. GERBANG PEMUDA NO.3, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:SKYGARDEN DAN SKYBRIDGE SENAYAN PARK, JA"
+},
+"SLITS, JAKARTA": {
+"alamat": "WIJAYA GRAND CENTER BLOK A-15,16, PULO, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:SLITS, JAKARTA"
+},
+"SOEHANA HALL SCBD, JAKARTA": {
+"alamat": "THE ENERGY BUILDING, SCBD LOT JL. JEND. SUDIRMAN KAV 52-53 NO.11A LT.2, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:SOEHANA HALL SCBD, JAKARTA"
+},
+"STADION MADYA DAN PLAZA SUDIRMAN": {
+"alamat": "QQMX+3R8, JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:STADION MADYA DAN PLAZA SUDIRMAN"
+},
+"STADION MADYA SENAYAN, JAKARTA": {
+"alamat": "QQMX+3R8, JL. ASIA AFRIKA, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.218612",
+"lon": "106.8025541",
+"match": "seni-bounded",
+"query": "seni:STADION MADYA SENAYAN, JAKARTA"
+},
+"STADION TENIS INDOOR SENAYAN": {
+"alamat": "JL. PINTU SATU SENAYAN BLOK B, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:STADION TENIS INDOOR SENAYAN"
+},
+"STADION UTAMA GBK SENAYAN, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.218612",
+"lon": "106.8025541",
+"match": "seni-bounded",
+"query": "seni:STADION UTAMA GBK SENAYAN, JAKARTA"
+},
+"STADION UTAMA GBK, LOBBY VIP BARAT, JAKARTA": {
+"alamat": "JL. PINTU SATU SENAYAN, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:STADION UTAMA GBK, LOBBY VIP BARAT, JAKA"
+},
+"SUMMARECON MALL KELAPA GADING, JAKARTA": {
+"alamat": "JL. BOULEVARD RAYA, KLP. GADING TIM., KEC. KLP. GADING, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14240",
+"lat": "-6.145511",
+"lon": "106.90212",
+"match": "seni-bounded",
+"query": "seni:SUMMARECON MALL KELAPA GADING, JAKARTA"
+},
+"TAMAN ISMAIL MARZUKI, JAKARTA": {
+"alamat": "JL. CIKINI RAYA NO.8, RT.8/RW.2, CIKINI, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10330",
+"lat": "-6.189155",
+"lon": "106.8398854",
+"match": "seni-bounded",
+"query": "seni:TAMAN ISMAIL MARZUKI, JAKARTA"
+},
+"TAMAN KOTA GBK, JAKARTA": {
+"alamat": "JL. GERBANG PEMUDA NO.1, RT.1/RW.3, GELORA, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10270",
+"lat": "-6.1375828",
+"lon": "106.8146203",
+"match": "seni-bounded",
+"query": "seni:TAMAN KOTA GBK, JAKARTA"
+},
+"TAMAN KOTA PERURI, JAKARTA": {
+"alamat": "JL. PALATEHAN NO.4, RT.1/RW.1, MELAWAI, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12160",
+"lat": "-6.2405378",
+"lon": "106.7990991",
+"match": "seni-bounded",
+"query": "seni:TAMAN KOTA PERURI, JAKARTA"
+},
+"TEATER BESAR, TAMAN ISMAIL MARZUKI, JAKARTA": {
+"alamat": "RR6R+364, RT.2/RW.2, CIKINI, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10330",
+"lat": "-6.189155",
+"lon": "106.8398854",
+"match": "seni-bounded",
+"query": "seni:TEATER BESAR, TAMAN ISMAIL MARZUKI, JAKA"
+},
+"THE 21 CLUB, JAKARTA": {
+"alamat": "RUKO CROWN GOLF MARINA BLOK B.52-56, RT.6/RW.2, KAMAL MUARA, JKT UTARA, DAERAH KHUSUS IBUKOTA JAKARTA 14470",
+"lat": "-6.1558477",
+"lon": "106.8898762",
+"match": "seni-bounded",
+"query": "seni:THE 21 CLUB, JAKARTA"
+},
+"THE BALLROOM DJAKARTA THEATER JAKARTA": {
+"alamat": "JL. M.H. THAMRIN NO.9, RT.2/RW.1, KB. SIRIH, KEC. MENTENG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10340",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:THE BALLROOM DJAKARTA THEATER JAKARTA"
+},
+"THE H CLUB, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53 JL. SCBD NO.LOT 19, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190 JAKARTA",
+"lat": "-6.2276515",
+"lon": "106.8111613",
+"match": "seni-bounded",
+"query": "seni:THE H CLUB, JAKARTA"
+},
+"THE KASABLANKA HALL LT 3, JAKARTA": {
+"alamat": "KOTA KASABLANKA, JL. RAYA CASABLANCA NO.RAYA LT. 3, RT.3/RW.14, MENTENG DALAM, KEC. TEBET, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12870",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:THE KASABLANKA HALL LT 3, JAKARTA"
+},
+"THE MUSIC HALL - GRHA PENGHARAPAN BUILDING, JAKARTA": {
+"alamat": "GRHA PENGHARAPAN BUILDING, KUNINGAN, KARET KUNINGAN, KECAMATAN SETIABUDI, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12950",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:THE MUSIC HALL - GRHA PENGHARAPAN BUILDI"
+},
+"THE RITZ CARLTON, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2285283",
+"lon": "106.8271551",
+"match": "seni-bounded",
+"query": "seni:THE RITZ CARLTON, JAKARTA"
+},
+"THE SPACE AT LEVEL 6, PLAZA INDONESIA": {
+"alamat": "PLAZA INDONESIA, LEVEL 6 UNIT E021AB, JL. M.H. THAMRIN NO.KAV. 28-30, DAERAH KHUSUS IBUKOTA JAKARTA 10350",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:THE SPACE AT LEVEL 6, PLAZA INDONESIA"
+},
+"THE SWILLHOUSE, JAKARTA": {
+"alamat": "FAIRGROUNDS, SCBD LOT, JL. JENDERAL SUDIRMAN NO.14, RT.5/RW.3, SENAYAN, KEC. KBY. BARU, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.2285283",
+"lon": "106.8271551",
+"match": "seni-bounded",
+"query": "seni:THE SWILLHOUSE, JAKARTA"
+},
+"TOKO D&G BEAUTY PLAZA INDONESIA LEVEL 1, LOBBY SELATAN, JAKARTA": {
+"alamat": "RQJP+CC3, JL. TAMAN DAAN MOGOT RAYA, RT.11/RW.1, TJ. DUREN UTARA, KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "",
+"lon": "",
+"match": "seni-miss",
+"query": "seni:TOKO D&G BEAUTY PLAZA INDONESIA LEVEL 1,"
+},
+"TRIBECA PARK - CENTRAL PARK MALL": {
+"alamat": "LETJEN S. PARMAN NO.28, RT.12/RW.6, TJ. DUREN SEL., KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "-6.1770469",
+"lon": "106.7901705",
+"match": "seni-bounded",
+"query": "seni:TRIBECA PARK - CENTRAL PARK MALL"
+},
+"TRIBECA PARK, CENTRAL PARK MALL, JAKARTA": {
+"alamat": "LETJEN S. PARMAN NO.KAV. 21, RT.12/RW.6, TJ. DUREN SEL., KEC. GROGOL PETAMBURAN, KOTA JAKARTA BARAT, DAERAH KHUSUS IBUKOTA JAKARTA 11470",
+"lat": "-6.1770469",
+"lon": "106.7901705",
+"match": "seni-bounded",
+"query": "seni:TRIBECA PARK, CENTRAL PARK MALL, JAKARTA"
+},
+"USMAR ISMAIL HALL, JAKARTA": {
+"alamat": "JL. HR RASUNA SAID KAV C-22 SETIABUDI SETIABUDI JAKARTA SELATAN DKI JAKARTA GEDUNG PUSAT PERFILMAN H. USMAR ISMAIL RT.2, RW.5, KARET KUNINGAN, KECAMATAN SETIABUDI, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12920",
+"lat": "-6.2220883",
+"lon": "106.8330961",
+"match": "seni-bounded",
+"query": "seni:USMAR ISMAIL HALL, JAKARTA"
+},
+"W SUPERCLUB, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO NO.1003, MENTENG DALAM, KEC. TEBET, KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12870",
+"lat": "-6.2628908",
+"lon": "106.8822289",
+"match": "seni-bounded",
+"query": "seni:W SUPERCLUB, JAKARTA"
+},
+"WHITERABIT, JAKARTA": {
+"alamat": "JL. GATOT SUBROTO NO.42, RT.3/RW.2, KUNINGAN BAR., KEC. MAMPANG PRPT., KOTA JAKARTA SELATAN, DAERAH KHUSUS IBUKOTA JAKARTA 12710",
+"lat": "-6.1754049",
+"lon": "106.827168",
+"match": "seni-bounded",
+"query": "seni:WHITERABIT, JAKARTA"
+},
+"XXX LE MERIDIEN, JAKARTA": {
+"alamat": "JL. JENDERAL SUDIRMAN NO.KAV 18 - 20, KARET TENGSIN, KECAMATAN TANAH ABANG, KOTA JAKARTA PUSAT, DAERAH KHUSUS IBUKOTA JAKARTA 10220",
+"lat": "-6.2132721",
+"lon": "106.8187206",
+"match": "seni-bounded",
+"query": "seni:XXX LE MERIDIEN, JAKARTA"
+},
+"ZOO, JAKARTA": {
+"alamat": "JL. JEND. SUDIRMAN KAV 52-53 NO.LOT 14, SENAYAN, KEC. KBY. BARU, JAKARTA, DAERAH KHUSUS IBUKOTA JAKARTA 12190",
+"lat": "-6.3114056",
+"lon": "106.8216897",
+"match": "seni-bounded",
+"query": "seni:ZOO, JAKARTA"
+}
+}

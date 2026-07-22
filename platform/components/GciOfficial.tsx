@@ -3,6 +3,8 @@
  * 4 sub-indikator pariwisata dari jakarta.go.id/competitiveness ditampilkan sebagai kartu
  * DI ATAS tabel kesiapan data GCI. Sumber & penanggung jawab dicantumkan.
  */
+import Link from "next/link";
+
 const HERO =
   "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
 const ACCENT = "#ed6b23";
@@ -16,12 +18,12 @@ const CULTURAL = { y2024: 52, y2025: 58 }; // dimensi Pengalaman Budaya (pariwis
 
 // 4 sub-indikator PARIWISATA (Cultural Experience) — jakarta.go.id/competitiveness.
 const INDIKATOR: {
-  label: string; nilai: string; satuan: string; tahun: string; sumber: string; pj: string; catatan?: string;
+  label: string; nilai: string; satuan: string; tahun: string; sumber: string; pj: string; catatan?: string; href?: string;
 }[] = [
   { label: "Jumlah Museum", nilai: "79", satuan: "Museum", tahun: "2025", sumber: "satudata.jakarta.go.id", pj: "Dinas Kebudayaan" },
-  { label: "Seni Visual & Pertunjukan", nilai: "156", satuan: "Karya / kegiatan", tahun: "2024", sumber: "Dinas Pariwisata & Ekraf", pj: "Dinas Pariwisata & Ekraf", catatan: "Belum digabung dengan data Disbud." },
-  { label: "Wisatawan Internasional", nilai: "2.767.622", satuan: "Wisatawan", tahun: "2025", sumber: "jakarta.bps.go.id", pj: "Dinas Pariwisata & Ekraf" },
-  { label: "Penawaran Kuliner (Michelin)", nilai: "0", satuan: "Restoran Michelin", tahun: "2025", sumber: "Michelin", pj: "Dinas Pariwisata & Ekraf", catatan: "Belum ada Michelin Star di Jakarta." },
+  { label: "Seni Visual & Pertunjukan", nilai: "156", satuan: "Karya / kegiatan", tahun: "2024", sumber: "Dinas Pariwisata & Ekraf", pj: "Dinas Pariwisata & Ekraf", catatan: "Belum digabung dengan data Disbud.", href: "/gci/pariwisata/seni-pertunjukan" },
+  { label: "Wisatawan Internasional", nilai: "2.767.622", satuan: "Wisatawan", tahun: "2025", sumber: "jakarta.bps.go.id", pj: "Dinas Pariwisata & Ekraf", href: "/gci/pariwisata/wisatawan-internasional" },
+  { label: "Penawaran Kuliner (Michelin)", nilai: "0", satuan: "Restoran Michelin", tahun: "2025", sumber: "Michelin", pj: "Dinas Pariwisata & Ekraf", catatan: "Belum ada Michelin Star di Jakarta.", href: "/gci/pariwisata/kuliner-michelin" },
 ];
 
 function trend(y2024: number, y2025: number) {
@@ -83,8 +85,9 @@ export function GciOfficial() {
           <span className="apple-fine text-ink-muted-48">4 indikator · sumber resmi</span>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {INDIKATOR.map((it) => (
-            <div key={it.label} className="utility-card flex flex-col p-5">
+          {INDIKATOR.map((it) => {
+            const inner = (
+              <>
               <div
                 className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white"
                 style={{ background: ACCENT }}
@@ -111,8 +114,28 @@ export function GciOfficial() {
                   <span className="text-ink font-medium text-right truncate ml-2" title={it.pj}>{it.pj}</span>
                 </div>
               </div>
-            </div>
-          ))}
+              {it.href && (
+                <div className="mt-3 flex items-center gap-1 apple-fine font-semibold" style={{ color: ACCENT }}>
+                  Lihat detail
+                  <span aria-hidden>→</span>
+                </div>
+              )}
+              </>
+            );
+            return it.href ? (
+              <Link
+                key={it.label}
+                href={it.href}
+                className="utility-card flex flex-col p-5 transition-shadow hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#ed6b23]/40"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div key={it.label} className="utility-card flex flex-col p-5">
+                {inner}
+              </div>
+            );
+          })}
         </div>
         <p className="mt-3 text-[12px] text-ink-muted-48">
           Hanya indikator <b>pariwisata</b> (domain Dispar/atraksi wisata). Indikator Cultural Experience lain — Kegiatan Olahraga (Dispora) &amp; Kota Kembar (Biro KSD) — tidak ditampilkan di sini.
