@@ -242,17 +242,36 @@ export default function DatasetDetailPage({
 
         {meta && !loading && (
           <>
-            <div className="flex items-center justify-between gap-3 mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Cari di dalam data…"
                 className="w-full max-w-sm rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-[14px] outline-none focus:border-[#ed6b23] transition-colors"
               />
-              <span className="text-[13px] text-slate-500 tabular-nums whitespace-nowrap">
-                {rows.length.toLocaleString("id-ID")} / {count.toLocaleString("id-ID")} baris
-                {debouncedQ && " (hasil pencarian)"}
-              </span>
+              <div className="flex items-center gap-3">
+                {/* Unduh seluruh dataset (semua baris, bukan halaman ini saja) */}
+                <div className="flex items-center gap-1.5">
+                  <a
+                    href={`/api/sdi/${slug}/export?format=csv`}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-[13px] font-medium text-slate-700 hover:border-[#ed6b23] hover:text-[#ed6b23] transition-colors"
+                    title="Unduh semua baris sebagai CSV"
+                  >
+                    <DownloadIcon /> CSV
+                  </a>
+                  <a
+                    href={`/api/sdi/${slug}/export?format=xlsx`}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-[13px] font-medium text-slate-700 hover:border-[#ed6b23] hover:text-[#ed6b23] transition-colors"
+                    title="Unduh semua baris sebagai Excel (XLSX)"
+                  >
+                    <DownloadIcon /> XLSX
+                  </a>
+                </div>
+                <span className="text-[13px] text-slate-500 tabular-nums whitespace-nowrap">
+                  {rows.length.toLocaleString("id-ID")} / {count.toLocaleString("id-ID")} baris
+                  {debouncedQ && " (hasil pencarian)"}
+                </span>
+              </div>
             </div>
 
             <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
@@ -341,6 +360,16 @@ function Meta({ label, value }: { label: string; value: string }) {
         {value}
       </span>
     </span>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
   );
 }
 
