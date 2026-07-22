@@ -73,8 +73,8 @@ export function secondaryDatasets(): SecondaryDataset[] {
       title: "Restoran & Zona KHAS Tersertifikasi Halal Jakarta",
       description:
         "Restoran/rumah makan & sentra Zona KHAS di DKI Jakarta tersertifikasi halal (BPJPH/LPPOM MUI) — profil, titik koordinat, dan nomor sertifikat halal bila tersedia.",
-      tags: ["halal", "restoran", "kuliner", "ramah-muslim", "sekunder"],
-      rows: 113,
+      tags: ["halal", "restoran", "kuliner", "zona-khas", "ramah-muslim", "sekunder"],
+      rows: 114,
       href: "/sdi/restoran-halal-jakarta",
       external: false,
     },
