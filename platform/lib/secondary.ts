@@ -19,6 +19,56 @@ export const ATLAS_BASE = "https://jakarta-restaurant-data.vercel.app";
 export function secondaryDatasets(): SecondaryDataset[] {
   return [
     {
+      id: "sec-wisman-negara",
+      title: "Wisman DKI Jakarta per Negara (BPS dibersihkan)",
+      description:
+        "Kunjungan wisatawan mancanegara ke DKI Jakarta per negara asal, klasifikasi negara BPS distandarkan (mis. China≡Tiongkok, Filipina≡Philipina).",
+      tags: ["wisman", "wisatawan", "mancanegara", "negara", "sekunder"],
+      rows: 604,
+      href: "/sdi/wisman-jakarta-per-negara",
+      external: false,
+    },
+    {
+      id: "sec-wisman-bulan",
+      title: "Wisman DKI Jakarta per Bulan (total)",
+      description:
+        "Total kunjungan wisatawan mancanegara ke DKI Jakarta per bulan (agregasi seluruh negara asal).",
+      tags: ["wisman", "wisatawan", "mancanegara", "bulanan", "sekunder"],
+      rows: 28,
+      href: "/sdi/wisman-jakarta-per-bulan",
+      external: false,
+    },
+    {
+      id: "sec-wisman-pintu",
+      title: "Wisman per Pintu Masuk (dinormalisasi)",
+      description:
+        "Kunjungan wisman menurut pintu masuk dengan nama pintu distandarkan (mis. 'BANDAR UDARA SOEKARNO HATTA'≡'Soekarno-Hatta').",
+      tags: ["wisman", "pintu-masuk", "sekunder"],
+      rows: 480,
+      href: "/sdi/wisman-jakarta-per-pintu-masuk",
+      external: false,
+    },
+    {
+      id: "sec-tripadvisor",
+      title: "Restoran Jakarta TripAdvisor (Kuliner GCI)",
+      description:
+        "Restoran DKI Jakarta bersumber TripAdvisor untuk indikator kuliner GCI (kriteria Kearney: TripAdvisor & Michelin). Rating, ulasan, peringkat, koordinat, URL.",
+      tags: ["kuliner", "restoran", "tripadvisor", "gci", "sekunder"],
+      rows: 38,
+      href: "/sdi/restoran-tripadvisor-jakarta",
+      external: false,
+    },
+    {
+      id: "sec-artis-chart",
+      title: "Artis Top 10 Global Chart (Billboard & Spotify, 2021–2025)",
+      description:
+        "Tabel referensi artis Top 10 Global Chart (Billboard & Spotify Year-End) 2021–2025 untuk verifikasi kriteria Kearney pada indikator seni pertunjukan.",
+      tags: ["seni-pertunjukan", "musik", "chart", "gci", "sekunder"],
+      rows: 100,
+      href: "/sdi/artis-top-global-chart",
+      external: false,
+    },
+    {
       id: "sec-halal-restoran",
       title: "Restoran & Zona KHAS Tersertifikasi Halal Jakarta",
       description:
