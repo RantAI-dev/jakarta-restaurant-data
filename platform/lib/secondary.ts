@@ -129,6 +129,36 @@ export function secondaryDatasets(): SecondaryDataset[] {
       external: false,
     },
     {
+      id: "sec-halal-bandara",
+      title: "Bandara Ramah Muslim (melayani Jakarta)",
+      description:
+        "Bandara yang melayani DKI Jakarta beserta fasilitas ramah muslim (masjid/musholla, tempat wudhu, arah kiblat, restoran halal) dan penghargaan terkait.",
+      tags: ["halal", "bandara", "ramah-muslim", "sekunder"],
+      rows: 4,
+      href: "/sdi/bandara-ramah-muslim-jakarta",
+      external: false,
+    },
+    {
+      id: "sec-halal-capaian",
+      title: "Pengakuan & Capaian Pariwisata Ramah Muslim",
+      description:
+        "Pengakuan, penghargaan, dan capaian pengembangan pariwisata ramah muslim yang relevan dengan Jakarta/Indonesia (mis. Global Muslim Travel Index).",
+      tags: ["halal", "pengakuan", "penghargaan", "ramah-muslim", "sekunder"],
+      rows: 15,
+      href: "/sdi/capaian-pariwisata-ramah-muslim",
+      external: false,
+    },
+    {
+      id: "sec-halal-warisan",
+      title: "Warisan Islam & Wisata Budaya Muslim Jakarta",
+      description:
+        "Daya tarik wisata budaya muslim & warisan Islam unggulan di DKI Jakarta (masjid bersejarah, museum, kampung, situs — alam & buatan): profil, lokasi, dan nilai sejarah.",
+      tags: ["halal", "warisan-islam", "wisata-budaya", "religi", "sekunder"],
+      rows: 25,
+      href: "/sdi/warisan-islam-wisata-budaya-muslim-jakarta",
+      external: false,
+    },
+    {
       id: "sec-event-visitor",
       title: "Jumlah Pengunjung Event Jakarta 2026",
       description:
