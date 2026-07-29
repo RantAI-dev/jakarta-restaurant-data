@@ -1237,10 +1237,13 @@ export function souvenirEmbedUrl(s: SouvenirShop): string {
   return `https://www.google.com/maps?q=${encodeURIComponent(q)}&hl=id&z=16&output=embed`;
 }
 
-/** Daftar produk unik (untuk filter), urut alfabetis. */
+/** Daftar produk unik (untuk filter), urut alfabetis. "?" = belum terverifikasi,
+ *  dibuang dari opsi filter karena bukan kategori produk yang bermakna. */
 export function souvenirProducts(): string[] {
   const set = new Set(
-    SOUVENIR_SHOPS.map((s) => s.product).filter((p): p is string => !!p)
+    SOUVENIR_SHOPS.map((s) => s.product).filter(
+      (p): p is string => !!p && p !== "?"
+    )
   );
   return [...set].sort((a, b) => a.localeCompare(b, "id"));
 }
