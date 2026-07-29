@@ -52,6 +52,10 @@ function matchesRelevance(s: SouvenirShop, f: Relevance): boolean {
   return s.relevance === "Ya" || s.relevance === "Sebagian";
 }
 
+/** "?" = produk belum terverifikasi; jangan ditampilkan mentah sebagai label. */
+const productLabel = (s: SouvenirShop): string =>
+  s.product && s.product !== "?" ? s.product : s.category;
+
 function formatReviews(n?: number): string {
   if (n == null) return "";
   if (n >= 1000) return (n / 1000).toFixed(1) + "k";
@@ -184,7 +188,7 @@ function Card({ s }: { s: SouvenirShop }) {
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center justify-between gap-2">
           <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase truncate">
-            {s.product || s.category}
+            {productLabel(s)}
           </p>
           <RelevanceBadge s={s} />
         </div>
@@ -506,7 +510,7 @@ export function SouvenirView() {
                       {s.name}
                     </td>
                     <td className="px-4 py-3 apple-caption text-ink-muted-80">
-                      {s.product || "—"}
+                      {s.product && s.product !== "?" ? s.product : "—"}
                     </td>
                     <td className="px-4 py-3 apple-caption text-ink-muted-80">
                       {[s.district, s.city].filter(Boolean).join(" · ") || "—"}
