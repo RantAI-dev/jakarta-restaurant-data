@@ -77,7 +77,7 @@ const SECTIONS = [
     key: "souvenir",
     no: "05",
     title: "Toko Suvenir",
-    desc: "Toko suvenir, oleh-oleh & kerajinan Jakarta dari TripAdvisor — ditandai mana yang benar-benar toko suvenir. Indikator GPCI CI-SH.",
+    desc: "Toko suvenir, oleh-oleh & kerajinan dari TripAdvisor, ditandai mana yang benar-benar toko suvenir.",
     count: "67",
     unit: "listing",
   },
@@ -152,9 +152,11 @@ export default function AtlasPage() {
       <section className="mx-auto max-w-[1320px] px-6 py-11 pb-20">
         <div className="mb-5 flex items-baseline justify-between">
           <h2 className="atlas-mono text-ink-muted-48">Kategori data</h2>
-          <span className="apple-fine text-ink-muted-48">4 kategori</span>
+          <span className="apple-fine text-ink-muted-48">
+            {SECTIONS.length} kategori
+          </span>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {SECTIONS.map((s) => (
             <Link
               key={s.key}
