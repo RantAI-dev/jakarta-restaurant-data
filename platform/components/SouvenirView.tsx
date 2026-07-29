@@ -294,6 +294,9 @@ export function SouvenirView() {
     return {
       total: SOUVENIR_SHOPS.length,
       ya,
+      // Hanya yang tegas BUKAN toko suvenir. Jangan pakai total-ya: itu ikut
+      // menyapu "Sebagian" (pasar/mal) dan yang belum terverifikasi.
+      tidak: SOUVENIR_SHOPS.filter((s) => s.relevance === "Tidak").length,
       avg,
       geo: SOUVENIR_SHOPS.filter((s) => s.lat != null).length,
     };
@@ -346,8 +349,8 @@ export function SouvenirView() {
           <p className="apple-lead mt-6 max-w-[760px] mx-auto">
             <span className="text-ink">{stats.total} listing</span> TripAdvisor
             kategori Shopping, ditandai satu per satu mana yang benar-benar toko
-            suvenir — karena {stats.total - stats.ya} di antaranya ternyata money
-            changer, service HP, dan toko elektronik.
+            suvenir — karena {stats.tidak} di antaranya ternyata money changer,
+            service HP, dan toko elektronik.
           </p>
           <div className="mt-9 flex items-center justify-center gap-4">
             <a href="#directory" className="press-scale pill-primary">
@@ -549,8 +552,11 @@ export function SouvenirView() {
             <h2 className="apple-tagline text-ink">Yang perlu diperhatikan</h2>
             <ul className="apple-caption text-ink-muted-80 mt-3 space-y-2 max-w-[60ch]">
               <li>
-                · {stats.total - stats.ya} dari {stats.total} listing bukan toko
-                suvenir meski TripAdvisor menaruhnya di kategori gift shop.
+                · {stats.tidak} dari {stats.total} listing bukan toko suvenir
+                sama sekali, meski TripAdvisor menaruhnya di kategori gift shop.
+                Sisanya {stats.ya} toko suvenir murni dan{" "}
+                {stats.total - stats.ya - stats.tidak} pasar/mal yang hanya
+                sebagian menjual suvenir.
               </li>
               <li>
                 · 10 koordinat TripAdvisor terbukti salah; 8 sudah dikoreksi, 2
