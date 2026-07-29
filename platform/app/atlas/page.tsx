@@ -32,6 +32,12 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="M7 21c0-1.7 2.2-3 5-3s5 1.3 5 3" />
     </>
   ),
+  souvenir: (
+    <>
+      <path d="M3 8h18l-1.4 11.2A2 2 0 0 1 17.6 21H6.4a2 2 0 0 1-2-1.8L3 8z" />
+      <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+    </>
+  ),
 };
 
 const SECTIONS = [
@@ -67,12 +73,20 @@ const SECTIONS = [
     count: "14",
     unit: "entri",
   },
+  {
+    key: "souvenir",
+    no: "05",
+    title: "Toko Suvenir",
+    desc: "Toko suvenir, oleh-oleh & kerajinan Jakarta dari TripAdvisor — ditandai mana yang benar-benar toko suvenir. Indikator GPCI CI-SH.",
+    count: "67",
+    unit: "listing",
+  },
 ];
 
 const STATS = [
-  { value: "3.503", label: "Total entri lapangan" },
-  { value: "4", label: "Kategori data" },
-  { value: "2.957", label: "Titik ber-koordinat" },
+  { value: "3.570", label: "Total entri lapangan" },
+  { value: "5", label: "Kategori data" },
+  { value: "3.018", label: "Titik ber-koordinat" },
   { value: "GCI", label: "Metodologi acuan" },
 ];
 

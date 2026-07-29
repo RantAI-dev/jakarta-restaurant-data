@@ -11,6 +11,7 @@ import { GCI_RESTAURANTS } from "../lib/gci";
 import { GCI_EVENTS } from "../lib/events";
 import { GOLF_COURSES } from "../lib/golf";
 import { RESTAURANTS } from "../lib/restaurants";
+import { SOUVENIR_SHOPS } from "../lib/souvenir";
 
 const url = process.env.DATABASE_URL;
 if (!url) throw new Error("DATABASE_URL belum di-set (lihat .env).");
@@ -98,6 +99,24 @@ const KINDS: {
         name: r.name,
         category: r.cuisine ?? null,
         area: r.area ?? null,
+        city: r.city ?? null,
+        lat: r.lat ?? null,
+        lng: r.lng ?? null,
+        data: r,
+      })),
+  },
+  {
+    kind: "souvenir",
+    title: "Toko Suvenir",
+    description:
+      "Toko suvenir, oleh-oleh & kerajinan Jakarta yang terdaftar di TripAdvisor.",
+    rows: () =>
+      SOUVENIR_SHOPS.map((r) => ({
+        kind: "souvenir",
+        ext_id: r.id,
+        name: r.name,
+        category: r.product ?? r.category ?? null,
+        area: r.district ?? null,
         city: r.city ?? null,
         lat: r.lat ?? null,
         lng: r.lng ?? null,

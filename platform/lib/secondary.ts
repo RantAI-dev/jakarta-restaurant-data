@@ -169,6 +169,16 @@ export function secondaryDatasets(): SecondaryDataset[] {
       external: false,
     },
     {
+      id: "sec-souvenir-ta",
+      title: "Toko Suvenir Jakarta (TripAdvisor)",
+      description:
+        "Toko suvenir, oleh-oleh & kerajinan DKI Jakarta yang terdaftar di TripAdvisor (Gift & Specialty Shops, Antique Stores, Flea & Street Markets) — alamat, koordinat, rating, dan penandaan mana yang benar-benar toko suvenir. Mendukung indikator GPCI CI-SH (daya tarik belanja).",
+      tags: ["suvenir", "oleh-oleh", "kerajinan", "belanja", "tripadvisor", "sekunder"],
+      rows: 67,
+      href: "/sdi/toko-suvenir-tripadvisor-2026",
+      external: false,
+    },
+    {
       id: "sec-gci-resto",
       title: "Restoran & Kafe GCI Jakarta",
       description:
