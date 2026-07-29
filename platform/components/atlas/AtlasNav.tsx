@@ -9,12 +9,19 @@ import type React from "react";
  * punya peta terpisah (restaurants). Section lain (gci/events/golf) tidak
  * mengirim `view` → tidak ada bar (hindari nav dobel). Path → /atlas/*.
  */
-export type Section = "restaurants" | "golf" | "gci" | "events" | "home";
+export type Section =
+  | "restaurants"
+  | "golf"
+  | "gci"
+  | "events"
+  | "souvenir"
+  | "home";
 export type View = "list" | "map";
 
 const MAP_PATHS: Partial<Record<Section, { list: string; map: string }>> = {
   restaurants: { list: "/atlas/restaurants", map: "/atlas/restaurants/map" },
   golf: { list: "/atlas/golf", map: "/atlas/golf/map" },
+  souvenir: { list: "/atlas/souvenir", map: "/atlas/souvenir/map" },
 };
 
 export function AtlasNav({

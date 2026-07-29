@@ -1,27 +1,27 @@
 "use client";
 
 /**
- * ATLAS — Toko Suvenir Jakarta (sumber: TripAdvisor + verifikasi riset).
+ * ATLAS — Toko Suvenir Jakarta, tampilan DAFTAR.
  *
- * Layout mengikuti section Atlas lain: hero strip + KPI, strip filter, lalu
- * split peta (kiri) + daftar (kanan). Peta pakai react-leaflet + CartoDB
- * Voyager, sama seperti komponen VenueMap di dashboard pariwisata.
+ * Konsep 1:1 dengan section Direktori Restoran (components/Dashboard.tsx):
+ * AtlasNav toggle List|Map → hero tile → stats tile (parchment) → toolbar
+ * sticky (cari + toggle grid/tabel + unduh, lalu baris filter) → grid kartu
+ * dengan slot preview peta di atas seperti "store utility card" di DESIGN.md.
+ * Petanya sendiri halaman terpisah: /atlas/souvenir/map (SouvenirMapView).
  *
- * Catatan data: TripAdvisor memasukkan banyak usaha yang BUKAN toko suvenir
- * ke kategori "Gift & Specialty Shops". Filter Relevansi default = "Suvenir"
- * (Ya + Sebagian) supaya angka yang tampil tidak menyesatkan; pilih "Semua"
- * untuk melihat seluruh hasil crawl apa adanya.
+ * Catatan data: TripAdvisor menaruh banyak usaha non-suvenir di kategori
+ * "Gift & Specialty Shops", jadi filter relevansi default = "Toko suvenir"
+ * (Ya + Sebagian) supaya angka yang tampil tidak menyesatkan.
  */
 import { useMemo, useState } from "react";
-import { MapContainer, TileLayer, CircleMarker, useMap } from "react-leaflet";
-import { useEffect } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 
+import { AtlasNav } from "@/components/atlas/AtlasNav";
 import { ExportButton } from "@/components/atlas/ExportButton";
 import {
   SOUVENIR_SHOPS,
+  souvenirEmbedUrl,
   souvenirMapsUrl,
+  souvenirProducts,
   type SouvenirShop,
 } from "@/lib/souvenir";
 import {
@@ -31,59 +31,233 @@ import {
   downloadSpreadsheet,
 } from "@/lib/export";
 
-const ORANGE = "#ed6b23";
-const GOLD = "#e6a900";
-const MUTED = "#9aa3ad";
+const RELEVANCE = ["Toko suvenir", "Suvenir murni", "Sebagian", "Semua"] as const;
+type Relevance = (typeof RELEVANCE)[number];
 
-const RELEVANCE_FILTERS = ["Suvenir", "Ya", "Sebagian", "Tidak", "Semua"] as const;
-type RelevanceFilter = (typeof RELEVANCE_FILTERS)[number];
+/** AtlasNav memakai key i18n; section ini berbahasa Indonesia tanpa dictionary. */
+export const navLabel = (k: string): string =>
+  k === "nav.view_list" ? "Daftar" : k === "nav.view_map" ? "Peta" : k;
 
-const RELEVANCE_LABEL: Record<RelevanceFilter, string> = {
-  Suvenir: "Toko suvenir",
-  Ya: "Suvenir murni",
-  Sebagian: "Sebagian suvenir",
-  Tidak: "Bukan suvenir",
-  Semua: "Semua listing",
-};
+const SORTS = [
+  { id: "reviews", label: "Ulasan terbanyak" },
+  { id: "rating", label: "Rating tertinggi" },
+  { id: "name", label: "Nama A–Z" },
+] as const;
+type SortId = (typeof SORTS)[number]["id"];
 
-/** Warna dot: emas = suvenir murni, oranye = sebagian, abu = bukan suvenir. */
-function dotColor(s: SouvenirShop): string {
-  if (s.relevance === "Ya") return GOLD;
-  if (s.relevance === "Sebagian") return ORANGE;
-  return MUTED;
-}
-
-function matchesRelevance(s: SouvenirShop, f: RelevanceFilter): boolean {
+function matchesRelevance(s: SouvenirShop, f: Relevance): boolean {
   if (f === "Semua") return true;
-  if (f === "Suvenir") return s.relevance === "Ya" || s.relevance === "Sebagian";
-  return s.relevance === f;
+  if (f === "Suvenir murni") return s.relevance === "Ya";
+  if (f === "Sebagian") return s.relevance === "Sebagian";
+  return s.relevance === "Ya" || s.relevance === "Sebagian";
 }
 
-function FitBounds({ shops }: { shops: SouvenirShop[] }) {
-  const map = useMap();
-  useEffect(() => {
-    const pts = shops
-      .filter((s) => s.lat != null && s.lng != null)
-      .map((s) => [s.lat as number, s.lng as number] as [number, number]);
-    if (!pts.length) return;
-    map.fitBounds(L.latLngBounds(pts), { padding: [30, 30], maxZoom: 14 });
-  }, [map, shops]);
-  return null;
+function formatReviews(n?: number): string {
+  if (n == null) return "";
+  if (n >= 1000) return (n / 1000).toFixed(1) + "k";
+  return n.toLocaleString("id-ID");
 }
 
-function StatTile({ label, value }: { label: string; value: string }) {
+function StarIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-[color:var(--accent)]" aria-hidden>
+      <path
+        fill="currentColor"
+        d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.2l5.9-.9L12 3z"
+      />
+    </svg>
+  );
+}
+
+function Stat({
+  number,
+  label,
+  small,
+}: {
+  number: string;
+  label: string;
+  small?: string;
+}) {
   return (
     <div>
-      <dd className="atlas-display-sm text-ink">{value}</dd>
-      <dt className="atlas-mono text-ink-muted-48">{label}</dt>
+      <div className="apple-hero apple-title-tight text-ink tabular">
+        {number}
+        {small && <span className="apple-lead text-ink-muted-48"> {small}</span>}
+      </div>
+      <div className="apple-caption text-ink-muted-80 mt-1.5">{label}</div>
     </div>
   );
 }
 
+function MiniSelect({
+  value,
+  onChange,
+  options,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  options: { id: string; label: string }[];
+}) {
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="appearance-none press-scale bg-canvas border border-hairline rounded-full h-9 pl-4 pr-9 apple-caption text-ink-muted-80 hover:text-ink focus:outline-none focus:border-primary-focus transition-colors cursor-pointer max-w-[240px] truncate"
+      >
+        {options.map((o) => (
+          <option key={o.id} value={o.id}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+      <svg
+        viewBox="0 0 24 24"
+        className="absolute right-3 top-1/2 -translate-y-1/2 h-3 w-3 text-ink-muted-48 pointer-events-none"
+        aria-hidden
+      >
+        <path fill="currentColor" d="M7 10l5 5 5-5z" />
+      </svg>
+    </div>
+  );
+}
+
+/** Badge relevansi — sejajar dengan badge sumber curated/OSM di kartu restoran. */
+function RelevanceBadge({ s }: { s: SouvenirShop }) {
+  const map: Record<string, { text: string; cls: string; title: string }> = {
+    Ya: {
+      text: "SUVENIR",
+      cls: "bg-primary/10 text-primary",
+      title: "Toko suvenir/oleh-oleh/kerajinan",
+    },
+    Sebagian: {
+      text: "SEBAGIAN",
+      cls: "bg-[color:var(--accent)]/10 text-[color:var(--accent)]",
+      title: "Pasar/mal — suvenir hanya sebagian dari isinya",
+    },
+    Tidak: {
+      text: "NON-SUVENIR",
+      cls: "bg-ink-muted-80/10 text-ink-muted-80",
+      title: "Dikategorikan TripAdvisor sebagai gift shop, tapi bukan toko suvenir",
+    },
+  };
+  const v = map[s.relevance] ?? {
+    text: "BELUM PASTI",
+    cls: "bg-ink-muted-80/10 text-ink-muted-80",
+    title: "Relevansi belum bisa diverifikasi",
+  };
+  return (
+    <span
+      className={`shrink-0 apple-fine uppercase tracking-wider px-1.5 py-0.5 rounded ${v.cls}`}
+      title={v.title}
+    >
+      {v.text}
+    </span>
+  );
+}
+
+function Card({ s }: { s: SouvenirShop }) {
+  return (
+    <li className="utility-card group bg-canvas border border-hairline rounded-apple_lg overflow-hidden flex flex-col">
+      <a
+        href={souvenirMapsUrl(s)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Buka di Google Maps — ${s.name}`}
+        className="relative block bg-parchment border-b border-hairline overflow-hidden group/map"
+      >
+        <div className="aspect-[16/9] w-full">
+          <iframe
+            src={souvenirEmbedUrl(s)}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full pointer-events-none select-none"
+            title={`Peta — ${s.name}`}
+            aria-hidden="true"
+          />
+        </div>
+        <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 bg-canvas/95 backdrop-blur border border-hairline rounded-full px-2.5 py-1 apple-fine text-ink shadow-[0_2px_8px_rgba(0,0,0,0.06)] opacity-0 group-hover/map:opacity-100 transition-opacity duration-200">
+          Buka peta
+        </span>
+      </a>
+
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center justify-between gap-2">
+          <p className="apple-caption-strong text-primary tracking-[0.06em] text-[11px] uppercase truncate">
+            {s.product || s.category}
+          </p>
+          <RelevanceBadge s={s} />
+        </div>
+
+        <h3 className="apple-tagline apple-title-tight text-ink mt-1.5 leading-[1.15]">
+          {s.name}
+        </h3>
+
+        <p className="apple-caption text-ink-muted-48 mt-1">
+          {[s.district, s.city].filter(Boolean).join(" · ")}
+        </p>
+
+        {s.rating != null && (
+          <p className="apple-caption mt-4 flex items-center gap-1.5 text-ink">
+            <StarIcon />
+            <span className="apple-caption-strong tabular">
+              {s.rating.toFixed(1).replace(".", ",")}
+            </span>
+            {s.reviews != null && s.reviews > 0 && (
+              <span className="text-ink-muted-48">
+                · {formatReviews(s.reviews)} ulasan · TripAdvisor
+              </span>
+            )}
+          </p>
+        )}
+
+        {s.address && (
+          <p className="apple-caption text-ink-muted-80 mt-3 line-clamp-2">
+            {s.address}
+          </p>
+        )}
+
+        {s.coordSource === "Koreksi riset" && (
+          <p className="apple-fine text-ink-muted-48 mt-2 italic">
+            Koordinat TripAdvisor keliru — sudah dikoreksi lewat penelusuran.
+          </p>
+        )}
+
+        <div className="mt-auto pt-5 flex items-center justify-between gap-4">
+          <a
+            href={souvenirMapsUrl(s)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="press-scale link-blue apple-caption-strong inline-flex items-center gap-1"
+          >
+            Buka di Maps
+            <span aria-hidden>↗</span>
+          </a>
+          {s.url && (
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="press-scale link-blue apple-caption inline-flex items-center gap-1"
+              title="Halaman TripAdvisor"
+            >
+              Sumber
+              <span aria-hidden>↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </li>
+  );
+}
+
 export function SouvenirView() {
-  const [relevance, setRelevance] = useState<RelevanceFilter>("Suvenir");
+  const [query, setQuery] = useState("");
   const [city, setCity] = useState("All");
-  const [selected, setSelected] = useState<string | null>(null);
+  const [product, setProduct] = useState("All");
+  const [relevance, setRelevance] = useState<Relevance>("Toko suvenir");
+  const [sort, setSort] = useState<SortId>("reviews");
+  const [viewMode, setViewMode] = useState<"grid" | "table">("grid");
 
   const cityOptions = useMemo(() => {
     const set = new Set(
@@ -91,24 +265,39 @@ export function SouvenirView() {
     );
     return ["All", ...[...set].sort()];
   }, []);
+  const productOptions = useMemo(() => ["All", ...souvenirProducts()], []);
 
-  const filtered = useMemo(
-    () =>
-      SOUVENIR_SHOPS.filter(
-        (s) => matchesRelevance(s, relevance) && (city === "All" || s.city === city)
-      ).sort((a, b) => (b.reviews ?? 0) - (a.reviews ?? 0)),
-    [relevance, city]
-  );
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const rows = SOUVENIR_SHOPS.filter((s) => {
+      if (!matchesRelevance(s, relevance)) return false;
+      if (city !== "All" && s.city !== city) return false;
+      if (product !== "All" && s.product !== product) return false;
+      if (!q) return true;
+      return [s.name, s.product, s.address, s.district, s.city]
+        .filter(Boolean)
+        .some((v) => (v as string).toLowerCase().includes(q));
+    });
+    return rows.sort((a, b) => {
+      if (sort === "name") return a.name.localeCompare(b.name, "id");
+      if (sort === "rating") return (b.rating ?? 0) - (a.rating ?? 0);
+      return (b.reviews ?? 0) - (a.reviews ?? 0);
+    });
+  }, [query, city, product, relevance, sort]);
 
   const stats = useMemo(() => {
     const ya = SOUVENIR_SHOPS.filter((s) => s.relevance === "Ya").length;
-    const sebagian = SOUVENIR_SHOPS.filter((s) => s.relevance === "Sebagian").length;
-    const geo = SOUVENIR_SHOPS.filter((s) => s.lat != null).length;
-    return { total: SOUVENIR_SHOPS.length, ya, sebagian, geo };
+    const rated = SOUVENIR_SHOPS.filter((s) => s.rating != null);
+    const avg = rated.length
+      ? rated.reduce((n, s) => n + (s.rating as number), 0) / rated.length
+      : 0;
+    return {
+      total: SOUVENIR_SHOPS.length,
+      ya,
+      avg,
+      geo: SOUVENIR_SHOPS.filter((s) => s.lat != null).length,
+    };
   }, []);
-
-  const mapped = filtered.filter((s) => s.lat != null && s.lng != null);
-  const active = filtered.find((s) => s.id === selected) ?? null;
 
   async function exportSouvenir(format: ExportFormat) {
     const columns: CsvColumn<SouvenirShop>[] = [
@@ -140,204 +329,246 @@ export function SouvenirView() {
   }
 
   return (
-    <main data-section="souvenir" className="min-h-screen flex flex-col bg-paper">
-      {/* HERO STRIP */}
-      <section className="border-b border-hairline bg-paper">
-        <div className="mx-auto max-w-[1320px] px-6 py-10 md:py-14">
-          <div className="flex items-center gap-3">
-            <span className="atlas-mono text-ink-muted-48">
-              VOL. 05 · DAYA TARIK BELANJA
-            </span>
-            <span className="flex-1 border-t border-hairline" />
-            <span className="atlas-coord">JAKARTA · GPCI CI-SH</span>
-          </div>
-          <div className="mt-6 grid md:grid-cols-12 gap-8 items-end">
-            <h1 className="atlas-display text-ink md:col-span-7">
-              Toko{" "}
-              <span className="atlas-italic text-[color:var(--accent)]">
-                Suvenir
-              </span>
-            </h1>
-            <dl className="md:col-span-5 grid grid-cols-4 gap-x-4 gap-y-1 border-l-0 md:border-l md:border-hairline md:pl-6">
-              <StatTile label="Listing" value={String(stats.total)} />
-              <StatTile label="Suvenir murni" value={String(stats.ya)} />
-              <StatTile label="Sebagian" value={String(stats.sebagian)} />
-              <StatTile label="Berkoordinat" value={String(stats.geo)} />
-            </dl>
-          </div>
-          <p className="mt-6 apple-caption text-ink-muted-80 max-w-[70ch]">
-            Hasil crawl TripAdvisor (kategori Shopping) yang sudah diverifikasi.
-            TripAdvisor memasukkan banyak usaha non-suvenir — money changer,
-            service HP, toko elektronik — ke kategori &ldquo;Gift &amp; Specialty
-            Shops&rdquo;, sehingga tiap baris ditandai relevansinya. Dari{" "}
-            {stats.total} listing, hanya {stats.ya} yang benar-benar toko suvenir.
+    <main className="min-h-screen bg-canvas">
+      <AtlasNav section="souvenir" view="list" t={navLabel} />
+
+      {/* ── HERO TILE ── */}
+      <section className="bg-canvas">
+        <div className="mx-auto max-w-[1280px] px-6 py-[80px] md:py-[120px] text-center">
+          <p className="apple-caption-strong text-ink-muted-80">
+            Data sekunder · Daya tarik belanja (GPCI CI-SH)
           </p>
+          <h1 className="apple-hero apple-title-tight mt-3 text-ink">
+            Toko suvenir Jakarta,
+            <br />
+            <span className="text-ink-muted-48">sudah disaring.</span>
+          </h1>
+          <p className="apple-lead mt-6 max-w-[760px] mx-auto">
+            <span className="text-ink">{stats.total} listing</span> TripAdvisor
+            kategori Shopping, ditandai satu per satu mana yang benar-benar toko
+            suvenir — karena {stats.total - stats.ya} di antaranya ternyata money
+            changer, service HP, dan toko elektronik.
+          </p>
+          <div className="mt-9 flex items-center justify-center gap-4">
+            <a href="#directory" className="press-scale pill-primary">
+              Lihat daftar
+            </a>
+            <a href="/atlas/souvenir/map" className="press-scale pill-secondary">
+              Buka peta
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* FILTER STRIP */}
-      <section className="frosted border-b border-hairline">
-        <div className="mx-auto max-w-[1320px] px-6 py-3 flex flex-wrap items-center gap-3">
-          <span className="atlas-mono text-ink-muted-48">FILTER ·</span>
-          <select
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            className="appearance-none press-scale bg-canvas border border-hairline rounded-full h-9 pl-4 pr-9 apple-caption text-ink-muted-80 hover:text-ink focus:outline-none cursor-pointer"
-          >
-            {cityOptions.map((c) => (
-              <option key={c} value={c}>
-                {c === "All" ? "Semua wilayah" : c}
-              </option>
-            ))}
-          </select>
-          <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full">
-            {RELEVANCE_FILTERS.map((r) => (
-              <button
-                key={r}
-                onClick={() => setRelevance(r)}
-                className={`press-scale rounded-full px-3 py-1 apple-caption ${
-                  relevance === r
-                    ? "bg-[color:var(--accent)] text-white"
-                    : "text-ink-muted-80 hover:text-ink"
-                }`}
-              >
-                {RELEVANCE_LABEL[r]}
-              </button>
-            ))}
-          </div>
-          <span className="ml-auto atlas-mono text-ink-muted-48">
-            {filtered.length}/{SOUVENIR_SHOPS.length} · {mapped.length} titik
-          </span>
-          <ExportButton onExport={exportSouvenir} label="Unduh" />
+      {/* ── STATS TILE ── */}
+      <section className="bg-parchment border-y border-hairline">
+        <div className="mx-auto max-w-[1280px] px-6 py-[64px] md:py-[80px] grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+          <Stat number={String(stats.total)} label="Listing terdata" />
+          <Stat number={String(stats.ya)} label="Toko suvenir murni" />
+          <Stat
+            number={stats.avg ? stats.avg.toFixed(2).replace(".", ",") : "—"}
+            label="Rating rata-rata"
+            small="/5"
+          />
+          <Stat number={String(stats.geo)} label="Titik berkoordinat" />
         </div>
       </section>
 
-      {/* SPLIT: peta + daftar */}
-      <section className="flex-1 grid md:grid-cols-[1.5fr_1fr] min-h-0">
-        <div className="relative border-b md:border-b-0 md:border-r border-hairline min-h-[420px]">
-          <MapContainer
-            center={[-6.2, 106.82]}
-            zoom={11}
-            scrollWheelZoom
-            style={{ height: "100%", width: "100%", minHeight: 420 }}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-              url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            />
-            <FitBounds shops={mapped} />
-            {mapped.map((s) => {
-              const isSel = s.id === selected;
-              return (
-                <CircleMarker
-                  key={s.id}
-                  center={[s.lat as number, s.lng as number]}
-                  radius={isSel ? 13 : 7}
-                  pathOptions={{
-                    color: "#ffffff",
-                    weight: isSel ? 3 : 2,
-                    fillColor: dotColor(s),
-                    fillOpacity: 0.92,
-                  }}
-                  eventHandlers={{ click: () => setSelected(s.id) }}
-                />
-              );
-            })}
-          </MapContainer>
-
-          {/* Legenda */}
-          <div className="absolute bottom-4 left-4 z-[500] rounded-apple_lg border border-hairline bg-canvas/95 px-3 py-2 space-y-1">
-            {[
-              { c: GOLD, l: "Toko suvenir" },
-              { c: ORANGE, l: "Sebagian suvenir" },
-              { c: MUTED, l: "Bukan toko suvenir" },
-            ].map((x) => (
-              <div key={x.l} className="flex items-center gap-2">
-                <span
-                  className="inline-block h-2.5 w-2.5 rounded-full"
-                  style={{ background: x.c }}
-                />
-                <span className="atlas-mono text-ink-muted-80">{x.l}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Daftar */}
-        <div className="overflow-y-auto max-h-[70vh] md:max-h-none">
-          {active && (
-            <div className="border-b border-hairline bg-canvas px-6 py-4">
-              <div className="atlas-mono text-ink-muted-48">TERPILIH</div>
-              <div className="apple-title text-ink mt-1">{active.name}</div>
-              {active.note && (
-                <p className="apple-caption text-ink-muted-80 mt-2">{active.note}</p>
-              )}
-              <a
-                href={souvenirMapsUrl(active)}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block mt-3 apple-caption text-[color:var(--accent)] hover:underline"
+      {/* ── TOOLBAR ── */}
+      <section id="filters" className="sticky top-[56px] z-10 frosted">
+        <div className="mx-auto max-w-[1280px] px-6 py-3 space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1 min-w-0">
+              <svg
+                viewBox="0 0 24 24"
+                className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted-48"
+                aria-hidden
               >
-                Buka di Google Maps →
-              </a>
+                <path
+                  fill="currentColor"
+                  d="M10 18a8 8 0 1 1 5.293-1.707l4.207 4.207-1.414 1.414-4.207-4.207A7.96 7.96 0 0 1 10 18zm0-2a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                />
+              </svg>
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Cari nama toko, produk, atau alamat…"
+                className="w-full bg-canvas border border-hairline rounded-lg pl-11 pr-16 h-10 text-[14px] placeholder:text-ink-muted-48 focus:outline-none focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--accent-ring)] transition-all"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 apple-caption tabular text-ink-muted-48">
+                {filtered.length}/{SOUVENIR_SHOPS.length}
+              </span>
             </div>
-          )}
+            <div className="inline-flex p-0.5 bg-canvas border border-hairline rounded-full">
+              {(["grid", "table"] as const).map((m) => (
+                <button
+                  key={m}
+                  onClick={() => setViewMode(m)}
+                  className={`press-scale rounded-full px-3 py-1 apple-caption-strong ${
+                    viewMode === m
+                      ? "bg-ink text-white"
+                      : "text-ink-muted-80 hover:text-ink"
+                  }`}
+                >
+                  {m === "grid" ? "Kartu" : "Tabel"}
+                </button>
+              ))}
+            </div>
+            <ExportButton onExport={exportSouvenir} label="Unduh" />
+          </div>
 
-          <ul>
+          <div className="flex flex-wrap items-center gap-2">
+            <MiniSelect
+              value={city}
+              onChange={setCity}
+              options={cityOptions.map((c) => ({
+                id: c,
+                label: c === "All" ? "Semua wilayah" : c,
+              }))}
+            />
+            <MiniSelect
+              value={product}
+              onChange={setProduct}
+              options={productOptions.map((p) => ({
+                id: p,
+                label: p === "All" ? "Semua produk" : p,
+              }))}
+            />
+            <span className="hidden md:inline-block h-5 w-px bg-hairline mx-1" />
+            <div className="inline-flex p-1 bg-canvas border border-hairline rounded-full">
+              {RELEVANCE.map((r) => (
+                <button
+                  key={r}
+                  onClick={() => setRelevance(r)}
+                  className={`press-scale rounded-full px-3 py-1 apple-caption ${
+                    relevance === r
+                      ? "bg-primary text-white"
+                      : "text-ink-muted-80 hover:text-ink"
+                  }`}
+                >
+                  {r}
+                </button>
+              ))}
+            </div>
+            <span className="hidden md:inline-block h-5 w-px bg-hairline mx-1" />
+            <MiniSelect
+              value={sort}
+              onChange={(v) => setSort(v as SortId)}
+              options={SORTS.map((s) => ({ id: s.id, label: s.label }))}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── DIRECTORY ── */}
+      <section id="directory" className="mx-auto max-w-[1280px] px-6 py-12">
+        {filtered.length === 0 ? (
+          <div className="text-center py-24">
+            <p className="apple-tagline text-ink">Tidak ada toko yang cocok</p>
+            <p className="apple-caption text-ink-muted-48 mt-2">
+              Coba longgarkan filter atau kosongkan kolom pencarian.
+            </p>
+          </div>
+        ) : viewMode === "grid" ? (
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((s) => (
-              <li
-                key={s.id}
-                onClick={() => setSelected(s.id)}
-                className={`cursor-pointer border-b border-hairline px-6 py-4 hover:bg-canvas ${
-                  s.id === selected ? "bg-canvas" : ""
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <span
-                    className="mt-1.5 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ background: dotColor(s) }}
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="apple-body text-ink">{s.name}</div>
-                    <div className="apple-caption text-ink-muted-80 mt-0.5">
-                      {[s.product, s.district, s.city].filter(Boolean).join(" · ")}
-                    </div>
-                    {s.address && (
-                      <div className="apple-caption text-ink-muted-48 mt-0.5 truncate">
-                        {s.address}
-                      </div>
-                    )}
-                  </div>
-                  <div className="shrink-0 text-right">
-                    {s.rating != null && (
-                      <div className="apple-caption text-ink">
-                        {s.rating.toFixed(1).replace(".", ",")}
-                      </div>
-                    )}
-                    {s.reviews != null && (
-                      <div className="atlas-mono text-ink-muted-48">
-                        {s.reviews} ulasan
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </li>
+              <Card key={s.id} s={s} />
             ))}
           </ul>
+        ) : (
+          <div className="overflow-x-auto border border-hairline rounded-apple_lg bg-canvas">
+            <table className="w-full text-left border-collapse min-w-[820px]">
+              <thead>
+                <tr className="border-b border-hairline bg-parchment">
+                  {["Nama", "Produk", "Wilayah", "Rating", "Relevansi", ""].map(
+                    (h) => (
+                      <th
+                        key={h}
+                        className="apple-caption-strong text-ink-muted-80 px-4 py-3"
+                      >
+                        {h}
+                      </th>
+                    )
+                  )}
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map((s) => (
+                  <tr key={s.id} className="border-b border-hairline last:border-0">
+                    <td className="px-4 py-3 apple-caption-strong text-ink">
+                      {s.name}
+                    </td>
+                    <td className="px-4 py-3 apple-caption text-ink-muted-80">
+                      {s.product || "—"}
+                    </td>
+                    <td className="px-4 py-3 apple-caption text-ink-muted-80">
+                      {[s.district, s.city].filter(Boolean).join(" · ") || "—"}
+                    </td>
+                    <td className="px-4 py-3 apple-caption tabular text-ink-muted-80">
+                      {s.rating != null
+                        ? `${s.rating.toFixed(1).replace(".", ",")} (${s.reviews ?? 0})`
+                        : "—"}
+                    </td>
+                    <td className="px-4 py-3">
+                      <RelevanceBadge s={s} />
+                    </td>
+                    <td className="px-4 py-3">
+                      <a
+                        href={souvenirMapsUrl(s)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="press-scale link-blue apple-caption whitespace-nowrap"
+                      >
+                        Maps ↗
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
 
-          {filtered.length === 0 && (
-            <div className="px-6 py-10 apple-caption text-ink-muted-48">
-              Tidak ada toko yang cocok dengan filter ini.
-            </div>
-          )}
+      {/* ── SOURCES ── */}
+      <section id="sources" className="border-t border-hairline bg-parchment">
+        <div className="mx-auto max-w-[1280px] px-6 py-12 grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="apple-tagline text-ink">Cara data ini dikumpulkan</h2>
+            <p className="apple-caption text-ink-muted-80 mt-3 max-w-[60ch]">
+              Crawl TripAdvisor geo <code>g294229</code> (Jakarta), kategori
+              Shopping <code>c26</code> — subkategori Gift &amp; Specialty Shops,
+              Antique Stores, dan Flea &amp; Street Markets. Alamat, koordinat,
+              telepon, rating, dan jumlah ulasan diambil dari JSON-LD halaman
+              detail. Relevansi suvenir, produk, kota/kecamatan, status
+              operasional, dan validasi koordinat diverifikasi lewat penelusuran
+              sumber terbuka.
+            </p>
+          </div>
+          <div>
+            <h2 className="apple-tagline text-ink">Yang perlu diperhatikan</h2>
+            <ul className="apple-caption text-ink-muted-80 mt-3 space-y-2 max-w-[60ch]">
+              <li>
+                · {stats.total - stats.ya} dari {stats.total} listing bukan toko
+                suvenir meski TripAdvisor menaruhnya di kategori gift shop.
+              </li>
+              <li>
+                · 10 koordinat TripAdvisor terbukti salah; 8 sudah dikoreksi, 2
+                dikosongkan karena tidak ada sumber yang bisa dipercaya.
+              </li>
+              <li>
+                · Rating dan ulasan adalah angka TripAdvisor, bukan Google —
+                sampelnya kecil untuk toko-toko baru.
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-hairline px-6 py-4">
-        <p className="atlas-mono text-ink-muted-48 mx-auto max-w-[1320px]">
-          SUMBER · TRIPADVISOR (GEO G294229, KATEGORI SHOPPING C26) · VERIFIKASI
-          RELEVANSI, WILAYAH &amp; KOORDINAT VIA PENELUSURAN SUMBER TERBUKA ·
-          DIPERBARUI 29 JULI 2026
+      <footer className="border-t border-hairline px-6 py-6">
+        <p className="atlas-mono text-ink-muted-48 mx-auto max-w-[1280px]">
+          SUMBER · TRIPADVISOR + VERIFIKASI PENELUSURAN TERBUKA · DIPERBARUI 29
+          JULI 2026
         </p>
       </footer>
     </main>

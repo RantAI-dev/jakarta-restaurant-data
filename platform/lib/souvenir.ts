@@ -1227,3 +1227,20 @@ export function souvenirMapsUrl(s: SouvenirShop): string {
     `${s.name} ${s.address ?? "Jakarta"}`
   )}`;
 }
+
+/** Embed peta untuk slot "gambar produk" di kartu (pola sama lib/restaurants). */
+export function souvenirEmbedUrl(s: SouvenirShop): string {
+  if (s.lat != null && s.lng != null) {
+    return `https://www.google.com/maps?q=${s.lat},${s.lng}&hl=id&z=17&output=embed`;
+  }
+  const q = [s.name, s.address, "Jakarta"].filter(Boolean).join(", ");
+  return `https://www.google.com/maps?q=${encodeURIComponent(q)}&hl=id&z=16&output=embed`;
+}
+
+/** Daftar produk unik (untuk filter), urut alfabetis. */
+export function souvenirProducts(): string[] {
+  const set = new Set(
+    SOUVENIR_SHOPS.map((s) => s.product).filter((p): p is string => !!p)
+  );
+  return [...set].sort((a, b) => a.localeCompare(b, "id"));
+}
