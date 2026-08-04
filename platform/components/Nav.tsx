@@ -11,6 +11,7 @@ const ITEMS = [
   { href: "/gci", label: "GCI" },
   { href: "/gpci", label: "GPCI" },
   { href: "/atlas", label: "Atlas" },
+  { href: "/docs", label: "API" },
 ];
 
 /**
