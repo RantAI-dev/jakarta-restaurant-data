@@ -1,0 +1,57 @@
+<clickhouse>
+    <!-- User & profil didefinisikan di sini (bukan lewat env CLICKHOUSE_USER)
+         supaya entrypoint tidak perlu menulis ke users.d, yang di-mount read-only. -->
+    <profiles>
+        <default>
+            <!-- DataLakeCatalog masih di balik flag eksperimental. -->
+            <allow_experimental_database_iceberg>1</allow_experimental_database_iceberg>
+            <write_full_path_in_iceberg_metadata>1</write_full_path_in_iceberg_metadata>
+
+            <!-- Batas pengaman: satu query tidak boleh menyandera server. -->
+            <max_execution_time>120</max_execution_time>
+            <max_memory_usage>4000000000</max_memory_usage>
+            <!-- Tanpa query cache: profil ini dipakai pipeline (tulis & transform),
+                 yang justru tidak boleh melihat hasil basi. -->
+        </default>
+
+        <!-- Profil app v2: read-only, batas lebih ketat (spec §6.3). -->
+        <app_readonly>
+            <readonly>1</readonly>
+            <allow_experimental_database_iceberg>1</allow_experimental_database_iceberg>
+            <max_execution_time>30</max_execution_time>
+            <max_result_rows>100000</max_result_rows>
+            <result_overflow_mode>throw</result_overflow_mode>
+            <max_memory_usage>1000000000</max_memory_usage>
+            <use_query_cache>1</use_query_cache>
+            <query_cache_nondeterministic_function_handling>ignore</query_cache_nondeterministic_function_handling>
+        </app_readonly>
+    </profiles>
+
+    <users>
+        <!-- Pemilik pipeline: boleh tulis. Dipakai dlt, SQLMesh, Dagster. -->
+        <dispar>
+            <password from_env="CH_PASSWORD"/>
+            <networks><ip>::/0</ip></networks>
+            <profile>default</profile>
+            <quota>default</quota>
+            <access_management>1</access_management>
+            <named_collection_control>1</named_collection_control>
+        </dispar>
+
+        <!-- App v2: hanya baca, hanya database serving. -->
+        <dispar_app>
+            <password from_env="CH_APP_PASSWORD"/>
+            <networks><ip>::/0</ip></networks>
+            <profile>app_readonly</profile>
+            <quota>default</quota>
+        </dispar_app>
+
+        <!-- default dinonaktifkan: tanpa ini siapa pun di jaringan bisa masuk tanpa sandi. -->
+        <default>
+            <password></password>
+            <networks><ip>127.0.0.1</ip></networks>
+            <profile>default</profile>
+            <quota>default</quota>
+        </default>
+    </users>
+</clickhouse>
