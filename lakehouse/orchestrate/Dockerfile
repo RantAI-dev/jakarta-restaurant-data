@@ -15,6 +15,10 @@ COPY ingest/dispar_ingest ./ingest/dispar_ingest
 RUN pip install ./ingest "dagster>=1.9" "dagster-webserver>=1.9"
 
 COPY orchestrate/dispar_orchestrate ./dispar_orchestrate
+# SQL Silver/Gold di-bake supaya aset functions_dim/curated_gold jalan tanpa
+# bind-mount repo (endpoint Docker bisa remote).
+COPY clickhouse/sql ./sql
+ENV SQL_DIR=/app/sql
 RUN mkdir -p /opt/dagster
 
 EXPOSE 3030
