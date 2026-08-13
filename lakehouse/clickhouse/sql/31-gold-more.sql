@@ -54,6 +54,20 @@ FROM silver.kunjungan_dtw;
 EXCHANGE TABLES serving.mart_kunjungan_dtw AND serving.mart_kunjungan_dtw_baru;
 TRUNCATE TABLE serving.mart_kunjungan_dtw_baru;
 
+-- ── mart_atlas ─────────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS serving.mart_atlas (
+    kategori String, jumlah_poi UInt32, rata_rating Float64, ada_koordinat UInt32
+) ENGINE = MergeTree ORDER BY kategori;
+CREATE TABLE IF NOT EXISTS serving.mart_atlas_baru AS serving.mart_atlas;
+TRUNCATE TABLE serving.mart_atlas_baru;
+INSERT INTO serving.mart_atlas_baru
+SELECT kategori, count() AS jumlah_poi,
+       round(avgIf(rating, rating IS NOT NULL), 2) AS rata_rating,
+       countIf(koordinat IS NOT NULL) AS ada_koordinat
+FROM silver.atlas GROUP BY kategori;
+EXCHANGE TABLES serving.mart_atlas AND serving.mart_atlas_baru;
+TRUNCATE TABLE serving.mart_atlas_baru;
+
 -- ── mart_event ─────────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS serving.mart_event (
     tahun UInt16, jumlah_event UInt32

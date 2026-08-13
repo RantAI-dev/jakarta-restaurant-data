@@ -109,6 +109,10 @@ def run_all() -> None:
 
     generate_silver()
     print(">>>", apply_curated_gold(ch), flush=True)
+    print(">>> Publikasi Gold → Iceberg", flush=True)
+    from .publish import publish_marts
+
+    publish_marts()
     print(">>> SELESAI", flush=True)
 
 

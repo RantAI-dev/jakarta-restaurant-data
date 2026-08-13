@@ -58,13 +58,20 @@ def curated_gold(context) -> None:
     context.log.info(refresh.apply_curated_gold())
 
 
+@asset(group_name="gold", deps=[curated_gold],
+       description="Publikasi mart Gold ke Iceberg (portabilitas Oracle/Trino/Spark)")
+def gold_iceberg(context) -> None:
+    from dispar_ingest.publish import publish_marts
+    context.log.info(str(publish_marts()))
+
+
 refresh_job = define_asset_job("refresh_lakehouse", selection="*")
 
 # Refresh harian 02:00 — data SDI bulanan, jadi tak perlu lebih sering.
 daily = ScheduleDefinition(job=refresh_job, cron_schedule="0 2 * * *")
 
 defs = Definitions(
-    assets=[bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto, curated_gold],
+    assets=[bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto, curated_gold, gold_iceberg],
     jobs=[refresh_job],
     schedules=[daily],
 )
