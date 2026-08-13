@@ -10,7 +10,7 @@ import csv
 import os
 from typing import Any, Iterator
 
-EKSTENSI = {".tsv", ".csv", ".xlsx"}
+EKSTENSI = {".tsv", ".csv", ".xlsx", ".json"}
 
 # Berkas kerja/cadangan yang tidak boleh ikut masuk lake.
 POLA_ABAIKAN = ("~$", ".bak.", "-KERJA", "-SWEEP", "PERLU REVIEW")
@@ -85,7 +85,28 @@ def read_xlsx(path: str) -> Iterator[dict[str, Any]]:
         wb.close()
 
 
+def read_json(path: str) -> Iterator[dict[str, Any]]:
+    """Array JSON berisi objek datar → baris. Nilai nested di-serialize di Bronze."""
+    import json
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, dict):
+        # Kalau objek tunggal membungkus array (mis. {"data": [...]}), pakai array
+        # pertama yang ditemukan; kalau tidak, perlakukan sebagai satu baris.
+        arr = next((v for v in data.values() if isinstance(v, list)), None)
+        data = arr if arr is not None else [data]
+    if not isinstance(data, list):
+        return
+    for item in data:
+        if isinstance(item, dict):
+            yield item
+
+
 def read_file(path: str) -> Iterator[dict[str, Any]]:
-    if path.lower().endswith(".xlsx"):
+    low = path.lower()
+    if low.endswith(".xlsx"):
         return read_xlsx(path)
+    if low.endswith(".json"):
+        return read_json(path)
     return read_delimited(path)

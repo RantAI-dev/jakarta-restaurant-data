@@ -67,13 +67,14 @@ def tebak_tipe(ch, src_ref, kolom) -> tuple[str, float]:
     tipe ∈ {'angka', 'tanggal', 'teks'}.
     """
     col = f"`{kolom}`"
+    # Sampel SAMPEL baris cukup untuk deteksi tipe pada ambang 95% — jauh lebih
+    # cepat daripada men-scan Parquet penuh dari object storage per kolom.
     q = f"""
         SELECT
             countIf(bersih_teks({col}) IS NOT NULL) AS non_kosong,
             countIf(angka_id({col}) IS NOT NULL) AS bisa_angka,
             countIf(tanggal_id({col}) IS NOT NULL) AS bisa_tanggal
-        FROM {src_ref}
-        LIMIT 1
+        FROM (SELECT {col} FROM {src_ref} LIMIT {SAMPEL})
     """
     non_kosong, bisa_angka, bisa_tanggal = ch.query(q).result_rows[0]
     if not non_kosong:
