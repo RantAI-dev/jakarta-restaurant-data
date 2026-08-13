@@ -27,7 +27,8 @@ export async function GET(req: Request) {
   }
 
   try {
-    const rows = await store.catalog();
+    // Hanya primer di list utama; sekunder tampil via kartu lib/secondary.ts.
+    const rows = (await store.catalog()).filter((r) => r.tier === "primer");
     if (rows.length) {
       const datasets: SdiDataset[] = rows.map((r) => ({
         id: 0,

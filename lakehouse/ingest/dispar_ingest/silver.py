@@ -120,7 +120,9 @@ def generate_silver() -> int:
     dibuat = 0
     meta_rows = []
     for ns, tbl, nama_iceberg in tabel:
-        if not ns.startswith("bronze"):
+        # Proses hanya namespace dataset (bronze_sdi/bronze_file/bronze_sec).
+        # bronze_meta* = tabel metadata (punya kolom Int64), bukan untuk di-Silver-kan.
+        if not ns.startswith("bronze") or ns.startswith("bronze_meta"):
             continue
         src_ref = f"{db_katalog}.`{nama_iceberg}`"
         try:
