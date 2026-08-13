@@ -1,0 +1,22 @@
+{
+  "name": "platform-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3032",
+    "build": "next build",
+    "start": "next start -p 3032",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.12.0",
+    "next": "15.0.7",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}

@@ -159,6 +159,27 @@ services:
       - ../:/repo:ro
     networks: [lakenet]
 
+  # ── App v2 — dashboard baca lapisan Gold (ClickHouse) ──────────────────
+  # Berdampingan dengan app v1 (dispar-platform); tidak mengganggunya.
+  dispar-v2:
+    build:
+      context: ../platform-v2
+    image: dispar-v2:latest
+    container_name: dispar-v2
+    profiles: ["app"]
+    environment:
+      CH_URL: http://lake-clickhouse:8123
+      CH_USER: dispar_app
+      CH_PASSWORD: ${CH_APP_PASSWORD:-disparapp}
+    ports:
+      - "13032:3032"
+    depends_on:
+      lake-clickhouse:
+        condition: service_healthy
+    mem_limit: 512m
+    restart: unless-stopped
+    networks: [lakenet]
+
 volumes:
   lake_data:
   lake_meta:
