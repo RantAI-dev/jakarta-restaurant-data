@@ -47,7 +47,9 @@ services:
       POSTGRES_DB: lakekeeper
     volumes:
       - lake_meta:/var/lib/postgresql/data
-      - ./catalog/init-meta.sql:/docker-entrypoint-initdb.d/10-init.sql:ro
+      # init-meta.sql (DB sqlmesh/dagster) sengaja tidak di-mount: DB lakekeeper
+      # dibuat otomatis oleh POSTGRES_DB, dan endpoint Docker remote tak bisa
+      # bind-mount file repo. SQLMesh/Dagster memakai store sendiri.
     ports:
       - "15433:5432"
     healthcheck:
@@ -100,7 +102,9 @@ services:
 
   # ── Query engine + serving layer ───────────────────────────────────────
   lake-clickhouse:
-    image: clickhouse/clickhouse-server:latest
+    build:
+      context: ./clickhouse
+    image: dispar-lake-clickhouse:latest
     container_name: lake-clickhouse
     environment:
       # User didefinisikan di config.d/dispar.xml lewat from_env — bukan lewat
@@ -111,10 +115,8 @@ services:
       S3_SECRET_KEY: ${S3_SECRET_KEY:-disparlakesecret}
     volumes:
       - lake_ch:/var/lib/clickhouse
-      # File tunggal, bukan direktori: entrypoint tetap perlu menulis
-      # default-user.xml ke users.d, jadi direktorinya tidak boleh di-mount ro.
-      - ./clickhouse/users-dispar.xml:/etc/clickhouse-server/users.d/dispar.xml:ro
-      - ./clickhouse/init:/docker-entrypoint-initdb.d:ro
+      # Config di-bake ke image (lihat clickhouse/Dockerfile) — tidak bind-mount,
+      # supaya jalan di endpoint Docker remote juga.
     ports:
       - "18123:8123"   # HTTP
       - "19440:9000"   # native
