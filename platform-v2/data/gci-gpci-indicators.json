@@ -1,0 +1,459 @@
+[
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE1",
+"name": "Wisatawan internasional",
+"definition": "Jumlah kedatangan wisatawan mancanegara",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"wisatawan mancanegara",
+"kunjungan wisatawan",
+"tic"
+],
+"measure": "jumlah|kunjungan",
+"note": "Wisman per kebangsaan; kunjungan wisman ke Indonesia (bulan/wilayah); kunjungan ke TIC & obyek wisata"
+},
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE2",
+"name": "Kuliner beragam",
+"definition": "Jumlah & ragam usaha kuliner",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"makanan dan minuman",
+"restoran",
+"food court",
+"kuliner"
+],
+"measure": "jumlah",
+"note": "Restoran & Kafe GCI (Atlas 2.577); Usaha Jasa Makan-Minum; Restoran per Kelurahan; Food Court"
+},
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE3",
+"name": "Seni visual & pertunjukan",
+"definition": "Jumlah venue/penyelenggaraan seni",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"seni pertunjukan",
+"pertunjukan musik",
+"penyelenggaraan event"
+],
+"measure": "jumlah",
+"note": "Data Seni Pertunjukan & Visual; Penyelenggaraan Event; Rekomendasi Pertunjukan Musik; Atlas Pertunjukan"
+},
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE4",
+"name": "Museum",
+"definition": "Jumlah museum",
+"owner": "Dinas Kebudayaan",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"obyek wisata",
+"desa wisata"
+],
+"measure": null,
+"note": "Proksi via Obyek Wisata; butuh inventori museum resmi"
+},
+{
+"framework": "GCI",
+"dimension": "Business Activity",
+"group": "MICE",
+"code": "BA-MICE",
+"name": "Konferensi internasional (ICCA)",
+"definition": "Jumlah konferensi/pertemuan internasional",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"pertemuan",
+"konferensi",
+"pameran"
+],
+"measure": "jumlah",
+"note": "Punya Usaha MICE berizin; jumlah konferensi internasional aktual perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Volume of Interaction",
+"code": "CI-FV",
+"name": "Jumlah wisatawan asing (Foreign Visitors)",
+"definition": "Jumlah pengunjung asing",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"wisatawan mancanegara",
+"kunjungan"
+],
+"measure": "jumlah|kunjungan",
+"note": "Wisman per kebangsaan; TIC (termasuk TIC Bandara Soetta)"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Volume of Interaction",
+"code": "CI-IC",
+"name": "Jumlah konferensi internasional",
+"definition": "Int'l conferences (MICE)",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"pertemuan",
+"konferensi",
+"pameran"
+],
+"measure": "jumlah",
+"note": "Usaha MICE berizin; jumlah konferensi aktual perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Trendsetting",
+"code": "CI-CE",
+"name": "Jumlah event budaya (Cultural Events)",
+"definition": "Jumlah event budaya besar",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"event pariwisata",
+"seni pertunjukan",
+"pengunjung event",
+"penyelenggaraan event"
+],
+"measure": "jumlah",
+"note": "Penyelenggaraan Event Pariwisata & Budaya; Seni Pertunjukan; Pengunjung Event"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Trendsetting",
+"code": "CI-CX",
+"name": "Nilai ekspor konten budaya (Cultural Content Export)",
+"definition": "Ekspor produk kreatif/budaya",
+"owner": "DISPAREKRAF (Ekraf)",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"ekonomi kreatif",
+"kekayaan intelektual"
+],
+"measure": "jumlah|persen",
+"note": "Proksi via Usaha Ekonomi Kreatif & Produk Ekraf ber-HKI; nilai ekspor perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Trendsetting",
+"code": "CI-AM",
+"name": "Lingkungan pasar seni (Art Market)",
+"definition": "Aktivitas pasar seni/galeri",
+"owner": "DISPAREKRAF (Ekraf) / Disbud",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"seni",
+"ekonomi kreatif"
+],
+"measure": null,
+"note": "Proksi via Seni Visual & Ekraf; data lelang/galeri perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Cultural Resources",
+"code": "CI-TA",
+"name": "Daya tarik wisata (Tourist Attractions)",
+"definition": "Jumlah & kualitas atraksi wisata",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"obyek wisata",
+"desa wisata",
+"kepuasan"
+],
+"measure": "jumlah|nilai",
+"note": "Obyek Wisata (unggulan) per lokasi; Desa Wisata; Nilai Kepuasan Pengunjung"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Cultural Resources",
+"code": "CI-WH",
+"name": "Kedekatan situs warisan dunia",
+"definition": "Proximity to World Heritage",
+"owner": "Dinas Kebudayaan",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"obyek wisata"
+],
+"measure": null,
+"note": "Kandidat Kota Tua; belum ada situs UNESCO di DKI — perlu konfirmasi Disbud"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Cultural Resources",
+"code": "CI-TH",
+"name": "Jumlah teater",
+"definition": "Number of theaters",
+"owner": "Dinas Kebudayaan / DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"seni pertunjukan"
+],
+"measure": null,
+"note": "Proksi via venue seni pertunjukan; inventori teater perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Cultural Resources",
+"code": "CI-MU",
+"name": "Jumlah museum",
+"definition": "Number of museums",
+"owner": "Dinas Kebudayaan",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"obyek wisata"
+],
+"measure": null,
+"note": "Proksi Obyek Wisata; inventori museum resmi perlu ditambah"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Facilities for Visitors",
+"code": "CI-HR",
+"name": "Jumlah kamar hotel",
+"definition": "Number of hotel rooms",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"kamar hotel",
+"penyediaan akomodasi",
+"rekapitulasi usaha dan kamar"
+],
+"measure": "kamar|jumlah",
+"note": "Rekapitulasi Usaha & Kamar Hotel; Usaha Penyediaan Akomodasi"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Facilities for Visitors",
+"code": "CI-LH",
+"name": "Jumlah kamar hotel mewah",
+"definition": "Luxury hotel rooms",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"tingkat hunian"
+],
+"measure": "hunian|rata|persen",
+"note": "Proksi Hotel Berbintang (hunian, lama menginap); perlu segmentasi bintang 4-5"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Shopping/Dining",
+"code": "CI-SH",
+"name": "Daya tarik belanja (Shopping)",
+"definition": "Attractiveness of shopping",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"belanja",
+"pengeluaran"
+],
+"measure": "persen|nilai|rata",
+"note": "% Pengaruh Wisata Belanja; pengeluaran wisatawan"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Shopping/Dining",
+"code": "CI-DI",
+"name": "Daya tarik kuliner (Dining)",
+"definition": "Attractiveness of dining",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "ready",
+"match": [
+"kuliner",
+"makanan dan minuman",
+"pengeluaran",
+"restoran"
+],
+"measure": "persen|nilai|rata|jumlah",
+"note": "Restoran & Kafe GCI; % Pengaruh Wisata Kuliner; pengeluaran wisatawan"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Shopping/Dining",
+"code": "CI-NL",
+"name": "Pilihan hiburan malam (Nightlife)",
+"definition": "Nightlife options",
+"owner": "DISPAREKRAF",
+"dataAvailable": true,
+"draftReadiness": "partial",
+"match": [
+"malam",
+"hiburan"
+],
+"measure": "persen|jumlah",
+"note": "% Pengaruh Wisata Malam; Usaha Hiburan & Rekreasi"
+},
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE5",
+"name": "Event olahraga besar",
+"definition": "Jumlah event olahraga internasional",
+"owner": "Dispora",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD (Dispora)"
+},
+{
+"framework": "GCI",
+"dimension": "Cultural Experience",
+"group": "Cultural",
+"code": "CE6",
+"name": "Sister city",
+"definition": "Jumlah kota kembar",
+"owner": "Biro Kerja Sama Daerah",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD (Biro KSD)"
+},
+{
+"framework": "GCI",
+"dimension": "Human Capital",
+"group": "Akses",
+"code": "HC-VISA",
+"name": "Kemudahan masuk (visa/entry)",
+"definition": "Kebijakan visa on arrival / bebas visa",
+"owner": "Imigrasi (nasional)",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-instansi; relevan arus wisatawan"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Volume of Interaction",
+"code": "CI-FR",
+"name": "Jumlah penduduk asing (Foreign Residents)",
+"definition": "Jumlah ekspatriat menetap",
+"owner": "Disdukcapil / Imigrasi",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD"
+},
+{
+"framework": "GPCI",
+"dimension": "Cultural Interaction",
+"group": "Facilities for Visitors",
+"code": "CI-ST",
+"name": "Jumlah stadion",
+"definition": "Number of stadiums",
+"owner": "Dispora",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD (Dispora)"
+},
+{
+"framework": "GPCI",
+"dimension": "Accessibility",
+"group": "International",
+"code": "AC-DF",
+"name": "Kota dengan penerbangan langsung internasional",
+"definition": "Cities with direct int'l flights",
+"owner": "Dishub / AP II",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD; konektivitas wisata"
+},
+{
+"framework": "GPCI",
+"dimension": "Accessibility",
+"group": "International",
+"code": "AC-AP",
+"name": "Jumlah penumpang udara",
+"definition": "Number of air passengers",
+"owner": "AP II / Dishub",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD; proksi arus wisatawan via bandara (Dispar punya TIC Bandara)"
+},
+{
+"framework": "GPCI",
+"dimension": "Accessibility",
+"group": "International",
+"code": "AC-AR",
+"name": "Kedatangan/keberangkatan bandara",
+"definition": "Airport arrivals/departures",
+"owner": "AP II",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD"
+},
+{
+"framework": "GPCI",
+"dimension": "Accessibility",
+"group": "International",
+"code": "AC-TT",
+"name": "Waktu tempuh ke bandara",
+"definition": "Travel time to airport",
+"owner": "Dishub",
+"dataAvailable": false,
+"draftReadiness": "gap",
+"match": [],
+"measure": null,
+"note": "Lintas-OPD"
+}
+]

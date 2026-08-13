@@ -1,4 +1,14 @@
-node_modules/
-.next/
+/node_modules
+/.next/
+/out/
 next-env.d.ts
-*.log
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env
+.env*.local
+.vercel
+*.tsbuildinfo
+/drizzle
+.env*

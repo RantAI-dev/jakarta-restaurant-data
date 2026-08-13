@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  // Standalone output → slim Docker runtime image (self-host di Portainer).
   output: "standalone",
-  // @clickhouse/client dipakai di server saja.
-  serverExternalPackages: ["@clickhouse/client"],
 };
+
 export default nextConfig;

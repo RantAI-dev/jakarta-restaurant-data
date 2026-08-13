@@ -1,0 +1,58 @@
+# Stack self-host Platform Data Dispar — dijalankan sebagai Portainer Git stack.
+# DB fresh (diseed dari script lokal) → lepas dari Neon. App di-build dari Dockerfile.
+services:
+  dispar-db:
+    image: postgres:16-alpine
+    container_name: dispar-db
+    environment:
+      POSTGRES_USER: dispar
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: dispar
+    volumes:
+      - dispar_db_data:/var/lib/postgresql/data
+    ports:
+      # diekspos ke host untuk seeding awal dari mesin dev (5432 sudah dipakai wa-assistant-db)
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dispar -d dispar"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    networks: [disparnet]
+
+  dispar-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dispar-app
+    environment:
+      DATABASE_URL: postgres://dispar:${DB_PASSWORD}@dispar-db:5432/dispar
+      SYNC_SECRET: ${SYNC_SECRET}
+      NODE_ENV: production
+    ports:
+      - "13031:3000"
+    depends_on:
+      dispar-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [disparnet]
+
+  # Cloudflare Tunnel — expose app ke internet tanpa buka port di router.
+  # Pakai host network agar Service URL "localhost:13031" (di dashboard CF) valid.
+  # Token diisi via Portainer stack Env CF_TUNNEL_TOKEN (JANGAN commit tokennya).
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: dispar-cloudflared
+    command: tunnel --no-autoupdate run --token ${CF_TUNNEL_TOKEN}
+    network_mode: host
+    restart: unless-stopped
+    depends_on:
+      - dispar-app
+
+volumes:
+  dispar_db_data:
+
+networks:
+  disparnet:
+    driver: bridge

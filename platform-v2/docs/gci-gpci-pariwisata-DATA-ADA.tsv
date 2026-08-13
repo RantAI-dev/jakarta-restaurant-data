@@ -1,0 +1,20 @@
+Framework	Dimensi/Fungsi	Kelompok	Kode	Indikator	Ukuran/Definisi	Pemilik Data (OPD)	Data Dispar	Readiness	Catatan
+GCI	Cultural Experience	Cultural	CE1	Wisatawan internasional	Jumlah kedatangan wisatawan mancanegara	DISPAREKRAF	Ya	Ready	Wisman per kebangsaan; kunjungan wisman ke Indonesia (bulan/wilayah); kunjungan ke TIC & obyek wisata
+GCI	Cultural Experience	Cultural	CE2	Kuliner beragam	Jumlah & ragam usaha kuliner	DISPAREKRAF	Ya	Ready	Restoran & Kafe GCI (Atlas 2.577); Usaha Jasa Makan-Minum; Restoran per Kelurahan; Food Court
+GCI	Cultural Experience	Cultural	CE3	Seni visual & pertunjukan	Jumlah venue/penyelenggaraan seni	DISPAREKRAF	Ya	Ready	Data Seni Pertunjukan & Visual; Penyelenggaraan Event; Rekomendasi Pertunjukan Musik; Atlas Pertunjukan
+GCI	Cultural Experience	Cultural	CE4	Museum	Jumlah museum	Dinas Kebudayaan	Sebagian	Partial	Proksi via Obyek Wisata; butuh inventori museum resmi
+GCI	Business Activity	MICE	BA-MICE	Konferensi internasional (ICCA)	Jumlah konferensi/pertemuan internasional	DISPAREKRAF	Sebagian	Partial	Punya Usaha MICE berizin; jumlah konferensi internasional aktual perlu ditambah
+GPCI	Cultural Interaction	Volume of Interaction	CI-FV	Jumlah wisatawan asing (Foreign Visitors)	Jumlah pengunjung asing	DISPAREKRAF	Ya	Ready	Wisman per kebangsaan; TIC (termasuk TIC Bandara Soetta)
+GPCI	Cultural Interaction	Volume of Interaction	CI-IC	Jumlah konferensi internasional	Int'l conferences (MICE)	DISPAREKRAF	Sebagian	Partial	Usaha MICE berizin; jumlah konferensi aktual perlu ditambah
+GPCI	Cultural Interaction	Trendsetting	CI-CE	Jumlah event budaya (Cultural Events)	Jumlah event budaya besar	DISPAREKRAF	Ya	Ready	Penyelenggaraan Event Pariwisata & Budaya; Seni Pertunjukan; Pengunjung Event
+GPCI	Cultural Interaction	Trendsetting	CI-CX	Nilai ekspor konten budaya (Cultural Content Export)	Ekspor produk kreatif/budaya	DISPAREKRAF (Ekraf)	Sebagian	Partial	Proksi via Usaha Ekonomi Kreatif & Produk Ekraf ber-HKI; nilai ekspor perlu ditambah
+GPCI	Cultural Interaction	Trendsetting	CI-AM	Lingkungan pasar seni (Art Market)	Aktivitas pasar seni/galeri	DISPAREKRAF (Ekraf) / Disbud	Sebagian	Partial	Proksi via Seni Visual & Ekraf; data lelang/galeri perlu ditambah
+GPCI	Cultural Interaction	Cultural Resources	CI-TA	Daya tarik wisata (Tourist Attractions)	Jumlah & kualitas atraksi wisata	DISPAREKRAF	Ya	Ready	Obyek Wisata (unggulan) per lokasi; Desa Wisata; Nilai Kepuasan Pengunjung
+GPCI	Cultural Interaction	Cultural Resources	CI-WH	Kedekatan situs warisan dunia	Proximity to World Heritage	Dinas Kebudayaan	Sebagian	Partial	Kandidat Kota Tua; belum ada situs UNESCO di DKI — perlu konfirmasi Disbud
+GPCI	Cultural Interaction	Cultural Resources	CI-TH	Jumlah teater	Number of theaters	Dinas Kebudayaan / DISPAREKRAF	Sebagian	Partial	Proksi via venue seni pertunjukan; inventori teater perlu ditambah
+GPCI	Cultural Interaction	Cultural Resources	CI-MU	Jumlah museum	Number of museums	Dinas Kebudayaan	Sebagian	Partial	Proksi Obyek Wisata; inventori museum resmi perlu ditambah
+GPCI	Cultural Interaction	Facilities for Visitors	CI-HR	Jumlah kamar hotel	Number of hotel rooms	DISPAREKRAF	Ya	Ready	Rekapitulasi Usaha & Kamar Hotel; Usaha Penyediaan Akomodasi
+GPCI	Cultural Interaction	Facilities for Visitors	CI-LH	Jumlah kamar hotel mewah	Luxury hotel rooms	DISPAREKRAF	Sebagian	Partial	Proksi Hotel Berbintang (hunian, lama menginap); perlu segmentasi bintang 4-5
+GPCI	Cultural Interaction	Shopping/Dining	CI-SH	Daya tarik belanja (Shopping)	Attractiveness of shopping	DISPAREKRAF	Sebagian	Partial	% Pengaruh Wisata Belanja; pengeluaran wisatawan
+GPCI	Cultural Interaction	Shopping/Dining	CI-DI	Daya tarik kuliner (Dining)	Attractiveness of dining	DISPAREKRAF	Ya	Ready	Restoran & Kafe GCI; % Pengaruh Wisata Kuliner; pengeluaran wisatawan
+GPCI	Cultural Interaction	Shopping/Dining	CI-NL	Pilihan hiburan malam (Nightlife)	Nightlife options	DISPAREKRAF	Sebagian	Partial	% Pengaruh Wisata Malam; Usaha Hiburan & Rekreasi
