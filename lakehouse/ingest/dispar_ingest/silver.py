@@ -69,25 +69,37 @@ def tebak_tipe(ch, src_ref, kolom) -> tuple[str, float]:
     col = f"`{kolom}`"
     # Sampel SAMPEL baris cukup untuk deteksi tipe pada ambang 95% — jauh lebih
     # cepat daripada men-scan Parquet penuh dari object storage per kolom.
+    # tgl_struktural = tanggal yang PUNYA struktur tanggal: ada pemisah (-,/),
+    # YYYYMM 6-digit, atau nama bulan. Tahun polos 4-digit ("2026") TIDAK masuk
+    # sini — ia ambigu (valid angka & tanggal) tapi lebih berguna sebagai angka
+    # (mis. kolom `tahun`). Kalau dijadikan Date, "2026"→2026-01-01 merusak
+    # logika yearOf di halaman.
     q = f"""
         SELECT
             countIf(bersih_teks({col}) IS NOT NULL) AS non_kosong,
             countIf(angka_id({col}) IS NOT NULL) AS bisa_angka,
-            countIf(tanggal_id({col}) IS NOT NULL) AS bisa_tanggal
+            countIf(tanggal_id({col}) IS NOT NULL) AS bisa_tanggal,
+            countIf(tanggal_id({col}) IS NOT NULL AND (
+                match(bersih_teks({col}), '[-/]')
+                OR match(bersih_teks({col}), '^(19|20)[0-9]{{2}}(0[1-9]|1[0-2])$')
+                OR match(lower(bersih_teks({col})),
+                    'januari|februari|pebruari|maret|april|mei|juni|juli|agustus|september|oktober|november|nopember|desember')
+            )) AS tgl_struktural
         FROM (SELECT {col} FROM {src_ref} LIMIT {SAMPEL})
     """
-    non_kosong, bisa_angka, bisa_tanggal = ch.query(q).result_rows[0]
+    non_kosong, bisa_angka, bisa_tanggal, tgl_struktural = ch.query(q).result_rows[0]
     if not non_kosong:
         return "teks", 0.0
     r_angka = bisa_angka / non_kosong
     r_tanggal = bisa_tanggal / non_kosong
-    # Tanggal diutamakan bila keduanya lolos (tahun murni "2026" lolos keduanya,
-    # tapi kolom periode lebih berguna sebagai tanggal). Namun kalau rasio angka
-    # jelas lebih tinggi, pilih angka.
-    if r_tanggal >= AMBANG_TIPE and r_tanggal >= r_angka:
+    r_struktural = tgl_struktural / non_kosong
+    # Tanggal menang hanya bila strukturnya tanggal; kalau tidak, angka dulu.
+    if r_struktural >= AMBANG_TIPE:
         return "tanggal", r_tanggal
     if r_angka >= AMBANG_TIPE:
         return "angka", r_angka
+    if r_tanggal >= AMBANG_TIPE:
+        return "tanggal", r_tanggal
     return "teks", max(r_angka, r_tanggal)
 
 
