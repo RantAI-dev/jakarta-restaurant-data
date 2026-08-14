@@ -11,6 +11,7 @@ ketergantungan antar-aset menghasilkan lineage otomatis di UI Dagster.
 from __future__ import annotations
 
 from dagster import (
+    DefaultScheduleStatus,
     Definitions,
     ScheduleDefinition,
     asset,
@@ -68,7 +69,14 @@ def gold_iceberg(context) -> None:
 refresh_job = define_asset_job("refresh_lakehouse", selection="*")
 
 # Refresh harian 02:00 — data SDI bulanan, jadi tak perlu lebih sering.
-daily = ScheduleDefinition(job=refresh_job, cron_schedule="0 2 * * *")
+# Penarikan SDI + rebuild lakehouse otomatis tiap hari 02:00. default_status
+# RUNNING = jadwal langsung aktif tanpa perlu dinyalakan manual di UI.
+# Inilah satu-satunya yang menyentuh API SDI (di belakang, bukan dari app).
+daily = ScheduleDefinition(
+    job=refresh_job,
+    cron_schedule="0 2 * * *",
+    default_status=DefaultScheduleStatus.RUNNING,
+)
 
 defs = Definitions(
     assets=[bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto, curated_gold, gold_iceberg],

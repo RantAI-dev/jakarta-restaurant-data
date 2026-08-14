@@ -1,10 +1,9 @@
-import { fetchSdiDetail } from "@/lib/sdi-fetch";
 import * as store from "@/lib/ch/store";
 import * as XLSX from "xlsx";
 
 // Export SELURUH baris satu dataset (tanpa paginasi) sebagai CSV atau XLSX.
 //   /api/sdi/<slug>/export?format=csv|xlsx
-// Baca dari lakehouse dulu; kalau belum ada, fallback fetch live SDI.
+// SUMBER TUNGGAL: lakehouse. App tidak memanggil API SDI.
 export const dynamic = "force-dynamic";
 export const maxDuration = 120;
 
@@ -29,18 +28,12 @@ export async function GET(
     /* jatuh ke live */
   }
 
-  // 2) Fallback: live SDI (primer belum tersync).
+  // Tidak ada fallback ke API SDI — kalau lakehouse belum punya, 404.
   if (!columns.length) {
-    try {
-      const d = await fetchSdiDetail(slug);
-      columns = d.columns.map((c) => c.key);
-      rows = d.rows as Record<string, unknown>[];
-    } catch (e) {
-      return new Response(
-        JSON.stringify({ error: "Dataset tidak ditemukan / gagal diambil", detail: String(e) }),
-        { status: 404, headers: { "Content-Type": "application/json" } }
-      );
-    }
+    return new Response(
+      JSON.stringify({ error: "Dataset belum tersedia di lakehouse" }),
+      { status: 404, headers: { "Content-Type": "application/json" } },
+    );
   }
 
   const cell = (r: Record<string, unknown>, k: string) => {

@@ -57,11 +57,11 @@ function buildCatalog(sdi: SdiDataset[]): CatalogRow[] {
 }
 
 export default function SdiPage() {
+  // Seed statis lokal hanya sebagai placeholder awal; segera ditimpa oleh
+  // katalog dari database lakehouse (/api/sdi). App tidak menarik dari API SDI.
   const [rows, setRows] = useState<SdiDataset[]>(SDI_DATASETS);
   const [q, setQ] = useState("");
   const [tier, setTier] = useState<"all" | Tier>("all");
-  const [source, setSource] = useState<"snapshot" | "live">("snapshot");
-  const [refreshing, setRefreshing] = useState(false);
 
   const catalog = useMemo(() => buildCatalog(rows), [rows]);
 
@@ -70,10 +70,7 @@ export default function SdiPage() {
     fetch("/api/sdi")
       .then((r) => r.json())
       .then((json) => {
-        if (alive && json.datasets?.length) {
-          setRows(json.datasets);
-          setSource(json.source === "live" ? "live" : "snapshot");
-        }
+        if (alive && json.datasets?.length) setRows(json.datasets);
       })
       .catch(() => {});
     return () => {
@@ -97,22 +94,6 @@ export default function SdiPage() {
 
   const stats = useMemo(() => sdiStats(rows), [rows]);
   const secondaryCount = secondaryDatasets().length;
-
-  async function refresh() {
-    setRefreshing(true);
-    try {
-      const res = await fetch("/api/sdi?live=1");
-      const json = await res.json();
-      if (json.datasets?.length) {
-        setRows(json.datasets);
-        setSource(json.source === "live" ? "live" : "snapshot");
-      }
-    } catch {
-      /* keep current rows */
-    } finally {
-      setRefreshing(false);
-    }
-  }
 
   return (
     <main className="min-h-screen bg-[#faf6f2]">
@@ -194,21 +175,11 @@ export default function SdiPage() {
             </span>
             <span
               className="text-[11px] font-medium px-2 py-1 rounded-full whitespace-nowrap"
-              style={{
-                background: source === "live" ? "#e8f5ee" : "#eef2f9",
-                color: source === "live" ? GREEN : NAVY,
-              }}
+              style={{ background: "#eef2f9", color: NAVY }}
+              title="Katalog dibaca dari database lakehouse; penarikan SDI dilakukan pipeline terjadwal."
             >
-              {source === "live" ? "● LIVE SDI" : "○ SNAPSHOT"}
+              ◆ LAKEHOUSE
             </span>
-            <button
-              onClick={refresh}
-              disabled={refreshing}
-              style={{ background: NAVY }}
-              className="text-white text-[13px] font-medium px-4 py-2.5 rounded-lg hover:opacity-90 disabled:opacity-60 transition-opacity whitespace-nowrap"
-            >
-              {refreshing ? "Menarik data…" : "↻ Refresh SDI"}
-            </button>
           </div>
         </div>
       </div>

@@ -22,5 +22,7 @@ ENV SQL_DIR=/app/sql
 RUN mkdir -p /opt/dagster
 
 EXPOSE 3030
-CMD ["dagster-webserver", "-h", "0.0.0.0", "-p", "3030", \
+# `dagster dev` menjalankan webserver + DAEMON (yang mengeksekusi jadwal).
+# webserver saja tak menjalankan jadwal harian.
+CMD ["dagster", "dev", "-h", "0.0.0.0", "-p", "3030", \
      "-m", "dispar_orchestrate.definitions"]
