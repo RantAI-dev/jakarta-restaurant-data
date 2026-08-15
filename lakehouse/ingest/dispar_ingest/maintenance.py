@@ -32,19 +32,13 @@ def run_maintenance(retensi_hari: int = RETENSI_HARI) -> dict:
             hasil["tabel"] += 1
             name = ".".join(ident)
             try:
+                from datetime import datetime, timedelta, timezone
                 tbl = catalog.load_table(ident)
                 before = len(list(tbl.snapshots()))
-                # pyiceberg: expire_snapshots menyimpan snapshot terbaru.
-                exp = tbl.expire_snapshots()
-                # API bervariasi antar versi; coba yang tersedia.
-                if hasattr(exp, "expire_snapshots_older_than_days"):
-                    exp.expire_snapshots_older_than_days(retensi_hari).commit()
-                elif hasattr(exp, "expire_older_than"):
-                    import time
-                    ms = int((time.time() - retensi_hari * 86400) * 1000)  # noqa: DTZ — epoch relatif OK
-                    exp.expire_older_than(ms).commit()
-                else:
-                    exp.commit()
+                # pyiceberg 0.11: expire_snapshots().older_than(dt).commit().
+                # older_than butuh datetime ber-tz; snapshot terbaru dipertahankan.
+                cutoff = datetime.now(timezone.utc) - timedelta(days=retensi_hari)
+                tbl.maintenance.expire_snapshots().older_than(cutoff).commit()
                 after = len(list(catalog.load_table(ident).snapshots()))
                 diff = max(0, before - after)
                 hasil["snapshot_diexpire"] += diff
