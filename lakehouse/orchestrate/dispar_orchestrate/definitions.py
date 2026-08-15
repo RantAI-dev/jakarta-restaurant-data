@@ -11,16 +11,21 @@ ketergantungan antar-aset menghasilkan lineage otomatis di UI Dagster.
 from __future__ import annotations
 
 from dagster import (
+    DagsterRunStatus,
     DefaultScheduleStatus,
+    DefaultSensorStatus,
     Definitions,
+    RunStatusSensorContext,
     ScheduleDefinition,
     asset,
     define_asset_job,
+    run_status_sensor,
 )
 
 from dispar_ingest import refresh
 from dispar_ingest.run_bronze import ingest_files, ingest_sdi
 from dispar_ingest.silver import generate_silver
+from dispar_ingest.notify import notify
 
 
 @asset(group_name="bronze", description="Tarik 183 dataset SDI ke Iceberg (all-string + audit)")
@@ -53,7 +58,21 @@ def silver_auto(context) -> None:
     generate_silver()
 
 
-@asset(group_name="gold", deps=[silver_auto],
+@asset(group_name="silver", deps=[silver_auto],
+       description="Gate kualitas: karantina baris gagal-konversi + deteksi anomali (row drop/null)")
+def quality_gate(context) -> None:
+    from dispar_ingest.quality import run_quality
+    r = run_quality(fail_on_error=True)
+    context.add_output_metadata({
+        "pass": r["pass"], "warn": r["warn"], "fail": r["fail"],
+        "karantina_baris": r["karantina_baris"],
+    })
+    if r["fails"]:
+        # Alert tapi jangan blokir Gold total — data lama tetap tersaji.
+        notify("Quality gate menemukan masalah: " + "; ".join(r["fails"][:5]), "warn")
+
+
+@asset(group_name="gold", deps=[quality_gate],
        description="Silver kurasi (wisman/restoran/dtw/event) + mart Gold MergeTree")
 def curated_gold(context) -> None:
     context.log.info(refresh.apply_curated_gold())
@@ -66,20 +85,64 @@ def gold_iceberg(context) -> None:
     context.log.info(str(publish_marts()))
 
 
-refresh_job = define_asset_job("refresh_lakehouse", selection="*")
+# ── Aset operasional base lakehouse (backup, maintenance) ──────────────────
+@asset(group_name="ops", description="Backup inkremental bucket Iceberg ke storage backup (S3→S3)")
+def backup_lake(context) -> None:
+    from dispar_ingest.backup import run_backup
+    # partisi tanggal via env/run; Dagster tak izinkan Date.now() di aset murni,
+    # jadi pakai run_id sebagai penanda unik + tanggal dari partition kalau ada.
+    tanggal = context.run.tags.get("dagster/schedule_name", "adhoc")
+    stamp = context.run_id[:8]
+    r = run_backup(f"{tanggal}-{stamp}")
+    context.add_output_metadata({"objek_disalin": r["objek_disalin"], "offsite": r["offsite"]})
+    if not r["offsite"]:
+        notify("Backup jalan tapi BELUM offsite (set BACKUP_S3_ENDPOINT untuk proteksi disk mati).", "warn")
 
-# Refresh harian 02:00 — data SDI bulanan, jadi tak perlu lebih sering.
-# Penarikan SDI + rebuild lakehouse otomatis tiap hari 02:00. default_status
-# RUNNING = jadwal langsung aktif tanpa perlu dinyalakan manual di UI.
-# Inilah satu-satunya yang menyentuh API SDI (di belakang, bukan dari app).
+
+@asset(group_name="ops", description="Expire snapshot Iceberg lama (anti-bloat metadata/storage)")
+def iceberg_maintenance(context) -> None:
+    from dispar_ingest.maintenance import run_maintenance
+    r = run_maintenance()
+    context.add_output_metadata({"snapshot_diexpire": r["snapshot_diexpire"], "tabel": r["tabel"]})
+
+
+refresh_job = define_asset_job(
+    "refresh_lakehouse",
+    selection=[bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto, quality_gate, curated_gold, gold_iceberg],
+)
+ops_job = define_asset_job("ops_backup_maintenance", selection=[backup_lake, iceberg_maintenance])
+
+# Refresh harian 02:00 — penarikan SDI + rebuild lakehouse (satu-satunya yang
+# menyentuh API SDI, di belakang). default_status RUNNING = aktif otomatis.
 daily = ScheduleDefinition(
     job=refresh_job,
     cron_schedule="0 2 * * *",
     default_status=DefaultScheduleStatus.RUNNING,
 )
+# Backup + maintenance harian 04:00 (setelah refresh selesai).
+ops_daily = ScheduleDefinition(
+    job=ops_job,
+    cron_schedule="0 4 * * *",
+    default_status=DefaultScheduleStatus.RUNNING,
+)
+
+
+# ── Alerting: kirim webhook saat run gagal ─────────────────────────────────
+@run_status_sensor(
+    run_status=DagsterRunStatus.FAILURE,
+    default_status=DefaultSensorStatus.RUNNING,
+)
+def alert_on_failure(context: RunStatusSensorContext) -> None:
+    job = context.dagster_run.job_name
+    notify(f"Pipeline GAGAL: job '{job}' (run {context.dagster_run.run_id[:8]}). Cek Dagster UI.", "error")
+
 
 defs = Definitions(
-    assets=[bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto, curated_gold, gold_iceberg],
-    jobs=[refresh_job],
-    schedules=[daily],
+    assets=[
+        bronze_sdi, bronze_files, lake_db, functions_dim, silver_auto,
+        quality_gate, curated_gold, gold_iceberg, backup_lake, iceberg_maintenance,
+    ],
+    jobs=[refresh_job, ops_job],
+    schedules=[daily, ops_daily],
+    sensors=[alert_on_failure],
 )

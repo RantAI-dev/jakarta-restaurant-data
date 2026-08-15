@@ -60,6 +60,30 @@ cd transform && uv run --with clickhouse-connect python generate_silver.py   # 1
 `./scripts/apply-sql.sh` idempoten (semua `CREATE OR REPLACE`). Untuk refresh
 penuh: ulang ingest Bronze → `apply-sql.sh` → `generate_silver.py`.
 
+## Operasional base (backup, quality, maintenance, alert)
+
+Aset Dagster grup `ops` + gate kualitas di alur utama. Semua bisa dijalankan
+manual lewat image ingest juga.
+
+**Backup** (`dispar_ingest.backup`) — mirror inkremental bucket Iceberg (S3→S3).
+Default ke bucket `lakehouse-backup` di RustFS yang sama (proteksi salah-hapus).
+Untuk **proteksi disk/host mati**, set `BACKUP_S3_ENDPOINT/KEY/SECRET` ke object
+storage lain. Restore: `python -m dispar_ingest.backup restore <tgl> [bucket]`.
+Jadwal: aset `backup_lake`, harian 04:00.
+
+**Quality gate + karantina** (`dispar_ingest.quality`) — aset `quality_gate`
+(antara Silver & Gold): karantina baris gagal-konversi → `_silver_meta.karantina`,
+deteksi anomali (row-count anjlok >50%, null-rate kolom terpromosi >5%) →
+`_silver_meta.quality`. Manual gate: `python -m dispar_ingest.quality --gate`.
+
+**Iceberg maintenance** (`dispar_ingest.maintenance`) — expire snapshot lama
+(retensi default 7 hari, `ICEBERG_RETENTION_DAYS`) supaya metadata/storage tak
+menggembung. Jadwal: aset `iceberg_maintenance`, harian 04:00.
+
+**Alerting** (`dispar_ingest.notify`) — sensor Dagster `alert_on_failure` kirim
+webhook saat run gagal; `quality_gate` juga alert saat menemukan masalah. Set
+`ALERT_WEBHOOK_URL` (Slack/Discord/generic). Kosong = hanya log.
+
 ## Catatan penting
 
 - **ClickHouse 26.7 hanya BISA MEMBACA** tabel Iceberg dari katalog REST dan

@@ -179,6 +179,19 @@ services:
       S3_SECRET_KEY: ${S3_SECRET_KEY:-disparlakesecret}
       SQL_DIR: /repo/lakehouse/clickhouse/sql
       TENANT: ${TENANT:-dispar-dki}
+      # Iceberg catalog + S3 endpoint (untuk backup & maintenance dari aset ops).
+      ICEBERG_CATALOG_URI: http://lake-catalog:8181/catalog
+      ICEBERG_WAREHOUSE: dispar
+      S3_ENDPOINT: http://lake-rustfs:9000
+      S3_REGION: local-01
+      # Backup: default ke bucket lokal. Untuk PROTEKSI DISK MATI, isi
+      # BACKUP_S3_* ke object storage lain (server/region beda).
+      BACKUP_BUCKET: ${BACKUP_BUCKET:-lakehouse-backup}
+      BACKUP_S3_ENDPOINT: ${BACKUP_S3_ENDPOINT:-}
+      BACKUP_S3_ACCESS_KEY: ${BACKUP_S3_ACCESS_KEY:-}
+      BACKUP_S3_SECRET_KEY: ${BACKUP_S3_SECRET_KEY:-}
+      # Alerting: webhook Slack/Discord/generic (kosong = hanya log).
+      ALERT_WEBHOOK_URL: ${ALERT_WEBHOOK_URL:-}
     volumes:
       - ../:/repo:ro
       - lake_dagster:/opt/dagster
