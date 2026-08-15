@@ -61,12 +61,17 @@ def _silver_tables(ch) -> list[str]:
     return [r[0] for r in ch.query("SHOW TABLES FROM silver").result_rows]
 
 
+def _esc(s: str) -> str:
+    return s.replace("'", "''")
+
+
 def _promoted_cols(ch, tabel: str) -> list[tuple[str, str]]:
-    """Kolom yang dipromosikan ke angka/tanggal (dari audit _silver_meta)."""
+    """Kolom yang dipromosikan ke angka/tanggal (dari audit _silver_meta).
+    Nama tabel dari SHOW TABLES (terkendali) → inline aman, hindari binding
+    clickhouse-connect yang rewel dengan named param."""
     rows = ch.query(
-        "SELECT kolom, tipe FROM _silver_meta.kolom_tipe "
-        "WHERE tabel=%(t)s AND dipromosikan=1",
-        parameters={"t": tabel},
+        f"SELECT kolom, tipe FROM _silver_meta.kolom_tipe "
+        f"WHERE tabel='{_esc(tabel)}' AND dipromosikan=1"
     ).result_rows
     return [(r[0], r[1]) for r in rows]
 
@@ -98,10 +103,7 @@ def run_quality(fail_on_error: bool = False) -> dict:
         if n == 0:
             _record(ch, tabel, "row_count", 0, "warn", "tabel kosong")
             hasil["warn"] += 1
-            ch.command(
-                "INSERT INTO _silver_meta.rowcount_history (tabel, baris) VALUES",
-                [[tabel, 0]],
-            )
+            ch.insert("_silver_meta.rowcount_history", [[tabel, 0]], column_names=["tabel", "baris"])
             continue
 
         # Cek 2: anjlok drastis vs run sebelumnya.
@@ -124,9 +126,10 @@ def run_quality(fail_on_error: bool = False) -> dict:
             rate = nulls / n if n else 0
             if rate > 0.05:  # >5% kolom terpromosi jadi NULL = gagal konversi nyata
                 contoh = _contoh_gagal(ch, tabel, kol)
-                ch.command(
-                    "INSERT INTO _silver_meta.karantina (tabel, alasan, contoh, jumlah) VALUES",
-                    [[tabel, f"{kol} ({tipe}) gagal konversi", contoh, nulls]],
+                ch.insert(
+                    "_silver_meta.karantina",
+                    [[tabel, f"{kol} ({tipe}) gagal konversi", contoh, int(nulls)]],
+                    column_names=["tabel", "alasan", "contoh", "jumlah"],
                 )
                 hasil["karantina_baris"] += nulls
                 _record(ch, tabel, f"null_rate:{kol}", round(rate, 4),
@@ -135,10 +138,7 @@ def run_quality(fail_on_error: bool = False) -> dict:
                 if rate >= 0.5:
                     hasil["fails"].append(f"{tabel}.{kol}: {rate:.0%} gagal konversi")
 
-        ch.command(
-            "INSERT INTO _silver_meta.rowcount_history (tabel, baris) VALUES",
-            [[tabel, int(n)]],
-        )
+        ch.insert("_silver_meta.rowcount_history", [[tabel, int(n)]], column_names=["tabel", "baris"])
 
     # Rekap verdict per tabel dari cek yang baru ditulis.
     verd = ch.query(
@@ -157,18 +157,19 @@ def run_quality(fail_on_error: bool = False) -> dict:
 
 
 def _record(ch, tabel, cek, nilai, verdict, detail) -> None:
-    ch.command(
-        "INSERT INTO _silver_meta.quality (tabel, cek, nilai, verdict, detail) VALUES",
+    ch.insert(
+        "_silver_meta.quality",
         [[tabel, cek, float(nilai), verdict, detail]],
+        column_names=["tabel", "cek", "nilai", "verdict", "detail"],
     )
 
 
 def _contoh_gagal(ch, tabel, kol) -> str:
     try:
         rows = ch.query(
-            f"SELECT DISTINCT `{kol}` FROM silver.`{tabel}` WHERE `{kol}` IS NULL LIMIT 1"
+            f"SELECT count() FROM silver.`{tabel}` WHERE `{kol}` IS NULL LIMIT 1"
         ).result_rows
-        return "NULL (nilai asli hilang saat konversi)" if rows else ""
+        return "NULL (nilai asli hilang saat konversi)" if rows and rows[0][0] else ""
     except Exception:  # noqa: BLE001
         return ""
 

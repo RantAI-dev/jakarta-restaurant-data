@@ -1,17 +1,18 @@
-"""Backup lakehouse — mirror bucket RustFS + dump metadata.
+"""Backup & restore lakehouse — mirror bucket RustFS (Iceberg) via s3fs.
 
 Base lakehouse tanpa backup = satu disk mati, semua Bronze hilang (dan Bronze
 sumber rekonstruksi seluruh lapisan). Modul ini menyalin SELURUH objek bucket
 lake (Iceberg Parquet + metadata) ke bucket backup terpisah lewat S3 API —
-inkremental (hanya objek baru/berubah), jadi murah dijalankan harian.
+inkremental (hanya objek baru/berubah), murah dijalankan harian.
 
-Target backup:
-  - default: bucket `lakehouse-backup/<TANGGAL>` di RustFS yang sama (proteksi
-    dari kesalahan hapus/overwrite tabel; TIDAK melindungi dari disk mati).
+Memakai **s3fs** (sudah ada via pyiceberg[s3fs]) — TIDAK menambah dependency
+(boto3 bikin pip resolution-too-deep di dep tree dlt+pyiceberg).
+
+Target:
+  - default: bucket `lakehouse-backup` di RustFS yang sama (proteksi salah-hapus;
+    TIDAK melindungi dari disk mati).
   - offsite: set BACKUP_S3_ENDPOINT/KEY/SECRET ke object storage lain
     (server/region beda) → proteksi disk/host mati. Inilah yang dianjurkan.
-
-Dipakai: `python -m dispar_ingest.backup [TANGGAL]`, atau aset Dagster harian.
 """
 
 from __future__ import annotations
@@ -20,27 +21,24 @@ import json
 import os
 import sys
 
-import boto3
-import botocore
+import s3fs
 
 
-def _client(endpoint: str, key: str, secret: str):
-    return boto3.client(
-        "s3",
-        endpoint_url=endpoint,
-        aws_access_key_id=key,
-        aws_secret_access_key=secret,
-        region_name=os.environ.get("S3_REGION", "local-01"),
-        config=botocore.client.Config(s3={"addressing_style": "path"}),
+def _fs(endpoint: str, key: str, secret: str) -> s3fs.S3FileSystem:
+    return s3fs.S3FileSystem(
+        key=key,
+        secret=secret,
+        client_kwargs={"endpoint_url": endpoint, "region_name": os.environ.get("S3_REGION", "local-01")},
+        config_kwargs={"s3": {"addressing_style": "path"}},
     )
 
 
-def _ensure_bucket(cli, bucket: str) -> None:
+def _ensure_bucket(fs: s3fs.S3FileSystem, bucket: str) -> None:
     try:
-        cli.create_bucket(Bucket=bucket)
-    except botocore.exceptions.ClientError as e:
-        if e.response["Error"]["Code"] not in ("BucketAlreadyExists", "BucketAlreadyOwnedByYou"):
-            raise
+        if not fs.exists(bucket):
+            fs.mkdir(bucket)
+    except Exception:  # noqa: BLE001 — mkdir bisa gagal kalau sudah ada (race), abaikan
+        pass
 
 
 def run_backup(tanggal: str) -> dict:
@@ -49,54 +47,48 @@ def run_backup(tanggal: str) -> dict:
     src_secret = os.environ.get("S3_SECRET_KEY", "disparlakesecret")
     src_bucket = os.environ.get("LAKE_BUCKET", "lakehouse")
 
-    # Target: offsite bila di-set, kalau tidak ke bucket backup lokal.
-    dst_endpoint = os.environ.get("BACKUP_S3_ENDPOINT", src_endpoint)
-    dst_key = os.environ.get("BACKUP_S3_ACCESS_KEY", src_key)
-    dst_secret = os.environ.get("BACKUP_S3_SECRET_KEY", src_secret)
+    dst_endpoint = os.environ.get("BACKUP_S3_ENDPOINT") or src_endpoint
+    dst_key = os.environ.get("BACKUP_S3_ACCESS_KEY") or src_key
+    dst_secret = os.environ.get("BACKUP_S3_SECRET_KEY") or src_secret
     dst_bucket = os.environ.get("BACKUP_BUCKET", "lakehouse-backup")
 
-    offsite = dst_endpoint != src_endpoint
-    src = _client(src_endpoint, src_key, src_secret)
-    dst = _client(dst_endpoint, dst_key, dst_secret)
+    offsite = (os.environ.get("BACKUP_S3_ENDPOINT") or "") not in ("", src_endpoint)
+    src = _fs(src_endpoint, src_key, src_secret)
+    dst = _fs(dst_endpoint, dst_key, dst_secret)
     _ensure_bucket(dst, dst_bucket)
 
-    prefix = f"{tanggal}/"
-    # Indeks objek tujuan yang sudah ada (inkremental berdasar size+etag).
+    prefix = f"{dst_bucket}/{tanggal}"
+    # Indeks size objek tujuan (inkremental).
     existing: dict[str, int] = {}
-    paginator = dst.get_paginator("list_objects_v2")
-    for page in paginator.paginate(Bucket=dst_bucket, Prefix=prefix):
-        for o in page.get("Contents", []):
-            existing[o["Key"]] = o["Size"]
+    try:
+        for info in dst.find(prefix, detail=True).values():
+            existing[info["Key"] if "Key" in info else info["name"]] = info.get("size", -1)
+    except Exception:  # noqa: BLE001
+        existing = {}
 
-    disalin = 0
-    dilewati = 0
-    total_bytes = 0
-    for page in src.get_paginator("list_objects_v2").paginate(Bucket=src_bucket):
-        for o in page.get("Contents", []):
-            key = o["Key"]
-            dst_key_path = f"{prefix}{key}"
-            if existing.get(dst_key_path) == o["Size"]:
-                dilewati += 1
-                continue
-            body = src.get_object(Bucket=src_bucket, Key=key)["Body"].read()
-            dst.put_object(Bucket=dst_bucket, Key=dst_key_path, Body=body)
-            disalin += 1
-            total_bytes += o["Size"]
+    disalin = dilewati = total_bytes = 0
+    for info in src.find(src_bucket, detail=True).values():
+        key = info["name"]  # "lakehouse/dispar-dki/bronze_sdi/..."
+        rel = key[len(src_bucket) + 1:]
+        dst_path = f"{prefix}/{rel}"
+        size = info.get("size", -1)
+        if existing.get(dst_path) == size and size >= 0:
+            dilewati += 1
+            continue
+        data = src.cat_file(key)
+        dst.pipe_file(dst_path, data)
+        disalin += 1
+        total_bytes += len(data)
 
     laporan = {
         "tanggal": tanggal,
         "offsite": offsite,
-        "dst": f"{dst_endpoint}/{dst_bucket}/{prefix}",
+        "dst": f"{dst_endpoint}/{prefix}",
         "objek_disalin": disalin,
         "objek_dilewati_sama": dilewati,
         "bytes_disalin": total_bytes,
     }
-    # Tulis manifest backup ke tujuan (bukti + untuk verifikasi restore).
-    dst.put_object(
-        Bucket=dst_bucket,
-        Key=f"{prefix}_manifest.json",
-        Body=json.dumps(laporan, ensure_ascii=False).encode(),
-    )
+    dst.pipe_file(f"{prefix}/_manifest.json", json.dumps(laporan, ensure_ascii=False).encode())
     print(json.dumps(laporan, indent=2, ensure_ascii=False), flush=True)
     if not offsite:
         print(
@@ -109,9 +101,7 @@ def run_backup(tanggal: str) -> dict:
 
 def run_restore(tanggal: str, target_bucket: str | None = None) -> dict:
     """Pulihkan objek dari backup <tanggal> ke bucket lake (atau target lain).
-
-    Restore adalah bagian tak-terpisah dari backup: backup yang tak pernah diuji
-    restore-nya tidak bisa diandalkan. Jalankan ke bucket uji untuk verifikasi.
+    Backup tak teruji restore = tak bisa diandalkan; jalankan ke bucket uji dulu.
     """
     dst_endpoint = os.environ.get("BACKUP_S3_ENDPOINT") or os.environ.get("S3_ENDPOINT", "http://lake-rustfs:9000")
     dst_key = os.environ.get("BACKUP_S3_ACCESS_KEY") or os.environ.get("S3_ACCESS_KEY", "disparlake")
@@ -123,32 +113,28 @@ def run_restore(tanggal: str, target_bucket: str | None = None) -> dict:
     lake_secret = os.environ.get("S3_SECRET_KEY", "disparlakesecret")
     into = target_bucket or os.environ.get("RESTORE_BUCKET", "lakehouse")
 
-    bk = _client(dst_endpoint, dst_key, dst_secret)
-    lake = _client(lake_endpoint, lake_key, lake_secret)
+    bk = _fs(dst_endpoint, dst_key, dst_secret)
+    lake = _fs(lake_endpoint, lake_key, lake_secret)
     _ensure_bucket(lake, into)
 
-    prefix = f"{tanggal}/"
+    prefix = f"{dst_bucket}/{tanggal}"
     dipulihkan = 0
-    for page in bk.get_paginator("list_objects_v2").paginate(Bucket=dst_bucket, Prefix=prefix):
-        for o in page.get("Contents", []):
-            key = o["Key"]
-            if key.endswith("_manifest.json"):
-                continue
-            orig = key[len(prefix):]
-            body = bk.get_object(Bucket=dst_bucket, Key=key)["Body"].read()
-            lake.put_object(Bucket=into, Key=orig, Body=body)
-            dipulihkan += 1
+    for info in bk.find(prefix, detail=True).values():
+        key = info["name"]
+        if key.endswith("_manifest.json"):
+            continue
+        rel = key[len(prefix) + 1:]
+        lake.pipe_file(f"{into}/{rel}", bk.cat_file(key))
+        dipulihkan += 1
     laporan = {"tanggal": tanggal, "ke_bucket": into, "objek_dipulihkan": dipulihkan}
     print(json.dumps(laporan, indent=2, ensure_ascii=False), flush=True)
     return laporan
 
 
 if __name__ == "__main__":
-    # backup <tgl> | restore <tgl> [target_bucket]
     if len(sys.argv) > 1 and sys.argv[1] == "restore":
         run_restore(sys.argv[2] if len(sys.argv) > 2 else "manual",
                     sys.argv[3] if len(sys.argv) > 3 else None)
     else:
-        tgl = sys.argv[1] if len(sys.argv) > 1 else "manual"
-        run_backup(tgl)
+        run_backup(sys.argv[1] if len(sys.argv) > 1 else "manual")
     sys.exit(0)
