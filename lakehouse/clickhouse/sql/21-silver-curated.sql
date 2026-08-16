@@ -13,7 +13,7 @@ SELECT
     bersih_teks(jenis_usaha)       AS jenis_usaha,
     bersih_teks(badan_usaha)       AS badan_usaha,
     angka_id(kapasitas)            AS kapasitas,
-    toYear(periode_data)           AS tahun
+    tahun_dari(periode_data)           AS tahun
 FROM silver.data_usaha_jasa_makanan_dan_minuman_jenis_usaha_restoran_di_dki_jakarta r
 LEFT JOIN silver.dim_wilayah w ON w.match_key = kunci_cocok(r.wilayah);
 
@@ -38,6 +38,6 @@ SELECT
     bersih_teks(nama_event)  AS nama_event,
     bersih_teks(tempat)      AS tempat,
     periode_data             AS tanggal,
-    toYear(periode_data)     AS tahun
+    tahun_dari(periode_data)     AS tahun
 FROM silver.data_event_pariwisata_dan_kebudayaan_dki_jakarta_2011_2019
 WHERE bersih_teks(nama_event) IS NOT NULL;

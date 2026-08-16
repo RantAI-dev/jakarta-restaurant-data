@@ -12,7 +12,7 @@ WITH src AS (
         kebangsaan AS kebangsaan_asli,
         bulan      AS bulan_asli,
         wisman     AS jumlah,
-        toYear(periode_data) AS tahun,
+        tahun_dari(periode_data) AS tahun,
         kunci_cocok(kebangsaan) AS k_negara,
         kunci_cocok(bulan)      AS k_bulan
     FROM silver.data_jumlah_kunjungan_dan_ranking_wisatawan_mancanegara_ke_provinsi_dki_jakarta_melalui_pintu_soekarno_hatta_berdasarkan_kebangsaan

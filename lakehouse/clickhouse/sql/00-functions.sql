@@ -80,6 +80,12 @@ CREATE OR REPLACE FUNCTION tanggal_id AS (s) ->
     hari_ditulis(s) > 0 AND toDayOfMonth(tanggal_id_raw(s)) != hari_ditulis(s), NULL,
     tanggal_id_raw(s));
 
+-- Ekstrak TAHUN dari periode_data yang tipenya bisa berbeda antar tabel:
+-- Date ('2026-04-01'), tahun-polos (Float64 2014, hasil auto-typer), atau
+-- YYYYMM. toString → tanggal_id menormalkan semuanya jadi Date, lalu toYear.
+-- Menghindari 'Illegal type Float64 of toYear' saat periode_data berupa angka.
+CREATE OR REPLACE FUNCTION tahun_dari AS (x) -> toYear(tanggal_id(toString(x)));
+
 -- Normalisasi teks untuk pencocokan dimensi: huruf kecil, tanpa tanda baca,
 -- spasi tunggal. Dipakai menjodohkan nama negara/pintu masuk yang ejaannya kacau.
 CREATE OR REPLACE FUNCTION kunci_cocok AS (s) ->
