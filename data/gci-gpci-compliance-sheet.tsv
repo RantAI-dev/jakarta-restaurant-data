@@ -1,0 +1,53 @@
+Framework	Dimensi/Fungsi	Bobot	Kode	Indikator	Ukuran/Definisi	Pemilik Data (OPD)	Data Dispar	Readiness	Catatan
+GCI	Business Activity	30%	BA1	Kantor pusat Fortune Global 500	Jumlah HQ perusahaan global	Bappeda / DPMPTSP	Tidak	Lintas-OPD	
+GCI	Business Activity	30%	BA2	Top global service firms	Kantor firma jasa global (hukum/akuntansi/konsultan)	Bappeda / DPMPTSP	Tidak	Lintas-OPD	
+GCI	Business Activity	30%	BA3	Pasar modal	Nilai kapitalisasi pasar bursa	BEI / OJK (nasional)	Tidak	Lintas-OPD	
+GCI	Business Activity	30%	BA4	Air freight	Volume kargo udara	Dishub / AP II	Tidak	Lintas-OPD	
+GCI	Business Activity	30%	BA5	Sea freight	Volume peti kemas pelabuhan	Pelindo / Dishub	Tidak	Lintas-OPD	
+GCI	Business Activity	30%	BA6	Konferensi internasional (ICCA/MICE)	Jumlah konferensi/pertemuan internasional	DISPAREKRAF	Sebagian	Partial	Punya data usaha MICE berizin; jumlah konferensi internasional aktual perlu ditambah
+GCI	Business Activity	30%	BA7	Unicorn / startup	Jumlah unicorn & startup	Diskominfotik / Bappeda	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC1	Populasi kelahiran asing	Jumlah penduduk foreign-born	Disdukcapil	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC2	Universitas top	Jumlah universitas peringkat dunia	Kemendikbud (nasional)	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC3	Populasi pendidikan tinggi	% penduduk berpendidikan tersier	BPS / Disdik	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC4	Mahasiswa internasional	Jumlah mahasiswa asing	Universitas (nasional)	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC5	Sekolah internasional	Jumlah sekolah internasional	Disdik	Tidak	Lintas-OPD	
+GCI	Human Capital	30%	HC6	Kemudahan masuk (visa)	Kebijakan visa/entry	Imigrasi (nasional)	Tidak	Lintas-OPD	
+GCI	Information Exchange	15%	IE1	Biro berita internasional	Jumlah kantor media/berita asing	Diskominfotik	Tidak	Lintas-OPD	
+GCI	Information Exchange	15%	IE2	Penetrasi broadband	Langganan internet/broadband	Diskominfotik	Tidak	Lintas-OPD	
+GCI	Information Exchange	15%	IE3	Kecepatan internet	Rata-rata kecepatan internet	Diskominfotik	Tidak	Lintas-OPD	
+GCI	Information Exchange	15%	IE4	Data center	Jumlah data center	Diskominfotik / swasta	Tidak	Lintas-OPD	
+GCI	Information Exchange	15%	IE5	Kebebasan pers	Indeks kebebasan pers	Nasional	Tidak	Lintas-OPD	
+GCI	Cultural Experience	15%	CE1	Museum	Jumlah museum	Dinas Kebudayaan	Sebagian	Partial	Proksi via Obyek Wisata; butuh inventori museum resmi
+GCI	Cultural Experience	15%	CE2	Seni visual & pertunjukan	Jumlah venue/penyelenggaraan seni	DISPAREKRAF	Ya	Ready	Data Seni Pertunjukan & Visual, Penyelenggaraan Event, Pertunjukan Musik + Atlas
+GCI	Cultural Experience	15%	CE3	Event olahraga besar	Jumlah event olahraga internasional	Dispora	Tidak	Gap	Lintas-OPD (Dispora)
+GCI	Cultural Experience	15%	CE4	Wisatawan internasional	Jumlah kedatangan wisatawan mancanegara	DISPAREKRAF	Ya	Ready	Wisman per kebangsaan, kunjungan ke TIC & obyek wisata
+GCI	Cultural Experience	15%	CE5	Kuliner beragam	Jumlah & ragam usaha kuliner	DISPAREKRAF	Ya	Ready	Restoran & Kafe GCI (Atlas 2.577), Usaha Makan-Minum, Food Court
+GCI	Cultural Experience	15%	CE6	Sister city	Jumlah kota kembar	Biro Kerja Sama Daerah	Tidak	Gap	Lintas-OPD (Biro KSD)
+GCI	Political Engagement	10%	PE1	Kedutaan / konsulat	Jumlah perwakilan diplomatik	Kemenlu (nasional)	Tidak	Lintas-OPD	
+GCI	Political Engagement	10%	PE2	Think tank	Jumlah lembaga think tank	Nasional	Tidak	Lintas-OPD	
+GCI	Political Engagement	10%	PE3	Organisasi internasional	Kantor organisasi internasional	Kemenlu	Tidak	Lintas-OPD	
+GCI	Political Engagement	10%	PE4	Konferensi politik	Jumlah konferensi politik internasional	Nasional	Tidak	Lintas-OPD	
+GPCI	Economy	-	EC1	PDRB & pertumbuhan	Nilai & pertumbuhan ekonomi kota	Bappeda / BPS	Sebagian	Partial	Punya Pertumbuhan PDRB Sektor Pariwisata & PAD/Investasi Pariwisata (kontribusi sektor)
+GPCI	Economy	-	EC2	Ukuran pasar & perusahaan	Market size, jumlah perusahaan besar	Bappeda / BPS	Tidak	Lintas-OPD	
+GPCI	Economy	-	EC3	Upah, pajak korporasi, kemudahan bisnis	Wage, corporate tax, ease of business	Bappeda / DPMPTSP	Tidak	Lintas-OPD	
+GPCI	Economy	-	EC4	Risiko ekonomi/politik	Country/city risk	Nasional	Tidak	Lintas-OPD	
+GPCI	R&D	-	RD1	Peneliti & lingkungan riset	Jumlah peneliti, R&D readiness	Kemenristek / Universitas	Tidak	Lintas-OPD	
+GPCI	R&D	-	RD2	Kinerja akademik & paten	Publikasi, paten, universitas top	Universitas (nasional)	Tidak	Lintas-OPD	
+GPCI	Cultural Interaction	-	CI1	Jumlah wisatawan asing	Foreign visitors	DISPAREKRAF	Ya	Ready	Wisman per kebangsaan, kunjungan wisman ke Indonesia (bulan/wilayah), TIC
+GPCI	Cultural Interaction	-	CI2	Jumlah event budaya	Cultural events	DISPAREKRAF	Ya	Ready	Penyelenggaraan Event Pariwisata & Budaya, Seni Pertunjukan, Pengunjung Event
+GPCI	Cultural Interaction	-	CI3	Jumlah kamar hotel	Hotel rooms	DISPAREKRAF	Ya	Ready	Rekapitulasi Usaha & Kamar Hotel, Usaha Penyediaan Akomodasi
+GPCI	Cultural Interaction	-	CI4	Konferensi internasional (MICE)	International conferences	DISPAREKRAF	Sebagian	Partial	Usaha MICE berizin; jumlah konferensi internasional aktual perlu ditambah
+GPCI	Cultural Interaction	-	CI5	Daya tarik belanja/kuliner/nightlife	Shopping/dining attractiveness	DISPAREKRAF	Ya	Ready	% Pengaruh Wisata Belanja/Kuliner/Malam, Rata-rata Pengeluaran Wisatawan
+GPCI	Cultural Interaction	-	CI6	Hotel mewah / kelas atas	Luxury hotels	DISPAREKRAF	Sebagian	Partial	Proksi Hotel Berbintang (hunian, lama menginap); perlu segmentasi bintang 4-5
+GPCI	Cultural Interaction	-	CI7	Resources budaya (teater/heritage)	Cultural resources	Dinas Kebudayaan / DISPAREKRAF	Sebagian	Partial	Proksi Obyek Wisata / Desa Wisata; perlu inventori cagar budaya & teater
+GPCI	Cultural Interaction	-	CI8	Jumlah stadion	Number of stadiums	Dispora	Tidak	Gap	Lintas-OPD (Dispora)
+GPCI	Cultural Interaction	-	CI9	Mahasiswa internasional	International students	Universitas	Tidak	Gap	Lintas-OPD
+GPCI	Livability	-	LV1	Biaya hidup & lingkungan kerja	Cost of living, working env	BPS / Disnaker	Tidak	Lintas-OPD	
+GPCI	Livability	-	LV2	Keamanan & keselamatan	Safety, disaster risk	Satpol PP / BPBD / Polri	Tidak	Lintas-OPD	
+GPCI	Livability	-	LV3	Layanan kesehatan	Medical services	Dinkes	Tidak	Lintas-OPD	
+GPCI	Livability	-	LV4	Kepuasan/pengalaman pengunjung	Attractiveness / satisfaction	DISPAREKRAF	Sebagian	Partial	Proksi Nilai Kepuasan Pengunjung Objek Wisata (untuk sisi wisata)
+GPCI	Environment	-	EN1	Kualitas udara & air	Air/water quality, pollution	DLH	Tidak	Lintas-OPD	
+GPCI	Environment	-	EN2	Ruang hijau & keberlanjutan	Green space, CO2, renewable	DLH / Distamhut	Tidak	Lintas-OPD	
+GPCI	Accessibility	-	AC1	Jaringan transportasi internasional	Int'l flights, direct destinations	Dishub / AP II	Tidak	Lintas-OPD	
+GPCI	Accessibility	-	AC2	Akses bandara	Time-to-airport	Dishub	Tidak	Lintas-OPD	
+GPCI	Accessibility	-	AC3	Transportasi dalam kota	Subway/rail, punctuality	Dishub / MRT/TransJakarta	Tidak	Lintas-OPD	

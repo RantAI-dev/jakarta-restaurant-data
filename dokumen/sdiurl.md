@@ -1,0 +1,1 @@
+https://ws.jakarta.go.id/gateway/DataPortalSatuDataJakarta/1.0/satudata?kategori=dataset&tipe=detail&url=jumlah-realisasi-investasi-pariwisata
