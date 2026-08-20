@@ -27,15 +27,19 @@ export type YearData = {
 };
 
 /**
- * Target GCI 2.1.c — "Hadirnya Kota Destinasi Dunia dengan Ragam Amenitas".
- * Jumlah Tamu Mancanegara (orang) & kontribusi PDRB Ekraf (persen) dari dokumen
- * indikator. Tahun = asumsi (deret dari dokumen) — koreksi bila label berbeda.
+ * Target RPJMD 2025–2029 (Tabel III.2), indikator 2.1.c "Jumlah Tamu
+ * Mancanegara" (orang) — kondisi awal + target per tahun 2025–2030. Dipakai
+ * sebagai garis TARGET yang dibandingkan dengan realisasi wisman datamart.
  */
-const TARGET_2_1_C = {
-  tahun: ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
-  tamu: [1273358, 1286092, 1289257, 1594162, 1848874, 2105833, 2332494, 2332494],
-  pdrbEkraf: [10.63, 10.75, 10.87, 11, 11.12, 11.25, 11.36, 11.36],
+const TARGET_WISMAN: Record<string, number> = {
+  "2025": 1286092,
+  "2026": 1289257,
+  "2027": 1594162,
+  "2028": 1848874,
+  "2029": 2105833,
+  "2030": 2332494,
 };
+const KONDISI_AWAL_WISMAN = 1273358; // baseline RPJMD
 
 export function WismanDashboard({
   years,
@@ -71,6 +75,11 @@ export function WismanDashboard({
   const quarterCats = ["Q1", "Q2", "Q3", "Q4"].filter((q) =>
     quarterSeries.some((s) => s.data.some((p) => p.label === q)),
   );
+
+  // Target (RPJMD 2025–2030) vs Realisasi (datamart). Satuan sama = orang.
+  const cmpYears = Array.from(new Set([...years, ...Object.keys(TARGET_WISMAN)])).sort();
+  const realisasiVals = cmpYears.map((y) => byYear[y]?.total ?? null);
+  const targetVals = cmpYears.map((y) => TARGET_WISMAN[y] ?? null);
 
   return (
     <section>
@@ -164,19 +173,20 @@ export function WismanDashboard({
         </ChartCard>
       </div>
 
-      {/* Perbandingan target GCI 2.1.c: Jumlah Tamu Mancanegara vs PDRB Ekraf */}
+      {/* Target RPJMD vs Realisasi wisman (indikator 2.1.c, Tabel III.2) */}
       <div className="mt-4">
         <ChartCard
-          title="Target GCI 2.1.c — Tamu Mancanegara & PDRB Ekraf"
-          sub="Jumlah tamu mancanegara (orang, batang) vs kontribusi PDRB Ekraf (persen, garis)"
+          title="Target vs Realisasi Wisman (RPJMD 2025–2030)"
+          sub="Realisasi wisman (batang) vs target Jumlah Tamu Mancanegara (garis putus)"
         >
           <ComboBarLine
-            categories={TARGET_2_1_C.tahun}
-            bar={{ name: "Jumlah Tamu Mancanegara", values: TARGET_2_1_C.tamu, unit: " org" }}
-            line={{ name: "PDRB Ekraf", values: TARGET_2_1_C.pdrbEkraf, unit: "%" }}
+            categories={cmpYears}
+            dualAxis={false}
+            bar={{ name: "Realisasi wisman", values: realisasiVals, unit: " org" }}
+            line={{ name: "Target (RPJMD)", values: targetVals, unit: " org" }}
           />
           <p className="mt-2 apple-fine text-ink-muted-48">
-            Sumber: dokumen indikator 2.1.c. Label tahun asumsi (deret dokumen) — sesuaikan bila berbeda.
+            Sumber target: RPJMD 2025–2029, Tabel III.2 indikator 2.1.c (kondisi awal {KONDISI_AWAL_WISMAN.toLocaleString("id-ID")}). Tahun berjalan = data parsial.
           </p>
         </ChartCard>
       </div>
