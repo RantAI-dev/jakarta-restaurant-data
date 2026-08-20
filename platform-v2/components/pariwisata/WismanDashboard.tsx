@@ -10,16 +10,31 @@ import { KpiRow, Kpi, ChartCard, ChartGrid, PALETTE } from "./DashboardKit";
 import { bulanLabel } from "@/lib/pariwisata/parse";
 import { BarBreakdown } from "@/components/charts/BarBreakdown";
 import { Donut } from "@/components/charts/Donut";
-import { LineTrend } from "@/components/charts/LineTrend";
+import { VerticalBars } from "@/components/charts/VerticalBars";
+import { GroupedBars } from "@/components/charts/GroupedBars";
+import { Treemap } from "@/components/charts/Treemap";
+import { ComboBarLine } from "@/components/charts/ComboBarLine";
 
 type Point = { label: string; value: number };
 export type YearData = {
   total: number;
   monthly: Point[];
+  quarterly: Point[];
   topNegara: Point[];
   donutNegara: Point[];
   peakMonth: Point | null;
   partial?: boolean;
+};
+
+/**
+ * Target GCI 2.1.c — "Hadirnya Kota Destinasi Dunia dengan Ragam Amenitas".
+ * Jumlah Tamu Mancanegara (orang) & kontribusi PDRB Ekraf (persen) dari dokumen
+ * indikator. Tahun = asumsi (deret dari dokumen) — koreksi bila label berbeda.
+ */
+const TARGET_2_1_C = {
+  tahun: ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+  tamu: [1273358, 1286092, 1289257, 1594162, 1848874, 2105833, 2332494, 2332494],
+  pdrbEkraf: [10.63, 10.75, 10.87, 11, 11.12, 11.25, 11.36, 11.36],
 };
 
 export function WismanDashboard({
@@ -48,6 +63,14 @@ export function WismanDashboard({
   const idx = years.indexOf(activeYear);
   const prev = idx > 0 ? byYear[years[idx - 1]] : null;
   const yoy = prev && prev.total ? ((d.total - prev.total) / prev.total) * 100 : null;
+
+  // Perbandingan kuartal antar tahun (Q1–Q4 per tahun) — hanya tahun yg ada kuartalnya.
+  const quarterSeries = years
+    .filter((y) => byYear[y]?.quarterly?.length)
+    .map((y) => ({ name: byYear[y].partial ? `${y} •` : y, data: byYear[y].quarterly }));
+  const quarterCats = ["Q1", "Q2", "Q3", "Q4"].filter((q) =>
+    quarterSeries.some((s) => s.data.some((p) => p.label === q)),
+  );
 
   return (
     <section>
@@ -90,24 +113,39 @@ export function WismanDashboard({
           value={d.peakMonth ? bulanLabel(d.peakMonth.label) : "—"}
           sub={d.peakMonth ? d.peakMonth.value.toLocaleString("id-ID") + " kunjungan" : undefined}
         />
-        <Kpi label="Pertumbuhan YoY" value={yoy != null ? `${yoy.toFixed(1)}%` : "—"} delta={yoy} sub={prev ? `vs ${years[idx - 1]}` : "—"} />
+        <Kpi label="Pertumbuhan tahunan" value={yoy != null ? `${yoy.toFixed(1)}%` : "—"} delta={yoy} sub={prev ? `vs ${years[idx - 1]}` : "—"} />
       </KpiRow>
 
       <div className="mt-4">
         <ChartGrid>
-          <ChartCard title={`Tren bulanan ${year}`} sub="kunjungan per bulan">
-            <LineTrend data={d.monthly} />
+          <ChartCard title={`Tren bulanan ${year}`} sub="kunjungan per bulan (batang)">
+            <VerticalBars data={d.monthly} unit=" kunjungan" labelFmt={bulanLabel} />
           </ChartCard>
-          <ChartCard title={`Top 10 negara asal ${year}`}>
+          <ChartCard title={`Top 15 negara asal ${year}`} sub="kunjungan per negara">
             <BarBreakdown data={d.topNegara} unit=" kunjungan" />
           </ChartCard>
-          <ChartCard title={`Komposisi negara ${year}`} sub="top 10 + lainnya">
+          <ChartCard title={`Peta komposisi negara ${year}`} sub="treemap · proporsi & detail">
+            <Treemap data={d.donutNegara} />
+          </ChartCard>
+          <ChartCard title={`Komposisi negara ${year}`} sub="top 8 + lainnya (donut)">
             <Donut data={d.donutNegara} />
           </ChartCard>
         </ChartGrid>
       </div>
 
-      {/* Tren lintas-tahun (full width, di bawah) */}
+      {/* Perbandingan kuartal antar tahun (Q1–Q4) */}
+      {quarterSeries.length > 0 && quarterCats.length > 0 && (
+        <div className="mt-4">
+          <ChartCard
+            title="Perbandingan kuartal antar tahun"
+            sub={`Q1–Q4 dibandingkan lintas tahun${quarterSeries.some((s) => s.name.includes("•")) ? " · tahun berjalan ditandai •" : ""}`}
+          >
+            <GroupedBars series={quarterSeries} categories={quarterCats} unit=" kunjungan" />
+          </ChartCard>
+        </div>
+      )}
+
+      {/* Tren lintas-tahun (full width) */}
       <div className="mt-4">
         <ChartCard
           title="Tren wisman per tahun"
@@ -123,6 +161,23 @@ export function WismanDashboard({
             unit=" kunjungan"
             color={PALETTE[2]}
           />
+        </ChartCard>
+      </div>
+
+      {/* Perbandingan target GCI 2.1.c: Jumlah Tamu Mancanegara vs PDRB Ekraf */}
+      <div className="mt-4">
+        <ChartCard
+          title="Target GCI 2.1.c — Tamu Mancanegara & PDRB Ekraf"
+          sub="Jumlah tamu mancanegara (orang, batang) vs kontribusi PDRB Ekraf (persen, garis)"
+        >
+          <ComboBarLine
+            categories={TARGET_2_1_C.tahun}
+            bar={{ name: "Jumlah Tamu Mancanegara", values: TARGET_2_1_C.tamu, unit: " org" }}
+            line={{ name: "PDRB Ekraf", values: TARGET_2_1_C.pdrbEkraf, unit: "%" }}
+          />
+          <p className="mt-2 apple-fine text-ink-muted-48">
+            Sumber: dokumen indikator 2.1.c. Label tahun asumsi (deret dokumen) — sesuaikan bila berbeda.
+          </p>
         </ChartCard>
       </div>
     </section>

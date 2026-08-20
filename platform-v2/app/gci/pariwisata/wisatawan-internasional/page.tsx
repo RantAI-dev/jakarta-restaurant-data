@@ -15,6 +15,24 @@ const SLUG_PINTU = "wisman-jakarta-per-pintu-masuk"; // arsip 2010/2014, hanya u
 const yearOf = (r: Record<string, unknown>) =>
   String(r.tahun ?? String(r.periode_data ?? "").slice(0, 4));
 
+/** Bulan (1–12) dari label periode ("YYYY-MM-DD" / "YYYYMM" / "YYYY-MM"). */
+const monthNum = (label: string) => {
+  const s = String(label).replace(/[^0-9]/g, "");
+  if (s.length >= 6) return parseInt(s.slice(4, 6), 10) || 0; // YYYYMM…
+  return parseInt(s, 10) || 0;
+};
+/** Total per kuartal (hanya kuartal yang ada datanya) dari deret bulanan. */
+function quartersOf(monthly: { label: string; value: number }[]): { label: string; value: number }[] {
+  const q = [0, 0, 0, 0];
+  for (const p of monthly) {
+    const m = monthNum(p.label);
+    if (m >= 1 && m <= 12) q[Math.floor((m - 1) / 3)] += p.value;
+  }
+  const out: { label: string; value: number }[] = [];
+  for (let i = 0; i < 4; i++) if (q[i] > 0) out.push({ label: `Q${i + 1}`, value: q[i] });
+  return out;
+}
+
 export default async function WisatawanInternasionalPage() {
   const safe = async (s: string) => {
     try {
@@ -47,7 +65,7 @@ export default async function WisatawanInternasionalPage() {
     const ranked = groupSum(nRows, "negara", "jumlah_kunjungan").sort(
       (a, b) => b.value - a.value
     );
-    const topNegara = ranked.slice(0, 10);
+    const topNegara = ranked.slice(0, 15);
     // Donut: top 8 + "Lainnya" = HANYA negara peringkat 9+ (bukan ember catch-all),
     // supaya slice "Lainnya" tidak membengkak & komposisi terbaca.
     const donutTop = ranked.slice(0, 8);
@@ -56,7 +74,7 @@ export default async function WisatawanInternasionalPage() {
     const lainnya = Math.max(0, totalReal - sumDonutTop);
     const donutNegara = lainnya > 0 ? [...donutTop, { label: "Lainnya", value: lainnya }] : donutTop;
 
-    byYear[y] = { total, monthly, topNegara, donutNegara, peakMonth, partial: bRows.length < 12 };
+    byYear[y] = { total, monthly, quarterly: quartersOf(monthly), topNegara, donutNegara, peakMonth, partial: bRows.length < 12 };
   }
   const yearlyTotals = years.map((y) => ({ label: y, value: byYear[y].total }));
   const defaultYear = years.includes("2025") ? "2025" : years[years.length - 1] ?? "";
