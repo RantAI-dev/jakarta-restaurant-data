@@ -65,7 +65,7 @@ export default async function WisatawanInternasionalPage() {
     const ranked = groupSum(nRows, "negara", "jumlah_kunjungan").sort(
       (a, b) => b.value - a.value
     );
-    const topNegara = ranked.slice(0, 15);
+    const topNegara = ranked.slice(0, 5);
     // Donut: top 8 + "Lainnya" = HANYA negara peringkat 9+ (bukan ember catch-all),
     // supaya slice "Lainnya" tidak membengkak & komposisi terbaca.
     const donutTop = ranked.slice(0, 8);

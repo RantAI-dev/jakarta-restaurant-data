@@ -133,7 +133,7 @@ export function WismanDashboard({
           <ChartCard title={`Tren bulanan ${year}`} sub="kunjungan per bulan (batang)">
             <VerticalBars data={d.monthly} unit=" kunjungan" labelFmt={bulanLabel} />
           </ChartCard>
-          <ChartCard title={`Top 15 negara asal ${year}`} sub="kunjungan per negara">
+          <ChartCard title={`Top 5 negara asal ${year}`} sub="kunjungan per negara">
             <BarBreakdown data={d.topNegara} unit=" kunjungan" />
           </ChartCard>
           <ChartCard title={`Peta komposisi negara ${year}`} sub="treemap · proporsi & detail">
