@@ -13,7 +13,6 @@ import { Donut } from "@/components/charts/Donut";
 import { VerticalBars } from "@/components/charts/VerticalBars";
 import { GroupedBars } from "@/components/charts/GroupedBars";
 import { Treemap } from "@/components/charts/Treemap";
-import { ComboBarLine } from "@/components/charts/ComboBarLine";
 
 type Point = { label: string; value: number };
 export type YearData = {
@@ -78,8 +77,12 @@ export function WismanDashboard({
 
   // Target (RPJMD 2025–2030) vs Realisasi (datamart). Satuan sama = orang.
   const cmpYears = Array.from(new Set([...years, ...Object.keys(TARGET_WISMAN)])).sort();
-  const realisasiVals = cmpYears.map((y) => byYear[y]?.total ?? null);
-  const targetVals = cmpYears.map((y) => TARGET_WISMAN[y] ?? null);
+  const realisasiData = cmpYears
+    .map((y) => ({ label: y, value: byYear[y]?.total ?? null }))
+    .filter((p): p is Point => p.value != null);
+  const targetData = cmpYears
+    .map((y) => ({ label: y, value: TARGET_WISMAN[y] ?? null }))
+    .filter((p): p is Point => p.value != null);
 
   return (
     <section>
@@ -177,16 +180,20 @@ export function WismanDashboard({
       <div className="mt-4">
         <ChartCard
           title="Target vs Realisasi Wisman (RPJMD 2025–2030)"
-          sub="Realisasi wisman (batang) vs target Jumlah Tamu Mancanegara (garis putus)"
+          sub="Batang berdampingan: realisasi (asli) vs target Jumlah Tamu Mancanegara"
         >
-          <ComboBarLine
+          <GroupedBars
             categories={cmpYears}
-            dualAxis={false}
-            bar={{ name: "Realisasi wisman", values: realisasiVals, unit: " org" }}
-            line={{ name: "Target (RPJMD)", values: targetVals, unit: " org" }}
+            series={[
+              { name: "Realisasi (asli)", data: realisasiData },
+              { name: "Target (RPJMD)", data: targetData },
+            ]}
+            colors={["#ed6b23", "#0e7c42"]}
+            unit=" org"
           />
           <p className="mt-2 apple-fine text-ink-muted-48">
-            Sumber target: RPJMD 2025–2029, Tabel III.2 indikator 2.1.c (kondisi awal {KONDISI_AWAL_WISMAN.toLocaleString("id-ID")}). Tahun berjalan = data parsial.
+            <span className="font-medium" style={{ color: "#ed6b23" }}>Oranye</span> = realisasi (asli) ·{" "}
+            <span className="font-medium" style={{ color: "#0e7c42" }}>hijau</span> = target RPJMD. Sumber target: Tabel III.2 indikator 2.1.c (kondisi awal {KONDISI_AWAL_WISMAN.toLocaleString("id-ID")}). Tahun berjalan = data parsial.
           </p>
         </ChartCard>
       </div>

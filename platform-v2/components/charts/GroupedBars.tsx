@@ -11,18 +11,20 @@ export function GroupedBars({
   series,
   categories,
   unit = "",
+  colors,
   height = 300,
 }: {
   series: { name: string; data: Point[] }[];
   categories: string[];
   unit?: string;
+  colors?: string[];
   height?: number;
 }) {
   if (!series.length)
     return <div className="text-[13px] text-slate-400 py-6 text-center">Tidak ada data.</div>;
 
   const option = {
-    color: PALETTE,
+    color: colors ?? PALETTE,
     grid: { left: 6, right: 16, top: 30, bottom: 6, containLabel: true },
     tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: (v: number) => idfmt(v) + unit },
     legend: { top: 0, textStyle: { color: "#475569", fontSize: 11 }, icon: "circle" },
