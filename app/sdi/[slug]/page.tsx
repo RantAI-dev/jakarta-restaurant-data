@@ -2,7 +2,6 @@
 
 import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { DatasetCharts } from "@/components/DatasetCharts";
 
 const NAVY = "#0f3d7a";
 const NAVY_DEEP = "#0a2b57";
@@ -179,8 +178,6 @@ export default function DatasetDetailPage({
 
         {data && (
           <>
-            <DatasetCharts columns={data.columns} rows={data.rows} />
-
             <div className="flex items-center justify-between gap-3 mb-4">
               <input
                 value={q}

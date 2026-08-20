@@ -1,14 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import ReactECharts from "echarts-for-react";
 import type { EChartsOption } from "echarts";
-import { EChart } from "./EChart";
 
-const NAVY = "#0f3d7a";
-const GOLD = "#e8a33d";
+const PRIMARY = "#ed6b23";
 const PALETTE = [
-  "#0f3d7a", "#e8a33d", "#2f6fb0", "#e07b39", "#5a9bd4",
-  "#f0b860", "#0a2b57", "#c98a2b", "#7fb3e0", "#b5651d",
+  "#ed6b23", "#f0a13a", "#c94f18", "#f6b860", "#8a3b12",
+  "#e8813f", "#b5651d", "#f4a259", "#6b2d0e", "#ffc98a",
 ];
 
 type Column = { key: string; desc: string | null; type: string | null };
@@ -38,17 +37,13 @@ const HIDDEN = new Set([
   "tanggal_upload", "tanggal_update", "created_at", "updated_at",
 ]);
 
-function humanize(k: string) {
-  return k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
+const humanize = (k: string) => k.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 function toNum(v: unknown): number | null {
   if (v === null || v === undefined || v === "") return null;
   const n = Number(String(v).replace(/\s/g, "").replace(/,/g, "."));
   return Number.isFinite(n) ? n : null;
 }
-function fmtInt(n: number) {
-  return (Math.round(n * 100) / 100).toLocaleString("id-ID");
-}
+const fmtInt = (n: number) => (Math.round(n * 100) / 100).toLocaleString("id-ID");
 function fmtCompact(v: number) {
   const a = Math.abs(v);
   if (a >= 1_000_000_000) return `${(v / 1_000_000_000).toLocaleString("id-ID", { maximumFractionDigits: 1 })} M`;
@@ -57,54 +52,45 @@ function fmtCompact(v: number) {
   return fmtInt(v);
 }
 
-/** Perkiraan jumlah nilai unik sebuah kolom (dari sampel, dibatasi). */
 function distinctCount(rows: Row[], key: string, cap = 200): number {
   const s = new Set<string>();
-  for (const r of rows) {
-    s.add(String(r[key] ?? ""));
-    if (s.size > cap) break;
-  }
+  for (const r of rows) { s.add(String(r[key] ?? "")); if (s.size > cap) break; }
   return s.size;
 }
-
-/**
- * Kategori default terbaik: hindari kolom id-like (nilai unik/hampir unik) &
- * kolom konstan; utamakan kardinalitas sedang (~8 kategori) yang enak dijadikan
- * grafik.
- */
+/** Kategori default terbaik: hindari kolom id-like/konstan; utamakan kardinalitas sedang. */
 function pickDefaultDim(dims: Column[], rows: Row[]): string {
   let best = dims[0]?.key ?? "";
   let bestScore = Infinity;
   for (const c of dims) {
-    if (/(^|_)(no|nomor|id|kode|uuid|slug)(_|$)/i.test(c.key)) continue; // skip id-like by name
+    if (/(^|_)(no|nomor|id|kode|uuid|slug)(_|$)/i.test(c.key)) continue;
     const dc = distinctCount(rows, c.key);
-    if (dc < 2 || dc >= rows.length) continue; // konstan atau unik → lewati
+    if (dc < 2 || dc >= rows.length) continue;
     const score = dc > 40 ? dc + 1000 : Math.abs(dc - 8);
     if (score < bestScore) { bestScore = score; best = c.key; }
   }
-  // fallback: kalau semua ke-skip, ambil dimensi apa pun dgn >1 nilai unik
   if (!best || distinctCount(rows, best) >= rows.length) {
     for (const c of dims) { const dc = distinctCount(rows, c.key); if (dc >= 2 && dc < rows.length) { best = c.key; break; } }
   }
   return best || dims[0]?.key || "";
 }
-
-/** Kolom numerik? Pakai hint tipe SDI, lalu fallback sampling nilai. */
 function isNumericCol(col: Column, rows: Row[]): boolean {
+  // Kolom yang jelas kategori/waktu → BUKAN measure meski isinya angka.
+  const k = col.key.toLowerCase();
+  if (/(^|_)(tahun|triwulan|semester|kuartal|bulan|periode|tanggal|waktu|kode|id|no|nomor|nama|wilayah|kecamatan|kelurahan|kota|lokasi|kategori|jenis|status|slug)(_|$)/.test(k)) return false;
+  // Hint tipe cuma sinyal POSITIF (lakehouse simpan semua sbg String → jangan
+  // pakai 'string/text' utk mendiskualifikasi; andalkan sampling nilai).
   const t = (col.type || "").toLowerCase();
   if (/int|num|dec|float|double|angka|real|money|rupiah/.test(t)) return true;
-  if (/text|string|char|date|tanggal|kategori|wilayah|nama/.test(t)) return false;
   let num = 0, tot = 0;
-  for (const r of rows.slice(0, 60)) {
+  for (const r of rows.slice(0, 80)) {
     const v = r[col.key];
     if (v === null || v === undefined || v === "") continue;
     tot++;
     if (toNum(v) !== null) num++;
   }
-  return tot > 0 && num / tot >= 0.7;
+  return tot >= 3 && num / tot >= 0.8;
 }
 
-/** Agregasi baris → [{name, value}] untuk sumbu kategori. */
 function aggregate(rows: Row[], x: string, y: string, agg: Agg): { name: string; value: number }[] {
   const groups = new Map<string, number[]>();
   const counts = new Map<string, number>();
@@ -136,7 +122,6 @@ function buildOption(cfg: ChartCfg, rows: Row[]): { option: EChartsOption; empty
   let data = aggregate(rows, cfg.x, cfg.y, cfg.agg);
   const timeLike = cfg.kind === "line" || cfg.kind === "area";
   if (timeLike) {
-    // Coba urutkan natural (angka/tanggal) agar tren masuk akal.
     data = [...data].sort((a, b) => {
       const na = toNum(a.name), nb = toNum(b.name);
       if (na !== null && nb !== null) return na - nb;
@@ -212,10 +197,10 @@ function buildOption(cfg: ChartCfg, rows: Row[]): { option: EChartsOption; empty
         smooth: isLine,
         showSymbol: cfg.kind === "line",
         symbolSize: 6,
-        lineStyle: isLine ? { width: 2, color: NAVY } : undefined,
-        itemStyle: { color: isLine ? NAVY : NAVY, borderRadius: horizontal ? [0, 4, 4, 0] : [4, 4, 0, 0] },
+        lineStyle: isLine ? { width: 2, color: PRIMARY } : undefined,
+        itemStyle: { color: PRIMARY, borderRadius: horizontal ? [0, 4, 4, 0] : [4, 4, 0, 0] },
         areaStyle: cfg.kind === "area"
-          ? { color: { type: "linear", x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: "rgba(15,61,122,0.28)" }, { offset: 1, color: "rgba(15,61,122,0.02)" }] } }
+          ? { color: { type: "linear", x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: "rgba(237,107,35,0.28)" }, { offset: 1, color: "rgba(237,107,35,0.02)" }] } }
           : undefined,
       }],
     },
@@ -226,9 +211,9 @@ let seq = 0;
 const nid = () => `c${++seq}`;
 
 /**
- * Pembuat grafik dari data dataset (sisi-klien, tanpa backend). User memilih
- * tipe grafik + kolom kategori/nilai + agregasi; data diringkas di browser dari
- * baris yang sudah dimuat. Bisa menambah beberapa grafik (sementara, tak disimpan).
+ * Pembuat grafik dari data dataset (sisi-klien). User memilih tipe + kolom X/Y +
+ * agregasi; data diringkas di browser dari baris yang termuat. Bisa menambah
+ * beberapa grafik (sementara, tak disimpan). Menggantikan "Visualisasi cepat".
  */
 export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[] }) {
   const cols = useMemo(
@@ -239,8 +224,8 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
   const measures = useMemo(() => cols.filter((c) => isNumericCol(c, rows)), [cols, rows]);
   const dimensions = useMemo(() => {
     const d = cols.filter((c) => !measures.includes(c));
-    return d.length ? d : cols; // kalau semua numerik, izinkan semua jadi kategori
-  }, [cols, measures, rows]);
+    return d.length ? d : cols;
+  }, [cols, measures]);
 
   const defX = useMemo(() => pickDefaultDim(dimensions, rows) || cols[0]?.key || "", [dimensions, rows, cols]);
   const defY = measures[0]?.key ?? "";
@@ -248,7 +233,6 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
   const [x, setX] = useState(defX);
   const [y, setY] = useState(defY);
   const [agg, setAgg] = useState<Agg>(defY ? "sum" : "count");
-
   const [charts, setCharts] = useState<ChartCfg[]>(() =>
     defX ? [{ id: nid(), kind: "bar", x: defX, y: defY, agg: defY ? "sum" : "count" }] : [],
   );
@@ -261,18 +245,15 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
   };
   const remove = (id: string) => setCharts((c) => c.filter((k) => k.id !== id));
 
-  const sel = "rounded-lg border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none focus:border-[#0f3d7a] transition-colors";
+  const sel = "rounded-lg border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none focus:border-[#ed6b23] transition-colors";
 
   return (
-    <div className="mb-8">
+    <div className="mb-6">
       <div className="flex items-center justify-between gap-3 mb-4">
-        <h2 className="text-[18px] font-bold tracking-tight" style={{ color: NAVY }}>
-          Visualisasi Data
-        </h2>
-        <span className="text-[12px] text-slate-400">Grafik dibuat dari data di bawah · sementara (tak tersimpan)</span>
+        <h2 className="text-[16px] font-bold tracking-tight text-slate-800">Visualisasi Data</h2>
+        <span className="text-[12px] text-slate-400">Grafik dari {rows.length.toLocaleString("id-ID")} baris termuat · sementara (tak tersimpan)</span>
       </div>
 
-      {/* Builder */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-5">
         <div className="flex flex-wrap items-end gap-3">
           <Field label="Tipe grafik">
@@ -283,7 +264,6 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
           <Field label="Kategori (X)">
             <select className={sel} value={x} onChange={(e) => setX(e.target.value)}>
               {dimensions.map((c) => <option key={c.key} value={c.key}>{humanize(c.key)}</option>)}
-              {/* kolom numerik juga boleh jadi kategori (mis. tahun) */}
               {measures.filter((m) => !dimensions.includes(m)).map((c) => <option key={c.key} value={c.key}>{humanize(c.key)}</option>)}
             </select>
           </Field>
@@ -304,22 +284,21 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
           <button
             onClick={add}
             className="rounded-lg px-4 py-2 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ background: NAVY }}
+            style={{ background: PRIMARY }}
           >
             + Tambah grafik
           </button>
         </div>
         {!measures.length && (
           <p className="mt-3 text-[12px] text-slate-500">
-            Dataset ini tak punya kolom angka yang terdeteksi — pakai agregasi <b>Jumlah baris (count)</b> untuk menghitung frekuensi per kategori.
+            Tak ada kolom angka terdeteksi — pakai <b>Jumlah baris (count)</b> untuk frekuensi per kategori.
           </p>
         )}
       </div>
 
-      {/* Grafik */}
       {charts.length === 0 ? (
         <div className="bg-white rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-400 text-[14px]">
-          Belum ada grafik. Pilih tipe & kolom di atas, lalu “Tambah grafik”.
+          Belum ada grafik. Pilih tipe &amp; kolom di atas, lalu “Tambah grafik”.
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
@@ -344,7 +323,7 @@ export function DatasetCharts({ columns, rows }: { columns: Column[]; rows: Row[
                 <div className="p-2">
                   {empty
                     ? <p className="grid h-[280px] place-items-center text-[13px] text-slate-400">Tak ada nilai untuk dirangkum.</p>
-                    : <EChart option={option} height={300} />}
+                    : <ReactECharts option={option} style={{ height: 300, width: "100%" }} notMerge lazyUpdate opts={{ renderer: "canvas" }} />}
                 </div>
               </div>
             );

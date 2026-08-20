@@ -2,7 +2,7 @@
 
 import { use, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { BarChart, type Bar } from "@/components/BarChart";
+import { DatasetCharts } from "@/components/DatasetCharts";
 
 const NAVY = "#ed6b23";
 const GOLD = "#f0a13a";
@@ -135,46 +135,6 @@ export default function DatasetDetailPage({
       .map((k) => ({ key: k, desc: null, type: null }));
   }, [meta, rows]);
 
-  // Chart cepat dari baris yang termuat (stabil: hanya 30 pertama dipakai).
-  const chart = useMemo<Bar[] | null>(() => {
-    if (!rows.length || !columns.length) return null;
-    const num = (v: unknown) => {
-      const s = String(v ?? "").trim();
-      if (!/^-?\d+(\.\d+)?$/.test(s)) return null;
-      const n = Number(s);
-      return Number.isFinite(n) ? n : null;
-    };
-    const isNumericCol = (key: string) =>
-      rows.filter((r) => num(r[key]) !== null).length >= rows.length * 0.9;
-    const labelRe =
-      /periode|tahun|bulan|tanggal|waktu|nama|kategori|jenis|wilayah|lokasi/i;
-    const labelCol =
-      columns.find((c) => labelRe.test(c.key)) ??
-      columns.find((c) => !isNumericCol(c.key)) ??
-      columns[0];
-    const measureRe =
-      /jumlah|total|nilai|pajak|pendapatan|kunjungan|pengunjung|wisatawan|follower|realisasi|persen|rata|rerata|capaian|target|skor|nominal|pad|retribusi|okupansi|hunian|tingkat|volume|kapasitas|penghasilan|pemasukan|pdrb|belanja|anggaran|pertumbuhan|kamar|tamu/i;
-    const valueCol = columns.find(
-      (c) =>
-        c.key !== labelCol.key &&
-        !labelRe.test(c.key) &&
-        measureRe.test(c.key) &&
-        isNumericCol(c.key)
-    );
-    if (!valueCol) return null;
-    const bars = rows
-      .map((r) => ({
-        label: String(r[labelCol.key] ?? ""),
-        value: num(r[valueCol.key]) ?? 0,
-      }))
-      .filter((b) => b.label !== "")
-      .slice(0, 30);
-    const vals = bars.map((b) => b.value);
-    if (bars.length < 2 || Math.max(...vals) === 0) return null;
-    if (Math.max(...vals) === Math.min(...vals)) return null;
-    return bars;
-  }, [rows, columns]);
-
   return (
     <main className="min-h-screen bg-[#faf6f2]">
       <section
@@ -231,13 +191,8 @@ export default function DatasetDetailPage({
           </div>
         )}
 
-        {chart && chart.length > 1 && (
-          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 mb-6">
-            <div className="text-[13px] font-semibold text-slate-700 mb-4">
-              Visualisasi cepat
-            </div>
-            <BarChart data={chart} />
-          </div>
+        {meta && !loading && rows.length > 0 && (
+          <DatasetCharts columns={columns} rows={rows} />
         )}
 
         {meta && !loading && (
