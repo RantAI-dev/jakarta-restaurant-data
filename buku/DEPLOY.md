@@ -1,7 +1,38 @@
 # Deploy — Web Buku Statistika Pariwisata Perkotaan
 
-Web buku ini di-*self-host* di server Depok (`192.168.18.187`, Portainer), sama
-seperti platform data dan lakehouse. Tidak ada Vercel, tidak ada database.
+Ada dua jalur. **Vercel adalah yang aktif sekarang**; Portainer disiapkan untuk
+pindah ke server sendiri nanti.
+
+## Jalur A — Vercel (aktif)
+
+| | |
+|---|---|
+| Project | `dispar-buku` (scope `kleopasevans-projects`) |
+| URL | <https://dispar-buku.vercel.app> |
+| Root directory | `buku` (folder ini yang di-*link*, bukan root repo) |
+| Region | `sin1` |
+| Database | tidak ada |
+
+```bash
+cd buku
+vercel deploy --prod --yes     # sudah ter-link ke project dispar-buku
+```
+
+Dua hal yang membuat build Vercel ini berhasil, jangan diutak-atik tanpa alasan:
+
+- `vercel.json` menyetel `framework: "nextjs"` — project dibuat lewat CLI,
+  sehingga *framework preset*-nya tidak terdeteksi otomatis dan Vercel mencari
+  direktori `public/`.
+- `next.config.mjs` mematikan `output: 'standalone'` saat variabel `VERCEL` ada.
+  Vercel menjalankan *output tracing* sendiri; dengan `standalone` build gagal
+  dengan `ENOENT … next-server.js.nft.json`.
+
+Isi buku sudah statis, jadi tidak ada env var yang perlu diset.
+
+## Jalur B — Portainer (self-host)
+
+Untuk memindahkan ke server Depok (`192.168.18.187`), sama seperti platform data
+dan lakehouse. Tidak ada database.
 
 | | |
 |---|---|
@@ -14,7 +45,7 @@ seperti platform data dan lakehouse. Tidak ada Vercel, tidak ada database.
 Port lain yang sudah terpakai di server itu: `13030` & `13032` (lakehouse),
 `13031` (platform), `15433`/`18123`/`18181`/`19000`/`19001`/`19440` (lakehouse).
 
-## 1. Pastikan isi buku sudah ter-commit
+### 1. Pastikan isi buku sudah ter-commit
 
 Build Docker **tidak** membaca repo naskah — ia memakai `content/docs/` dan
 `src/data/figures.ts` yang ada di dalam repo ini. Jadi sebelum deploy:
@@ -28,7 +59,7 @@ git commit -m "sinkronisasi naskah buku"
 git push
 ```
 
-## 2. Buat stack di Portainer (sekali saja)
+### 2. Buat stack di Portainer (sekali saja)
 
 1. Portainer → **Stacks → Add stack**.
 2. Name: `buku`.
@@ -40,7 +71,7 @@ git push
 Build pertama memakan beberapa menit (`npm ci` + `next build`). Setelah selesai,
 cek `http://192.168.18.187:13035`.
 
-## 3. Redeploy setelah naskah berubah
+### 3. Redeploy setelah naskah berubah
 
 Portainer → Stacks → `buku` → **Update the stack** → centang
 **Re-pull image and redeploy** / **Re-build**. Portainer menarik commit terbaru
@@ -49,7 +80,7 @@ lalu membangun ulang image.
 Kalau webhook stack sudah diaktifkan, cukup panggil URL webhook-nya setelah
 `git push`.
 
-## 4. Akses dari internet
+### 4. Akses dari internet
 
 Server ini sudah menjalankan Cloudflare Tunnel untuk platform (container
 `dispar-cloudflared`, mode `network_mode: host`). **Jangan** membuat tunnel
