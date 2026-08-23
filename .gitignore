@@ -31,3 +31,7 @@ next-env.d.ts
 scripts/.address-tsv-cache.json
 __pycache__/
 *.log
+
+# Repo naskah buku (clone terpisah, punya .git sendiri) — jangan ikut ter-commit
+# ke repo ini. Aplikasi webnya ada di buku/, dan isinya sudah diimpor ke sana.
+/buku-statistika-pariwisata-perkotaan/

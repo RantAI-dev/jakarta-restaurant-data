@@ -1,0 +1,41 @@
+---
+title: "3.2 Pemodelan Length of Stay (LoS) dan Rata-Rata Pengeluaran (Average Expenditure)"
+---
+
+Menghitung berapa banyak orang datang adalah langkah pertama. Langkah yang menentukan dampak ekonomi adalah menerjemahkan kunjungan itu menjadi lama tinggal dan pengeluaran. Dua indikator ini, *Length of Stay* (LoS) dan *Average Expenditure* per hari, adalah titik masuk ke semua analisis kontribusi ekonomi: dari sekadar "berapa devisa yang masuk" sampai model *Tourism Satellite Account* (TSA) yang lebih rumit.
+
+## Apa Itu *Length of Stay* dan Mengapa Penting?
+
+*Length of Stay* adalah rata-rata jumlah malam yang dihabiskan wisman di negara tujuan selama satu kunjungan. Untuk konteks Indonesia, rata-rata LoS nasional adalah sekitar 7–10 malam, dengan variasi besar per negara asal. Wisman dari Australia dan Selandia Baru, yang sering datang dalam paket liburan dua minggu, cenderung memiliki LoS lebih panjang. Wisman dari Singapura dan Malaysia, yang sering datang untuk perjalanan singkat atau urusan keluarga, memiliki LoS lebih pendek.
+
+LoS bukan sekadar indikator akademis. Ia menentukan hampir semua hal lain dalam analisis dampak ekonomi. Total pengeluaran wisman = jumlah kunjungan × LoS × pengeluaran per hari. Jika LoS rata-rata turun, total devisa ikut turun, bahkan jika jumlah kunjungan naik. Inilah yang terjadi pada beberapa destinasi pasca-pandemi: kunjungan pulih, tetapi LoS turun karena wisman lebih sering datang untuk perjalanan singkat dan *workation*, dan total devisa tidak pulih secepat kunjungan.
+
+## Bagaimana LoS Diukur? Metode Langsung dan Tidak Langsung
+
+Pengukuran LoS yang paling langsung adalah lewat PES, di mana wisman yang akan keluar ditanya berapa lama mereka tinggal di Indonesia. Hasilnya adalah rata-rata LoS per kunjungan, dan rata-rata LoS per orang (untuk kunjungan berulang). Kelebihan: data individual memungkinkan disagregasi per negara asal, per pintu masuk, per maksud kunjungan. Kekurangan: responden PES adalah mereka yang menunggu di area *boarding* dan punya waktu untuk diwawancarai, bias yang sama dengan survei penumpang pada umumnya.
+
+Ada metode tidak langsung yang berguna sebagai *cross-check*. MPD, misalnya, memungkinkan pengamatan langsung berapa lama perangkat asing tertentu (yang bisa diidentifikasi lewat SIM card roaming atau pola penggunaan) berada di sebuah kota. Jika dikalibrasi dengan benar, LoS berbasis MPD bisa lebih granular (per kota, per kawasan) dibanding PES, dan lebih murah untuk dilakukan secara berkelanjutan. Tantangannya: tidak semua wisman mengaktifkan roaming, dan yang mengaktifkannya belum tentu representatif.
+
+## Rata-Rata Pengeluaran: Lebih dari Sekadar Angka Tunggal
+
+Rata-rata pengeluaran wisman per hari bervariasi tergantung apa yang dihitung. BPS membedakan dua indikator: pengeluaran total per kunjungan (per orang) dan pengeluaran per hari. Yang pertama adalah total belanja dibagi jumlah kunjungan; yang kedua adalah total belanja dibagi total malam. Keduanya berguna, dan kekacauan muncul ketika rilis yang berbeda mengutip angka yang berbeda tanpa klarifikasi.
+
+Untuk 2024, BPS merilis rata-rata pengeluaran wisman sekitar **USD 1.391,85 per kunjungan**, yang dengan LoS 7–10 malam menghasilkan kira-kira USD 140–200 per hari. Variasi per negara asal cukup besar: wisman dari Australia cenderung mengeluarkan lebih banyak per hari; wisman dari Asia Tenggara cenderung lebih hemat, baik karena perjalanan lebih singkat maupun karena daya beli yang berbeda. Untuk konteks domestik, rata-rata pengeluaran per perjalanan wisnus sekitar **Rp 2,32 juta** (BPS, 2024), dengan porsi terbesar pada transportasi dan akomodasi.
+
+## Pemodelan Statistik untuk LoS dan Pengeluaran
+
+Rata-rata sederhana adalah titik masuk, tetapi tidak cukup untuk kebijakan. Model yang lebih kuat memperlakukan LoS sebagai variabel yang tergantung pada karakteristik wisman: negara asal, umur, jenis kelamin, maksud kunjungan, musim, dan gateway kedatangan. Regresi linear sederhana dengan variabel-variabel ini memberikan gambaran bagaimana masing-masing faktor memengaruhi LoS. Untuk analisis yang lebih halus, model *survival analysis* atau *hazard model* memperlakukan LoS sebagai durasi sampai "kejadian" (keberangkatan), dan memungkinkan estimasi yang lebih akurat ketika ada *censoring* (data yang terpotong).
+
+Untuk pengeluaran, tantangannya adalah distribusi yang *highly skewed*: kebanyakan wisman mengeluarkan jumlah yang relatif kecil, sementara sebagian kecil, wisman MICE, pelancong *luxury*, atau pebisnis yang membawa keluarga, mengeluarkan jumlah yang sangat besar. Rata-rata sederhana sangat dipengaruhi *outlier* ini; median atau logaritma rata-rata lebih stabil. Untuk diskusi dampak ekonomi, yang dibutuhkan adalah distribusi lengkap: berapa persen wisman yang mengeluarkan di bawah USD 500, berapa persen di atas USD 5.000, dan bagaimana komposisi ini berubah antar-tahun. Rata-rata saja tidak cukup.
+
+## Apa yang Bisa Dijawab dengan LoS dan Pengeluaran?
+
+Kombinasi LoS, rata-rata pengeluaran, dan jumlah kunjungan memungkinkan estimasi total devisa dari sektor pariwisata. Untuk Indonesia, estimasi kasar 2024: 13,9 juta kunjungan × ~USD 1.392 per kunjungan ≈ **USD 19,3 miliar**. Sebagai pembanding, WTTC melaporkan USD 19,1 miliar untuk tahun yang sama. Kedua angka itu berdekatan, tetapi bukan angka yang sama dan tidak boleh dipertukarkan: yang pertama adalah hasil perkalian kasar dari dua rata-rata BPS, yang kedua adalah estimasi WTTC dengan metode dan cakupan tersendiri. Kedekatannya menambah keyakinan, bukan membuktikan kebenaran salah satunya. Angka ini harus dibaca dengan hati-hati, dan bukan hanya karena ada kunjungan yang dihitung lebih dari sekali, ada pengeluaran yang tidak tercatat, dan ada definisi "pengeluaran" yang bervariasi.
+
+Ada satu jebakan aritmetika yang lebih halus dan lebih sering terlewat. Rumus "jumlah kunjungan × LoS rata-rata × pengeluaran per hari rata-rata" hanya sahih bila lama tinggal dan pengeluaran harian **tidak berkorelasi** satu sama lain. Dalam kenyataannya keduanya hampir selalu berkorelasi, dan sering berkorelasi negatif: wisman yang tinggal lebih lama cenderung berbelanja lebih hemat per hari, sementara pelancong bisnis berdurasi pendek berbelanja jauh lebih tinggi per harinya. Secara statistik, rata-rata hasil kali dua variabel tidak sama dengan hasil kali kedua rata-ratanya — selisihnya persis sebesar kovariansi keduanya. Mengalikan dua rata-rata karena itu akan melebih-lebihkan atau meremehkan total devisa, bergantung arah korelasinya.
+
+Cara yang benar adalah menghitung total pengeluaran **per responden** lebih dahulu (lama tinggalnya dikalikan pengeluaran hariannya sendiri), baru merata-ratakan hasilnya. Dengan data mikro PES, langkah itu tidak lebih sulit; yang diperlukan hanyalah kesadaran bahwa urutan perkalian dan perata-rataan tidak bisa ditukar. Tapi sebagai titik masuk, ini menunjukkan skala kontribusi sektor terhadap neraca perdagangan.
+
+Kontribusi terhadap Produk Domestik Bruto (PDB) adalah hitungan yang lebih rumit. *Direct contribution* (kontribusi langsung) adalah setoran sektor karakteristik pariwisata (akomodasi, makanan & minuman, transportasi, agen perjalanan) ke PDB. *Indirect contribution* (kontribusi tidak langsung) menambahkan efek rambatan ke sektor lain. WTTC, yang memakai kerangka TSA, memperkirakan kontribusi **total** sektor Travel & Tourism Indonesia terhadap PDB sekitar 5,1% pada 2024. Angka ini kerap disandingkan dengan negara tetangga yang porsinya lebih besar, dan perbandingan semacam itu memang lazim dipakai sebagai argumen kebijakan. Syaratnya satu: pastikan yang dibandingkan sama-sama kontribusi total, karena kontribusi total sebuah negara bisa mencapai dua kali lipat kontribusi langsungnya. Menyandingkan angka total satu negara dengan angka langsung negara lain akan melebih-lebihkan jurangnya.
+
+<VisualMenyusul tipe="Tabel" id="3.1" deskripsi="Rata-rata LoS dan pengeluaran wisman per negara asal 2024; kolom: negara asal, rata-rata LoS (malam), rata-rata pengeluaran per kunjungan (USD), rata-rata pengeluaran per hari (USD); baris: 10 negara asal teratas" sumber="BPS — Statistik Pengeluaran Wisatawan Mancanegara 2024" />

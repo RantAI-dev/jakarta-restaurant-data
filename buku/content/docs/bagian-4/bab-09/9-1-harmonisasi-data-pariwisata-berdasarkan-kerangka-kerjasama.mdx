@@ -1,0 +1,85 @@
+---
+title: "9.1 Harmonisasi Data Pariwisata Berdasarkan Kerangka Kerjasama Satu Data Indonesia"
+---
+
+Satu Data Indonesia (SDI) adalah kebijakan nasional yang bertujuan menyatukan data lintas instansi agar dapat dibandingkan dan dipakai bersama. Untuk sektor pariwisata, SDI bertumpu pada empat prinsip yang diuraikan di bawah ini.
+
+## Empat Pilar Satu Data Indonesia
+
+Satu Data Indonesia berdiri di atas dasar hukum yang eksplisit: **Peraturan Presiden No. 39 Tahun 2019 tentang Satu Data Indonesia**. Perpres itu menetapkan empat prinsip yang harus dipenuhi setiap data yang dihasilkan instansi pemerintah — termasuk data kepariwisataan:
+
+1. **Standar Data.** Data disusun mengikuti konsep, definisi, klasifikasi, ukuran, dan satuan yang baku, sehingga angka dari dua daerah berbeda benar-benar mengukur hal yang sama.
+2. **Metadata.** Setiap data wajib disertai keterangan yang menjelaskan isinya, cara pengumpulannya, cakupannya, dan kapan ia diperbarui. (Perpres menyebut prinsip ini cukup sebagai "memiliki Metadata"; istilah "metadata baku" yang lazim dipakai sehari-hari merujuk pada struktur metadata yang dibakukan, bukan pada nama prinsipnya.)
+3. **Interoperabilitas.** Data disimpan dan dipertukarkan dalam format yang memungkinkan sistem yang berbeda saling membaca tanpa konversi manual.
+4. **Kode Referensi dan Data Induk.** Entitas yang sama — nama daerah, klasifikasi usaha, kode pelabuhan — memakai kode yang seragam lintas instansi, sehingga penggabungan data tidak tersandung perbedaan penulisan.
+
+Perpres yang sama juga menetapkan peran. **Pembina Data** menyusun standar: di tingkat pusat, BPS untuk data statistik dan Badan Informasi Geospasial untuk data geospasial. Perlu dicatat bahwa di tingkat daerah pembinaan data geospasial dijalankan oleh perangkat daerah yang menyelenggarakan Simpul Jaringan, bukan langsung oleh BIG — perbedaan yang menentukan ke mana sebuah dinas harus berkonsultasi. Selanjutnya ada **Walidata** yang mengumpulkan, memeriksa, dan menyebarluaskan data di instansinya; **Produsen Data** yang menghasilkan data sesuai standar; serta **Forum Satu Data Indonesia** sebagai wadah koordinasi ketika terjadi perbedaan. Pembagian peran inilah yang membuat pertanyaan "angka siapa yang benar" punya jalur penyelesaian formal, bukan sekadar perdebatan antar-lembaga.
+
+Tiga pilar pertama dibahas berturut-turut di bawah ini.
+
+## Standar Data: Bahasa yang Sama untuk Semua
+
+Standar data adalah kesepakatan tentang definisi, klasifikasi, dan format. Untuk pariwisata, standar yang penting mencakup tiga hal.
+
+- **Definisi "wisman"**: apakah *overnight visitor* saja, atau termasuk *same-day visitor*? Masing-masing negara punya definisi sendiri, dan Indonesia perlu memilih dengan hati-hati.
+- **Klasifikasi usaha**: hotel berbintang 1–5, nonbintang, *homestay*, dan *hostel*. Klasifikasi yang konsisten memungkinkan agregasi dan perbandingan antar-daerah.
+- **Format data**: tanggal dalam ISO 8601 (YYYY-MM-DD), nama tempat berdasarkan *gazetteer* resmi, dan satuan berdasarkan standar internasional.
+
+Dalam kerangka SDI, penyusunan standar berada pada Pembina Data — di tingkat pusat, BPS untuk data statistik dan Badan Informasi Geospasial untuk data geospasial — sementara koordinasi lintas instansi dijalankan lewat Sekretariat dan Forum Satu Data Indonesia. Standar disusun secara bertahap. Baru sebagian yang diformalkan untuk sektor pariwisata, dan prosesnya terus berlangsung. Disparekraf yang ingin beroperasi dalam kerangka SDI harus mengadopsi standar yang berlaku.
+
+## Metadata: Konteks yang Hilang dari Data
+
+Metadata adalah informasi tentang data. Untuk statistik kunjungan wisman, metadata menjawab:
+
+- *Apa* yang diukur? (definisi operasional)
+- *Bagaimana* diukurnya? (metode)
+- *Kapan* diukur? (periode, frekuensi)
+- *Siapa* yang mengukur? (lembaga, kontak)
+- *Seberapa andal*? (margin error, confidence interval)
+
+Metadata yang konsisten memungkinkan pengguna data di satu kota untuk menggunakan data kota lain tanpa harus memahami detail internal masing-masing. SDI menyediakan *portal* metadata yang memungkinkan deskripsi data dicari dan dirujuk. Semakin banyak Disparekraf yang mengisi metadata, semakin kuat ekosistem data.
+
+## Interoperabilitas: Sistem yang Bicara Satu Sama Lain
+
+Interoperabilitas adalah kemampuan satu sistem untuk bertukar data dengan sistem lain. Prinsipnya: setiap sistem dapat membaca dan memahami data dari sistem lain tanpa intervensi manual.
+
+Untuk mencapainya, beberapa komponen teknis diperlukan:
+
+- **API (*Application Programming Interface*)**: pintu masuk terstruktur untuk sistem lain membaca data.
+- **Format data terbuka**: JSON, XML, atau CSV yang bisa dibaca oleh berbagai tools.
+- **Standar pertukaran**: SDMX, *Open Data Protocol*, atau *REST API* yang umum.
+- **Authentication**: mekanisme untuk memastikan hanya pihak berwenang yang bisa membaca data.
+
+Untuk Disparekraf, menyiapkan interoperabilitas adalah investasi yang cukup besar pada awalnya, tetapi memberikan efek jangka panjang yang signifikan: data bisa diakses oleh *platform* analisis yang lebih besar, dan Disparekraf tidak harus menjadi *single source of truth* untuk semua kebutuhan.
+
+## Studi Kasus: Implementasi SDI di Bali
+
+Sebagai provinsi dengan volume data pariwisata terbesar di Indonesia, Bali menjadi laboratorium yang menarik untuk penerapan SDI. Beberapa inisiatif yang sudah berjalan:
+
+- **Bali Satu Data**: portal yang menyatukan data kunjungan, TPKH, *event*, dan statistik terkait.
+- **Standardisasi hotel**: klasifikasi hotel bintang 1–5 dengan definisi yang konsisten.
+- **Koordinasi lintas OPD**: forum rutin antara Disparekraf, BPS, imigrasi, dan operator bandara.
+
+Tantangan yang masih ada: integrasi data *real-time*, terutama dari MPD operator, dan konsistensi antar-pulau (Bali vs Nusa Tenggara). Yang sudah bagus dari Bali adalah *political will* yang kuat dan tradisi koordinasi yang sudah lama.
+
+## Sejarah Definisi "Wisman" di Indonesia: Pelajaran Harmonisasi
+
+Untuk memahami kenapa harmonisasi sulit, mari lihat satu contoh konkret: evolusi definisi "wisman" di Indonesia. Definisi ini menentukan siapa yang dihitung, dan perubahan definisi bisa mengubah angka kunjungan secara dramatis.
+
+> **Peringatan sumber**: periodisasi di bawah ini disusun sebagai **ilustrasi** tentang bagaimana definisi bisa bergeser dari waktu ke waktu, bukan sebagai kronologi resmi yang terdokumentasi lengkap dalam satu terbitan BPS. Tahun-tahun pemisahnya bersifat perkiraan. Sebelum dikutip dalam dokumen kebijakan, telusuri langsung ke *Berita Resmi Statistik* dan buku metadata BPS untuk tahun yang bersangkutan. Yang dimaksudkan untuk diambil pembaca dari bagian ini adalah **polanya** — bahwa definisi memang berubah, dan perubahannya jarang diumumkan sekeras angkanya — bukan tanggal-tanggalnya.
+
+**Versi historis (ilustratif)**:
+
+- **Sebelum 2010**: BPS menghitung wisman berdasarkan *frontier counting* di pintu masuk resmi (bandara, pelabuhan). Definisi: "setiap pelintas batas yang tercatat imigrasi."
+- **2010–2014**: Kemenpar menambahkan *Passenger Exit Survey* (PES) untuk memperkaya data, tetapi definisi diubah: "wisman adalah pelintas batas yang menginap sekurang-kurangnya satu malam." *Same-day visitor* dikeluarkan.
+- **2015–2019**: definisi bergeser lagi, wisman termasuk semua pelintas batas, tanpa membedakan LoS. *Same-day visitor* dimasukkan kembali.
+- **2020–2022 (pandemi)**: definisi dipertahankan, tetapi sumber data bergeser karena pintu masuk ditutup, dan banyak data berbasis survei hilang.
+- **2023–sekarang**: BPS dan Kemenpar merilis dua seri paralel, seri kunjungan yang lebih luas dan seri yang membatasi diri pada wisman yang menginap. Disparekraf daerah menggunakan definisi yang berbeda lagi (seringkali lebih longgar, inklusif transit).
+
+Implikasi: angka 5,98 vs 6,33 juta kunjungan Bali 2024 (yang keduanya dikutip di media) bisa jadi angka yang berbeda dengan definisi berbeda. BPS Bali merilis 6,33 juta (definisi yang lebih inklusif), sementara sumber lain bisa merilis 5,98 juta (definisi eksklusif). Jika tidak ada harmonisasi definisi, dua institusi yang berbeda merilis angka yang berbeda untuk "hal yang sama", dan analis tidak tahu angka mana yang harus dipakai.
+
+**Lessons learned**: SDI untuk definisi "wisman" harus memilih satu definisi baku, merilis dua seri paralel hanya untuk studi tertentu, dan wajib menyertakan catatan kaki tentang definisi yang dipakai. Tahun 2024 bisa menjadi target untuk harmonisasi penuh: BPS, Kemenpar, dan Disparekraf menyepakati satu definisi "wisman" yang dipakai di semua rilis. Proses ini yang sedang berlangsung di bawah koordinasi Bappenas dan Kementerian PAN-RB.
+
+Studi kasus ini juga menunjukkan bahwa harmonisasi bukan hanya soal teknis, melainkan juga politik antar-lembaga. Setiap perubahan definisi memiliki implikasi pada angka yang dipakai untuk target promosi, dan setiap lembaga ingin "angka-nya" yang dijadikan rujukan. Tantangan harmonisasi adalah menemukan definisi yang dapat diterima semua pihak, dan yang secara statistik bermakna.
+
+<VisualMenyusul tipe="Grafik" id="9.1" deskripsi="Diagram alir, alur harmonisasi data SDI: dari produsen data (BPS, Disparekraf, operator) ke metadata, standar, dan interoperabilitas" sumber="kerangka SDI, diolah" />

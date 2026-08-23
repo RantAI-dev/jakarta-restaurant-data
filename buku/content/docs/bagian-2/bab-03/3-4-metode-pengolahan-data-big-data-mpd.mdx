@@ -1,0 +1,54 @@
+---
+title: "3.4 Metode Pengolahan Data Big Data MPD untuk Identifikasi Cluster dan Length of Stay"
+---
+
+Sumber tradisional survei dan *frontier counting* memiliki keterbatasan yang sudah berulang kali disebutkan: granularitas jangka pendek, pembaruan lambat, dan kaburnya batas kota. Data *Mobile Positioning* (MPD) muncul sebagai pelengkap yang menjanjikan tiga hal sekaligus: granularitas spasial (tingkat kelurahan atau blok), granularitas temporal (jam atau hari), dan cakupan yang besar (jutaan perangkat aktif). MPD digunakan untuk estimasi pergerakan, *clustering* untuk identifikasi pola, dan hasilnya dipakai untuk mengestimasi *Length of Stay* di tingkat kota.
+
+## Apa Itu MPD dan Bagaimana Cara Kerjanya?
+
+Setiap telepon seluler yang aktif di jaringan operator telekomunikasi berkomunikasi dengan menara BTS (*Base Transceiver Station*) terdekat. Komunikasi ini terjadi secara berkala, baik saat melakukan panggilan, mengirim pesan, menggunakan data, atau sekadar *handshake* periodik dengan menara. Agregat dari kejadian ini, setelah dianonimkan dan diagregasi, menjadi data MPD: berapa perangkat yang terhubung ke menara tertentu pada waktu tertentu, berapa lama masing-masing perangkat tinggal di area tertentu, dan bagaimana perpindahan antarmenara.
+
+Erat kaitannya dengan jaringan, data MPD punya karakteristik tertentu. Pertama, granularitas spasial ditentukan oleh densitas menara: di pusat kota metropolitan dengan puluhan menara per kilometer persegi, presisi bisa sampai blok; di pedesaan dengan satu menara per kilometer, presisinya jauh lebih kasar. Kedua, granularitas temporal ditentukan oleh frekuensi *handshake* dan pola penggunaan: pengguna aktif yang sering mengakses data akan tercatat lebih sering, sementara pengguna pasif mungkin hanya tercatat beberapa kali per hari. Ketiga, cakupan ditentukan oleh pangsa pasar operator: data dari satu operator hanya mencakup sebagian dari populasi perangkat, dan untuk merepresentasikan total diperlukan kerja sama lintas operator.
+
+## Jenis Analisis yang Bisa Dilakukan dengan MPD
+
+Data MPD memungkinkan beberapa analisis yang sulit dilakukan dengan sumber lain:
+
+- **Origin-Destination Matrix antarkota**: dengan melacak perpindahan perangkat antarkota (berdasarkan menara asal dan menara tujuan), Matriks OD bisa direkonstruksi dengan granularitas yang lebih tinggi daripada survei.
+- **Identification of tourist clusters**: perangkat yang berada dalam area tertentu selama durasi yang panjang (misalnya lebih dari 24 jam) dan tidak menunjukkan pola *commuting* harian (pergi-pulang rutin) bisa diidentifikasi sebagai wisatawan atau pengunjung, dan dikelompokkan berdasarkan asal dan pola perilaku.
+- **Estimation of length of stay**: durasi dari *arrival event* (koneksi pertama di area) hingga *departure event* (koneksi terakhir di area) menjadi LoS berbasis MPD.
+- **Analisis pola pergerakan dalam kota**: dengan kepadatan menara yang tinggi, pergerakan dalam kota bisa direkam, termasuk kunjungan ke atraksi, lokasi makan, dan pola harian.
+- **Deteksi anomali**: konsentrasi perangkat yang tiba-tiba meningkat di suatu area bisa menunjukkan *event* (konser, festival, demonstrasi) yang belum tercatat resmi.
+
+## Teknik *Clustering* untuk Mengidentifikasi Wisatawan
+
+Salah satu tantangan utama MPD adalah membedakan *"device"* (perangkat) mana yang merupakan *device* seorang wisman, mana yang merupakan *device* penduduk lokal, dan mana yang merupakan *device* pekerja komuter. Pendekatan yang umum dipakai adalah *clustering* berbasis perilaku:
+
+- **Penduduk lokal**: perangkat yang tercatat di area yang sama setiap hari, dengan pola pergerakan pagi-siang-malam yang konsisten (rumah, kantor, kembali ke rumah). Mereka adalah basis *noise* yang harus disaring.
+- **Komuter**: perangkat yang masuk ke area pada pagi hari dan keluar pada sore hari, tanpa menginap. Mereka juga bukan target analisis, kecuali untuk studi urban mobility.
+- **Wisatawan menginap**: perangkat yang tiba di area, tinggal selama beberapa malam, dan kemudian pergi. Pola mereka bisa diidentifikasi dengan mendeteksi minimal satu malam di area yang sama dengan waktu "non-aktif" panjang (malam hari).
+- **Same-day visitor**: perangkat yang masuk dan keluar pada hari yang sama, sering dengan pola kunjungan ke beberapa atraksi.
+
+Algoritma *clustering* yang dipakai bervariasi: *DBSCAN* untuk mendeteksi *device* yang berada dalam "area turis" tertentu, *k-means* untuk mengelompokkan perilaku serupa, dan *sequence analysis* untuk mendeteksi pola kunjungan ke beberapa lokasi berurutan. Hasilnya adalah segmentasi pengunjung yang lebih halus dibanding rilis BPS, dan memungkinkan analisis yang lebih spesifik.
+
+## Mengestimasi *Length of Stay* dari MPD
+
+LoS berbasis MPD memerlukan kehati-hatian: *device* bisa "tidak terlihat" selama beberapa jam (saat di mode pesawat, di area tanpa sinyal, atau dengan baterai mati), dan ini bisa diartikan sebagai *check-out* jika tidak diperlakukan dengan benar. Untuk mengatasinya, *event* LoS didefinisikan dengan toleransi terhadap **ketiadaan catatan**, bukan terhadap catatan di tempat lain. Perbedaan ini menentukan: perangkat yang sama sekali tidak terpantau selama 6–12 jam masih boleh dianggap "tinggal" di area asal, karena ketiadaan sinyal memang bisa berarti apa saja. Sebaliknya, perangkat yang **terpantau di area lain** bukanlah kasus toleransi sama sekali: itu bukti bahwa perangkatnya sudah berpindah, dan memperlakukannya sebagai "masih tinggal" akan melebih-lebihkan lama tinggal secara sistematis. Ambang toleransinya harus disesuaikan dengan karakteristik operator dan area — semakin rapat menara BTS, semakin pendek jeda yang wajar ditoleransi.
+
+Setelah LoS diekstrak, hasilnya bisa diagregasi dengan beberapa cara: rata-rata per negara asal (jika bisa diidentifikasi), rata-rata per kota, rata-rata per musim, dan rata-rata per segmen perilaku (wisman liburan, wisman bisnis, pelancong regional). Perbandingan LoS berbasis MPD dengan LoS dari PES bisa menjadi *sanity check* yang berharga: jika perbedaan keduanya terlalu besar, ada bias yang perlu diselidiki.
+
+## Bias dan Etika MPD
+
+Penggunaan MPD untuk analisis pariwisata dan kebijakan kota mengangkat dua isu yang tidak bisa diabaikan. **Pertama, bias representasi**: tidak semua orang punya telepon seluler, dan tidak semua orang mengaktifkan paket data. Anak-anak, orang lanjut usia, dan kelompok marjinal kurang terwakili. *Device* yang aktif berdata juga berkorelasi dengan kelas sosial dan pola urbanisasi, sehingga biasnya tidak bisa dianggap nol. **Kedua, privasi**: data MPD, jika tidak dianonimkan dan diagregasi dengan benar, bisa digunakan untuk melacak individu, terutama jika digabungkan dengan data lain. Agregasi ke tingkat area dan waktu, anonimisasi kandidat, dan kepatuhan terhadap UU Perlindungan Data Pribadi (UU PDP) adalah syarat minimum.
+
+Untuk konteks Indonesia, kerja sama antara operator telekomunikasi dan pemerintah daerah sudah dimulai, beberapa Disparekraf dan Bappeda menggunakan data MPD untuk analisis kunjungan. Standar nasional tentang penggunaan data ini masih dalam pengembangan, dan ada peluang besar untuk membangun kerangka yang melindungi privasi sekaligus memungkinkan riset dan kebijakan yang berbasis bukti.
+
+## Apa yang Membuat MPD Berbeda dari Sumber Lain?
+
+Kekuatan MPD terletak pada tiga hal sekaligus: granularitas spasial-temporal yang tidak dimiliki BPS, kemampuan merekam perilaku yang tidak selalu muncul di survei, dan pembaruan yang cepat. Keterbatasannya adalah bias, privasi, dan ketergantungan pada kerja sama operator. Dalam satu arsitektur data yang utuh, MPD dipakai sebagai pelengkap yang menutup celah yang tidak bisa dijangkau sumber lain, bukan sebagai pengganti.
+
+Untuk diskusi yang akan datang, tentang indikator GCI, perilaku wisatawan, dan pemodelan kebijakan, MPD menjadi semakin relevan. Indeks kota global semakin mengandalkan data seperti ini untuk mengukur "lovability" dan "vibrancy", dan kemampuan kota-kota Indonesia untuk memproduksi analisis yang sebanding adalah salah satu ukuran kematangan ekosistem datanya.
+
+<VisualMenyusul tipe="Grafik" id="3.3" deskripsi="Diagram alir, alur pengolahan MPD dari raw event ke derived metric (LoS, cluster, asal); tiap kotak menjelaskan transformasi data dan asumsi" sumber="BPS / Kajian internal Disparekraf, diolah" />
+
+<VisualMenyusul tipe="Grafik" id="3.4" deskripsi="Diagram batang, perbandingan LoS berbasis PES vs MPD untuk wisman Australia 2024 (malam); sumbu X: bulan; sumbu Y: rata-rata LoS (malam)" sumber="BPS PES, data MPD operator (dianonimkan), diolah" />

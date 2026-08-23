@@ -1,0 +1,125 @@
+---
+title: "6.1 Text Mining dan Sentiment Analysis dari Ulasan Digital"
+---
+
+Ulasan daring adalah sumber data yang sangat kaya untuk analisis sentimen. Seorang wisman yang baru kembali dari Bali menulis di *TripAdvisor* tentang pengalamannya, apa yang disuka, apa yang tidak, bagaimana hotel, atraksi, dan layanan mengecewakan atau memukau. Teks ini, meskipun subjektif, merepresentasikan persepsi langsung dari pengguna, dan dalam volume besar memungkinkan generalisasi yang tidak bisa dilakukan dengan survei kecil.
+
+## Mengapa Ulasan Daring Bernilai
+
+Ulasan daring punya tiga karakteristik yang menjadikannya sumber data yang kuat. **Pertama, volume**: sebuah atraksi populer di Bali bisa memiliki ribuan hingga puluhan ribu ulasan. **Kedua, keragaman**: ulasan ditulis dalam banyak bahasa, dengan gaya dan fokus yang berbeda-beda, memberikan variasi yang kaya. **Ketiga, kebaruan**: ulasan baru muncul terus-menerus, memungkinkan pemutakhiran analisis yang cepat.
+
+Keterbatasannya cukup serius. **Bias representasi**: pengguna yang menulis ulasan tidak acak, mereka yang puas atau yang sangat kecewa lebih termotivasi menulis. **Bias bahasa**: ulasan dalam bahasa Inggris lebih mendominasi untuk destinasi internasional, sehingga sentimen wisman dari pasar non-Inggris kurang terwakili. **Bias demografis**: pengguna platform tertentu cenderung demografis tertentu (misalnya *TripAdvisor* lebih tua, *Google Reviews* lebih umum). Karakteristik ini harus dipahami sebelum menarik kesimpulan.
+
+## Pra-Pemrosesan Teks
+
+Langkah pertama dalam *text mining* adalah pra-pemrosesan (*preprocessing*). Ini mencakup:
+
+- **Tokenisasi**: memecah teks menjadi kata atau frasa (token).
+- **Normalisasi**: mengubah semua ke huruf kecil, menghapus tanda baca, menangani variasi ejaan.
+- **Stemming dan lemmatization**: mengembalikan kata ke bentuk dasarnya (misalnya "pergi", "pergian", "pergi-pergi" → "pergi").
+- **Penghapusan stopwords**: menghapus kata-kata umum yang tidak banyak informasi ("yang", "dan", "di").
+- **Named Entity Recognition (NER)**: mengidentifikasi entitas bernama, nama tempat, restoran, hotel, merek.
+
+Setelah pra-pemrosesan, teks menjadi lebih bersih dan siap untuk analisis lanjut. Pemilihan teknik pra-pemrosesan sangat tergantung pada bahasa dan konteks, ulasan dalam Bahasa Indonesia memerlukan teknik yang berbeda dengan ulasan dalam Bahasa Inggris.
+
+## Walkthrough: Pra-Pemrosesan Ulasan TripAdvisor Bali
+
+Untuk melihat bagaimana pra-pemrosesan bekerja dalam praktik, mari ambil satu ulasan *TripAdvisor* hipotetis (Bahasa Indonesia) tentang sebuah resor di Ubud, dan jalani setiap langkah pra-pemrosesan.
+
+**Ulasan asli**:
+
+> "Saya dan keluarga baru saja balik dari Ubud setelah 5 hari. Pengalaman kami di Resor X sangat menakjubkan! Kamarnya bersih dan luas, pemandangan sawahnya cantik banget. Staf-nya ramah dan helpful, terutama Pak Wayan yang selalu siap bantu. Makanan di restorannya enak, terutama sate lilit dan nasi campur. Tapi sayangnya Wifi-nya agak lambat di kamar, dan AC-nya berisik. Overall recommended untuk liburan keluarga!"
+
+**Langkah 1, Tokenisasi**:
+
+Mengubah teks menjadi daftar kata/frasa:
+
+`saya`, `dan`, `keluarga`, `baru`, `saja`, `balik`, `dari`, `Ubud`, `setelah`, `5`, `hari`, `pengalaman`, `kami`, `di`, `Resor`, `X`, `sangat`, `menakjubkan`, `kamarnya`, `bersih`, `dan`, `luas`, `pemandangan`, `sawahnya`, `cantik`, `banget`, `staf-nya`, `ramah`, `dan`, `helpful`, `terutama`, `Pak`, `Wayan`, `yang`, `selalu`, `siap`, `bantu`, `makanan`, `di`, `restorannya`, `enak`, `terutama`, `sate`, `lilit`, `dan`, `nasi`, `campur`, `tapi`, `sayangnya`, `Wifi-nya`, `agak`, `lambat`, `di`, `kamar`, `dan`, `AC-nya`, `berisik`, `Overall`, `recommended`, `untuk`, `liburan`, `keluarga`.
+
+Total token: 50. Tahap tokenisasi belum menghapus tanda baca, semua kata/frasa tetap apa adanya.
+
+**Langkah 2, Normalisasi**:
+
+Mengubah semua ke huruf kecil, menghapus tanda baca, dan menangani variasi ejaan:
+
+`saya`, `dan`, `keluarga`, `baru`, `saja`, `balik`, `dari`, `ubud`, `setelah`, `5`, `hari`, `pengalaman`, `kami`, `di`, `resor`, `x`, `sangat`, `menakjubkan`, `kamarnya`, `bersih`, `luas`, `pemandangan`, `sawahnya`, `cantik`, `banget`, `staf`, `nya`, `ramah`, `helpful`, `terutama`, `pak`, `wayan`, `yang`, `selalu`, `siap`, `bantu`, `makanan`, `restorannya`, `enak`, `sate`, `lilit`, `nasi`, `campur`, `tapi`, `sayangnya`, `wifi`, `nya`, `agak`, `lambat`, `kamar`, `ac`, `nya`, `berisik`, `overall`, `recommended`, `untuk`, `liburan`, `keluarga`.
+
+Token "staf-nya" → "staf", "nya" (kontrak). "Wifi-nya" → "wifi", "nya". "AC-nya" → "ac", "nya". Token "Overall" dan "recommended" tetap sebagai bahasa Inggris (akan ditangani terpisah).
+
+**Langkah 3, Stemming dan lemmatization**:
+
+Untuk Bahasa Indonesia, *stemmer* seperti Sastrawi akan menghasilkan:
+
+`balik` → `balik`, `pengalaman` → `alam`, `menakjubkan` → `takjub`, `cantik` → `cantik`, `ramah` → `ramah`, `bersih` → `bersih`, `berisik` → `risik`, `lambat` → `lambat`, `recommended` → `recommend` (English unchanged).
+
+Stemming mengurangi variasi morfologi, sehingga kata "menakjubkan" dan "takjub" akan memiliki bobot yang sama.
+
+**Langkah 4, Penghapusan stopwords**:
+
+Menghapus kata-kata umum (dengan asumsi daftar stopwords Bahasa Indonesia):
+
+`saya`, `dan`, `keluarga`, `baru`, `saja`, `dari`, `setelah`, `5`, `hari`, `pengalaman`, `kami`, `di`, `resor`, `sangat`, `takjub`, `kamarnya`, `bersih`, `luas`, `pemandangan`, `sawahnya`, `cantik`, `banget`, `staf`, `ramah`, `helpful`, `terutama`, `pak`, `wayan`, `selalu`, `siap`, `bantu`, `makanan`, `restorannya`, `enak`, `sate`, `lilit`, `nasi`, `campur`, `tapi`, `sayangnya`, `wifi`, `agak`, `lambat`, `kamar`, `ac`, `berisik`, `overall`, `recommended`, `untuk`, `liburan`.
+
+Token tersisa: 51. Removal stopwords meningkatkan *signal-to-noise*, kata-kata yang dibuang tidak banyak informasi tentang sentimen atau topik.
+
+**Langkah 5, Named Entity Recognition (NER)**:
+
+Identifikasi entitas:
+
+- `Ubud` → LOKASI (kota)
+- `Resor X` → ORGANISASI (resor)
+- `Pak Wayan` → PERSON ( staf)
+- `sate lilit` → MAKANAN (makanan khas Bali)
+- `nasi campur` → MAKANAN (makanan Indonesia)
+- `Wifi` → PRODUK (layanan)
+- `AC` → PRODUK (perlengkapan)
+
+**Langkah 6, Output akhir**:
+
+Teks yang sudah diproses lebih bersih dan siap untuk analisis sentimen. Dari token yang tersisa, kata-kata sentimen yang dominan:
+
+- **Positif**: `takjub`, `bersih`, `luas`, `cantik`, `ramah`, `helpful`, `enak`, `recommended`, `siap`, `bantu` (~10 token positif)
+- **Negatif**: `sayangnya`, `agak`, `lambat`, `berisik` (~4 token negatif)
+- **Netral**: `wifi`, `ac`, `kamar`, `makanan`, `pemandangan`, `sawahnya` (~30 token netral)
+
+Proporsi sentimen positif:negatif:netral = 10:4:30, atau sekitar 23% positif, 9% negatif, 68% netral. Selisih sederhana antara proporsi positif dan negatif = +14 poin persentase. Perlu ditegaskan bahwa ini **bukan** *Net Promoter Score*: NPS dihitung dari jawaban responden pada skala rekomendasi 0–10, bukan dari hitungan token sentimen. Menamainya NPS akan membuatnya tampak sebanding dengan skor NPS resmi, padahal keduanya mengukur hal yang berbeda dengan cara yang berbeda.
+
+**Aspek spesifik (ABSA)**:
+
+- **Kamar**: positif (bersih, luas) + negatif (berisik AC)
+- **Staf**: positif (ramah, helpful)
+- **Makanan**: positif (enak, sate lilit, nasi campur)
+- **Fasilitas**: negatif (wifi lambat, AC berisik)
+- **Lokasi**: positif (pemandangan sawah)
+
+ABSA memberikan pemahaman yang jauh lebih granular: kota memiliki kekuatan pada *staf* dan *makanan*, tetapi kelemahan pada fasilitas teknis. Tanpa ABSA, semua kelemahan dan kekuatan akan tercampur dalam satu skor yang tidak terperinci.
+
+Walkthrough ini menggambarkan tiga hal: (1) pra-pemrosesan adalah prosedur standar yang bisa di-replikasi untuk ribuan ulasan; (2) setiap langkah (tokenisasi, normalisasi, stemming, stopwords, NER) memiliki justifikasinya sendiri; (3) output pra-pemrosesan adalah *input* untuk analisis sentimen dan *topic modeling*. Skala (ratusan hingga puluhan ribu ulasan) mengubahnya dari analisis kualitatif menjadi kuantitatif, memungkinkan generalisasi yang tidak mungkin dilakukan dengan membaca ulasan satu per satu.
+
+> **Catatan metodologis**: Ulasan TripAdvisor Bali dalam walkthrough ini adalah **sintetik** (ditulis untuk menggambarkan prosedur), bukan kutipan aktual dari pengguna. Prosedur lima-langkah (tokenisasi, normalisasi, stemming, *stopwords*, NER) dan pertimbangan ABSA berlaku umum untuk ulasan Bahasa Indonesia. Untuk aplikasi nyata pada ulasan Bali, hasil preprocessing dan analisis sentimen akan berbeda tergantung pada sampel ulasan aktual dan model spesifik yang digunakan (Sastrawi, *IndoBERT*, atau *XLM-RoBERTa*).
+
+## *Sentiment Analysis*: Dari Teks ke Skor
+
+*Sentiment analysis* adalah proses mengklasifikasikan teks ke dalam sentimen positif, negatif, atau netral. Ada tiga pendekatan utama:
+
+- **Lexicon-based**: menggunakan kamus kata yang sudah diberi label sentimen (positif/negatif). Contoh: *VADER* untuk Bahasa Inggris, atau *sentiword_id* untuk Bahasa Indonesia. Kelebihan: sederhana, tidak butuh data training. Kekurangan: tidak menangani konteks dan sarkasme dengan baik.
+- **Machine Learning**: melatih model pada *dataset* yang sudah dilabeli (misalnya 1.000 ulasan yang dilabeli manual). Kelebihan: bisa menangani konteks. Kekurangan: butuh data training yang banyak.
+- **Deep Learning / LLM**: menggunakan model bahasa besar (seperti BERT atau GPT) yang sudah dilatih pada korpus besar. Kelebihan: akurasi tinggi, bisa menangani nuansa. Kekurangan: memerlukan sumber daya komputasi besar dan tidak selalu transparan.
+
+Untuk konteks Indonesia, *lexicon-based* dengan *sentiword_id* adalah titik masuk yang paling murah, dan *machine learning* dengan model yang dilatih pada ulasan berbahasa Indonesia memberikan akurasi lebih baik. Untuk analisis dengan volume besar, pendekatan *deep learning* semakin relevan.
+
+## Topik dan Aspek yang Muncul dari Ulasan
+
+*Topic modeling* (misalnya dengan algoritma *Latent Dirichlet Allocation*) memungkinkan identifikasi topik-topik utama yang dibicarakan dalam ulasan. Hasilnya adalah distribusi topik per ulasan atau per atraksi, dan dari sini analis bisa tahu apakah sentimen positif didorong oleh "pelayanan", "kebersihan", "makanan", atau "pemandangan".
+
+Pendekatan yang lebih halus adalah *aspect-based sentiment analysis* (ABSA), yang mengidentifikasi sentimen per aspek. Misalnya, sebuah ulasan tentang hotel bisa dinilai: "kamarBersih = positif, sarapan = negatif, lokasi = positif". Dengan ABSA, pemahaman tentang kekuatan dan kelemahan sebuah objek menjadi jauh lebih granular.
+
+## Limitasi dan Etika
+
+Analisis ulasan daring memiliki limitasi yang tidak boleh diabaikan. **Bukan sampel acak**: ulasan adalah *self-selected*, dan proporsi ulasan positif/negatif tidak mencerminkan distribusi pengalaman aktual. **Dimanipulasi**: ulasan bisa palsu, baik positif (boost) maupun negatif (kompetitor attack). Platform memiliki mekanisme deteksi, tetapi tidak sempurna. **Privasi**: meskipun nama pengguna biasanya disamarkan, mengutip ulasan spesifik bisa mengidentifikasi individu.
+
+Untuk konteks Indonesia, pertimbangan utama adalah apakah ulasan representatif untuk semua kota. Destinasi seperti Bali, Yogyakarta, dan Jakarta memiliki volume ulasan yang besar dalam Bahasa Inggris dan Bahasa Indonesia, sehingga bisa dianalisis. Kota-kota yang kurang populer secara internasional memiliki volume ulasan yang jauh lebih kecil, dan generalisasi menjadi sulit.
+
+<VisualMenyusul tipe="Grafik" id="6.1" deskripsi="Word cloud, topik-topik utama yang muncul dalam ulasan TripAdvisor untuk atraksi top Bali 2023" sumber="TripAdvisor API (jika tersedia), diolah" />
+
+<VisualMenyusul tipe="Tabel" id="6.1" deskripsi="Perbandingan tiga platform ulasan populer (TripAdvisor, Google Reviews, OTA) untuk konteks Indonesia; kolom: platform, cakupan kota, jumlah ulasan, bahasa dominan, representasi demografis" sumber="pengamatan langsung, diolah" />

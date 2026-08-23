@@ -1,0 +1,55 @@
+---
+title: "6.2 Analisis Jejak Digital Media Sosial untuk Mengukur City Lovability"
+---
+
+Platform media sosial seperti Instagram, TikTok, dan X menghasilkan volume *post geotagged* yang sangat besar. Seorang wisman yang mengunggah foto di Ubud dengan *hashtag* tertentu, atau seorang vlogger yang membuat video tentang Yogyakarta, memberikan jejak digital yang bisa dianalisis untuk memahami destinasi mana yang sedang populer, sentimen apa yang muncul, dan bagaimana kota dipersepsikan.
+
+## Apa yang Berbeda dari Ulasan?
+
+Ulasan dan media sosial berbeda dalam beberapa hal penting. **Ulasan adalah refleksi retrospektif**: ditulis setelah pengalaman selesai, dengan waktu untuk berpikir. **Media sosial adalah ekspresi real-time**: ditulis saat pengalaman berlangsung, lebih spontan, lebih emosional. **Ulasan fokus pada evaluasi**: apakah pengalaman bagus atau tidak. **Media sosial fokus pada penampilan**: bagaimana seseorang ingin terlihat saat berbagi.
+
+Implikasinya: sentimen yang ditangkap berbeda. Ulasan lebih kritis, karena pengguna membandingkan dengan ekspektasi. Media sosial lebih positif, karena pengguna berbagi momen terbaik. Untuk mendapatkan gambaran yang utuh, keduanya harus dipakai.
+
+## Jejak Spasial: *Geotagging* dan *Location Tag*
+
+Sebagian besar platform media sosial mengizinkan pengguna memberikan *tag* lokasi pada *post*. *Tag* ini bisa berasal dari GPS otomatis (*Instagram* dan *TikTok* sering mengaktifkan ini), atau dipilih secara manual dari database tempat. Untuk analisis spasial, *tag* otomatis lebih akurat, tetapi yang manual lebih umum.
+
+Data yang bisa diekstrak dari *tag* lokasi:
+
+- **Volume *post* per lokasi**: berapa kali sebuah tempat ditandai per periode. Indikator popularitas.
+- **Distribusi temporal**: kapan *post* muncul (jam, hari, musim). Indikator pola kunjungan.
+- **Asal pengunggah**: lewat profil atau bahasa, bisa diestimasi apakah pengunggah domestik atau wisman.
+- **Engagement**: likes, komentar, share. Indikator seberapa menarik *post* tersebut.
+
+Untuk analisis destinasi, kombinasi volume dan engagement adalah metrik yang kuat. Sebuah destinasi dengan banyak *post* dan banyak *engagement* adalah destinasi yang mendapat perhatian luas.
+
+## Analisis Hashtag dan Tren
+
+*Hashtag* adalah salah satu fitur paling informatif dari media sosial. Untuk perjalanan Indonesia, *hashtag* seperti #bali, #borobudur, #jogja, atau #explorejakarta digunakan jutaan kali. Analisis *hashtag* memungkinkan identifikasi:
+
+- **Tren naik**: *hashtag* yang pertumbuhannya tinggi mengindikasikan destinasi atau aktivitas yang sedang viral.
+- **Asosiasi**: *hashtag* yang sering muncul bersamaan menunjukkan persepsi yang terkait (misalnya #bali + #spiritual sering muncul bersamaan).
+- **Influencer**: siapa yang membuat *post* dengan *engagement* tertinggi, dan apakah mereka cocok untuk kampanye destinasi.
+
+Contoh konkret: *hashtag* #wonderfulindonesia yang merupakan slogan promosi Kementerian Pariwisata memiliki jutaan *post*, dan analisis *sentiment* dari *post* ini menggambarkan bagaimana Indonesia dipersepsikan oleh pengguna domestik dan internasional.
+
+## *City Lovability* sebagai Konstruk
+
+Salah satu dimensi Resonance adalah *Lovability*, dan variabel operasionalnya sebagian besar dibangun dari data media sosial. *Lovability* bukan sekadar *popularity*, ia adalah kombinasi dari seberapa banyak kota dibicarakan, seberapa positif sentimennya, dan seberapa otentik persepsinya.
+
+Untuk konteks Indonesia, *Lovability* Bali secara konsisten tinggi, bahkan setelah pandemi, narasi Bali pulih dengan cepat karena dukungan media sosial. Yogyakarta juga memiliki *Lovability* yang kuat, terutama dari generasi muda yang tertarik pada estetika budaya dan *aesthetic*. Jakarta memiliki volume tinggi tetapi *Lovability* lebih rendah, diskusi tentang kota lebih netral atau negatif, terkait kemacetan, banjir, dan polusi.
+
+## Etika dan Privasi
+
+Analisis media sosial menimbulkan isu etika yang serius. Data yang di-*post* secara publik tetap tunduk pada privasi individu, dan analisis agregat tanpa izin tetap harus dilakukan dengan hati-hati. Beberapa prinsip:
+
+- **Agregasi**: analisis harus dilakukan pada data agregat, bukan individu.
+- **Anonymization**: identitas asli tidak boleh digunakan, bahkan untuk debugging.
+- **Tidak untuk profiling**: data tidak boleh dipakai untuk membuat profil perilaku individu.
+- **Transparansi**: publikasi hasil analisis harus jelas tentang metode, *dataset*, dan keterbatasan.
+
+Untuk konteks Indonesia, regulasi tentang penggunaan data pribadi mulai berlaku (UU PDP 2022), dan analisis media sosial harus memastikan kepatuhan.
+
+<VisualMenyusul tipe="Grafik" id="6.2" deskripsi="Diagram garis, volume post geotagged untuk tiga kota Indonesia (Bali, Yogyakarta, Jakarta) 2022–2024 (juta post); sumbu X: bulan; sumbu Y: volume post; seri terpisah per kota" sumber="agregasi data Instagram/TikTok, diolah" />
+
+<VisualMenyusul tipe="Tabel" id="6.2" deskripsi="Top-10 hashtag perjalanan Indonesia 2024; kolom: peringkat, hashtag, jumlah post (juta), asosiasi utama, sentimen dominan" sumber="agregasi Instagram, diolah" />

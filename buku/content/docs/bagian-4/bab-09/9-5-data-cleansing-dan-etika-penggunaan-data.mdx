@@ -1,0 +1,78 @@
+---
+title: "9.5 Data Cleansing dan Etika Penggunaan Data AI (Privasi, Hak Cipta, dan Validasi Kebenaran Data)"
+---
+
+AI dan data besar membawa potensi dan risiko secara bersamaan. Dua hal yang harus selalu diperhatikan: bagaimana data dibersihkan sebelum dipakai, dan bagaimana data dipakai secara etis.
+
+## *Data Cleansing*: Membersihkan Sebelum Dipakai
+
+Data yang dikumpulkan dari berbagai sumber sering kali kotor: duplikat, nilai hilang, inkonsistensi format, dan *outlier*. Sebelum dipakai untuk analisis, data harus dibersihkan.
+
+Teknik *cleansing* yang umum mencakup lima tahap.
+
+- **Deduplikasi**: membuang record yang duplikat.
+- **Imputasi**: mengganti nilai hilang dengan estimasi (rata-rata, median, atau model).
+- **Normalisasi format**: tanggal, nama, alamat, dsb.
+- **Deteksi outlier**: mengidentifikasi nilai yang tidak normal dan memutuskan apakah dibuang atau dikoreksi.
+- **Validasi referensi**: memastikan data sesuai dengan daftar referensi (mis. daftar kota resmi).
+
+*Data cleansing* adalah pekerjaan yang tidak terlihat tetapi menentukan. Hasil analisis yang kredibel selalu dimulai dengan data yang bersih.
+
+## Privasi: Melindungi Individu
+
+Data statistik untuk destinasi sering kali melibatkan informasi tentang individu: nama, identitas, lokasi. Melindungi privasi adalah kewajiban etis dan hukum.
+
+Di Indonesia, kerangka hukumnya adalah **Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)**, yang disahkan pada 17 Oktober 2022 dan berlaku penuh dua tahun kemudian, yakni sejak 17 Oktober 2024. Beberapa prinsip utamanya:
+
+- **Purpose limitation**: data hanya dipakai untuk tujuan yang dinyatakan.
+- **Data minimization**: hanya kumpulkan data yang memang dibutuhkan.
+- **Consent**: untuk data sensitif, butuh persetujuan eksplisit.
+- **Right to erasure**: individu bisa meminta data mereka dihapus.
+
+Dua hal berikut justru yang paling relevan bagi pembaca buku ini, dan keduanya sering terlewat.
+
+**Persetujuan bukan satu-satunya dasar yang sah.** UU PDP menyediakan beberapa dasar pemrosesan data pribadi, dan persetujuan hanyalah salah satunya. Dasar lain mencakup pemenuhan kewajiban hukum, pelaksanaan kewenangan yang bersumber pada peraturan perundang-undangan, serta pelaksanaan tugas dalam rangka kepentingan umum atau pelayanan publik. Untuk dinas pariwisata yang menjalankan pendataan berdasarkan tugas dan fungsinya, dasar yang tepat umumnya adalah **pelaksanaan tugas dalam rangka pelayanan publik**, bukan persetujuan satu per satu. Memaksakan skema persetujuan pada pendataan yang sebenarnya bertumpu pada kewenangan publik justru menyulitkan tanpa menambah perlindungan.
+
+**Ada ketentuan khusus untuk kepentingan statistik dan penelitian ilmiah**, dan arahnya perlu dipahami dengan tepat karena mudah disalahartikan. Pasal 15 UU PDP tidak membebaskan pengendali data dari kewajibannya. Yang dapat dikesampingkan adalah sebagian **hak subjek data** — antara lain hak memperoleh informasi tertentu, hak mengakhiri pemrosesan, dan hak menarik persetujuan — ketika pemrosesan dilakukan untuk kepentingan yang disebut pasal itu, termasuk kepentingan statistik dan penelitian ilmiah.
+
+Pengesampingan itu pun tidak bebas: ayat berikutnya menegaskan bahwa ia hanya boleh dilakukan **dalam rangka pelaksanaan ketentuan peraturan perundang-undangan**. Artinya sebuah dinas tidak bisa menyandarkan diri pada pasal ini semata-mata karena pekerjaannya berlabel "statistik"; harus ada dasar peraturan yang memerintahkan atau memungkinkan pendataan itu.
+
+Perlu ditegaskan pula apa yang **tidak** dinyatakan undang-undang ini. Kewajiban seperti pengamanan yang memadai, pembatasan tujuan, dan penyajian hasil dalam bentuk agregat memang praktik yang baik dan dianjurkan sepanjang buku ini — tetapi rumusan eksplisit semacam itu berasal dari GDPR, bukan dari Pasal 15 UU PDP. Mencampuradukkan keduanya membuat pembaca mengira sedang mengutip hukum Indonesia padahal sedang mengutip hukum Uni Eropa.
+
+Di luar dua hal itu, setiap proyek data yang mengumpulkan informasi pribadi tetap harus tunduk pada UU PDP, dan pada kondisi tertentu instansi wajib menunjuk pejabat pelindungan data pribadi (*data protection officer*) yang mengawasi kepatuhan.
+
+> **Catatan**: ringkasan di atas tidak menggantikan pembacaan atas teks undang-undangnya. Sebelum menyusun kebijakan internal, rujuk langsung pasal-pasal UU No. 27 Tahun 2022 beserta aturan pelaksananya, dan mintalah pendapat hukum bila proyeknya melibatkan data pribadi spesifik.
+
+## Hak Cipta: Kepemilikan Data
+
+Data bisa dilindungi hak cipta, terutama jika merupakan karya orisinal (foto, deskripsi). Untuk data agregat (mis. jumlah kunjungan), biasanya tidak ada masalah hak cipta. Untuk data kreatif (deskripsi, foto), ada.
+
+Untuk pengguna data Disparekraf, beberapa hal yang perlu diperhatikan:
+
+- **Lisensi**: Disparekraf perlu menyatakan lisensi data (mis. CC-BY 4.0). Ini memungkinkan pengguna memahami apa yang boleh dilakukan.
+- **Atribusi**: penggunaan data berhak cipta harus menyertakan atribusi.
+- **Penggunaan komersial**: beberapa lisensi melarang penggunaan komersial.
+
+## Validasi Kebenaran Data
+
+AI dan LLM bisa menghasilkan informasi yang salah, yang disebut *hallucination*. Untuk konteks kebijakan, ini sangat serius. Beberapa mitigasi:
+
+- **Human in the loop**: setiap keputusan penting harus ada manusia yang memverifikasi.
+- **Sumber otoritatif**: cross-check dengan data BPS, Disparekraf, atau sumber resmi.
+- **Transparansi**: ketika hasil AI dipakai, sampaikan bahwa hasil itu berasal dari model, bukan dari penilaian manusia yang berwenang.
+- **Audit trail**: catat *prompt*, *model*, dan *timestamp* setiap keputusan yang dilakukan AI.
+
+Diskusi lebih lengkap tentang regulasi (UU PDP, GDPR, lisensi data, dan Algorithmic Impact Assessment) tersedia di **Lampiran A.4, Etika & Regulasi Data**. Topik ini disajikan sebagai ikhtisar singkat; untuk implementasi aktual, baca lampiran terlebih dahulu.
+
+## Etika Penggunaan AI dalam Kebijakan
+
+Empat pertanyaan etis yang lebih luas harus menjadi pegangan pengambil kebijakan:
+
+- **Akuntabilitas**: siapa yang bertanggung jawab jika keputusan berdasarkan AI salah?
+- **Transparansi**: apakah publik tahu bahwa keputusan dipengaruhi AI?
+- **Bias**: apakah AI mewarisi bias data training? Apakah keputusan menjadi diskriminatif?
+- **Kesetaraan**: apakah AI memperburuk kesenjangan yang sudah ada?
+
+Untuk menjawab ini, beberapa pendekatan: *algorithmic impact assessment* sebelum dipakai, tim AI yang beragam, dan *external review* independen.
+
+<VisualMenyusul tipe="Grafik" id="9.5" deskripsi="Diagram, empat pilar tata kelola data AI: cleansing, privasi, hak cipta, validasi" sumber="kerangka tata kelola, diolah" />

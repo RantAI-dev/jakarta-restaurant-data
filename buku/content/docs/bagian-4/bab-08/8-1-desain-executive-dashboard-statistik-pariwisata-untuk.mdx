@@ -1,0 +1,72 @@
+---
+title: "8.1 Desain Executive Dashboard Statistik Pariwisata untuk Pengambilan Keputusan Pemda"
+---
+
+*Dashboard* eksekutif adalah antarmuka visual yang menyatukan indikator-indikator kunci dalam satu tampilan. Tujuannya: memberikan gambaran status secara *real-time*, sehingga pemimpin bisa membaca, memahami, dan bertindak dalam hitungan menit. Prinsip desain, teknologi, dan praktik implementasi untuk konteks kota di Indonesia mengikuti pola *user-centric*: lihat apa yang user butuhkan, rancang untuk itu, dan uji dengan user.
+
+## Prinsip Desain *Dashboard* yang Efektif
+
+*Dashboard* yang buruk menggabungkan semua informasi di satu tempat. *Dashboard* yang baik memilih informasi yang benar-benar relevan dan menyajikannya dengan cara yang intuitif. Beberapa prinsip utama:
+
+- **Ringkas, bukan lengkap**: 5–7 metrik utama, bukan 50. *Dashboard* bukan laporan.
+- **Visual sebelum angka**: grafik dan ikon, baru angka. Yang paling penting adalah tren, bukan presisi digit.
+- **Aksiabel**: setiap metrik harus punya ambang atau target, sehingga pembaca tahu "apakah ini baik atau buruk".
+- **Update tepat waktu**: data basi lebih buruk dari tidak ada data. *Dashboard* harus menampilkan tanggal *update* terakhir.
+- **Berlapis**: layer pertama memberikan gambaran umum, layer kedua memungkinkan drill-down untuk yang ingin tahu lebih.
+
+## Komponen Khas untuk *Dashboard* Pariwisata
+
+Beberapa komponen yang biasanya ada di *dashboard* pariwisata kota:
+
+- **KPI utama**: total kunjungan wisman (bulanan), TPKH, rata-rata LoS, kontribusi PDRB.
+- **Asal negara**: *pie chart* atau *treemap* 10 negara asal teratas.
+- **Tren**: grafik garis kunjungan 12 bulan terakhir dengan *forecast* 6 bulan ke depan.
+- **Kapasitas**: kamar terpakai vs tersedia, okupansi hotel berbintang vs nonbintang.
+- **Event**: daftar *event* internasional yang akan/sedang berlangsung.
+- **Promosi**: jumlah dan jangkauan kampanye promosi aktif.
+- **Konektivitas**: rute internasional langsung, frekuensi, dan utilisasi.
+
+Layout tipikal: baris atas adalah KPI ringkas dengan delta vs bulan lalu; baris kedua adalah grafik tren; baris ketiga adalah peta atau tabel distribusi; baris keempat adalah layer detail yang bisa di-*toggle*.
+
+## Arsitektur Teknologi
+
+Beberapa teknologi yang umum dipakai:
+
+- **Looker Studio (Google Data Studio)**: gratis, integrasi dengan banyak sumber data, cukup untuk kebutuhan kota.
+- **Microsoft Power BI**: berbayar (ada free tier), kemampuan analisis lebih kuat, cocok untuk kota besar.
+- **Tableau**: berbayar, kemampuan visual tinggi, banyak dipakai korporasi.
+- **Apache Superset**: open source, *self-hosted*, cocok untuk kota yang punya tim teknis.
+- **Custom (React + D3.js)**: paling fleksibel, paling mahal (butuh *developer*).
+
+Untuk konteks Indonesia, **Looker Studio** adalah titik masuk yang paling murah dan cepat. Kota yang punya investasi lebih bisa menggunakan Power BI atau Tableau. Open source seperti Superset cocok untuk kota yang memiliki tim teknis dan ingin kustomisasi penuh.
+
+## Data Pipeline di Belakang *Dashboard*
+
+*Dashboard* yang baik membutuhkan *pipeline* data yang andal. Beberapa komponen:
+
+- **Sumber data**: BPS rilis bulanan, MPD operator, data Disparekraf, transaksi e-wallet, dsb.
+- **ETL (*Extract, Transform, Load*)**: skrip Python atau SQL yang menarik data, membersihkannya, dan menyimpannya di gudang data.
+- **Gudang data**: biasanya *data warehouse* (BigQuery, Snowflake, atau PostgreSQL) atau *data lake* (untuk data belum terstruktur).
+- **API**: dari gudang data, *dashboard* menarik data yang dibutuhkan via API.
+- **Refresh**: otomatis (harian, mingguan) atau manual.
+
+Untuk kota-kota di Indonesia, *pipeline* ini seringkali menjadi bottleneck. Data Disparekraf tidak terstandar, sehingga ETL harus banyak menangani normalisasi. MPD operator biasanya sulit diakses karena masalah privasi. Inilah mengapa investasi di SDI menjadi prasyarat.
+
+## Contoh Tata Letak *Dashboard*: Portal Satu Data Jakarta
+
+Konsep yang sama dengan Satu Data Jakarta bisa dipakai untuk *dashboard* pariwisata: portal yang menampilkan indikator kunjungan, TPKH, dan *event* secara *real-time*, dengan *drill-down* ke tingkat kecamatan.
+
+Kasus Jakarta menonjol karena *political will* gubernur sangat menentukan eksekusi. Tanpa dorongan dari atas, *dashboard* cenderung jadi pajangan. Yang diperlukan: dasar hukum (Peraturan Gubernur), komitmen APBD, dan tim teknis yang terdiri dari *data engineer*, analis, dan desainer.
+
+## Keterbatasan yang Harus Diakui
+
+*Dashboard* bukan solusi untuk semua masalah. Keterbatasan:
+
+- **Terlalu banyak signal**: setiap orang yang melihat *dashboard* fokus pada angka yang berbeda, sehingga mudah kehilangan prioritas.
+- **Kurang konteks**: angka tanpa cerita bisa menyesatkan. *Dashboard* yang baik disertai *insight* singkat.
+- **Kurang tindak lanjut**: *dashboard* tanpa mekanisme tindak lanjut hanya pajangan.
+- **Data yang tidak akurat**: kalau data dasarnya salah, *dashboard* akan menyajikan kesalahan dengan tampilan yang menarik.
+
+*Dashboard* adalah alat untuk keputusan, bukan keputusan itu sendiri. Angka-angka di *dashboard* harus selalu ditafsirkan oleh analis yang tahu konteksnya.
+
+<VisualMenyusul tipe="Grafik" id="8.1" deskripsi="Mockup dashboard eksekutif, wireframe layout dengan 4 zona: KPI, tren, distribusi asal, peta" sumber="ilustrasi, diolah" />

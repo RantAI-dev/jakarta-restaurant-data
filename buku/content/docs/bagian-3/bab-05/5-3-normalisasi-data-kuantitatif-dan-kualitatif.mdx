@@ -1,0 +1,201 @@
+---
+title: "5.3 Normalisasi Data Kuantitatif dan Kualitatif"
+---
+
+Setelah variabel teridentifikasi dan *proxy* dibangun, langkah berikutnya adalah memastikan bahwa variabel-variabel yang berbeda (yang memiliki satuan yang berbeda pula) bisa dibandingkan secara fair. Jumlah museum (satuan: buah) tidak bisa langsung dijumlahkan dengan tingkat konektivitas udara (satuan: indeks) atau rata-rata pengeluaran (satuan: USD). Normalisasi adalah teknik untuk mengubah semua variabel ke skala yang sama, sehingga penjumlahan atau pembobotan menjadi bermakna.
+
+## Mengapa Normalisasi Diperlukan
+
+Normalisasi mengatasi dua masalah sekaligus. Pertama, satuan yang berbeda: skor 100 untuk "jumlah museum" dan skor 100 untuk "konektivitas udara" tidak bisa dibandingkan; satuannya tidak sama. Kedua, skala yang berbeda: skor 90 untuk "kualitas pendidikan" (skala 0–100) dan skor 1,5 juta untuk "jumlah wisatawan" (skala 0–1,5 juta) tidak bisa dijumlahkan. Normalisasi mengubah semua variabel ke rentang yang sama, sehingga penjumlahan bobot menjadi bermakna.
+
+Pilihan normalisasi menentukan bagaimana setiap kota diberi skor. Normalisasi yang berbeda bisa menghasilkan peringkat yang berbeda untuk kota yang sama, dan ini bukan isu teknis saja, ini adalah isu desain indeks yang menentukan siapa yang diuntungkan.
+
+## *Min-Max Scaling*: Sederhana, Intuitif, tetapi Sensitif
+
+*Min-Max scaling* adalah normalisasi paling sederhana. Setiap variabel diubah ke skala 0–1, dengan formula:
+
+```
+x_norm = (x - min(x)) / (max(x) - min(x))
+```
+
+Hasilnya: variabel dengan nilai minimum menjadi 0, nilai maksimum menjadi 1, dan nilai lainnya di antara. Skala 0–1 memudahkan interpretasi dan penjumlahan.
+
+Kelemahan *min-max scaling*: sensitif terhadap *outlier*. Satu nilai ekstrem (misalnya satu kota dengan jumlah wisman yang sangat tinggi) akan menarik nilai maksimum ke atas, sehingga skor kota-kota lain terkompresi ke ujung bawah skala meskipun sebenarnya nilainya cukup baik. Solusi: *winsorization* (membatasi nilai ekstrem ke persentil tertentu) atau *trimming* (menghapus *outlier* sebelum normalisasi).
+
+## *Z-Score Standardization*: Rata-Rata 0, Standar Deviasi 1
+
+*Z-score* mengubah setiap variabel sehingga rata-ratanya menjadi 0 dan standar deviasinya menjadi 1:
+
+```
+z = (x - μ) / σ
+```
+
+Hasilnya: variabel dengan nilai di atas rata-rata akan positif, di bawah rata-rata negatif. Skala ini memungkinkan interpretasi "berapa standar deviasi dari rata-rata" yang bermakna statistik.
+
+Kelemahan *z-score*: tidak memiliki batas skala yang tetap. Sebuah variabel bisa memiliki z-score -3 atau +4, tergantung posisi relatifnya. Untuk penjumlahan dengan bobot, ini biasanya tidak masalah, tetapi untuk interpretasi non-teknis, *z-score* kurang intuitif dibanding *min-max*.
+
+## Normalisasi untuk Data Kualitatif
+
+Tidak semua variabel bersifat kuantitatif. Variabel seperti "kualitas institusi", "tingkat korupsi", atau "kebebasan pers" biasanya diukur dengan *ranking* atau *qualitative scoring*. Untuk mengubahnya menjadi skala yang bisa dibandingkan, ada beberapa pendekatan:
+
+- **Rank-based**: mengubah setiap variabel menjadi *ranking* (1, 2, 3, ...). Keuntungan: skala seragam, tidak sensitif terhadap distribusi. Kekurangan: peringkat 1 dan 2 dianggap berbeda jauh, padahal bisa jadi sangat dekat.
+- **Percentile-based**: mengubah ke persentil (0–100). Keuntungan: distribusi yang lebih mulus, lebih intuitif. Kekurangan: tidak bisa membedakan dua kota yang berada di persentil yang sama.
+- **Likert-style scoring**: untuk survei persepsi, normalisasi ke skala 1–5 atau 1–7. Pendekatan ini yang paling umum dalam *Travel & Tourism Development Index* (TTDI) dari World Economic Forum — nama baru sejak 2021, menggantikan *Travel & Tourism Competitiveness Index*.
+
+## Arah Indikator: Tidak Semua Variabel "Makin Besar Makin Baik"
+
+Ada satu langkah yang sering terlewat, dan akibatnya fatal. Rumus
+*min-max* dan *z-score* di atas diam-diam mengandaikan bahwa nilai yang
+lebih besar selalu berarti lebih baik. Untuk jumlah museum atau
+konektivitas udara, andaian itu benar. Untuk tingkat kemacetan, angka
+kriminalitas, tingkat polusi, harga yang dianggap mencekik, atau tingkat
+korupsi, andaian itu justru terbalik.
+
+Bila variabel semacam itu dinormalisasi apa adanya, kota dengan
+kemacetan terparah akan menerima skor 1,000 dan terbaca sebagai kota
+terbaik pada dimensi tersebut. Indeksnya tetap berjalan, tabelnya tetap
+rapi, dan tidak ada satu pun peringatan yang muncul. Kesalahan seperti
+ini sulit ketahuan justru karena hasilnya tampak wajar.
+
+Penanganannya sederhana: balik arahnya sebelum digabungkan. Untuk
+variabel yang "makin kecil makin baik", pakai
+
+```
+x_norm = (max(x) - x) / (max(x) - min(x))
+```
+
+sehingga nilai terendah memperoleh 1 dan nilai tertinggi memperoleh 0.
+Untuk *z-score*, cukup kalikan hasilnya dengan −1. Alternatif lain yang
+kadang lebih mudah dijelaskan ke publik adalah mengubah variabelnya
+menjadi bentuk positif sejak awal, misalnya memakai "kecepatan
+rata-rata lalu lintas" alih-alih "tingkat kemacetan", atau "indeks rasa
+aman" alih-alih "angka kriminalitas".
+
+Apa pun cara yang dipilih, arah tiap variabel wajib dicatat eksplisit di
+dokumentasi metodologi, dalam satu kolom tersendiri di samping nama
+variabel dan sumbernya. Pemeriksaan paling murah untuk mendeteksi
+kesalahan arah adalah membaca ulang daftar peringkat teratas: kalau ada
+kota yang naik ke puncak justru karena hal-hal yang buruk, hampir pasti
+ada variabel yang lupa dibalik.
+
+## Kapan Normalisasi Mana yang Dipakai?
+
+Pemilihan normalisasi tergantung pada tujuan:
+
+- **Pemeringkatan**: *min-max* atau *z-score*, tergantung preferensi. Keduanya valid.
+- **Komparasi antar-waktu**: keduanya bermasalah bila statistik acuannya dihitung ulang tiap periode. *Z-score* memakai rata-rata dan standar deviasi tahun berjalan, sehingga skor sebuah kota bisa berubah semata-mata karena kota lain bergerak, meski kota itu sendiri tidak berubah sedikit pun. Solusinya adalah membekukan acuan: pakai minimum, maksimum, rata-rata, dan standar deviasi dari satu tahun dasar, lalu terapkan acuan yang sama ke seluruh tahun berikutnya.
+- **Komunikasi publik**: *min-max* lebih intuitif untuk audiens non-teknis.
+- **Analisis statistik lanjut**: *z-score* lebih cocok untuk regresi dan korelasi.
+
+Yang penting adalah konsistensi seluruh variabel dalam satu indeks. Menggunakan *min-max* untuk variabel A dan *z-score* untuk variabel B akan menghasilkan skor yang tidak bisa dibandingkan.
+
+## Menangani Data yang Hilang (*Missing Data*)
+
+Untuk data yang hilang (*missing*) atau tidak tersedia, normalisasi menghadapi tantangan tambahan. Beberapa pendekatan:
+
+- **Imputasi rata-rata**: mengganti *missing* dengan rata-rata variabel. Sederhana, tetapi bisa menutupi variasi.
+- **Imputasi regresi**: memprediksi *missing* dari variabel lain. Lebih akurat, tetapi bergantung pada model.
+- **Multiple imputation**: menghasilkan beberapa *dataset* dengan imputasi berbeda, lalu mengagregasi hasilnya. Paling robust, tetapi paling kompleks.
+- **Tidak imputasi**: membiarkan *missing* dan memfilter kota yang datanya tidak lengkap. Paling konservatif.
+
+Pilihan tergantung pada tradeoff akurasi dan kompleksitas. Untuk pemeringkatan resmi, transparansi metode adalah yang terpenting.
+
+## Contoh Perhitungan Manual: Lima Kota dengan Tiga Variabel
+
+Untuk memahami bagaimana normalisasi bekerja dalam praktik, mari lihat contoh sederhana. Misalkan ada lima kota Indonesia (Jakarta, Bali, Yogyakarta, Surabaya, Bandung) dan tiga variabel yang ingin dinormalisasi: (A) jumlah museum, (B) konektivitas udara internasional, dan (C) rata-rata pengeluaran wisman per kunjungan (USD).
+
+**Data asli**:
+
+| Kota | Museum | Konektivitas | Pengeluaran |
+|------|--------|--------------|-------------|
+| Jakarta | 154 | 89 | 1.250 |
+| Bali (Denpasar) | 78 | 47 | 1.480 |
+| Yogyakarta | 62 | 23 | 970 |
+| Surabaya | 71 | 38 | 1.120 |
+| Bandung | 45 | 27 | 890 |
+
+**Langkah 1, Hitung statistik deskriptif**:
+
+- Museum: min=45, max=154, mean=82, std=37,66
+- Konektivitas: min=23, max=89, mean=44,8, std=23,65
+- Pengeluaran: min=890, max=1.480, mean=1.142, std=209,51
+
+(Standar deviasi di sini dihitung sebagai standar deviasi *populasi*, karena kelima kota adalah seluruh himpunan yang dibandingkan, bukan sampel acak dari himpunan yang lebih besar. Pilihan ini perlu disebutkan eksplisit: memakai standar deviasi sampel akan menghasilkan angka yang berbeda, dan pembaca yang mencoba mereproduksi perhitungan akan kebingungan bila asumsinya tidak dinyatakan.)
+
+**Langkah 2, Terapkan *min-max scaling* ke museum**:
+
+Formula: `x_norm = (x - min) / (max - min) = (x - 45) / (154 - 45) = (x - 45) / 109`
+
+- Jakarta: (154 - 45) / 109 = 1,000
+- Bali: (78 - 45) / 109 = 0,303
+- Yogya: (62 - 45) / 109 = 0,156
+- Surabaya: (71 - 45) / 109 = 0,239
+- Bandung: (45 - 45) / 109 = 0,000
+
+Hasil: skala 0,000 sampai 1,000, dengan Jakarta pada nilai maksimum (1,000) dan Bandung pada nilai minimum (0,000).
+
+**Langkah 3, Terapkan *z-score* ke konektivitas**:
+
+Formula: `z = (x - μ) / σ = (x - 44,8) / 23,65`
+
+- Jakarta: (89 - 44,8) / 23,65 = 1,869
+- Bali: (47 - 44,8) / 23,65 = 0,093
+- Yogya: (23 - 44,8) / 23,65 = -0,922
+- Surabaya: (38 - 44,8) / 23,65 = -0,288
+- Bandung: (27 - 44,8) / 23,65 = -0,753
+
+(Perhatikan bahwa σ dipakai sampai dua angka di belakang koma. Membulatkannya lebih dulu menjadi 23,7 akan menggeser hasilnya di digit ketiga — misalnya Jakarta menjadi 1,865, bukan 1,869. Dalam contoh perhitungan, pembulatan antara harus dihindari agar pembaca dapat mereproduksi angkanya persis.)
+
+Hasil: variabel dengan rata-rata 0, standar deviasi 1. Jakarta paling tinggi (z=1,87), Yogya paling rendah (z=-0,92).
+
+**Langkah 4a, Terapkan *min-max* ke konektivitas**:
+
+Skor agregat di Langkah 6 nanti menuntut semua variabel berada pada skala yang sama, sehingga konektivitas perlu dihitung ulang dengan *min-max*, bukan dengan *z-score* di atas.
+
+Formula: `x_norm = (x - 23) / (89 - 23) = (x - 23) / 66`
+
+- Jakarta: (89 - 23) / 66 = 1,000
+- Bali: (47 - 23) / 66 = 0,364
+- Yogya: (23 - 23) / 66 = 0,000
+- Surabaya: (38 - 23) / 66 = 0,227
+- Bandung: (27 - 23) / 66 = 0,061
+
+**Langkah 4b, Terapkan *min-max* ke pengeluaran**:
+
+Formula: `x_norm = (x - 890) / (1.480 - 890) = (x - 890) / 590`
+
+- Jakarta: (1.250 - 890) / 590 = 0,610
+- Bali: (1.480 - 890) / 590 = 1,000
+- Yogya: (970 - 890) / 590 = 0,136
+- Surabaya: (1.120 - 890) / 590 = 0,390
+- Bandung: (890 - 890) / 590 = 0,000
+
+Hasil: Bali tertinggi (1,000), Bandung terendah (0,000).
+
+**Langkah 5, Perhatikan perbedaan profil**:
+
+Setelah normalisasi, profil setiap kota menjadi terlihat:
+
+- **Jakarta**: tinggi di museum (1,000) dan konektivitas (z=1,87), menengah di pengeluaran (0,610). Kota metropolitan dengan penawaran lengkap.
+- **Bali**: menengah di museum (0,303) dan konektivitas (z=0,09), tertinggi di pengeluaran (1,000). Kota dengan wisman premium.
+- **Yogyakarta**: rendah di museum (0,156), konektivitas (z=-0,92), dan pengeluaran (0,136) — nilai terendah kedua setelah Bandung di dua dari tiga variabel. Kota budaya yang kuat secara reputasi, tetapi lemah secara konektivitas dan nilai belanja.
+- **Surabaya**: menengah di semua variabel. Kota yang seimbang, tanpa keunggulan menonjol maupun kelemahan tajam.
+- **Bandung**: rendah di semua variabel. Kota yang perlu banyak investasi.
+
+**Langkah 6, Skor total agregat (jika min-max di semua variabel)**:
+
+Skor total = (museum + konektivitas + pengeluaran) / 3, semua dalam *min-max*:
+
+- Jakarta: (1,000 + 1,000 + 0,610) / 3 = 0,870
+- Bali: (0,303 + 0,364 + 1,000) / 3 = 0,556
+- Yogya: (0,156 + 0,000 + 0,136) / 3 = 0,097
+- Surabaya: (0,239 + 0,227 + 0,390) / 3 = 0,285
+- Bandung: (0,000 + 0,061 + 0,000) / 3 = 0,020
+
+Peringkat: Jakarta (1), Bali (2), Surabaya (3), Yogya (4), Bandung (5). Polanya: Jakarta dominan karena punya museum dan koneksi tinggi; Bali meski pengeluaran wisman tertinggi, konektivitasnya sedang; kota-kota non-metropolitan tertinggal.
+
+Perhitungan ini menggambarkan satu hal penting: **normalisasi bukan sekadar transformasi matematis, itu adalah keputusan desain yang menentukan siapa yang diuntungkan**. Jika kota-kota non-metropolitan ingin masuk radar, variabel yang berbeda ('kualitas pengalaman', 'keaslian budaya', 'keberlanjutan') adalah yang memperlihatkan keunggulan mereka. Normalisasi tidak bisa menutupi kelemahan struktural, hanya menerjemahkannya ke skala yang konsisten.
+
+> **Catatan metodologis**: Angka-angka dalam contoh ini (jumlah museum 154 untuk Jakarta, konektivitas 89 untuk Jakarta, pengeluaran USD 1.250–1.480, dst.) adalah **sintetik** untuk keperluan ilustrasi prosedur. Tujuannya: memperlihatkan *workflow* kalkulasi min-max dan z-score, hasilnya, dan interpretasi. Untuk aplikasi nyata, angka-angka harus diganti dengan data aktual dari BPS, Disparekraf, dan sumber resmi lainnya. Prosedur dan logikanya berlaku umum dan tidak bergantung pada angka spesifik.
+
+<VisualMenyusul tipe="Grafik" id="5.1" deskripsi="Ilustrasi perbandingan metode normalisasi (baris subplot: min-max, z-score, rank-based) untuk 5 kota hipotetis; sumbu X: kota; sumbu Y: skor ternormalisasi; seri: variabel museum, variabel konektivitas, variabel pengeluaran" sumber="ilustrasi, diolah" />

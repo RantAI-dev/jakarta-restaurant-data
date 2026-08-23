@@ -1,0 +1,58 @@
+---
+title: "3.3 Analisis Matriks Origin-Destination (OD) untuk Pemetaan Pola Pergerakan Wisatawan"
+---
+
+Mengetahui berapa kunjungan dan berapa lama tinggal ibarat melihat sebuah drama dari kursi paling belakang: kita tahu jumlah penonton dan berapa lama mereka tinggal, tetapi tidak tahu dari mana mereka datang, ke mana mereka pergi, dan bagaimana mereka berpindah antarkota. Matriks *Origin-Destination* (OD) adalah alat untuk menjawab semua itu sekaligus: sebuah tabel dua dimensi yang memetakan "dari mana" (negara asal, kota asal) ke "ke mana" (kota tujuan, destinasi spesifik). Untuk kebijakan promosi dan investasi infrastruktur, matriks OD adalah peta yang paling berbicara.
+
+## Anatomi Matriks OD
+
+Bentuk paling sederhana dari matriks OD adalah tabel dengan negara asal di baris dan kota tujuan di kolom. Setiap sel berisi jumlah kunjungan: berapa kunjungan wisman dari Australia ke Bali, berapa dari Jepang ke Yogyakarta, dan seterusnya. Tabel ini bisa diperluas: per musim, per maksud kunjungan, per kelompok usia, per moda transportasi. Yang penting adalah konsisten dalam mendefinisikan "asal" dan "tujuan", apakah asal adalah negara paspor, kota tinggal, atau bandara awal; apakah tujuan adalah kota administratif atau aglomerasi.
+
+Untuk Indonesia, matriks OD paling sederhana yang bisa disusun adalah antara negara asal wisman dan pintu masuk kedatangan. BPS sudah merilis versi sederhana dari matriks ini: total kunjungan per negara asal per bulan, dan total kunjungan per pintu masuk per bulan. Menggabungkan keduanya untuk menghasilkan matriks "asal × pintu masuk" masih memerlukan asumsi atau data tambahan, dan di sinilah pekerjaan metodologis yang sebenarnya dimulai.
+
+## Sumber Data untuk Matriks OD
+
+Beberapa sumber memberi kontribusi pada matriks OD:
+
+- **Data imigrasi per pintu masuk**: mencatat negara asal (berdasarkan paspor) dan pintu masuk, tetapi tidak mencatat kota tujuan akhir. Wisman yang masuk lewat Soekarno-Hatta bisa jadi menuju Jakarta, Bandung, Yogyakarta, atau Bali.
+- **PES**: mencatat pintu masuk keluar dan negara asal, dan kadang-kadang kota tujuan selama di Indonesia. Lebih akurat untuk matriks asal × kota, tetapi sampelnya kecil.
+- **Survei Wisnus**: untuk perjalanan domestik, bisa menghasilkan matriks asal_kota × tujuan_kota, tetapi tidak mencakup wisman.
+- **MPD**: memungkinkan rekonstruksi matriks asal_kota_asal × tujuan_kota secara langsung, dengan granularitas waktu dan rute perjalanan, tetapi dengan biasabilitas terhadap pengguna *smartphone*.
+
+Daftar ini menunjukkan bahwa tidak ada sumber tunggal yang menghasilkan matriks OD tingkat kota secara lengkap. Matriks yang dipakai dalam pembahasan kebijakan biasanya merupakan hasil rekonstruksi dari beberapa sumber, dengan asumsi yang harus dinyatakan secara eksplisit.
+
+## Membangun Matriks OD Tingkat Kota: Contoh Bali
+
+Mari ambil contoh konkret: matriks OD untuk Bali. Sekitar 45% kunjungan wisman Indonesia pada 2024 masuk lewat Bali — 6,33 juta dari 13,9 juta kunjungan (BPS Bali; BPS). Untuk mengetahui dari mana mereka datang, *frontier counting* memberi negara asal (Australia, RRT, India, Jepang, Singapura sebagai terbesar), tetapi tidak memberi tahu berapa lama mereka tinggal di Bali versus berapa lama mereka melakukan *side trip* ke Yogyakarta atau Lombok.
+
+MPD bisa melengkapi dengan menunjukkan *footprint* pergerakan: berapa banyak perangkat yang masuk ke Bali, berapa lama mereka tinggal, berapa yang juga melakukan perjalanan ke destinasi tetangga, dan berapa yang langsung kembali ke negara asal.
+
+Dengan mengalikan proporsi ini dengan total kunjungan dari *frontier counting*, kita bisa menghasilkan matriks yang lebih akurat: misalnya, 60% kunjungan wisman Australia ke Bali benar-benar tinggal di Bali selama 5+ malam, 20% memiliki LoS 2–4 malam, dan 20% hanya transit atau lanjut ke destinasi lain.
+
+Angka-angka ini bukan dari BPS. Angka-angka ini adalah rekonstruksi yang bisa diverifikasi silang ketika *data* MPD tersedia.
+
+## Apa yang Bisa Dibaca dari Matriks OD?
+
+Matriks OD yang baik memungkinkan beberapa hal konkret:
+
+- **Menyusun promosi yang lebih terarah**. Jika matriks OD menunjukkan bahwa Jepang adalah pasar utama untuk Bali, promosi ke Jepang dapat diprioritaskan. Jika matriks OD menunjukkan bahwa Australia dominan untuk Lombok tetapi bukan untuk Yogyakarta, promosi dapat disesuaikan.
+- **Merencanakan kapasitas infrastruktur**. Jika Matriks OD per moda menunjukkan peningkatan perjalanan dari India lewat jalur udara langsung, bandara dan konektivitas ke kota tujuan bisa disiapkan.
+- **Mengelola overtourism**. Jika Matriks OD menunjukkan konsentrasi kunjungan ke satu kawasan (misalnya Ubud atau Kuta), promosi bisa dialihkan ke kawasan sekitarnya untuk mengurangi tekanan.
+- **Memprediksi dampak perubahan**. Jika maskapai baru membuka rute langsung dari Tokyo ke Denpasar, Matriks OD menjadi dasar untuk memperkirakan peningkatan kunjungan dan persiapan kapasitas.
+
+Untuk kota-kota besar di Indonesia, Matriks OD semacam ini masih dalam tahap pembangunan. Beberapa *Destination Management Organization* (DMO) daerah seperti di Bali sudah mulai mempublikasikan versi sederhana, tetapi integrasi nasional masih parsial. Pekerjaan ke depan adalah menyatukan Matriks OD yang dibangun oleh masing-masing daerah ke dalam satu kerangka yang bisa dibandingkan dan diagregasi.
+
+## Keterbatasan dan Bias
+
+Matriks OD bukan representasi sempurna dari pergerakan nyata. Beberapa keterbatasan yang harus selalu diingat:
+
+- **Definisi asal**: apakah "asal" adalah negara paspor, kota tinggal, atau bandara awal? Ketiganya menghasilkan matriks yang berbeda.
+- **Kunjungan multi-destinasi**: seorang wisman yang mengunjungi Jakarta, Yogyakarta, dan Bali secara berurutan akan tercatat di masing-masing kota, tetapi proporsi hari yang dihabiskan di masing-masing kota tidak selalu tercatat.
+- **Same-day visitors**: untuk perbatasan darat, proporsi pelancong harian cukup besar dan sering luput dari pelacakan.
+- **Pembulatan dan kelengkapan**: data MPD tidak lengkap untuk anak-anak, orang lanjut usia, dan pengunjung dengan perangkat mati.
+
+Membaca Matriks OD dengan kacamata kritis berarti memahami keterbatasan ini dan tidak memperlakukan angka sebagai kebenaran absolut.
+
+<VisualMenyusul tipe="Tabel" id="3.2" deskripsi="Matriks OD sederhana, kunjungan wisman per negara asal per pintu masuk utama 2024 (juta kunjungan); kolom: Soekarno-Hatta, Ngurah Rai, Juanda, Kualanamu, Hasanuddin, lain; baris: 10 negara asal teratas" sumber="BPS, diolah dari Statistik Kunjungan Wisman 2024" />
+
+<VisualMenyusul tipe="Grafik" id="3.2" deskripsi="Peta panas Indonesia, distribusi spasial kunjungan wisman per pintu masuk 2024 (juta kunjungan)" sumber="BPS, diolah" />

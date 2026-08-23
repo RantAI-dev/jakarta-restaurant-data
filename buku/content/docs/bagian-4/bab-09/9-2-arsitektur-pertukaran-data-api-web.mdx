@@ -1,0 +1,67 @@
+---
+title: "9.2 Arsitektur Pertukaran Data (API & Web Services) Antara Walidata Daerah dan Platform GCI"
+---
+
+Setelah data harmonisasi, pertanyaannya adalah bagaimana data itu berpindah dari satu tempat ke tempat lain. Arsitektur API (*Application Programming Interface*) adalah jawabannya, sebuah kontrak formal antara penyedia data dan konsumen data yang memungkinkan pertukaran otomatis.
+
+## Anatomi API
+
+API adalah antarmuka yang memungkinkan satu program untuk meminta data dari program lain. Untuk konteks statistik, alur umumnya:
+
+- **Konsumen** mengirim *request* ke endpoint API dengan parameter tertentu (mis. "data kunjungan wisman Bali 2024 bulanan").
+- **Server** memproses request, menarik data dari basis data, dan mengembalikan dalam format tertentu (JSON, XML).
+- **Konsumen** menerima data dan memproses lebih lanjut untuk visualisasi, analisis, atau integrasi ke aplikasi lain.
+
+API yang baik didokumentasikan secara terbuka, memiliki *rate limiting* yang masuk akal, dan mengembalikan pesan *error* yang informatif ketika ada masalah.
+
+## REST API vs GraphQL
+
+Dua pendekatan utama untuk API: REST API dan GraphQL.
+
+- **REST API**: sumber daya (data) diidentifikasi oleh URL, dan aksi (GET, *POST*, PUT, DELETE) didefinisikan oleh HTTP method. Sederhana, banyak dipakai, dan mudah didokumentasikan.
+- **GraphQL**: konsumen menentukan *field* yang dibutuhkan dalam satu request. Lebih fleksibel, tetapi lebih kompleks untuk disiapkan.
+
+Untuk konteks pemerintah daerah, REST API adalah pilihan yang lebih aman. GraphQL memberikan keuntungan ketika konsumen data beragam dan butuh subset data yang berbeda.
+
+## Autentikasi dan Otorisasi
+
+Data statistik bisa jadi sensitif. Siapa yang boleh mengaksesnya? Autentikasi menjawab "siapa yang request", otorisasi menjawab "apa yang boleh diakses".
+
+Beberapa metode:
+
+- **API Key**: string unik yang diberikan kepada konsumen. Sederhana, tetapi rentan jika bocor.
+- **OAuth 2.0**: standar untuk delegasi akses. Konsumen login via provider OAuth, dan provider memberikan token dengan scope tertentu.
+- **JWT (*JSON Web Token*)**: token yang ditandatangani secara digital, memuat klaim tentang identitas dan hak akses.
+
+Untuk Disparekraf, OAuth 2.0 + JWT adalah kombinasi yang umum. Konsumen (mis. *platform* GCI) akan login via OAuth, dan Disparekraf bisa mengatur scope data apa yang diakses.
+
+## Standar Pertukaran: SDMX dan *Open Data Protocol*
+
+Beberapa standar yang umum:
+
+- **SDMX (Statistical Data and Metadata Exchange)**: standar ISO untuk pertukaran data statistik. Banyak digunakan oleh bank sentral, BPS, dan badan internasional.
+- **OData (*Open Data Protocol*)**: standar dari Microsoft untuk *RESTful API* dengan fitur query yang kuat.
+- **CKAN / DKAN**: platform *open data* yang umum dipakai pemerintah.
+
+Untuk Indonesia, kombinasi SDMX (untuk data statistik resmi) dan OData (untuk API umum) adalah pilihan yang masuk akal.
+
+## Pertimbangan Implementasi
+
+Beberapa hal yang sering menjadi *lessons learned*:
+
+- **Versioning**: API akan berubah. Selalu sediakan *versioning* di URL (mis. `/v1/`, `/v2/`) agar konsumen lama tidak *break*.
+- **Rate limiting**: batasi jumlah request per konsumen per periode. Mencegah *overload* dan *abuse*.
+- **Documentation**: dokumentasi yang baik (Swagger/OpenAPI) menghemat waktu konsumen dan tim support.
+- **Monitoring**: pantau *latency*, *error rate*, dan *throughput* untuk memastikan kualitas.
+
+## Implikasi untuk Disparekraf
+
+Implikasi untuk Disparekraf yang ingin melayani data via API:
+
+- **Investasi awal**: menyiapkan API memerlukan *developer* dan infrastruktur (server, basis data, monitoring).
+- **Pemeliharaan**: API adalah *living product* yang harus dipantau dan di-*update*.
+- **Komunitas**: bangun komunitas konsumen (akademisi, jurnalis, *startup*) yang bisa memberikan umpan balik.
+
+Hasilnya: Disparekraf tidak hanya menjadi *producer* data, tetapi juga *provider* data yang bisa diintegrasikan ke dalam ekosistem yang lebih besar.
+
+<VisualMenyusul tipe="Grafik" id="9.2" deskripsi="Diagram arsitektur API, Disparekraf sebagai provider, dengan konsumen (GCI, akademisi, dashboard, researcher)" sumber="arsitektur tipikal, diolah" />

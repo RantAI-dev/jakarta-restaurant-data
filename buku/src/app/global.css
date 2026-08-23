@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@theme {
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Identitas warna — oranye Dinas Pariwisata di atas dasar putih/gelap netral.
+   --------------------------------------------------------------------------- */
+:root {
+  --color-fd-primary: oklch(0.62 0.19 41);
+  --color-fd-ring: oklch(0.62 0.19 41);
+}
+
+.dark {
+  --color-fd-primary: oklch(0.72 0.16 45);
+  --color-fd-ring: oklch(0.72 0.16 45);
+}
+
+/* Naskah buku: baris lebih lega daripada dokumentasi teknis. */
+#nd-page .prose {
+  --fd-prose-max-width: 46rem;
+  text-wrap: pretty;
+}
+
+#nd-page .prose p {
+  line-height: 1.75;
+}
+
+/* Judul memakai serif — pembeda utama antara "buku" dan "dokumentasi". */
+#nd-page h1,
+#nd-page .prose :is(h2, h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+#nd-page h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* Kertas: dasar hangat + butiran halus, supaya layar tidak terasa kosong. */
+.kertas {
+  background-color: var(--color-fd-background);
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      color-mix(in oklch, var(--color-fd-primary) 12%, transparent),
+      transparent 70%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Garis rambut pemisah, sepanjang lebar kolom. */
+.rule-tipis {
+  border-top: 1px solid var(--color-fd-border);
+}
+
+/* ---------------------------------------------------------------------------
+   Palet visualisasi data.
+
+   Kategorikal slot 1–6 + kutub diverging + tinta bagan, masing-masing dengan
+   langkah tersendiri untuk mode gelap (bukan pembalikan otomatis). Nilai ini
+   lolos seluruh gate validator palet (lightness band, chroma, pemisahan CVD,
+   ambang penglihatan normal, kontras) pada kedua permukaan.
+   --------------------------------------------------------------------------- */
+.viz {
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+
+  --pole-negatif: #e34948;
+  --pole-netral: #898781;
+  --pole-positif: #2a78d6;
+
+  --viz-grid: #e1e0d9;
+  --viz-axis: #c3c2b7;
+  --viz-muted: #898781;
+  --viz-surface: #fcfcfb;
+}
+
+.dark .viz {
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+
+  --pole-negatif: #e66767;
+  --pole-netral: #898781;
+  --pole-positif: #3987e5;
+
+  --viz-grid: #2c2c2a;
+  --viz-axis: #383835;
+  --viz-muted: #898781;
+  --viz-surface: #1a1a19;
+}
+
+/* Recharts memasang fokus outline pada wrapper; tidak diperlukan di sini. */
+.viz .recharts-wrapper:focus-visible {
+  outline: none;
+}

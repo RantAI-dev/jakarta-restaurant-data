@@ -1,0 +1,74 @@
+---
+title: "5.2 Teknik Konstruksi Proxy Indicator Saat Data Primer Global Tidak Tersedia"
+---
+
+Salah satu tantangan terbesar bagi kota-kota di luar OECD adalah keterbatasan akses ke data primer global. Banyak variabel yang dipakai GCI, GPCI, dan Resonance, seperti *number of international conferences*, *international schools*, *high-ranking universities*, atau *quality of healthcare*, sulit dipenuhi langsung untuk kota-kota Indonesia. Jalan keluar yang umum adalah menggunakan *proxy indicator*, variabel pengganti yang berkorelasi kuat dengan variabel asli, dan yang datanya tersedia secara lokal.
+
+## Apa Itu *Proxy Indicator*?
+
+*Proxy* adalah variabel yang digunakan sebagai pengganti karena variabel yang sebenarnya tidak bisa diukur atau tidak tersedia. *Proxy* yang baik memiliki tiga sifat: (1) berkorelasi kuat dengan variabel asli, (2) datanya tersedia secara konsisten, dan (3) definisinya jelas sehingga tidak terjadi *interpretation drift*. Sebagai contoh, untuk variabel "jumlah wisman kelas atas", sulit diukur langsung; *proxy* yang umum adalah "rata-rata pengeluaran per hari", yang berkorelasi kuat dengan segmentasi pasar.
+
+Kelemahan *proxy* yang paling jelas: *proxy* bisa jadi bukan variabel yang sama. Rata-rata pengeluaran per hari bisa berkorelasi dengan wisman kelas atas, tetapi juga bisa dipengaruhi oleh inflasi, jenis mata uang, dan persaingan harga lokal. Seorang analis yang menggunakan *proxy* tanpa membahas keterbatasannya akan menyajikan angka yang menyesatkan.
+
+## Contoh *Proxy* untuk Variabel Pariwisata
+
+Berikut adalah beberapa contoh *proxy* yang bisa dipakai untuk variabel GCI/GPCI:
+
+- **Variabel "international conferences"**: sulit diukur untuk kota Indonesia karena database ICCA tidak lengkap. *Proxy*: "jumlah *event* MICE internasional yang dilaporkan AIPI (Asosiasi Industri Pertemuan Indonesia)", yang mencakup tidak semua *event* ICCA, tetapi memberikan gambaran tren.
+- **Variabel "quality of dining"**: langkah pertama bukan mencari *proxy*, melainkan memastikan variabel aslinya diukur dari sumber apa. Beberapa indeks kota memakai daftar kurasi internasional tertentu — *La Liste* dan sejenisnya — bukan *Michelin Guide* dan bukan pula *Asia's 50 Best*. Selama tidak ada restoran Indonesia di dalam daftar yang dipakai indeks, nilai indikatornya tetap nol, dan tidak ada *proxy* internal yang bisa mengubahnya. *Proxy* tetap berguna, tetapi untuk keperluan yang berbeda: **memantau kemajuan sendiri**. Contohnya rasio restoran kelas atas terhadap total restoran berizin di kota tersebut, atau rasio *venue* kategori harga tertinggi terhadap total *venue* kuliner. Bedakan keduanya dengan tegas: *proxy* untuk memantau kemajuan sendiri **tidak sama** dengan *proxy* untuk menebak skor indeks. Yang pertama sah dan berguna; yang kedua hampir selalu menyesatkan pimpinan.
+- **Variabel "number of museums"**: relatif mudah diukur, tetapi kualitas museum sangat bervariasi. *Proxy*: "museum dengan koleksi minimal 1.000 benda", yang menyaring dari ribuan museum kecil menjadi ratusan yang signifikan.
+- **Variabel "international schools"**: relatif mudah diukur, tetapi tidak semua kota melaporkan. *Proxy*: "sekolah dengan kurikulum internasional terakreditasi", yang walau tidak lengkap, memberikan ukuran kasar.
+- **Variabel "kunjungan wisman"**: tersedia, tetapi *frontier counting* tidak membedakan leisure dari MICE. *Proxy*: "rasio TPKH bintang 4–5 terhadap total TPKH", yang berkorelasi dengan kunjungan berkualitas.
+
+## *Proxy* yang Tidak Boleh Dipakai
+
+Tidak semua variabel memiliki *proxy* yang baik. Beberapa variabel memiliki karakteristik yang sulit ditiru: kualitas (misalnya "tingkat kepuasan"), persepsi (misalnya "reputasi"), atau kuantitas yang sangat granular (misalnya "jumlah perusahaan rintisan skala global"). Untuk variabel-variabel ini, lebih baik tidak dipakai daripada menggunakan *proxy* yang menyesatkan.
+
+Seorang analis yang kredibel akan secara eksplisit menyatakan: "Variabel X tidak tersedia; kami memilih untuk tidak menggunakan *proxy* karena tidak ada yang cukup baik." Keputusan ini lebih jujur daripada memaksakan variabel dengan *proxy* yang diragukan.
+
+## Validasi *Proxy*
+
+Sebelum dipakai dalam pemeringkatan, *proxy* perlu divalidasi. Validasi yang paling sederhana: bandingkan *proxy* dengan variabel asli untuk kota-kota yang memiliki keduanya. Jika korelasi tinggi (*R²* > 0,7), *proxy* bisa dipakai. Jika korelasi rendah, *proxy* perlu diperbaiki atau ditinggalkan.
+
+Validasi yang lebih kuat: uji sensitivitas. Jika *proxy* diganti dengan variabel yang berbeda, apakah hasil pemeringkatan berubah drastis? Jika hasilnya berubah drastis, *proxy* terlalu sensitif dan tidak boleh dipakai. Jika hasilnya stabil, *proxy* cukup robust.
+
+## Langkah-demi-Langkah: Membangun *Proxy* Kunjungan *Event* MICE untuk Kota Indonesia
+
+Untuk menggambarkan prosesnya secara konkret, mari lihat satu studi kasus: membangun *proxy* untuk variabel GCI "jumlah *event* MICE internasional skala ICCA" di Jakarta. Variabel asli sulit dipenuhi karena data ICCA tidak mencakup semua *event* yang terjadi di Jakarta, dan banyak *event* Indonesia (terutama yang disponsori oleh korporasi lokal atau asosiasi regional) tidak masuk database ICCA.
+
+**Langkah 1, Identifikasi variabel asli dan batasan akses**.
+
+Variabel asli: "jumlah *event* MICE internasional yang masuk database ICCA untuk kota Y pada tahun Z". Sumber asli: ICCA Association Database. Batasan: ICCA hanya mencatat *event* yang diselenggarakan oleh *association* (asosiasi profesi/industri), dan hanya *event* yang masuk database resmi mereka. Untuk Jakarta, data ini bisa diakses sebagian, tetapi tidak bisa menjadi sumber tunggal.
+
+**Langkah 2, Identifikasi *proxy* potensial**.
+
+Kandidat *proxy*:
+- *Proxy* A: "jumlah *event* MICE internasional yang dilaporkan AIPI (Asosiasi Industri Pertemuan Indonesia)". AIPI melaporkan *event* MICE yang melibatkan asosiasi, tetapi tidak semua eventICC cabang Indonesia mendaftarkan event-nya ke AIPI.
+- *Proxy* B: "jumlah *event* di Jakarta Convention Center (JCC) + JIExpo + Balai Sarbini + hotel-hotel besar dengan kapasitas 1.000+ delegate". Lebih inklusif, tetapi bisa termasuk *event* yang tidak bersifat "internasional".
+- *Proxy* C: "jumlah *event* yang memiliki delegasi dari minimal 5 negara". Memerlukan data lintas kota, sulit diakses.
+
+Pemilihan: *Proxy* A adalah pilihan yang paling aman karena definisinya jelas (*event* MICE oleh asosiasi) dan sumbernya terstandar (AIPI). Kualitasnya lebih rendah dari ICCA, tetapi lebih tinggi dari *Proxy* B (yang terlalu inklusif).
+
+**Langkah 3, Dokumentasi keterbatasan**.
+
+Setiap *proxy* punya keterbatasan yang harus didokumentasikan secara eksplisit. Untuk *Proxy* A: "Variabel ini mencakup *event* MICE yang dilaporkan AIPI, yang subset dari total *event* MICE di Jakarta. *Event* korporat (tinggi, tetapi jarang internasional), *event* pernikahan, dan *event* yang disponsori individu tidak termasuk." Dokumentasi seperti ini memungkinkan reviewer dan pengguna data untuk memahami keterbatasan dan menginterpretasikan angka dengan tepat.
+
+**Langkah 4, Validasi silang**.
+
+Validasi silang dilakukan dengan membandingkan *Proxy* A dengan ICCA untuk kota-kota yang keduanya memiliki data. Untuk kota-kota di Asia Tenggara (Singapura, Bangkok, Kuala Lumpur), korelasi antara kedua sumber biasanya di kisaran 0,6–0,8, cukup tinggi untuk dipakai, dengan catatan bahwa *Proxy* A akan *underestimate* total *event* sebesar 20–40%.
+
+**Langkah 5, Pelaporan dalam pemeringkatan**.
+
+Dalam rilis pemeringkatan, *proxy* yang dipakai harus selalu disebutkan, dengan keterbatasannya. Frasa standar: "Variabel '*event* MICE internasional' di-*proxy* dengan data AIPI (per X tahun). Korelasi dengan ICCA 0,7. *Underestimate* terhadap total *event* sebesar 20–40%." Transparansi semacam ini memungkinkan pengguna data untuk mengevaluasi kelayakan indeks.
+
+Studi kasus ini menggambarkan proses lima-langkah yang bisa di-replikasi untuk variabel GCI lainnya: identifikasi, eksplorasi kandidat, dokumentasi, validasi, dan pelaporan. Proses ini memakan waktu dan sumber daya, tetapi tanpa proses ini, *proxy* yang dibangun akan menjadi sumber bias yang tidak terkontrol.
+
+> **Catatan metodologis**: Angka "korelasi 0,6–0,8" antara AIPI dan ICCA untuk kota-kota Asia Tenggara, dan besaran *underestimate* 20–40%, adalah **kisaran tipikal** berdasarkan pengalaman umum, bukan hasil studi spesifik. Untuk validasi kuantitatif, *case-by-case backtesting* dengan data lokal diperlukan.
+
+## Konteks Indonesia: Tantangan *Proxy* yang Spesifik
+
+Kota-kota Indonesia menghadapi tantangan *proxy* yang spesifik. Data Disparekraf daerah tidak selalu terstandar; satu kota bisa menghitung "kunjungan" berdasarkan TPKH, kota lain berdasarkan pintu masuk, dan kota lain lagi berdasarkan *event*. Untuk menghasilkan pemeringkatan yang komparabel, distandardisasi definisi adalah prasyarat, dan standardisasi ini bukan pekerjaan yang mudah.
+
+Di sinilah peran Satu Data Indonesia (SDI) menjadi penting. SDI menyediakan kerangka metadata dan walidata yang memungkinkan setiap kota melaporkan data dengan standar yang sama. Tanpa SDI, *proxy* yang dibangun oleh satu kota tidak akan comparable dengan kota lain.
+
+<VisualMenyusul tipe="Tabel" id="5.2" deskripsi="Contoh pemetaan variabel GCI/GPCI ke proxy Indonesia untuk konteks kota besar; kolom: variabel asli, sumber asli, proxy yang dipakai, sumber proxy, keterbatasan; baris: 10 variabel kunci" sumber="BPS, AIPI, PHRI, diolah" />

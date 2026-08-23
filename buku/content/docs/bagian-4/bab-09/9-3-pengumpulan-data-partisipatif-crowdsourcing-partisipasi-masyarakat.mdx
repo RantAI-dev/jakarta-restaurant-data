@@ -1,0 +1,117 @@
+---
+title: "9.3 Pengumpulan Data Partisipatif (Crowdsourcing): Partisipasi Masyarakat dan Wisatawan dalam Pemetaan Destinasi Perkotaan"
+---
+
+Sumber data tidak hanya berupa agregat resmi dari lembaga. Banyak informasi tentang destinasi muncul dari pengalaman langsung wisatawan dan masyarakat lokal. *Crowdsourcing*, pengumpulan data dari banyak kontributor, adalah pendekatan yang memanfaatkan sumber ini secara terstruktur.
+
+## Apa yang Bisa Dikumpulkan Lewat *Crowdsourcing*?
+
+Beberapa jenis data yang cocok untuk *crowdsourcing*:
+
+- **Pemetaan atraksi**: kontributor menambahkan atau mengoreksi lokasi atraksi yang belum tercatat di peta resmi.
+- **Status real-time**: apakah sebuah restoran buka, apakah toilet umum berfungsi, apakah jalan sedang diperbaiki.
+- **Review dan rating**: pengalaman langsung yang tidak selalu muncul di platform komersial.
+- **Foto dan deskripsi**: dokumentasi visual yang melengkapi informasi tekstual.
+- **Event lokal**: festival, pasar malam, konser jalanan yang tidak masuk kalender resmi.
+
+## Platform yang Bisa Dipakai
+
+- **OpenStreetMap**: *crowdsourcing* peta terbuka. Banyak dipakai di Indonesia, terutama untuk pemetaan desa dan jalan kecil.
+- **Wikivoyage**: panduan perjalanan yang ditulis kontributor.
+- **Google Maps**: ulasan dan foto yang ditambahkan kontributor.
+- **Aplikasi lokal**: beberapa Disparekraf punya aplikasi yang meminta pengguna menambahkan informasi tentang destinasi.
+
+Untuk konteks Indonesia, **OpenStreetMap** adalah platform yang paling matang dan terbuka. Kontribusi dari *volunteer* di Indonesia cukup aktif, dan data bisa dipakai untuk berbagai keperluan (termasuk oleh Disparekraf).
+
+## Tantangan Kualitas
+
+*Crowdsourcing* menghadapi empat masalah kualitas.
+
+- **Bias**: kontributor aktif biasanya penduduk urban, kelas menengah, dan punya akses internet. Data bisa bias terhadap kelompok ini.
+- **Manipulasi**: bisnis bisa menulis review positif tentang dirinya, atau negatif tentang pesaing.
+- **Konsistensi**: definisi "atraksi" atau "tempat makan" bisa sangat subjektif.
+- **Vandalisme**: beberapa kontributor nakal bisa menghapus atau mengotori data.
+
+Untuk mengurangi masalah ini, beberapa pendekatan:
+
+- **Moderasi**: kontributor berpengalaman atau moderator memverifikasi kontribusi.
+- **Reputasi**: sistem reputasi yang menghargai kontributor yang konsisten.
+- **Cross-validation**: data dari *crowdsourcing* dibanding dengan sumber resmi.
+- **Incentive**: *badge*, pengakuan, atau bahkan *micro-payment* untuk kontributor aktif.
+
+## Untuk Disparekraf: Peluang dan Risiko
+
+Disparekraf yang menggunakan *crowdsourcing* perlu memperhatikan:
+
+- **Hukum**: kontribusi tunduk pada lisensi tertentu — OpenStreetMap memakai **ODbL** (*Open Database License*) sejak 2012, bukan CC-BY-SA. Pastikan penggunaannya sesuai.
+- **Akuntabilitas**: data yang dipakai untuk kebijakan harus jelas sumbernya.
+- **Kontinuitas**: platform *crowdsourcing* bisa berhenti beroperasi ketika kontributornya menghilang. Diversifikasi sumber.
+
+Contoh konkret: Disparekraf yang bekerja sama dengan komunitas OpenStreetMap Indonesia dapat mempercepat pemetaan desa wisata, sehingga cakupan data spasial meningkat secara signifikan.
+
+## Studi Kasus Perkotaan: Overpass API untuk Inventarisasi Kuliner Satu Kota
+
+Sebelum menengok contoh perdesaan, ada baiknya melihat penerapan yang persis sekota — konteks yang menjadi tema buku ini.
+
+Pada 2026, tim data Disparekraf DKI Jakarta memakai *Overpass API* untuk menarik seluruh titik kuliner di dalam batas administratif DKI. Kuncinya bukan *bounding box* persegi, melainkan poligon administratif yang sesungguhnya:
+
+```
+area["name"="Daerah Khusus Ibukota Jakarta"]["admin_level"="4"]->.dki;
+(
+  node["amenity"="restaurant"](area.dki);
+  way["amenity"="restaurant"](area.dki);
+  node["amenity"="cafe"](area.dki);
+  way["amenity"="cafe"](area.dki);
+  node["tourism"="hotel"](area.dki);
+  way["tourism"="hotel"](area.dki);
+);
+out center tags;
+```
+
+Perhatikan bahwa `node` dan `way` harus ditulis sebagai baris terpisah: sebuah restoran bisa terpetakan sebagai titik tunggal (*node*) atau sebagai denah bangunan (*way*), dan menghilangkan salah satunya berarti kehilangan sebagian objek tanpa peringatan apa pun. Penulisan singkat semacam `node/way[...]` bukan sintaks yang sah dan akan ditolak peladen.
+
+Perbedaan antara poligon dan *bounding box* juga jauh dari sepele. *Bounding box* di sekitar Jakarta akan menyeret masuk sebagian Bekasi, Depok, dan Tangerang — dan angka yang dihasilkan lalu dilaporkan sebagai "angka Jakarta". Poligon administratif menutup celah itu sejak di kueri, bukan lewat pembersihan manual di belakang.
+
+Hasil yang lebih penting bagi pembaca justru soal **kualitas atribut**. Cakupan geometris OSM sangat baik: nyaris setiap restoran punya koordinat. Tetapi sebagian besar objek tidak memiliki tag alamat sama sekali, dan ratusan lainnya tidak punya tag jenis masakan. Untuk pemetaan spasial, itu sudah memadai. Untuk daftar yang harus diserahkan kepada pimpinan dengan kolom "Alamat" terisi, jelas tidak. Alamat kemudian dilengkapi dari sumber komersial, dan yang tetap tidak ditemukan **dibiarkan kosong, bukan dikarang**.
+
+Pelajarannya berlaku umum dan patut diingat sebelum memilih sumber data: **OSM unggul dalam cakupan geometris dan lemah dalam atribut**, sedangkan data perizinan OPD justru sebaliknya — kaya atribut, miskin koordinat. Keduanya saling melengkapi. Menentukan sumber mana yang menjadi rujukan resmi untuk setiap kolom adalah pekerjaan tata kelola data induk, bukan pekerjaan pemetaan.
+
+## Studi Kasus: OpenStreetMap untuk Pemetaan Desa Wisata Indonesia
+
+**OpenStreetMap (OSM)** adalah platform pemetaan kolaboratif terbesar di dunia, dengan lebih dari 8 juta kontributor aktif dan puluhan miliar *node* (poi, jalan, bangunan). Untuk Indonesia, OSM sangat relevan karena dua alasan: (1) banyak kawasan pedesaan dan terpencil yang tidak terpetakan secara resmi, dan (2) komunitas *mapper* Indonesia cukup aktif — Perkumpulan OpenStreetMap Indonesia (POI) memiliki kehadiran yang kuat di forum internasional.
+
+**Penerapan untuk desa wisata**: Disparekraf yang ingin memetakan desa wisata (mis. Desa Penglipuran di Bali, Desa Wae Rebo di NTT, atau Desa Adat di Toraja) menghadapi tantangan: data spasial resmi Badan Informasi Geospasial (BIG) tidak memiliki detail setingkat nama jalan, nama rumah, dan nama atraksi kecil. OSM *mapper* lokal bisa menambahkan data ini, dengan biaya rendah (waktu sukarela, bukan honor).
+
+**Contoh praktis**: 
+
+- **Desa Penglipuran, Bangli, Bali**: OSM memiliki detail jalan setapak, permukiman warga, dan *split gate* (pintu adat) yang tidak ada di Google Maps. Disparekraf Bali menggunakan data OSM ini untuk materi promosi resmi, dengan atribusi yang jelas.
+- **Candi Borobudur dan Prambanan**: meskipun sudah terpetakan secara resmi, OSM menambahkan detail seperti *sunrise viewpoint*, *parking lot*, dan *souvenir shops* yang berguna untuk pengunjung.
+- **Pulau-pulau kecil di Raja Ampat**: OSM memetakan *homestay* dan *dive shop* yang tidak masuk peta komersial, sehingga Disparekraf bisa merekomendasikan akomodasi yang terverifikasi.
+
+**Kualitas data**: OSM memiliki beberapa mekanisme penjagaan kualitas:
+
+- **Validasi setelah publikasi, bukan sebelumnya**: perlu ditegaskan bahwa OSM **tidak** menyaring suntingan sebelum tayang. Setiap suntingan langsung masuk ke basis data, lalu diperiksa belakangan oleh komunitas melalui alat pemantau perubahan, tinjauan *changeset*, dan mekanisme pengembalian. Modelnya menyerupai Wikipedia: keandalannya berasal dari banyaknya mata yang meninjau sesudahnya, bukan dari gerbang persetujuan di depan. Konsekuensinya untuk instansi: data OSM tidak boleh diperlakukan sebagai data terverifikasi begitu saja, dan area yang jarang disunting justru paling rawan luput dari koreksi.
+- **Edit history**: setiap perubahan dapat ditinjau, sehingga vandalisme mudah dilacak dan dikembalikan.
+- **Tags terstandar**: OSM menggunakan *tags* (key-value pairs) yang konsisten, sehingga data bisa difilter dan dianalisis.
+- **Tools validasi**: JOSM (editor OSM) memiliki *quality checks* yang memastikan data konsisten (mis. jalan tidak overlap, poligon tertutup).
+
+**Lisensi dan atribusi**: OSM menggunakan lisensi **ODbL (*Open Database License*)**. Siapa pun boleh memakai datanya, dengan dua syarat: mencantumkan atribusi ke OpenStreetMap dan kontributornya, serta melepas basis data turunan dengan lisensi yang sama (*share-alike*). Perlu dicatat, kewajiban *share-alike* itu melekat pada basis datanya, bukan pada setiap peta atau grafik yang dihasilkan darinya — sebuah pembedaan yang sering disalahpahami ketika instansi ragu memakai OSM. Untuk Disparekraf yang memakai data OSM, yang penting adalah:
+
+- **Atribusi**: "© *OpenStreetMap* contributors" di setiap visualisasi.
+- **Derivatif terbuka**: jika Disparekraf menambahkan data ke OSM atau membuat produk turunan, produk itu harus dilepas dengan lisensi terbuka juga.
+- **Penggunaan komersial diizinkan.** ODbL tidak melarang komersialisasi sama sekali; siapa pun boleh menjual produk yang dibuat dari data OSM. Yang diwajibkan adalah atribusi, dan — bila yang didistribusikan adalah **basis data turunan** — pelepasan basis data itu dengan lisensi yang sama. Sebuah peta cetak, laporan, atau grafik tergolong *Produced Work*. Bila ia dibuat dari data OSM **apa adanya**, kewajibannya hanya atribusi.
+
+Namun justru alur kerja yang dibahas di buku ini menuntut kehati-hatian lebih. Begitu data OSM digabung, disaring, atau diperkaya — misalnya ditambahi alamat dan rating dari sumber lain — yang terbentuk adalah **basis data turunan**. Dan menurut ODbL, menerbitkan *Produced Work* dari basis data turunan itu membuat basis datanya dianggap telah digunakan secara publik, sehingga kewajiban *share-alike* ikut hidup: basis data turunannya harus ditawarkan dengan lisensi yang sama, cuma-cuma, dan dapat diunduh.
+
+Konsekuensinya konkret bagi sebuah dinas: menerbitkan peta kuliner kota yang dibangun dari OSM yang sudah diperkaya berarti bersiap membuka basis data hasil pengayaan itu juga. Itu bukan alasan untuk menghindari OSM, tetapi keputusan yang harus diambil sadar-sadar di awal — bukan ditemukan setelah peta terlanjur terbit.
+
+**Tips implementasi untuk Disparekraf**:
+
+1. **Mulai dengan Kawasan Prioritas**: pilih 5–10 desa wisata yang menjadi *flagship*, dan konsentrasikan upaya pemetaan di sana.
+2. **Lokakarya dengan komunitas**: undang Perkumpulan OpenStreetMap Indonesia (POI) atau *mapper* lokal untuk *mapathon* — acara pemetaan massal — selama satu sampai dua hari.
+3. **Lisensi**: putuskan apakah Disparekraf akan menambahkan data proprietary ke OSM (dengan implikasi ODbL) atau menyimpan data proprietary secara terpisah.
+4. **Integrasi**: hubungkan data OSM dengan portal Disparekraf lewat *Overpass API*, yang memungkinkan kueri data OSM hampir seketika.
+
+Studi kasus ini menggambarkan bagaimana *crowdsourcing* bukan hanya soal "banyak kontributor", tetapi juga soal *governance* (lisensi, atribusi, kualitas) dan *integration* (dengan portal resmi). Disparekraf yang berhasil mengintegrasikan OSM akan memiliki dua keuntungan: data yang lebih lengkap, dan komunitas yang menjadi *advocate* destinasi.
+
+<VisualMenyusul tipe="Grafik" id="9.3" deskripsi="Diagram aktivitas, kontributor crowdsourcing terbagi per demografis (usia, lokasi, jenis kelamin)" sumber="data agregat platform, diolah" />

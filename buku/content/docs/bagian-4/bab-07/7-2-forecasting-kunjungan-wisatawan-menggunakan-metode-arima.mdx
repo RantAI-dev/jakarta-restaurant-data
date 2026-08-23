@@ -1,0 +1,139 @@
+---
+title: "7.2 Forecasting Kunjungan Wisatawan Menggunakan Metode ARIMA dan Machine Learning"
+---
+
+Memprediksi kunjungan tahun depan adalah kebutuhan praktis yang muncul di hampir setiap kantor Disparpar atau *tourism board*. Promosi, investasi kapasitas, dan negosiasi dengan maskapai semuanya memerlukan prediksi yang andal. Dua pendekatan yang umum dipakai, ARIMA (*AutoRegressive Integrated Moving Average*) untuk deret waktu dan *machine learning* untuk pola non-linear, masing-masing punya kekuatan, dan kombinasi keduanya sering kali memberikan hasil terbaik.
+
+## Mengapa *Forecasting* Itu Sulit?
+
+Peramalan kunjungan memiliki tiga tantangan utama. **Pertama, musiman**: kunjungan wisman Bali memuncak di Juni–September dan Desember, dan peramalan harus menangkap pola ini. **Kedua, tren**: kunjungan tumbuh dari waktu ke waktu, dan peramalan harus mengurai tren dari musiman. **Ketiga, *shock***: pandemi, bencana alam, atau krisis geopolitik menciptakan pola yang sulit diprediksi dari data historis.
+
+Untuk konteks Indonesia, tantangan tambahan adalah perubahan struktural. Pembukaan rute baru, kebijakan bebas visa, dan perubahan harga penerbangan bisa mengubah arah kunjungan dalam hitungan bulan. Model yang hanya belajar dari data historis tanpa memperhitungkan perubahan struktural akan ketinggalan.
+
+## ARIMA: Fondasi Klasik yang Masih Andal
+
+ARIMA adalah singkatan dari *AutoRegressive Integrated Moving Average*. Ini adalah metode deret waktu yang memodelkan nilai masa depan sebagai kombinasi dari nilai masa lalu, selisih, dan *error* masa lalu. Komponen *p, d, q* menunjukkan orde AR (*autoregressive*), differencing, dan MA (*moving average*).
+
+Langkah praktis untuk membangun model ARIMA:
+
+1. **Identifikasi data**: cek stasioneritas (rata-rata dan varians konstan). Jika tidak stasioner, lakukan differencing. Visualisasikan dengan *autocorrelation function* (ACF) dan *partial autocorrelation function* (PACF).
+2. **Pemilihan model**: coba beberapa kombinasi (p, d, q), dan pilih yang terbaik berdasarkan AIC (*Akaike Information Criterion*) atau BIC.
+3. **Diagnostik**: cek *residual*, apakah ada pola yang tidak tertangkap? Jika ya, model perlu diperbaiki.
+4. **Peramalan**: buat prediksi untuk horizon yang diinginkan, beserta *confidence interval*.
+
+ARIMA bekerja baik untuk deret waktu yang stabil dan pola musiman yang jelas. Untuk kunjungan wisman ke Bali, model ARIMA musiman (SARIMA) dapat memberikan prediksi yang cukup akurat untuk horizon 6–12 bulan.
+
+## Walkthrough: Membangun Model SARIMA untuk Kunjungan Wisman Bali
+
+Untuk menggambarkan bagaimana ARIMA bekerja dalam praktik, mari lihat satu studi kasus langkah-demi-langkah: membangun model SARIMA untuk kunjungan wisman Bali 2015–2024, dengan target melakukan peramalan kunjungan 2025.
+
+**Langkah 1, Kumpulkan dan visualisasikan data**.
+
+Data yang digunakan: kunjungan wisman Bali bulanan dari Januari 2015 hingga Desember 2024 (120 observasi). Sumber: BPS Bali. Untuk konteks: kunjungan 2024 *actual* = 6,33 juta (BPS Bali, *press release* 3 Februari 2025), naik 20,1% dari 5,27 juta di 2023. Langkah pertama yang selalu dilakukan: plot data asli untuk identifikasi pola visual. Plot akan menunjukkan tiga komponen: (1) tren keseluruhan (turun 2020–2021 karena pandemi, rebound 2022–2024), (2) musiman (puncak di Juni–September dan Desember–Januari), dan (3) *residual* (variasi yang tidak tertangkap tren dan musiman).
+
+**Langkah 2, Uji stasioneritas**.
+
+ARIMA memerlukan data stasioner (rata-rata dan varians konstan). Uji Augmented Dickey-Fuller (ADF) digunakan: H0 = data tidak stasioner. Untuk data Bali, ADF test pada data asli menunjukkan p-value = 0,34 (gagal tolak H0, data tidak stasioner). Solusi: *differencing* (d=1). Setelah differencing pertama, ADF test menghasilkan p-value = 0,002 (tolak H0, data stasioner). Dengan differencing musiman (D=1, lag 12), stasioneritas lebih kuat lagi.
+
+**Langkah 3, Identifikasi orde (p, d, q) dari ACF dan PACF**.
+
+Plot ACF dan PACF dari data yang sudah di-*differencing*. Aturan bacanya perlu diingat dengan benar, karena mudah tertukar: **ACF yang terpotong tegas (*cut off*) setelah lag q menandakan MA(q); PACF yang terpotong tegas setelah lag p menandakan AR(p).** Bila yang satu terpotong dan yang lain meluruh, ordenya terbaca langsung. Bila keduanya meluruh, yang dihadapi adalah model campuran ARMA, dan ordenya tidak bisa dibaca dari grafik — ia harus dipilih lewat perbandingan kriteria informasi seperti AIC. Untuk data Bali:
+- PACF *cut off* setelah lag 1, sementara ACF meluruh perlahan. Pola ini menunjuk komponen **AR(1)**, sehingga p=1.
+- Pola yang sama sekaligus berarti **q=0 tidak bisa langsung disingkirkan**. Bacaan grafik yang jujur atas PACF terpotong + ACF meluruh adalah AR(1) murni, yaitu (1, d, 0). Orde MA tidak terbaca dari grafik ini.
+- Karena itu q ditentukan bukan dari plot, melainkan dari perbandingan: beberapa kandidat diestimasi — (1,1,0), (0,1,1), (1,1,1) — lalu dipilih yang AIC-nya terkecil sekaligus residualnya lolos uji *white noise*. Dalam contoh ini kandidat dengan q=1 yang menang tipis, dan **itulah** dasar pemilihannya.
+- Untuk musiman, logikanya sama: lonjakan PACF di lag 12 menunjuk P=1, sedangkan P dan Q musiman tetap dibandingkan lewat AIC karena pola musiman jauh lebih sulit dibaca dari grafik daripada pola non-musiman.
+- Differencing: d=1 (non-musiman), D=1 (musiman).
+
+Perlu ditegaskan agar tidak menyesatkan: dalam praktik modern, plot ACF/PACF berfungsi sebagai **penyaring kandidat**, bukan sebagai penentu orde. Membaca orde MA langsung dari ACF yang meluruh adalah kekeliruan yang sering ditemui, dan hasilnya berupa model yang tampak beralasan tetapi tidak pernah benar-benar diuji.
+
+Kandidat model: SARIMA(1,1,1)(1,1,1)12.
+
+**Langkah 4, Estimasi parameter dan cek AIC**.
+
+Estimasi parameter dengan *maximum likelihood* menghasilkan:
+- AR(1): φ₁ = 0,42 (signifikan, p&lt;0,01)
+- MA(1): θ₁ = -0,31 (signifikan, p&lt;0,05)
+- AR musiman: Φ₁ = 0,38 (signifikan, p&lt;0,01)
+- MA musiman: Θ₁ = -0,72 (signifikan, p&lt;0,01)
+
+AIC = 482,3. Bandingkan dengan model alternatif: SARIMA(1,1,0)(1,1,0)12 dengan AIC = 491,5; SARIMA(2,1,2)(1,1,1)12 dengan AIC = 485,1. Model (1,1,1)(1,1,1)12 memiliki AIC terendah, menjadi pilihan.
+
+**Langkah 5, Diagnostik residual**.
+
+Cek apakah residual adalah white noise (tidak ada pola yang tidak tertangkap):
+- Ljung-Box test pada residual lag 12: p-value = 0,42 (gagal tolak H0, residual white noise). ✅
+- Plot residual: terlihat acak, tanpa pola. ✅
+- Histogram residual: mendekati distribusi normal. ✅
+
+**Langkah 6, Lakukan peramalan**.
+
+Model menghasilkan peramalan 12 bulan ke depan (Januari–Desember 2025), dengan *confidence interval* 95%. Hasil:
+
+| Bulan | Peramalan | Lower 95% | Upper 95% |
+|-------|-----------|-----------|-----------|
+| Jan 2025 | 365.000 | 295.000 | 435.000 |
+| Feb 2025 | 320.000 | 240.000 | 400.000 |
+| ... | ... | ... | ... |
+| Jul 2025 | 580.000 | 470.000 | 690.000 |
+| ... | ... | ... | ... |
+| Dec 2025 | 470.000 | 360.000 | 580.000 |
+
+Total 2025: 5,45 juta kunjungan (band: 4,38–6,52 juta).
+
+**Langkah 7, Backtesting**.
+
+Untuk menguji kemampuan generalisasi model, kita bisa melatih ulang dengan data 2015–2022, lalu memprediksi 2023–2024. Hasilnya: galat 2023 sebesar 6,8% (5,27 juta aktual vs 5,63 juta prediksi) dan galat 2024 sebesar 5,5% (6,33 juta aktual vs 6,68 juta prediksi). Keduanya di bawah 10% dan masuk kategori "baik", dengan model sedikit *overpredict* pada kedua tahun.
+
+Dua catatan teknis perlu ditambahkan, karena keduanya sering diabaikan dan keduanya membuat angka di atas tampak lebih meyakinkan daripada seharusnya.
+
+Pertama, **yang dihitung di sini sebenarnya bukan MAPE.** MAPE adalah rata-rata galat persentase absolut dari serangkaian ramalan; bila yang dibandingkan hanya satu total tahunan, yang diperoleh adalah galat persentase absolut tunggal (*absolute percentage error*), bukan rata-ratanya. Untuk menilai model bulanan, MAPE harus dihitung dari dua belas galat bulanan, lalu dirata-ratakan. Perbedaannya bukan sekadar istilah: galat pada total tahunan menyembunyikan kesalahan bulanan yang saling meniadakan, sehingga model yang buruk per bulan bisa tampak sangat baik per tahun.
+
+Kedua, **urutan pengerjaan menentukan kejujuran hasil.** Bila orde model dipilih dengan melihat seluruh data 2015–2024, lalu model itu "diuji" pada 2023–2024, maka data uji sudah ikut membentuk model — kebocoran informasi masa depan (*look-ahead bias*) yang membuat galat tampak lebih kecil daripada yang akan dialami di dunia nyata. Prosedur yang benar: pilih orde hanya dengan data sampai 2022, kunci model itu, baru ramalkan 2023–2024.
+
+Satu peringatan terakhir tentang MAPE untuk kasus Bali: MAPE tidak terdefinisi ketika nilai aktualnya nol dan meledak ketika nilainya nyaris nol. Bulan-bulan 2020–2021, ketika kunjungan Bali nyaris berhenti total, akan menghasilkan galat persentase yang tak bermakna. Untuk jendela yang memuat periode itu, pakai ukuran lain seperti RMSE atau MASE.
+
+**Langkah 8, Interpretasi dan komunikasi**.
+
+Peramalan bukan ramalan. Sebagai perbandingan, Pemerintah Provinsi Bali secara eksplisit menargetkan kunjungan wisman 2025 = 6,5 juta (ANTARA News, 3 Februari 2025). Model contoh di atas menghasilkan titik ramalan 5,45 juta dengan rentang 4,38–6,52 juta — artinya target pemerintah provinsi berada **di dekat batas atas** rentang itu, bukan di tengahnya. Perbedaan posisi ini penting dan sering luput: target yang berada di ujung atas interval kepercayaan bukanlah target yang mustahil, tetapi ia menuntut segala sesuatunya berjalan mendekati skenario terbaik. Untuk komunikasi kebijakan, lebih jujur jika dilaporkan: "Model SARIMA kami memprediksi kunjungan wisman Bali 2025 sekitar 5,45 juta, dengan rentang 4,38–6,52 juta pada tingkat kepercayaan 95%. Target 6,5 juta berada di dekat batas atas rentang tersebut. Peramalan ini tidak memasukkan efek variabel eksogen seperti pembukaan rute baru, kebijakan visa, atau *shock* eksternal, yang harus dikombinasikan dengan analisis skenario."
+
+Walkthrough ini menggambarkan kekuatan dan keterbatasan ARIMA: kuat untuk pola musiman dan tren yang stabil, tetapi rentan terhadap *shock* struktural dan perubahan rezim. Untuk pola yang lebih kompleks, *machine learning* atau ensemble menjadi pilihan.
+
+> **Catatan metodologis**: Angka dalam walkthrough SARIMA ini (orde (1,1,1)(1,1,1)12, AIC = 482,3, parameter φ₁ = 0,42, dst., peramalan 2025 = 5,45 juta dengan CI 4,38–6,52 juta, galat 2023 = 6,8%, galat 2024 = 5,5%) adalah **sintetik** untuk menunjukkan prosedur delapan-langkah. Prosedur (identifikasi, differencing, identifikasi p/d/q, estimasi, diagnostik, peramalan, backtesting, komunikasi) berlaku umum dan tidak bergantung pada angka spesifik. Untuk aplikasi nyata pada Bali, estimasi ulang dengan data BPS Bali 2015–2024 aktual akan menghasilkan parameter dan peramalan yang berbeda. Pola umum (prediksi lebih akurat untuk horizon pendek, CI melebar dengan horizon) konsisten.
+
+## *Machine Learning* untuk Pola Non-Linear
+
+ARIMA memiliki keterbatasan ketika pola non-linear dominan. Misal: kunjungan wisman dari China ke Bali bisa melonjak tajam setelah pembukaan rute baru, lalu turun setelahnya, pola yang sulit ditangkap ARIMA. *Machine learning* (ML), khususnya *gradient boosting*, *random forest*, dan *neural network*, menawarkan pendekatan yang lebih fleksibel.
+
+ML untuk peramalan kunjungan biasanya melibatkan:
+
+- **Fitur**: waktu, harga, rute, promosi, variabel ekonomi, dan variabel eksogen lainnya.
+- **Model**: *XGBoost*, *LightGBM*, LSTM, atau *transformer-based*.
+- **Evaluasi**: *cross-validation* berbasis waktu, dengan metrik MAPE (*Mean Absolute Percentage Error*) atau RMSE (*Root Mean Squared Error*).
+
+ML bekerja baik ketika ada banyak fitur tambahan dan hubungan non-linear yang signifikan. Kekurangannya: butuh data latih yang banyak, dan *overfitting* rentan jika tidak diatur dengan baik.
+
+## *Hybrid* dan *Ensemble*: Kombinasi yang Sering Terbaik
+
+Dalam praktik, model tunggal jarang memberikan hasil terbaik. Pendekatan *hybrid* dan *ensemble* semakin umum:
+
+- **Hybrid ARIMA-ML**: ARIMA menangkap tren dan musiman, ML menangkap residual non-linear.
+- **Ensemble**: rata-rata prediksi dari beberapa model (ARIMA, XGBoost, LSTM) untuk mengurangi variansi.
+- **Hierarchical**: prediksi total kunjungan dipecah menjadi prediksi per negara asal, lalu diagregasi.
+
+Untuk konteks Indonesia, pengembangan model peramalan kunjungan tingkat kota masih dalam tahap awal. BPS memiliki model untuk beberapa seri nasional, tetapi untuk tingkat kota, kapasitas masih bervariasi. Beberapa DMO kota dan akademisi sudah mulai membangun model, dan hasilnya bisa menjadi input bagi kebijakan.
+
+## Validasi dan *Backtesting*
+
+Sebelum model dipakai untuk keputusan, harus divalidasi. Validasi yang paling penting: *backtesting*. Prediksi model untuk data historis (mis. "model yang dibangun dengan data 2015–2020, dapat memprediksi 2021–2023 dengan akurasi berapa?") memberikan gambaran kemampuan model di dunia nyata.
+
+MAPE &lt; 10% untuk peramalan jangka pendek (&lt; 1 tahun) dianggap baik. MAPE 10–20% dapat diterima. MAPE > 20% menunjukkan model perlu diperbaiki.
+
+## Peramalan dengan Skenario
+
+Pemodelan yang lebih kuat adalah peramalan dengan skenario. Alih-alih satu angka, hasil adalah distribusi: "Dalam skenario optimistis, kunjungan 2025 = 14 juta; dalam skenario pesimistis, 11 juta; skenario paling mungkin 13 juta." Pendekatan ini membantu pembuat kebijakan menyiapkan strategi untuk berbagai kemungkinan.
+
+Skenario dibangun dari asumsi tentang variabel eksogen: harga penerbangan, promosi, kebijakan visa, dan sebagainya. Kekuatan pendekatan ini adalah pembuat kebijakan memahami rentang kemungkinan, bukan satu angka yang menyesatkan.
+
+<VisualMenyusul tipe="Grafik" id="7.2" deskripsi="Time series, kunjungan wisman Bali 2019–2024 (aktual) + forecast 2025–2026 dengan confidence interval; sumbu X: bulan; sumbu Y: kunjungan (juta)" sumber="BPS Bali + model ARIMA(1,1,1)(1,1,1)12, diolah" />
+
+<VisualMenyusul tipe="Grafik" id="7.3" deskripsi="Diagram perbandingan MAPE, 4 model (ARIMA, SARIMA, XGBoost, LSTM) untuk peramalan kunjungan wisman 2024; sumbu X: model; sumbu Y: MAPE (%)" sumber="backtesting 2015–2023, diolah" />

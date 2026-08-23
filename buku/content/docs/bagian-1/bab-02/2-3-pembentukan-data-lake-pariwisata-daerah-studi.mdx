@@ -1,0 +1,29 @@
+---
+title: "2.3 Pembentukan Data Lake Pariwisata Daerah (Studi Kasus: Sistem Satu Data)"
+---
+
+Ketika sebuah kota punya puluhan sumber data yang berbeda, masing-masing dengan format, jadwal rilis, dan standar metadata sendiri, persoalannya adalah tidak adanya tempat untuk menyatukan, bukan pada kurangnya data. *Data lake* adalah satu solusi arsitektural: sebuah repositori terpusat yang menyimpan data mentah dari berbagai sumber, dengan kemampuan untuk diolah sesuai kebutuhan analitis. Konsep ini diterapkan dalam konteks Satu Data Indonesia, dan pelajaran dari pengalaman awal kota-kota yang sudah memulai bisa dilihat di praktik lapangan Jakarta dan kota-kota lain.
+
+## Apa Itu *Data Lake*, dan Apa Bedanya dengan *Data Warehouse*?
+
+Data lake menyimpan data dalam bentuk mentahnya (*raw*), apa pun formatnya: CSV, JSON, gambar, video, hasil *scrape*. Data warehouse menyimpan data yang sudah dibersihkan dan dimodelkan untuk kebutuhan analitis tertentu. Keduanya punya tempat, tetapi *data lake* lebih fleksibel untuk menampung sumber baru yang belum tentu masuk dalam model analitis baku. Untuk konteks kepariwisataan, *data lake* memungkinkan kita menyimpan semua sinyal, dari MPD, transaksi, hingga *post* media sosial, tanpa harus memutuskan dulu untuk apa data itu akan dipakai.
+
+## Satu Data Indonesia sebagai Kerangka Kebijakan
+
+Satu Data Indonesia (SDI) diluncurkan melalui Peraturan Presiden No. 39 Tahun 2019. SDI menetapkan tiga prinsip utama: data harus memenuhi standar metadata tertentu, harus punya *walidata* (lembaga yang bertanggung jawab atas data), dan harus dipublikasikan ke portal nasional. Untuk konteks pariwisata, beberapa implikasinya:
+
+Pertama, *walidata* untuk data kunjungan wisman adalah BPS; untuk data perjalanan domestik adalah BPS juga (lewat Survei Wisnus); untuk data *event* dan promosi adalah Kementerian Pariwisata. Penetapan ini mencegah tumpang tindih otoritas.
+
+Kedua, setiap data harus punya *metadata*, deskripsi tentang apa yang diukur, bagaimana cara pengukurannya, dan seberapa sering diperbarui. Metadata yang terstandar memungkinkan pengguna data dari satu kota untuk membandingkannya dengan kota lain tanpa perlu memahami detail internal masing-masing.
+
+Ketiga, *interoperabilitas*, kemampuan satu sistem untuk bicara dengan sistem lain lewat API (*Application Programming Interface*), menjadi prasyarat. Tanpa interoperabilitas, *data lake* hanya jadi tempat menyimpan data, bukan tempat memanfaatkannya.
+
+## Studi Kasus: Satu Data Jakarta
+
+Sebelum ada kebijakan nasional, beberapa kota sudah memulai inisiatif serupa. Jakarta meluncurkan **Satu Data Jakarta**, portal yang menyatukan data dari berbagai dinas dan menampilkan statistik kota secara terbuka. Untuk konteks pariwisata, ini memungkinkan penggabungan data kunjungan (dari imigrasi), data TPKH hotel (dari BPS DKI), dan data aktivitas ekonomi kreatif (dari Disparekraf DKI) dalam satu tampilan terpadu.
+
+Pengalaman Jakarta menunjukkan beberapa hal yang patut diperhatikan. Pertama, *political will* di level kepala daerah menentukan: tanpa dukungan gubernur atau wali kota, sulit memaksa seluruh OPD berbagi data. Kedua, investasi teknologinya tidak kecil — portal data memerlukan server, antarmuka, dan tim yang mengelolanya secara berkelanjutan. Ketiga, *perubahan budaya* adalah tantangan terbesar: instansi yang dulu menjaga data eksklusif harus belajar membagi dan menerima standar bersama.
+
+## Pelajaran untuk Kota Lain
+
+Inisiatif *data lake* daerah berhasil ketika tiga prasyarat terpenuhi: ada *champion* di level kepala daerah, ada standar metadata yang jelas, dan ada mekanisme insentif bagi OPD untuk berbagi. Tanpa ketiga hal ini, *data lake* cenderung jadi gudang data yang tidak terurus atau portal yang tidak pernah di-update.

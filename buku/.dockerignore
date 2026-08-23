@@ -1,0 +1,9 @@
+node_modules
+.next
+.source
+.git
+npm-debug.log*
+README.md
+DEPLOY.md
+AGENTS.md
+CLAUDE.md

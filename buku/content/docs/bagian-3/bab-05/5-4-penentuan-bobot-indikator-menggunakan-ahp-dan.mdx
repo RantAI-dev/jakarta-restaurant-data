@@ -1,0 +1,116 @@
+---
+title: "5.4 Penentuan Bobot Indikator Menggunakan AHP dan PCA"
+---
+
+Setelah variabel ternormalisasi, langkah yang menentukan hasil akhir adalah penentuan bobot. Bobot yang berbeda menghasilkan peringkat yang berbeda, dan ini adalah titik paling subjektif dalam pembangunan indeks. Dua pendekatan yang umum dipakai, AHP (*Analytic Hierarchy Process*) dan PCA (*Principal Component Analysis*), merepresentasikan dua filsafat berbeda: AHP berbasis *expert judgment*, PCA berbasis pola data.
+
+## AHP: *Expert Judgment* yang Terstruktur
+
+AHP, yang dikembangkan Thomas Saaty pada 1970-an, adalah metode terstruktur untuk menentukan bobot berdasarkan perbandingan berpasangan. Langkah-langkah utama:
+
+1. **Bangun hierarki**: identifikasi tujuan (misalnya "skor total kota"), dimensi, dan variabel.
+2. **Perbandingan berpasangan**: untuk setiap pasangan variabel dalam satu dimensi, tanya "manakah yang lebih penting, dan seberapa besar kepentingannya?" Skala 1–9 (1: sama penting, 9: jauh lebih penting).
+3. **Perhitungan bobot**: dari matriks perbandingan, hitung bobot relatif menggunakan eigenvector.
+4. **Cek konsistensi**: rasio konsistensi (CR) &lt; 0,1 menunjukkan perbandingan cukup konsisten.
+
+Keunggulan AHP: memaksa *expert* untuk berpikir sistematis dan menjelaskan pilihan mereka. Bobot yang dihasilkan memiliki dasar rasional. Kekurangan: kualitas hasil sangat bergantung pada kualitas *expert*. *Expert* yang bias akan menghasilkan bobot yang bias.
+
+Untuk konteks Indonesia, AHP bisa dipakai dengan *expert* dari kalangan akademisi, Disparekraf, operator MICE, dan asosiasi perhotelan. Yang penting: proses harus terbuka, dan *expert* harus diverifikasi kredibilitasnya.
+
+## Lima-Langkah AHP: Contoh Pembobotan Lima Indikator Pariwisata
+
+Untuk melihat bagaimana AHP bekerja dalam praktik, mari jalani satu studi kasus. Misalkan Disparekraf DKI Jakarta ingin menentukan bobot untuk lima indikator pariwisata dalam menyusun "Indeks Destinasi Jakarta" mereka: (V1) konektivitas udara, (V2) kualitas atraksi, (V3) pengalaman bersantap (*dining*), (V4) akomodasi, dan (V5) sentimen media sosial. Tujuannya: merangkum kelima variabel ini menjadi satu skor kota.
+
+**Langkah 1, Matriks perbandingan berpasangan**.
+
+Sepuluh *expert* diminta mengisi *questionnaire* yang membandingkan setiap pasangan variabel. Skala Saaty 1–9 dipakai (1: sama penting, 3: agak lebih penting, 5: lebih penting, 7: jauh lebih penting, 9: mutlak lebih penting). Misalnya, *expert* A menilai "V1 (konektivitas) agak lebih penting dari V2 (atraksi)", diisi 3 di sel (V1, V2). Setelah diagregasi dari 10 *expert*, matriks awal adalah:
+
+| | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| V1 | 1 | 3 | 5 | 2 | 4 |
+| V2 | 1/3 | 1 | 2 | 1/2 | 2 |
+| V3 | 1/5 | 1/2 | 1 | 1/4 | 1/2 |
+| V4 | 1/2 | 2 | 4 | 1 | 3 |
+| V5 | 1/4 | 1/2 | 2 | 1/3 | 1 |
+
+(mis. sel V1-V2 = 3, artinya V1 dinilai *agak lebih penting* dari V2 dalam penilaian agregat *expert*; sel V2-V1 = 1/3 sebagai resiprokal. Perlu dicatat bagaimana angka ini harus dibaca. Skala Saaty memetakan penilaian **verbal** ke angka: 3 berarti "agak lebih penting", 5 "lebih penting", 9 "mutlak lebih penting". Angka-angka itu kemudian **diperlakukan sebagai rasio** dalam perhitungan — itulah sebabnya sel kebalikannya diisi 1/3 dan eigenvector bisa dihitung. Jadi keliru menyebutnya sekadar label, tetapi keliru pula membacanya sebagai pengukuran presisi: "3" menyatakan derajat preferensi seorang ahli, bukan hasil pengukuran bahwa V1 tepat tiga kali lebih penting daripada V2.)
+
+**Langkah 2, Normalisasi kolom**.
+
+Setiap kolom dibagi dengan jumlah kolomnya. Setelah dinormalisasi, setiap kolom berjumlah 1.
+
+**Langkah 3, Hitung bobot (rata-rata baris)**.
+
+| Variabel | Bobot |
+|---|---|
+| V1 (konektivitas) | 0,42 |
+| V2 (atraksi) | 0,15 |
+| V3 (dining) | 0,07 |
+| V4 (akomodasi) | 0,26 |
+| V5 (sentimen) | 0,10 |
+| **Total** | **1,00** |
+
+Interpretasi: konektivitas (V1) adalah faktor terpenting menurut *expert*, dengan bobot 42%. Akomodasi (V4) kedua (26%), atraksi (V2) ketiga (15%), sentimen (V5) keempat (10%), dan *dining* (V3) kelima (7%).
+
+**Langkah 4, Cek konsistensi (Consistency Ratio)**.
+
+Konsistensi matriks diuji dengan rumus Saaty: `CR = CI / RI`, di mana `CI = (λmax - n) / (n - 1)`. Untuk n=5, RI (Random Index) = 1,12. Dari matriks, `λmax` ≈ 5,0653, sehingga `CI = (5,0653 - 5) / 4 = 0,0163`. `CR = 0,0163 / 1,12 = 0,0146`. (Perhatikan bahwa CI dibawa sampai empat angka di belakang koma sebelum dibagi RI; membulatkannya lebih dulu menjadi 0,016 akan menghasilkan 0,014, dan pembaca tidak akan bisa mereproduksi angka yang tercetak.) Karena CR &lt; 0,10, matriks dianggap cukup konsisten. Jika CR > 0,10, hasil AHP tidak valid, dan *expert* perlu merevisi pendapat mereka.
+
+**Langkah 5, Aplikasi ke data kota**.
+
+Setelah bobot ditentukan, skor kota dihitung sebagai `Skor = b1×V1 + b2×V2 + b3×V3 + b4×V4 + b5×V5` (semua variabel sudah dinormalisasi). Misalnya, untuk kota A dengan skor V1=0,85, V2=0,70, V3=0,90, V4=0,60, V5=0,75: Skor = 0,42×0,85 + 0,15×0,70 + 0,07×0,90 + 0,26×0,60 + 0,10×0,75 = 0,357 + 0,105 + 0,063 + 0,156 + 0,075 = 0,756.
+
+Lima langkah ini menggambarkan kekuatan AHP: bobot yang dihasilkan memiliki justifikasi eksplisit (siapa *expert*, bagaimana perbandingannya, bagaimana konsistensinya). Kelemahannya: hasilnya sangat tergantung kualitas *expert*. *Expert* yang bias terhadap konektivitas (misalnya dari asosiasi penerbangan) akan memberikan bobot sangat berbeda dari *expert* yang lebih berorientasi pada pengalaman (misalnya dari komunitas *food blogger*). Karena itu, *expert selection* adalah variabel yang paling menentukan kualitas AHP.
+
+> **Catatan metodologis**: Matriks perbandingan berpasangan, eigenvector, dan Consistency Ratio (CR = 0,0146) dalam contoh ini adalah **sintetik** untuk menunjukkan prosedur AHP. Lima indikator yang dipakai (V1 konektivitas, V2 atraksi, V3 *dining*, V4 akomodasi, V5 sentimen) dipilih untuk relevansi dengan diskusi sub-bab. Bobot akhir (0,42; 0,15; 0,07; 0,26; 0,10) adalah hasil dari matriks contoh, bukan dari *expert* nyata. Untuk aplikasi nyata, bobot akan berbeda tergantung pada komposisi dan preferensi *expert*. Yang penting: prosedur dan ambang CR &lt; 0,10 berlaku umum.
+
+## PCA: Pendekatan Berbasis Data
+
+PCA adalah metode statistik yang menentukan bobot berdasarkan variansi data. Langkah-langkah:
+
+1. **Standarisasi**: lakukan *z-score* pada semua variabel.
+2. **Hitung matriks kovariansi atau korelasi**.
+3. **Eigen decomposition**: ekstrak *principal components* (PC) dan *eigenvalues*.
+4. **Pilih jumlah PC**: biasanya ambil PC yang menjelaskan 70–80% variansi kumulatif.
+5. **Bobot**: untuk tiap variabel, kuadratkan *loading*-nya pada setiap PC yang dipertahankan, timbang menurut proporsi varians yang dijelaskan PC tersebut, jumlahkan, lalu normalisasi ulang agar total bobot sama dengan 1. Mengambil *loading* PC pertama begitu saja sebagai bobot adalah penyederhanaan yang lazim ditemui — dan lazim keliru.
+
+Keunggulan PCA: bobotnya diturunkan dari struktur data, bukan dari preferensi perancang indeks, sehingga lebih sulit dituduh memihak. Dua hal perlu diluruskan, karena keduanya sering dinyatakan terbalik. Pertama, PCA **tidak** bebas dari penilaian manusia: berapa komponen yang dipertahankan, apakah memakai matriks korelasi atau kovariansi, dan apakah dilakukan rotasi — semuanya keputusan analis yang mengubah hasil. Kedua, PCA tidak otomatis mengurangi tumpang tindih antar-variabel yang berkorelasi. Bila bobot diambil dari komponen pertama saja, sekelompok variabel yang saling berkorelasi kuat akan bergerak bersama di komponen itu dan memperoleh bobot gabungan yang membengkak — persis kritik *double counting* yang sering dilayangkan pada indeks berbasis PCA. Prosedur bertimbang-varians pada langkah 5 di atas meredam persoalan ini, tetapi tidak menghapusnya sepenuhnya; karena itu korelasi antar-variabel tetap perlu diperiksa sebelum PCA dijalankan, bukan sesudahnya. Kekurangan lain: hasilnya sulit diinterpretasikan. Mengapa museum menentukan PC 1? PCA tidak menjawab pertanyaan "mengapa", ia hanya menunjukkan bahwa museum dan beberapa variabel lain bersama menjelaskan variansi terbesar.
+
+Ada tiga jebakan praktis yang perlu diwaspadai sebelum bobot PCA dipakai. Pertama, bila lebih dari satu komponen diambil, kontribusi tiap variabel tidak bisa begitu saja dijumlahkan; praktik yang lazim adalah memakai kuadrat *loading* yang ditimbang menurut proporsi varians yang dijelaskan masing-masing komponen, lalu dinormalisasi ulang agar totalnya 1. Kedua, *loading* bisa bernilai negatif, dan bobot negatif akan membuat kota mendapat nilai lebih tinggi justru ketika variabel itu turun; tanda tiap *loading* wajib diperiksa dan ditafsirkan, bukan dipakai mentah-mentah. Ketiga, dan yang paling sering dikacaukan: PCA memaksimalkan varians, bukan kepentingan. Variabel yang paling membedakan kota belum tentu variabel yang paling penting secara kebijakan. Sebuah variabel bisa mendapat bobot besar semata-mata karena datanya paling menyebar, bukan karena ia paling berarti bagi warga kota.
+
+Karena itu, untuk konteks Indonesia, PCA paling aman diposisikan sebagai *cross-check* terhadap AHP, bukan sebagai penggantinya. Jika PCA menunjukkan bahwa variabel X jauh lebih menentukan daripada yang diperkirakan para *expert* dalam AHP, itu adalah isyarat untuk meninjau ulang penilaian — bukan perintah untuk mengganti bobotnya.
+
+## Kapan Pakai AHP, Kapan Pakai PCA?
+
+Pemilihan tergantung pada tujuan dan ketersediaan data:
+
+- **Tujuan politis atau strategis**: AHP, karena *expert* bisa menjelaskan pilihan dan bobot bisa dinegosiasikan.
+- **Tujuan teknis dan eksplorasi**: PCA, karena PCA menemukan pola yang tidak terlihat secara intuitif.
+- **Kombinasi**: gunakan AHP untuk menetapkan bobot, lalu PCA sebagai pemeriksa. Perlu ditegaskan, kesepakatan antara keduanya **bukan** bukti bahwa bobotnya lebih akurat — keduanya menjawab pertanyaan yang berbeda. AHP menjawab "seberapa penting variabel ini menurut mereka yang memahami kebijakannya"; PCA menjawab "seberapa besar variabel ini membedakan kota satu dari yang lain". Ketidaksepakatan justru informatif: ia menandai variabel yang dianggap penting tetapi ternyata tidak membedakan apa pun, atau sebaliknya.
+
+Untuk pemeringkatan kota Indonesia, kombinasi AHP-PCA adalah pendekatan yang masuk akal. AHP memastikan bahwa variabel yang dianggap penting oleh *stakeholder* dimasukkan, dan PCA memastikan bahwa variabel yang sebenarnya paling membedakan kota mendapat bobot yang layak.
+
+## Validasi Akhir: Apakah Indeksnya *Robust*?
+
+Setelah bobot ditentukan, indeks harus divalidasi. Pertanyaan yang diajukan:
+
+- **Stabilitas**: apakah peringkat berubah drastis jika satu variabel dihapus? Jika ya, indeks tidak stabil.
+- **Validitas konvergen**: apakah kota yang masuk indeks ini juga masuk indeks lain dengan pemeringkatan yang sama? Jika ya, validitasnya baik.
+- **Validitas prediktif**: apakah kota yang skor-nya tinggi tahun ini juga tinggi tahun depan? Jika ya, indeks memprediksi dengan baik.
+
+Untuk konteks Indonesia, validasi pemeringkatan akan memakan waktu, perlu beberapa tahun untuk menguji stabilitas dan validitas prediktif. Kuncinya adalah konsistensi: sekali metode ditetapkan, harus dijalankan dengan disiplin lintas waktu.
+
+## Apa yang Diperlukan untuk Kota Indonesia?
+
+Kota-kota Indonesia yang ingin menggunakan pemeringkatan GCI/GPCI sebagai kerangka analisis memiliki beberapa kebutuhan spesifik:
+
+- **Standar definisi**: tidak bisa lanjut tanpa Satu Data Indonesia yang operasional.
+- **Akses ke data primer**: kota-kota yang aktif membangun rilis data tahunan (seperti "Statistik Daerah" dari BPS) punya keunggulan.
+- **Akses ke data global**: variabel yang bersumber dari UNWTO, WEF, UNESCO, dan ICCA harus bisa diakses oleh analis kota.
+- **Kapasitas teknis**: mampu melakukan AHP, PCA, dan menghasilkan dokumentasi yang bisa di-*review*.
+
+Kebutuhan-kebutuhan ini bukan sesuatu yang muncul tiba-tiba; mereka harus dibangun dalam jangka panjang. *Toolkit* yang sudah dibahas memerlukan investasi yang konsisten untuk penerapannya.
+
+<VisualMenyusul tipe="Grafik" id="5.2" deskripsi="Diagram alir, proses pembangunan indeks kota dari identifikasi variabel hingga validasi akhir" sumber="kerangka teoretis, diolah" />
+
+<VisualMenyusul tipe="Tabel" id="5.3" deskripsi="Perbandingan AHP vs PCA untuk pembobotan indeks; kolom: aspek, AHP, PCA; baris: pendekatan, kebutuhan data, interpretabilitas, subjektivitas, kompleksitas, aplikasi" sumber="kerangka teoretis, diolah" />

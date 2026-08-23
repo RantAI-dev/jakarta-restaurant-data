@@ -1,0 +1,125 @@
+---
+title: "A.4 Etika & Regulasi Data untuk Analisis Kebijakan Pariwisata"
+---
+
+> Lampiran ini melengkapi sub-bab 9.5 dengan pembahasan lebih
+> detail tentang empat pilar tata kelola data AI: *cleansing*,
+> privasi, hak cipta, dan validasi. Disusun untuk menjadi
+> referensi implementasi bagi Disparekraf dan analis yang
+> menangani data pribadi dalam proyek data kebijakan.
+
+## A.4.1 *Data Cleansing* — Panduan Lima Tahap
+
+Sub-bab 9.5 mengulas lima tahap *cleansing* (deduplikasi, imputasi, normalisasi format, deteksi outlier, validasi referensi). Suplemen ini memberikan tips implementasi untuk setiap tahap:
+
+- **Deduplikasi**: gunakan *hash* (MD5, SHA-256) atas kombinasi nama + tanggal + variabel kunci. Dua record dengan *hash* yang sama hampir pasti duplikat. Untuk data geometri spasial, gunakan *spatial join* dengan toleransi 5–10 meter.
+- **Imputasi**: untuk variabel kontinu, gunakan *regression imputation* (lebih akurat dari mean). Untuk variabel kategorikal, gunakan *mode imputation* atau *random forest imputation*. Pertimbangkan apakah *missing* adalah *Missing Completely At Random* (MCAR), *Missing At Random* (MAR), atau *Missing Not At Random* (MNAR) — implikasinya berbeda.
+- **Normalisasi format**: untuk tanggal, ISO 8601 (YYYY-MM-DD) adalah standar. Untuk nama, *string matching* (Levenshtein distance, Jaro-Winkler) untuk mendeteksi duplikat variasi ejaan.
+- **Deteksi outlier**: gunakan IQR (Inter-Quartile Range) atau Z-score. Untuk data spasial, gunakan local outlier detection (mis. Local Outlier Factor).
+- **Validasi referensi**: untuk variabel kota, validasi terhadap daftar resmi BPS (Kode Wilayah Administratif). Untuk hotel, validasi terhadap database PHRI.
+
+## A.4.2 Privasi dan UU PDP Indonesia
+
+**UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)** berlaku sejak 17 Oktober 2024 (2 tahun setelah penetapan). Kerangka utama:
+
+- **Data Pribadi yang bersifat umum** (Pasal 4 ayat 3): nama lengkap, jenis kelamin, kewarganegaraan, agama, status perkawinan, serta data pribadi yang bila dikombinasikan dapat mengidentifikasi seseorang.
+- **Data Pribadi yang bersifat spesifik** (Pasal 4 ayat 2): data dan informasi kesehatan, data biometrik, data genetika, catatan kejahatan, data anak, data keuangan pribadi, serta data lain yang ditetapkan peraturan perundang-undangan. Kategori ini menuntut perlindungan dan dasar pemrosesan yang lebih ketat.
+- **Pemrosesan data**: pengumpulan, penyimpanan, pengungkapan, dan analisis data.
+- **Pengendali Data**: pihak yang menentukan tujuan dan cara pemrosesan (mis. Disparekraf).
+- **Pemroses Data**: pihak yang memproses data atas nama pengendali (mis. vendor TI).
+
+Prinsip utama:
+
+- **Purpose limitation**: data hanya dipakai untuk tujuan yang dinyatakan saat pengumpulan.
+- **Data minimization**: hanya kumpulkan data yang memang dibutuhkan.
+- **Consent**: untuk pemrosesan data sensitif, butuh persetujuan eksplisit.
+- **Right to erasure**: individu bisa meminta data mereka dihapus.
+- **Data portability**: individu bisa meminta data mereka dalam format terbuka.
+
+Satu kewajiban yang sering luput sampai keadaan darurat benar-benar terjadi: **pemberitahuan kegagalan pelindungan data**. Pasal 46 menetapkan batas waktu **3 × 24 jam** sejak kegagalan diketahui, dan pemberitahuan itu wajib disampaikan kepada **dua pihak sekaligus** — subjek data yang terdampak *dan* lembaga pengawas. Ini berbeda dari model Uni Eropa yang memberitahu regulator lebih dahulu dan subjek data hanya bila risikonya tinggi. Isi pemberitahuannya pun ditentukan: data pribadi apa yang terungkap, kapan dan bagaimana terungkapnya, serta upaya penanganan dan pemulihan yang dilakukan. Dalam hal tertentu — antara lain bila kegagalan itu mengganggu pelayanan publik atau berdampak serius bagi kepentingan masyarakat — pemberitahuan kepada publik juga wajib.
+
+Tenggat 3 × 24 jam menuntut kesiapan yang dibangun sebelum insiden, bukan sesudahnya: siapa yang berwenang menyatakan telah terjadi kegagalan, siapa yang menyusun pemberitahuan, dan dari mana daftar subjek data terdampak diperoleh. Instansi yang baru menyusun alurnya ketika insiden berlangsung hampir pasti melewati tenggat itu.
+
+Implikasi untuk Disparekraf:
+
+- **Formulir Survei**: harus ada persetujuan eksplisit untuk pengumpulan data pribadi.
+- **Data Sharing**: ketika Disparekraf berbagi data dengan pihak ketiga (akademisi, vendor), harus ada Perjanjian Pemrosesan Data (DPA).
+- **Transfer ke luar negeri**: Pasal 56 UU PDP menyusun tiga tingkat yang harus ditempuh **berurutan**, bukan dipilih salah satu. Pertama, pengendali wajib memastikan negara tujuan memiliki tingkat pelindungan yang setara atau lebih tinggi. Bila itu tidak terpenuhi, barulah tingkat kedua berlaku: wajib memastikan adanya pelindungan yang memadai dan bersifat mengikat, misalnya lewat klausul kontraktual. Bila keduanya tetap tidak terpenuhi, tingkat ketiga menuntut persetujuan dari subjek data. Perlu dicatat bahwa penilaian kesetaraan itu dibebankan kepada **pengendali data sendiri** — tidak ada daftar putih negara yang dianggap memadai seperti mekanisme *adequacy decision* di Uni Eropa.
+- **DPO**: Pasal 53 UU PDP mewajibkan penunjukan pejabat pelindungan data pribadi (*Data Protection Officer*) dalam tiga keadaan: pemrosesan untuk kepentingan pelayanan publik; kegiatan inti yang menuntut pemantauan teratur dan sistematis terhadap data pribadi dalam skala besar; serta kegiatan inti yang memproses data pribadi spesifik atau data yang berkaitan dengan tindak pidana.
+
+  **Ketiganya bersifat alternatif, bukan kumulatif** — dan ini perubahan yang relatif baru. Rumusan asli pasal itu memakai kata penghubung "dan", yang secara harfiah berarti ketiga syarat harus terpenuhi sekaligus. Mahkamah Konstitusi, lewat Putusan Nomor 151/PUU-XXII/2024 yang diucapkan pada 30 Juli 2025, menyatakan kata itu inkonstitusional bersyarat sepanjang tidak dimaknai "dan/atau". Sejak putusan tersebut, **satu keadaan saja sudah cukup** untuk memunculkan kewajiban.
+
+  Konsekuensinya langsung mengenai pembaca buku ini: keadaan pertama — pemrosesan untuk kepentingan pelayanan publik — kini berdiri sendiri. Dinas yang menyelenggarakan pendataan pariwisata sebagai bagian dari tugas pelayanan publiknya sangat mungkin sudah wajib menunjuk DPO, tanpa perlu memenuhi dua keadaan lainnya.
+
+  Dua catatan penutup. Pertama, undang-undang **tidak mendefinisikan "skala besar"** sama sekali: tidak ada ambang angka, tidak ada kriteria kualitatif, dan penjelasan pasalnya hanya berbunyi "cukup jelas". Mengimpor kriteria dari GDPR seolah-olah berlaku sebagai hukum Indonesia adalah kekeliruan yang perlu dihindari. Kedua, sebelum dipakai sebagai dasar kebijakan, teks putusan dan pasalnya perlu dibaca langsung dari sumber resmi — situs Mahkamah Konstitusi untuk putusan, dan lembaran negara untuk undang-undangnya.
+
+## A.4.3 Hak Cipta dan Lisensi Data
+
+Untuk data pemerintah (mis. data kunjungan yang dikumpulkan Disparekraf), beberapa pilihan lisensi:
+
+- **Domain publik**: data sepenuhnya terbuka, tanpa batasan. Cocok untuk data yang tidak memerlukan atribusi atau derivatif.
+- **CC-BY 4.0**: data bisa dipakai dengan syarat atribusi. Cocok untuk data yang dikembangkan dengan biaya publik.
+- **CC-BY-SA 4.0**: seperti CC-BY, tetapi derivatif juga harus dilepas dengan lisensi terbuka.
+- **CC-BY-NC 4.0**: data bisa dipakai untuk non-komersial saja.
+- **Lisensi proprietary**: hanya untuk penggunaan internal Disparekraf.
+
+Untuk Indonesia, praktik baik cenderung pada **CC-BY 4.0** untuk data agregat (mis. total kunjungan per bulan) dan lisensi proprietary untuk data individu (mis. profil responden survei).
+
+## A.4.4 Penilaian Dampak: Kewajiban Hukum dan Kerangka Praktik
+
+Bagian ini perlu dibaca dalam urutan yang benar. Ada **kewajiban hukum** yang berlaku di Indonesia, dan ada **kerangka praktik** internasional yang membantu memenuhinya. Keduanya kerap tertukar, dan yang tertinggal biasanya justru yang pertama.
+
+### Kewajiban hukumnya: penilaian dampak menurut Pasal 34 UU PDP
+
+Pasal 34 UU PDP mewajibkan pengendali data melakukan **penilaian dampak pelindungan data pribadi** ketika pemrosesan berpotensi menimbulkan risiko tinggi bagi subjek data. Undang-undang menyebut tujuh keadaan yang tergolong berisiko tinggi, dan daftarnya bersifat **alternatif** — satu keadaan saja sudah cukup:
+
+1. pengambilan keputusan secara otomatis yang berakibat hukum atau berdampak signifikan;
+2. pemrosesan data pribadi yang bersifat spesifik;
+3. pemrosesan data pribadi dalam skala besar;
+4. evaluasi, penskoran, atau pemantauan yang sistematis terhadap subjek data;
+5. pencocokan atau penggabungan sekelompok data;
+6. penggunaan teknologi baru dalam pemrosesan; dan/atau
+7. pemrosesan yang membatasi pelaksanaan hak subjek data.
+
+Perhatikan betapa dekatnya daftar itu dengan pekerjaan yang dibahas sepanjang buku ini. Menggabungkan data kunjungan dengan data perizinan dan data seluler adalah **pencocokan atau penggabungan sekelompok data** (nomor 5). Mengolah *Mobile Positioning Data* satu provinsi adalah pemrosesan **skala besar** (nomor 3). Memakai model bahasa besar untuk mengekstraksi informasi dari ulasan adalah **teknologi baru** (nomor 6). Ketiganya dibahas sebagai praktik yang dianjurkan di bab-bab sebelumnya — dan ketiganya memicu kewajiban penilaian dampak.
+
+Ketentuan lebih lanjut mengenai penilaian dampak ini didelegasikan kepada Peraturan Pemerintah, sehingga bentuk baku dokumennya perlu dicek pada aturan pelaksana yang berlaku saat proyek dijalankan.
+
+### Kerangka praktiknya: *Algorithmic Impact Assessment*
+
+AIA adalah kerangka untuk mengevaluasi dampak algoritma atau AI sebelum dipakai. Ia bukan kewajiban hukum di Indonesia, tetapi berguna sebagai cara terstruktur memenuhi Pasal 34 — terutama untuk keadaan nomor 1, 4, dan 6. Langkah-langkahnya:
+
+1. **Scope**: jelaskan tujuan dan konteks penggunaan algoritma.
+2. **Stakeholder**: identifikasi pihak yang terdampak.
+3. **Data audit**: cek bias, kelengkapan, dan kualitas data training.
+4. **Algorithmic bias**: identifikasi potensi bias dalam algoritma.
+5. **Impact**: evaluasi dampak potensial (positif dan negatif).
+6. **Mitigation**: rancang mitigasi (mis. *human in the loop*, validasi manual).
+7. **Monitoring**: tetapkan KPI untuk memantau kinerja algoritma.
+8. **Contingency**: rencana *rollback* jika algoritma bermasalah.
+
+Untuk proyek Disparekraf, AIA bisa dilakukan pada tiga tahap:
+
+- **Sebelum proyek**: identifikasi risiko secara umum.
+- **Sebelum deployment**: cek apakah model siap dipakai.
+- **Berkala (annual)**: cek apakah model masih relevan.
+
+## A.4.5 Regulasi Internasional yang Patut Diketahui
+
+Untuk proyek yang melibatkan data lintas batas:
+
+- **GDPR (Uni Eropa)**: acuan yang paling banyak ditiru. Lingkupnya sering disalahpahami: GDPR **tidak** ditentukan oleh kewarganegaraan, melainkan oleh keberadaan subjek data di wilayah Uni Eropa dan oleh apakah pengendali data menawarkan barang/jasa kepada mereka atau memantau perilaku mereka di sana. Wisman Prancis yang mengisi survei kepuasan **di Bali** pada umumnya berada di luar lingkup GDPR; sebaliknya, kampanye pemasaran daring yang menyasar calon wisatawan **yang sedang berada di Eropa** justru masuk lingkupnya.
+- **CCPA/CPRA (California)**: bukan sekadar "GDPR yang lebih sempit". Pendekatannya berbeda secara mendasar — bertumpu pada hak konsumen untuk mengetahui, menghapus, dan menolak *penjualan* data pribadinya (model *opt-out*), sementara GDPR menuntut dasar pemrosesan yang sah sejak awal (model *opt-in*). Kewajibannya juga hanya mengikat badan usaha yang memenuhi ambang pendapatan atau volume data tertentu.
+- **PDPA (Singapura, Thailand, Malaysia)**: undang-undang perlindungan data **masing-masing negara**, bukan satu rezim regional. Tidak ada instrumen ASEAN yang mengikat seperti GDPR di Uni Eropa; yang ada adalah kerangka kerja sama sukarela seperti *ASEAN Model Contractual Clauses*. Transfer data lintas negara di ASEAN karena itu tunduk pada hukum negara asal dan negara tujuan secara terpisah, dan harus diperiksa satu per satu.
+
+Untuk Disparekraf yang menyimpan data di platform global (mis. AWS, Google Cloud), yang lebih menentukan justru **UU PDP** beserta ketentuan transfer data ke luar wilayah Indonesia, bukan GDPR. GDPR baru relevan bila instansi benar-benar memproses data subjek yang sedang berada di Uni Eropa.
+
+## A.4.6 Referensi Implementasi
+
+- **UU No. 27 Tahun 2022**: Pelindungan Data Pribadi (UU PDP).
+- **Peraturan Menteri Kominfo No. 20 Tahun 2016**: tentang Perlindungan Data Pribadi dalam Sistem Elektronik. (Perlu dicatat, aturan menteri ini terbit sebelum UU PDP dan kedudukannya kini berada di bawah undang-undang tersebut; rujuk UU No. 27 Tahun 2022 lebih dahulu, dan periksa aturan pelaksana terbaru sebelum menyusun kebijakan internal.)
+- **ISO/IEC 27001**: standar Information Security Management.
+- **ISO/IEC 27701**: standar Privacy Information Management.
+- **NIST AI Risk Management Framework**: panduan AI risk management dari NIST AS.
+
+Lampiran ini dirancang sebagai panduan praktis. Untuk konsultasi hukum atau teknis mendalam, Disparekraf disarankan bekerja sama dengan ahli privasi dan AI ethics yang relevan.

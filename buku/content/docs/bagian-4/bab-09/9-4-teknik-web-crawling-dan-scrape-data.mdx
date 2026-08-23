@@ -1,0 +1,68 @@
+---
+title: "9.4 Teknik Web Crawling dan Scrape Data Otomatis Berbasis AI/LLM untuk Memantau Tren Wisata Real-Time"
+---
+
+Sumber data baru yang paling cepat berkembang adalah web terbuka. Forum perjalanan, blog, ulasan daring, dan media sosial menghasilkan teks dalam volume yang sebelumnya tidak tertangani. *Web crawling* dan *scrape* adalah teknik untuk mengambil data tersebut, dan AI/LLM memungkinkan analisisnya secara otomatis.
+
+## Apa Itu *Web Crawling* dan *Scrape*?
+
+- **Crawler**: program yang mengunjungi halaman web secara otomatis, mengikuti *link*, dan mengindeks teks.
+- **Scraper**: program yang mengekstrak informasi spesifik dari halaman yang sudah di-crawl.
+
+Untuk pemantauan tren wisata, keduanya digunakan: crawler mengumpulkan halaman dari berbagai sumber, dan scraper mengekstrak informasi yang dibutuhkan (mis. nama atraksi, sentimen, harga).
+
+## AI/LLM sebagai Alat Ekstraksi
+
+LLM dan model bahasa besar lainnya memungkinkan:
+
+- **Ekstraksi entitas**: menemukan nama tempat, restoran, dan atraksi dalam teks.
+- **Klasifikasi sentimen**: membedakan ulasan positif, negatif, dan netral.
+- **Ringkasan**: merangkum banyak ulasan menjadi insight kunci.
+- **Deteksi tren**: mengidentifikasi topik yang naik popularitasnya.
+
+Contoh: Disparekraf yang ingin tahu tentang sentimen internasional terhadap Bali bisa menjalankan *pipeline* yang menelusuri lebih dari 1.000 blog dan ulasan setiap minggu, mengekstrak entitas dengan GPT, dan mengklasifikasikan sentimen. Hasilnya adalah laporan mingguan yang tidak mungkin dibuat secara manual.
+
+## Legalitas dan Etika
+
+Tidak semua data web boleh di-scrape. Beberapa hal yang harus menjadi perhatian:
+
+- **Terms of Service**: banyak platform melarang scraping otomatis.
+- **Hak cipta**: teks yang di-scrape mungkin dilindungi hak cipta.
+- **Privasi**: identitas kontributor bisa teridentifikasi dari teks.
+- **Rate limiting**: scraping cepat bisa membebani server dan termasuk *abuse*.
+
+Untuk penggunaan non-komersial seperti riset dan perumusan kebijakan, banyak yurisdiksi menyediakan pengecualian — Amerika Serikat lewat doktrin *fair use*, sejumlah negara Persemakmuran lewat *fair dealing*. **Indonesia tidak menganut doktrin *fair use*.** Yang berlaku adalah pembatasan hak cipta yang disebutkan secara tertutup dalam Undang-Undang No. 28 Tahun 2014 tentang Hak Cipta, antara lain untuk keperluan pendidikan, penelitian, dan penulisan karya ilmiah, sepanjang sumbernya disebutkan lengkap dan tidak merugikan kepentingan yang wajar dari penciptanya. Perbedaannya bersifat mendasar: *fair use* adalah uji yang lentur dan ditimbang kasus per kasus, sedangkan pembatasan dalam undang-undang Indonesia berupa daftar yang harus dicocokkan. Mengandaikan *fair use* berlaku di Indonesia adalah kekeliruan hukum yang bisa mahal akibatnya. Disparekraf yang ingin melakukan *scraping* reguler harus mendapat izin dari platform, atau menggunakan API resmi (jika tersedia).
+
+## Arsitektur Pipeline
+
+Pipeline tipikal untuk *scraping* berbasis AI:
+
+1. **Crawler**: mengunjungi halaman target, mengikuti *link*, menyimpan HTML/markdown.
+2. **Preprocessing**: membersihkan HTML, memecah menjadi chunk.
+3. **Ekstraksi**: LLM mengekstrak entitas, sentimen, dan metadata.
+4. **Storage**: menyimpan hasil ke basis data.
+5. **Visualization**: *dashboard* menampilkan tren.
+
+Tools: Python + Scrapy/BeautifulSoup (crawler), LangChain (LLM integration), Postgres/BigQuery (storage), Looker Studio (visualization).
+
+## Validasi: Ketika Rating Itu Milik Mal, Bukan Restoran
+
+Kesalahan paling berbahaya dalam pencocokan otomatis bukanlah "tidak ditemukan", melainkan "ditemukan, tetapi yang salah". Ketika sebuah restoran di dalam pusat perbelanjaan dicari lewat API pemetaan, jawaban yang kembali kerap adalah **entitas malnya** — lengkap dengan puluhan ribu ulasan yang justru membuat angkanya tampak meyakinkan. Rating 4,5 dengan 40.000 ulasan terlihat jauh lebih kredibel daripada rating 4,5 dengan 300 ulasan, padahal yang pertama mengukur mal dan yang kedua mengukur restorannya.
+
+Tim data Jakarta menyusun langkah verifikasi khusus untuk menangkap kesalahan jenis ini. Sebuah baris ditandai mencurigakan bila memenuhi salah satu dari tiga syarat: jumlah ulasannya melampaui ambang yang tidak masuk akal untuk sebuah restoran; namanya mengandung kata kunci pusat perbelanjaan; atau **satu pengenal tempat yang sama dipakai oleh lebih dari satu venue** — tanda pasti bahwa beberapa restoran tercocokkan ke gedung yang sama. Untuk tiap kandidat, nama resmi diambil ulang lalu dibandingkan dengan nama *venue* memakai ukuran kemiripan tekstual, setelah kata-kata umum seperti *restaurant*, *cafe*, dan *jakarta* dibuang.
+
+Yang tidak lolos pemeriksaan **rating-nya dikosongkan, bukan diperbaiki dengan tebakan**. Akibatnya proporsi entri tanpa rating naik tajam — dan justru angka yang lebih besar itulah yang jujur. Prinsip yang tertulis di kepala berkas *pipeline* proyek layak dikutip utuh sebagai kaidah kerja: *sebuah venue hanya memperoleh angka bila sumbernya benar-benar mengembalikan angka.* Tidak ada rating yang pernah dikarang.
+
+Ada pula sisi anggaran yang jarang dibicarakan dalam pembahasan *scraping*, padahal sangat menentukan desain metodologi. Panggilan ke API pemetaan komersial berbiaya per seribu permintaan, sehingga menyelesaikan beberapa ribu *venue* menelan biaya yang nyata meski tidak besar. Karena itu hasilnya di-*cache* agar eksekusi ulang tidak menagih biaya dua kali, dan sebagian pengayaan sengaja dirancang memakai jenis permintaan yang lebih murah dengan *field mask* seminimal mungkin, ditambah batas keras jumlah panggilan per eksekusi agar tetap berada di dalam kuota gratis. Dalam pengumpulan data pemerintah, **desain kuota adalah bagian dari desain metodologi**, bukan urusan teknis yang bisa ditunda.
+
+## Limitasi dan Bias
+
+LLM memiliki bias yang dikenal: bisa jadi bias terhadap kelompok atau topik tertentu, dan akurasinya bervariasi. Untuk konteks kebijakan, hasil LLM harus divalidasi dengan sampel manual. *Hallucination* (informasi yang dikarang model) adalah risiko lain yang harus diwaspadai.
+
+Untuk memastikan kualitas, beberapa praktik:
+
+- **Spot check**: cek manual 5–10% hasil ekstraksi.
+- **Cross-validation**: bandingkan hasil model dengan data ground truth.
+- **Penyempurnaan bertahap (*iterative refinement*)**: perbaiki *prompt* berdasarkan kesalahan yang ditemukan.
+
+<VisualMenyusul tipe="Grafik" id="9.4" deskripsi="Diagram pipeline, dari crawling ke visualization dengan LLM sebagai middleware" sumber="kerangka pipeline AI, diolah" />
