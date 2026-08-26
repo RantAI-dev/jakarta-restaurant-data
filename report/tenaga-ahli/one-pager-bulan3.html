@@ -1,0 +1,440 @@
+<title>Ringkasan Bulan ke-3 — Data Statistik Pariwisata Jakarta</title>
+<style>
+  :root {
+    --paper: #f7f4f0;
+    --surface: #ffffff;
+    --ink: #16191d;
+    --ink-soft: #5d5a55;
+    --rule: #ddd7cf;
+    --accent: #c2521c;
+    --accent-soft: #f3e4da;
+    --good: #0e6b3d;
+    --good-soft: #e2efe7;
+    --warn: #8a6410;
+    --warn-soft: #f6ecd6;
+    --shadow: 0 1px 2px rgba(20, 18, 15, .06), 0 8px 24px -18px rgba(20, 18, 15, .5);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+    --sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14161a;
+      --surface: #1b1e23;
+      --ink: #eceae6;
+      --ink-soft: #a49f97;
+      --rule: #2e3238;
+      --accent: #e8834b;
+      --accent-soft: #37241a;
+      --good: #5cbd8a;
+      --good-soft: #16281f;
+      --warn: #d7ab53;
+      --warn-soft: #2a2317;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .9);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14161a;
+    --surface: #1b1e23;
+    --ink: #eceae6;
+    --ink-soft: #a49f97;
+    --rule: #2e3238;
+    --accent: #e8834b;
+    --accent-soft: #37241a;
+    --good: #5cbd8a;
+    --good-soft: #16281f;
+    --warn: #d7ab53;
+    --warn-soft: #2a2317;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .9);
+  }
+  :root[data-theme="light"] {
+    --paper: #f7f4f0;
+    --surface: #ffffff;
+    --ink: #16191d;
+    --ink-soft: #5d5a55;
+    --rule: #ddd7cf;
+    --accent: #c2521c;
+    --accent-soft: #f3e4da;
+    --good: #0e6b3d;
+    --good-soft: #e2efe7;
+    --warn: #8a6410;
+    --warn-soft: #f6ecd6;
+    --shadow: 0 1px 2px rgba(20, 18, 15, .06), 0 8px 24px -18px rgba(20, 18, 15, .5);
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 40px 20px 64px;
+  }
+  .sheet {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  header.masthead {
+    border-top: 3px solid var(--accent);
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  #theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--surface);
+    color: var(--ink-soft);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 5px 12px 5px 9px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  #theme-toggle:hover { color: var(--ink); border-color: var(--accent); }
+  #theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  #theme-toggle .dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: linear-gradient(100deg, var(--accent) 0 50%, transparent 50% 100%);
+  }
+  @media (prefers-reduced-motion: reduce) { #theme-toggle { transition: none; } }
+
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.4vw, 40px);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  header.masthead p.lede {
+    margin: 0;
+    max-width: 68ch;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    padding-top: 10px;
+  }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .kpi { background: var(--surface); padding: 14px 16px; }
+  .kpi .num {
+    font-family: var(--serif);
+    font-variant-numeric: tabular-nums;
+    font-size: 27px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+  }
+  .kpi .lab {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 5px;
+  }
+
+  section { display: flex; flex-direction: column; gap: 12px; }
+  h2 {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  ul.deliverables { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+  ul.deliverables li {
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+    align-items: start;
+    padding: 11px 16px;
+  }
+  ul.deliverables .what { grid-column: 1; grid-row: 1; font-weight: 600; }
+  ul.deliverables .how { grid-column: 1 / -1; grid-row: 2; color: var(--ink-soft); font-size: 13.5px; }
+  .chip {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.jalan { background: var(--good-soft); color: var(--good); }
+  .chip.tunggu { background: var(--warn-soft); color: var(--warn); }
+
+  /* Diagram sengaja tetap berlatar terang di kedua tema — dibaca seperti
+     sisipan cetak, sekaligus menjaga label mermaid tetap kontras. */
+  .diagram {
+    background: #fbf9f6;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 18px 14px;
+    overflow-x: auto;
+  }
+  .diagram .mermaid text,
+  .diagram .mermaid .nodeLabel,
+  .diagram .mermaid .edgeLabel,
+  .diagram .mermaid .cluster-label { color: #16191d; fill: #16191d; }
+  .diagram pre.mermaid { margin: 0; display: flex; justify-content: center; min-width: 640px; }
+  .caption { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+
+  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; align-items: start; }
+  dl.notes { margin: 0; display: flex; flex-direction: column; gap: 11px; }
+  dl.notes dt { font-weight: 600; }
+  dl.notes dd { margin: 2px 0 0; color: var(--ink-soft); font-size: 13.5px; }
+  ol.next { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; color: var(--ink); }
+  ol.next span { color: var(--ink-soft); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    justify-content: space-between;
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="topline">
+      <p class="eyebrow">Ringkasan Bulanan · Bulan ke-3</p>
+      <button id="theme-toggle" type="button" aria-pressed="false">
+        <span class="dot" aria-hidden="true"></span><span class="txt">Mode gelap</span>
+      </button>
+    </div>
+    <h1>Data pariwisata Jakarta kini mengalir di satu jalur, setiap hari</h1>
+    <p class="lede">
+      Bulan ini data Dinas berhenti berpindah-pindah antar berkas dan layanan. Semua ditarik ke
+      <em>lake house</em>, dibersihkan, diperiksa mutunya, lalu disajikan ke dashboard — otomatis dan
+      tercatat, sehingga setiap angka bisa ditelusuri sampai ke sumber dan tanggal penarikannya.
+    </p>
+    <div class="meta">
+      <span><b>Kegiatan</b> Penyediaan &amp; Pengelolaan Data Statistik Pariwisata Jakarta · TA 2026</span>
+      <span><b>Periode</b> Agustus 2026</span>
+      <span><b>Angka diverifikasi</b> 26 Agu 2026, dibaca langsung dari lake house</span>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">225</div><div class="lab">Tabel mentah · Bronze</div></div>
+    <div class="kpi"><div class="num">224</div><div class="lab">Model bersih · Silver</div></div>
+    <div class="kpi"><div class="num">6</div><div class="lab">Mart penyaji · Gold</div></div>
+    <div class="kpi"><div class="num">348</div><div class="lab">Pemeriksaan mutu / hari</div></div>
+    <div class="kpi"><div class="num">210 ms</div><div class="lab">Respons kueri p95</div></div>
+    <div class="kpi"><div class="num">0%</div><div class="lab">Kesalahan kueri</div></div>
+  </div>
+
+  <section>
+    <h2>Arsitektur yang berjalan</h2>
+    <div class="diagram">
+<pre class="mermaid">
+%%{init: {"theme":"base","themeVariables":{"darkMode":false,"fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"13px","background":"#fbf9f6","mainBkg":"#ffffff","primaryColor":"#ffffff","primaryTextColor":"#16191d","primaryBorderColor":"#b9b1a7","secondaryColor":"#f1eeea","tertiaryColor":"#f3e4da","nodeBorder":"#b9b1a7","nodeTextColor":"#16191d","textColor":"#16191d","titleColor":"#16191d","lineColor":"#8c847a","edgeLabelBackground":"#fbf9f6","labelBackground":"#fbf9f6","labelTextColor":"#16191d","clusterBkg":"#f7f4f0","clusterBorder":"#ddd7cf"}}}%%
+flowchart LR
+  subgraph SUM["Sumber"]
+    A["Satu Data Jakarta · 183 dataset"]
+    B["Berkas pendataan lapangan"]
+  end
+
+  subgraph LAKE["Lake house Dinas · terjadwal harian 02.00"]
+    direction LR
+    C["Bronze · mentah di Iceberg"]
+    D["Silver · bersih &amp; bertipe"]
+    E{"Gerbang mutu"}
+    F["Gold · mart penyaji"]
+    K[("Karantina · baris belum layak")]
+  end
+
+  subgraph PAKAI["Pemanfaatan"]
+    G["Platform data Dispar · katalog &amp; dashboard"]
+    H["Rantai Lake · pengelolaan, dashboard, asisten data"]
+  end
+
+  A --> C
+  B --> C
+  C --> D
+  D --> E
+  E -- lolos --> F
+  E -- gagal konversi --> K
+  F --> G
+  F --> H
+  L["Cadangan harian 04.00 &amp; pemeliharaan"] -.-> C
+
+  classDef gold fill:#f3e4da,stroke:#c2521c,color:#16191d;
+  classDef gate fill:#f6ecd6,stroke:#8a6410,color:#16191d;
+  classDef quar fill:#f1eeea,stroke:#8c847a,color:#5d5a55;
+  class F gold;
+  class E gate;
+  class K quar;
+</pre>
+    </div>
+    <p class="caption">
+      Data mentah disimpan dalam format terbuka (Apache Iceberg) di penyimpanan objek — bukan di dalam
+      mesin basis data — sehingga mesin pengolah dapat diganti di kemudian hari, termasuk ke basis data
+      komersial, tanpa memindahkan isi datanya. Ini memenuhi arahan rapat 13 Juli 2026.
+    </p>
+  </section>
+
+  <section>
+    <h2>Keluaran bulan ini</h2>
+    <ul class="deliverables">
+      <li>
+        <span class="what">Lake house tiga lapis</span>
+        <span class="chip jalan">Berjalan otomatis</span>
+        <span class="how">Bronze–Silver–Gold di server Dinas; pemuatan harian 02.00, pemeliharaan &amp; cadangan 04.00.</span>
+      </li>
+      <li>
+        <span class="what">Gerbang mutu harian + karantina</span>
+        <span class="chip jalan">Berjalan otomatis</span>
+        <span class="how">26 Agu: 223 lolos · 42 peringatan · 83 gagal → 124 kelompok temuan ditahan, tidak dibuang dan tidak dipakai.</span>
+      </li>
+      <li>
+        <span class="what">Penyatuan dengan platform Rantai Lake</span>
+        <span class="chip jalan">Tersambung</span>
+        <span class="how">Platform lakehouse siap pakai milik penyedia disambungkan ke mart penyaji — perangkatnya tidak dibangun dalam kegiatan ini.</span>
+      </li>
+      <li>
+        <span class="what">Aplikasi data Dinas membaca lake house</span>
+        <span class="chip jalan">Berjalan</span>
+        <span class="how">Katalog dan seluruh isi dataset dibaca dari lake house, tidak lagi menembak layanan luar saat halaman dibuka.</span>
+      </li>
+      <li>
+        <span class="what">Dashboard indikator diperkaya</span>
+        <span class="chip jalan">Berjalan</span>
+        <span class="how">Wisman: Target RPJMD 2025–2030 vs realisasi, komposisi triwulan, peringkat negara asal; pembuat grafik mandiri di tiap dataset.</span>
+      </li>
+      <li>
+        <span class="what">Label lapisan medallion di katalog</span>
+        <span class="chip tunggu">Menunggu penerapan</span>
+        <span class="how">Kolom Bronze/Silver/Gold per dataset, dihitung dari keadaan lake house. Saat ini: 2 bronze · 194 silver · 5 gold.</span>
+      </li>
+      <li>
+        <span class="what">Dokumentasi API &amp; buku metodologi</span>
+        <span class="chip jalan">Terbit</span>
+        <span class="how">Halaman REST API publik + buku “Statistika Pariwisata Perkotaan” (9 bab, 4 bagian, glosarium &amp; etika data).</span>
+      </li>
+    </ul>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2>Catatan &amp; sikap yang diambil</h2>
+      <dl class="notes">
+        <dt>Kunjungan bulanan 31 DTW belum bisa dipenuhi</dt>
+        <dd>Dari 31 destinasi, hanya 2 punya angka terbit untuk Juli 2026 — keduanya bukan bulan penuh. Angka tidak dikarang: kolom dikosongkan, proyeksi dipisah sebagai alat kontrol, dan ditempuh permintaan resmi ke pengelola.</dd>
+        <dt>Angka publik yang tidak konsisten</dt>
+        <dd>“9,86 juta kunjungan Semester I 2026” yang beredar setara satu bulan wisnus menurut BPS DKI. Ditandai agar tidak terpakai dalam laporan resmi.</dd>
+        <dt>Mutu data sumber</dt>
+        <dd>52.735 nilai pada kolom jumlah tidak terbaca sebagai angka. Ditahan di karantina beserta alasannya sebagai bahan perbaikan ke pemilik data.</dd>
+        <dt>Ketergantungan satu server</dt>
+        <dd>Dimitigasi cadangan harian yang dapat dipulihkan per tanggal, dan penyimpanan format terbuka agar mesin pengolah bisa diganti tanpa migrasi data.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Bulan berikutnya</h2>
+      <ol class="next">
+        <li>Penerapan label lapisan medallion ke katalog publik.</li>
+        <li>Pemasangan Rantai Lake di server Dinas untuk operator internal.</li>
+        <li>Dashboard baku untuk pimpinan — satu halaman indikator utama.</li>
+        <li>Permintaan data resmi ke pengelola 31 DTW <span>(17 di antaranya UPT/UP Pemprov — jalur nota dinas).</span></li>
+        <li>Uji pemulihan dari cadangan dan pemuatan bertahap.</li>
+        <li>Lapisan <em>policy insight</em> <span>— indikator tertaut ke KPI Disparekraf dan target RPJMD.</span></li>
+      </ol>
+    </section>
+  </div>
+
+  <footer>
+    <span>Laporan lengkap: 1 laporan utama + 7 laporan tenaga ahli</span>
+    <span>Seluruh angka dibaca langsung dari sistem yang berjalan, 26 Agustus 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  // Pengalih terang/gelap. Awalnya ikut preferensi sistem; pilihan pembaca
+  // disimpan supaya bertahan saat halaman dibuka lagi.
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById("theme-toggle");
+    var label = btn.querySelector(".txt");
+    var KEY = "one-pager-tema";
+
+    function sistemGelap() {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    function temaSaatIni() {
+      return root.dataset.theme || (sistemGelap() ? "dark" : "light");
+    }
+    function terapkan(t) {
+      root.dataset.theme = t;
+      var gelap = t === "dark";
+      btn.setAttribute("aria-pressed", String(gelap));
+      label.textContent = gelap ? "Mode terang" : "Mode gelap";
+    }
+
+    var tersimpan = null;
+    try { tersimpan = localStorage.getItem(KEY); } catch (e) {}
+    terapkan(tersimpan === "dark" || tersimpan === "light" ? tersimpan : temaSaatIni());
+
+    btn.addEventListener("click", function () {
+      var baru = temaSaatIni() === "dark" ? "light" : "dark";
+      terapkan(baru);
+      try { localStorage.setItem(KEY, baru); } catch (e) {}
+    });
+  })();
+</script>
