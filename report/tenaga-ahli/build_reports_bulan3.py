@@ -6,8 +6,9 @@ Kegiatan: Penyediaan dan Pengelolaan Data Statistik Pariwisata Jakarta — TA 20
 Fokus bulan ke-3 (Agustus 2026):
   1) Lake House data pariwisata (Bronze–Silver–Gold) BERJALAN OTOMATIS HARIAN
      di server Dinas — menutup arahan MoM 13 Juli (lake house + fleksibel ke Oracle).
-  2) Pengembangan platform lakehouse dengan Rantai Lake — konsol pengelolaan
-     lakehouse + BI (manual & lewat percakapan/AI) + AI Copilot tanya-data.
+  2) Penerapan platform lakehouse Rantai Lake (produk platform yang sudah ada —
+     BUKAN dikembangkan dalam kegiatan ini): disambungkan ke lake house Dinas
+     sebagai alat pengelolaan + dashboarding + asisten data.
   3) Aplikasi data Dispar kini membaca 100% dari lakehouse (tidak lagi menembak
      API luar saat halaman dibuka) + pembuat grafik mandiri per dataset +
      dashboard Wisman Target vs Realisasi RPJMD 2025–2030.
@@ -319,10 +320,11 @@ PENDAHULUAN_UMUM = (
     "data, maka bulan ketiga difokuskan pada penataan data di tingkat arsitektur: (1) membangun dan "
     "mengoperasikan Lake House data pariwisata tiga lapis (mentah–bersih–penyaji) yang berjalan otomatis "
     "setiap hari pada server milik Dinas, sebagai tindak lanjut arahan rapat 13 Juli 2026 mengenai kebutuhan "
-    "lake house yang tetap fleksibel bila kelak dipindahkan ke basis data lain; (2) pengembangan platform "
-    "lakehouse dengan Rantai Lake, yaitu konsol pengelolaan lakehouse yang sekaligus menjadi alat "
-    "dashboarding — dashboard dapat disusun secara manual maupun melalui percakapan dengan asisten AI, "
-    "dengan jawaban yang selalu menyertakan kueri dan sumber datanya; serta (3) memastikan seluruh tampilan "
+    "lake house yang tetap fleksibel bila kelak dipindahkan ke basis data lain; (2) menyatukan lake house "
+    "Dinas dengan Rantai Lake — platform lakehouse siap pakai milik penyedia — sebagai alat pengelolaan "
+    "sekaligus alat dashboarding, sehingga dashboard dapat disusun tanpa menulis kueri, baik lewat "
+    "antarmuka maupun percakapan, dengan jawaban yang selalu menyertakan kueri dan sumber datanya; serta "
+    "(3) memastikan seluruh tampilan "
     "data pada platform Dinas dibaca dari lake house tersebut, bukan lagi menembak layanan luar setiap kali "
     "halaman dibuka, sehingga tampilan tetap hidup meskipun layanan sumber sedang terganggu."
 )
@@ -331,9 +333,10 @@ RTL_UMUM = (
     "Sebagai kelanjutan, tim melanjutkan pengembangan Jakarta Tourism Intelligence Platform — satu fondasi "
     "AI-Data yang menggabungkan lima kemampuan inti: Data Gathering, Lakehouse Making, Dashboarding, AI "
     "Analyst, dan Policy Insight Layer. Pada bulan ketiga ini kemampuan Lakehouse Making telah terwujud dan "
-    "berjalan otomatis, kemampuan Dashboarding meningkat menjadi alat bantu mandiri bagi pengguna, dan "
-    "kemampuan AI Analyst mulai berfungsi melalui asisten yang dapat menjawab pertanyaan langsung di atas "
-    "data Dinas. Tahap berikutnya adalah memantapkan lapisan Policy Insight — mengubah jawaban data menjadi "
+    "berjalan otomatis, sedangkan kemampuan Dashboarding dan AI Analyst dipenuhi dengan menyatukan lake "
+    "house Dinas dengan platform Rantai Lake yang sudah tersedia — sehingga anggaran kegiatan tidak dipakai "
+    "membangun ulang perangkat yang sudah ada, melainkan untuk data dan penerapannya. Tahap berikutnya "
+    "adalah memantapkan lapisan Policy Insight — mengubah jawaban data menjadi "
     "bahan kebijakan yang tetap dapat diaudit sampai ke baris datanya."
 )
 
@@ -349,7 +352,7 @@ MEMBERS.append(dict(
     pendahuluan_peran=(
         "Sebagai Project Manager Analisis Data dan Pembangunan Dashboard Pariwisata, tenaga ahli bertanggung "
         "jawab merencanakan dan mengoordinasikan seluruh sumber daya tim, menetapkan prioritas pekerjaan bulan "
-        "ketiga (pembangunan lake house, pengembangan platform lakehouse dengan Rantai Lake, dan pemindahan "
+        "ketiga (pembangunan lake house, penyatuannya dengan platform Rantai Lake, dan pemindahan "
         "seluruh tampilan data ke atas lake house), memantau progres, mengelola risiko, serta memastikan "
         "seluruh keluaran selesai sesuai standar kualitas dan harapan pemilik program."
     ),
@@ -363,12 +366,13 @@ MEMBERS.append(dict(
         "Pada bulan ketiga, tenaga ahli memimpin penutupan salah satu arahan utama rapat 13 Juli 2026, yaitu "
         "penyediaan lake house data pariwisata. Lake house tiga lapis kini berjalan otomatis setiap hari pada "
         "server Dinas, memuat 225 tabel data mentah, 224 tampilan data bersih, dan 6 mart penyaji dashboard. "
-        "Di atasnya dikembangkan platform lakehouse dengan Rantai Lake sebagai alat pengelolaan sekaligus alat "
-        "dashboarding. Rincian realisasi terhadap uraian tugas sebagai berikut:"
+        "Lake house tersebut kemudian disatukan dengan Rantai Lake — platform lakehouse siap pakai milik "
+        "penyedia — sebagai alat pengelolaan sekaligus alat dashboarding, tanpa perlu membangun perangkatnya "
+        "sendiri. Rincian realisasi terhadap uraian tugas sebagai berikut:"
     ),
     realisasi=[
         ("Perencanaan SDM & prioritas pekerjaan",
-         "Menetapkan tiga prioritas bulan ketiga (lake house berjalan otomatis, pengembangan platform lakehouse dengan Rantai Lake, dan pemindahan seluruh tampilan data ke atas lake house) serta membagi peran tim antara rekayasa data, tata kelola mutu, pengembangan dashboard, dan penyusunan dokumentasi metodologi."),
+         "Menetapkan tiga prioritas bulan ketiga (lake house berjalan otomatis, penyatuan lake house dengan platform Rantai Lake, dan pemindahan seluruh tampilan data ke atas lake house) serta membagi peran tim antara rekayasa data, tata kelola mutu, penyusunan dashboard, dan penyusunan dokumentasi metodologi."),
         ("Pelaporan progres & pembaruan",
          "Menyusun rekapitulasi capaian: lake house 3 lapis berjalan harian (225 tabel mentah, 224 tampilan bersih, 6 mart penyaji); platform Dinas membaca 100% dari lake house; dashboard Wisman dilengkapi pembanding Target RPJMD 2025–2030; pembuat grafik mandiri tersedia di setiap halaman dataset; dokumentasi REST API terbit; buku metodologi statistik pariwisata perkotaan terbit sebagai rujukan."),
         ("Ketepatan waktu, mutu & anggaran",
@@ -378,27 +382,27 @@ MEMBERS.append(dict(
     ],
     bukti_intro=(
         "Berikut bukti keluaran kegiatan di bawah koordinasi Project Manager: struktur lake house yang berjalan, "
-        "platform data yang membacanya, dan alat dashboarding yang dikembangkan di atasnya."
+        "platform data yang membacanya, dan dashboard yang tersusun di atasnya melalui Rantai Lake."
     ),
     bukti=[
         ("lake", "Struktur lake house data pariwisata yang berjalan (26 Agustus 2026):"),
         ("img", "01-lake-catalog.jpg", "Gambar 1. Katalog lake house — 183 dataset primer Satu Data Jakarta, 16 dataset sekunder olahan, 27 model bersih, dan 6 mart penyaji, seluruhnya di server Dinas."),
         ("img", "07-app-home.jpg", "Gambar 2. Platform data Dinas — seluruh angka pada halaman ini dibaca dari lake house, bukan dari pemanggilan layanan luar saat halaman dibuka."),
-        ("img", "04-bi-dashboard.jpg", "Gambar 3. Pengembangan platform lakehouse dengan Rantai Lake — dashboard tersusun dari mart Gold, dapat dibuat manual maupun melalui percakapan."),
+        ("img", "04-bi-dashboard.jpg", "Gambar 3. Lake house Dinas disatukan dengan platform Rantai Lake — dashboard tersusun dari mart Gold, dapat dibuat lewat antarmuka maupun percakapan."),
     ],
     rtl_peran=(
         "Dalam pengembangan platform, Project Manager berperan memutakhirkan roadmap: Fase 1 (fondasi data & "
         "dashboard) dan Fase 2 (platform mandiri & perluasan data) telah terpenuhi; bulan ini Fase 3 dimulai "
         "dengan berdirinya lake house dan berfungsinya AI Analyst tahap awal. Fokus berikutnya adalah "
-        "pemasangan konsol Rantai Lake pada server Dinas untuk dipakai operator internal, serta penyusunan "
+        "pemasangan Rantai Lake pada server Dinas untuk dipakai operator internal, serta penyusunan "
         "lapisan Policy Insight yang menautkan setiap angka ke KPI Disparekraf dan indikator daya saing kota."
     ),
     rtl_bukti=[],
     penutup=(
         "Secara keseluruhan, pekerjaan bulan ketiga telah menutup kebutuhan lake house yang diarahkan pada "
         "rapat 13 Juli 2026, memindahkan seluruh tampilan data ke atasnya, dan menambah kemampuan "
-        "dashboarding serta asisten data. Koordinasi tim dilanjutkan untuk pemasangan konsol di lingkungan "
-        "Dinas dan penguatan lapisan analisis kebijakan."
+        "dashboarding serta asisten data melalui Rantai Lake. Koordinasi tim dilanjutkan untuk pemasangan "
+        "Rantai Lake di lingkungan Dinas dan penguatan lapisan analisis kebijakan."
     ),
 ))
 
@@ -545,38 +549,39 @@ MEMBERS.append(dict(
         "Menyusun panduan pemanfaatan dashboard bagi pengguna di lingkungan Dinas.",
     ],
     pelaksanaan_intro=(
-        "Pada bulan ketiga, tenaga ahli mengembangkan platform lakehouse dengan Rantai Lake sebagai alat "
-        "dashboarding: pengguna dapat membuat dashboard bernama, menyusun kartu grafik dari 19 jenis "
-        "visualisasi, menata letaknya, memasang penyaring lintas kartu, dan membagikannya — atau cukup meminta "
-        "melalui percakapan. Di sisi platform Dinas, dashboard Wisman diperkaya dengan pembanding target RPJMD "
-        "dan setiap halaman dataset dilengkapi pembuat grafik mandiri. Realisasi terhadap uraian tugas:"
+        "Pada bulan ketiga, tenaga ahli menyatukan lake house Dinas dengan Rantai Lake — platform lakehouse "
+        "siap pakai milik penyedia — lalu menyusun dashboard indikator di atasnya: dashboard bernama, kartu "
+        "grafik dari ragam visualisasi yang tersedia, penataan letak, penyaring lintas kartu, sampai berbagi "
+        "tautan, tanpa perlu membangun perangkat BI sendiri. Di sisi platform Dinas, dashboard Wisman "
+        "diperkaya dengan pembanding target RPJMD dan setiap halaman dataset dilengkapi pembuat grafik "
+        "mandiri. Realisasi terhadap uraian tugas:"
     ),
     realisasi=[
         ("Koneksi dashboard ke lapisan penyaji",
-         "Menghubungkan seluruh kartu dashboard ke mart Gold lake house; kueri setiap kartu disusun di sisi server dari daftar kolom yang tervalidasi, sehingga pengguna maupun asisten AI tidak pernah menulis kueri mentah."),
-        ("Alat dashboarding mandiri",
-         "Membangun kanvas dashboard yang dapat digeser dan diubah ukurannya, dengan jenis kartu grafik, angka kunci (KPI), tabel, dan teks; tersedia 19 jenis visualisasi (batang, garis, area, gabungan dua sumbu, pai/donat, funnel, treemap, sebaran, gelembung, peta panas, radar, air terjun, pengukur, peta wilayah Jakarta, dll.)."),
+         "Menyambungkan Rantai Lake ke mart Gold lake house Dinas dan menyiapkan kredensial hanya-baca; kueri tiap kartu disusun sistem dari daftar kolom yang tervalidasi, sehingga pengguna maupun asisten AI tidak pernah menulis kueri mentah."),
+        ("Penyusunan dashboard di atas platform",
+         "Menyusun dashboard indikator memakai kanvas dan ragam visualisasi yang sudah disediakan platform (grafik, angka kunci/KPI, tabel, teks, peta wilayah), termasuk menata letak kartu dan mode ubah tampilan — tanpa pengembangan perangkat BI dalam kegiatan ini."),
         ("Dashboard tematik & indikator",
          "Menambahkan pembanding Target vs Realisasi Wisman (RPJMD 2025–2030, indikator Jumlah Tamu Mancanegara) pada dashboard Wisatawan Internasional, serta melengkapi tampilan dengan komposisi triwulan, peringkat negara asal, dan peta komposisi (treemap)."),
         ("Pembuat grafik mandiri per dataset",
          "Menyediakan panel Visualisasi Data pada setiap halaman dataset katalog: pengguna memilih tipe grafik, kolom kategori, jenis agregasi, dan kolom nilai, lalu menambahkan grafik — tanpa menulis rumus atau kueri."),
         ("Penyaring, berbagi & pemeliharaan",
-         "Menambahkan penyaring tahun dan penyaring lintas kartu, penelusuran ke baris mentah saat kartu diklik, ekspor PDF dan YAML, tautan berbagi publik yang dapat dicabut, serta penyematan (embed) untuk situs lain — seluruhnya hanya-baca dan mengambil data dari mart penyaji."),
+         "Mengatur penyaring tahun dan penyaring lintas kartu, penelusuran ke baris mentah saat kartu diklik, ekspor PDF, tautan berbagi yang dapat dicabut, serta penyematan (embed) untuk situs lain — seluruhnya hanya-baca dan mengambil data dari mart penyaji."),
         ("Kewaspadaan & ringkasan berkala",
-         "Menyiapkan aturan kewaspadaan (alert) dan ringkasan berkala (digest) yang membandingkan angka indikator terhadap ambang tertentu dan mengirimkannya melalui surel atau kanal pesan."),
+         "Menyiapkan aturan kewaspadaan (alert) dan ringkasan berkala (digest) atas indikator terpilih: angka dibandingkan terhadap ambang tertentu dan dikirim melalui surel atau kanal pesan."),
     ],
     bukti_intro=(
-        "Bukti berupa tangkapan layar alat dashboarding yang dikembangkan dan hasilnya pada platform Dinas."
+        "Bukti berupa tangkapan layar dashboard yang disusun di atas Rantai Lake dan hasilnya pada platform Dinas."
     ),
     bukti=[
         ("img", "04-bi-dashboard.jpg", "Gambar 1. Dashboard tersusun dari mart Gold — angka kunci, tren bulanan, negara asal, dan komposisi wilayah, dengan penyaring dan mode ubah tata letak."),
-        ("img", "05-bi-chart-gallery.jpg", "Gambar 2. Galeri jenis visualisasi — 19 jenis kartu grafik yang tersedia bagi penyusun dashboard."),
+        ("img", "05-bi-chart-gallery.jpg", "Gambar 2. Ragam visualisasi yang tersedia pada platform dan dipakai menyusun dashboard indikator."),
         ("img", "08-wisman-target.jpg", "Gambar 3. Dashboard Wisatawan Internasional — perbandingan Realisasi (jingga) terhadap Target RPJMD 2025–2030 (hijau)."),
         ("img", "09-chart-builder.jpg", "Gambar 4. Pembuat grafik mandiri pada halaman dataset katalog — pilih tipe, kategori, agregasi, dan nilai, lalu tambahkan grafik."),
     ],
     rtl_peran=(
         "Pada pengembangan platform, BI Developer berperan menyusun dashboard baku untuk pimpinan (executive "
-        "dashboard) di atas alat yang telah dibangun, menambah indikator strategis (destinasi, MICE, okupansi "
+        "dashboard) di atas platform yang sudah tersedia, menambah indikator strategis (destinasi, MICE, okupansi "
         "hotel, efektivitas promosi), serta menyiapkan panduan singkat agar staf Dinas dapat menyusun dashboard "
         "sendiri."
     ),
@@ -584,7 +589,7 @@ MEMBERS.append(dict(
         ("06-ai-copilot.jpg", "Gambar 5. Penyusunan dashboard melalui percakapan — pertanyaan pengguna diterjemahkan menjadi kueri ke mart Gold, jawabannya menyertakan kueri dan tabel hasilnya."),
     ],
     penutup=(
-        "Alat dashboarding mandiri telah tersedia, dashboard indikator diperkaya dengan pembanding target "
+        "Dashboard indikator telah tersusun di atas platform Rantai Lake, diperkaya dengan pembanding target "
         "RPJMD, dan setiap dataset kini dapat divisualisasikan langsung oleh pengguna. Tahap berikutnya adalah "
         "menyusun dashboard baku untuk pimpinan dan panduan pemakaiannya."
     ),
@@ -791,9 +796,9 @@ CAPAIAN_ROWS = [
     ["Gerbang mutu data harian + karantina",
      "348 pemeriksaan/hari; baris gagal konversi ditahan di karantina, riwayat jumlah baris tersimpan",
      "Berjalan otomatis"],
-    ["Platform lakehouse Rantai Lake",
-     "Konsol pengelolaan (katalog, alur data, pemantauan) + dashboarding 19 jenis grafik + AI Copilot tanya-data",
-     "Berjalan (server pengembangan)"],
+    ["Penyatuan dengan platform Rantai Lake",
+     "Lake house Dinas tersambung ke platform siap pakai: pengelolaan (katalog, alur data, pemantauan), dashboarding, dan asisten data — perangkatnya tidak dibangun dalam kegiatan ini",
+     "Tersambung, uji pakai"],
     ["Aplikasi data Dinas membaca lake house",
      "Katalog & seluruh isi dataset dibaca dari lake house; tidak lagi menembak layanan luar saat halaman dibuka",
      "Berjalan"],
@@ -838,7 +843,7 @@ KENDALA_WIDTHS = [3.8, 5.0, 6.8]
 RENCANA_HEADER = ["Rencana bulan berikutnya", "Sasaran"]
 RENCANA_ROWS = [
     ["Penerapan label lapisan medallion ke lingkungan publik", "Katalog publik menampilkan posisi tiap dataset di lake house"],
-    ["Pemasangan konsol Rantai Lake di server Dinas", "Operator internal dapat memantau & menjalankan alur data sendiri"],
+    ["Pemasangan Rantai Lake di server Dinas", "Operator internal dapat memantau & menjalankan alur data sendiri"],
     ["Dashboard baku untuk pimpinan (executive dashboard)", "Satu halaman ringkas indikator utama Disparekraf"],
     ["Permintaan data resmi ke pengelola 31 DTW", "Angka kunjungan bulanan diperoleh dari sumber, bukan dari penyisiran media"],
     ["Uji pemulihan dari cadangan & pemuatan bertahap", "Keandalan operasi lake house teruji, beban pemuatan harian turun"],
@@ -928,7 +933,7 @@ def build_utama():
         ("01-lake-catalog.jpg", "Gambar 1. Katalog lake house — 183 dataset primer Satu Data Jakarta, 16 dataset sekunder olahan, 27 model bersih, dan 6 mart penyaji."),
         ("02-lake-pipelines.jpg", "Gambar 2. Dua alur data terjadwal (pemutakhiran harian & pemeliharaan/pencadangan) — keduanya berstatus selesai."),
         ("03-lake-observability.jpg", "Gambar 3. Pemantauan operasional — waktu respons kueri persentil-95 210 ms, kesalahan kueri 0%, tanpa insiden."),
-        ("04-bi-dashboard.jpg", "Gambar 4. Dashboarding pada platform lakehouse Rantai Lake — kartu tersusun dari mart penyaji."),
+        ("04-bi-dashboard.jpg", "Gambar 4. Dashboard indikator yang disusun di atas platform Rantai Lake — kartu membaca mart penyaji lake house Dinas."),
         ("06-ai-copilot.jpg", "Gambar 5. Asisten data (AI Copilot) — pertanyaan bahasa sehari-hari dijawab dengan kueri yang ditampilkan terbuka beserta hasilnya."),
         ("08-wisman-target.jpg", "Gambar 6. Dashboard Wisatawan Internasional — realisasi (jingga) terhadap target RPJMD 2025–2030 (hijau)."),
         ("09-chart-builder.jpg", "Gambar 7. Pembuat grafik mandiri pada halaman dataset katalog."),
