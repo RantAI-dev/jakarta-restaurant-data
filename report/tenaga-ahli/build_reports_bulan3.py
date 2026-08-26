@@ -766,7 +766,230 @@ MEMBERS.append(dict(
     ),
 ))
 
+# ---------- laporan utama (payung) ----------
+
+def kop(doc, judul, subjudul):
+    para(doc, "PEMERINTAH PROVINSI DAERAH KHUSUS IBUKOTA JAKARTA", size=12, bold=True,
+         align=WD_ALIGN_PARAGRAPH.CENTER, space_after=0)
+    para(doc, "DINAS PARIWISATA DAN EKONOMI KREATIF", size=13, bold=True,
+         align=WD_ALIGN_PARAGRAPH.CENTER, space_after=0)
+    para(doc, "Bidang Data, Informasi dan Pengembangan Destinasi", size=10, italic=True,
+         align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY, space_after=2)
+    hr = doc.add_paragraph(); hr.paragraph_format.space_after = Pt(10)
+    pPr = hr._p.get_or_add_pPr(); pbdr = OxmlElement('w:pBdr')
+    bottom = OxmlElement('w:bottom'); bottom.set(qn('w:val'), 'single'); bottom.set(qn('w:sz'), '12')
+    bottom.set(qn('w:space'), '1'); bottom.set(qn('w:color'), '1a1a1a'); pbdr.append(bottom); pPr.append(pbdr)
+    para(doc, judul, size=14, bold=True, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=1)
+    para(doc, subjudul, size=10.5, align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY, space_after=10)
+
+
+CAPAIAN_HEADER = ["Keluaran bulan ini", "Wujud nyata", "Status"]
+CAPAIAN_ROWS = [
+    ["Lake House data pariwisata (Bronze–Silver–Gold)",
+     "225 tabel mentah (Iceberg), 224 model bersih, 6 mart penyaji; pemuatan harian 02.00, pemeliharaan & cadangan 04.00",
+     "Berjalan otomatis"],
+    ["Gerbang mutu data harian + karantina",
+     "348 pemeriksaan/hari; baris gagal konversi ditahan di karantina, riwayat jumlah baris tersimpan",
+     "Berjalan otomatis"],
+    ["Platform lakehouse Rantai Lake",
+     "Konsol pengelolaan (katalog, alur data, pemantauan) + dashboarding 19 jenis grafik + AI Copilot tanya-data",
+     "Berjalan (server pengembangan)"],
+    ["Aplikasi data Dinas membaca lake house",
+     "Katalog & seluruh isi dataset dibaca dari lake house; tidak lagi menembak layanan luar saat halaman dibuka",
+     "Berjalan"],
+    ["Dashboard indikator diperkaya",
+     "Wisman: Target RPJMD 2025–2030 vs realisasi, komposisi triwulan, peringkat negara asal",
+     "Berjalan"],
+    ["Pembuat grafik mandiri per dataset",
+     "Panel Visualisasi Data di tiap halaman dataset katalog (tipe grafik, kategori, agregasi, nilai)",
+     "Berjalan"],
+    ["Label lapisan medallion di katalog",
+     "Kolom Lapisan (Bronze/Silver/Gold) + penyaring & keterangan; dihitung dari keadaan lake house",
+     "Selesai dibangun, menunggu penerapan"],
+    ["Dokumentasi REST API publik",
+     "Katalog, detail & baris data, ekspor CSV/XLSX, sinkronisasi",
+     "Terbit"],
+    ["Buku “Statistika Pariwisata Perkotaan”",
+     "9 bab / 4 bagian + glosarium, akronim, indeks, etika & regulasi data, daftar pustaka",
+     "Terbit"],
+    ["Penelusuran data kunjungan 31 DTW",
+     "Dua putaran penyisiran sumber publik Juli 2026 + jalur perolehan data & kontak pengelola",
+     "Selesai"],
+]
+CAPAIAN_WIDTHS = [4.6, 8.0, 3.0]
+
+KENDALA_HEADER = ["Kendala / risiko", "Dampak", "Tindakan & mitigasi"]
+KENDALA_ROWS = [
+    ["Kunjungan bulanan 31 DTW tidak terbit",
+     "Dari 31 destinasi, hanya 2 punya angka terbit untuk Juli 2026 — keduanya bukan bulan penuh",
+     "Angka tidak dikarang: kolom dikosongkan, proyeksi dipisah sebagai alat kontrol. Ditempuh jalur permintaan resmi ke pengelola (17 UPT/UP Pemprov bisa lewat nota dinas)"],
+    ["Angka publik yang tidak konsisten",
+     "Angka “9,86 juta kunjungan Semester I 2026” yang beredar setara satu bulan wisnus menurut BPS DKI",
+     "Ditandai agar tidak dipakai dalam laporan resmi; rujukan yang dipakai adalah BPS dengan periode eksplisit"],
+    ["Mutu data sumber",
+     "Sebagian kolom berisi nilai yang tidak dapat dibaca sebagai angka (mis. 52.735 nilai pada kolom jumlah)",
+     "Ditahan di karantina beserta alasannya — tidak dibuang dan tidak dipakai — sebagai bahan perbaikan ke pemilik data"],
+    ["Ketergantungan pada satu server",
+     "Seluruh lake house berjalan pada satu server Dinas",
+     "Pencadangan harian yang dapat dipulihkan per tanggal; data mentah disimpan format terbuka sehingga mesin pengolah dapat diganti tanpa migrasi data"],
+]
+KENDALA_WIDTHS = [3.8, 5.0, 6.8]
+
+RENCANA_HEADER = ["Rencana bulan berikutnya", "Sasaran"]
+RENCANA_ROWS = [
+    ["Penerapan label lapisan medallion ke lingkungan publik", "Katalog publik menampilkan posisi tiap dataset di lake house"],
+    ["Pemasangan konsol Rantai Lake di server Dinas", "Operator internal dapat memantau & menjalankan alur data sendiri"],
+    ["Dashboard baku untuk pimpinan (executive dashboard)", "Satu halaman ringkas indikator utama Disparekraf"],
+    ["Permintaan data resmi ke pengelola 31 DTW", "Angka kunjungan bulanan diperoleh dari sumber, bukan dari penyisiran media"],
+    ["Uji pemulihan dari cadangan & pemuatan bertahap", "Keandalan operasi lake house teruji, beban pemuatan harian turun"],
+    ["Lapisan Policy Insight", "Angka indikator tertaut ke KPI Disparekraf & target RPJMD sebagai bahan kebijakan"],
+]
+RENCANA_WIDTHS = [7.8, 7.8]
+
+LAMPIRAN_HEADER = ["No.", "Posisi tenaga ahli", "Berkas laporan"]
+LAMPIRAN_ROWS = [
+    ["1", "Project Manager Analisis Data dan Pembangunan Dashboard Pariwisata", "01-PM-Analisis-Data-Dashboard"],
+    ["2", "Database Administrator (Senior)", "02-Database-Administrator"],
+    ["3", "Master Data Management (MDM) Specialist (Senior)", "03-MDM-Specialist"],
+    ["4", "BI Developer 1 (Junior)", "04-BI-Developer-1"],
+    ["5", "Data Engineer 2 (Junior)", "05-Data-Engineer-2"],
+    ["6", "Data Analyst (Intermediate)", "06-Data-Analyst"],
+    ["7", "Business Analyst 1 (Intermediate)", "07-Business-Analyst-1"],
+]
+LAMPIRAN_WIDTHS = [1.0, 9.0, 5.6]
+
+
+def build_utama():
+    """Laporan utama (payung) kegiatan bulan ke-3 — merangkum tujuh laporan tenaga ahli."""
+    doc = Document()
+    st = doc.styles['Normal']; st.font.name = "Arial"; st.font.size = Pt(11)
+    for section in doc.sections:
+        section.top_margin = Cm(2.2); section.bottom_margin = Cm(2.0)
+        section.left_margin = Cm(2.5); section.right_margin = Cm(2.2)
+
+    kop(doc,
+        "LAPORAN BULANAN KEGIATAN",
+        "Penyediaan dan Pengelolaan Data Statistik Pariwisata Jakarta — Tahun Anggaran 2026")
+
+    t = doc.add_table(rows=0, cols=2); set_table_borders(t, color="bfbfbf")
+    ident = [
+        ("Periode Laporan", "Bulan ke-3 (Agustus 2026)"),
+        ("Kegiatan", "Analisis Data dan Pembangunan Dashboard Pariwisata"),
+        ("Sub Kegiatan", "Perencanaan Daya Tarik Wisata Provinsi"),
+        ("Lokasi", "Provinsi DKI Jakarta"),
+        ("Jumlah Tenaga Ahli", "7 (tujuh) orang — laporan per orang terlampir"),
+        ("Tanggal Verifikasi Angka", "26 Agustus 2026 (dibaca langsung dari lake house)"),
+    ]
+    for k, v in ident:
+        row = t.add_row().cells
+        cell_text(row[0], k, bold=True, size=10, align=WD_ALIGN_PARAGRAPH.LEFT); set_cell_bg(row[0], "eeeeee")
+        cell_text(row[1], v, size=10, align=WD_ALIGN_PARAGRAPH.LEFT)
+        row[0].width = Cm(4.8); row[1].width = Cm(10.8)
+    doc.add_paragraph().paragraph_format.space_after = Pt(4)
+
+    heading(doc, "I.  RINGKASAN EKSEKUTIF")
+    para(doc, PENDAHULUAN_UMUM)
+    para(doc,
+         "Inti capaian bulan ini: data pariwisata Dinas tidak lagi berpindah-pindah antar berkas dan "
+         "layanan, melainkan mengalir pada satu jalur yang sama setiap hari — ditarik ke lake house, "
+         "dibersihkan, diperiksa mutunya, lalu disajikan ke dashboard. Karena jalur itu berjalan sendiri "
+         "dan tercatat, setiap angka yang tampil dapat ditelusuri kembali sampai ke sumber dan tanggal "
+         "penarikannya; sebaliknya, angka yang belum layak tidak ikut tampil, melainkan ditahan di "
+         "karantina untuk diperbaiki di sumbernya.")
+
+    heading(doc, "II.  CAPAIAN BULAN INI")
+    para(doc, "Seluruh keluaran di bawah ini dapat diperiksa langsung pada sistem yang berjalan:",
+         space_after=4)
+    data_table(doc, CAPAIAN_HEADER, CAPAIAN_ROWS, CAPAIAN_WIDTHS)
+
+    heading(doc, "III.  STRUKTUR DATA YANG DIBANGUN")
+    para(doc,
+         "Data disusun berlapis (arsitektur medallion). Lapisan mentah disimpan dalam format terbuka di "
+         "penyimpanan objek — bukan di dalam mesin basis data — sehingga mesin pengolah dapat diganti di "
+         "kemudian hari, termasuk ke basis data komersial, tanpa memindahkan isi datanya. Ini memenuhi "
+         "arahan rapat 13 Juli 2026.", space_after=6)
+    data_table(doc, LAKE_HEADER, LAKE_ROWS, LAKE_WIDTHS)
+    para(doc, "Lapisan penyaji yang dibaca dashboard:", bold=True, size=10.5,
+         align=WD_ALIGN_PARAGRAPH.LEFT, space_before=4, space_after=3)
+    data_table(doc, MART_HEADER, MART_ROWS, MART_WIDTHS)
+
+    heading(doc, "IV.  PENJAMINAN MUTU DATA")
+    para(doc,
+         "Antara lapisan bersih dan lapisan penyaji dipasang gerbang mutu yang berjalan otomatis setiap "
+         "hari. Hasilnya tersimpan sehingga mutu data dapat ditelusuri per tanggal.", space_after=6)
+    data_table(doc, QUAL_HEADER, QUAL_ROWS, QUAL_WIDTHS)
+    data_table(doc, KARANTINA_HEADER, KARANTINA_ROWS, KARANTINA_WIDTHS)
+
+    heading(doc, "V.  BUKTI PELAKSANAAN")
+    para(doc,
+         "Tangkapan layar berikut diambil dari sistem yang sedang berjalan pada 26 Agustus 2026.",
+         space_after=6)
+    for f, c in [
+        ("01-lake-catalog.jpg", "Gambar 1. Katalog lake house — 183 dataset primer Satu Data Jakarta, 16 dataset sekunder olahan, 27 model bersih, dan 6 mart penyaji."),
+        ("02-lake-pipelines.jpg", "Gambar 2. Dua alur data terjadwal (pemutakhiran harian & pemeliharaan/pencadangan) — keduanya berstatus selesai."),
+        ("03-lake-observability.jpg", "Gambar 3. Pemantauan operasional — waktu respons kueri persentil-95 210 ms, kesalahan kueri 0%, tanpa insiden."),
+        ("04-bi-dashboard.jpg", "Gambar 4. Dashboarding pada platform lakehouse Rantai Lake — kartu tersusun dari mart penyaji."),
+        ("06-ai-copilot.jpg", "Gambar 5. Asisten data (AI Copilot) — pertanyaan bahasa sehari-hari dijawab dengan kueri yang ditampilkan terbuka beserta hasilnya."),
+        ("08-wisman-target.jpg", "Gambar 6. Dashboard Wisatawan Internasional — realisasi (jingga) terhadap target RPJMD 2025–2030 (hijau)."),
+        ("09-chart-builder.jpg", "Gambar 7. Pembuat grafik mandiri pada halaman dataset katalog."),
+        ("10-api-docs.jpg", "Gambar 8. Dokumentasi REST API platform data."),
+        ("11-buku-home.jpg", "Gambar 9. Buku “Statistika Pariwisata Perkotaan” sebagai dokumentasi metodologi."),
+    ]:
+        add_image(doc, f, c)
+
+    heading(doc, "VI.  REKAP INDIKATOR TERPILIH")
+    para(doc, "Wisatawan mancanegara per kawasan asal (dibaca dari lapisan penyaji):", bold=True,
+         size=10.5, align=WD_ALIGN_PARAGRAPH.LEFT, space_after=3)
+    data_table(doc, WIS_HEADER, WIS_ROWS, WIS_WIDTHS)
+    para(doc, "Hasil penelusuran kunjungan 31 daya tarik wisata untuk Juli 2026:", bold=True,
+         size=10.5, align=WD_ALIGN_PARAGRAPH.LEFT, space_before=4, space_after=3)
+    data_table(doc, DTW_HEADER, DTW_ROWS, DTW_WIDTHS)
+
+    heading(doc, "VII.  KENDALA, RISIKO, DAN MITIGASI")
+    data_table(doc, KENDALA_HEADER, KENDALA_ROWS, KENDALA_WIDTHS)
+
+    heading(doc, "VIII.  RENCANA BULAN BERIKUTNYA")
+    para(doc, RTL_UMUM, space_after=6)
+    data_table(doc, RENCANA_HEADER, RENCANA_ROWS, RENCANA_WIDTHS)
+
+    heading(doc, "IX.  PENUTUP")
+    para(doc,
+         "Pekerjaan bulan ketiga menutup kebutuhan lake house yang diarahkan pada rapat 13 Juli 2026, "
+         "memindahkan seluruh tampilan data Dinas ke atasnya, dan menambah kemampuan dashboarding serta "
+         "asisten data. Seluruh angka pada laporan ini diverifikasi langsung dari sistem yang berjalan "
+         "pada 26 Agustus 2026; keluaran yang belum selesai dinyatakan apa adanya beserta rencana "
+         "penyelesaiannya.")
+
+    heading(doc, "LAMPIRAN — LAPORAN PELAKSANAAN TUGAS TENAGA AHLI")
+    para(doc, "Laporan per tenaga ahli disertakan sebagai satu berkas terpisah untuk masing-masing posisi:",
+         space_after=4)
+    data_table(doc, LAMPIRAN_HEADER, LAMPIRAN_ROWS, LAMPIRAN_WIDTHS)
+
+    # tanda tangan
+    doc.add_paragraph().paragraph_format.space_after = Pt(6)
+    sig = doc.add_table(rows=0, cols=2)
+    r = sig.add_row().cells
+    cell_text(r[0], "Mengetahui,\nPejabat Pembuat Komitmen", size=10.5, align=WD_ALIGN_PARAGRAPH.CENTER)
+    cell_text(r[1], "Jakarta, ......................... 2026\nProject Manager Kegiatan",
+              size=10.5, align=WD_ALIGN_PARAGRAPH.CENTER)
+    for _ in range(4): sig.add_row()
+    r = sig.add_row().cells
+    cell_text(r[0], "(  Bima Agung  )", bold=True, size=10.5, align=WD_ALIGN_PARAGRAPH.CENTER)
+    cell_text(r[1], "(  [Nama Project Manager]  )", bold=True, size=10.5, align=WD_ALIGN_PARAGRAPH.CENTER)
+    r = sig.add_row().cells
+    cell_text(r[0], "NIP. 197907162011011008", size=9.5, align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY)
+    cell_text(r[1], "Project Manager Analisis Data dan Pembangunan Dashboard Pariwisata",
+              size=9.5, align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY)
+
+    outdir = os.path.join(BASE, "bulan-3")
+    os.makedirs(outdir, exist_ok=True)
+    out = os.path.join(outdir, "00-Laporan-Utama-Bulan-3.docx")
+    doc.save(out)
+    print("wrote", out)
+
+
 if __name__ == "__main__":
+    build_utama()
     for m in MEMBERS:
         build(m)
-    print("done:", len(MEMBERS), "reports")
+    print("done: 1 laporan utama +", len(MEMBERS), "laporan tenaga ahli")
