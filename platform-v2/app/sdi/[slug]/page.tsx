@@ -20,6 +20,32 @@ type DatasetMeta = {
   satuan: string | null;
   columns: Column[];
   total: number;
+  medallion: MedallionInfo | null;
+};
+
+type Medallion = "bronze" | "silver" | "gold";
+type MedallionInfo = { level: Medallion; table?: string; mart?: string };
+
+/** Keterangan tiap lapisan lakehouse (arsitektur medallion). */
+const MEDAL: Record<Medallion, { label: string; bg: string; fg: string; note: string }> = {
+  bronze: {
+    label: "Bronze",
+    bg: "#f6ebe1",
+    fg: "#8a5223",
+    note: "salinan mentah apa adanya di lakehouse (Apache Iceberg) — belum ada model bertipe",
+  },
+  silver: {
+    label: "Silver",
+    bg: "#eef1f5",
+    fg: "#4a5a6b",
+    note: "sudah dibersihkan & bertipe; tabel di halaman ini dibaca dari lapisan Silver",
+  },
+  gold: {
+    label: "Gold",
+    bg: "#fbf0d6",
+    fg: "#8a6a12",
+    note: "sudah diringkas menjadi mart penyaji yang dibaca dashboard indikator",
+  },
 };
 
 const HIDDEN = new Set([
@@ -87,6 +113,7 @@ export default function DatasetDetailPage({
           satuan: json.satuan,
           columns: json.columns ?? [],
           total: json.total ?? 0,
+          medallion: json.medallion ?? null,
         });
         setRows((prev) => (reset ? json.rows : [...prev, ...json.rows]));
       } catch {
@@ -166,6 +193,7 @@ export default function DatasetDetailPage({
               )}
             </div>
           )}
+          {meta?.medallion && <MedallionNote info={meta.medallion} />}
         </div>
       </section>
 
@@ -304,6 +332,45 @@ export default function DatasetDetailPage({
         )}
       </section>
     </main>
+  );
+}
+
+/** Lapisan medallion dataset ini di lakehouse + keterangan singkatnya. */
+function MedallionNote({ info }: { info: MedallionInfo }) {
+  const m = MEDAL[info.level];
+  const path =
+    info.level === "gold"
+      ? ["Bronze", "Silver", "Gold"]
+      : info.level === "silver"
+        ? ["Bronze", "Silver"]
+        : ["Bronze"];
+  return (
+    <div className="mt-4 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg bg-white/10 border border-white/15 px-4 py-2.5">
+      <span className="text-white/50 uppercase text-[11px] tracking-wider">
+        Lapisan lakehouse:
+      </span>
+      <span className="inline-flex items-center gap-1.5 text-[12px] text-white/70">
+        {path.map((p, i) => (
+          <span key={p} className="inline-flex items-center gap-1.5">
+            {i > 0 && <span className="text-white/30">→</span>}
+            {p === m.label ? (
+              <span
+                className="text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded"
+                style={{ background: m.bg, color: m.fg }}
+              >
+                ◆ {p}
+              </span>
+            ) : (
+              <span>{p}</span>
+            )}
+          </span>
+        ))}
+      </span>
+      <span className="text-[12.5px] text-white/70 max-w-[70ch]">
+        {m.note}
+        {info.mart ? ` (${info.mart})` : ""}.
+      </span>
+    </div>
   );
 }
 

@@ -37,6 +37,7 @@ export async function GET(
     }
     const { rows, count } = await store.rowsPage(slug, offset, limit, q);
     const sync = await store.sync(slug);
+    const medal = (await store.medallion()).get(slug) ?? null;
     return NextResponse.json(
       {
         source: "lakehouse",
@@ -49,6 +50,8 @@ export async function GET(
         klasifikasi: sync?.klasifikasi ?? null,
         kontak: sync?.kontak ?? null,
         author: sync?.author ?? null,
+        // Lapisan medallion (bronze/silver/gold) + mart penyaji bila sudah Gold.
+        medallion: medal,
         columns: cols.map((c) => ({ key: c.key, desc: c.description, type: c.type })),
         rows,
         total: sync?.total ?? count,

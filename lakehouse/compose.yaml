@@ -218,6 +218,10 @@ services:
       CH_PASSWORD: ${CH_APP_PASSWORD:-disparapp}
     ports:
       - "13032:3032"
+      # 13031 = port yang ditunjuk tunnel Cloudflare (dispar.rantai.dev).
+      # Sejak v2 jadi versi publik, app v1 (dispar-app) dihentikan dan port ini
+      # diambil alih v2. Kalau v1 mau dihidupkan lagi, lepas baris ini dulu.
+      - "13031:3032"
     depends_on:
       lake-clickhouse:
         condition: service_healthy

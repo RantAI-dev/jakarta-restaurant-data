@@ -144,6 +144,109 @@ async function silverAda(): Promise<Set<string>> {
   return _silverCache;
 }
 
+/* ── Medallion (Bronze / Silver / Gold) ──────────────────────────────────── */
+
+export type Medallion = "bronze" | "silver" | "gold";
+export type MedallionInfo = {
+  level: Medallion;
+  /** Nama tabel di lake (Bronze/Silver). */
+  table: string;
+  /** Mart penyaji yang memakai dataset ini (hanya untuk level "gold"). */
+  mart?: string;
+};
+
+/**
+ * Sumber tiap mart Gold → tabel dasar yang mengisinya.
+ *
+ * Diturunkan dari SQL lakehouse (satu-satunya tempat mart dibangun):
+ *   lakehouse/clickhouse/sql/20-silver-wisman.sql   → silver.wisman
+ *   lakehouse/clickhouse/sql/21-silver-curated.sql  → silver.restoran / kunjungan_dtw / event
+ *   lakehouse/clickhouse/sql/22-silver-atlas.sql    → silver.atlas
+ *   lakehouse/clickhouse/sql/11-dim-more.sql        → silver.dim_indikator
+ *   lakehouse/clickhouse/sql/{30,31}-gold*.sql      → serving.mart_*
+ *
+ * Ditulis eksplisit (bukan dibaca dari system.tables) karena akun app bersifat
+ * readonly + query-cache: membaca system.* ditolak ClickHouse. Keberadaan mart
+ * dan tabel Silver-nya tetap diverifikasi ke server sebelum diklaim "gold".
+ */
+const GOLD_SOURCES: Record<string, string[]> = {
+  mart_wisman: [
+    "data_jumlah_kunjungan_dan_ranking_wisatawan_mancanegara_ke_provinsi_dki_jakarta_melalui_pintu_soekarno_hatta_berdasarkan_kebangsaan",
+  ],
+  mart_kuliner: ["data_usaha_jasa_makanan_dan_minuman_jenis_usaha_restoran_di_dki_jakarta"],
+  mart_event: ["data_event_pariwisata_dan_kebudayaan_dki_jakarta_2011_2019"],
+  mart_kunjungan_dtw: ["kunjungan_31_dtw_juli_2026_sumber_mentah"],
+  mart_atlas: ["atlas_restoran", "atlas_souvenir", "atlas_nightlife", "atlas_pertunjukan"],
+  mart_gci_readiness: ["gci_gpci_indicators"],
+};
+
+/** Mart penyaji yang benar-benar ada di lakehouse. */
+let _servingCache: Set<string> | null = null;
+async function servingAda(): Promise<Set<string>> {
+  if (_servingCache) return _servingCache;
+  const rows = await q<{ name: string }>(`SHOW TABLES FROM serving`);
+  _servingCache = new Set(rows.map((r) => r.name));
+  return _servingCache;
+}
+
+/**
+ * Peta slug → lapisan medallion tertinggi yang sudah dicapai dataset:
+ *   bronze — baru tersalin apa adanya ke lake (belum punya model bertipe),
+ *   silver — sudah punya model bersih & bertipe (inilah yang ditampilkan),
+ *   gold   — sudah dipakai mart penyaji dashboard.
+ */
+export async function medallion(): Promise<Map<string, MedallionInfo>> {
+  const [rows, silver, serving] = await Promise.all([catalog(), silverAda(), servingAda()]);
+
+  // tabel dasar → mart yang memakainya (hanya mart yang benar-benar ada)
+  const goldOf = new Map<string, string>();
+  for (const [mart, sources] of Object.entries(GOLD_SOURCES)) {
+    if (!serving.has(mart)) continue;
+    for (const t of sources) if (!goldOf.has(t)) goldOf.set(t, mart);
+  }
+
+  const map = new Map<string, MedallionInfo>();
+  for (const r of rows) {
+    const table = r.table_name;
+    if (!table) continue;
+    const mart = goldOf.get(table);
+    if (mart) map.set(r.slug, { level: "gold", table, mart });
+    else if (silver.has(table)) map.set(r.slug, { level: "silver", table });
+    else map.set(r.slug, { level: "bronze", table });
+  }
+  return map;
+}
+
+/**
+ * Medallion untuk dataset lokal (halaman Atlas) yang datanya juga ada di lake
+ * sebagai berkas Bronze. Kunci = id dataset sekunder pada lib/secondary.ts.
+ * Dataset yang belum masuk lake sengaja tidak dipetakan (tidak diberi label).
+ */
+export const ATLAS_TABLES: Record<string, string> = {
+  "sec-gci-resto": "atlas_restoran",
+  "sec-events": "atlas_pertunjukan",
+};
+
+/** Medallion untuk tabel berkas Atlas (di luar katalog SDI). */
+export async function medallionForTables(
+  tables: string[],
+): Promise<Map<string, MedallionInfo>> {
+  const [silver, serving] = await Promise.all([silverAda(), servingAda()]);
+  const goldOf = new Map<string, string>();
+  for (const [mart, sources] of Object.entries(GOLD_SOURCES)) {
+    if (!serving.has(mart)) continue;
+    for (const t of sources) if (!goldOf.has(t)) goldOf.set(t, mart);
+  }
+  const map = new Map<string, MedallionInfo>();
+  for (const table of tables) {
+    const mart = goldOf.get(table);
+    if (mart) map.set(table, { level: "gold", table, mart });
+    else if (silver.has(table)) map.set(table, { level: "silver", table });
+    else map.set(table, { level: "bronze", table });
+  }
+  return map;
+}
+
 /** Kolom audit lakehouse — disembunyikan dari tampilan. */
 const AUDIT = new Set(["_ingested_at", "_source_url", "_batch_id", "_row_hash", "_tenant"]);
 function stripAudit(r: Record<string, unknown>): Record<string, unknown> {

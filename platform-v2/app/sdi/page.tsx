@@ -18,6 +18,8 @@ const LINK = "#2563eb";
 const HERO = "radial-gradient(900px 320px at 88% -25%, rgba(237,107,35,0.28), transparent 62%), linear-gradient(160deg, #2a2521 0%, #16130f 100%)";
 
 type Tier = "primer" | "sekunder";
+type Medallion = "bronze" | "silver" | "gold";
+type MedallionMap = Record<string, { level: Medallion; mart?: string }>;
 type CatalogRow = {
   id: string;
   title: string;
@@ -28,11 +30,37 @@ type CatalogRow = {
   size: string; // teks ukuran (dilihat / baris)
   href: string;
   external: boolean;
+  /** Kunci pencarian lapisan medallion: slug (primer) atau id (sekunder). */
+  medalKey: string;
+};
+
+/** Warna & keterangan tiap lapisan medallion (arsitektur lakehouse). */
+const MEDAL: Record<Medallion, { label: string; bg: string; fg: string; note: string }> = {
+  bronze: {
+    label: "Bronze",
+    bg: "#f6ebe1",
+    fg: "#8a5223",
+    note: "tersalin apa adanya ke lakehouse (mentah, belum bertipe)",
+  },
+  silver: {
+    label: "Silver",
+    bg: "#eef1f5",
+    fg: "#4a5a6b",
+    note: "sudah dibersihkan & bertipe — inilah yang ditampilkan di halaman dataset",
+  },
+  gold: {
+    label: "Gold",
+    bg: "#fbf0d6",
+    fg: "#8a6a12",
+    note: "sudah dipakai mart penyaji dashboard",
+  },
 };
 
 function buildCatalog(sdi: SdiDataset[]): CatalogRow[] {
   const primer: CatalogRow[] = sdi.map((r) => ({
-    id: `sdi-${r.id}`,
+    // id numerik SDI tidak ikut ke lakehouse (selalu 0) — pakai slug agar
+    // key baris tabel tetap unik.
+    id: `sdi-${r.slug}`,
     title: r.title,
     description: r.description,
     tags: r.tags,
@@ -41,6 +69,7 @@ function buildCatalog(sdi: SdiDataset[]): CatalogRow[] {
     size: `${r.views.toLocaleString("id-ID")} dilihat`,
     href: `/sdi/${r.slug}`,
     external: false,
+    medalKey: r.slug,
   }));
   const sekunder: CatalogRow[] = secondaryDatasets().map((s) => ({
     id: s.id,
@@ -52,6 +81,9 @@ function buildCatalog(sdi: SdiDataset[]): CatalogRow[] {
     size: `${s.rows.toLocaleString("id-ID")} baris`,
     href: s.href,
     external: s.external ?? true,
+    // Dataset sekunder yang ada di katalog lakehouse dikenali lewat slug pada
+    // href-nya; sisanya (halaman Atlas) lewat id — lihat ATLAS_TABLES di store.
+    medalKey: s.href.startsWith("/sdi/") ? s.href.slice("/sdi/".length) : s.id,
   }));
   return [...primer, ...sekunder];
 }
@@ -62,6 +94,8 @@ export default function SdiPage() {
   const [rows, setRows] = useState<SdiDataset[]>(SDI_DATASETS);
   const [q, setQ] = useState("");
   const [tier, setTier] = useState<"all" | Tier>("all");
+  const [medal, setMedal] = useState<MedallionMap>({});
+  const [medalFilter, setMedalFilter] = useState<"all" | Medallion>("all");
 
   const catalog = useMemo(() => buildCatalog(rows), [rows]);
 
@@ -73,15 +107,32 @@ export default function SdiPage() {
         if (alive && json.datasets?.length) setRows(json.datasets);
       })
       .catch(() => {});
+    // Lapisan medallion tiap dataset — dihitung dari keadaan lakehouse.
+    fetch("/api/sdi/medallion")
+      .then((r) => r.json())
+      .then((json) => {
+        if (alive && json.datasets) setMedal(json.datasets as MedallionMap);
+      })
+      .catch(() => {});
     return () => {
       alive = false;
     };
   }, []);
 
+  const medalCounts = useMemo(() => {
+    const c: Record<Medallion, number> = { bronze: 0, silver: 0, gold: 0 };
+    for (const r of catalog) {
+      const lvl = medal[r.medalKey]?.level;
+      if (lvl) c[lvl] += 1;
+    }
+    return c;
+  }, [catalog, medal]);
+
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
     return catalog.filter((r) => {
       if (tier !== "all" && r.tier !== tier) return false;
+      if (medalFilter !== "all" && medal[r.medalKey]?.level !== medalFilter) return false;
       if (!term) return true;
       return (
         r.title.toLowerCase().includes(term) ||
@@ -90,7 +141,7 @@ export default function SdiPage() {
         r.tags.some((t) => t.toLowerCase().includes(term))
       );
     });
-  }, [catalog, q, tier]);
+  }, [catalog, q, tier, medal, medalFilter]);
 
   const stats = useMemo(() => sdiStats(rows), [rows]);
   const secondaryCount = secondaryDatasets().length;
@@ -169,6 +220,36 @@ export default function SdiPage() {
               </button>
             ))}
           </div>
+          {/* Segmented filter lapisan medallion */}
+          <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1">
+            {(
+              [
+                ["all", "Semua lapisan"],
+                ["bronze", "Bronze"],
+                ["silver", "Silver"],
+                ["gold", "Gold"],
+              ] as const
+            ).map(([val, label]) => (
+              <button
+                key={val}
+                onClick={() => setMedalFilter(val)}
+                className="px-3 py-1.5 rounded-md text-[13px] font-medium transition-colors whitespace-nowrap"
+                style={
+                  medalFilter === val
+                    ? { background: NAVY, color: "#fff" }
+                    : { color: "#475569" }
+                }
+                title={val === "all" ? "Semua lapisan lakehouse" : MEDAL[val].note}
+              >
+                {label}
+                {val !== "all" && medalCounts[val] > 0 && (
+                  <span className="ml-1.5 tabular-nums opacity-70">
+                    {medalCounts[val]}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
           <div className="flex items-center gap-3">
             <span className="text-[13px] text-slate-500 tabular-nums whitespace-nowrap">
               {filtered.length} baris
@@ -199,6 +280,7 @@ export default function SdiPage() {
                   <th className="px-4 py-3 font-semibold hidden md:table-cell">
                     Tag
                   </th>
+                  <th className="px-4 py-3 font-semibold w-32">Lapisan</th>
                   <th className="px-4 py-3 font-semibold w-48">Sumber</th>
                   <th className="px-4 py-3 font-semibold text-right w-32 hidden sm:table-cell">
                     Ukuran
@@ -243,6 +325,9 @@ export default function SdiPage() {
                       </div>
                     </td>
                     <td className="px-4 py-3">
+                      <MedalBadge info={medal[r.medalKey]} />
+                    </td>
+                    <td className="px-4 py-3">
                       <span className="text-[13px] text-slate-600">
                         {r.source}
                       </span>
@@ -276,7 +361,7 @@ export default function SdiPage() {
                 {filtered.length === 0 && (
                   <tr>
                     <td
-                      colSpan={6}
+                      colSpan={7}
                       className="px-4 py-12 text-center text-slate-400"
                     >
                       Tidak ada dataset yang cocok.
@@ -300,6 +385,45 @@ export default function SdiPage() {
             <TierBadge tier="sekunder" /> = pendataan Jakarta Atlas (GCI)
           </span>
         </p>
+
+        {/* ── Keterangan lapisan medallion ── */}
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-5">
+          <div className="text-[13px] font-semibold text-slate-800">
+            Lapisan data (arsitektur medallion lakehouse)
+          </div>
+          <p className="text-[12.5px] text-slate-500 mt-1 max-w-[95ch]">
+            Setiap dataset melewati tiga lapisan di lakehouse Dinas. Label pada
+            kolom <em>Lapisan</em> menunjukkan lapisan tertinggi yang sudah
+            dicapai dataset tersebut — dihitung langsung dari keadaan lakehouse,
+            bukan ditulis manual.
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {(["bronze", "silver", "gold"] as const).map((lvl) => (
+              <div
+                key={lvl}
+                className="rounded-lg border border-slate-200 px-4 py-3"
+              >
+                <div className="flex items-center gap-2">
+                  <MedalBadge info={{ level: lvl }} />
+                  <span className="text-[12px] text-slate-400 tabular-nums">
+                    {medalCounts[lvl]} dataset
+                  </span>
+                </div>
+                <div className="text-[12.5px] text-slate-600 mt-2 leading-relaxed">
+                  {lvl === "bronze" &&
+                    "Salinan apa adanya dari sumber (Satu Data Jakarta / berkas pendataan), disimpan dalam format terbuka Apache Iceberg lengkap dengan kolom audit: waktu tarik, alamat sumber, dan nomor batch."}
+                  {lvl === "silver" &&
+                    "Sudah dibersihkan dan bertipe (angka, tanggal, teks) serta diselaraskan dengan dimensi bersama. Baris yang gagal dikonversi masuk karantina, tidak dibuang dan tidak dipakai. Inilah lapisan yang tampil di halaman dataset."}
+                  {lvl === "gold" &&
+                    "Sudah diringkas menjadi mart penyaji (serving.mart_*) yang dibaca dashboard indikator — mis. wisman, kuliner, event, kunjungan DTW."}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-[12px] text-slate-400 mt-3">
+            Dataset yang belum tersalin ke lakehouse tidak diberi label lapisan.
+          </p>
+        </div>
       </section>
     </main>
   );
@@ -316,6 +440,27 @@ function TierBadge({ tier }: { tier: Tier }) {
       }}
     >
       {primer ? "Data Primer" : "Data Sekunder"}
+    </span>
+  );
+}
+
+function MedalBadge({
+  info,
+}: {
+  info?: { level: Medallion; mart?: string };
+}) {
+  if (!info) return <span className="text-[12px] text-slate-300">—</span>;
+  const m = MEDAL[info.level];
+  const title = info.mart
+    ? `${m.label} — ${m.note} (${info.mart})`
+    : `${m.label} — ${m.note}`;
+  return (
+    <span
+      className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded whitespace-nowrap"
+      style={{ background: m.bg, color: m.fg }}
+      title={title}
+    >
+      ◆ {m.label}
     </span>
   );
 }
