@@ -204,24 +204,25 @@ services:
     restart: unless-stopped
     networks: [lakenet]
 
-  # ── App v2 — dashboard baca lapisan Gold (ClickHouse) ──────────────────
-  # Berdampingan dengan app v1 (dispar-platform); tidak mengganggunya.
+  # ── App v2 — versi PUBLIK, baca lapisan Gold (ClickHouse) ──────────────
+  # Sejak 27 Agu 2026 v2 menggantikan app v1 (dispar-platform) sebagai yang
+  # dilayani tunnel Cloudflare. Profil "app" dilepas supaya service ini ikut
+  # dikelola setiap kali stack di-deploy (termasuk build ulang image).
   dispar-v2:
     build:
       context: ../platform-v2
     image: dispar-v2:latest
     container_name: dispar-v2
-    profiles: ["app"]
     environment:
       CH_URL: http://lake-clickhouse:8123
       CH_USER: dispar_app
       CH_PASSWORD: ${CH_APP_PASSWORD:-disparapp}
     ports:
       - "13032:3032"
-      # Untuk menjadikan v2 versi publik: hentikan dulu app v1 (dispar-app),
-      # lalu tambahkan "13031:3032" di sini — 13031 adalah port yang ditunjuk
-      # tunnel Cloudflare (dispar.rantai.dev). Jangan diaktifkan selama v1
-      # masih jalan: port bentrok dan container v2 gagal start.
+      # 13031 = port yang ditunjuk tunnel Cloudflare (dispar.rantai.dev).
+      # PRASYARAT: app v1 (container dispar-app) harus dalam keadaan berhenti,
+      # kalau tidak port bentrok dan container ini gagal start.
+      - "13031:3032"
     depends_on:
       lake-clickhouse:
         condition: service_healthy
