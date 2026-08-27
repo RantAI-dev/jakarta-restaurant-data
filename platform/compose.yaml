@@ -30,8 +30,13 @@ services:
       DATABASE_URL: postgres://dispar:${DB_PASSWORD}@dispar-db:5432/dispar
       SYNC_SECRET: ${SYNC_SECRET}
       NODE_ENV: production
-    ports:
-      - "13031:3000"
+    # Sejak 27 Agu 2026 port 13031 (yang ditunjuk tunnel Cloudflare) dipegang
+    # app v2 di stack dispar-lakehouse. App v1 ini dipertahankan sebagai
+    # cadangan, tapi TIDAK lagi mempublikasikan port supaya redeploy stack ini
+    # tak bentrok dengan v2. Untuk mengembalikan v1 ke publik: hentikan
+    # dispar-v2, lalu aktifkan kembali pemetaan di bawah.
+    # ports:
+    #   - "13031:3000"
     depends_on:
       dispar-db:
         condition: service_healthy
