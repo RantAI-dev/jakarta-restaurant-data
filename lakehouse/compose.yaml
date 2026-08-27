@@ -217,6 +217,9 @@ services:
       CH_URL: http://lake-clickhouse:8123
       CH_USER: dispar_app
       CH_PASSWORD: ${CH_APP_PASSWORD:-disparapp}
+      # Image-nya (Next standalone) default PORT=3000; pemetaan port di bawah
+      # memakai 3032, jadi porta pendengarnya disamakan di sini.
+      PORT: 3032
     ports:
       - "13032:3032"
       # 13031 = port yang ditunjuk tunnel Cloudflare (dispar.rantai.dev).
