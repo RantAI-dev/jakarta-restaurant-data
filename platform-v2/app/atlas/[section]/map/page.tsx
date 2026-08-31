@@ -23,6 +23,10 @@ const SouvenirMapView = dynamic(
   () => import("@/components/SouvenirMapView").then((m) => m.SouvenirMapView),
   { ssr: false, loading }
 );
+const GmtiMapView = dynamic(
+  () => import("@/components/GmtiMapView").then((m) => m.GmtiMapView),
+  { ssr: false, loading }
+);
 
 export default function AtlasSectionMapPage({
   params,
@@ -32,5 +36,6 @@ export default function AtlasSectionMapPage({
   const { section } = use(params);
   if (section === "restaurants") return <MapView />;
   if (section === "souvenir") return <SouvenirMapView />;
+  if (section === "gmti") return <GmtiMapView />;
   notFound();
 }

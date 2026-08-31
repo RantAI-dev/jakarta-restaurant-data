@@ -159,6 +159,16 @@ export function secondaryDatasets(): SecondaryDataset[] {
       external: false,
     },
     {
+      id: "sec-gmti-ibadah",
+      title: "Masjid & Mushalla DKI Jakarta (SIMAS Kemenag)",
+      description:
+        "Seluruh masjid & mushalla DKI Jakarta yang terdaftar di SIMAS Kemenag RI, semua tipologi (Masjid Negara sampai Mushalla Pendidikan) — nama, nomor ID masjid, alamat, kota administrasi, dan kecamatan. Data registrasi Kemenag, bukan sensus lapangan.",
+      tags: ["halal", "masjid", "mushalla", "ibadah", "simas", "gmti", "ramah-muslim", "sekunder"],
+      rows: 8331,
+      href: "/atlas/gmti",
+      external: false,
+    },
+    {
       id: "sec-event-visitor",
       title: "Jumlah Pengunjung Event Jakarta 2026",
       description:

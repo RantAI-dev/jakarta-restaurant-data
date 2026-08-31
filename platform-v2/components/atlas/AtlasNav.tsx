@@ -15,6 +15,7 @@ export type Section =
   | "gci"
   | "events"
   | "souvenir"
+  | "gmti"
   | "home";
 export type View = "list" | "map";
 
@@ -22,6 +23,7 @@ const MAP_PATHS: Partial<Record<Section, { list: string; map: string }>> = {
   restaurants: { list: "/atlas/restaurants", map: "/atlas/restaurants/map" },
   golf: { list: "/atlas/golf", map: "/atlas/golf/map" },
   souvenir: { list: "/atlas/souvenir", map: "/atlas/souvenir/map" },
+  gmti: { list: "/atlas/gmti", map: "/atlas/gmti/map" },
 };
 
 export function AtlasNav({
