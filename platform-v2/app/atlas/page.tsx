@@ -101,7 +101,7 @@ const SECTIONS = [
 const STATS = [
   { value: "12.239", label: "Total entri lapangan" },
   { value: "6", label: "Kategori data" },
-  { value: "3.516", label: "Titik ber-koordinat" },
+  { value: "4.082", label: "Titik ber-koordinat" },
   { value: "GCI", label: "Metodologi acuan" },
 ];
 

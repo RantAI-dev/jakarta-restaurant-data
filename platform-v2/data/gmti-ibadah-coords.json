@@ -1,4 +1,16 @@
 {
+ "8": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:07.885Z"
+ },
+ "10": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:15.113Z"
+ },
+ "11": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:11.897Z"
+ },
  "19": {
   "found": true,
   "lat": -6.170166,
@@ -62,6 +74,18 @@
   "query": "AL-IKHLAS, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
   "checkedAt": "2026-08-31T15:43:03.316Z"
  },
+ "66": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:08.197Z"
+ },
+ "74": {
+  "found": true,
+  "lat": -6.2474281,
+  "lon": 106.8423709,
+  "source": "nominatim",
+  "query": "Al-Musafir, Pancoran, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:08.197Z"
+ },
  "111": {
   "found": true,
   "lat": -6.187285,
@@ -76,6 +100,14 @@
   "source": "nominatim",
   "query": "HIDAYATULLAH, Setiabudi, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:52.783Z"
+ },
+ "151": {
+  "found": true,
+  "lat": -6.1618282,
+  "lon": 106.7992111,
+  "source": "nominatim",
+  "query": "Nurul Iman, Gambir, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:04.694Z"
  },
  "357": {
   "found": false,
@@ -108,6 +140,30 @@
   "source": "nominatim",
   "query": "At-Taqwa, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T15:42:50.722Z"
+ },
+ "1796": {
+  "found": true,
+  "lat": -6.1934835,
+  "lon": 106.8228616,
+  "source": "nominatim",
+  "query": "Plaza Indonesia, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:01.676Z"
+ },
+ "1797": {
+  "found": true,
+  "lat": -6.2247671,
+  "lon": 106.8098512,
+  "source": "nominatim",
+  "query": "Pacific Place, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:58.771Z"
+ },
+ "1808": {
+  "found": true,
+  "lat": -6.2025162,
+  "lon": 106.8236386,
+  "source": "nominatim",
+  "query": "Stasiun Sudirman, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:54.521Z"
  },
  "2077": {
   "found": false,
@@ -145,6 +201,14 @@
   "query": "AL-IKHLAS, Cilandak, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T15:42:29.115Z"
  },
+ "6216": {
+  "found": true,
+  "lat": -6.1886221,
+  "lon": 106.8389147,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:07.883Z"
+ },
  "10258": {
   "found": true,
   "lat": -6.2434178,
@@ -161,9 +225,161 @@
   "query": "AL-BAKRIE, Setiabudi, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T15:42:22.143Z"
  },
+ "13932": {
+  "found": true,
+  "lat": -6.2091912,
+  "lon": 106.8990496,
+  "source": "nominatim",
+  "query": "Jl. Tanah Koja II /02 Jatinegara Kaum Pulogadung, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:51.699Z"
+ },
+ "13934": {
+  "found": true,
+  "lat": -6.2090873,
+  "lon": 106.8996787,
+  "source": "nominatim",
+  "query": "Jl. Tanah Koja II /02 Jatinegara Kaum, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:49.560Z"
+ },
+ "14123": {
+  "found": true,
+  "lat": -6.18128,
+  "lon": 106.882086,
+  "source": "nominatim",
+  "query": "AN-NUR, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:47.416Z"
+ },
+ "14125": {
+  "found": true,
+  "lat": -6.2094196,
+  "lon": 106.8788482,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:44.052Z"
+ },
+ "14219": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:31:36.422Z"
+ },
+ "14653": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:31:33.105Z"
+ },
+ "17792": {
+  "found": true,
+  "lat": -6.1872138,
+  "lon": 106.8840635,
+  "source": "nominatim",
+  "query": "AL-BARKAH, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:33.105Z"
+ },
+ "18026": {
+  "found": true,
+  "lat": -6.195335,
+  "lon": 106.883113,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:29.721Z"
+ },
+ "18571": {
+  "found": true,
+  "lat": -6.14956,
+  "lon": 106.7855145,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:26.795Z"
+ },
+ "18626": {
+  "found": true,
+  "lat": -6.14956,
+  "lon": 106.7855145,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:24.133Z"
+ },
+ "18628": {
+  "found": true,
+  "lat": -6.1623586,
+  "lon": 106.7755906,
+  "source": "nominatim",
+  "query": "Jl. Karya Barat /03, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:20.123Z"
+ },
+ "20522": {
+  "found": true,
+  "lat": -6.20113,
+  "lon": 106.9027609,
+  "source": "nominatim",
+  "query": "Jatinegara Kaum /03, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:18.075Z"
+ },
+ "20563": {
+  "found": true,
+  "lat": -6.2025048,
+  "lon": 106.8978664,
+  "source": "nominatim",
+  "query": "Jl. Jatinegara Kaum Raya /03, Pulogadung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:16.704Z"
+ },
+ "20950": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:31:12.152Z"
+ },
+ "20959": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:38:08.353Z"
+ },
+ "20965": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:38:05.466Z"
+ },
+ "21127": {
+  "found": true,
+  "lat": -5.7981252,
+  "lon": 106.4989506,
+  "source": "nominatim",
+  "query": "PULAU TIDUNG /02, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:12.152Z"
+ },
+ "21317": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:31:06.845Z"
+ },
  "22888": {
   "found": false,
   "checkedAt": "2026-08-31T13:45:45.530Z"
+ },
+ "25168": {
+  "found": true,
+  "lat": -5.7396829,
+  "lon": 106.6022891,
+  "source": "nominatim",
+  "query": "PULAU PANGGANG, /03, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:06.845Z"
+ },
+ "25604": {
+  "found": true,
+  "lat": -5.6529942,
+  "lon": 106.5775729,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:05.440Z"
+ },
+ "25615": {
+  "found": true,
+  "lat": -5.7396829,
+  "lon": 106.6022891,
+  "source": "nominatim",
+  "query": "PULAU PANGGANG /02, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:02.178Z"
+ },
+ "25616": {
+  "found": true,
+  "lat": -5.7396829,
+  "lon": 106.6022891,
+  "source": "nominatim",
+  "query": "PULAU PANGGANG /02, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:31:01.056Z"
  },
  "27204": {
   "found": true,
@@ -192,6 +408,18 @@
   "source": "nominatim",
   "query": "AL-ALAM, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:41.312Z"
+ },
+ "28460": {
+  "found": true,
+  "lat": -5.7396829,
+  "lon": 106.6022891,
+  "source": "nominatim",
+  "query": "PULAU PANGGANG /03, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:59.658Z"
+ },
+ "28952": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:54.421Z"
  },
  "29717": {
   "found": true,
@@ -373,9 +601,305 @@
   "query": "Pulau Tidung /01, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:10.827Z"
  },
+ "58528": {
+  "found": true,
+  "lat": -6.1518974,
+  "lon": 106.7909732,
+  "source": "nominatim",
+  "query": "Jl.Jelambar Jaya IV /03 Jelambar Baru, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:38:05.463Z"
+ },
+ "58617": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:51.126Z"
+ },
+ "59359": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:47.945Z"
+ },
+ "59361": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:44.371Z"
+ },
+ "59668": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:40.657Z"
+ },
+ "59677": {
+  "found": true,
+  "lat": -6.1840112,
+  "lon": 106.788524,
+  "source": "nominatim",
+  "query": "Jl. Way Besay /01 Tanjung Duren Selatan, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:40.657Z"
+ },
+ "59684": {
+  "found": true,
+  "lat": -6.1597038,
+  "lon": 106.7797769,
+  "source": "nominatim",
+  "query": "Al-Amanah, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:39.162Z"
+ },
+ "59687": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:32.910Z"
+ },
+ "64239": {
+  "found": true,
+  "lat": -6.2524192,
+  "lon": 106.9253845,
+  "source": "nominatim",
+  "query": "Jl. Raya Jatiwaringin Jakarta Timur, Duren Sawit, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:32.910Z"
+ },
+ "64611": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:28.034Z"
+ },
+ "64701": {
+  "found": true,
+  "lat": -6.1499167,
+  "lon": 106.9174783,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Kelapa Gading, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:28.034Z"
+ },
+ "64713": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:38:00.272Z"
+ },
+ "65283": {
+  "found": true,
+  "lat": -6.1572801,
+  "lon": 106.7723068,
+  "source": "nominatim",
+  "query": "An-Nur, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:23.643Z"
+ },
+ "65288": {
+  "found": true,
+  "lat": -6.1739346,
+  "lon": 106.8015319,
+  "source": "nominatim",
+  "query": "Al-Barokah, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:19.943Z"
+ },
+ "65292": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:12.882Z"
+ },
+ "65298": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:30:08.893Z"
+ },
+ "65303": {
+  "found": true,
+  "lat": -6.172505,
+  "lon": 106.80357,
+  "source": "nominatim",
+  "query": "Baiturrahman, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:08.893Z"
+ },
+ "65305": {
+  "found": true,
+  "lat": -6.1680213,
+  "lon": 106.7797792,
+  "source": "nominatim",
+  "query": "Al- Kautsar, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:30:05.638Z"
+ },
  "69529": {
   "found": false,
   "checkedAt": "2026-08-31T13:45:05.241Z"
+ },
+ "69631": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:58.365Z"
+ },
+ "69632": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:55.078Z"
+ },
+ "69633": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:52.240Z"
+ },
+ "69634": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:49.997Z"
+ },
+ "69635": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:46.402Z"
+ },
+ "69636": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:42.120Z"
+ },
+ "69637": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:38.708Z"
+ },
+ "69638": {
+  "found": true,
+  "lat": -5.857389,
+  "lon": 106.6169858,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:29:38.708Z"
+ },
+ "69639": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:31.237Z"
+ },
+ "69641": {
+  "found": true,
+  "lat": -6.1917944,
+  "lon": 106.8437498,
+  "source": "nominatim",
+  "query": "AL-KHAIRIYAH, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:29:31.237Z"
+ },
+ "69642": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:24.965Z"
+ },
+ "69643": {
+  "found": true,
+  "lat": -6.1858367,
+  "lon": 106.8244068,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:38:00.272Z"
+ },
+ "69646": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:21.178Z"
+ },
+ "69648": {
+  "found": true,
+  "lat": -6.1845932,
+  "lon": 106.828724,
+  "source": "nominatim",
+  "query": "Jl. Kebon Sirih Barat Dalam /02, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:29:21.178Z"
+ },
+ "69649": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:15.804Z"
+ },
+ "69651": {
+  "found": true,
+  "lat": -6.1842701,
+  "lon": 106.8324441,
+  "source": "nominatim",
+  "query": "Jl. Srikaya /06, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:29:15.804Z"
+ },
+ "69667": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:11.306Z"
+ },
+ "69671": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:08.118Z"
+ },
+ "69811": {
+  "found": true,
+  "lat": -6.1917926,
+  "lon": 106.8425521,
+  "source": "nominatim",
+  "query": "Jl. Raden Saleh II /03, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:29:08.118Z"
+ },
+ "69812": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:03.258Z"
+ },
+ "69816": {
+  "found": true,
+  "lat": -6.1921051,
+  "lon": 106.8386396,
+  "source": "nominatim",
+  "query": "Jl. Cikini Raya, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:56.494Z"
+ },
+ "69898": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:29:00.189Z"
+ },
+ "69899": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:56.302Z"
+ },
+ "69900": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:53.729Z"
+ },
+ "69901": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:49.036Z"
+ },
+ "69902": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:46.064Z"
+ },
+ "69903": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:42.998Z"
+ },
+ "69904": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:39.933Z"
+ },
+ "69905": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:36.671Z"
+ },
+ "69906": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:34.113Z"
+ },
+ "69907": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:30.790Z"
+ },
+ "70501": {
+  "found": true,
+  "lat": -6.1986681,
+  "lon": 106.8307307,
+  "source": "nominatim",
+  "query": "Jl. Besuki, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:54.636Z"
+ },
+ "70502": {
+  "found": true,
+  "lat": -6.2040138,
+  "lon": 106.8374477,
+  "source": "nominatim",
+  "query": "Jl. Tegal, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:53.247Z"
+ },
+ "70503": {
+  "found": true,
+  "lat": -6.1971851,
+  "lon": 106.8393369,
+  "source": "nominatim",
+  "query": "Jl. Cilacap, Menteng, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:51.300Z"
+ },
+ "70504": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:27.211Z"
+ },
+ "70958": {
+  "found": true,
+  "lat": -6.1297976,
+  "lon": 106.7999598,
+  "source": "nominatim",
+  "query": "JL. TANAH PASIR PENJARINGAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:28:27.211Z"
  },
  "71511": {
   "found": true,
@@ -384,6 +908,206 @@
   "source": "nominatim",
   "query": "Al-Anwar, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:35.309Z"
+ },
+ "72389": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:21.799Z"
+ },
+ "73463": {
+  "found": true,
+  "lat": -6.1398887,
+  "lon": 106.7706065,
+  "source": "nominatim",
+  "query": "NURUL JANNAH, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:28:21.799Z"
+ },
+ "74258": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:15.300Z"
+ },
+ "74306": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:11.492Z"
+ },
+ "74317": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:08.059Z"
+ },
+ "75568": {
+  "found": true,
+  "lat": -6.1374673,
+  "lon": 106.7779915,
+  "source": "nominatim",
+  "query": "TELUK GONG /010 PEJAGALAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:49.806Z"
+ },
+ "85010": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:28:04.872Z"
+ },
+ "85760": {
+  "found": true,
+  "lat": -6.1526246,
+  "lon": 106.7817605,
+  "source": "nominatim",
+  "query": "Darussalam, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:28:04.871Z"
+ },
+ "85807": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:44.897Z"
+ },
+ "85924": {
+  "found": true,
+  "lat": -6.150299,
+  "lon": 106.7920016,
+  "source": "nominatim",
+  "query": "Al-Muhajirin, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:28:01.635Z"
+ },
+ "86092": {
+  "found": true,
+  "lat": -6.1764307,
+  "lon": 106.7972006,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:58.321Z"
+ },
+ "86093": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:51.528Z"
+ },
+ "86100": {
+  "found": true,
+  "lat": -6.152579,
+  "lon": 106.7782898,
+  "source": "nominatim",
+  "query": "Nurul Amal, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:51.528Z"
+ },
+ "86162": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:44.774Z"
+ },
+ "86177": {
+  "found": true,
+  "lat": -6.1493222,
+  "lon": 106.7915937,
+  "source": "nominatim",
+  "query": "Jelambar Timur /09 Jelambar Baru, Grogol Petamburan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:44.774Z"
+ },
+ "89692": {
+  "found": true,
+  "lat": -6.2760771,
+  "lon": 106.8769945,
+  "source": "nominatim",
+  "query": "Makasar /01, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:42.936Z"
+ },
+ "89863": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:37.830Z"
+ },
+ "89944": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:01.834Z"
+ },
+ "90085": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:41.399Z"
+ },
+ "90092": {
+  "found": true,
+  "lat": -6.291997,
+  "lon": 106.8843506,
+  "source": "nominatim",
+  "query": "An-Nur, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:41.399Z"
+ },
+ "90094": {
+  "found": true,
+  "lat": -6.2493665,
+  "lon": 106.8840378,
+  "source": "nominatim",
+  "query": "SMP 80, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:38.086Z"
+ },
+ "90096": {
+  "found": true,
+  "lat": -6.2759165,
+  "lon": 106.8768195,
+  "source": "nominatim",
+  "query": "Baiturrahman, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:34.171Z"
+ },
+ "90098": {
+  "found": true,
+  "lat": -6.2578846,
+  "lon": 106.876641,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:01.834Z"
+ },
+ "90101": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:54.687Z"
+ },
+ "90104": {
+  "found": true,
+  "lat": -6.2424782,
+  "lon": 106.8949188,
+  "source": "nominatim",
+  "query": "Nurul Iman, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:54.687Z"
+ },
+ "90110": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:48.605Z"
+ },
+ "90114": {
+  "found": true,
+  "lat": -6.2725345,
+  "lon": 106.8738898,
+  "source": "nominatim",
+  "query": "Al-Amin, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:48.605Z"
+ },
+ "90118": {
+  "found": true,
+  "lat": -6.2424782,
+  "lon": 106.8949188,
+  "source": "nominatim",
+  "query": "Nurul Iman, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:37.830Z"
+ },
+ "90124": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:32.215Z"
+ },
+ "90128": {
+  "found": true,
+  "lat": -6.2693235,
+  "lon": 106.8794117,
+  "source": "nominatim",
+  "query": "Ar-Rahman, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:44.918Z"
+ },
+ "90131": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:37.782Z"
+ },
+ "90135": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:33.487Z"
+ },
+ "90138": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:29.871Z"
+ },
+ "90139": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:26.373Z"
  },
  "90435": {
   "found": true,
@@ -408,6 +1132,78 @@
   "source": "nominatim",
   "query": "Al-Mabrur, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T14:16:56.295Z"
+ },
+ "104087": {
+  "found": true,
+  "lat": -6.2226146,
+  "lon": 106.8513319,
+  "source": "nominatim",
+  "query": "Jl. Balimatraman /02 Manggarai Selatan, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:32.215Z"
+ },
+ "104101": {
+  "found": true,
+  "lat": -6.2226146,
+  "lon": 106.8513319,
+  "source": "nominatim",
+  "query": "Jalan Balimatraman /04 Manggarai Selatan, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:30.280Z"
+ },
+ "104107": {
+  "found": true,
+  "lat": -6.2342952,
+  "lon": 106.8535225,
+  "source": "nominatim",
+  "query": "Al-Huda, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:28.894Z"
+ },
+ "104112": {
+  "found": true,
+  "lat": -6.2163429,
+  "lon": 106.8630723,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:25.623Z"
+ },
+ "104117": {
+  "found": true,
+  "lat": -6.2181307,
+  "lon": 106.8490984,
+  "source": "nominatim",
+  "query": "Jl. Rusa IV /08 Manggarai Selatan, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:22.154Z"
+ },
+ "104122": {
+  "found": true,
+  "lat": -6.2196705,
+  "lon": 106.8494507,
+  "source": "nominatim",
+  "query": "Al-Ikhwan, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:20.392Z"
+ },
+ "104127": {
+  "found": true,
+  "lat": -6.2226146,
+  "lon": 106.8513319,
+  "source": "nominatim",
+  "query": "Jl. Balimatraman /02, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:17.046Z"
+ },
+ "104137": {
+  "found": true,
+  "lat": -6.2261518,
+  "lon": 106.8454138,
+  "source": "nominatim",
+  "query": "Jl. Pal batu /04 Menteng Dalam, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:15.004Z"
+ },
+ "104764": {
+  "found": true,
+  "lat": -6.1330437,
+  "lon": 106.8975002,
+  "source": "nominatim",
+  "query": "AL-HIKMAH, Koja, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:27:12.455Z"
  },
  "105635": {
   "found": false,
@@ -485,6 +1281,46 @@
   "found": false,
   "checkedAt": "2026-08-31T13:44:52.996Z"
  },
+ "131045": {
+  "found": true,
+  "lat": -6.2314492,
+  "lon": 106.7996019,
+  "source": "nominatim",
+  "query": "SMA 82, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:31.135Z"
+ },
+ "131050": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:23.825Z"
+ },
+ "131053": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:20.136Z"
+ },
+ "131222": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:05.639Z"
+ },
+ "150188": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:27:01.867Z"
+ },
+ "150189": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:58.339Z"
+ },
+ "150194": {
+  "found": true,
+  "lat": -6.258612,
+  "lon": 106.8068238,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:58.339Z"
+ },
+ "150196": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:51.405Z"
+ },
  "150716": {
   "found": true,
   "lat": -6.1382327,
@@ -492,6 +1328,86 @@
   "source": "nominatim",
   "query": "Al-Ikhlas, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
   "checkedAt": "2026-08-31T14:15:28.293Z"
+ },
+ "161608": {
+  "found": true,
+  "lat": -6.2884275,
+  "lon": 106.8833312,
+  "source": "nominatim",
+  "query": "Pinang Ranti /01, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:51.405Z"
+ },
+ "161610": {
+  "found": true,
+  "lat": -6.2873537,
+  "lon": 106.8849821,
+  "source": "nominatim",
+  "query": "Darussalam, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:50.021Z"
+ },
+ "161993": {
+  "found": true,
+  "lat": -6.2759165,
+  "lon": 106.8768195,
+  "source": "nominatim",
+  "query": "BAITURRAHMAN, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:46.933Z"
+ },
+ "162002": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:40.538Z"
+ },
+ "162015": {
+  "found": true,
+  "lat": -6.2884275,
+  "lon": 106.8833312,
+  "source": "nominatim",
+  "query": "PINANG RANTI /02, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:40.538Z"
+ },
+ "162017": {
+  "found": true,
+  "lat": -6.2884275,
+  "lon": 106.8833312,
+  "source": "nominatim",
+  "query": "PINANG RANTI /02, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:39.417Z"
+ },
+ "162545": {
+  "found": true,
+  "lat": -6.291997,
+  "lon": 106.8843506,
+  "source": "nominatim",
+  "query": "AN-NUR, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:20.136Z"
+ },
+ "162565": {
+  "found": true,
+  "lat": -6.2556447,
+  "lon": 106.8775074,
+  "source": "nominatim",
+  "query": "KEBON PALA /09, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:38.011Z"
+ },
+ "162566": {
+  "found": true,
+  "lat": -6.2556447,
+  "lon": 106.8775074,
+  "source": "nominatim",
+  "query": "KEBON PALA /02, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:36.609Z"
+ },
+ "162732": {
+  "found": true,
+  "lat": -6.2628607,
+  "lon": 106.8738471,
+  "source": "nominatim",
+  "query": "NURUL HUDA*, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:26.373Z"
+ },
+ "162740": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:13.059Z"
  },
  "164379": {
   "found": true,
@@ -565,6 +1481,10 @@
   "query": "SYARIF HIDAYATULLAH, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T13:44:52.996Z"
  },
+ "165257": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:30.918Z"
+ },
  "165692": {
   "found": true,
   "lat": -6.255232,
@@ -593,13 +1513,2109 @@
   "query": "KELAPA DUA WETAN /02, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T14:13:47.193Z"
  },
+ "168436": {
+  "found": true,
+  "lat": -6.1335877,
+  "lon": 106.7229873,
+  "source": "nominatim",
+  "query": "BABURRAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:30.918Z"
+ },
+ "168444": {
+  "found": true,
+  "lat": -6.1490213,
+  "lon": 106.7226009,
+  "source": "nominatim",
+  "query": "AR-RAHMAT, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:27.496Z"
+ },
+ "168456": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:19.614Z"
+ },
+ "168771": {
+  "found": true,
+  "lat": -6.1312369,
+  "lon": 106.7292577,
+  "source": "nominatim",
+  "query": "AL-ISTIQOMAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:19.613Z"
+ },
+ "168786": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:16.534Z"
+ },
+ "168794": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:11.228Z"
+ },
+ "168822": {
+  "found": true,
+  "lat": -6.1491115,
+  "lon": 106.7688915,
+  "source": "nominatim",
+  "query": "AL-MUJAHIDIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:11.228Z"
+ },
+ "168832": {
+  "found": true,
+  "lat": -6.1255484,
+  "lon": 106.7260828,
+  "source": "nominatim",
+  "query": "MIFTAHUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:07.959Z"
+ },
+ "169489": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:26:02.724Z"
+ },
+ "169580": {
+  "found": true,
+  "lat": -6.102788,
+  "lon": 106.8046205,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:26:02.724Z"
+ },
+ "169594": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /004, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:59.559Z"
+ },
+ "169599": {
+  "found": true,
+  "lat": -6.1354731,
+  "lon": 106.7999529,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:57.604Z"
+ },
+ "169606": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:50.406Z"
+ },
+ "169628": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "KAPUK MUARA /010, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:22.683Z"
+ },
+ "169645": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:47.201Z"
+ },
+ "169695": {
+  "found": true,
+  "lat": -6.102788,
+  "lon": 106.8046205,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:47.201Z"
+ },
+ "169713": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:39.943Z"
+ },
+ "169721": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /005, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:39.943Z"
+ },
+ "169722": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /005, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:38.817Z"
+ },
+ "169725": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /001, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:36.876Z"
+ },
+ "169729": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /001, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:35.758Z"
+ },
+ "169731": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /001, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:34.634Z"
+ },
+ "169732": {
+  "found": true,
+  "lat": -6.1229723,
+  "lon": 106.7613232,
+  "source": "nominatim",
+  "query": "JL. KAPUK MUARA /002, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:32.695Z"
+ },
+ "169733": {
+  "found": true,
+  "lat": -6.1334807,
+  "lon": 106.7721543,
+  "source": "nominatim",
+  "query": "JL. VIKAMAS II /003, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:30.657Z"
+ },
+ "169734": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:24.703Z"
+ },
+ "169735": {
+  "found": true,
+  "lat": -6.1328544,
+  "lon": 106.776051,
+  "source": "nominatim",
+  "query": "AL-FURQON, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:24.703Z"
+ },
+ "170614": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:16.992Z"
+ },
+ "170626": {
+  "found": true,
+  "lat": -6.2622595,
+  "lon": 106.7704961,
+  "source": "nominatim",
+  "query": "AL-FALAH, Pesanggrahan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:16.992Z"
+ },
+ "170637": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:25:09.935Z"
+ },
+ "171001": {
+  "found": true,
+  "lat": -6.2287977,
+  "lon": 106.7729182,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:09.935Z"
+ },
+ "171038": {
+  "found": true,
+  "lat": -6.2442278,
+  "lon": 106.7730899,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:06.251Z"
+ },
+ "171055": {
+  "found": true,
+  "lat": -6.2537508,
+  "lon": 106.7764147,
+  "source": "nominatim",
+  "query": "Nurul-Hidayah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:03.263Z"
+ },
+ "171083": {
+  "found": true,
+  "lat": -6.2276952,
+  "lon": 106.7808616,
+  "source": "nominatim",
+  "query": "Al-Furqon, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:25:00.715Z"
+ },
+ "171140": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:54.245Z"
+ },
+ "171141": {
+  "found": true,
+  "lat": -6.1416692,
+  "lon": 106.7784083,
+  "source": "nominatim",
+  "query": "Kp. GUSTI /015 PEJAGALAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:54.245Z"
+ },
+ "171143": {
+  "found": true,
+  "lat": -6.2537508,
+  "lon": 106.7764147,
+  "source": "nominatim",
+  "query": "Nurul Hidayah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:52.719Z"
+ },
+ "171412": {
+  "found": true,
+  "lat": -6.2872362,
+  "lon": 106.7713301,
+  "source": "nominatim",
+  "query": "Al-Istiqomah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:48.735Z"
+ },
+ "171432": {
+  "found": true,
+  "lat": -6.2655599,
+  "lon": 106.7710616,
+  "source": "nominatim",
+  "query": "DAARUL MUTA'ALLIMIN, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:45.658Z"
+ },
+ "171497": {
+  "found": true,
+  "lat": -6.2452851,
+  "lon": 106.7706165,
+  "source": "nominatim",
+  "query": "Al-Mujahidin, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:42.951Z"
+ },
+ "171528": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:35.661Z"
+ },
+ "171693": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:31.968Z"
+ },
+ "171826": {
+  "found": true,
+  "lat": -6.2469708,
+  "lon": 106.832781,
+  "source": "nominatim",
+  "query": "Al-Istiqomah, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:31.968Z"
+ },
+ "171832": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:26.515Z"
+ },
+ "171838": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:22.710Z"
+ },
+ "171929": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:19.699Z"
+ },
+ "171946": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:16.681Z"
+ },
+ "171963": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:13.709Z"
+ },
+ "171971": {
+  "found": true,
+  "lat": -6.2630889,
+  "lon": 106.8184883,
+  "source": "nominatim",
+  "query": "Jl. Bangka II /02, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:13.709Z"
+ },
+ "172051": {
+  "found": true,
+  "lat": -6.2427934,
+  "lon": 106.821361,
+  "source": "nominatim",
+  "query": "Jl. Pondok Karya /09, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:12.115Z"
+ },
+ "172060": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:24:06.657Z"
+ },
+ "172150": {
+  "found": true,
+  "lat": -6.2127253,
+  "lon": 106.7885546,
+  "source": "nominatim",
+  "query": "Al-Amin, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:24:06.657Z"
+ },
+ "172182": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:18.429Z"
+ },
+ "172212": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:59.626Z"
+ },
+ "172222": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:56.303Z"
+ },
+ "172327": {
+  "found": true,
+  "lat": -6.2287977,
+  "lon": 106.7729182,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:13.059Z"
+ },
+ "172348": {
+  "found": true,
+  "lat": -6.2286492,
+  "lon": 106.7766138,
+  "source": "nominatim",
+  "query": "Al-Jihad, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:56.303Z"
+ },
+ "172349": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:49.011Z"
+ },
+ "172440": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:46.769Z"
+ },
+ "172445": {
+  "found": true,
+  "lat": -6.1304651,
+  "lon": 106.7202994,
+  "source": "nominatim",
+  "query": "AL-MUQORROBIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:46.769Z"
+ },
+ "172449": {
+  "found": true,
+  "lat": -6.1415732,
+  "lon": 106.7470717,
+  "source": "nominatim",
+  "query": "AL-FALAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:43.420Z"
+ },
+ "172452": {
+  "found": true,
+  "lat": -6.1514128,
+  "lon": 106.742359,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:40.260Z"
+ },
+ "172454": {
+  "found": true,
+  "lat": -6.1409316,
+  "lon": 106.7698108,
+  "source": "nominatim",
+  "query": "NURUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:35.992Z"
+ },
+ "172458": {
+  "found": true,
+  "lat": -6.2480688,
+  "lon": 106.7796382,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:18.429Z"
+ },
+ "172464": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:33.137Z"
+ },
+ "172478": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:29.456Z"
+ },
+ "172479": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:26.389Z"
+ },
+ "172487": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:08.121Z"
+ },
+ "172501": {
+  "found": true,
+  "lat": -6.2836664,
+  "lon": 106.768315,
+  "source": "nominatim",
+  "query": "Al-Barkah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:22.326Z"
+ },
+ "172507": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:16.567Z"
+ },
+ "172510": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:23:13.687Z"
+ },
+ "172518": {
+  "found": true,
+  "lat": -6.2506103,
+  "lon": 106.7757055,
+  "source": "nominatim",
+  "query": "As-Sakinah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:15.545Z"
+ },
+ "172519": {
+  "found": true,
+  "lat": -6.1756209,
+  "lon": 106.7247294,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:13.687Z"
+ },
+ "172525": {
+  "found": true,
+  "lat": -6.1486127,
+  "lon": 106.7254966,
+  "source": "nominatim",
+  "query": "KHOIRUL KAMIL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:11.447Z"
+ },
+ "172527": {
+  "found": true,
+  "lat": -6.1623159,
+  "lon": 106.737672,
+  "source": "nominatim",
+  "query": "AL-MUKHLISIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:07.638Z"
+ },
+ "172535": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:04.776Z"
+ },
+ "172538": {
+  "found": true,
+  "lat": -6.1623159,
+  "lon": 106.737672,
+  "source": "nominatim",
+  "query": "AL-MUKHLISIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:23:02.052Z"
+ },
+ "172622": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:55.767Z"
+ },
+ "172625": {
+  "found": true,
+  "lat": -6.1271804,
+  "lon": 106.7388909,
+  "source": "nominatim",
+  "query": "AL-MUNAWAROH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:55.767Z"
+ },
+ "172627": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:52.496Z"
+ },
+ "172629": {
+  "found": true,
+  "lat": -6.1491115,
+  "lon": 106.7688915,
+  "source": "nominatim",
+  "query": "AL-MUJAHIDIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:49.410Z"
+ },
+ "172631": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:43.119Z"
+ },
+ "172632": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:39.159Z"
+ },
+ "172633": {
+  "found": true,
+  "lat": -6.1699254,
+  "lon": 106.7319692,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:39.159Z"
+ },
+ "172634": {
+  "found": true,
+  "lat": -6.1255484,
+  "lon": 106.7260828,
+  "source": "nominatim",
+  "query": "MIFTAHUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:36.918Z"
+ },
+ "172635": {
+  "found": true,
+  "lat": -6.1405838,
+  "lon": 106.7488591,
+  "source": "nominatim",
+  "query": "AL-MUSYAWAROH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:33.852Z"
+ },
+ "172636": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:30.889Z"
+ },
+ "172637": {
+  "found": true,
+  "lat": -6.1334934,
+  "lon": 106.7468656,
+  "source": "nominatim",
+  "query": "NURUL HIKMAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:28.312Z"
+ },
+ "172639": {
+  "found": true,
+  "lat": -6.1756209,
+  "lon": 106.7247294,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:24.977Z"
+ },
+ "172642": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:22.366Z"
+ },
+ "172645": {
+  "found": true,
+  "lat": -6.1623159,
+  "lon": 106.737672,
+  "source": "nominatim",
+  "query": "AL-MUKHLISIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:19.770Z"
+ },
+ "172682": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:13.502Z"
+ },
+ "172683": {
+  "found": true,
+  "lat": -6.2380164,
+  "lon": 106.8240687,
+  "source": "nominatim",
+  "query": "Al-Huda, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:13.502Z"
+ },
+ "172686": {
+  "found": true,
+  "lat": -6.2630889,
+  "lon": 106.8184883,
+  "source": "nominatim",
+  "query": "Jl. Bangka IV /03, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:22:10.521Z"
+ },
+ "172709": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:04.651Z"
+ },
+ "172712": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:22:01.227Z"
+ },
+ "172713": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:57.838Z"
+ },
+ "172714": {
+  "found": true,
+  "lat": -6.2630889,
+  "lon": 106.8184883,
+  "source": "nominatim",
+  "query": "Jl. Bangka Raya /011, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:57.838Z"
+ },
+ "172715": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:51.575Z"
+ },
+ "172726": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:48.670Z"
+ },
+ "172753": {
+  "found": true,
+  "lat": -6.1567985,
+  "lon": 106.7672636,
+  "source": "nominatim",
+  "query": "NURUL ISLAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:48.670Z"
+ },
+ "172756": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:46.427Z"
+ },
+ "172758": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:40.596Z"
+ },
+ "172760": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:40.596Z"
+ },
+ "172763": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:37.515Z"
+ },
+ "172769": {
+  "found": true,
+  "lat": -6.1394855,
+  "lon": 106.7429397,
+  "source": "nominatim",
+  "query": "NURUL HASANAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:34.857Z"
+ },
+ "172773": {
+  "found": true,
+  "lat": -6.141101,
+  "lon": 106.7392048,
+  "source": "nominatim",
+  "query": "AS-SALAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:31.793Z"
+ },
+ "172776": {
+  "found": true,
+  "lat": -6.164418,
+  "lon": 106.7281393,
+  "source": "nominatim",
+  "query": "AL-BARKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:28.105Z"
+ },
+ "172781": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:25.146Z"
+ },
+ "172784": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:19.702Z"
+ },
+ "172791": {
+  "found": true,
+  "lat": -6.158896,
+  "lon": 106.7465322,
+  "source": "nominatim",
+  "query": "AN-NUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:19.702Z"
+ },
+ "172799": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:16.732Z"
+ },
+ "172802": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:14.072Z"
+ },
+ "172807": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:08.158Z"
+ },
+ "172810": {
+  "found": true,
+  "lat": -6.1516987,
+  "lon": 106.7455995,
+  "source": "nominatim",
+  "query": "AL-HURIYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:08.158Z"
+ },
+ "173160": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:21:01.387Z"
+ },
+ "173161": {
+  "found": true,
+  "lat": -6.140298,
+  "lon": 106.7601595,
+  "source": "nominatim",
+  "query": "BABUS SALAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:21:01.387Z"
+ },
+ "173162": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:54.580Z"
+ },
+ "173163": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:51.356Z"
+ },
+ "173164": {
+  "found": true,
+  "lat": -6.1762847,
+  "lon": 106.7162518,
+  "source": "nominatim",
+  "query": "AR-RIDHO, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:51.356Z"
+ },
+ "173165": {
+  "found": true,
+  "lat": -6.1587303,
+  "lon": 106.7641337,
+  "source": "nominatim",
+  "query": "USWATUN HASANAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:48.386Z"
+ },
+ "173166": {
+  "found": true,
+  "lat": -6.1290124,
+  "lon": 106.7381421,
+  "source": "nominatim",
+  "query": "AL-HIKMAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:45.539Z"
+ },
+ "173167": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:38.469Z"
+ },
+ "173168": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:38.469Z"
+ },
+ "173169": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:33.333Z"
+ },
+ "173170": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:29.634Z"
+ },
+ "173171": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:27.126Z"
+ },
+ "173172": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:27.126Z"
+ },
+ "173173": {
+  "found": true,
+  "lat": -6.1567985,
+  "lon": 106.7672636,
+  "source": "nominatim",
+  "query": "NURUL ISLAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:24.384Z"
+ },
+ "173174": {
+  "found": true,
+  "lat": -6.1762847,
+  "lon": 106.7162518,
+  "source": "nominatim",
+  "query": "AR-RIDHO, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:20.313Z"
+ },
+ "173759": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:17.230Z"
+ },
+ "173760": {
+  "found": true,
+  "lat": -6.158896,
+  "lon": 106.7465322,
+  "source": "nominatim",
+  "query": "AN-NUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:14.257Z"
+ },
+ "173762": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:20:07.392Z"
+ },
+ "173763": {
+  "found": true,
+  "lat": -6.1415732,
+  "lon": 106.7470717,
+  "source": "nominatim",
+  "query": "AL-FALAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:07.392Z"
+ },
+ "173766": {
+  "found": true,
+  "lat": -6.1620051,
+  "lon": 106.7457338,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:04.625Z"
+ },
+ "173769": {
+  "found": true,
+  "lat": -6.1620051,
+  "lon": 106.7457338,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:20:01.563Z"
+ },
+ "173773": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:56.621Z"
+ },
+ "173781": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:56.621Z"
+ },
+ "173785": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:54.375Z"
+ },
+ "173788": {
+  "found": true,
+  "lat": -6.1567985,
+  "lon": 106.7672636,
+  "source": "nominatim",
+  "query": "NURUL ISLAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:51.285Z"
+ },
+ "173791": {
+  "found": true,
+  "lat": -6.1558042,
+  "lon": 106.732195,
+  "source": "nominatim",
+  "query": "BAITUL RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:49.044Z"
+ },
+ "173793": {
+  "found": true,
+  "lat": -6.1699254,
+  "lon": 106.7319692,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:46.081Z"
+ },
+ "173798": {
+  "found": true,
+  "lat": -6.1623159,
+  "lon": 106.737672,
+  "source": "nominatim",
+  "query": "AL-MUKHLISIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:43.841Z"
+ },
+ "173800": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:37.379Z"
+ },
+ "173802": {
+  "found": true,
+  "lat": -6.1451066,
+  "lon": 106.755441,
+  "source": "nominatim",
+  "query": "NURUL IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:37.379Z"
+ },
+ "173804": {
+  "found": true,
+  "lat": -6.158896,
+  "lon": 106.7465322,
+  "source": "nominatim",
+  "query": "AN-NUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:34.320Z"
+ },
+ "173808": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:27.833Z"
+ },
+ "173813": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:27.833Z"
+ },
+ "173816": {
+  "found": true,
+  "lat": -6.1512701,
+  "lon": 106.7647649,
+  "source": "nominatim",
+  "query": "BAITUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:25.179Z"
+ },
+ "174059": {
+  "found": true,
+  "lat": -6.1399072,
+  "lon": 106.765132,
+  "source": "nominatim",
+  "query": "AL-FURQON, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:21.769Z"
+ },
+ "174070": {
+  "found": true,
+  "lat": -6.1514128,
+  "lon": 106.742359,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:18.524Z"
+ },
+ "174075": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:13.674Z"
+ },
+ "174083": {
+  "found": true,
+  "lat": -6.144341,
+  "lon": 106.7538903,
+  "source": "nominatim",
+  "query": "BAITUL MUKMININ, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:13.674Z"
+ },
+ "174088": {
+  "found": true,
+  "lat": -6.2489628,
+  "lon": 106.8257181,
+  "source": "nominatim",
+  "query": "Jl. Mampang Prapatan XI /01 Tegal Parang Mampang Prapatan, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:10.806Z"
+ },
+ "174092": {
+  "found": true,
+  "lat": -6.2489628,
+  "lon": 106.8257181,
+  "source": "nominatim",
+  "query": "Jl. Mampang Prapatan XI /01 Tegal Parang, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:08.763Z"
+ },
+ "174094": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:03.157Z"
+ },
+ "174095": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:19:00.172Z"
+ },
+ "174100": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:19:00.172Z"
+ },
+ "174102": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:53.747Z"
+ },
+ "174104": {
+  "found": true,
+  "lat": -6.2491615,
+  "lon": 106.8246896,
+  "source": "nominatim",
+  "query": "Jl. Mampang Prapatan XV /04 Tegal Parang, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:53.747Z"
+ },
+ "174105": {
+  "found": true,
+  "lat": -6.1558042,
+  "lon": 106.732195,
+  "source": "nominatim",
+  "query": "BAITUL RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:51.589Z"
+ },
+ "174108": {
+  "found": true,
+  "lat": -6.251599,
+  "lon": 106.8300131,
+  "source": "nominatim",
+  "query": "Al-Barokah, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:48.932Z"
+ },
+ "174109": {
+  "found": true,
+  "lat": -6.1699254,
+  "lon": 106.7319692,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:46.364Z"
+ },
+ "174112": {
+  "found": true,
+  "lat": -6.2489614,
+  "lon": 106.8315987,
+  "source": "nominatim",
+  "query": "Jl. Tegal Parang Selatan /01, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:43.357Z"
+ },
+ "174113": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:38.805Z"
+ },
+ "174114": {
+  "found": true,
+  "lat": -6.2426756,
+  "lon": 106.8286635,
+  "source": "nominatim",
+  "query": "Jl. Mampang Prapatan XV /01, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:38.805Z"
+ },
+ "174116": {
+  "found": true,
+  "lat": -6.1514128,
+  "lon": 106.742359,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:35.857Z"
+ },
+ "174118": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:32.772Z"
+ },
+ "174122": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:26.289Z"
+ },
+ "174124": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:22.606Z"
+ },
+ "174125": {
+  "found": true,
+  "lat": -6.1394855,
+  "lon": 106.7429397,
+  "source": "nominatim",
+  "query": "NURUL HASANAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:22.606Z"
+ },
+ "174129": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:16.877Z"
+ },
+ "174131": {
+  "found": true,
+  "lat": -6.1567447,
+  "lon": 106.7205029,
+  "source": "nominatim",
+  "query": "AL-HASYIMIAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:16.877Z"
+ },
+ "174133": {
+  "found": true,
+  "lat": -6.1620051,
+  "lon": 106.7457338,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:14.394Z"
+ },
+ "174135": {
+  "found": true,
+  "lat": -6.251599,
+  "lon": 106.8300131,
+  "source": "nominatim",
+  "query": "Al-Barokah, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:12.150Z"
+ },
+ "174138": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:18:06.507Z"
+ },
+ "174141": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:06.507Z"
+ },
+ "174145": {
+  "found": true,
+  "lat": -6.1409316,
+  "lon": 106.7698108,
+  "source": "nominatim",
+  "query": "NURUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:18:03.646Z"
+ },
+ "174146": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:56.559Z"
+ },
+ "174151": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:53.210Z"
+ },
+ "174550": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:53.207Z"
+ },
+ "174552": {
+  "found": true,
+  "lat": -6.1255484,
+  "lon": 106.7260828,
+  "source": "nominatim",
+  "query": "MIFTAHUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:50.136Z"
+ },
+ "174555": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:43.179Z"
+ },
+ "174557": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:39.866Z"
+ },
+ "174560": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:36.803Z"
+ },
+ "174563": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:17:34.294Z"
+ },
+ "174568": {
+  "found": true,
+  "lat": -6.1647942,
+  "lon": 106.7244853,
+  "source": "nominatim",
+  "query": "AL-HUSAINI, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:34.294Z"
+ },
+ "174570": {
+  "found": true,
+  "lat": -6.1270593,
+  "lon": 106.7357195,
+  "source": "nominatim",
+  "query": "NURUL AMIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:31.410Z"
+ },
+ "174573": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:28.153Z"
+ },
+ "174575": {
+  "found": true,
+  "lat": -6.158896,
+  "lon": 106.7465322,
+  "source": "nominatim",
+  "query": "AN-NUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:25.913Z"
+ },
+ "174577": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:22.829Z"
+ },
+ "174583": {
+  "found": true,
+  "lat": -6.1497135,
+  "lon": 106.7269151,
+  "source": "nominatim",
+  "query": "AL-HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:20.582Z"
+ },
+ "174586": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:18.340Z"
+ },
+ "174589": {
+  "found": true,
+  "lat": -6.1558042,
+  "lon": 106.732195,
+  "source": "nominatim",
+  "query": "BAITUL RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:16.098Z"
+ },
+ "174591": {
+  "found": true,
+  "lat": -6.1786917,
+  "lon": 106.7057393,
+  "source": "nominatim",
+  "query": "DARUSSALAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:13.114Z"
+ },
+ "174592": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:09.223Z"
+ },
+ "174596": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:06.585Z"
+ },
+ "174599": {
+  "found": true,
+  "lat": -6.1803241,
+  "lon": 106.7184972,
+  "source": "nominatim",
+  "query": "AL-AMALIAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:03.421Z"
+ },
+ "174600": {
+  "found": true,
+  "lat": -6.1774914,
+  "lon": 106.7177522,
+  "source": "nominatim",
+  "query": "AL-MABRUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:17:00.449Z"
+ },
+ "174601": {
+  "found": true,
+  "lat": -6.164418,
+  "lon": 106.7281393,
+  "source": "nominatim",
+  "query": "AL-BARKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:57.154Z"
+ },
+ "174603": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:54.912Z"
+ },
+ "174604": {
+  "found": true,
+  "lat": -6.1497135,
+  "lon": 106.7269151,
+  "source": "nominatim",
+  "query": "AL-HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:51.843Z"
+ },
+ "174607": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:48.898Z"
+ },
+ "174609": {
+  "found": true,
+  "lat": -6.1553066,
+  "lon": 106.7616878,
+  "source": "nominatim",
+  "query": "AL-MUTTAQIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:44.841Z"
+ },
+ "174611": {
+  "found": true,
+  "lat": -6.158896,
+  "lon": 106.7465322,
+  "source": "nominatim",
+  "query": "AN-NUR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:42.164Z"
+ },
+ "175401": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:34.947Z"
+ },
+ "175408": {
+  "found": true,
+  "lat": -6.2176121,
+  "lon": 106.8183052,
+  "source": "nominatim",
+  "query": "Hidayatullah, Setiabudi, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:34.947Z"
+ },
+ "175416": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:37:04.528Z"
+ },
+ "175417": {
+  "found": true,
+  "lat": -6.231075,
+  "lon": 106.8267428,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Setiabudi, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:04.528Z"
+ },
+ "175655": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:28.233Z"
+ },
+ "175683": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:25.097Z"
+ },
+ "175684": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:25.097Z"
+ },
+ "175685": {
+  "found": true,
+  "lat": -6.1699254,
+  "lon": 106.7319692,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:22.128Z"
+ },
+ "175686": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:17.308Z"
+ },
+ "175687": {
+  "found": true,
+  "lat": -6.1553766,
+  "lon": 106.7609142,
+  "source": "nominatim",
+  "query": "DARUL MUTTAQIEN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:17.308Z"
+ },
+ "175688": {
+  "found": true,
+  "lat": -6.1699254,
+  "lon": 106.7319692,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:14.446Z"
+ },
+ "175689": {
+  "found": true,
+  "lat": -6.1471182,
+  "lon": 106.7296794,
+  "source": "nominatim",
+  "query": "AL-JIHAD, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:16:11.475Z"
+ },
+ "175691": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:06.084Z"
+ },
+ "175695": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:16:01.740Z"
+ },
+ "175696": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:58.835Z"
+ },
+ "175697": {
+  "found": true,
+  "lat": -6.164418,
+  "lon": 106.7281393,
+  "source": "nominatim",
+  "query": "AL-BARKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:58.835Z"
+ },
+ "175698": {
+  "found": true,
+  "lat": -6.1415732,
+  "lon": 106.7470717,
+  "source": "nominatim",
+  "query": "AL-FALAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:55.444Z"
+ },
+ "175699": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:49.462Z"
+ },
+ "175700": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:47.221Z"
+ },
+ "175701": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:44.133Z"
+ },
+ "175702": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:41.275Z"
+ },
+ "175704": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:41.275Z"
+ },
+ "175705": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:35.577Z"
+ },
+ "175706": {
+  "found": true,
+  "lat": -6.1415509,
+  "lon": 106.7535913,
+  "source": "nominatim",
+  "query": "AL-HASANAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:35.577Z"
+ },
+ "175707": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:29.000Z"
+ },
+ "175708": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:29.000Z"
+ },
+ "175710": {
+  "found": true,
+  "lat": -6.1553066,
+  "lon": 106.7616878,
+  "source": "nominatim",
+  "query": "AL-MUTTAQIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:26.757Z"
+ },
+ "175712": {
+  "found": true,
+  "lat": -6.1620051,
+  "lon": 106.7457338,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:23.429Z"
+ },
+ "175713": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:15.687Z"
+ },
+ "175715": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:13.176Z"
+ },
+ "175719": {
+  "found": true,
+  "lat": -6.1485013,
+  "lon": 106.7338642,
+  "source": "nominatim",
+  "query": "NURUL FALAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:13.176Z"
+ },
+ "175720": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:09.821Z"
+ },
+ "175721": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:15:03.738Z"
+ },
+ "175722": {
+  "found": true,
+  "lat": -6.14705,
+  "lon": 106.7716737,
+  "source": "nominatim",
+  "query": "AL-MUCHLISIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:03.738Z"
+ },
+ "175724": {
+  "found": true,
+  "lat": -6.1415509,
+  "lon": 106.7535913,
+  "source": "nominatim",
+  "query": "AL-HASANAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:15:00.750Z"
+ },
+ "175727": {
+  "found": true,
+  "lat": -6.1756209,
+  "lon": 106.7247294,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:57.865Z"
+ },
+ "175762": {
+  "found": true,
+  "lat": -6.1393224,
+  "lon": 106.7529308,
+  "source": "nominatim",
+  "query": "NURUL HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:54.696Z"
+ },
+ "175763": {
+  "found": true,
+  "lat": -6.1267567,
+  "lon": 106.7378344,
+  "source": "nominatim",
+  "query": "AL-AYUBI, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:51.365Z"
+ },
+ "175764": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:47.479Z"
+ },
+ "175765": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:42.266Z"
+ },
+ "175766": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:38.076Z"
+ },
+ "175768": {
+  "found": true,
+  "lat": -6.1409316,
+  "lon": 106.7698108,
+  "source": "nominatim",
+  "query": "NURUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:38.076Z"
+ },
+ "175769": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:32.412Z"
+ },
+ "175771": {
+  "found": true,
+  "lat": -6.1756209,
+  "lon": 106.7247294,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:32.412Z"
+ },
+ "175773": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:26.090Z"
+ },
+ "175776": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:23.542Z"
+ },
+ "175777": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:20.104Z"
+ },
+ "175779": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:17.241Z"
+ },
+ "175781": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:17.241Z"
+ },
+ "175782": {
+  "found": true,
+  "lat": -6.1485662,
+  "lon": 106.7321829,
+  "source": "nominatim",
+  "query": "AL-MUTAQIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:14.280Z"
+ },
+ "175784": {
+  "found": true,
+  "lat": -6.1451066,
+  "lon": 106.755441,
+  "source": "nominatim",
+  "query": "NURUL IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:11.440Z"
+ },
+ "175786": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:14:05.401Z"
+ },
+ "175787": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:05.395Z"
+ },
+ "175788": {
+  "found": true,
+  "lat": -6.1567985,
+  "lon": 106.7672636,
+  "source": "nominatim",
+  "query": "NURUL ISLAM, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:14:02.328Z"
+ },
+ "175790": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:54.840Z"
+ },
+ "175791": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:50.656Z"
+ },
+ "175792": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:47.693Z"
+ },
+ "175793": {
+  "found": true,
+  "lat": -6.16598,
+  "lon": 106.7434419,
+  "source": "nominatim",
+  "query": "AL-MUBAROK, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:47.693Z"
+ },
+ "175795": {
+  "found": true,
+  "lat": -6.1312369,
+  "lon": 106.7292577,
+  "source": "nominatim",
+  "query": "AL-ISTIQOMAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:45.188Z"
+ },
+ "176009": {
+  "found": true,
+  "lat": -6.2836664,
+  "lon": 106.768315,
+  "source": "nominatim",
+  "query": "Al-Barkah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:41.082Z"
+ },
+ "176068": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:33.301Z"
+ },
+ "176470": {
+  "found": true,
+  "lat": -6.1297976,
+  "lon": 106.7999598,
+  "source": "nominatim",
+  "query": "JL. TANAH PASIR PENJARINGAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:33.301Z"
+ },
  "176615": {
   "found": false,
   "checkedAt": "2026-08-31T14:13:39.857Z"
  },
+ "176668": {
+  "found": true,
+  "lat": -6.2276952,
+  "lon": 106.7808616,
+  "source": "nominatim",
+  "query": "Al-Furqon, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:31.349Z"
+ },
+ "177185": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:25.394Z"
+ },
+ "177225": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:21.611Z"
+ },
+ "177293": {
+  "found": true,
+  "lat": -6.2480688,
+  "lon": 106.7796382,
+  "source": "nominatim",
+  "query": "Al-Hikmah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:21.611Z"
+ },
+ "177304": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:14.277Z"
+ },
+ "177326": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:10.564Z"
+ },
+ "177539": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:07.117Z"
+ },
+ "177547": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:13:04.293Z"
+ },
+ "177556": {
+  "found": true,
+  "lat": -6.232193,
+  "lon": 106.7716543,
+  "source": "nominatim",
+  "query": "Nurul Iman, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:04.293Z"
+ },
+ "177773": {
+  "found": true,
+  "lat": -6.1215429,
+  "lon": 106.7316232,
+  "source": "nominatim",
+  "query": "JL. KAMAL MUARA /01 KAMAL MUARA, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:13:00.960Z"
+ },
+ "179914": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:55.470Z"
+ },
+ "180231": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:52.307Z"
+ },
+ "183884": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:49.089Z"
+ },
+ "183886": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:45.591Z"
+ },
+ "183887": {
+  "found": true,
+  "lat": -6.1795129,
+  "lon": 106.7478138,
+  "source": "nominatim",
+  "query": "KP.BUGIS /03 KEMBANGAN SELATAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:45.591Z"
+ },
+ "183888": {
+  "found": true,
+  "lat": -6.1795129,
+  "lon": 106.7478138,
+  "source": "nominatim",
+  "query": "KP.BUGIS /03 KEMBANGAN SELATAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:44.465Z"
+ },
+ "183889": {
+  "found": true,
+  "lat": -6.1868543,
+  "lon": 106.7553317,
+  "source": "nominatim",
+  "query": "PESANGGRAHAN /07 KEMBANGAN SELATAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:42.511Z"
+ },
+ "183890": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:38.677Z"
+ },
+ "183891": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:35.502Z"
+ },
+ "183892": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:32.021Z"
+ },
+ "183893": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:28.449Z"
+ },
+ "183894": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:25.034Z"
+ },
+ "183895": {
+  "found": true,
+  "lat": -6.2099073,
+  "lon": 106.7507853,
+  "source": "nominatim",
+  "query": "AT-TAUBAH, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:25.034Z"
+ },
+ "183898": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:09.185Z"
+ },
+ "183901": {
+  "found": true,
+  "lat": -6.2136983,
+  "lon": 106.7261898,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:21.357Z"
+ },
+ "184059": {
+  "found": true,
+  "lat": -6.1968483,
+  "lon": 106.7355459,
+  "source": "nominatim",
+  "query": "JL.LAPANGAN TENIS /011 MERUYA UTARA, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:37:00.830Z"
+ },
+ "184071": {
+  "found": true,
+  "lat": -6.161234,
+  "lon": 106.7514553,
+  "source": "nominatim",
+  "query": "AN-NUR, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:58.685Z"
+ },
+ "184094": {
+  "found": true,
+  "lat": -6.1958612,
+  "lon": 106.742505,
+  "source": "nominatim",
+  "query": "JL.MERUYA UTARA /011, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:17.552Z"
+ },
  "184108": {
   "found": false,
   "checkedAt": "2026-08-31T14:13:34.148Z"
+ },
+ "184250": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:11.305Z"
+ },
+ "184251": {
+  "found": true,
+  "lat": -6.174034,
+  "lon": 106.7348238,
+  "source": "nominatim",
+  "query": "AL-FALAH, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:11.305Z"
+ },
+ "184254": {
+  "found": true,
+  "lat": -6.162732,
+  "lon": 106.7509834,
+  "source": "nominatim",
+  "query": "JL.BASMOL /06 KEMBANGAN UTARA, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:08.487Z"
+ },
+ "184256": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:12:02.816Z"
+ },
+ "184257": {
+  "found": true,
+  "lat": -6.1629696,
+  "lon": 106.7502223,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:12:02.816Z"
+ },
+ "184388": {
+  "found": true,
+  "lat": -6.1885306,
+  "lon": 106.739284,
+  "source": "nominatim",
+  "query": "KEMBANGAN SELATAN /01, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:59.886Z"
+ },
+ "184488": {
+  "found": true,
+  "lat": -6.2231315,
+  "lon": 106.7231969,
+  "source": "nominatim",
+  "query": "JL.RUDAL /06 JOGLO, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:58.764Z"
+ },
+ "184489": {
+  "found": true,
+  "lat": -6.21314,
+  "lon": 106.7365559,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:54.894Z"
+ },
+ "184491": {
+  "found": true,
+  "lat": -6.2121799,
+  "lon": 106.7358102,
+  "source": "nominatim",
+  "query": "NURUL IKHLAS, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:57.291Z"
+ },
+ "184494": {
+  "found": true,
+  "lat": -6.1821483,
+  "lon": 106.7353236,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:52.403Z"
+ },
+ "184540": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:48.496Z"
+ },
+ "184708": {
+  "found": true,
+  "lat": -6.21828,
+  "lon": 106.7565191,
+  "source": "nominatim",
+  "query": "JL. RAYA JOGLO /03, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:49.397Z"
+ },
+ "184716": {
+  "found": true,
+  "lat": -6.2196375,
+  "lon": 106.7335601,
+  "source": "nominatim",
+  "query": "JL.RAYA JOGLO /01, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:48.496Z"
+ },
+ "184722": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:11:45.088Z"
+ },
+ "184729": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:11:41.793Z"
+ },
+ "184734": {
+  "found": true,
+  "lat": -6.21314,
+  "lon": 106.7365559,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:47.004Z"
+ },
+ "184738": {
+  "found": true,
+  "lat": -6.21828,
+  "lon": 106.7565191,
+  "source": "nominatim",
+  "query": "JL.RAYA JOGLO /03, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:41.793Z"
+ },
+ "184749": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:11:36.051Z"
+ },
+ "184756": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:39.726Z"
+ },
+ "184777": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:11:32.971Z"
+ },
+ "185356": {
+  "found": true,
+  "lat": -6.1818598,
+  "lon": 106.7366114,
+  "source": "nominatim",
+  "query": "BAITURRAHMAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:32.969Z"
+ },
+ "185360": {
+  "found": true,
+  "lat": -6.2101635,
+  "lon": 106.7329989,
+  "source": "nominatim",
+  "query": "JL.MERUYA SELATAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:29.533Z"
+ },
+ "185371": {
+  "found": true,
+  "lat": -6.2108028,
+  "lon": 106.7323496,
+  "source": "nominatim",
+  "query": "BANI USMAN, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:27.693Z"
+ },
+ "186200": {
+  "found": true,
+  "lat": -6.2147217,
+  "lon": 106.8729793,
+  "source": "nominatim",
+  "query": "Jl. Pisangan Baru /014 Pisangan Baru, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:24.016Z"
+ },
+ "186528": {
+  "found": true,
+  "lat": -6.162732,
+  "lon": 106.7509834,
+  "source": "nominatim",
+  "query": "KP.BASMOL /06 KEMBANGAN UTARA, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:22.422Z"
+ },
+ "186532": {
+  "found": true,
+  "lat": -6.1885306,
+  "lon": 106.739284,
+  "source": "nominatim",
+  "query": "KEMBANGAN SELATAN /01, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:20.565Z"
+ },
+ "189824": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:11:15.330Z"
  },
  "190489": {
   "found": true,
@@ -617,9 +3633,65 @@
   "query": "AL-ALAM 1, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:31.221Z"
  },
+ "191653": {
+  "found": true,
+  "lat": -6.2092411,
+  "lon": 106.8476809,
+  "source": "nominatim",
+  "query": "Jl. Saharjo /05, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:15.330Z"
+ },
+ "191654": {
+  "found": true,
+  "lat": -6.22077,
+  "lon": 106.8460965,
+  "source": "nominatim",
+  "query": "Jl. Saharjo /012, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:13.688Z"
+ },
+ "191655": {
+  "found": true,
+  "lat": -6.211398,
+  "lon": 106.8465409,
+  "source": "nominatim",
+  "query": "Jl. Bakti /05, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:11.748Z"
+ },
  "194793": {
   "found": false,
   "checkedAt": "2026-08-31T14:13:28.859Z"
+ },
+ "194877": {
+  "found": true,
+  "lat": -6.3432114,
+  "lon": 106.8730112,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:10.189Z"
+ },
+ "194885": {
+  "found": true,
+  "lat": -6.3358252,
+  "lon": 106.8727401,
+  "source": "nominatim",
+  "query": "Al-Falah, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:07.127Z"
+ },
+ "196680": {
+  "found": true,
+  "lat": -6.3459972,
+  "lon": 106.8750624,
+  "source": "nominatim",
+  "query": "Madinatul Akbar, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:03.891Z"
+ },
+ "196684": {
+  "found": true,
+  "lat": -6.3432114,
+  "lon": 106.8730112,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:11:00.190Z"
  },
  "197349": {
   "found": true,
@@ -709,6 +3781,26 @@
   "found": false,
   "checkedAt": "2026-08-31T14:11:37.669Z"
  },
+ "199925": {
+  "found": true,
+  "lat": -6.2150014,
+  "lon": 106.8562862,
+  "source": "nominatim",
+  "query": "Ar-Rahman, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:56.798Z"
+ },
+ "200011": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:51.611Z"
+ },
+ "200013": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:48.974Z"
+ },
+ "200018": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:45.483Z"
+ },
  "200178": {
   "found": true,
   "lat": -6.1403207,
@@ -725,6 +3817,10 @@
   "query": "JL.KALIBARU /011, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T14:11:24.719Z"
  },
+ "200751": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:41.079Z"
+ },
  "201221": {
   "found": true,
   "lat": -6.1207571,
@@ -732,6 +3828,42 @@
   "source": "nominatim",
   "query": "/003 SEMPER TIMUR, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T14:11:20.457Z"
+ },
+ "201239": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:37.478Z"
+ },
+ "201243": {
+  "found": true,
+  "lat": -6.3503719,
+  "lon": 106.8108649,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:37.478Z"
+ },
+ "201244": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:30.597Z"
+ },
+ "201247": {
+  "found": true,
+  "lat": -6.3111415,
+  "lon": 106.8480779,
+  "source": "nominatim",
+  "query": "Nurul Huda, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:30.597Z"
+ },
+ "201250": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:23.690Z"
+ },
+ "201259": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:21.442Z"
+ },
+ "201260": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:17.687Z"
  },
  "201300": {
   "found": true,
@@ -777,6 +3909,42 @@
   "query": "Al-Ikhlas, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:10:49.213Z"
  },
+ "204262": {
+  "found": true,
+  "lat": -6.2174965,
+  "lon": 106.8500384,
+  "source": "nominatim",
+  "query": "Jl. Menara Air /011, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:17.687Z"
+ },
+ "204267": {
+  "found": true,
+  "lat": -6.2174965,
+  "lon": 106.8500384,
+  "source": "nominatim",
+  "query": "Jl. Menara Air /011, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:16.563Z"
+ },
+ "204269": {
+  "found": true,
+  "lat": -6.2197357,
+  "lon": 106.8496823,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:15.048Z"
+ },
+ "204272": {
+  "found": true,
+  "lat": -6.2213445,
+  "lon": 106.8496177,
+  "source": "nominatim",
+  "query": "Jl. Manggarai Selatan /010, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:11.933Z"
+ },
+ "204275": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:06.663Z"
+ },
  "205411": {
   "found": true,
   "lat": -6.2489747,
@@ -804,6 +3972,26 @@
   "source": "nominatim",
   "query": "MUARA BARU /017 PENJARINGAN, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T14:10:33.132Z"
+ },
+ "205638": {
+  "found": true,
+  "lat": -6.3258728,
+  "lon": 106.8057629,
+  "source": "nominatim",
+  "query": "/ 02 Jl. Jagakarsa, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:06.663Z"
+ },
+ "205670": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:10:02.092Z"
+ },
+ "205671": {
+  "found": true,
+  "lat": -6.3507884,
+  "lon": 106.8045329,
+  "source": "nominatim",
+  "query": "Al-Hasanah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:10:02.092Z"
  },
  "205866": {
   "found": true,
@@ -873,6 +4061,138 @@
   "query": "AL-HIDAYAH, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T14:10:10.061Z"
  },
+ "207489": {
+  "found": true,
+  "lat": -6.3425608,
+  "lon": 106.8135472,
+  "source": "nominatim",
+  "query": "Al-Barkah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:59.496Z"
+ },
+ "207490": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:09:53.305Z"
+ },
+ "207492": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:09:49.693Z"
+ },
+ "207493": {
+  "found": true,
+  "lat": -6.3247936,
+  "lon": 106.8251383,
+  "source": "nominatim",
+  "query": "Darul Muttaqin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:49.693Z"
+ },
+ "207494": {
+  "found": true,
+  "lat": -6.3309947,
+  "lon": 106.8374634,
+  "source": "nominatim",
+  "query": "Al-Amin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:47.079Z"
+ },
+ "207495": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:09:40.496Z"
+ },
+ "207496": {
+  "found": true,
+  "lat": -6.3247936,
+  "lon": 106.8251383,
+  "source": "nominatim",
+  "query": "Darul Muttaqin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:40.496Z"
+ },
+ "207497": {
+  "found": true,
+  "lat": -6.3258728,
+  "lon": 106.8057629,
+  "source": "nominatim",
+  "query": "/ 02 Jl. Jagakarsa, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:37.488Z"
+ },
+ "207498": {
+  "found": true,
+  "lat": -6.3503719,
+  "lon": 106.8108649,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:35.522Z"
+ },
+ "207505": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "Al-Iman, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:32.932Z"
+ },
+ "207507": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 05, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:29.128Z"
+ },
+ "207508": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 06, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:28.009Z"
+ },
+ "207509": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "Nurul Hidayah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:26.163Z"
+ },
+ "207510": {
+  "found": true,
+  "lat": -6.319757,
+  "lon": 106.8260433,
+  "source": "nominatim",
+  "query": "Nurul Hikmah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:23.487Z"
+ },
+ "207511": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:09:17.360Z"
+ },
+ "207512": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 05, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:17.360Z"
+ },
+ "207514": {
+  "found": true,
+  "lat": -6.3173953,
+  "lon": 106.8198284,
+  "source": "nominatim",
+  "query": "/ 07, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:16.236Z"
+ },
+ "207515": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 05, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:14.391Z"
+ },
+ "208305": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:09:08.711Z"
+ },
  "208321": {
   "found": true,
   "lat": -6.273609,
@@ -881,6 +4201,14 @@
   "query": "AL-HIJRAH, Pesanggrahan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:10:07.211Z"
  },
+ "208442": {
+  "found": true,
+  "lat": -6.3503719,
+  "lon": 106.8108649,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:08.711Z"
+ },
  "208619": {
   "found": true,
   "lat": -6.2358892,
@@ -888,6 +4216,62 @@
   "source": "nominatim",
   "query": "Al-Huda, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:10:03.700Z"
+ },
+ "208719": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:06.050Z"
+ },
+ "208865": {
+  "found": true,
+  "lat": -6.3221246,
+  "lon": 106.8313478,
+  "source": "nominatim",
+  "query": "Darussalam, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:09:02.762Z"
+ },
+ "208869": {
+  "found": true,
+  "lat": -6.3503201,
+  "lon": 106.8106136,
+  "source": "nominatim",
+  "query": "Nurul Iman, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:59.636Z"
+ },
+ "208873": {
+  "found": true,
+  "lat": -6.3429444,
+  "lon": 106.8023973,
+  "source": "nominatim",
+  "query": "Al-Falah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:56.917Z"
+ },
+ "208875": {
+  "found": true,
+  "lat": -6.319757,
+  "lon": 106.8260433,
+  "source": "nominatim",
+  "query": "Nurul Hikmah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:54.676Z"
+ },
+ "208878": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:48.520Z"
+ },
+ "208885": {
+  "found": true,
+  "lat": -6.3425608,
+  "lon": 106.8135472,
+  "source": "nominatim",
+  "query": "Al-Barkah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:48.520Z"
+ },
+ "208888": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:42.726Z"
  },
  "209057": {
   "found": true,
@@ -929,6 +4313,114 @@
   "query": "NURUL HIDAYAH, Pesanggrahan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:47.718Z"
  },
+ "210039": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:40.215Z"
+ },
+ "210041": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:37.971Z"
+ },
+ "210047": {
+  "found": true,
+  "lat": -6.2964243,
+  "lon": 106.8432334,
+  "source": "nominatim",
+  "query": "Al-Mukmin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:37.971Z"
+ },
+ "210050": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:31.423Z"
+ },
+ "210051": {
+  "found": true,
+  "lat": -6.3309947,
+  "lon": 106.8374634,
+  "source": "nominatim",
+  "query": "Al;Amin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:31.423Z"
+ },
+ "210056": {
+  "found": true,
+  "lat": -6.3526832,
+  "lon": 106.8050578,
+  "source": "nominatim",
+  "query": "At-Taubah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:28.562Z"
+ },
+ "210059": {
+  "found": true,
+  "lat": -6.342399,
+  "lon": 106.8176252,
+  "source": "nominatim",
+  "query": "Al-Main, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:25.379Z"
+ },
+ "210060": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:19.167Z"
+ },
+ "210062": {
+  "found": true,
+  "lat": -6.3429444,
+  "lon": 106.8023973,
+  "source": "nominatim",
+  "query": "Al-Falah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:19.167Z"
+ },
+ "210063": {
+  "found": true,
+  "lat": -6.3523972,
+  "lon": 106.81966,
+  "source": "nominatim",
+  "query": "Al-Huda, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:16.097Z"
+ },
+ "210064": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:09.336Z"
+ },
+ "210384": {
+  "found": true,
+  "lat": -6.2115724,
+  "lon": 106.8641495,
+  "source": "nominatim",
+  "query": "Jl. Pisangan Baru II /07 Pisangan Baru, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:09.336Z"
+ },
+ "210385": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:05.568Z"
+ },
+ "210387": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:08:01.767Z"
+ },
+ "210388": {
+  "found": true,
+  "lat": -6.2046695,
+  "lon": 106.8597095,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:08:01.766Z"
+ },
+ "210390": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:54.347Z"
+ },
+ "210391": {
+  "found": true,
+  "lat": -6.2042862,
+  "lon": 106.8618477,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:54.347Z"
+ },
+ "210392": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:48.282Z"
+ },
  "210627": {
   "found": true,
   "lat": -6.0961467,
@@ -937,6 +4429,42 @@
   "query": "JAMIATUL KHOIR, Penjaringan, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:44.963Z"
  },
+ "211079": {
+  "found": true,
+  "lat": -6.2115724,
+  "lon": 106.8641495,
+  "source": "nominatim",
+  "query": "Jl. Pisangan Baru II /07 Pisangan Baru, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:48.282Z"
+ },
+ "211080": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:42.461Z"
+ },
+ "211081": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:39.386Z"
+ },
+ "211082": {
+  "found": true,
+  "lat": -6.2143484,
+  "lon": 106.8725956,
+  "source": "nominatim",
+  "query": "Jl. Pisangan Baru /013 Pisangan Baru, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:39.386Z"
+ },
+ "211083": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:35.333Z"
+ },
+ "211084": {
+  "found": true,
+  "lat": -6.2149252,
+  "lon": 106.8703394,
+  "source": "nominatim",
+  "query": "Stasiun Jatinegara Pisangan Baru, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:09.185Z"
+ },
  "211099": {
   "found": true,
   "lat": -6.2161672,
@@ -944,6 +4472,14 @@
   "source": "nominatim",
   "query": "Nurul Falah, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:41.626Z"
+ },
+ "211575": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:32.350Z"
+ },
+ "212766": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:29.359Z"
  },
  "212949": {
   "found": true,
@@ -985,6 +4521,38 @@
   "query": "NURUL FALAH, Kembangan, Kota Administrasi Jakarta Barat, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:27.893Z"
  },
+ "214001": {
+  "found": true,
+  "lat": -5.9775464,
+  "lon": 106.7073046,
+  "source": "nominatim",
+  "query": "Pulau Untung Jawa /03, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:39.726Z"
+ },
+ "214002": {
+  "found": true,
+  "lat": -5.9775464,
+  "lon": 106.7073046,
+  "source": "nominatim",
+  "query": "Pulau Untung Jawa /03, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:29.359Z"
+ },
+ "214004": {
+  "found": true,
+  "lat": -5.9775464,
+  "lon": 106.7073046,
+  "source": "nominatim",
+  "query": "Pulau Untung Jawa /01, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:27.507Z"
+ },
+ "214005": {
+  "found": true,
+  "lat": -5.9775464,
+  "lon": 106.7073046,
+  "source": "nominatim",
+  "query": "Pulau Untung Jawa /02, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:38.605Z"
+ },
  "214054": {
   "found": true,
   "lat": -6.1966637,
@@ -993,9 +4561,93 @@
   "query": "Jl. Rambutan Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:25.069Z"
  },
+ "214077": {
+  "found": true,
+  "lat": -5.6537082,
+  "lon": 106.5694563,
+  "source": "nominatim",
+  "query": "Pulau Kelapa /01, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:25.761Z"
+ },
+ "214080": {
+  "found": true,
+  "lat": -5.6537082,
+  "lon": 106.5694563,
+  "source": "nominatim",
+  "query": "Pulau Kelapa /04, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:24.633Z"
+ },
+ "214084": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:19.405Z"
+ },
+ "214089": {
+  "found": true,
+  "lat": -5.6533066,
+  "lon": 106.5781284,
+  "source": "nominatim",
+  "query": "Pulau Harapan /01, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:19.405Z"
+ },
+ "214090": {
+  "found": true,
+  "lat": -5.8581818,
+  "lon": 106.6161581,
+  "source": "nominatim",
+  "query": "Pulau Pari /04, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:17.995Z"
+ },
+ "214110": {
+  "found": true,
+  "lat": -5.7447769,
+  "lon": 106.6138105,
+  "source": "nominatim",
+  "query": "Pulau Pramuka /005, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:16.253Z"
+ },
+ "214111": {
+  "found": true,
+  "lat": -5.7465349,
+  "lon": 106.6138676,
+  "source": "nominatim",
+  "query": "Pulau Pramuka, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:14.750Z"
+ },
+ "214112": {
+  "found": true,
+  "lat": -5.6537082,
+  "lon": 106.5694563,
+  "source": "nominatim",
+  "query": "Pulau Kelapa /01, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:07:13.629Z"
+ },
+ "214377": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:08.541Z"
+ },
+ "214510": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:04.734Z"
+ },
  "215117": {
   "found": false,
   "checkedAt": "2026-08-31T14:09:20.029Z"
+ },
+ "215139": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:07:01.560Z"
+ },
+ "215158": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:57.856Z"
+ },
+ "215169": {
+  "found": true,
+  "lat": -6.148861,
+  "lon": 106.8394637,
+  "source": "nominatim",
+  "query": "BAITURRAHIM, Sawah Besar, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:57.856Z"
  },
  "215171": {
   "found": true,
@@ -1004,6 +4656,750 @@
   "source": "nominatim",
   "query": "Al-Hasanah, Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T14:09:20.029Z"
+ },
+ "216346": {
+  "found": true,
+  "lat": -6.1674984,
+  "lon": 106.8587854,
+  "source": "nominatim",
+  "query": "AL MUSYAWAROH, Kemayoran, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:54.563Z"
+ },
+ "216519": {
+  "found": true,
+  "lat": -6.3567494,
+  "lon": 106.8097522,
+  "source": "nominatim",
+  "query": "AT-Taqwa, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:51.448Z"
+ },
+ "216522": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:43.983Z"
+ },
+ "216525": {
+  "found": true,
+  "lat": -6.2994423,
+  "lon": 106.8457478,
+  "source": "nominatim",
+  "query": "Baiturrahman, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:43.983Z"
+ },
+ "216526": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:38.056Z"
+ },
+ "216527": {
+  "found": true,
+  "lat": -6.3074765,
+  "lon": 106.8497865,
+  "source": "nominatim",
+  "query": "Nurul Islam, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:38.056Z"
+ },
+ "216528": {
+  "found": true,
+  "lat": -6.3526832,
+  "lon": 106.8050578,
+  "source": "nominatim",
+  "query": "At-Taubah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:35.192Z"
+ },
+ "216529": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:29.310Z"
+ },
+ "216531": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:26.016Z"
+ },
+ "216533": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "Nurul Hidayah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:26.016Z"
+ },
+ "216778": {
+  "found": true,
+  "lat": -6.3541563,
+  "lon": 106.8335781,
+  "source": "nominatim",
+  "query": "Mardhotillah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:23.358Z"
+ },
+ "216781": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 03, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:19.972Z"
+ },
+ "216784": {
+  "found": true,
+  "lat": -6.3503719,
+  "lon": 106.8108649,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:18.127Z"
+ },
+ "216786": {
+  "found": true,
+  "lat": -6.3503719,
+  "lon": 106.8108649,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:14.965Z"
+ },
+ "216791": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:06:08.413Z"
+ },
+ "216794": {
+  "found": true,
+  "lat": -6.3085075,
+  "lon": 106.8531963,
+  "source": "nominatim",
+  "query": "Al-Ihsan, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:08.413Z"
+ },
+ "217130": {
+  "found": true,
+  "lat": -6.3204004,
+  "lon": 106.8140714,
+  "source": "nominatim",
+  "query": "Ar-Rahman, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:06:04.725Z"
+ },
+ "217132": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:58.467Z"
+ },
+ "217133": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:55.493Z"
+ },
+ "217135": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:51.481Z"
+ },
+ "217136": {
+  "found": true,
+  "lat": -6.198979,
+  "lon": 106.8594317,
+  "source": "nominatim",
+  "query": "Jl. Pembina I Pal Meriam, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:51.481Z"
+ },
+ "217137": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:46.636Z"
+ },
+ "217141": {
+  "found": true,
+  "lat": -6.3415063,
+  "lon": 106.8161008,
+  "source": "nominatim",
+  "query": "Jl. Gudang Baru, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:46.636Z"
+ },
+ "217143": {
+  "found": true,
+  "lat": -6.211966,
+  "lon": 106.8631817,
+  "source": "nominatim",
+  "query": "Al-Barokah, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:44.593Z"
+ },
+ "217144": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:37.942Z"
+ },
+ "217149": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:35.372Z"
+ },
+ "217150": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:31.920Z"
+ },
+ "217152": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:28.314Z"
+ },
+ "217155": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:24.617Z"
+ },
+ "217158": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:21.008Z"
+ },
+ "217160": {
+  "found": true,
+  "lat": -6.204633,
+  "lon": 106.8637393,
+  "source": "nominatim",
+  "query": "Al-Istiqomah, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:21.008Z"
+ },
+ "217162": {
+  "found": true,
+  "lat": -6.204633,
+  "lon": 106.8637393,
+  "source": "nominatim",
+  "query": "Al-Istiqomah, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:18.035Z"
+ },
+ "217165": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:11.232Z"
+ },
+ "217167": {
+  "found": true,
+  "lat": -6.2028799,
+  "lon": 106.8660435,
+  "source": "nominatim",
+  "query": "Nurul Huda, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:11.232Z"
+ },
+ "217170": {
+  "found": true,
+  "lat": -6.2077957,
+  "lon": 106.8636038,
+  "source": "nominatim",
+  "query": "Al-Abror, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:08.211Z"
+ },
+ "217173": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:05:01.629Z"
+ },
+ "217176": {
+  "found": true,
+  "lat": -6.1999352,
+  "lon": 106.8703572,
+  "source": "nominatim",
+  "query": "Al- Falah, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:05:01.629Z"
+ },
+ "217178": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:54.907Z"
+ },
+ "217188": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:51.196Z"
+ },
+ "217190": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:47.901Z"
+ },
+ "217232": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:45.106Z"
+ },
+ "217383": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:41.433Z"
+ },
+ "217384": {
+  "found": true,
+  "lat": -6.2054296,
+  "lon": 106.868086,
+  "source": "nominatim",
+  "query": "Jl. Kebon Kelapa Utan Kayu Selatan, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:41.433Z"
+ },
+ "217386": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:37.345Z"
+ },
+ "217387": {
+  "found": true,
+  "lat": -6.2042862,
+  "lon": 106.8618477,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:37.345Z"
+ },
+ "217389": {
+  "found": true,
+  "lat": -6.1991476,
+  "lon": 106.8707091,
+  "source": "nominatim",
+  "query": "Jl. Flamboyan Utan Kayu Selatan, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:34.749Z"
+ },
+ "217391": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:29.810Z"
+ },
+ "217393": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:25.114Z"
+ },
+ "217394": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:21.433Z"
+ },
+ "217398": {
+  "found": true,
+  "lat": -6.2054296,
+  "lon": 106.868086,
+  "source": "nominatim",
+  "query": "Jl. Kebon Kelapa Utan Kayu Selatan, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:21.433Z"
+ },
+ "217416": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:16.414Z"
+ },
+ "217417": {
+  "found": true,
+  "lat": -6.2050261,
+  "lon": 106.8672669,
+  "source": "nominatim",
+  "query": "Jl. Pandan Utan Kayu Selatan, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:16.414Z"
+ },
+ "217418": {
+  "found": true,
+  "lat": -6.2116818,
+  "lon": 106.8570238,
+  "source": "nominatim",
+  "query": "Nurul Islam, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:14.573Z"
+ },
+ "217419": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:07.917Z"
+ },
+ "217420": {
+  "found": true,
+  "lat": -6.2042862,
+  "lon": 106.8618477,
+  "source": "nominatim",
+  "query": "Al-Ikhlas, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:04:07.917Z"
+ },
+ "217421": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:04:00.974Z"
+ },
+ "217422": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:57.652Z"
+ },
+ "217423": {
+  "found": true,
+  "lat": -6.1989043,
+  "lon": 106.8632619,
+  "source": "nominatim",
+  "query": "Jl. Kemuning Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:57.652Z"
+ },
+ "217424": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:52.945Z"
+ },
+ "217426": {
+  "found": true,
+  "lat": -6.1956439,
+  "lon": 106.8711592,
+  "source": "nominatim",
+  "query": "Jl. Nangka Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:52.945Z"
+ },
+ "217428": {
+  "found": true,
+  "lat": -6.1966637,
+  "lon": 106.8624881,
+  "source": "nominatim",
+  "query": "Jl. Rambutan Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:51.326Z"
+ },
+ "217429": {
+  "found": true,
+  "lat": -6.1993566,
+  "lon": 106.8631476,
+  "source": "nominatim",
+  "query": "Al-Akhyar, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:50.204Z"
+ },
+ "217431": {
+  "found": true,
+  "lat": -6.1989043,
+  "lon": 106.8632619,
+  "source": "nominatim",
+  "query": "Jl. Kemuning Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:46.897Z"
+ },
+ "217433": {
+  "found": true,
+  "lat": -6.1936644,
+  "lon": 106.8701041,
+  "source": "nominatim",
+  "query": "Jl. Pengayoman Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:45.058Z"
+ },
+ "217633": {
+  "found": true,
+  "lat": -6.3258728,
+  "lon": 106.8057629,
+  "source": "nominatim",
+  "query": "/ 04 Jl. Ciganjur, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:43.211Z"
+ },
+ "217649": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:37.596Z"
+ },
+ "217652": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:34.363Z"
+ },
+ "217654": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:30.206Z"
+ },
+ "217655": {
+  "found": true,
+  "lat": -6.3547287,
+  "lon": 106.8096793,
+  "source": "nominatim",
+  "query": "Nurul Ihsan, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:30.206Z"
+ },
+ "217657": {
+  "found": true,
+  "lat": -6.3247936,
+  "lon": 106.8251383,
+  "source": "nominatim",
+  "query": "Darul Muttaqin, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:26.089Z"
+ },
+ "217965": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:20.272Z"
+ },
+ "217967": {
+  "found": true,
+  "lat": -6.3429444,
+  "lon": 106.8023973,
+  "source": "nominatim",
+  "query": "Al-Falah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:20.272Z"
+ },
+ "217996": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:13.155Z"
+ },
+ "217997": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:10.172Z"
+ },
+ "218688": {
+  "found": true,
+  "lat": -6.3317849,
+  "lon": 106.813678,
+  "source": "nominatim",
+  "query": "Nurul Jihad, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:03:10.172Z"
+ },
+ "218690": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:03:04.525Z"
+ },
+ "218691": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:59.733Z"
+ },
+ "218694": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:55.936Z"
+ },
+ "219259": {
+  "found": true,
+  "lat": -6.3507884,
+  "lon": 106.8045329,
+  "source": "nominatim",
+  "query": "Al-Hasanah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:02:55.936Z"
+ },
+ "219262": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:37.524Z"
+ },
+ "219268": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:34.174Z"
+ },
+ "219275": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:30.827Z"
+ },
+ "219503": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "Nurul Hidayah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:02:30.827Z"
+ },
+ "219508": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:23.916Z"
+ },
+ "219510": {
+  "found": true,
+  "lat": -6.3581388,
+  "lon": 106.8077058,
+  "source": "nominatim",
+  "query": "Istiqomah, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:02:23.916Z"
+ },
+ "219514": {
+  "found": true,
+  "lat": -6.3547287,
+  "lon": 106.8096793,
+  "source": "nominatim",
+  "query": "Nurul Ihsan, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:02:19.607Z"
+ },
+ "219519": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:14.870Z"
+ },
+ "219524": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:02:11.585Z"
+ },
+ "219526": {
+  "found": true,
+  "lat": -6.3301011,
+  "lon": 106.8222371,
+  "source": "nominatim",
+  "query": "/ 04, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:02:11.585Z"
+ },
+ "219658": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:01:55.411Z"
+ },
+ "219665": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:01:51.517Z"
+ },
+ "222473": {
+  "found": true,
+  "lat": -6.3362724,
+  "lon": 106.8545944,
+  "source": "nominatim",
+  "query": "SDN 01, Pasar Rebo, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:37.116Z"
+ },
+ "222479": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:30.206Z"
+ },
+ "222614": {
+  "found": true,
+  "lat": -6.2262109,
+  "lon": 106.8881716,
+  "source": "nominatim",
+  "query": "Cipinang Muara /01, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:51.517Z"
+ },
+ "222633": {
+  "found": true,
+  "lat": -6.2193557,
+  "lon": 106.8636187,
+  "source": "nominatim",
+  "query": "Kampung Melayu /08, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:40.083Z"
+ },
+ "222634": {
+  "found": true,
+  "lat": -6.2262109,
+  "lon": 106.8881716,
+  "source": "nominatim",
+  "query": "cipinang muara /04, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:38.247Z"
+ },
+ "222635": {
+  "found": true,
+  "lat": -6.2193557,
+  "lon": 106.8636187,
+  "source": "nominatim",
+  "query": "Kampung Melayu /07, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:36.406Z"
+ },
+ "222636": {
+  "found": true,
+  "lat": -6.2193557,
+  "lon": 106.8636187,
+  "source": "nominatim",
+  "query": "Kampung melayu /02, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:29.611Z"
+ },
+ "222637": {
+  "found": true,
+  "lat": -6.2204721,
+  "lon": 106.8667169,
+  "source": "nominatim",
+  "query": "Balimester /05, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:18.624Z"
+ },
+ "222641": {
+  "found": true,
+  "lat": -6.2204721,
+  "lon": 106.8667169,
+  "source": "nominatim",
+  "query": "Bali Mester /05, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:17.232Z"
+ },
+ "222680": {
+  "found": true,
+  "lat": -6.2204721,
+  "lon": 106.8667169,
+  "source": "nominatim",
+  "query": "Balimester /08, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:15.293Z"
+ },
+ "222683": {
+  "found": true,
+  "lat": -6.2187144,
+  "lon": 106.8716533,
+  "source": "nominatim",
+  "query": "Rawa Bunga, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:11.539Z"
+ },
+ "222695": {
+  "found": true,
+  "lat": -6.2218936,
+  "lon": 106.8791239,
+  "source": "nominatim",
+  "query": "Nurul Yaqin, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:09.372Z"
+ },
+ "222696": {
+  "found": true,
+  "lat": -6.2218936,
+  "lon": 106.8791239,
+  "source": "nominatim",
+  "query": "Nurul Yaqin, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:07.128Z"
+ },
+ "222697": {
+  "found": true,
+  "lat": -6.2218936,
+  "lon": 106.8791239,
+  "source": "nominatim",
+  "query": "Nurul Yaqin, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:04.885Z"
+ },
+ "223142": {
+  "found": true,
+  "lat": -6.2388772,
+  "lon": 106.8700533,
+  "source": "nominatim",
+  "query": "MIFTAHUL JANNAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:01:01.466Z"
+ },
+ "223144": {
+  "found": true,
+  "lat": -6.2179227,
+  "lon": 106.8806713,
+  "source": "nominatim",
+  "query": "CIPINANG BESAR UTARA, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:58.872Z"
+ },
+ "223146": {
+  "found": true,
+  "lat": -6.2179227,
+  "lon": 106.8806713,
+  "source": "nominatim",
+  "query": "CIPINANG BESAR UTARA, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:57.750Z"
+ },
+ "223147": {
+  "found": true,
+  "lat": -6.2179227,
+  "lon": 106.8806713,
+  "source": "nominatim",
+  "query": "Cipinang Besar Utara / 03, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:55.974Z"
+ },
+ "223149": {
+  "found": true,
+  "lat": -6.213586,
+  "lon": 106.8636594,
+  "source": "nominatim",
+  "query": "AL-HIKMAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:54.583Z"
+ },
+ "223180": {
+  "found": true,
+  "lat": -6.2154536,
+  "lon": 106.8660459,
+  "source": "nominatim",
+  "query": "Jl. Jatinegara Timur, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:51.585Z"
+ },
+ "223188": {
+  "found": true,
+  "lat": -6.2179227,
+  "lon": 106.8806713,
+  "source": "nominatim",
+  "query": "JL.Cipinang Besar Utara, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:49.039Z"
+ },
+ "223189": {
+  "found": true,
+  "lat": -6.2262109,
+  "lon": 106.8881716,
+  "source": "nominatim",
+  "query": "Cipinang Muara, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:47.197Z"
+ },
+ "223190": {
+  "found": true,
+  "lat": -6.2262109,
+  "lon": 106.8881716,
+  "source": "nominatim",
+  "query": "Cipinang Muara, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:46.076Z"
+ },
+ "223191": {
+  "found": true,
+  "lat": -6.2262109,
+  "lon": 106.8881716,
+  "source": "nominatim",
+  "query": "Cipinang Muara, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:44.955Z"
+ },
+ "223192": {
+  "found": true,
+  "lat": -6.2179227,
+  "lon": 106.8806713,
+  "source": "nominatim",
+  "query": "JL. Cipinang Besar Utara, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:43.591Z"
+ },
+ "223194": {
+  "found": true,
+  "lat": -6.197724,
+  "lon": 106.9243262,
+  "source": "nominatim",
+  "query": "NURUL ISLAM, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:41.255Z"
+ },
+ "225265": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:27.242Z"
  },
  "225395": {
   "found": true,
@@ -1133,6 +5529,86 @@
   "query": "Jl. H, , Kebon Baru, Tebet, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:08:12.177Z"
  },
+ "258736": {
+  "found": true,
+  "lat": -6.2963454,
+  "lon": 106.8935871,
+  "source": "nominatim",
+  "query": "ASH-SHIROTH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:34.810Z"
+ },
+ "258737": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya /02, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:30.202Z"
+ },
+ "258738": {
+  "found": true,
+  "lat": -6.28524,
+  "lon": 106.90141,
+  "source": "nominatim",
+  "query": "Jln. Lubang buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:24.441Z"
+ },
+ "259219": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:22.596Z"
+ },
+ "259220": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:21.476Z"
+ },
+ "259221": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:00:17.095Z"
+ },
+ "259222": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:17.095Z"
+ },
+ "259573": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:15.974Z"
+ },
+ "259584": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:14.851Z"
+ },
+ "259589": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:13.731Z"
+ },
+ "259736": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:00:09.324Z"
+ },
  "259951": {
   "found": false,
   "checkedAt": "2026-08-31T14:08:06.910Z"
@@ -1144,6 +5620,38 @@
  "259955": {
   "found": false,
   "checkedAt": "2026-08-31T14:08:00.238Z"
+ },
+ "260257": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:09.324Z"
+ },
+ "261946": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:23.680Z"
+ },
+ "263282": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:00:04.774Z"
+ },
+ "263332": {
+  "found": true,
+  "lat": -6.3365185,
+  "lon": 106.8186489,
+  "source": "nominatim",
+  "query": "Jl. Sirsak /07, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:07.447Z"
+ },
+ "264115": {
+  "found": true,
+  "lat": -6.3130259,
+  "lon": 106.8905229,
+  "source": "nominatim",
+  "query": "Ceger, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:04.774Z"
  },
  "265381": {
   "found": true,
@@ -1160,6 +5668,210 @@
   "source": "nominatim",
   "query": "Al-Falaah, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T14:07:58.373Z"
+ },
+ "265542": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:03.652Z"
+ },
+ "265544": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:02.530Z"
+ },
+ "265549": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:01.410Z"
+ },
+ "265554": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:00:00.290Z"
+ },
+ "265556": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:59.170Z"
+ },
+ "265561": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:58.050Z"
+ },
+ "265562": {
+  "found": true,
+  "lat": -6.359599,
+  "lon": 106.9076631,
+  "source": "nominatim",
+  "query": "Nurul Ikhsan, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:56.930Z"
+ },
+ "265563": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:53.328Z"
+ },
+ "265564": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya R 01, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:52.206Z"
+ },
+ "265565": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:50.775Z"
+ },
+ "265567": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:49.653Z"
+ },
+ "265569": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:48.532Z"
+ },
+ "265572": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:47.411Z"
+ },
+ "265573": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:46.292Z"
+ },
+ "265575": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:45.171Z"
+ },
+ "265576": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:44.051Z"
+ },
+ "265577": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:42.929Z"
+ },
+ "265578": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:41.808Z"
+ },
+ "265580": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:40.686Z"
+ },
+ "265581": {
+  "found": true,
+  "lat": -6.3276686,
+  "lon": 106.8977178,
+  "source": "nominatim",
+  "query": "AL- BAROKAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:39.563Z"
+ },
+ "265582": {
+  "found": true,
+  "lat": -6.2928737,
+  "lon": 106.9030865,
+  "source": "nominatim",
+  "query": "Lubang Buaya, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:36.698Z"
+ },
+ "265583": {
+  "found": true,
+  "lat": -6.3130259,
+  "lon": 106.8905229,
+  "source": "nominatim",
+  "query": "Ceger, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:35.278Z"
+ },
+ "265586": {
+  "found": true,
+  "lat": -6.3276686,
+  "lon": 106.8977178,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:33.540Z"
+ },
+ "265880": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:26.466Z"
+ },
+ "265881": {
+  "found": true,
+  "lat": -6.1993213,
+  "lon": 106.9213798,
+  "source": "nominatim",
+  "query": "AR-RIDHO, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:26.466Z"
+ },
+ "265884": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:19.172Z"
+ },
+ "265943": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:15.814Z"
  },
  "265974": {
   "found": false,
@@ -1196,6 +5908,10 @@
  "266785": {
   "found": false,
   "checkedAt": "2026-08-31T14:07:37.446Z"
+ },
+ "267054": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:12.574Z"
  },
  "267695": {
   "found": false,
@@ -1460,9 +6176,21 @@
   "found": false,
   "checkedAt": "2026-08-31T13:51:48.354Z"
  },
+ "281245": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:09.220Z"
+ },
  "281463": {
   "found": false,
   "checkedAt": "2026-08-31T13:51:24.006Z"
+ },
+ "281870": {
+  "found": true,
+  "lat": -6.2182589,
+  "lon": 106.8097665,
+  "source": "nominatim",
+  "query": "Hotel The Sultan, Tanah Abang, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:59:09.220Z"
  },
  "283949": {
   "found": true,
@@ -1528,6 +6256,42 @@
   "found": false,
   "checkedAt": "2026-08-31T13:44:01.386Z"
  },
+ "284957": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:59:02.099Z"
+ },
+ "286457": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:58.857Z"
+ },
+ "287579": {
+  "found": true,
+  "lat": -6.2190497,
+  "lon": 106.9102517,
+  "source": "nominatim",
+  "query": "KP. SUMUR /010 KLENDER, Duren Sawit, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:58.857Z"
+ },
+ "288403": {
+  "found": true,
+  "lat": -5.7383062,
+  "lon": 106.6018227,
+  "source": "nominatim",
+  "query": "ANNI''MAH, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:56.995Z"
+ },
+ "288912": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:50.704Z"
+ },
+ "288943": {
+  "found": true,
+  "lat": -6.346829,
+  "lon": 106.856402,
+  "source": "nominatim",
+  "query": "MARDHOTILLAH, Pasar Rebo, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:50.704Z"
+ },
  "290269": {
   "found": true,
   "lat": -6.3423733,
@@ -1535,6 +6299,50 @@
   "source": "nominatim",
   "query": "SIDRATUL MUNTAHA, Pasar Rebo, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T13:51:23.896Z"
+ },
+ "291215": {
+  "found": true,
+  "lat": -6.0992505,
+  "lon": 106.9617231,
+  "source": "nominatim",
+  "query": "SMPN 200, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:23.680Z"
+ },
+ "291288": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:16.809Z"
+ },
+ "291823": {
+  "found": true,
+  "lat": -6.2303545,
+  "lon": 106.8641527,
+  "source": "nominatim",
+  "query": "NURUL IHSAN, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:47.328Z"
+ },
+ "291847": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:13.308Z"
+ },
+ "291849": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:33:02.794Z"
+ },
+ "293169": {
+  "found": true,
+  "lat": -6.2163429,
+  "lon": 106.8630723,
+  "source": "nominatim",
+  "query": "Al-Hidayah, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:33:02.793Z"
+ },
+ "294179": {
+  "found": true,
+  "lat": -6.2950019,
+  "lon": 106.8821971,
+  "source": "nominatim",
+  "query": "SPBU Pertamina 34.13503, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:43.643Z"
  },
  "294840": {
   "found": true,
@@ -1548,6 +6356,30 @@
   "found": false,
   "checkedAt": "2026-08-31T13:51:09.210Z"
  },
+ "297033": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:09.807Z"
+ },
+ "297230": {
+  "found": true,
+  "lat": -6.1394986,
+  "lon": 106.8272804,
+  "source": "nominatim",
+  "query": "Jl. Mangga Dua Abdad, Sawah Besar, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:40.431Z"
+ },
+ "297653": {
+  "found": true,
+  "lat": -6.3013737,
+  "lon": 106.8348679,
+  "source": "nominatim",
+  "query": "ASTON PRIORITY, Pasar Minggu, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:38.883Z"
+ },
+ "298169": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:32.510Z"
+ },
  "300820": {
   "found": true,
   "lat": -6.2090213,
@@ -1559,6 +6391,22 @@
  "301153": {
   "found": false,
   "checkedAt": "2026-08-31T13:51:03.815Z"
+ },
+ "301806": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:56.481Z"
+ },
+ "305171": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:28.006Z"
+ },
+ "306696": {
+  "found": true,
+  "lat": -6.2847902,
+  "lon": 106.7661947,
+  "source": "nominatim",
+  "query": "Jl. Mawar II /013, Pesanggrahan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:28.006Z"
  },
  "307907": {
   "found": true,
@@ -1575,6 +6423,22 @@
  "308004": {
   "found": false,
   "checkedAt": "2026-08-31T13:50:55.821Z"
+ },
+ "312552": {
+  "found": true,
+  "lat": -6.237977,
+  "lon": 106.790081,
+  "source": "nominatim",
+  "query": "Jl. Bumi, Kebayoran Baru, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:36:09.807Z"
+ },
+ "313152": {
+  "found": true,
+  "lat": -6.2022814,
+  "lon": 106.9203142,
+  "source": "nominatim",
+  "query": "NURUL FALAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:26.387Z"
  },
  "314152": {
   "found": true,
@@ -1612,6 +6476,10 @@
   "found": false,
   "checkedAt": "2026-08-31T13:50:27.513Z"
  },
+ "315430": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:19.013Z"
+ },
  "315921": {
   "found": true,
   "lat": -6.1270593,
@@ -1631,6 +6499,10 @@
   "source": "nominatim",
   "query": "AKBAR, Kemayoran, Kota Administrasi Jakarta Pusat, DKI Jakarta",
   "checkedAt": "2026-08-31T13:43:52.878Z"
+ },
+ "317179": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:15.312Z"
  },
  "317712": {
   "found": true,
@@ -1655,6 +6527,22 @@
   "source": "nominatim",
   "query": "AL MU’MIN, Kelapa Gading, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T13:43:49.158Z"
+ },
+ "318607": {
+  "found": true,
+  "lat": -6.3385381,
+  "lon": 106.8235883,
+  "source": "nominatim",
+  "query": "AL-JANNAH, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:15.312Z"
+ },
+ "318643": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:58:08.466Z"
+ },
+ "319747": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:04.593Z"
  },
  "321784": {
   "found": true,
@@ -1728,6 +6616,14 @@
   "found": false,
   "checkedAt": "2026-08-31T13:48:51.994Z"
  },
+ "324830": {
+  "found": true,
+  "lat": -6.1654328,
+  "lon": 106.6986759,
+  "source": "nominatim",
+  "query": "AL-MUBAROK, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:08.466Z"
+ },
  "326196": {
   "found": false,
   "checkedAt": "2026-08-31T13:48:48.744Z"
@@ -1764,6 +6660,14 @@
   "query": "NURUL IMAN, Kebon Jeruk, Kota Administrasi Jakarta Barat, DKI Jakarta",
   "checkedAt": "2026-08-31T13:48:35.930Z"
  },
+ "334749": {
+  "found": true,
+  "lat": -6.2657615,
+  "lon": 106.7827856,
+  "source": "nominatim",
+  "query": "PIM 2, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:05.316Z"
+ },
  "335775": {
   "found": true,
   "lat": -6.2230172,
@@ -1779,6 +6683,14 @@
  "336349": {
   "found": false,
   "checkedAt": "2026-08-31T13:48:22.422Z"
+ },
+ "336786": {
+  "found": true,
+  "lat": -6.3255647,
+  "lon": 106.902903,
+  "source": "nominatim",
+  "query": "AL-HIKMAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:58:02.505Z"
  },
  "336966": {
   "found": true,
@@ -1840,6 +6752,10 @@
   "found": false,
   "checkedAt": "2026-08-31T13:47:56.450Z"
  },
+ "339863": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:53.234Z"
+ },
  "339906": {
   "found": true,
   "lat": -6.1283453,
@@ -1859,6 +6775,10 @@
  "340618": {
   "found": false,
   "checkedAt": "2026-08-31T13:47:42.471Z"
+ },
+ "340635": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:55.882Z"
  },
  "341282": {
   "found": true,
@@ -1887,6 +6807,14 @@
   "source": "nominatim",
   "query": "NURUL IRFAN, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T13:47:32.793Z"
+ },
+ "341812": {
+  "found": true,
+  "lat": -6.3323139,
+  "lon": 106.8930463,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:55.882Z"
  },
  "342486": {
   "found": true,
@@ -1980,9 +6908,69 @@
   "found": false,
   "checkedAt": "2026-08-31T13:46:36.377Z"
  },
+ "347364": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:48.769Z"
+ },
+ "347375": {
+  "found": true,
+  "lat": -6.1684971,
+  "lon": 106.7122536,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:48.769Z"
+ },
+ "347406": {
+  "found": true,
+  "lat": -6.1155628,
+  "lon": 106.7145,
+  "source": "nominatim",
+  "query": "NURUL HIDAYAH, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:45.695Z"
+ },
+ "347409": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:38.319Z"
+ },
+ "347447": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:34.334Z"
+ },
+ "347504": {
+  "found": true,
+  "lat": -6.1076463,
+  "lon": 106.6978168,
+  "source": "nominatim",
+  "query": "BAITUL MUTTAQIEN, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:34.334Z"
+ },
+ "347574": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:27.307Z"
+ },
+ "347727": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:23.527Z"
+ },
+ "347771": {
+  "found": true,
+  "lat": -6.1874349,
+  "lon": 106.8523004,
+  "source": "nominatim",
+  "query": "NURUL FALAH, Johar Baru, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:23.527Z"
+ },
  "347781": {
   "found": false,
   "checkedAt": "2026-08-31T13:46:33.130Z"
+ },
+ "347848": {
+  "found": true,
+  "lat": -6.177642,
+  "lon": 106.8462319,
+  "source": "nominatim",
+  "query": "AN-NUR, Johar Baru, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:19.854Z"
  },
  "347891": {
   "found": true,
@@ -1992,6 +6980,74 @@
   "query": "UNIVERSITAS BOROBUDUR, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T13:46:33.130Z"
  },
+ "348106": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:13.199Z"
+ },
+ "348126": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:49.863Z"
+ },
+ "348242": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:36:00.425Z"
+ },
+ "348414": {
+  "found": true,
+  "lat": -6.3256883,
+  "lon": 106.8146201,
+  "source": "nominatim",
+  "query": "AL-MAKMUR, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:13.199Z"
+ },
+ "348420": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:06.381Z"
+ },
+ "348496": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:57:03.667Z"
+ },
+ "348504": {
+  "found": true,
+  "lat": -6.1465971,
+  "lon": 106.7148387,
+  "source": "nominatim",
+  "query": "AL-ITTIHAD, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:57:03.667Z"
+ },
+ "348507": {
+  "found": true,
+  "lat": -6.3514053,
+  "lon": 106.907491,
+  "source": "nominatim",
+  "query": "AN-NUR PONDOK RANGGON, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:59.984Z"
+ },
+ "348527": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:53.770Z"
+ },
+ "348548": {
+  "found": true,
+  "lat": -6.2040331,
+  "lon": 106.811721,
+  "source": "nominatim",
+  "query": "AL- IMAN, Tanah Abang, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:53.770Z"
+ },
+ "348676": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:47.193Z"
+ },
+ "348680": {
+  "found": true,
+  "lat": -6.3429059,
+  "lon": 106.8916195,
+  "source": "nominatim",
+  "query": "AL- HASANAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:47.193Z"
+ },
  "348817": {
   "found": true,
   "lat": -6.187128,
@@ -2000,6 +7056,54 @@
   "query": "Kramat Raya A /05, Senen, Kota Administrasi Jakarta Pusat, DKI Jakarta",
   "checkedAt": "2026-08-31T13:46:29.427Z"
  },
+ "348854": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL- BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:43.621Z"
+ },
+ "348865": {
+  "found": true,
+  "lat": -6.1409316,
+  "lon": 106.7698108,
+  "source": "nominatim",
+  "query": "NURUL JANNAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:40.991Z"
+ },
+ "348913": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:33.067Z"
+ },
+ "348926": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:29.719Z"
+ },
+ "348973": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:25.934Z"
+ },
+ "348981": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL- HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:25.934Z"
+ },
+ "349500": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:19.063Z"
+ },
+ "349542": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:15.271Z"
+ },
+ "349568": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:12.501Z"
+ },
  "349769": {
   "found": true,
   "lat": -6.1342773,
@@ -2007,6 +7111,70 @@
   "source": "nominatim",
   "query": "AN-NUR, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T13:46:27.566Z"
+ },
+ "349902": {
+  "found": true,
+  "lat": -6.3520598,
+  "lon": 106.8966252,
+  "source": "nominatim",
+  "query": "AL-HUSNA, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:56:12.500Z"
+ },
+ "350081": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:05.677Z"
+ },
+ "350270": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:56:02.460Z"
+ },
+ "350349": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:58.569Z"
+ },
+ "350378": {
+  "found": true,
+  "lat": -6.1684624,
+  "lon": 106.7214421,
+  "source": "nominatim",
+  "query": "AL- BAROKAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:58.569Z"
+ },
+ "350383": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:51.635Z"
+ },
+ "350408": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:48.414Z"
+ },
+ "350506": {
+  "found": true,
+  "lat": -6.1805951,
+  "lon": 106.7222853,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:48.414Z"
+ },
+ "350634": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:40.722Z"
+ },
+ "350674": {
+  "found": true,
+  "lat": -6.1484798,
+  "lon": 106.7344579,
+  "source": "nominatim",
+  "query": "NURUL YAQIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:40.722Z"
+ },
+ "350984": {
+  "found": true,
+  "lat": -6.3276686,
+  "lon": 106.8977178,
+  "source": "nominatim",
+  "query": "AL- BAROKAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:37.520Z"
  },
  "351042": {
   "found": false,
@@ -2020,6 +7188,14 @@
   "found": false,
   "checkedAt": "2026-08-31T13:46:12.986Z"
  },
+ "351786": {
+  "found": true,
+  "lat": -6.3530108,
+  "lon": 106.8929074,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:33.938Z"
+ },
  "351800": {
   "found": false,
   "checkedAt": "2026-08-31T13:46:08.735Z"
@@ -2027,6 +7203,38 @@
  "351879": {
   "found": false,
   "checkedAt": "2026-08-31T13:46:05.600Z"
+ },
+ "352446": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:27.310Z"
+ },
+ "352830": {
+  "found": true,
+  "lat": -6.1290124,
+  "lon": 106.7381421,
+  "source": "nominatim",
+  "query": "AL HIKMAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:27.310Z"
+ },
+ "353454": {
+  "found": true,
+  "lat": -6.1404074,
+  "lon": 106.7473515,
+  "source": "nominatim",
+  "query": "AL- IMAN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:24.151Z"
+ },
+ "354296": {
+  "found": true,
+  "lat": -6.3530108,
+  "lon": 106.8929074,
+  "source": "nominatim",
+  "query": "AL- HIDAYAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:20.784Z"
+ },
+ "354540": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:14.278Z"
  },
  "354991": {
   "found": true,
@@ -2044,6 +7252,18 @@
   "query": "BAITUSSALAM, Kemayoran, Kota Administrasi Jakarta Pusat, DKI Jakarta",
   "checkedAt": "2026-08-31T13:46:01.788Z"
  },
+ "355678": {
+  "found": true,
+  "lat": -6.3612858,
+  "lon": 106.8854081,
+  "source": "nominatim",
+  "query": "AL-RIDHO, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:55:14.278Z"
+ },
+ "356718": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:56.734Z"
+ },
  "357956": {
   "found": false,
   "checkedAt": "2026-08-31T13:45:54.790Z"
@@ -2055,6 +7275,1066 @@
   "source": "nominatim",
   "query": "JL. HAJI UNG, Kemayoran, Kota Administrasi Jakarta Pusat, DKI Jakarta",
   "checkedAt": "2026-08-31T13:45:54.790Z"
+ },
+ "361252": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:08.171Z"
+ },
+ "367547": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:05.323Z"
+ },
+ "368266": {
+  "found": true,
+  "lat": -6.2860465,
+  "lon": 106.8053355,
+  "source": "nominatim",
+  "query": "BAITURRAHMAN, Cilandak, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:49.860Z"
+ },
+ "369170": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:55:01.446Z"
+ },
+ "369649": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:53.541Z"
+ },
+ "370933": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:58.107Z"
+ },
+ "371158": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:54.934Z"
+ },
+ "371159": {
+  "found": true,
+  "lat": -6.348709,
+  "lon": 106.8119907,
+  "source": "nominatim",
+  "query": "Jl. Radio Cipedak Jakarta Selatan, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:54.934Z"
+ },
+ "371161": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:49.467Z"
+ },
+ "371190": {
+  "found": true,
+  "lat": -6.3526832,
+  "lon": 106.8050578,
+  "source": "nominatim",
+  "query": "AT-TAUBAH, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:49.467Z"
+ },
+ "371191": {
+  "found": true,
+  "lat": -6.2184262,
+  "lon": 106.858979,
+  "source": "nominatim",
+  "query": "Jl. Bukit Duri Selatan Bukit Duri Jakarta Selatan, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:46.551Z"
+ },
+ "371200": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:41.120Z"
+ },
+ "371216": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:41.119Z"
+ },
+ "371327": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:50.310Z"
+ },
+ "371397": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:38.151Z"
+ },
+ "371398": {
+  "found": true,
+  "lat": -6.1461005,
+  "lon": 106.730458,
+  "source": "nominatim",
+  "query": "AL-FAJAR, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:35.186Z"
+ },
+ "371399": {
+  "found": true,
+  "lat": -6.1382327,
+  "lon": 106.7471157,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:31.793Z"
+ },
+ "371446": {
+  "found": true,
+  "lat": -6.237018,
+  "lon": 106.763515,
+  "source": "nominatim",
+  "query": "MIFTAHUL HUDA, Pesanggrahan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:35:50.310Z"
+ },
+ "371487": {
+  "found": true,
+  "lat": -6.2162326,
+  "lon": 106.8879792,
+  "source": "nominatim",
+  "query": "AN- NUR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:28.766Z"
+ },
+ "371972": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:43.126Z"
+ },
+ "372136": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:21.826Z"
+ },
+ "372140": {
+  "found": true,
+  "lat": -6.3113127,
+  "lon": 106.8959234,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:21.826Z"
+ },
+ "372147": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:15.538Z"
+ },
+ "372149": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:12.261Z"
+ },
+ "372193": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:39.507Z"
+ },
+ "372385": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:35.977Z"
+ },
+ "372421": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:54:08.832Z"
+ },
+ "372564": {
+  "found": true,
+  "lat": -6.2983474,
+  "lon": 106.8993336,
+  "source": "nominatim",
+  "query": "AL-BURHAN, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:08.832Z"
+ },
+ "372565": {
+  "found": true,
+  "lat": -6.3077358,
+  "lon": 106.8864632,
+  "source": "nominatim",
+  "query": "AT-TAUBAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:05.473Z"
+ },
+ "372580": {
+  "found": true,
+  "lat": -6.1620051,
+  "lon": 106.7457338,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:54:01.770Z"
+ },
+ "372696": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:32.193Z"
+ },
+ "372916": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:55.088Z"
+ },
+ "372964": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:28.383Z"
+ },
+ "373264": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:51.880Z"
+ },
+ "373685": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:48.266Z"
+ },
+ "373976": {
+  "found": true,
+  "lat": -6.3486914,
+  "lon": 106.8103688,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:48.266Z"
+ },
+ "374564": {
+  "found": true,
+  "lat": -6.2204895,
+  "lon": 106.8920829,
+  "source": "nominatim",
+  "query": "DARUSSALAM, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:44.590Z"
+ },
+ "374611": {
+  "found": true,
+  "lat": -6.2078106,
+  "lon": 106.7801348,
+  "source": "nominatim",
+  "query": "Jl Idris /11 Sukabumi Utara Kebon Jeruk Jakarta Barat, Kebon Jeruk, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:41.651Z"
+ },
+ "374637": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:36.846Z"
+ },
+ "375959": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:43.432Z"
+ },
+ "376210": {
+  "found": true,
+  "lat": -6.143309,
+  "lon": 106.7380163,
+  "source": "nominatim",
+  "query": "AL-MUHAJIRIN, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:36.846Z"
+ },
+ "376561": {
+  "found": true,
+  "lat": -6.2469708,
+  "lon": 106.832781,
+  "source": "nominatim",
+  "query": "AL- ISTIQOMAH, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:32.965Z"
+ },
+ "376597": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:26.700Z"
+ },
+ "376997": {
+  "found": true,
+  "lat": -6.2631981,
+  "lon": 106.7868418,
+  "source": "nominatim",
+  "query": "Jl. Margaguna Raya Gandaria selatan Cilandak Jakarta Selatan, Cilandak, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:26.700Z"
+ },
+ "377427": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:21.867Z"
+ },
+ "378085": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:18.908Z"
+ },
+ "378484": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:15.032Z"
+ },
+ "378619": {
+  "found": true,
+  "lat": -6.142171,
+  "lon": 106.7497355,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Cengkareng, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:15.032Z"
+ },
+ "379243": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:08.031Z"
+ },
+ "379712": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:04.217Z"
+ },
+ "380579": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:53:00.389Z"
+ },
+ "380588": {
+  "found": true,
+  "lat": -6.3204004,
+  "lon": 106.8140714,
+  "source": "nominatim",
+  "query": "AR-RAHMAN, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:53:00.389Z"
+ },
+ "381570": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:54.129Z"
+ },
+ "382265": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:50.852Z"
+ },
+ "382308": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:47.586Z"
+ },
+ "382366": {
+  "found": true,
+  "lat": -6.3383884,
+  "lon": 106.8129665,
+  "source": "nominatim",
+  "query": "DARUL RAHMAN, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:47.586Z"
+ },
+ "382581": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:40.771Z"
+ },
+ "382707": {
+  "found": true,
+  "lat": -6.3113127,
+  "lon": 106.8959234,
+  "source": "nominatim",
+  "query": "AL- IKHLAS, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:40.771Z"
+ },
+ "382747": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:33.878Z"
+ },
+ "382810": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:25.160Z"
+ },
+ "382829": {
+  "found": true,
+  "lat": -6.2987116,
+  "lon": 106.905188,
+  "source": "nominatim",
+  "query": "AN- NUR, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:33.878Z"
+ },
+ "382870": {
+  "found": true,
+  "lat": -6.3265186,
+  "lon": 106.8234871,
+  "source": "nominatim",
+  "query": "AL-WIQOYAH, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:30.626Z"
+ },
+ "383498": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:39.731Z"
+ },
+ "383602": {
+  "found": true,
+  "lat": -5.796274,
+  "lon": 106.4975702,
+  "source": "nominatim",
+  "query": "Jl. Pantai Selatan Pulau Tidung, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:27.417Z"
+ },
+ "385441": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:22.309Z"
+ },
+ "385746": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:18.716Z"
+ },
+ "386049": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:52:15.440Z"
+ },
+ "386387": {
+  "found": true,
+  "lat": -6.2724035,
+  "lon": 106.8115544,
+  "source": "nominatim",
+  "query": "AL- IKHLAS, Cilandak, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:15.440Z"
+ },
+ "386414": {
+  "found": true,
+  "lat": -6.1782966,
+  "lon": 106.8637012,
+  "source": "nominatim",
+  "query": "Jl. Cempaka III /002, Cempaka Putih, Jakarta Pusat, Cempaka Putih, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:35:25.160Z"
+ },
+ "386461": {
+  "found": true,
+  "lat": -6.2364362,
+  "lon": 106.8852777,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:12.096Z"
+ },
+ "386488": {
+  "found": true,
+  "lat": -6.2278423,
+  "lon": 106.8654411,
+  "source": "nominatim",
+  "query": "AL- MUTTAQIN, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:08.907Z"
+ },
+ "386491": {
+  "found": true,
+  "lat": -6.2418977,
+  "lon": 106.8663041,
+  "source": "nominatim",
+  "query": "AL-ABROR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:04.605Z"
+ },
+ "386492": {
+  "found": true,
+  "lat": -6.2162326,
+  "lon": 106.8879792,
+  "source": "nominatim",
+  "query": "AN-NUR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:52:01.543Z"
+ },
+ "386493": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:56.049Z"
+ },
+ "386495": {
+  "found": true,
+  "lat": -6.2077005,
+  "lon": 106.9233452,
+  "source": "nominatim",
+  "query": "AL- MARZUKIYAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:56.049Z"
+ },
+ "386497": {
+  "found": true,
+  "lat": -6.2080238,
+  "lon": 106.9038807,
+  "source": "nominatim",
+  "query": "NURUL AMAL, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:52.374Z"
+ },
+ "386498": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:45.047Z"
+ },
+ "386499": {
+  "found": true,
+  "lat": -6.2179236,
+  "lon": 106.8630434,
+  "source": "nominatim",
+  "query": "AL- BARKAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:45.047Z"
+ },
+ "386500": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:37.244Z"
+ },
+ "386501": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:33.743Z"
+ },
+ "386503": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:29.841Z"
+ },
+ "386505": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:27.185Z"
+ },
+ "386506": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:23.380Z"
+ },
+ "386606": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:20.436Z"
+ },
+ "386639": {
+  "found": true,
+  "lat": -6.1657291,
+  "lon": 106.8584486,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Kemayoran, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:20.436Z"
+ },
+ "386673": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:13.151Z"
+ },
+ "386727": {
+  "found": true,
+  "lat": -6.3113127,
+  "lon": 106.8959234,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:13.151Z"
+ },
+ "386739": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:51:06.492Z"
+ },
+ "386743": {
+  "found": true,
+  "lat": -6.3545718,
+  "lon": 106.8350136,
+  "source": "nominatim",
+  "query": "MUSHOLLA NURUL IMAN, Jagakarsa, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:06.492Z"
+ },
+ "386748": {
+  "found": true,
+  "lat": -6.1352331,
+  "lon": 106.917776,
+  "source": "nominatim",
+  "query": "NURUL FALAH, Koja, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:51:03.234Z"
+ },
+ "386758": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:57.200Z"
+ },
+ "386795": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:53.888Z"
+ },
+ "386796": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:50.673Z"
+ },
+ "386817": {
+  "found": true,
+  "lat": -6.232193,
+  "lon": 106.7716543,
+  "source": "nominatim",
+  "query": "NURUL IMAN, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:50:50.673Z"
+ },
+ "386821": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:43.998Z"
+ },
+ "386822": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:40.768Z"
+ },
+ "386825": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:37.287Z"
+ },
+ "386831": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:33.937Z"
+ },
+ "386843": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:30.747Z"
+ },
+ "386886": {
+  "found": true,
+  "lat": -6.1966637,
+  "lon": 106.8624881,
+  "source": "nominatim",
+  "query": "Jl. Rambutan Utan Kayu Utara, Matraman, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:50:30.747Z"
+ },
+ "386888": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:25.322Z"
+ },
+ "386931": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:22.469Z"
+ },
+ "386933": {
+  "found": true,
+  "lat": -6.1992701,
+  "lon": 106.9307713,
+  "source": "nominatim",
+  "query": "AL- IKHLAS, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:50:22.469Z"
+ },
+ "386934": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:15.524Z"
+ },
+ "386938": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:12.143Z"
+ },
+ "386944": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:09.304Z"
+ },
+ "386945": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:05.731Z"
+ },
+ "386947": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:50:01.645Z"
+ },
+ "386953": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:58.513Z"
+ },
+ "386955": {
+  "found": true,
+  "lat": -6.2418977,
+  "lon": 106.8663041,
+  "source": "nominatim",
+  "query": "AL-ABROR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:49:58.512Z"
+ },
+ "386962": {
+  "found": true,
+  "lat": -6.213586,
+  "lon": 106.8636594,
+  "source": "nominatim",
+  "query": "AL-HIKMAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:49:54.908Z"
+ },
+ "386967": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:47.778Z"
+ },
+ "386969": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:43.583Z"
+ },
+ "386970": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:18.706Z"
+ },
+ "386971": {
+  "found": true,
+  "lat": -6.2364362,
+  "lon": 106.8852777,
+  "source": "nominatim",
+  "query": "NURUL HUDA, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:49:43.583Z"
+ },
+ "386972": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:36.698Z"
+ },
+ "386990": {
+  "found": true,
+  "lat": -6.3142017,
+  "lon": 106.8682255,
+  "source": "nominatim",
+  "query": "AT- TAUBAH, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:49:36.698Z"
+ },
+ "386994": {
+  "found": true,
+  "lat": -6.18369,
+  "lon": 106.843311,
+  "source": "nominatim",
+  "query": "Jl. Kramat Raya , , Kwitang, Senen, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:39.731Z"
+ },
+ "386995": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:30.176Z"
+ },
+ "387032": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:26.705Z"
+ },
+ "387041": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:23.022Z"
+ },
+ "387043": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:19.438Z"
+ },
+ "387105": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:15.513Z"
+ },
+ "387208": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:12.125Z"
+ },
+ "387225": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:08.898Z"
+ },
+ "387262": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:06.181Z"
+ },
+ "387279": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:49:02.727Z"
+ },
+ "387281": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:58.841Z"
+ },
+ "387283": {
+  "found": true,
+  "lat": -6.2278423,
+  "lon": 106.8654411,
+  "source": "nominatim",
+  "query": "AL-MUTTAQIN, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:58.841Z"
+ },
+ "387285": {
+  "found": true,
+  "lat": -6.2403823,
+  "lon": 106.8733798,
+  "source": "nominatim",
+  "query": "AL-AKHYAR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:55.594Z"
+ },
+ "387295": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:49.728Z"
+ },
+ "387296": {
+  "found": true,
+  "lat": -6.2162326,
+  "lon": 106.8879792,
+  "source": "nominatim",
+  "query": "AN-NUR, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:49.728Z"
+ },
+ "387297": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:42.901Z"
+ },
+ "387298": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:39.186Z"
+ },
+ "387299": {
+  "found": true,
+  "lat": -6.1961713,
+  "lon": 106.9271382,
+  "source": "nominatim",
+  "query": "AL-HIDAYAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:37.369Z"
+ },
+ "387300": {
+  "found": true,
+  "lat": -6.1992701,
+  "lon": 106.9307713,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:34.095Z"
+ },
+ "387325": {
+  "found": true,
+  "lat": -6.1956079,
+  "lon": 106.9639892,
+  "source": "nominatim",
+  "query": "AL BARKAH, Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:35:18.706Z"
+ },
+ "387330": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:26.491Z"
+ },
+ "387338": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:23.224Z"
+ },
+ "387444": {
+  "found": true,
+  "lat": -6.2736811,
+  "lon": 106.8759129,
+  "source": "nominatim",
+  "query": "AL-BAROKAH, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:23.224Z"
+ },
+ "387528": {
+  "found": true,
+  "lat": -6.2193876,
+  "lon": 106.8674203,
+  "source": "nominatim",
+  "query": "AL-FATTAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:20.000Z"
+ },
+ "387529": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:12.836Z"
+ },
+ "387530": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:48:09.326Z"
+ },
+ "387533": {
+  "found": true,
+  "lat": -6.2274837,
+  "lon": 106.8790637,
+  "source": "nominatim",
+  "query": "MIFTAHUL FALAH, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:09.326Z"
+ },
+ "387833": {
+  "found": true,
+  "lat": -6.1254738,
+  "lon": 106.7218864,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:06.116Z"
+ },
+ "387844": {
+  "found": true,
+  "lat": -6.3263225,
+  "lon": 106.8938112,
+  "source": "nominatim",
+  "query": "NURUL HIKMAH, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:48:02.420Z"
+ },
+ "388166": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:55.971Z"
+ },
+ "388247": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:52.781Z"
+ },
+ "388288": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:48.760Z"
+ },
+ "388640": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:45.965Z"
+ },
+ "388790": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:11.020Z"
+ },
+ "388791": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:42.653Z"
+ },
+ "388792": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:39.055Z"
+ },
+ "388892": {
+  "found": true,
+  "lat": -6.2160284,
+  "lon": 106.859953,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Jatinegara, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:47:39.055Z"
+ },
+ "388966": {
+  "found": true,
+  "lat": -6.2345947,
+  "lon": 106.7759418,
+  "source": "nominatim",
+  "query": "AL- HUSNA, Kebayoran Lama, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:47:36.319Z"
+ },
+ "389189": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:29.630Z"
+ },
+ "389509": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:25.487Z"
+ },
+ "389699": {
+  "found": true,
+  "lat": -6.3280392,
+  "lon": 106.8984206,
+  "source": "nominatim",
+  "query": "AT-TAQWA, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:47:25.487Z"
+ },
+ "389786": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:19.004Z"
+ },
+ "389826": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:35:07.698Z"
+ },
+ "390028": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:15.407Z"
+ },
+ "390032": {
+  "found": true,
+  "lat": -6.3347991,
+  "lon": 106.8744896,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Ciracas, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:47:15.407Z"
+ },
+ "390313": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:08.466Z"
+ },
+ "390804": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:04.704Z"
+ },
+ "391097": {
+  "found": true,
+  "lat": -6.2812783,
+  "lon": 106.8381533,
+  "source": "nominatim",
+  "query": "MIFTAHUL JANNAH, Pasar Minggu, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:35:07.698Z"
+ },
+ "391539": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:47:01.586Z"
+ },
+ "392335": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:57.965Z"
+ },
+ "392344": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:54.619Z"
+ },
+ "392758": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:51.028Z"
+ },
+ "392982": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:34.908Z"
+ },
+ "393909": {
+  "found": true,
+  "lat": -6.1471302,
+  "lon": 106.8359908,
+  "source": "nominatim",
+  "query": "ORCHARDZ HOTEL, Sawah Besar, Kota Administrasi Jakarta Pusat, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:51.028Z"
+ },
+ "395038": {
+  "found": true,
+  "lat": -6.1221831,
+  "lon": 106.9572175,
+  "source": "nominatim",
+  "query": "Kp.Sungai Tiram /002 Marunda, Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:47.788Z"
+ },
+ "395086": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:42.162Z"
+ },
+ "395189": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:38.568Z"
+ },
+ "395613": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:34.760Z"
+ },
+ "395781": {
+  "found": true,
+  "lat": -6.1839112,
+  "lon": 106.9485355,
+  "source": "nominatim",
+  "query": "Jl. Balai Rakyat, Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:34.760Z"
+ },
+ "396153": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:29.887Z"
+ },
+ "396189": {
+  "found": true,
+  "lat": -6.2435391,
+  "lon": 106.8221557,
+  "source": "nominatim",
+  "query": "AL-HUSNA, Mampang Prapatan, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:29.887Z"
+ },
+ "396224": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:22.332Z"
+ },
+ "396662": {
+  "found": true,
+  "lat": -6.3057937,
+  "lon": 106.8316766,
+  "source": "nominatim",
+  "query": "AL-AMIN, Pasar Minggu, Kota Administrasi Jakarta Selatan, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:22.332Z"
+ },
+ "397164": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:16.047Z"
+ },
+ "397311": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:12.344Z"
+ },
+ "397478": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:09.408Z"
+ },
+ "397679": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:06.569Z"
+ },
+ "397807": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:46:02.885Z"
+ },
+ "398097": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:31.232Z"
+ },
+ "398111": {
+  "found": true,
+  "lat": -6.1956079,
+  "lon": 106.9639892,
+  "source": "nominatim",
+  "query": "AL-BARKAH, Cakung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:02.885Z"
+ },
+ "398127": {
+  "found": true,
+  "lat": -6.3523675,
+  "lon": 106.9062598,
+  "source": "nominatim",
+  "query": "ALI BIN ABI THALIB, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:35:04.431Z"
+ },
+ "398204": {
+  "found": true,
+  "lat": -6.3459402,
+  "lon": 106.8952246,
+  "source": "nominatim",
+  "query": "AL-AMIN, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:46:00.034Z"
+ },
+ "398377": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:56.865Z"
+ },
+ "398650": {
+  "found": false,
+  "checkedAt": "2026-08-31T15:45:53.379Z"
+ },
+ "398721": {
+  "found": true,
+  "lat": -5.7465349,
+  "lon": 106.6138676,
+  "source": "nominatim",
+  "query": "Pulau Pramuka, Kepulauan Seribu Utara, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T15:45:53.379Z"
  },
  "398728": {
   "found": true,
@@ -2068,13 +8348,53 @@
   "found": false,
   "checkedAt": "2026-08-31T15:45:46.823Z"
  },
+ "399181": {
+  "found": true,
+  "lat": -5.857389,
+  "lon": 106.6169858,
+  "source": "nominatim",
+  "query": "AL- IKHLAS, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:56.865Z"
+ },
+ "399200": {
+  "found": true,
+  "lat": -5.796274,
+  "lon": 106.4975702,
+  "source": "nominatim",
+  "query": "Jalan Pantai Selatan / 02 Pulau Tidung, Kepulauan Seribu Selatan, Kabupaten Administrasi Kepulauan Seribu, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:53.051Z"
+ },
+ "399202": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:27.651Z"
+ },
  "399216": {
   "found": false,
   "checkedAt": "2026-08-31T15:45:43.651Z"
  },
+ "399663": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:47.966Z"
+ },
+ "400259": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:23.881Z"
+ },
  "400276": {
   "found": false,
   "checkedAt": "2026-08-31T15:45:40.329Z"
+ },
+ "400277": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:44.484Z"
+ },
+ "400616": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:41.173Z"
+ },
+ "400687": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:37.909Z"
  },
  "400714": {
   "found": false,
@@ -2088,6 +8408,14 @@
   "query": "NURUL HUDA, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
   "checkedAt": "2026-08-31T15:45:36.639Z"
  },
+ "400812": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:34.805Z"
+ },
+ "400894": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:31.605Z"
+ },
  "400942": {
   "found": true,
   "lat": -6.1605024,
@@ -2095,6 +8423,10 @@
   "source": "nominatim",
   "query": "AL-ISTIQOMAH, Kalideres, Kota Administrasi Jakarta Barat, DKI Jakarta",
   "checkedAt": "2026-08-31T15:45:33.389Z"
+ },
+ "401036": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:27.708Z"
  },
  "401143": {
   "found": false,
@@ -2111,6 +8443,14 @@
  "401589": {
   "found": false,
   "checkedAt": "2026-08-31T15:45:17.259Z"
+ },
+ "401708": {
+  "found": true,
+  "lat": -6.2368575,
+  "lon": 106.9364396,
+  "source": "nominatim",
+  "query": "AL-IKHLAS, Duren Sawit, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:27.708Z"
  },
  "403028": {
   "found": false,
@@ -2131,6 +8471,14 @@
  "403906": {
   "found": false,
   "checkedAt": "2026-08-31T15:45:06.250Z"
+ },
+ "404548": {
+  "found": true,
+  "lat": -6.320493,
+  "lon": 106.9013449,
+  "source": "nominatim",
+  "query": "Jl. Bambu Hitam, Cipayung, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:32:23.881Z"
  },
  "404921": {
   "found": false,
@@ -2180,6 +8528,10 @@
   "found": false,
   "checkedAt": "2026-08-31T15:44:36.419Z"
  },
+ "409815": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:21.265Z"
+ },
  "409897": {
   "found": true,
   "lat": -6.28524,
@@ -2223,6 +8575,10 @@
   "source": "nominatim",
   "query": "AR-RAHMAN, Pademangan, Kota Administrasi Jakarta Utara, DKI Jakarta",
   "checkedAt": "2026-08-31T15:44:20.709Z"
+ },
+ "410321": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:32:18.799Z"
  },
  "410574": {
   "found": true,
@@ -2311,6 +8667,22 @@
   "source": "nominatim",
   "query": "Jl. Tebet Barat, Tebet, Kota Administrasi Jakarta Selatan, DKI Jakarta",
   "checkedAt": "2026-08-31T15:43:23.484Z"
+ },
+ "414253": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:17.577Z"
+ },
+ "414255": {
+  "found": true,
+  "lat": -6.2759165,
+  "lon": 106.8768195,
+  "source": "nominatim",
+  "query": "BAITURRAHMAN, Makasar, Kota Administrasi Jakarta Timur, DKI Jakarta",
+  "checkedAt": "2026-08-31T16:34:17.577Z"
+ },
+ "414795": {
+  "found": false,
+  "checkedAt": "2026-08-31T16:34:11.259Z"
  },
  "415694": {
   "found": false,

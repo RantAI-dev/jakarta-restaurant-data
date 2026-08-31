@@ -325,7 +325,13 @@ import type { GmtiAgg, GmtiCapaian, GmtiMeta, GmtiPlace, GmtiTipologi } from "./
     `\nexport const GMTI_META: GmtiMeta = ${JSON.stringify(meta, null, 2)};\n` +
     `\nexport const GMTI_AGG: GmtiAgg[] = ${JSON.stringify(agg, null, 1)};\n` +
     `\nexport const GMTI_TIPOLOGI: GmtiTipologi[] = ${JSON.stringify(tipologi, null, 1)};\n` +
-    `\nexport const GMTI_PLACES: GmtiPlace[] = ${JSON.stringify(places, null, 1)};\n` +
+    // GMTI_PLACES ditulis sebagai JSON.parse, bukan literal objek: dengan 1.000+
+    // entri TypeScript menyerah menyimpulkan tipe literalnya (TS2590, "union
+    // type too complex"). Sebagai bonus, JSON.parse lebih cepat di-parse mesin
+    // JS daripada literal objek sepanjang ini.
+    `\nexport const GMTI_PLACES: GmtiPlace[] = JSON.parse(\n  ${JSON.stringify(
+      JSON.stringify(places)
+    )}\n);\n` +
     `\nexport const GMTI_CAPAIAN: GmtiCapaian[] = ${JSON.stringify(capaianRows, null, 1)};\n`;
 
   writeFileSync(at("../lib/gmti-data.ts"), header + body);
