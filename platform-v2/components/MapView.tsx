@@ -10,6 +10,7 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import { RESTAURANTS, type Restaurant, googleMapsUrl } from "@/lib/restaurants";
+import { addBasemap } from "@/lib/basemap";
 import {
   DEFAULT_LANG,
   STORAGE_KEY,
@@ -148,17 +149,7 @@ export function MapView() {
       preferCanvas: true,
     }).setView([-6.2, 106.85], 11);
 
-    // CartoDB Voyager — modern civic-tech basemap with subtle pastel
-    // colours, clean typography, no API key required.
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 20,
-        subdomains: "abcd",
-        attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
+    addBasemap(map);
 
     mapRef.current = map;
     return () => {

@@ -4,7 +4,7 @@
  * ATLAS — Toko Suvenir Jakarta, tampilan PETA.
  *
  * Konsep 1:1 dengan components/MapView.tsx (peta Direktori Restoran): Leaflet
- * + markercluster di atas basemap CartoDB Voyager, strip filter frosted di
+ * + markercluster di atas basemap Esri Light Gray Canvas, strip filter frosted di
  * atas, popup per pin, toggle List|Map lewat AtlasNav. Marker diwarnai per
  * relevansi supaya listing non-suvenir tetap bisa dilihat tapi terbedakan.
  */
@@ -17,6 +17,7 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import { AtlasNav } from "@/components/atlas/AtlasNav";
 import { navLabel } from "@/components/SouvenirView";
+import { addBasemap } from "@/lib/basemap";
 import {
   SOUVENIR_SHOPS,
   souvenirMapsUrl,
@@ -182,15 +183,7 @@ export function SouvenirMapView() {
       zoom: 11,
       scrollWheelZoom: true,
     });
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 20,
-        subdomains: "abcd",
-        attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
+    addBasemap(map);
     mapRef.current = map;
     return () => {
       map.remove();

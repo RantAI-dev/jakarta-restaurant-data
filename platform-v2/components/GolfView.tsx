@@ -10,6 +10,7 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import { AtlasNav, LangToggle } from "@/components/atlas/AtlasNav";
 import { ExportButton } from "@/components/atlas/ExportButton";
 import { GOLF_COURSES, golfMapsUrl, type GolfCourse } from "@/lib/golf";
+import { addBasemap } from "@/lib/basemap";
 import {
   type CsvColumn,
   type ExportFormat,
@@ -153,18 +154,7 @@ export function GolfView() {
       preferCanvas: true,
       scrollWheelZoom: true,
     }).setView([-6.2, 106.85], 11);
-    // CartoDB Voyager — same modern basemap used on the restaurants
-    // map for visual consistency. Subtle pastel colours don't compete
-    // with the prominent custom hole-count pins.
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 20,
-        subdomains: "abcd",
-        attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
+    addBasemap(map);
     mapRef.current = map;
     return () => {
       map.remove();

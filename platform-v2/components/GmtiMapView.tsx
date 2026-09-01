@@ -22,6 +22,7 @@ import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import { AtlasNav } from "@/components/atlas/AtlasNav";
 import { navLabel } from "@/components/GmtiView";
+import { addBasemap } from "@/lib/basemap";
 import { GMTI_AGG, GMTI_META, GMTI_PLACES } from "@/lib/gmti-data";
 import {
   PILLARS,
@@ -170,15 +171,7 @@ export function GmtiMapView() {
       zoom: 11,
       scrollWheelZoom: true,
     });
-    L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 20,
-        subdomains: "abcd",
-        attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
-      }
-    ).addTo(map);
+    addBasemap(map);
     mapRef.current = map;
     return () => {
       map.remove();

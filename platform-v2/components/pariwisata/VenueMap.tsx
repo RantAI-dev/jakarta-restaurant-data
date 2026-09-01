@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Peta venue seni-pertunjukan (Leaflet) — gaya basemap Atlas (CartoDB Voyager).
+ * Peta venue seni-pertunjukan (Leaflet) — gaya basemap Atlas (Esri Light Gray).
  * Dot oranye = venue biasa (radius ∝ jumlah event). Dot EMAS + halo = venue yang
  * pernah menghadirkan artis Top-10 Global Chart terverifikasi (GBK/JIS).
  * Klik dot → info venue muncul di PANEL KANAN (peta di kiri, tak terhalang).
@@ -149,11 +149,19 @@ export function VenueMap({ venues }: { venues: Venue[] }) {
       {/* Peta (kiri) */}
       <div className="relative h-[380px] flex-1 overflow-hidden rounded-2xl border border-slate-200 shadow-sm md:h-[520px]">
         <MapContainer center={[-6.2, 106.85]} zoom={11} preferCanvas style={{ height: "100%", width: "100%" }} scrollWheelZoom>
+          {/* Esri Light Gray Canvas — lihat lib/basemap.ts soal kenapa bukan
+              CARTO lagi. Peta ini memakai react-leaflet deklaratif, jadi
+              layer-nya ditulis di sini alih-alih lewat addBasemap(). */}
           <TileLayer
-            attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            subdomains="abcd"
-            maxZoom={20}
+            attribution='Peta © <a href="https://www.esri.com">Esri</a> — sumber: Esri, HERE, Garmin, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+            maxNativeZoom={16}
+            maxZoom={18}
+          />
+          <TileLayer
+            url="https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}"
+            maxNativeZoom={16}
+            maxZoom={18}
           />
           <FitBounds venues={venues} />
 
