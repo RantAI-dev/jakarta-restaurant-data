@@ -31,6 +31,7 @@ cd ../buku
 npm run import:book
 npm run build          # pastikan naskah baru tidak memecah MDX
 npm run pdf:build      # cetak ulang berkas PDF dari isi yang baru
+npm run pdf:preview    # lihat halamannya sebelum percaya
 git add content public && git commit -m "sinkronisasi naskah"
 ```
 
@@ -83,14 +84,45 @@ bagian dari naskah cetak.
 ## Versi PDF
 
 `npm run pdf:build` menjalankan server produksi, membuka `/cetak` (seluruh isi
-buku dalam satu halaman dengan gaya kertas), lalu mencetaknya lewat Chromium
-headless ke `public/buku-statistika-pariwisata-perkotaan.pdf`. Berkasnya
-di-commit karena image build Vercel tidak punya Chromium.
+buku dalam satu halaman bergaya kertas), lalu mencetaknya lewat Chromium ke
+`public/buku-statistika-pariwisata-perkotaan.pdf`. Berkasnya di-commit karena
+image build Vercel tidak punya Chromium.
 
-Halaman `/pdf` menyematkan berkas itu dengan penampil bawaan peramban, plus
-tombol unduh. Karena PDF lahir dari halaman yang sama dengan edisi web, isinya
-tidak mungkin berbeda — tetapi PDF **tidak** ikut berubah sampai
-`npm run pdf:build` dijalankan ulang.
+Halaman `/pdf` menyematkan berkas itu dengan penampil bawaan peramban. Karena
+PDF lahir dari halaman yang sama dengan edisi web, isinya tidak mungkin berbeda
+— tetapi PDF **tidak** ikut berubah sampai `npm run pdf:build` dijalankan ulang.
+
+### Setelah build, lihat hasilnya
+
+```bash
+npm run pdf:preview            # 13 halaman contoh → .pdf-preview/*.png
+npm run pdf:preview -- 38 41   # rentang halaman tertentu
+```
+
+Cacat tata letak — kolom tabel gepeng, header hilang, gambar meluber, halaman
+setengah kosong — tidak pernah terlihat dari kode. Semua cacat yang pernah
+ditemukan di sini ketahuan dari memandangi PNG-nya.
+
+### Kenapa skripnya serumit itu
+
+Empat hal yang tidak kelihatan tetapi wajib, masing-masing pernah memakan waktu:
+
+- **Protokol DevTools, bukan `--print-to-pdf`.** Hanya lewat `Page.printToPDF`
+  header berjalan dan nomor halaman bisa dipasang.
+- **`--remote-allow-origins=*`.** Sejak Chrome 111 sambungan DevTools yang
+  membawa header `Origin` ditolak, dan WebSocket bawaan Node selalu
+  mengirimkannya. Tanpa flag ini skrip menggantung tanpa satu pun pesan galat.
+- **`transferMode: 'ReturnAsStream'`.** PDF 5 MB dikirim sebagai satu pesan
+  base64 ~7 MB tidak pernah sampai; perintahnya menggantung. Dengan stream,
+  cetaknya selesai dalam hitungan detik.
+- **Gambar `loading="eager"`.** Halaman cetak memuat seluruh buku sekaligus;
+  gambar yang ditunda tidak pernah termuat dan hilang dari PDF. Skrip menolak
+  mencetak bila gambar yang termuat kurang dari 32.
+
+Dicetak dua kali lalu disambung dengan qpdf: bagian depan (sampul, kredit,
+daftar isi) tanpa running head, sisanya dengan header dan nomor halaman.
+Batasnya dihitung dari halaman pertama yang memuat pembatas "Bagian I", bukan
+angka tetap yang akan basi begitu daftar isinya memanjang.
 
 ## Visual
 

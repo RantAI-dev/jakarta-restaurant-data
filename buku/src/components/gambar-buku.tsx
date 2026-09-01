@@ -30,8 +30,12 @@ export function GambarBuku({ tipe, id, src, lebar, tinggi, alt }: Props) {
           alt={alt}
           width={lebar}
           height={tinggi}
-          loading="lazy"
-          decoding="async"
+          // Sengaja eager: halaman /cetak memuat seluruh buku sekaligus, dan
+          // gambar yang ditunda tidak akan pernah termuat saat dicetak ke PDF.
+          // Di halaman web satu sub-bab paling banyak memuat dua figure, jadi
+          // tidak ada ruginya.
+          loading="eager"
+          decoding="sync"
           className="h-auto w-full"
         />
       </div>
