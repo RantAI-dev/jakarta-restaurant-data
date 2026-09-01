@@ -30,7 +30,8 @@ cd ../buku-statistika-pariwisata-perkotaan && git pull
 cd ../buku
 npm run import:book
 npm run build          # pastikan naskah baru tidak memecah MDX
-git add content public/figures && git commit -m "sinkronisasi naskah"
+npm run pdf:build      # cetak ulang berkas PDF dari isi yang baru
+git add content public && git commit -m "sinkronisasi naskah"
 ```
 
 Lalu deploy ulang (lihat `DEPLOY.md`).
@@ -78,6 +79,18 @@ public/figures/              # DIBUAT OTOMATIS — salinan figure naskah
 
 `content/docs/index.mdx` ditulis tangan — itu halaman pengantar edisi web, bukan
 bagian dari naskah cetak.
+
+## Versi PDF
+
+`npm run pdf:build` menjalankan server produksi, membuka `/cetak` (seluruh isi
+buku dalam satu halaman dengan gaya kertas), lalu mencetaknya lewat Chromium
+headless ke `public/buku-statistika-pariwisata-perkotaan.pdf`. Berkasnya
+di-commit karena image build Vercel tidak punya Chromium.
+
+Halaman `/pdf` menyematkan berkas itu dengan penampil bawaan peramban, plus
+tombol unduh. Karena PDF lahir dari halaman yang sama dengan edisi web, isinya
+tidak mungkin berbeda — tetapi PDF **tidak** ikut berubah sampai
+`npm run pdf:build` dijalankan ulang.
 
 ## Visual
 

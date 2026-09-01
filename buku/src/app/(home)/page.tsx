@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText } from 'lucide-react';
 import { source } from '@/lib/source';
 import { appName, appSubtitle, mulaiBacaHref } from '@/lib/shared';
 
@@ -64,6 +64,13 @@ export default function HomePage() {
               >
                 <BookOpen className="size-4" aria-hidden />
                 Daftar isi
+              </Link>
+              <Link
+                href="/pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-fd-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-fd-accent"
+              >
+                <FileText className="size-4" aria-hidden />
+                Versi PDF
               </Link>
             </div>
 

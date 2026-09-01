@@ -23,6 +23,10 @@ export function baseOptions(): BaseLayoutProps {
         text: 'Daftar isi',
         url: '/docs',
       },
+      {
+        text: 'PDF',
+        url: '/pdf',
+      },
     ],
   };
 }

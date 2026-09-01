@@ -7,7 +7,8 @@
     "dev": "next dev",
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
-    "import:book": "node scripts/import-book.mjs"
+    "import:book": "node scripts/import-book.mjs",
+    "pdf:build": "node scripts/build-pdf.mjs"
   },
   "dependencies": {
     "cnfast": "^0.1.0",
