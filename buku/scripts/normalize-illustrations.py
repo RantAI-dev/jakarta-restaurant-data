@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Normalisasi ilustrasi pembatas bagian sebelum dipasang ke buku.
+"""Normalisasi ilustrasi sampul dan pembatas bagian sebelum dipasang ke buku.
 
 Keluaran model gambar hampir selalu punya dua cacat yang tidak kelihatan di
 layar tetapi merusak halaman cetak: latar yang tidak benar-benar putih (253–254,
 sehingga tampak sebagai kotak abu-abu di atas kertas putih), dan margin kosong
 lebar yang membuat ilustrasi mengecil sendiri di tengah halaman.
 
-Masukan : docs/generation/{I,II,III,IV}.png
-Keluaran: public/gambar/pembatas-bagian-{1..4}.png
+Masukan : docs/generation/{I,II,III,IV,judul}.png
+Keluaran: public/gambar/pembatas-bagian-{1..4}.png dan sampul.png
 
 Jalankan: npm run illustrations:build
 """
@@ -29,7 +29,9 @@ AMBANG_PUTIH = 246
 # Padding akhir, dalam persen lebar gambar setelah dipangkas.
 PADDING = 0.02
 
-SUMBER = {"I": 1, "II": 2, "III": 3, "IV": 4}
+# Empat pembatas bagian + satu ilustrasi sampul.
+SUMBER = {"I": "pembatas-bagian-1", "II": "pembatas-bagian-2", "III": "pembatas-bagian-3",
+          "IV": "pembatas-bagian-4", "judul": "sampul"}
 
 
 def normalisasi(masuk: pathlib.Path, keluar: pathlib.Path) -> str:
@@ -58,14 +60,14 @@ def main() -> None:
     if not MASUK.exists():
         sys.exit(f"Folder ilustrasi tidak ada: {MASUK}")
 
-    print("Menormalisasi ilustrasi pembatas bagian:")
+    print("Menormalisasi ilustrasi:")
     dibuat = 0
-    for nama, nomor in SUMBER.items():
+    for nama, keluaran in SUMBER.items():
         masuk = MASUK / f"{nama}.png"
         if not masuk.exists():
             print(f"  {nama}.png belum ada, dilewati")
             continue
-        print("  " + normalisasi(masuk, KELUAR / f"pembatas-bagian-{nomor}.png"))
+        print("  " + normalisasi(masuk, KELUAR / f"{keluaran}.png"))
         dibuat += 1
 
     print(f"\n{dibuat} ilustrasi ditulis ke public/gambar/.")

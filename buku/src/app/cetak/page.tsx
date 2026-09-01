@@ -163,6 +163,8 @@ export default function HalamanCetak() {
     <main className="cetak">
       {/* ------------------------------------------------------------ sampul */}
       <section className="cetak-sampul">
+        {/* Ilustrasi tanpa teks; judul buku ada di bawahnya. */}
+        <img src="/gambar/sampul.png" alt="" className="cetak-sampul-gambar" />
         <p className="cetak-instansi">Dinas Pariwisata dan Ekonomi Kreatif</p>
         <h1>{appName}</h1>
         <p className="cetak-subjudul">{appSubtitle}</p>
@@ -177,7 +179,7 @@ export default function HalamanCetak() {
           <dt>Disusun untuk</dt>
           <dd>Dinas Pariwisata dan Ekonomi Kreatif</dd>
           <dt>Penyusun</dt>
-          <dd>RantAI</dd>
+          <dd>Umar Ali Ahmad · Evan Pradipta · Dinas Pariwisata Jakarta</dd>
           <dt>Berkas ini dicetak</dt>
           <dd>{tanggal}</dd>
         </dl>

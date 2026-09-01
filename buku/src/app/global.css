@@ -148,6 +148,13 @@ body:has(.cetak) {
   break-after: page;
 }
 
+.cetak-sampul-gambar {
+  width: 100%;
+  height: auto;
+  margin-bottom: auto;
+  padding-bottom: 14mm;
+}
+
 .cetak-sampul h1 {
   font-size: 34pt;
   line-height: 1.08;

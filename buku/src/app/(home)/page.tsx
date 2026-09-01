@@ -94,7 +94,7 @@ export default function HomePage() {
             </dl>
           </div>
 
-          {/* Sampul buku — komposisi tipografis, bukan gambar. */}
+          {/* Sampul buku: ilustrasi di atas, punggung oranye seperti versi cetak. */}
           <div className="hidden lg:block">
             <div className="relative w-[248px] rotate-[-1.5deg] rounded-r-md rounded-l-sm border border-fd-border bg-fd-card shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)]">
               <span
@@ -102,6 +102,11 @@ export default function HomePage() {
                 className="absolute inset-y-0 left-0 w-2.5 rounded-l-sm bg-fd-primary"
               />
               <div className="flex h-[352px] flex-col justify-between p-6 pl-8">
+                <img
+                  src="/gambar/sampul.png"
+                  alt=""
+                  className="-mx-1 mb-2 w-[calc(100%+0.5rem)] rounded-sm bg-white"
+                />
                 <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-fd-muted-foreground">
                   Dinas Pariwisata
                   <br />
@@ -184,7 +189,7 @@ export default function HomePage() {
             di bukunya.
           </p>
           <p className="mt-4 text-xs text-fd-muted-foreground">
-            {appName} · disiapkan RantAI untuk Dinas Pariwisata dan Ekonomi Kreatif.
+            {appName} · Umar Ali Ahmad, Evan Pradipta, dan Dinas Pariwisata Jakarta.
           </p>
         </section>
       </div>
