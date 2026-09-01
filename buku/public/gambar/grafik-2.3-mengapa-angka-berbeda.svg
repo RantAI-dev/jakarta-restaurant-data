@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 572" width="1200" height="572" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="572" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Mengapa angka berbeda, dan di mana didamaikan</text>
+<rect x="48" y="84" width="520" height="128" rx="4" fill="#ffffff" stroke="#1a2b42" stroke-width="1.6"/>
+<text x="70" y="118" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1a2b42" text-anchor="start">BPS Bali</text>
+<text x="70" y="158" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1a2b42" text-anchor="start">6.333.360 kunjungan</text>
+<text x="70" y="186" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">Seluruh pintu masuk Bali, rilis 3 Februari 2025</text>
+<rect x="632" y="84" width="520" height="128" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.6"/>
+<text x="654" y="118" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#b5651d" text-anchor="start">Angka yang beredar di media</text>
+<text x="654" y="158" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#b5651d" text-anchor="start">±5,98 juta kunjungan</text>
+<text x="654" y="186" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">Hanya kedatangan langsung lewat Bandara Ngurah Rai</text>
+<text x="600" y="158" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#6b7280" text-anchor="middle">≠</text>
+<text x="600" y="242" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="middle">Selisih ratusan ribu kunjungan bukan tanda ada yang berbohong, melainkan tanda definisi operasionalnya berbeda</text>
+<text x="48" y="280" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1a2b42" text-anchor="start">Mekanisme yang mendamaikan</text>
+<rect x="48" y="296" width="348" height="92" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.3"/>
+<text x="66" y="326" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1a2b42" text-anchor="start">Forum Satu Data</text>
+<text x="66" y="350" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Menyelaraskan definisi dan jadwal rilis</text>
+<text x="66" y="366.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">antar-walidata</text>
+<rect x="420" y="296" width="348" height="92" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.3"/>
+<text x="438" y="326" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1a2b42" text-anchor="start">MoU lintas lembaga</text>
+<text x="438" y="350" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Menetapkan siapa bertanggung jawab atas</text>
+<text x="438" y="366.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">data apa</text>
+<rect x="792" y="296" width="348" height="92" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.3"/>
+<text x="810" y="326" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1a2b42" text-anchor="start">Audit metadata BPS</text>
+<text x="810" y="350" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Memastikan data yang masuk portal memenuhi</text>
+<text x="810" y="366.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">standar</text>
+<rect x="48" y="420" width="1104" height="58" rx="4" fill="#1a2b42" stroke="#1a2b42" stroke-width="1.2"/>
+<text x="600" y="455" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Hasilnya bukan satu angka tunggal, melainkan konsensus tentang angka mana dipakai untuk konteks apa</text>
+<text x="48" y="512" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Contoh kunjungan wisman ke Bali sepanjang 2024, ketika dua angka yang sama-sama benar beredar bersamaan. Sumber: BPS Bali (rilis</text>
+<text x="48" y="532" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">3 Februari 2025) dan naskah subbab 2.4, diolah.</text>
+</svg>

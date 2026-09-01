@@ -1,90 +1,77 @@
-# Gambar yang Perlu Dibuat
+# Gambar Buku: yang Sudah Dibuat dan yang Perlu Anda Buat
 
-Daftar visual yang belum ada di naskah, disusun setelah menghitung sebaran 32
-visual yang sudah jadi. Ditujukan untuk dikerjakan di repo naskah
-(`bab/assets/scripts/`), memakai `theme.py` yang sudah ada supaya gayanya
-seragam dengan visual yang sekarang.
+Naskah membawa 32 figure. Setelah dihitung sebarannya, dua bab pembuka —
+Bab 1 dan Bab 2, sekitar 30 halaman pertama — tidak punya satu pun visual, dan
+6.1, 6.2, 9.3, serta 4.5.3 juga kosong.
 
-## Di mana kekosongannya
+Sepuluh di antaranya sudah dibuat di repo ini. Sisanya butuh data baru atau
+model gambar, dan itu bagian Anda.
 
-| Bab | Visual | Catatan |
+## Sudah jadi — 10 diagram SVG
+
+Dibangun oleh `scripts/build-diagrams.mjs`, memakai palet dan huruf yang sama
+dengan `theme.py` di repo naskah, sehingga duduk berdampingan dengan 32 figure
+matplotlib tanpa terlihat berasal dari dua dunia berbeda. Semuanya SVG: teksnya
+tetap bisa diseleksi dan dicari di dalam PDF, dan tajam di semua ukuran cetak.
+
+| ID | Letak | Isi |
 |---|---|---|
-| **1. Konseptualisasi GCI** | **0** | 4 sub-bab, ±14 halaman, tanpa satu pun visual |
-| **2. Arsitektur & Sumber Data** | **0** | 4 sub-bab, ±16 halaman, tanpa satu pun visual |
-| 3. Pengolahan Data | 4 | memadai |
-| 4. Atraksi & Aksesibilitas | 5 | memadai |
-| Interlude 4.5 | 3 | 4.5.3 (Jakarta) tanpa visual |
-| 5. Indikator Proksi | 5 | memadai |
-| **6. Perilaku & Sentimen** | 2 | 6.1 dan 6.2 tanpa visual, padahal keduanya paling teknis |
-| 7. Ekonometrika | 5 | memadai |
-| 8. Visualisasi & Kebijakan | 4 | memadai |
-| 9. SDI & Crawling | 4 | 9.3 tanpa visual |
+| Grafik 1.1 | 1.1 | Struktur dimensi Kearney, GPCI, dan Resonance; dimensi yang memuat pariwisata ditandai |
+| Grafik 1.2 | 1.2 | Empat jenis data pariwisata → dimensi indeks yang memakainya |
+| Tabel 1.1 | 1.3 | Siapa menghitung kunjungan atas dasar apa, dan apa yang tidak tercakup |
+| Grafik 1.3 | 1.4 | Rantai Satu Data Indonesia, tiga prasyarat Perpres 39/2019, dan titik yang masih putus |
+| Grafik 2.1 | 2.1 | Tiga lembaga inti: terbitan, frekuensi, granularitas |
+| Tabel 2.1 | 2.2 | Sumber tradisional vs big data pada enam aspek |
+| Grafik 2.2 | 2.3 | Lapisan data lake daerah, dari zona mentah sampai data mart |
+| Grafik 2.3 | 2.4 | Dua angka kunjungan Bali 2024 yang sama-sama benar, dan mekanisme yang mendamaikannya |
+| Grafik 6.1 | 6.1 | Enam langkah pra-pemrosesan ulasan daring |
+| Grafik 9.3 | 9.3 | Alur data crowdsourcing dari kontributor sampai publikasi |
 
-Dua bab pembuka adalah masalah terbesar: pembaca melewati 30 halaman pertama —
-justru bagian yang paling menentukan apakah ia lanjut membaca — tanpa satu pun
-gambar.
+Semua isinya diambil dari pernyataan yang sudah ada di naskah — tidak ada angka
+atau klaim baru. Sumbernya dicantumkan di dalam tiap gambar.
 
-## Aturan main
+Untuk mengubahnya: sunting `scripts/build-diagrams.mjs`, lalu
 
-Mengikuti pemisahan yang terbukti: **diagram berlabel dibuat dengan kode**,
-bukan model gambar. Model gambar tidak bisa dipercaya menulis label, apalagi
-dalam bahasa Indonesia; hasilnya huruf palsu yang mirip kata tetapi bukan, dan
-itu tidak bisa dipakai di dokumen resmi.
+```bash
+npm run diagrams:build && npm run import:book && npm run build && npm run pdf:build
+```
 
-- **Kode** (matplotlib / graphviz, ikut `theme.py`) — semua diagram, bagan alir,
-  tabel, dan chart. Semua usulan di bawah masuk kategori ini kecuali yang
-  ditandai *ilustrasi*.
-- **Model gambar** — hanya untuk ilustrasi tanpa teks sama sekali (bagian
-  terakhir dokumen ini).
+Posisi tiap diagram ditentukan di `scripts/import-book.mjs` (konstanta
+`DIAGRAM`), dicocokkan dengan judul sub-bagian di naskah. Kalau judul di naskah
+berubah, impor **berhenti dengan galat** alih-alih diam-diam menghilangkan
+diagram.
 
-Penomoran mengikuti pola naskah, jadi berkasnya otomatis terpasang oleh importer
-edisi web: `grafik-1.1-*.png`, `tabel-2.1-*.png`, dan seterusnya.
+## Perlu Anda buat — 3 visual yang menunggu data
 
-## Prioritas 1 — Bab 1 dan 2 (data sudah ada di naskah)
+Ini tidak bisa dibuat dari teks yang ada: angkanya belum ada di mana pun.
+Begitu datanya tersedia sebagai CSV di repo naskah, visualnya bisa dibuat
+dengan kode seperti figure lainnya.
 
-Keempat visual ini tidak butuh data baru: semuanya menggambarkan ulang apa yang
-sudah dinyatakan di teks.
+| ID | Letak | Isi | Data yang dibutuhkan |
+|---|---|---|---|
+| Grafik 6.2 | 6.1 | Distribusi sentimen dan sepuluh aspek yang paling sering muncul | Hasil hitung *walkthrough* ulasan TripAdvisor Bali yang dibahas di 6.1, tetapi angkanya tidak ditabelkan di naskah |
+| Grafik 6.4 | 6.2 | Sebaran *geotag* unggahan wisatawan di satu kota | Ekspor agregat titik geotag; belum ada berkasnya sama sekali |
+| Grafik 4.5.4 | 4.5.3 | Komposisi maksud kunjungan ke Jakarta | `jakarta-komposisi-kunjungan` sempat ada di repo naskah lalu dihapus |
 
-| ID | Letak | Jenis | Isi | Sumber |
-|---|---|---|---|---|
-| GRAFIK 1.1 | 1.1 | Matriks dimensi | Tiga indeks berdampingan: Kearney (5 dimensi), GPCI (6), Resonance (3). Dimensi yang memuat pariwisata ditandai warna aksen | Teks 1.1 |
-| GRAFIK 1.2 | 1.2 | Diagram alir | Empat jenis data pariwisata (kunjungan, atraksi/budaya, akomodasi & kuliner, ulasan daring) → dimensi indeks yang memakainya | Teks 1.2 |
-| TABEL 1.1 | 1.3 | Tabel | Definisi "wisatawan" menurut IRTS 2008, BPS, dan praktik tingkat kota; kolom: cakupan, yang dihitung, yang luput | Teks 1.3 |
-| GRAFIK 1.3 | 1.4 | Diagram alir | Rantai Satu Data Indonesia: produsen data → walidata → pengguna, dengan titik putus yang dibahas di 1.4 ditandai | Teks 1.4 |
-| GRAFIK 2.1 | 2.1 | Bagan | Tiga lembaga inti (BPS, Kemenpar, Disparekraf) — apa yang diterbitkan, frekuensi, dan tingkat granularitasnya | Teks 2.1 |
-| TABEL 2.1 | 2.2 | Tabel | Sumber tradisional vs *big data*: cakupan, granularitas spasial/temporal, jeda rilis, bias utama | Teks 2.1–2.2 |
-| GRAFIK 2.2 | 2.3 | Arsitektur | Lapisan *data lake* pariwisata daerah: mentah → terkurasi → mart, dengan posisi walidata | Teks 2.3 |
-| GRAFIK 2.3 | 2.4 | Diagram alir | Mengapa angka antar-instansi berbeda, dan di titik mana direkonsiliasi | Teks 2.4 |
+## Perlu Anda buat — 4 ilustrasi (model gambar)
 
-## Prioritas 2 — Bab 6 (sebagian butuh data)
+Halaman pembatas Bagian I–IV sekarang hanya berisi judul, dan muncul empat kali
+sepanjang buku. Ini satu-satunya tempat model gambar layak dipakai, karena
+ilustrasinya **tidak boleh memuat teks sama sekali**.
 
-| ID | Letak | Jenis | Isi | Status data |
-|---|---|---|---|---|
-| GRAFIK 6.1 | 6.1 | Diagram alir | Pipeline *text mining*: ulasan mentah → pembersihan → tokenisasi → *stopword* → *stemming* → skor sentimen | Ada — *walkthrough* TripAdvisor Bali di 6.1 |
-| GRAFIK 6.2 | 6.1 | Batang | Distribusi sentimen dan sepuluh aspek yang paling sering muncul dari *walkthrough* yang sama | **Butuh data**: hasil hitung *walkthrough* belum ditabelkan di naskah |
-| GRAFIK 6.4 | 6.2 | Peta titik | Sebaran *geotag* unggahan wisatawan di satu kota, menunjukkan konsentrasi kawasan | **Butuh data**: belum ada berkas; perlu ekspor agregat dari sumber media sosial |
+Model gambar tidak bisa dipercaya menulis label, apalagi bahasa Indonesia:
+hasilnya huruf palsu yang mirip kata tetapi bukan. Karena itu semua diagram di
+atas dibuat dengan kode, dan ilustrasi ini dirancang supaya tidak butuh huruf.
 
-## Prioritas 3 — sisanya
-
-| ID | Letak | Jenis | Isi | Status data |
-|---|---|---|---|---|
-| GRAFIK 4.5.4 | 4.5.3 | Komposisi | Maksud kunjungan ke Jakarta (rekreasi / bisnis / MICE / keluarga) | **Butuh data**: berkas `jakarta-komposisi-kunjungan` sempat ada lalu dihapus |
-| GRAFIK 9.3 | 9.3 | Diagram alir | Alur data *crowdsourcing*: kontribusi warga → moderasi → validasi walidata → publikasi | Ada — teks 9.3 |
-
-## Ilustrasi tanpa teks (satu-satunya yang cocok dibuat model gambar)
-
-Empat ilustrasi banner untuk halaman pembatas Bagian I–IV. Halaman itu sekarang
-hanya berisi judul, dan ia muncul empat kali di sepanjang buku.
-
-Kerangka prompt yang menahan model dari menulis huruf palsu:
+Kerangka prompt:
 
 ```
 Flat vector illustration, clean white background, no text, no letters, no numbers.
 <objek dan komposisi, spesifik dan terhitung>
 All panels and screens are EMPTY rectangles with no writing inside.
 Uniform figure scale and identical line weight across all elements.
-Strict palette: deep navy #1F3864, medium blue #2E5C9A, pale blue-grey #EDF1F8,
-accent orange #D2601A, white background.
+Strict palette: deep navy #1a2b42, medium blue #4a6fa5, pale blue-grey #eef4f9,
+accent terracotta #b5651d, white background.
 Minimal geometric flat design, corporate infographic style.
 Wide banner composition, 2400x900 pixels.
 ```
@@ -93,26 +80,21 @@ Objek per bagian:
 
 | Bagian | Objek |
 |---|---|
-| I · Fondasi | Siluet kota dengan menara pemeringkatan berundak; tanpa angka |
-| II · Metodologi | Aliran titik data dari bandara, pelabuhan, dan menara seluler menuju satu wadah |
-| III · Indikator | Timbangan dan slider bobot; kotak indikator kosong tanpa tulisan |
+| I · Fondasi | Siluet kota dengan podium peringkat berundak di latar depan |
+| II · Metodologi | Aliran titik data dari pesawat, kapal, dan menara seluler menuju satu wadah |
+| III · Indikator | Timbangan dan deretan slider bobot; kotak indikator kosong |
 | IV · Aplikasi | Ruang kendali dengan panel kosong dan peta kota tanpa label |
 
-Setiap gambar dinormalisasi sebelum dipasang: ratakan latar ke putih murni,
-buang margin kosong (`getbbox`), lalu beri padding seragam. Tanpa langkah ini
-ilustrasi tampak mengecil sendiri di tengah halaman.
+Tiga hal yang menentukan hasilnya:
 
-## Setelah gambar jadi
+- `no text, no letters, no numbers` — diulang tiga cara; sekali saja sering bocor.
+- Palet disebut sebagai hex, diambil dari `theme.py`, supaya nyambung dengan
+  seluruh visual lain.
+- Rasio lebar 2400×900, supaya tidak memakan setengah halaman.
 
-```bash
-cd buku
-npm run import:book    # menyalin figure baru + memetakan nomornya
-npm run build
-npm run pdf:build
-npm run pdf:preview    # lihat halamannya
-```
+Sebelum dipasang, tiap gambar dinormalisasi: ratakan latar ke putih murni
+(`im.point(lambda v: 255 if v > 246 else v)`), buang margin kosong (`getbbox`),
+lalu beri padding seragam. Tanpa langkah ini ilustrasi tampak mengecil sendiri
+di tengah halaman.
 
-Importer mencocokkan nomor placeholder ke nama berkas, jadi penamaan berkas
-harus tepat: `grafik-1.1-<slug>.png`. Placeholder `[INSERT GRAFIK 1.1: …]` juga
-perlu ditambahkan di naskah pada posisi yang diinginkan — tanpa itu, gambar
-tidak punya tempat.
+Kirimkan berkasnya, dan pemasangannya saya urus.

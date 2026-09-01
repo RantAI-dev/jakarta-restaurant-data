@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 424" width="1200" height="424" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="424" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Struktur dimensi tiga pemeringkatan kota</text>
+<rect x="48" y="70" width="352" height="204" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M48 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="64" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">Kearney Global City Index</text>
+<circle cx="66" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Business Activity</text>
+<circle cx="66" cy="157" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Human Capital</text>
+<circle cx="66" cy="187" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Information Exchange</text>
+<rect x="56" y="206" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="66" cy="217" r="2.6" fill="#b5651d"/>
+<text x="78" y="222" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Cultural Experience</text>
+<circle cx="66" cy="247" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="252" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Political Engagement</text>
+<rect x="424" y="70" width="352" height="234" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M424 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="440" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">GPCI (Mori Memorial Foundation)</text>
+<circle cx="442" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Economy</text>
+<circle cx="442" cy="157" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Research and Development</text>
+<rect x="432" y="176" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="442" cy="187" r="2.6" fill="#b5651d"/>
+<text x="454" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Cultural Interaction</text>
+<circle cx="442" cy="217" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="222" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Livability</text>
+<rect x="432" y="236" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="442" cy="247" r="2.6" fill="#b5651d"/>
+<text x="454" y="252" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Accessibility</text>
+<circle cx="442" cy="277" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="282" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Environment</text>
+<rect x="800" y="70" width="352" height="144" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M800 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="816" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">Resonance World's Best Cities</text>
+<circle cx="818" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="830" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Livability</text>
+<rect x="808" y="146" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="818" cy="157" r="2.6" fill="#b5651d"/>
+<text x="830" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Lovability</text>
+<circle cx="818" cy="187" r="2.6" fill="#4a6fa5"/>
+<text x="830" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Prosperity</text>
+<rect x="48" y="318" width="14" height="14" rx="3" fill="#f7ede2" stroke="#b5651d"/>
+<text x="70" y="330" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start">Dimensi yang memuat komponen pariwisata secara langsung</text>
+<text x="48" y="364" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Kearney memakai lima dimensi, GPCI enam, Resonance tiga. Pariwisata tidak berdiri sebagai dimensi tersendiri di ketiganya; ia</text>
+<text x="48" y="384" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">masuk lewat dimensi budaya, konektivitas, dan reputasi. Sumber: naskah subbab 1.1, diolah.</text>
+</svg>

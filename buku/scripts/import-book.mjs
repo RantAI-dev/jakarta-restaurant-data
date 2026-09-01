@@ -62,6 +62,98 @@ const CHAPTERS = {
 
 const FIGURES_SRC = path.join(BOOK, 'assets', 'figures');
 const FIGURES_OUT = path.join(ROOT, 'public', 'figures');
+const DIAGRAM_DIR = path.join(ROOT, 'public', 'gambar');
+
+/**
+ * Diagram yang dibuat di repo ini (scripts/build-diagrams.mjs), bukan di repo
+ * naskah — untuk bab yang sama sekali tidak punya visual.
+ *
+ * Naskah tidak memuat placeholder untuk visual ini, jadi posisinya ditentukan
+ * di sini: disisipkan tepat setelah sub-bagian yang dirujuk `setelah`.
+ * Begitu naskah kelak memuat placeholder sendiri, entri terkait tinggal dihapus.
+ */
+const DIAGRAM = [
+  {
+    bab: 'bab-01',
+    setelah: 'Resonance: Perspektif Berbeda',
+    tipe: 'Grafik',
+    id: '1.1',
+    berkas: 'grafik-1.1-struktur-tiga-indeks.svg',
+    alt: 'Perbandingan dimensi Kearney Global City Index, GPCI, dan Resonance; dimensi yang memuat komponen pariwisata ditandai.',
+  },
+  {
+    bab: 'bab-01',
+    setelah: 'Accessibility: Lebih dari Bandara Besar',
+    tipe: 'Grafik',
+    id: '1.2',
+    berkas: 'grafik-1.2-data-ke-dimensi.svg',
+    alt: 'Alur empat jenis data pariwisata menuju dimensi indeks kota yang memakainya.',
+  },
+  {
+    bab: 'bab-01',
+    setelah: 'Multi-Sumber, Multi-Definisi',
+    tipe: 'Tabel',
+    id: '1.1',
+    berkas: 'tabel-1.1-siapa-menghitung-apa.svg',
+    alt: 'Dasar penghitungan kunjungan menurut BPS, Kementerian Pariwisata, Disparekraf daerah, operator bandara, dan OTA, beserta yang tidak tercakup masing-masing.',
+  },
+  {
+    bab: 'bab-01',
+    setelah: 'SDI dan Implikasinya untuk Statistik Pariwisata',
+    tipe: 'Grafik',
+    id: '1.3',
+    berkas: 'grafik-1.3-rantai-satu-data.svg',
+    alt: 'Rantai Satu Data Indonesia dari produsen data ke pengguna, tiga prasyarat Perpres 39/2019, dan titik yang masih putus.',
+  },
+  {
+    bab: 'bab-02',
+    setelah: 'Tiga Lembaga Inti',
+    tipe: 'Grafik',
+    id: '2.1',
+    berkas: 'grafik-2.1-tiga-lembaga.svg',
+    alt: 'Terbitan, frekuensi, dan granularitas data dari BPS, Kementerian Pariwisata, dan Disparekraf daerah.',
+  },
+  {
+    bab: 'bab-02',
+    setelah: 'Apa yang Bisa Dilakukan dengan Big Data, dan Apa yang Tidak',
+    tipe: 'Tabel',
+    id: '2.1',
+    berkas: 'tabel-2.1-tradisional-vs-bigdata.svg',
+    alt: 'Perbandingan sumber tradisional dan big data pada cakupan, granularitas, jeda rilis, bias, dan otoritas.',
+  },
+  {
+    bab: 'bab-02',
+    setelah: 'Satu Data Indonesia sebagai Kerangka Kebijakan',
+    tipe: 'Grafik',
+    id: '2.2',
+    berkas: 'grafik-2.2-lapisan-data-lake.svg',
+    alt: 'Lapisan data lake pariwisata daerah dari zona mentah ke data mart, dengan tata kelola Satu Data Indonesia yang melingkupinya.',
+  },
+  {
+    bab: 'bab-02',
+    setelah: 'Mekanisme Validasi yang Ada',
+    tipe: 'Grafik',
+    id: '2.3',
+    berkas: 'grafik-2.3-mengapa-angka-berbeda.svg',
+    alt: 'Dua angka kunjungan wisman Bali 2024 yang sama-sama benar, dan tiga mekanisme yang mendamaikannya.',
+  },
+  {
+    bab: 'bab-06',
+    setelah: 'Pra-Pemrosesan Teks',
+    tipe: 'Grafik',
+    id: '6.1',
+    berkas: 'grafik-6.1-pipeline-text-mining.svg',
+    alt: 'Enam langkah pra-pemrosesan ulasan daring, dari teks mentah sampai siap diberi skor sentimen.',
+  },
+  {
+    bab: 'bab-09',
+    setelah: 'Platform yang Bisa Dipakai',
+    tipe: 'Grafik',
+    id: '9.3',
+    berkas: 'grafik-9.3-alur-crowdsourcing.svg',
+    alt: 'Alur data crowdsourcing dari kontributor sampai publikasi, dengan empat masalah kualitas yang ditangani saat moderasi dan verifikasi.',
+  },
+];
 
 // ---------------------------------------------------------------- utilities
 
@@ -178,6 +270,47 @@ function transformPlaceholders(md, figures) {
 /** Peta figure dibaca sekali, dipakai semua halaman. */
 let FIGURES = new Map();
 
+/** Ukuran SVG dibaca dari atribut width/height pada elemen akarnya. */
+function ukuranSvg(file) {
+  const kepala = fs.readFileSync(file, 'utf8').slice(0, 400);
+  return {
+    lebar: Number(kepala.match(/\bwidth="(\d+)"/)?.[1] ?? 1200),
+    tinggi: Number(kepala.match(/\bheight="(\d+)"/)?.[1] ?? 800),
+  };
+}
+
+/**
+ * Sisipkan diagram buatan repo ini ke akhir sub-bagian yang dirujuk.
+ *
+ * Dicocokkan dengan teks judul apa adanya; kalau judulnya berubah di naskah,
+ * impor berhenti dengan galat alih-alih diam-diam menghilangkan diagram.
+ */
+function sisipkanDiagram(md, chapterId) {
+  const untukBab = DIAGRAM.filter((d) => d.bab === chapterId);
+  if (untukBab.length === 0) return md;
+
+  let baris = md.split('\n');
+
+  for (const d of untukBab) {
+    const indeksJudul = baris.findIndex(
+      (l) => l.startsWith('#') && plainText(l.replace(/^#+\s*/, '')) === d.setelah,
+    );
+    if (indeksJudul === -1) continue;
+
+    // Akhir sub-bagian: judul berikutnya pada tingkat mana pun.
+    let akhir = baris.findIndex((l, i) => i > indeksJudul && /^#{2,4}\s/.test(l));
+    if (akhir === -1) akhir = baris.length;
+
+    const { lebar, tinggi } = ukuranSvg(path.join(DIAGRAM_DIR, d.berkas));
+    const markup = `<GambarBuku tipe="${d.tipe}" id="${d.id}" src="/gambar/${d.berkas}" lebar={${lebar}} tinggi={${tinggi}} alt="${jsxAttr(d.alt)}" />`;
+
+    baris = [...baris.slice(0, akhir), '', markup, '', ...baris.slice(akhir)];
+    d.terpasang = true;
+  }
+
+  return baris.join('\n');
+}
+
 function transformBody(md) {
   let out = md;
 
@@ -268,7 +401,10 @@ function buildChapter(partDir, chapterId) {
     pages.push(slug);
     write(
       path.join(dir, `${slug}.mdx`),
-      page({ title: s.heading, body: transformBody(s.lines.join('\n')) }),
+      page({
+        title: s.heading,
+        body: sisipkanDiagram(transformBody(s.lines.join('\n')), chapterId),
+      }),
     );
   }
 
@@ -354,6 +490,16 @@ function main() {
 
   totalHalaman += buildLampiran();
   console.log(`lampiran: ok`);
+
+  const luput = DIAGRAM.filter((d) => !d.terpasang);
+  if (luput.length) {
+    console.error(
+      `\nDiagram tidak terpasang karena judul rujukannya tidak ada di naskah:\n` +
+        luput.map((d) => `  ${d.tipe} ${d.id} → "${d.setelah}"`).join('\n'),
+    );
+    process.exit(1);
+  }
+  console.log(`diagram: ${DIAGRAM.length} SVG terpasang`);
 
   writeMeta(OUT, {
     title: 'Statistika Pariwisata Perkotaan',

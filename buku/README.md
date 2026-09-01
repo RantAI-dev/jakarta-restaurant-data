@@ -28,6 +28,7 @@ perlu akses ke repo naskah.
 ```bash
 cd ../buku-statistika-pariwisata-perkotaan && git pull
 cd ../buku
+npm run diagrams:build # diagram SVG buatan repo ini
 npm run import:book
 npm run build          # pastikan naskah baru tidak memecah MDX
 npm run pdf:build      # cetak ulang berkas PDF dari isi yang baru
@@ -134,6 +135,20 @@ Batasnya dihitung dari halaman pertama yang memuat pembatas "Bagian I", bukan
 angka tetap yang akan basi begitu daftar isinya memanjang.
 
 ## Visual
+
+Buku memakai dua sumber visual:
+
+1. **32 figure dari naskah** (`bab/assets/figures/*.png`) — dirender skrip
+   matplotlib di repo naskah, dipakai apa adanya. Keterangan dan sumber sudah
+   tercetak di dalam gambar.
+2. **10 diagram SVG dari repo ini** (`scripts/build-diagrams.mjs`) — untuk bab
+   yang naskahnya tidak punya visual sama sekali, terutama Bab 1 dan 2.
+   Paletnya mengikuti `theme.py` naskah supaya keduanya tidak terlihat berasal
+   dari dua dunia berbeda; teks di dalam SVG tetap bisa diseleksi di PDF.
+
+Yang masih kurang, termasuk empat ilustrasi yang memang perlu model gambar,
+didaftar di `docs/gambar-yang-perlu-dibuat.md`.
+
 
 Semua grafik dan tabel diambil dari `bab/assets/figures/` — berkas yang dirender
 skrip matplotlib di repo naskah, sama persis dengan yang dipakai buku cetak.

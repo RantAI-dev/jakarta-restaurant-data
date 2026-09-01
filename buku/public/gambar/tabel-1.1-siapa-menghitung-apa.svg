@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 439" width="1200" height="439" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="439" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Siapa menghitung kunjungan, dan atas dasar apa</text>
+<rect x="48" y="70" width="1104" height="42" fill="#1a2b42"/>
+<text x="60" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Lembaga</text>
+<text x="280.8" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Dasar penghitungan</text>
+<text x="744.48" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Yang tidak tercakup</text>
+<text x="60" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">BPS</text>
+<text x="280.8" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Pintu masuk imigrasi: bandara, pelabuhan, pos lintas batas</text>
+<text x="744.48" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Pelintas jalur tidak resmi; pergerakan di dalam kota</text>
+<line x1="48" y1="151" x2="1152" y2="151" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="48" y="151" width="1104" height="60" fill="#f7f8fa"/>
+<text x="60" y="177" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Kementerian Pariwisata</text>
+<text x="280.8" y="177" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Data yang sama dengan BPS, disajikan dan dikelompokkan berbeda</text>
+<text x="744.48" y="177" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Selisih penyajian membuat angkanya tidak selalu identik</text>
+<text x="744.48" y="198" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">dengan BPS</text>
+<line x1="48" y1="211" x2="1152" y2="211" stroke="#e5e7eb" stroke-width="1"/>
+<text x="60" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Disparekraf daerah</text>
+<text x="280.8" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Data hotel, restoran, dan event di yurisdiksinya</text>
+<text x="744.48" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Wisatawan yang tidak menginap di akomodasi berizin</text>
+<line x1="48" y1="250" x2="1152" y2="250" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="48" y="250" width="1104" height="60" fill="#f7f8fa"/>
+<text x="60" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Operator bandara</text>
+<text x="280.8" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Passenger throughput di terminal</text>
+<text x="744.48" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Wisatawan yang masuk lewat moda lain; penumpang transit</text>
+<text x="744.48" y="297" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">ikut terhitung</text>
+<line x1="48" y1="310" x2="1152" y2="310" stroke="#e5e7eb" stroke-width="1"/>
+<text x="60" y="336" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">OTA (Traveloka, Tiket.com)</text>
+<text x="280.8" y="336" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Transaksi pemesanan di platform sendiri</text>
+<text x="744.48" y="336" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Pemesanan langsung, walk-in, dan platform pesaing</text>
+<line x1="48" y1="349" x2="1152" y2="349" stroke="#e5e7eb" stroke-width="1"/>
+<text x="48" y="379" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Tidak ada satu angka pasti untuk "kunjungan ke Kota X"; yang ada adalah rentang estimasi yang bergantung pada definisi dan</text>
+<text x="48" y="399" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">metode pencatatan. Sumber: naskah subbab 1.3, diolah.</text>
+</svg>

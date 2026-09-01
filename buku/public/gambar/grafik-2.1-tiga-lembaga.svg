@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 398" width="1200" height="398" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="398" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Tiga lembaga inti sumber data pariwisata</text>
+<rect x="48" y="70" width="352" height="204" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M48 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="64" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">BPS</text>
+<circle cx="66" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Statistik Kunjungan Wisman (tahunan,</text>
+<text x="78" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">rincian bulanan dan kebangsaan)</text>
+<circle cx="66" cy="187" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Statistik Pengeluaran Wisman, berbasis PES</text>
+<circle cx="66" cy="217" r="2.6" fill="#4a6fa5"/>
+<text x="78" y="222" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Statistik Hotel: TPKH per provinsi</text>
+<rect x="56" y="236" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="66" cy="247" r="2.6" fill="#b5651d"/>
+<text x="78" y="252" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Granularitas: nasional dan provinsi</text>
+<rect x="424" y="70" width="352" height="204" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M424 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="440" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">Kementerian Pariwisata</text>
+<circle cx="442" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Direktori statistik bulanan wisman</text>
+<circle cx="442" cy="157" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Rincian asal negara dan pintu masuk</text>
+<circle cx="442" cy="187" r="2.6" fill="#4a6fa5"/>
+<text x="454" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Data perjalanan domestik terbatas; Survei</text>
+<text x="454" y="222" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Wisnus dikelola BPS</text>
+<rect x="432" y="236" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="442" cy="247" r="2.6" fill="#b5651d"/>
+<text x="454" y="252" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Granularitas: nasional</text>
+<rect x="800" y="70" width="352" height="234" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M800 74 a4 4 0 0 1 4 -4 h344 a4 4 0 0 1 4 4 v34 h-352 z" fill="#1a2b42"/>
+<text x="816" y="95" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="start">Disparekraf provinsi dan kabupaten/kota</text>
+<circle cx="818" cy="127" r="2.6" fill="#4a6fa5"/>
+<text x="830" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Data hotel, restoran, dan event di</text>
+<text x="830" y="162" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">wilayahnya</text>
+<circle cx="818" cy="187" r="2.6" fill="#4a6fa5"/>
+<text x="830" y="192" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Pemahaman pola kunjungan lokal yang lebih</text>
+<text x="830" y="222" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">dalam</text>
+<circle cx="818" cy="247" r="2.6" fill="#4a6fa5"/>
+<text x="830" y="252" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#1a1a1a" text-anchor="start">Publikasi belum terstandar antar-daerah</text>
+<rect x="808" y="266" width="336" height="26" rx="3" fill="#f7ede2"/>
+<circle cx="818" cy="277" r="2.6" fill="#b5651d"/>
+<text x="830" y="282" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="start">Granularitas: kota dan kabupaten</text>
+<text x="48" y="338" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Semakin ke kanan, datanya semakin granular tetapi semakin tidak terstandar. Pertanyaan tingkat kota hampir selalu memerlukan</text>
+<text x="48" y="358" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">gabungan ketiganya. Sumber: naskah subbab 2.1, diolah.</text>
+</svg>

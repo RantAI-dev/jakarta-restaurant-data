@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="460" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Lapisan data lake pariwisata daerah</text>
+<rect x="48" y="84" width="208" height="44" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<text x="62" y="112" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Imigrasi</text>
+<line x1="262" y1="106" x2="320" y2="216" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="48" y="140" width="208" height="44" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<text x="62" y="168" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Hotel dan restoran</text>
+<line x1="262" y1="162" x2="320" y2="216" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="48" y="196" width="208" height="44" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<text x="62" y="224" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Mobile positioning</text>
+<line x1="262" y1="218" x2="320" y2="216" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="48" y="252" width="208" height="44" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<text x="62" y="280" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Transaksi dan e-wallet</text>
+<line x1="262" y1="274" x2="320" y2="216" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="48" y="308" width="208" height="44" rx="4" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+<text x="62" y="336" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Media sosial</text>
+<line x1="262" y1="330" x2="320" y2="216" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="330" y="168" width="268" height="96" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<text x="348" y="200" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1a2b42" text-anchor="start">Zona mentah</text>
+<text x="348" y="224" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">Disimpan apa adanya: CSV, JSON,</text>
+<text x="348" y="240.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">gambar, hasil scrape</text>
+<line x1="604" y1="216" x2="614" y2="216" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="620" y="168" width="268" height="96" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<text x="638" y="200" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1a2b42" text-anchor="start">Zona terkurasi</text>
+<text x="638" y="224" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">Dibersihkan, distandarkan, diberi</text>
+<text x="638" y="240.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">metadata</text>
+<line x1="894" y1="216" x2="904" y2="216" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="910" y="168" width="268" height="96" rx="4" fill="#1a2b42" stroke="#4a6fa5" stroke-width="1.4"/>
+<text x="928" y="200" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Data mart dan dasbor</text>
+<text x="928" y="224" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#dbe4ef" text-anchor="start">Siap dipakai untuk indikator dan</text>
+<text x="928" y="240.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#dbe4ef" text-anchor="start">kebijakan</text>
+<rect x="330" y="300" width="828" height="66" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.3"/>
+<text x="348" y="327" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#b5651d" text-anchor="start">Tata kelola Satu Data Indonesia</text>
+<text x="348" y="348" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Walidata yang ditetapkan · standar metadata · interoperabilitas lewat API — berlaku di seluruh lapisan, bukan hanya di ujung</text>
+<text x="48" y="400" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Data lake menyimpan sinyal dalam bentuk mentahnya, lalu mengurasinya bertahap. Tanpa tata kelola di baris bawah, ia berhenti</text>
+<text x="48" y="420" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">menjadi gudang data yang tidak terurus. Sumber: naskah subbab 2.3, diolah.</text>
+</svg>

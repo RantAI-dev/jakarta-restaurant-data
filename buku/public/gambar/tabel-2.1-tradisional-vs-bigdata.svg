@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 457" width="1200" height="457" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="457" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Sumber tradisional dan big data: apa bedanya</text>
+<rect x="48" y="70" width="1104" height="42" fill="#1a2b42"/>
+<text x="60" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Aspek</text>
+<text x="280.8" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Sumber tradisional (survei, imigrasi)</text>
+<text x="722.4000000000001" y="97" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="start">Big data (MPD, transaksi, media sosial)</text>
+<text x="60" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Cakupan</text>
+<text x="280.8" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Pelintas dan responden formal; jalur tidak resmi luput</text>
+<text x="722.4000000000001" y="138" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Nyaris universal di kalangan pengguna ponsel, tetapi hanya</text>
+<text x="722.4000000000001" y="159" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">sebagian operator</text>
+<line x1="48" y1="172" x2="1152" y2="172" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="48" y="172" width="1104" height="39" fill="#f7f8fa"/>
+<text x="60" y="198" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Granularitas spasial</text>
+<text x="280.8" y="198" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Nasional dan provinsi</text>
+<text x="722.4000000000001" y="198" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Kelurahan hingga blok, tergantung densitas menara</text>
+<line x1="48" y1="211" x2="1152" y2="211" stroke="#e5e7eb" stroke-width="1"/>
+<text x="60" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Granularitas temporal</text>
+<text x="280.8" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Bulanan untuk wisman; tahunan untuk domestik</text>
+<text x="722.4000000000001" y="237" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Harian, bahkan per jam</text>
+<line x1="48" y1="250" x2="1152" y2="250" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="48" y="250" width="1104" height="39" fill="#f7f8fa"/>
+<text x="60" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Jeda rilis</text>
+<text x="280.8" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Beberapa minggu hingga beberapa tahun</text>
+<text x="722.4000000000001" y="276" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Nyaris seketika</text>
+<line x1="48" y1="289" x2="1152" y2="289" stroke="#e5e7eb" stroke-width="1"/>
+<text x="60" y="315" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Bias utama</text>
+<text x="280.8" y="315" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Nonrespons dan definisi operasional yang berbeda</text>
+<text x="722.4000000000001" y="315" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Populasi pemilik ponsel; bias merek dan pangsa operator</text>
+<line x1="48" y1="328" x2="1152" y2="328" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="48" y="328" width="1104" height="39" fill="#f7f8fa"/>
+<text x="60" y="354" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1a2b42" text-anchor="start">Otoritas</text>
+<text x="280.8" y="354" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Rujukan baku untuk kebijakan dan perbandingan internasional</text>
+<text x="722.4000000000001" y="354" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">Belum ada standar metadata; sulit diaudit pihak luar</text>
+<line x1="48" y1="367" x2="1152" y2="367" stroke="#e5e7eb" stroke-width="1"/>
+<text x="48" y="397" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Keduanya bukan pengganti satu sama lain: sumber tradisional memberi angka yang bisa dipertanggungjawabkan, big data memberi</text>
+<text x="48" y="417" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">kedalaman yang tidak bisa dijangkau survei. Sumber: naskah subbab 2.1–2.2, diolah.</text>
+</svg>

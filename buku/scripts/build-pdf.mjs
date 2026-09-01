@@ -183,8 +183,8 @@ async function cetak(cdp, url, { pakaiHeader }) {
       sessionId,
     );
     const jumlahGambar = aset.result?.value ?? 0;
-    if (jumlahGambar < 32) {
-      throw new Error(`Hanya ${jumlahGambar} gambar yang termuat; seharusnya 32 atau lebih.`);
+    if (jumlahGambar < 42) {
+      throw new Error(`Hanya ${jumlahGambar} gambar yang termuat; seharusnya 42 atau lebih.`);
     }
 
     const { stream } = await cdp.kirim(

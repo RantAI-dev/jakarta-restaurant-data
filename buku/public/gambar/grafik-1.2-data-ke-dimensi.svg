@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 566" width="1200" height="566" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="566" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Dari data pariwisata ke dimensi indeks kota</text>
+<rect x="48" y="86" width="300" height="76" rx="4" fill="#ffffff" stroke="#1a2b42" stroke-width="1.4"/>
+<text x="198" y="129" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="middle">Kunjungan dan lama tinggal</text>
+<rect x="48" y="182" width="300" height="76" rx="4" fill="#ffffff" stroke="#1a2b42" stroke-width="1.4"/>
+<text x="198" y="225" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="middle">Atraksi, museum, warisan budaya</text>
+<rect x="48" y="278" width="300" height="76" rx="4" fill="#ffffff" stroke="#1a2b42" stroke-width="1.4"/>
+<text x="198" y="321" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="middle">Akomodasi, kuliner, nightlife</text>
+<rect x="48" y="374" width="300" height="76" rx="4" fill="#ffffff" stroke="#1a2b42" stroke-width="1.4"/>
+<text x="198" y="417" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="middle">Ulasan daring dan media sosial</text>
+<rect x="800" y="86" width="352" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="816" y="112" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="start">Cultural Experience</text>
+<text x="816" y="132" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start">Kearney</text>
+<rect x="800" y="164" width="352" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="816" y="190" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="start">Human Capital</text>
+<text x="816" y="210" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start">Kearney</text>
+<rect x="800" y="242" width="352" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="816" y="268" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="start">Cultural Interaction</text>
+<text x="816" y="288" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start">GPCI</text>
+<rect x="800" y="320" width="352" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="816" y="346" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="start">Accessibility</text>
+<text x="816" y="366" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start">GPCI</text>
+<rect x="800" y="398" width="352" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="816" y="424" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1a2b42" text-anchor="start">Lovability</text>
+<text x="816" y="444" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#6b7280" text-anchor="start">Resonance</text>
+<line x1="354" y1="124" x2="792" y2="273" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<line x1="354" y1="124" x2="792" y2="351" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<line x1="354" y1="220" x2="792" y2="117" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<line x1="354" y1="316" x2="792" y2="117" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<line x1="354" y1="316" x2="792" y2="195" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<line x1="354" y1="412" x2="792" y2="429" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<text x="48" y="486" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Empat jenis data pariwisata yang dikumpulkan kota, dan dimensi indeks yang memakainya. Satu jenis data dapat menyumbang ke lebih</text>
+<text x="48" y="506" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">dari satu dimensi, sehingga perbaikan satu sumber data berdampak pada beberapa skor sekaligus. Sumber: naskah subbab 1.2,</text>
+<text x="48" y="526" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">diolah.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 574" width="1200" height="574" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="574" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Pipeline pra-pemrosesan ulasan daring</text>
+<rect x="48" y="80" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="74" cy="108" r="13" fill="#1a2b42"/>
+<text x="74" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="98" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Ulasan mentah</text>
+<text x="66" y="142" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Teks apa adanya dari platform ulasan</text>
+<line x1="404" y1="132" x2="418" y2="132" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="424" y="80" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="450" cy="108" r="13" fill="#1a2b42"/>
+<text x="450" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="474" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Normalisasi</text>
+<text x="442" y="142" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Huruf kecil, tanda baca dibuang, ejaan</text>
+<text x="442" y="158.875" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">diseragamkan</text>
+<line x1="780" y1="132" x2="794" y2="132" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="800" y="80" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="826" cy="108" r="13" fill="#1a2b42"/>
+<text x="826" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="850" y="113" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Tokenisasi</text>
+<text x="818" y="142" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Teks dipecah menjadi kata atau frasa</text>
+<line x1="976" y1="188" x2="224" y2="234" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="48" y="246" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="74" cy="274" r="13" fill="#1a2b42"/>
+<text x="74" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="98" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Penghapusan stopword</text>
+<text x="66" y="308" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">"yang", "dan", "di" dibuang</text>
+<line x1="404" y1="298" x2="418" y2="298" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="424" y="246" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="450" cy="274" r="13" fill="#1a2b42"/>
+<text x="450" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="474" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Stemming / lemmatization</text>
+<text x="442" y="308" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">"pergian", "pergi-pergi" → "pergi"</text>
+<line x1="780" y1="298" x2="794" y2="298" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ujung)"/>
+<rect x="800" y="246" width="352" height="104" rx="4" fill="#eef4f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<circle cx="826" cy="274" r="13" fill="#1a2b42"/>
+<text x="826" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="850" y="279" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="700" fill="#1a2b42" text-anchor="start">Named entity recognition</text>
+<text x="818" y="308" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Nama tempat, hotel, restoran, merek dikenali</text>
+<rect x="48" y="418" width="1104" height="62" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="600" y="456" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#b5651d" text-anchor="middle">Keluaran: teks bersih yang siap diberi skor sentimen dan dipetakan ke aspek layanan</text>
+<text x="48" y="514" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Pemilihan teknik bergantung pada bahasa: ulasan berbahasa Indonesia memerlukan daftar stopword dan stemmer yang berbeda dari</text>
+<text x="48" y="534" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">bahasa Inggris. Sumber: naskah subbab 6.1, diolah.</text>
+</svg>
