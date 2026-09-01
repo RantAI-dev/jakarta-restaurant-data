@@ -93,15 +93,15 @@ const SECTIONS = [
     no: "06",
     title: "GMTI — Jakarta Ramah Muslim",
     desc: "Masjid & mushalla se-DKI dari SIMAS Kemenag, digabung dengan seluruh dataset halal Dispar: restoran bersertifikat, hotel, mall, RPH, warisan Islam.",
-    count: "8.669",
+    count: "8.666",
     unit: "entri",
   },
 ];
 
 const STATS = [
-  { value: "12.239", label: "Total entri lapangan" },
+  { value: "12.236", label: "Total entri lapangan" },
   { value: "6", label: "Kategori data" },
-  { value: "4.082", label: "Titik ber-koordinat" },
+  { value: "4.079", label: "Titik ber-koordinat" },
   { value: "GCI", label: "Metodologi acuan" },
 ];
 
@@ -171,7 +171,7 @@ export default function AtlasPage() {
             {SECTIONS.length} kategori
           </span>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SECTIONS.map((s) => (
             <Link
               key={s.key}

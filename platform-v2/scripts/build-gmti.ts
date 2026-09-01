@@ -93,6 +93,32 @@ const NON_SIGNATURE = new Set(["Masjid Jami", "Mushalla Perumahan"]);
  */
 const geoKey = (s: string) => s.toLowerCase().replace(/[^a-z]/g, "");
 
+/**
+ * Halaman GMTI khusus DKI Jakarta, jadi baris di luar DKI dibuang di sini —
+ * mis. Bandara Soekarno-Hatta beserta dua masjidnya yang secara administratif
+ * ada di Tangerang. Dataset asalnya di katalog /sdi TIDAK diubah: di sana
+ * Soekarno-Hatta memang relevan karena melayani Jakarta.
+ *
+ * Penyaringan memakai atribusi wilayah (`kota`), BUKAN uji titik-dalam-poligon.
+ * Poligon GeoJSON yang kita punya kasar di pesisir utara, sehingga lokasi yang
+ * sah — PIK, RPHU Rorotan, Masjid Si Pitung Marunda, Mbah Priok, Pulau Onrust
+ * & Cipir — jatuh di luar poligon dan akan ikut terbuang kalau disaring
+ * berdasarkan koordinat.
+ *
+ * NON_DKI diperiksa lebih dulu karena ada nilai seperti
+ * "Tangerang (melayani Jakarta)" yang lolos kalau hanya dicek kata "Jakarta".
+ */
+const NON_DKI =
+  /tangerang|bekasi|depok|\bbogor\b|banten|karawang|\bserang\b|cikarang|cilegon/i;
+/** "seribu" saja, bukan "kepulauan seribu" — data memakai juga "Kep. Seribu". */
+const IS_DKI = /jakarta|seribu/i;
+
+const inDki = (kota: string | undefined): boolean => {
+  const k = kota ?? "";
+  if (NON_DKI.test(k)) return false;
+  return IS_DKI.test(k);
+};
+
 const num = (v: string | undefined): number | undefined => {
   if (v == null || v === "") return undefined;
   const n = Number(v);
@@ -124,7 +150,15 @@ function slugId(prefix: string, name: string, i: number): string {
 }
 
 async function main() {
-  const ibadah = ibadahRaw.rows as IbadahRow[];
+  const dibuang: string[] = [];
+
+  // SIMAS ditarik dengan prov=11 sehingga semestinya sudah DKI seluruhnya —
+  // saringan ini jaga-jaga kalau tarikan berikutnya kecolongan.
+  const ibadah = (ibadahRaw.rows as IbadahRow[]).filter((r) => {
+    if (inDki(r.kota)) return true;
+    dibuang.push(`ibadah: ${r.name} (${r.kota ?? "tanpa kota"})`);
+    return false;
+  });
 
   let coords: Record<string, CoordEntry> = {};
   try {
@@ -256,6 +290,10 @@ async function main() {
     src.file.rows.forEach((row, i) => {
       const name = clean(row.nama);
       if (!name) return;
+      if (!inDki(clean(row.kota))) {
+        dibuang.push(`${src.label}: ${name} (${clean(row.kota) ?? "tanpa kota"})`);
+        return;
+      }
       places.push({
         id: slugId(src.file.slug.slice(0, 12), name, i),
         name,
@@ -335,6 +373,13 @@ import type { GmtiAgg, GmtiCapaian, GmtiMeta, GmtiPlace, GmtiTipologi } from "./
     `\nexport const GMTI_CAPAIAN: GmtiCapaian[] = ${JSON.stringify(capaianRows, null, 1)};\n`;
 
   writeFileSync(at("../lib/gmti-data.ts"), header + body);
+
+  // Selalu sebutkan apa yang dibuang — penyaringan diam-diam bikin angka
+  // halaman tidak bisa ditelusuri.
+  if (dibuang.length) {
+    console.log(`  di luar DKI, dibuang (${dibuang.length}):`);
+    for (const d of dibuang) console.log(`    · ${d}`);
+  }
 
   const kb = (n: number) => `${Math.round(n / 1024)} KB`;
   console.log(

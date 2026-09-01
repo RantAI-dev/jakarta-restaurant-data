@@ -25,7 +25,7 @@ export const PILLAR_LABEL: Record<Pillar, string> = {
   makan: "Makan & minum",
   menginap: "Menginap",
   destinasi: "Destinasi & fasilitas",
-  program: "Program & inovasi",
+  program: "Program dan Event",
 };
 
 export const PILLAR_DESC: Record<Pillar, string> = {
@@ -33,7 +33,7 @@ export const PILLAR_DESC: Record<Pillar, string> = {
   makan: "Restoran, RPH, dan produk kuliner bersertifikat halal BPJPH/LPPOM MUI.",
   menginap: "Hotel syariah & ramah muslim — arah kiblat, mushalla, tempat wudhu.",
   destinasi: "Mall, bandara, dan situs warisan Islam dengan fasilitas ramah muslim.",
-  program: "Inovasi, kampung wisata, festival, dan program pendukung.",
+  program: "Program, event, festival, kampung wisata, dan inovasi pendukung.",
 };
 
 export const PILLAR_COLOR: Record<Pillar, string> = {
