@@ -153,6 +153,38 @@ const DIAGRAM = [
     berkas: 'grafik-9.3-alur-crowdsourcing.svg',
     alt: 'Alur data crowdsourcing dari kontributor sampai publikasi, dengan empat masalah kualitas yang ditangani saat moderasi dan verifikasi.',
   },
+  {
+    bab: 'bab-02',
+    setelah: 'Apa yang Masih Perlu Diperbaiki',
+    tipe: 'Grafik',
+    id: '2.4',
+    berkas: 'grafik-2.4-kategori-event.svg',
+    alt: 'Sepuluh nilai jenis event terbanyak pada katalog event Dinas Pariwisata; lima ejaan berbeda merujuk kategori musik yang sama.',
+  },
+  {
+    bab: 'interlude-4-5',
+    setelah: 'Peran MICE dan Korporat',
+    tipe: 'Grafik',
+    id: '4.5.4',
+    berkas: 'grafik-4.5.4-kunjungan-dtw-jakarta.svg',
+    alt: 'Lima belas destinasi wisata Jakarta dengan kunjungan tertinggi pada Juli 2025.',
+  },
+  {
+    bab: 'interlude-4-5',
+    setelah: 'Overtourism Tersegmentasi: Sudirman–Thamrin vs Kampung Kota',
+    tipe: 'Grafik',
+    id: '4.5.5',
+    berkas: 'grafik-4.5.5-sebaran-event-jakarta.svg',
+    alt: 'Peta sebaran event Jakarta semester I 2026 di atas batas kecamatan, dengan jumlah event per kota administrasi.',
+  },
+  {
+    bab: 'bab-06',
+    setelah: 'Limitasi dan Etika',
+    tipe: 'Grafik',
+    id: '6.2',
+    berkas: 'grafik-6.2-volume-ulasan.svg',
+    alt: 'Sebaran jumlah ulasan per venue untuk restoran, nightlife, dan toko suvenir Jakarta pada sumbu logaritmik, dengan median masing-masing kategori.',
+  },
 ];
 
 // ---------------------------------------------------------------- utilities

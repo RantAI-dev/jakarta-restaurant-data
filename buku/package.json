@@ -10,7 +10,9 @@
     "import:book": "node scripts/import-book.mjs",
     "pdf:build": "node scripts/build-pdf.mjs",
     "pdf:preview": "node scripts/pdf-preview.mjs",
-    "diagrams:build": "node scripts/build-diagrams.mjs"
+    "diagrams:build": "node scripts/build-diagrams.mjs",
+    "charts:build": "node scripts/build-charts.mjs",
+    "illustrations:build": "python3 scripts/normalize-illustrations.py"
   },
   "dependencies": {
     "cnfast": "^0.1.0",

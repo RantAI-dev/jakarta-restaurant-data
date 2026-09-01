@@ -1,25 +1,23 @@
-# Gambar Buku: yang Sudah Dibuat dan yang Perlu Anda Buat
+# Gambar Buku
 
-Naskah membawa 32 figure. Setelah dihitung sebarannya, dua bab pembuka —
-Bab 1 dan Bab 2, sekitar 30 halaman pertama — tidak punya satu pun visual, dan
-6.1, 6.2, 9.3, serta 4.5.3 juga kosong.
+Naskah membawa 32 figure, dan tidak satu pun berada di Bab 1 dan Bab 2 — 30
+halaman pertama buku. Dokumen ini mencatat apa yang ditambahkan untuk menutup
+kekosongan itu, dari mana angkanya, dan apa yang masih terbuka.
 
-Sepuluh di antaranya sudah dibuat di repo ini. Sisanya butuh data baru atau
-model gambar, dan itu bagian Anda.
+Buku kini memuat **50 visual**: 32 dari naskah, 10 diagram konseptual, 4 grafik
+dari data yang dikumpulkan sendiri, dan 4 ilustrasi pembatas bagian.
 
-## Sudah jadi — 10 diagram SVG
+## 10 diagram konseptual — `scripts/build-diagrams.mjs`
 
-Dibangun oleh `scripts/build-diagrams.mjs`, memakai palet dan huruf yang sama
-dengan `theme.py` di repo naskah, sehingga duduk berdampingan dengan 32 figure
-matplotlib tanpa terlihat berasal dari dua dunia berbeda. Semuanya SVG: teksnya
-tetap bisa diseleksi dan dicari di dalam PDF, dan tajam di semua ukuran cetak.
+Isinya sepenuhnya dari pernyataan yang sudah ada di naskah; tidak ada angka atau
+klaim baru.
 
 | ID | Letak | Isi |
 |---|---|---|
 | Grafik 1.1 | 1.1 | Struktur dimensi Kearney, GPCI, dan Resonance; dimensi yang memuat pariwisata ditandai |
 | Grafik 1.2 | 1.2 | Empat jenis data pariwisata → dimensi indeks yang memakainya |
 | Tabel 1.1 | 1.3 | Siapa menghitung kunjungan atas dasar apa, dan apa yang tidak tercakup |
-| Grafik 1.3 | 1.4 | Rantai Satu Data Indonesia, tiga prasyarat Perpres 39/2019, dan titik yang masih putus |
+| Grafik 1.3 | 1.4 | Rantai Satu Data Indonesia, tiga prasyaratnya, dan titik yang masih putus |
 | Grafik 2.1 | 2.1 | Tiga lembaga inti: terbitan, frekuensi, granularitas |
 | Tabel 2.1 | 2.2 | Sumber tradisional vs big data pada enam aspek |
 | Grafik 2.2 | 2.3 | Lapisan data lake daerah, dari zona mentah sampai data mart |
@@ -27,152 +25,51 @@ tetap bisa diseleksi dan dicari di dalam PDF, dan tajam di semua ukuran cetak.
 | Grafik 6.1 | 6.1 | Enam langkah pra-pemrosesan ulasan daring |
 | Grafik 9.3 | 9.3 | Alur data crowdsourcing dari kontributor sampai publikasi |
 
-Semua isinya diambil dari pernyataan yang sudah ada di naskah — tidak ada angka
-atau klaim baru. Sumbernya dicantumkan di dalam tiap gambar.
+## 4 grafik dari data sendiri — `scripts/build-charts.mjs`
 
-Untuk mengubahnya: sunting `scripts/build-diagrams.mjs`, lalu
+Tiga visual dalam naskah menunggu data yang tidak pernah ada. Alih-alih
+mengarang angka, ketiganya diganti dengan data yang benar-benar dikumpulkan dan
+diolah tim data Dinas Pariwisata di repo ini. Setiap keterangan menyebut
+cakupan dan baris yang tidak terpakai.
+
+| ID | Letak | Isi | Sumber di repo |
+|---|---|---|---|
+| Grafik 2.4 | 2.4 | 141 nilai berbeda untuk jenis event; 42 ejaan merujuk kategori musik yang sama, mencakup 528 dari 804 event | `platform/data/event-visitors-2026.json` |
+| Grafik 4.5.4 | 4.5.3 | Kunjungan ke 15 destinasi wisata Jakarta teratas, Juli 2025 (25 destinasi melapor, rentang empat orde besaran) | `data/kunjungan-31-dtw-juli-2026-KERJA.tsv` |
+| Grafik 4.5.5 | 4.5.3 | Peta sebaran 610 event Jakarta semester I 2026 di atas batas kecamatan | katalog event + `platform-v2/public/geo/dki-jakarta.geojson` |
+| Grafik 6.2 | 6.1 | Jumlah ulasan per venue pada sumbu logaritmik: median restoran 1.632, nightlife 2, suvenir 4 | `data-restoran/nightlife/souvenir-*.tsv` |
+
+Grafik 2.4 bukan sekadar penambal: ia bukti dari katalog sendiri untuk masalah
+yang dibahas subbab 2.4 — kolomnya ada, terisi, dan tetap tidak bisa dijumlahkan.
+
+## 4 ilustrasi pembatas bagian — `scripts/normalize-illustrations.py`
+
+Dibangkitkan dengan model gambar, tanpa teks sama sekali, lalu dinormalisasi:
+latar diratakan ke putih murni, margin kosong dibuang, padding diseragamkan.
+Sumber mentahnya di `docs/generation/`, hasil terpasang di `public/gambar/`.
+Muncul di halaman pembatas versi cetak dan di daftar isi halaman depan web.
+
+## Yang masih terbuka
+
+| Yang dibutuhkan | Untuk apa | Kenapa belum bisa |
+|---|---|---|
+| Teks ulasan (bukan hanya rating) | Analisis sentimen sungguhan di 6.1 | Kurasi yang ada hanya menyimpan rating dan jumlah ulasan |
+| Agregat titik geotag media sosial | Jejak spasial digital di 6.2 | Peta event yang ada berasal dari katalog resmi, bukan jejak media sosial — dua hal berbeda dan tidak boleh dilabeli sama |
+| Maksud kunjungan wisatawan Jakarta | Komposisi rekreasi/bisnis/MICE di 4.5.3 | Tidak ada di sumber mana pun yang kita punya; kunjungan per destinasi sudah menggantikannya |
+
+Kalau salah satu datanya muncul, grafiknya tinggal ditambahkan ke
+`scripts/build-charts.mjs`.
+
+## Membangun ulang semuanya
 
 ```bash
-npm run diagrams:build && npm run import:book && npm run build && npm run pdf:build
+npm run diagrams:build      # 10 diagram konseptual
+npm run charts:build        # 4 grafik dari data sendiri
+npm run illustrations:build # 4 ilustrasi pembatas (butuh Pillow)
+npm run import:book         # pasang ke halaman
+npm run build && npm run pdf:build && npm run pdf:preview
 ```
 
-Posisi tiap diagram ditentukan di `scripts/import-book.mjs` (konstanta
-`DIAGRAM`), dicocokkan dengan judul sub-bagian di naskah. Kalau judul di naskah
-berubah, impor **berhenti dengan galat** alih-alih diam-diam menghilangkan
-diagram.
-
-## Perlu Anda buat — 3 visual yang menunggu data
-
-Tidak bisa dibuat dari teks yang ada: angkanya belum ada di mana pun. Kirimkan
-CSV dengan kolom persis seperti di bawah, taruh di `bab/assets/data/` pada repo
-naskah, dan grafiknya saya yang buat.
-
-### 1. Grafik 6.2 — distribusi sentimen dan aspek ulasan (subbab 6.1)
-
-Hasil hitung *walkthrough* ulasan TripAdvisor Bali yang sudah dibahas di naskah,
-tetapi angkanya tidak pernah ditabelkan.
-
-```
-sentimen-ulasan-bali.csv
-kategori,jumlah_ulasan,proporsi_persen
-Positif,…,…
-Netral,…,…
-Negatif,…,…
-
-aspek-ulasan-bali.csv
-peringkat,aspek,jumlah_sebutan,sentimen_rata2
-1,…,…,…
-```
-
-### 2. Grafik 6.4 — sebaran geotag unggahan wisatawan (subbab 6.2)
-
-Belum ada berkasnya sama sekali. Cukup agregat, bukan titik per unggahan —
-lebih aman secara privasi dan cukup untuk peta panas.
-
-```
-geotag-agregat-<kota>.csv
-kelurahan,lat,lon,jumlah_unggahan,periode
-```
-
-### 3. Grafik 4.5.4 — komposisi maksud kunjungan ke Jakarta (subbab 4.5.3)
-
-Berkas `jakarta-komposisi-kunjungan` sempat ada di repo naskah lalu dihapus.
-Kalau masih tersimpan, kirim apa adanya; kalau tidak:
-
-```
-jakarta-komposisi-kunjungan-2023.csv
-kategori,proporsi_persen
-Rekreasi,…
-Bisnis,…
-MICE,…
-Keluarga,…
-Lain-lain,…
-```
-
-## Perlu Anda buat — 4 ilustrasi (model gambar)
-
-Halaman pembatas Bagian I–IV sekarang hanya berisi judul, dan muncul empat kali
-sepanjang buku. Ini satu-satunya tempat model gambar layak dipakai, karena
-ilustrasinya **tidak boleh memuat teks sama sekali**.
-
-Model gambar tidak bisa dipercaya menulis label, apalagi bahasa Indonesia:
-hasilnya huruf palsu yang mirip kata tetapi bukan. Karena itu seluruh diagram di
-atas dibuat dengan kode, dan keempat ilustrasi ini dirancang supaya tidak
-membutuhkan huruf sama sekali.
-
-Nama berkas yang ditunggu: `pembatas-bagian-1.png` … `pembatas-bagian-4.png`,
-2400×900 piksel, latar putih.
-
-### Bagian I — Fondasi Pariwisata dan Kota Global
-
-```
-Flat vector illustration, clean white background, no text, no letters, no numbers.
-A city skyline of simple geometric buildings on the right, and three stepped
-podium blocks of different heights on the left, as in a ranking podium. A few
-small human figures at uniform scale stand near the podium. All building windows
-and podium faces are EMPTY shapes with no writing inside.
-Identical line weight across all elements.
-Strict palette: deep navy #1a2b42, medium blue #4a6fa5, pale blue-grey #eef4f9,
-accent terracotta #b5651d, white background.
-Minimal geometric flat design, corporate infographic style.
-Wide banner composition, 2400x900 pixels.
-```
-
-### Bagian II — Metodologi dan Teknik Pengolahan Data
-
-```
-Flat vector illustration, clean white background, no text, no letters, no numbers.
-An airplane, a ship, and a cell tower on the left, each emitting a stream of small
-dots that flow rightward and converge into a single large container shape.
-The dots are uniform circles; the container is an EMPTY outlined vessel with no
-writing inside. Identical line weight across all elements.
-Strict palette: deep navy #1a2b42, medium blue #4a6fa5, pale blue-grey #eef4f9,
-accent terracotta #b5651d, white background.
-Minimal geometric flat design, corporate infographic style.
-Wide banner composition, 2400x900 pixels.
-```
-
-### Bagian III — Indikator dan Pembobotan Global City Index
-
-```
-Flat vector illustration, clean white background, no text, no letters, no numbers.
-A balance scale in the centre with an empty square tray on each side, and a row of
-four horizontal slider controls on the right, each with a round knob at a different
-position. Small EMPTY rounded rectangles float above the scale as indicator cards
-with no writing inside. Identical line weight across all elements.
-Strict palette: deep navy #1a2b42, medium blue #4a6fa5, pale blue-grey #eef4f9,
-accent terracotta #b5651d, white background.
-Minimal geometric flat design, corporate infographic style.
-Wide banner composition, 2400x900 pixels.
-```
-
-### Bagian IV — Aplikasi Statistika, Pemodelan, dan Kebijakan
-
-```
-Flat vector illustration, clean white background, no text, no letters, no numbers.
-A control room seen from behind: two human figures at uniform scale facing a wall
-of EMPTY rectangular panels, and a simplified city map outline on the largest
-panel with no labels. Panels contain only plain geometric shapes — no charts with
-numbers, no writing. Identical line weight across all elements.
-Strict palette: deep navy #1a2b42, medium blue #4a6fa5, pale blue-grey #eef4f9,
-accent terracotta #b5651d, white background.
-Minimal geometric flat design, corporate infographic style.
-Wide banner composition, 2400x900 pixels.
-```
-
-### Sebelum dikirim
-
-Tiga hal yang menentukan hasilnya:
-
-- `no text, no letters, no numbers` diulang tiga cara; sekali saja sering bocor.
-  Kalau hasilnya tetap memuat huruf, buang dan bangkitkan ulang — jangan ditambal.
-- Palet disebut sebagai hex, diambil dari `theme.py`, supaya nyambung dengan
-  seluruh visual lain.
-- Rasio lebar 2400×900 supaya tidak memakan setengah halaman.
-
-Normalisasi sebelum dipasang: ratakan latar ke putih murni
-(`im.point(lambda v: 255 if v > 246 else v)`), buang margin kosong (`getbbox`),
-lalu beri padding seragam. Tanpa langkah ini ilustrasi tampak mengecil sendiri di
-tengah halaman.
-
-Kirimkan berkasnya, dan pemasangannya saya urus.
+Posisi tiap gambar ditentukan di `scripts/import-book.mjs` (konstanta
+`DIAGRAM`), dicocokkan dengan judul sub-bagian naskah. Kalau judulnya berubah,
+impor berhenti dengan galat alih-alih diam-diam menghilangkan gambar.

@@ -245,6 +245,8 @@ export default function HalamanCetak() {
       {bagian.map((b, i) => (
         <div key={b.judul}>
           <section className="cetak-bagian">
+            {/* Ilustrasi tanpa teks; keterangannya ada pada judul di bawahnya. */}
+            <img src={`/gambar/pembatas-bagian-${i + 1}.png`} alt="" />
             <p className="cetak-bagian-nomor">
               <Penanda id={idBagian(i)} />
               Bagian {ANGKA_ROMAWI[i]}

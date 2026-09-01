@@ -13,73 +13,28 @@
  * Keluaran: public/gambar/*.svg — dipasang ke halaman oleh scripts/import-book.mjs.
  * Jalankan: npm run diagrams:build
  */
-import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  C,
+  W,
+  angka,
+  baris,
+  keterangan,
+  kotak,
+  panah,
+  teks,
+  tulisSvg,
+} from './svg-kit.mjs';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = path.join(ROOT, 'public', 'gambar');
+const OUT = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+  'public',
+  'gambar',
+);
 
-const W = 1200;
-const C = {
-  primary: '#1a2b42',
-  secondary: '#4a6fa5',
-  accent: '#b5651d',
-  neutral: '#6b7280',
-  light: '#e5e7eb',
-  text: '#1a1a1a',
-  pale: '#eef4f9',
-  paleAccent: '#f7ede2',
-};
-const FONT = 'Liberation Sans, Arial, Helvetica, sans-serif';
-
-// ------------------------------------------------------------------ primitif
-
-const esc = (s) =>
-  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-/** Pemenggalan baris sederhana berdasarkan perkiraan lebar karakter. */
-function baris(teks, maksKarakter) {
-  const kata = String(teks).split(/\s+/);
-  const hasil = [];
-  let kini = '';
-  for (const k of kata) {
-    if ((kini + ' ' + k).trim().length > maksKarakter && kini) {
-      hasil.push(kini);
-      kini = k;
-    } else {
-      kini = (kini + ' ' + k).trim();
-    }
-  }
-  if (kini) hasil.push(kini);
-  return hasil;
-}
-
-function teks(x, y, isi, o = {}) {
-  const {
-    ukuran = 15,
-    warna = C.text,
-    tebal = 400,
-    anchor = 'start',
-    miring = false,
-    lebarKarakter,
-    tinggiBaris = 1.32,
-  } = o;
-  const potongan = lebarKarakter ? baris(isi, lebarKarakter) : [String(isi)];
-  return potongan
-    .map(
-      (b, i) =>
-        `<text x="${x}" y="${y + i * ukuran * tinggiBaris}" font-family="${FONT}" font-size="${ukuran}" ` +
-        `font-weight="${tebal}" fill="${warna}" text-anchor="${anchor}"` +
-        `${miring ? ' font-style="italic"' : ''}>${esc(b)}</text>`,
-    )
-    .join('\n');
-}
-
-function kotak(x, y, w, h, o = {}) {
-  const { isi = '#ffffff', garis = C.light, tebalGaris = 1.2, radius = 4 } = o;
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${radius}" fill="${isi}" stroke="${garis}" stroke-width="${tebalGaris}"/>`;
-}
+const tulis = (nama, tinggi, isi) => tulisSvg(OUT, nama, tinggi, isi);
 
 /** Kartu berjudul: bilah judul di atas, isi berupa daftar butir. */
 function kartu(x, y, w, { judul, butir, warnaJudul = C.primary, tinggiButir = 30, padding = 16 }) {
@@ -145,13 +100,6 @@ function langkah(x, y, w, h, label, o = {}) {
   );
 }
 
-function panah(x1, y1, x2, y2, o = {}) {
-  const { warna = C.neutral, putus = false } = o;
-  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${warna}" stroke-width="1.6" marker-end="url(#ujung)"${
-    putus ? ' stroke-dasharray="5 4"' : ''
-  }/>`;
-}
-
 function tabel(x, y, w, kolom, baris_, lebarKolom) {
   const tinggiKepala = 42;
   const padding = 12;
@@ -193,41 +141,6 @@ function tabel(x, y, w, kolom, baris_, lebarKolom) {
   });
 
   return { svg: bagian.join('\n'), tinggi: by - y };
-}
-
-/**
- * Keterangan dan sumber dicetak di dalam gambar, sama seperti figure
- * matplotlib naskah, supaya edisi web dan cetak tidak perlu mengulangnya.
- */
-function keterangan(y, isi, sumber) {
-  const potongan = baris(`${isi} Sumber: ${sumber}`, 128);
-  return {
-    svg: potongan
-      .map((b, i) =>
-        teks(48, y + i * 20, b, { ukuran: 13, warna: C.neutral, miring: true }),
-      )
-      .join('\n'),
-    tinggi: potongan.length * 20,
-  };
-}
-
-function svg(tinggi, isi) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${tinggi}" width="${W}" height="${tinggi}" role="img">
-<defs>
-  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-    <path d="M0 0 L10 5 L0 10 z" fill="${C.neutral}"/>
-  </marker>
-</defs>
-<rect width="${W}" height="${tinggi}" fill="#ffffff"/>
-${isi}
-</svg>
-`;
-}
-
-function tulis(nama, tinggi, isi) {
-  fs.mkdirSync(OUT, { recursive: true });
-  fs.writeFileSync(path.join(OUT, nama), svg(tinggi, isi));
-  console.log(`  ${nama}`);
 }
 
 // ------------------------------------------------------------------ diagram

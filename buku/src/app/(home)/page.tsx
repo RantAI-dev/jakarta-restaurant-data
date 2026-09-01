@@ -132,6 +132,12 @@ export default function HomePage() {
           <ol className="mt-6">
             {bagian.map((b, i) => (
               <li key={b.judul} className="rule-tipis py-7 last:border-b last:border-fd-border">
+                {/* Ilustrasi pembatas bagian yang sama dengan versi cetak. */}
+                <img
+                  src={`/gambar/pembatas-bagian-${i + 1}.png`}
+                  alt=""
+                  className="mb-6 h-24 w-full rounded-lg bg-white object-contain p-2 sm:h-32"
+                />
                 <div className="grid gap-4 sm:grid-cols-[3rem_1fr]">
                   <span
                     aria-hidden

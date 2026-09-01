@@ -283,6 +283,12 @@ body:has(.cetak) {
   padding-left: 10mm;
 }
 
+.cetak-bagian img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 14mm;
+}
+
 .cetak-bagian-nomor {
   text-transform: uppercase;
   letter-spacing: 0.2em;

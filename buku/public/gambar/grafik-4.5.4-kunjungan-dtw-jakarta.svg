@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 710" width="1200" height="710" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="710" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Kunjungan ke destinasi wisata Jakarta, Juli 2025</text>
+<text x="288" y="99" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">TIJA Ancol</text>
+<rect x="300" y="84" width="750" height="20" rx="2" fill="#b5651d"/>
+<text x="1060" y="99" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">793.791</text>
+<text x="288" y="133" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Kawasan Monumen Nasional</text>
+<rect x="300" y="118" width="456.36760809835334" height="20" rx="2" fill="#1a2b42"/>
+<text x="766.3676080983533" y="133" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">483.014</text>
+<text x="288" y="167" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">T. Marga Satwa Ragunan</text>
+<rect x="300" y="152" width="442.8007498195369" height="20" rx="2" fill="#1a2b42"/>
+<text x="752.8007498195369" y="167" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">468.655</text>
+<text x="288" y="201" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Taman Mini Indonesia Indah</text>
+<rect x="300" y="186" width="246.08083236015526" height="20" rx="2" fill="#1a2b42"/>
+<text x="556.0808323601552" y="201" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">260.449</text>
+<text x="288" y="235" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Kawasan Kota Tua</text>
+<rect x="300" y="220" width="218.48981658900138" height="20" rx="2" fill="#1a2b42"/>
+<text x="528.4898165890014" y="235" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">231.247</text>
+<text x="288" y="269" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Pos Bloc</text>
+<rect x="300" y="254" width="67.21259122363443" height="20" rx="2" fill="#1a2b42"/>
+<text x="377.21259122363443" y="269" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">71.137</text>
+<text x="288" y="303" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Museum Nasional</text>
+<rect x="300" y="288" width="63.42192088345673" height="20" rx="2" fill="#1a2b42"/>
+<text x="373.4219208834567" y="303" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">67.125</text>
+<text x="288" y="337" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Museum Sejarah Jakarta</text>
+<rect x="300" y="322" width="35.83846377698916" height="20" rx="2" fill="#1a2b42"/>
+<text x="345.83846377698916" y="337" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">37.931</text>
+<text x="288" y="371" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Kepulauan Seribu</text>
+<rect x="300" y="356" width="35.66177998994697" height="20" rx="2" fill="#1a2b42"/>
+<text x="345.661779989947" y="371" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">37.744</text>
+<text x="288" y="405" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Museum Wayang</text>
+<rect x="300" y="390" width="30.90549023609489" height="20" rx="2" fill="#1a2b42"/>
+<text x="340.9054902360949" y="405" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">32.710</text>
+<text x="288" y="439" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">PBB Setu Babakan</text>
+<rect x="300" y="424" width="21.254020264780024" height="20" rx="2" fill="#1a2b42"/>
+<text x="331.25402026478" y="439" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">22.495</text>
+<text x="288" y="473" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Taman Lapangan Banteng</text>
+<rect x="300" y="458" width="21.201109611975948" height="20" rx="2" fill="#1a2b42"/>
+<text x="331.20110961197594" y="473" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">22.439</text>
+<text x="288" y="507" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">M. Seni Rupa dan Keramik</text>
+<rect x="300" y="492" width="13.187035378330066" height="20" rx="2" fill="#1a2b42"/>
+<text x="323.18703537833005" y="507" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">13.957</text>
+<text x="288" y="541" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Museum Kebangkitan Nasional</text>
+<rect x="300" y="526" width="3.2322739864775487" height="20" rx="2" fill="#1a2b42"/>
+<text x="313.23227398647754" y="541" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">3.421</text>
+<text x="288" y="575" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="end">Museum Bahari</text>
+<rect x="300" y="560" width="2.928037732854114" height="20" rx="2" fill="#1a2b42"/>
+<text x="312.92803773285414" y="575" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">3.099</text>
+<line x1="300" y1="78" x2="300" y2="600" stroke="#e5e7eb" stroke-width="1"/>
+<text x="48" y="630" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Lima belas destinasi dengan kunjungan tertinggi, dari 25 destinasi yang melaporkan angka Juli 2025; enam destinasi lain belum</text>
+<text x="48" y="650" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">melaporkan. Rentangnya empat orde besaran: 793.791 kunjungan di puncak, 65 di dasar. Sumber: laporan pengelola destinasi via</text>
+<text x="48" y="670" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Satu Data Jakarta, dikumpulkan dan diolah tim data Dinas Pariwisata.</text>
+</svg>

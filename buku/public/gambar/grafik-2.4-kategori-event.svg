@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 662" width="1200" height="662" role="img">
+<defs>
+  <marker id="ujung" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+  </marker>
+</defs>
+<rect width="1200" height="662" fill="#ffffff"/>
+<text x="48" y="44" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1a1a1a" text-anchor="start">Satu kategori, banyak ejaan: jenis event pada katalog sendiri</text>
+<text x="48" y="70" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start">141 nilai berbeda dipakai untuk 804 event</text>
+<text x="418" y="123" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">MUSIK</text>
+<rect x="430" y="108" width="640" height="20" rx="2" fill="#b5651d"/>
+<text x="1080" y="123" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">239</text>
+<text x="418" y="157" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">HIBURAN MUSIK</text>
+<rect x="430" y="142" width="227.61506276150627" height="20" rx="2" fill="#b5651d"/>
+<text x="667.6150627615062" y="157" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">85</text>
+<text x="418" y="191" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">PERTUNJUKAN MUSIK</text>
+<rect x="430" y="176" width="222.25941422594144" height="20" rx="2" fill="#b5651d"/>
+<text x="662.2594142259414" y="191" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">83</text>
+<text x="418" y="225" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="end">HIBURAN</text>
+<rect x="430" y="210" width="85.69037656903765" height="20" rx="2" fill="#6b7280"/>
+<text x="525.6903765690377" y="225" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">32</text>
+<text x="418" y="259" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">PERTUNJUKAN MUSIK / DJ</text>
+<rect x="430" y="244" width="74.97907949790795" height="20" rx="2" fill="#b5651d"/>
+<text x="514.979079497908" y="259" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">28</text>
+<text x="418" y="293" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">PERTUNJUKAN MUSIK/DJ</text>
+<rect x="430" y="278" width="56.23430962343096" height="20" rx="2" fill="#b5651d"/>
+<text x="496.23430962343093" y="293" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">21</text>
+<text x="418" y="327" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="end">PEMBACAAN QURAN</text>
+<rect x="430" y="312" width="45.52301255230126" height="20" rx="2" fill="#6b7280"/>
+<text x="485.5230125523013" y="327" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">17</text>
+<text x="418" y="361" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#b5651d" text-anchor="end">MUSIK DAN TALKSHOW</text>
+<rect x="430" y="346" width="42.84518828451883" height="20" rx="2" fill="#b5651d"/>
+<text x="482.8451882845188" y="361" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">16</text>
+<text x="418" y="395" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="end">FESTIVAL</text>
+<rect x="430" y="380" width="37.48953974895397" height="20" rx="2" fill="#6b7280"/>
+<text x="477.489539748954" y="395" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">14</text>
+<text x="418" y="429" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#1a1a1a" text-anchor="end">CITY TOUR</text>
+<rect x="430" y="414" width="26.778242677824267" height="20" rx="2" fill="#6b7280"/>
+<text x="466.77824267782427" y="429" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="400" fill="#6b7280" text-anchor="start">10</text>
+<rect x="48" y="474" width="1104" height="74" rx="4" fill="#f7ede2" stroke="#b5651d" stroke-width="1.4"/>
+<text x="70" y="506" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#b5651d" text-anchor="start">42 ejaan berbeda merujuk hal yang sama</text>
+<text x="70" y="530" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#1a1a1a" text-anchor="start">MUSIK, HIBURAN MUSIK, PERTUNJUKAN MUSIK, PERTUNJUKAN MUSIK / DJ, dan seterusnya — bersama-sama mencakup 528 event, 66 persen dari seluruh katalog</text>
+<text x="48" y="582" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">Kolomnya ada, terisi, dan tetap tidak bisa dijumlahkan. Selama nilainya ditulis bebas tanpa daftar kode baku, penggabungan</text>
+<text x="48" y="602" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">antar-instansi akan selalu berhenti di tahap ini. Sumber: katalog event Dinas Pariwisata semester I 2026, dihitung apa adanya</text>
+<text x="48" y="622" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6b7280" text-anchor="start" font-style="italic">tanpa pembersihan.</text>
+</svg>
