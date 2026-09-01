@@ -115,9 +115,18 @@ Empat hal yang tidak kelihatan tetapi wajib, masing-masing pernah memakan waktu:
 - **`transferMode: 'ReturnAsStream'`.** PDF 5 MB dikirim sebagai satu pesan
   base64 ~7 MB tidak pernah sampai; perintahnya menggantung. Dengan stream,
   cetaknya selesai dalam hitungan detik.
+- **`Emulation.setEmulatedMedia` ke mode terang.** Headless mengikuti tema
+  sistem; kalau sistemnya gelap, area margin PDF memakai warna kanvas gelap dan
+  tiap halaman tercetak berbingkai hitam sampai ke tepi kertas.
 - **Gambar `loading="eager"`.** Halaman cetak memuat seluruh buku sekaligus;
   gambar yang ditunda tidak pernah termuat dan hilang dari PDF. Skrip menolak
   mencetak bila gambar yang termuat kurang dari 32.
+
+Daftar isi bernomor halaman butuh lintasan tambahan: halaman `/cetak` menanam
+penanda tak terlihat di tiap bab dan sub-bab, skrip membaca posisinya dari
+lapisan teks PDF, menuliskannya ke `.pdf-index.json`, lalu mencetak ulang.
+Diulang sampai petanya tidak berubah — mengisi nomor bisa menggeser baris, dan
+pergeseran itu harus ikut terhitung.
 
 Dicetak dua kali lalu disambung dengan qpdf: bagian depan (sampul, kredit,
 daftar isi) tanpa running head, sisanya dengan header dan nomor halaman.

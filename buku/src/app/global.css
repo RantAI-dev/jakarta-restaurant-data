@@ -86,6 +86,17 @@ html > body[data-scroll-locked] {
 html:has(.cetak),
 body:has(.cetak) {
   background: #fff;
+  /* Wajib: tanpa ini area margin PDF ikut memakai warna kanvas mode gelap,
+     dan halaman tercetak berbingkai hitam sampai ke tepi kertas. */
+  color-scheme: light;
+}
+
+/* Penanda posisi untuk daftar isi: tidak terlihat di kertas, tetapi tetap
+   masuk ke lapisan teks PDF sehingga nomor halamannya bisa dibaca kembali. */
+.cetak-penanda {
+  color: transparent;
+  font-size: 2px;
+  letter-spacing: 0;
 }
 
 .cetak {
@@ -201,49 +212,63 @@ body:has(.cetak) {
 
 .cetak-daftar-isi h2 {
   font-size: 18pt;
-  margin: 0 0 1.2em;
+  margin: 0 0 1.4em;
 }
 
-.cetak-daftar-isi ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cetak-daftar-isi > ol > li {
+.di-blok {
   margin-bottom: 1.1em;
   break-inside: avoid;
+}
+
+/* Tiap baris: [label] judul …titik penuntun… nomor.
+   Titik dibuat memanjang otomatis supaya nomor selalu rata kanan. */
+.cetak-daftar-isi p {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin: 0 0 0.18em;
+}
+
+.di-titik {
+  flex: 1;
+  border-bottom: 0.4pt dotted #b8b8bd;
+  transform: translateY(-0.22em);
+  min-width: 1.5em;
+}
+
+.di-nomor {
+  font-variant-numeric: tabular-nums;
+  color: #4a4a50;
+  min-width: 2.2em;
+  text-align: right;
+}
+
+.di-label {
+  color: #6b6b70;
+  min-width: 7em;
 }
 
 .di-bagian {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 11pt;
-  margin: 0 0 0.45em;
-  border-bottom: 0.4pt solid #d9d9de;
-  padding-bottom: 0.25em;
+  margin-top: 0.9em !important;
+  padding-bottom: 0.2em;
 }
 
-/* Kolom label dikunci lewat grid: "Interlude 4.5" lebih lebar daripada
-   "Bab 1", dan dengan indentasi biasa ia menabrak judul di sebelahnya. */
+.di-bagian .di-nomor {
+  color: #16161a;
+}
+
 .di-bab {
-  display: grid;
-  grid-template-columns: 7.5em 1fr;
-  gap: 0.5em;
-  margin: 0.55em 0 0.2em;
   font-size: 10pt;
-}
-
-.di-bab span {
-  color: #6b6b70;
+  margin-top: 0.45em !important;
 }
 
 .di-subbab {
   font-size: 9pt;
   color: #4a4a50;
-  margin-left: 8em;
-  margin-bottom: 0.12em;
-  text-align: left;
+  padding-left: 7.4em;
 }
 
 /* --------------------------------------------------- pembatas bagian & bab */

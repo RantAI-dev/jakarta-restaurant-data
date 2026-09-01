@@ -27,6 +27,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = process.env.PDF_PORT ?? '3123';
 const PORT_CDP = process.env.CDP_PORT ?? '9333';
 const KELUARAN = path.join(ROOT, 'public', 'buku-statistika-pariwisata-perkotaan.pdf');
+// Peta nomor halaman untuk daftar isi; dibaca halaman /cetak saat dirender.
+const PETA = path.join(ROOT, '.pdf-index.json');
 const JUDUL = 'Statistika Pariwisata Perkotaan';
 
 const CHROMIUM = ['chromium', 'chromium-browser', 'google-chrome-stable', 'google-chrome'].find(
@@ -164,6 +166,13 @@ async function cetak(cdp, url, { pakaiHeader }) {
 
   try {
     await cdp.kirim('Page.enable', {}, sessionId);
+    // Headless mengikuti tema sistem. Kalau sistemnya gelap, area margin PDF
+    // ikut memakai warna kanvas gelap dan halaman tercetak berbingkai hitam.
+    await cdp.kirim(
+      'Emulation.setEmulatedMedia',
+      { features: [{ name: 'prefers-color-scheme', value: 'light' }] },
+      sessionId,
+    );
     const selesai = new Promise((resolve) => cdp.saat('Page.loadEventFired', resolve));
     await cdp.kirim('Page.navigate', { url }, sessionId);
     await selesai;
@@ -205,6 +214,32 @@ async function cetak(cdp, url, { pakaiHeader }) {
   } finally {
     await cdp.kirim('Target.closeTarget', { targetId });
   }
+}
+
+/**
+ * Baca posisi penanda `PM<id>PM` yang ditanam halaman /cetak, dan kembalikan
+ * peta id → nomor halaman. Inilah yang mengisi nomor di daftar isi.
+ */
+function petaPenanda(berkas) {
+  const total = Number(
+    spawnSync('pdfinfo', [berkas], { encoding: 'utf8' }).stdout.match(/Pages:\s+(\d+)/)?.[1] ?? 0,
+  );
+
+  const peta = {};
+  for (let hal = 1; hal <= total; hal++) {
+    const teks =
+      spawnSync('pdftotext', ['-f', String(hal), '-l', String(hal), berkas, '-'], {
+        encoding: 'utf8',
+      }).stdout ?? '';
+    // pdftotext bisa menyisipkan pemenggalan baris di tengah token. Kunci
+    // dikecilkan karena sebagian penanda berada di elemen ber-text-transform
+    // uppercase, dan huruf besar itu ikut masuk ke lapisan teks PDF.
+    for (const cocok of teks.replace(/\s+/g, '').matchAll(/PM([A-Za-z0-9-]+?)PM/g)) {
+      const id = cocok[1].toLowerCase();
+      if (!(id in peta)) peta[id] = hal;
+    }
+  }
+  return peta;
 }
 
 /**
@@ -276,13 +311,33 @@ async function main() {
     cdp = await Cdp.buka(webSocketDebuggerUrl);
 
     const url = `http://127.0.0.1:${PORT}/cetak`;
+    const isi = path.join(tmp, 'isi.pdf');
+
+    // Daftar isi butuh nomor halaman, dan nomor halaman baru diketahui setelah
+    // dicetak. Jadi: cetak, baca posisi penanda, tulis petanya, cetak lagi.
+    // Diulang sampai peta tidak berubah — mengisi nomor bisa menggeser baris,
+    // dan pergeseran itu harus ikut terhitung.
+    let peta = {};
+    for (let putaran = 1; putaran <= 4; putaran++) {
+      console.log(`Lintasan ${putaran}: mencetak isi…`);
+      fs.writeFileSync(isi, await cetak(cdp, url, { pakaiHeader: true }));
+
+      const petaBaru = petaPenanda(isi);
+      const jumlahBaru = Object.keys(petaBaru).length;
+      if (jumlahBaru === 0) throw new Error('Tidak ada penanda daftar isi yang terbaca.');
+
+      if (JSON.stringify(petaBaru) === JSON.stringify(peta)) {
+        console.log(`Nomor halaman stabil (${jumlahBaru} entri).`);
+        break;
+      }
+      peta = petaBaru;
+      fs.writeFileSync(PETA, JSON.stringify(peta, null, 2));
+      if (putaran === 4) console.log('Peringatan: nomor halaman belum stabil setelah 4 lintasan.');
+    }
+
     console.log('Mencetak bagian depan (tanpa header)…');
     const depan = path.join(tmp, 'depan.pdf');
     fs.writeFileSync(depan, await cetak(cdp, url, { pakaiHeader: false }));
-
-    console.log('Mencetak isi (dengan header & nomor halaman)…');
-    const isi = path.join(tmp, 'isi.pdf');
-    fs.writeFileSync(isi, await cetak(cdp, url, { pakaiHeader: true }));
 
     const batas = halamanBagianDepan(depan);
     console.log(`Bagian depan: ${batas} halaman.`);
@@ -311,6 +366,7 @@ async function main() {
     const mb = (fs.statSync(KELUARAN).size / 1024 / 1024).toFixed(1);
     console.log(`\nPDF ditulis: public/${path.basename(KELUARAN)} — ${jumlah} halaman, ${mb} MB`);
   } finally {
+    fs.rmSync(PETA, { force: true });
     cdp?.tutup();
     browser.kill('SIGTERM');
     server.kill('SIGTERM');

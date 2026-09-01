@@ -28,3 +28,4 @@ next-env.d.ts
 # Render halaman PDF untuk pemeriksaan visual — hasil sementara.
 .pdf-preview
 
+.pdf-index.json
