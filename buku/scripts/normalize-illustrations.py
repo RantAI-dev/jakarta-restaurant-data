@@ -29,9 +29,10 @@ AMBANG_PUTIH = 246
 # Padding akhir, dalam persen lebar gambar setelah dipangkas.
 PADDING = 0.02
 
-# Empat pembatas bagian + satu ilustrasi sampul.
+# Empat pembatas bagian + satu ilustrasi sampul. Sampul memakai judul2:
+# versi potret, menggantikan judul.png yang terlalu melebar untuk halaman A4.
 SUMBER = {"I": "pembatas-bagian-1", "II": "pembatas-bagian-2", "III": "pembatas-bagian-3",
-          "IV": "pembatas-bagian-4", "judul": "sampul"}
+          "IV": "pembatas-bagian-4", "judul2": "sampul"}
 
 
 def normalisasi(masuk: pathlib.Path, keluar: pathlib.Path) -> str:

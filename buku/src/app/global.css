@@ -149,10 +149,15 @@ body:has(.cetak) {
 }
 
 .cetak-sampul-gambar {
-  width: 100%;
+  /* Tinggi dibatasi, bukan lebar: ilustrasinya potret, dan tanpa batas ini
+     blok judul terdorong keluar halaman. */
+  max-height: 172mm;
+  max-width: 100%;
+  width: auto;
   height: auto;
-  margin-bottom: auto;
-  padding-bottom: 14mm;
+  /* Rata kiri, sejajar dengan blok judul di bawahnya. */
+  margin: 0 auto auto 0;
+  padding-bottom: 12mm;
 }
 
 .cetak-sampul h1 {
