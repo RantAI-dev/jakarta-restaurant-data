@@ -43,7 +43,9 @@ Pipeline tipikal untuk *scraping* berbasis AI:
 4. **Storage**: menyimpan hasil ke basis data.
 5. **Visualization**: *dashboard* menampilkan tren.
 
-Tools: Python + Scrapy/BeautifulSoup (crawler), LangChain (LLM integration), Postgres/BigQuery (storage), Looker Studio (visualization).
+<GambarBuku tipe="Grafik" id="9.4" src="/figures/grafik-9.4-pipeline-crawling-llm.png" lebar={3136} tinggi={320} alt="Diagram pipeline, dari crawling ke visualization dengan LLM sebagai middleware; sumber: kerangka pipeline AI, diolah" />
+
+Kelima tahap pada diagram di atas masing-masing punya padanan *tools* konkret: Python + Scrapy/BeautifulSoup untuk *crawler*, LangChain untuk integrasi LLM di tahap ekstraksi, Postgres/BigQuery untuk *storage*, dan Looker Studio untuk *visualization*. LLM sebagai *middleware* di tengah rantai itulah yang paling rawan — persis titik yang dibahas berikutnya, ketika hasil ekstraksi otomatis salah mengenali entitas.
 
 ## Validasi: Ketika Rating Itu Milik Mal, Bukan Restoran
 
@@ -64,5 +66,3 @@ Untuk memastikan kualitas, beberapa praktik:
 - **Spot check**: cek manual 5–10% hasil ekstraksi.
 - **Cross-validation**: bandingkan hasil model dengan data ground truth.
 - **Penyempurnaan bertahap (*iterative refinement*)**: perbaiki *prompt* berdasarkan kesalahan yang ditemukan.
-
-<VisualMenyusul tipe="Grafik" id="9.4" deskripsi="Diagram pipeline, dari crawling ke visualization dengan LLM sebagai middleware" sumber="kerangka pipeline AI, diolah" />

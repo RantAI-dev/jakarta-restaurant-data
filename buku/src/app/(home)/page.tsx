@@ -166,10 +166,9 @@ export default function HomePage() {
           <h2 className="font-display text-base font-semibold">Tentang edisi web ini</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fd-muted-foreground">
             Naskah masih dalam tahap proofreading, sehingga isinya dapat berubah.
-            Sebagian grafik dan tabel belum tersedia datanya — titik-titik itu
-            ditandai sebagai <em>menyusul</em> agar terlihat apa yang akan mengisinya.
-            Grafik yang sudah punya data ditampilkan interaktif, lengkap dengan
-            tampilan tabelnya.
+            Seluruh 32 grafik dan tabel memakai berkas yang sama persis dengan
+            naskah cetak, jadi angka yang dibaca di sini identik dengan yang ada
+            di bukunya.
           </p>
           <p className="mt-4 text-xs text-fd-muted-foreground">
             {appName} · disiapkan RantAI untuk Dinas Pariwisata dan Ekonomi Kreatif.

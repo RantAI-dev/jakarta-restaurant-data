@@ -8,7 +8,7 @@ Salah satu aplikasi paling powerful dari pemodelan adalah simulasi kebijakan. Pe
 
 Simulasi skenario adalah penggunaan model untuk memprediksi hasil dari kebijakan alternatif. Tidak seperti peramalan yang memprediksi masa depan tanpa intervensi, simulasi secara eksplisit mengubah satu atau beberapa variabel input dan melihat efeknya terhadap output.
 
-Contoh konkret: "Apa yang terjadi dengan skor GCI Kota A jika jumlah rute internasional langsung naik dari 25 menjadi 35?" Model GCI memiliki formula tertentu dengan bobot yang diketahui; menaikkan variabel konektivitas, dengan asumsi lain konstan, akan meningkatkan skor. Simulasi memungkinkan menjajagi berbagai kebijakan sebelum mengimplementasikannya.
+Contoh konkret: "Apa yang terjadi dengan skor GCI Kota A jika jumlah rute internasional langsung naik dari 25 menjadi 35?" Model GCI memiliki formula tertentu dengan bobot yang diketahui; menaikkan variabel konektivitas, dengan asumsi lain konstan, akan meningkatkan skor. Simulasi memungkinkan menjajaki berbagai kebijakan sebelum mengimplementasikannya.
 
 ## Jenis Simulasi
 
@@ -96,9 +96,13 @@ Beberapa pelajaran penting dari penggunaan simulasi:
 3. **Sumber daya terbatas memaksa prioritization**, simulasi membantu di sini.
 4. **Hasilnya adalah skenario, bukan ramalan**, skenario memperkaya pertimbangan, tanpa menentukan satu keputusan.
 
+<GambarBuku tipe="Tabel" id="7.2" src="/figures/tabel-7.2-matriks-skenario.png" lebar={1920} tinggi={632} alt="Matriks skenario, 4 skenario kebijakan (status quo, investasi museum, peningkatan konektivitas, paket lengkap) dan dampaknya terhadap skor GCI, peringkat, serta biaya estimasi; sumber: simulasi, diolah" />
+
+Matriks di atas menerjemahkan pelajaran "paket kebijakan, bukan satu tindakan" menjadi angka yang bisa dibandingkan berdampingan: biaya dan dampak skenario satu-per-satu (investasi museum saja, konektivitas saja) versus skenario gabungan. Pola yang sama dengan Langkah 3–4 di studi kasus Kota A akan terulang di sini — intervensi tunggal jarang cukup, dan kombinasi yang tepat sasaran biasanya mengalahkan intervensi tunggal yang lebih mahal sekalipun.
+
 ## Walkthrough: Tornado Chart untuk Identifikasi Variabel Kunci GCI
 
-Salah satu output paling informatif dari simulasi GCI adalah *tornado chart*, diagram batang horizontal yang menampilkan sensitivitas skor GCI terhadap perubahan satu variabel. Contoh berikut memakai kota lain — sebut saja **Kota B** — dengan himpunan variabel dan bobot yang berbeda dari studi kasus sebelumnya, sehingga angkanya memang tidak untuk dicocokkan dengan angka Kota A. Mari lihat satu contoh hipotetis untuk Kota A (skor awal 0,50, target 0,65).
+Salah satu output paling informatif dari simulasi GCI adalah *tornado chart*, diagram batang horizontal yang menampilkan sensitivitas skor GCI terhadap perubahan satu variabel. Contoh berikut memakai kota lain — sebut saja **Kota B** — dengan himpunan variabel dan bobot yang berbeda dari studi kasus sebelumnya, sehingga angkanya memang tidak untuk dicocokkan dengan angka Kota A. Mari lihat satu contoh hipotetis untuk Kota B (skor awal 0,50, target 0,65).
 
 **Langkah 1, Definisikan variabel kunci**.
 
@@ -124,15 +128,9 @@ Total pengaruh (jika semua +10%): +0,070 dari baseline 0,50 → 0,57. Belum cuku
 
 Plot batang horizontal, diurutkan dari yang paling sensitif (atas) ke paling tidak sensitif (bawah). Bentuk visualnya seperti tornado: panjang batang mengecil ke bawah.
 
-```
-V4 Investasi Infrastruktur ████████████████████ +0,018
-V2 Koneksi Penerbangan     ███████████████ +0,014
-V1 Museum                 ██████████ +0,010
-V6 Talenta Kreatif        █████████ +0,009
-V7 Acara Internasional    ████████ +0,008
-V3 Restoran               ██████ +0,006
-V5 Koneksi Digital        █████ +0,005
-```
+<GambarBuku tipe="Grafik" id="7.4" src="/figures/grafik-7.4-tornado-gci.png" lebar={1440} tinggi={880} alt="Tornado chart, sensitivity analysis skor GCI terhadap perubahan 10% pada tiap variabel; sumbu X: delta skor; sumbu vertikal: nama variabel; sumber: simulasi dengan formula GCI, diolah" />
+
+Urutan pada tornado chart di atas persis yang dipakai Langkah 4 berikut untuk memilih variabel mana yang paling layak diintervensi.
 
 **Langkah 4, Identifikasi variabel paling efektif**.
 
@@ -149,9 +147,9 @@ Jika hanya V4 dan V2 yang bisa diintervensi secara langsung (karena V1, V6, V7 m
 
 **Langkah 5, Tuning dengan analisis skenario**.
 
-Tornado chart menunjukkan **efisiensi margiunal** (dampak per unit perubahan), bukan total kebutuhan. Analisis ini menunjukkan: "Untuk V4 dan V2, perubahan besar diperlukan karena baseline-nya rendah. Untuk V1, V6, V7, baseline-nya sudah cukup untuk dibuka dengan investasi yang lebih kecil."
+Tornado chart menunjukkan **efisiensi marginal** (dampak per unit perubahan), bukan total kebutuhan. Analisis ini menunjukkan: "Untuk V4 dan V2, perubahan besar diperlukan karena baseline-nya rendah. Untuk V1, V6, V7, baseline-nya sudah cukup untuk dibuka dengan investasi yang lebih kecil."
 
-Implikasi kebijakan: kota A tidak bisa mengandalkan satu variabel. Paket kebijakan yang mengombinasikan investasi infrastruktur (modal besar), pembukaan rute (perjanjian bilateral), dan program budaya (museum, acara) adalah yang paling mungkin mencapai target.
+Implikasi kebijakan: Kota B tidak bisa mengandalkan satu variabel. Paket kebijakan yang mengombinasikan investasi infrastruktur (modal besar), pembukaan rute (perjanjian bilateral), dan program budaya (museum, acara) adalah yang paling mungkin mencapai target.
 
 **Keterbatasan tornado chart**: asumsi "variabel lain konstan" jarang berlaku di dunia nyata. Peningkatan koneksi penerbangan biasanya diiringi peningkatan investasi infrastruktur, dan keduanya saling memperkuat. *Feedback loop* ini tidak ditangkap tornado chart sederhana. Untuk menangkapnya, diperlukan model simulasi dinamis (system dynamics atau CGE) yang memungkinkan interdependensi.
 
@@ -159,6 +157,4 @@ Walkthrough ini menggambarkan kekuatan simulasi: kemampuan untuk memvisualisasik
 
 > **Catatan metodologis**: Angka dalam walkthrough tornado chart (skor awal 0,50, target 0,65, sensitivitas V4 = +0,018, dst., kombinasi V4 +50% dan V2 +60% untuk menutup gap) adalah **sintetik** untuk menggambarkan prosedur *sensitivity analysis*. Variabel yang dipakai (V1 museum, V2 koneksi penerbangan, dst.) adalah contoh yang relevan untuk GCI. Bobot dan sensitivitas aktual setiap variabel akan berbeda tergantung formula GCI dari tahun yang digunakan (formula diperbarui tiap tahun). Yang penting: prosedur tornado chart (urutkan variabel dari yang paling sensitif, identifikasi *biggest bang for the buck*) berlaku umum.
 
-<VisualMenyusul tipe="Grafik" id="7.4" deskripsi="Tornado chart, sensitivity analysis skor GCI terhadap perubahan 10% pada tiap variabel; sumbu X: delta skor; sumbu vertikal: nama variabel" sumber="simulasi dengan formula GCI, diolah" />
-
-<VisualMenyusul tipe="Tabel" id="7.2" deskripsi="Matriks skenario, 4 skenario kebijakan (status quo, investasi museum, peningkatan konektivitas, paket lengkap) dan dampaknya terhadap skor GCI, peringkat, serta biaya estimasi" sumber="simulasi, diolah" />
+Bersama dengan dampak ekonomi (7.1) dan peramalan kunjungan (7.2), tornado chart dan matriks skenario di atas melengkapi satu sama lain: mengukur dampak masa lalu, memprediksi tren, dan mensimulasikan pilihan kebijakan ke depan — tiga jawaban berbeda untuk pertanyaan yang sama, apa yang bisa dilakukan dengan angka.

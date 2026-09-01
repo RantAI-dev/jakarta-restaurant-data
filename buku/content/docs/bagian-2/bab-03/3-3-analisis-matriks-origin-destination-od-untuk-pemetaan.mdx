@@ -17,7 +17,7 @@ Beberapa sumber memberi kontribusi pada matriks OD:
 - **Data imigrasi per pintu masuk**: mencatat negara asal (berdasarkan paspor) dan pintu masuk, tetapi tidak mencatat kota tujuan akhir. Wisman yang masuk lewat Soekarno-Hatta bisa jadi menuju Jakarta, Bandung, Yogyakarta, atau Bali.
 - **PES**: mencatat pintu masuk keluar dan negara asal, dan kadang-kadang kota tujuan selama di Indonesia. Lebih akurat untuk matriks asal × kota, tetapi sampelnya kecil.
 - **Survei Wisnus**: untuk perjalanan domestik, bisa menghasilkan matriks asal_kota × tujuan_kota, tetapi tidak mencakup wisman.
-- **MPD**: memungkinkan rekonstruksi matriks asal_kota_asal × tujuan_kota secara langsung, dengan granularitas waktu dan rute perjalanan, tetapi dengan biasabilitas terhadap pengguna *smartphone*.
+- **MPD**: memungkinkan rekonstruksi matriks asal_kota_asal × tujuan_kota secara langsung, dengan granularitas waktu dan rute perjalanan, tetapi dengan bias terhadap pengguna *smartphone*.
 
 Daftar ini menunjukkan bahwa tidak ada sumber tunggal yang menghasilkan matriks OD tingkat kota secara lengkap. Matriks yang dipakai dalam pembahasan kebijakan biasanya merupakan hasil rekonstruksi dari beberapa sumber, dengan asumsi yang harus dinyatakan secara eksplisit.
 
@@ -53,6 +53,6 @@ Matriks OD bukan representasi sempurna dari pergerakan nyata. Beberapa keterbata
 
 Membaca Matriks OD dengan kacamata kritis berarti memahami keterbatasan ini dan tidak memperlakukan angka sebagai kebenaran absolut.
 
-<VisualMenyusul tipe="Tabel" id="3.2" deskripsi="Matriks OD sederhana, kunjungan wisman per negara asal per pintu masuk utama 2024 (juta kunjungan); kolom: Soekarno-Hatta, Ngurah Rai, Juanda, Kualanamu, Hasanuddin, lain; baris: 10 negara asal teratas" sumber="BPS, diolah dari Statistik Kunjungan Wisman 2024" />
+<GambarBuku tipe="Grafik" id="3.2" src="/figures/grafik-3.2-wisman-provinsi.png" lebar={1700} tinggi={840} alt="Peta Indonesia, kunjungan wisman menurut provinsi pintu masuk utama 2024 — empat provinsi dengan rilis BPS tahunan resmi dan terverifikasi (Bali, Kepulauan Riau, Jawa Timur, Sumatera Utara; ~59% dari total nasional), provinsi lain tanpa pintu masuk internasional bervolume besar ditampilkan sebagai tanpa-data, bukan dipaksakan estimasi; sumber: BPS (rilis provinsi masing-masing), diolah" />
 
-<VisualMenyusul tipe="Grafik" id="3.2" deskripsi="Peta panas Indonesia, distribusi spasial kunjungan wisman per pintu masuk 2024 (juta kunjungan)" sumber="BPS, diolah" />
+Sebagian besar wilayah pada peta ini sengaja dibiarkan kosong, dan kekosongan itu sendiri adalah bagian dari matriks OD yang perlu dibaca dengan benar: provinsi tanpa warna bukan berarti nihil wisman, melainkan tidak memiliki pintu masuk internasional yang datanya dipublikasikan terpisah oleh BPS setempat. Menafsirkannya sebagai "provinsi tanpa pariwisata" akan mengulangi kesalahan yang justru diperingatkan subbab ini: memperlakukan ketiadaan data sebagai kebenaran absolut.

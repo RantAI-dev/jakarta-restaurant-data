@@ -48,13 +48,13 @@ Port lain yang sudah terpakai di server itu: `13030` & `13032` (lakehouse),
 ### 1. Pastikan isi buku sudah ter-commit
 
 Build Docker **tidak** membaca repo naskah — ia memakai `content/docs/` dan
-`src/data/figures.ts` yang ada di dalam repo ini. Jadi sebelum deploy:
+`public/figures/` yang ada di dalam repo ini. Jadi sebelum deploy:
 
 ```bash
 cd buku
 npm run import:book
 npm run build            # gagal di sini = naskah baru memecah MDX, perbaiki dulu
-git add content src/data
+git add content public/figures
 git commit -m "sinkronisasi naskah buku"
 git push
 ```

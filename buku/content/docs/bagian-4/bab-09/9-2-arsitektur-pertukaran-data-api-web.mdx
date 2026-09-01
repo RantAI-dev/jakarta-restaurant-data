@@ -14,6 +14,10 @@ API adalah antarmuka yang memungkinkan satu program untuk meminta data dari prog
 
 API yang baik didokumentasikan secara terbuka, memiliki *rate limiting* yang masuk akal, dan mengembalikan pesan *error* yang informatif ketika ada masalah.
 
+<GambarBuku tipe="Grafik" id="9.2" src="/figures/grafik-9.2-arsitektur-api.png" lebar={2348} tinggi={1984} alt="Diagram arsitektur API, Disparekraf sebagai provider, dengan konsumen (GCI, akademisi, dashboard, researcher); sumber: arsitektur tipikal, diolah" />
+
+Diagram di atas menempatkan Disparekraf di posisi *server* pada alur request-response yang baru dijelaskan, melayani beragam jenis konsumen sekaligus — masing-masing dengan kebutuhan format, frekuensi akses, dan tingkat kepercayaan yang berbeda. Perbedaan kebutuhan itulah yang membuat pilihan arsitektur (REST vs GraphQL) dan mekanisme otorisasi di bawah ini bukan keputusan teknis semata.
+
 ## REST API vs GraphQL
 
 Dua pendekatan utama untuk API: REST API dan GraphQL.
@@ -62,6 +66,4 @@ Implikasi untuk Disparekraf yang ingin melayani data via API:
 - **Pemeliharaan**: API adalah *living product* yang harus dipantau dan di-*update*.
 - **Komunitas**: bangun komunitas konsumen (akademisi, jurnalis, *startup*) yang bisa memberikan umpan balik.
 
-Hasilnya: Disparekraf tidak hanya menjadi *producer* data, tetapi juga *provider* data yang bisa diintegrasikan ke dalam ekosistem yang lebih besar.
-
-<VisualMenyusul tipe="Grafik" id="9.2" deskripsi="Diagram arsitektur API, Disparekraf sebagai provider, dengan konsumen (GCI, akademisi, dashboard, researcher)" sumber="arsitektur tipikal, diolah" />
+Hasilnya: Disparekraf tidak hanya menjadi *producer* data, tetapi juga *provider* data yang bisa diintegrasikan ke dalam ekosistem yang lebih besar — tetapi arsitektur ini hanya bermakna setelah data di baliknya sudah harmonis. Disparekraf yang melayani API dengan definisi wisman yang masih berbeda dari BPS hanya akan mempercepat penyebaran angka yang tidak konsisten, bukan menyelesaikannya. Investasi API karena itu datang setelah investasi harmonisasi (subbab 9.1), bukan sebagai penggantinya.

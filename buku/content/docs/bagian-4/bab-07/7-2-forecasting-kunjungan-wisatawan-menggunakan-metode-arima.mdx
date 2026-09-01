@@ -100,6 +100,10 @@ Walkthrough ini menggambarkan kekuatan dan keterbatasan ARIMA: kuat untuk pola m
 
 > **Catatan metodologis**: Angka dalam walkthrough SARIMA ini (orde (1,1,1)(1,1,1)12, AIC = 482,3, parameter φ₁ = 0,42, dst., peramalan 2025 = 5,45 juta dengan CI 4,38–6,52 juta, galat 2023 = 6,8%, galat 2024 = 5,5%) adalah **sintetik** untuk menunjukkan prosedur delapan-langkah. Prosedur (identifikasi, differencing, identifikasi p/d/q, estimasi, diagnostik, peramalan, backtesting, komunikasi) berlaku umum dan tidak bergantung pada angka spesifik. Untuk aplikasi nyata pada Bali, estimasi ulang dengan data BPS Bali 2015–2024 aktual akan menghasilkan parameter dan peramalan yang berbeda. Pola umum (prediksi lebih akurat untuk horizon pendek, CI melebar dengan horizon) konsisten.
 
+<GambarBuku tipe="Grafik" id="7.2" src="/figures/grafik-7.2-forecast-bali.png" lebar={1400} tinggi={900} alt="Time series, kunjungan wisman Bali 2019–2024 (aktual, tahunan, BPS Bali) + peramalan 2025 dengan confidence interval; sumbu X: tahun; sumbu Y: kunjungan (juta); sumber: BPS Bali (aktual) + walkthrough SARIMA §7.2 di atas (peramalan, sintetik, lihat Catatan metodologis &quot;Langkah 8&quot;), diolah. Cakupan disesuaikan dari rencana awal (bulanan, 2025–2026): data bulanan BPS Bali tidak bisa diakses otomatis, dan tidak ada angka peramalan 2026 di naskah untuk direplikasi tanpa mengarang." />
+
+*Confidence interval* yang melebar ke tahun peramalan pada grafik di atas bukan tanda model yang lemah, melainkan representasi jujur dari ketidakpastian yang memang membesar seiring horizon. Satu angka tunggal (5,45 juta) akan terlihat lebih meyakinkan daripada rentangnya (4,38–6,52 juta), tetapi rentang itulah yang seharusnya dipegang pembuat kebijakan — persis seperti target 6,5 juta Pemprov Bali yang, seperti dibahas di atas, ternyata berada di dekat batas atas rentang tersebut, bukan di titik tengahnya.
+
 ## *Machine Learning* untuk Pola Non-Linear
 
 ARIMA memiliki keterbatasan ketika pola non-linear dominan. Misal: kunjungan wisman dari China ke Bali bisa melonjak tajam setelah pembukaan rute baru, lalu turun setelahnya, pola yang sulit ditangkap ARIMA. *Machine learning* (ML), khususnya *gradient boosting*, *random forest*, dan *neural network*, menawarkan pendekatan yang lebih fleksibel.
@@ -132,8 +136,4 @@ MAPE &lt; 10% untuk peramalan jangka pendek (&lt; 1 tahun) dianggap baik. MAPE 1
 
 Pemodelan yang lebih kuat adalah peramalan dengan skenario. Alih-alih satu angka, hasil adalah distribusi: "Dalam skenario optimistis, kunjungan 2025 = 14 juta; dalam skenario pesimistis, 11 juta; skenario paling mungkin 13 juta." Pendekatan ini membantu pembuat kebijakan menyiapkan strategi untuk berbagai kemungkinan.
 
-Skenario dibangun dari asumsi tentang variabel eksogen: harga penerbangan, promosi, kebijakan visa, dan sebagainya. Kekuatan pendekatan ini adalah pembuat kebijakan memahami rentang kemungkinan, bukan satu angka yang menyesatkan.
-
-<VisualMenyusul tipe="Grafik" id="7.2" deskripsi="Time series, kunjungan wisman Bali 2019–2024 (aktual) + forecast 2025–2026 dengan confidence interval; sumbu X: bulan; sumbu Y: kunjungan (juta)" sumber="BPS Bali + model ARIMA(1,1,1)(1,1,1)12, diolah" />
-
-<VisualMenyusul tipe="Grafik" id="7.3" deskripsi="Diagram perbandingan MAPE, 4 model (ARIMA, SARIMA, XGBoost, LSTM) untuk peramalan kunjungan wisman 2024; sumbu X: model; sumbu Y: MAPE (%)" sumber="backtesting 2015–2023, diolah" />
+Skenario dibangun dari asumsi tentang variabel eksogen: harga penerbangan, promosi, kebijakan visa, dan sebagainya. Kekuatan pendekatan ini adalah pembuat kebijakan memahami rentang kemungkinan, bukan satu angka yang menyesatkan — kelanjutan wajar dari pelajaran *confidence interval* yang sama pada walkthrough SARIMA sebelumnya.

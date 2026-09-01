@@ -60,19 +60,8 @@ const CHAPTERS = {
   'bab-09': { file: 'bab-09-draft.md', label: 'Bab 9' },
 };
 
-/**
- * Placeholder visual yang sudah punya data + komponen interaktif.
- * PNG di bab/assets/figures/ sengaja tidak dipakai: README naskah menandai
- * keenam PNG itu sudah usang, sedangkan CSV-nya masih sahih.
- */
-const FIGURE_COMPONENTS = {
-  'GRAFIK 4.5.1': 'GrafikBaliWisman',
-  'TABEL 4.5.2': 'TabelBaliTopNegara',
-  'GRAFIK 4.5.3': 'GrafikDiyTpkh',
-  'GRAFIK 4.5.6': 'GrafikJakartaKomposisi',
-  'GRAFIK 6.3': 'GrafikNpsDistribusi',
-  'TABEL 6.3': 'TabelNpsDriver',
-};
+const FIGURES_SRC = path.join(BOOK, 'assets', 'figures');
+const FIGURES_OUT = path.join(ROOT, 'public', 'figures');
 
 // ---------------------------------------------------------------- utilities
 
@@ -128,22 +117,56 @@ function outsideCodeFences(md, fn) {
 // ------------------------------------------------------------ transformasi
 
 /**
- * `[INSERT GRAFIK 3.1: deskripsi ...; sumber: BPS].` →
- * komponen interaktif (kalau datanya ada) atau kartu "menyusul".
+ * Berkas figure yang sudah dirender naskah, dikunci ke nomor visualnya.
+ * Penamaannya konsisten: `grafik-3.1-moda-masuk.png`, `tabel-4.5.2-....png`.
+ * Tanda hubung di akhir awalan penting agar 4.5 tidak menangkap 4.5.1.
  */
-function transformPlaceholders(md) {
+function petaFigure() {
+  if (!fs.existsSync(FIGURES_SRC)) return new Map();
+
+  return new Map(
+    fs
+      .readdirSync(FIGURES_SRC)
+      .filter((f) => f.endsWith('.png'))
+      .map((file) => {
+        const m = file.match(/^(grafik|tabel|gambar)-([0-9]+(?:\.[0-9]+)*)-/);
+        return m ? [`${m[1].toUpperCase()} ${m[2]}`, file] : null;
+      })
+      .filter(Boolean),
+  );
+}
+
+/** Baca lebar & tinggi PNG dari header IHDR — hindari pergeseran tata letak. */
+function ukuranPng(file) {
+  const buf = fs.readFileSync(file);
+  return { lebar: buf.readUInt32BE(16), tinggi: buf.readUInt32BE(20) };
+}
+
+/**
+ * `[INSERT GRAFIK 3.1: deskripsi ...; sumber: BPS].` → gambar figure resmi
+ * dari naskah, atau kartu "menyusul" bila figure-nya belum dirender.
+ */
+function transformPlaceholders(md, figures) {
   return md.replace(
     /\[INSERT\s+(GRAFIK|TABEL|GAMBAR)\s+([0-9]+(?:\.[0-9]+)*)\s*:\s*([\s\S]*?)\]\.?/g,
     (_full, tipe, id, isi) => {
-      const key = `${tipe} ${id}`;
-      const komponen = FIGURE_COMPONENTS[key];
-      if (komponen) return `<${komponen} />`;
+      const teksPenuh = plainText(isi.replace(/\s+/g, ' ').trim());
+      const label = tipe.charAt(0) + tipe.slice(1).toLowerCase();
+      const berkas = figures.get(`${tipe} ${id}`);
+
+      if (berkas) {
+        // Keterangan dan sumber sudah tercetak di dalam gambar; di sini
+        // dipakai sebagai teks alternatif untuk pembaca layar.
+        const { lebar, tinggi } = ukuranPng(path.join(FIGURES_SRC, berkas));
+        return `<GambarBuku tipe="${label}" id="${id}" src="/figures/${berkas}" lebar={${lebar}} tinggi={${tinggi}} alt="${jsxAttr(
+          teksPenuh,
+        )}" />`;
+      }
 
       const teks = isi.replace(/\s+/g, ' ').trim();
       const m = teks.match(/^(.*?);\s*sumber:\s*(.*?)\.?$/i);
       const deskripsi = plainText(m ? m[1] : teks);
       const sumber = m ? plainText(m[2]) : '';
-      const label = tipe.charAt(0) + tipe.slice(1).toLowerCase();
 
       return `<VisualMenyusul tipe="${label}" id="${id}" deskripsi="${jsxAttr(
         deskripsi,
@@ -151,6 +174,9 @@ function transformPlaceholders(md) {
     },
   );
 }
+
+/** Peta figure dibaca sekali, dipakai semua halaman. */
+let FIGURES = new Map();
 
 function transformBody(md) {
   let out = md;
@@ -168,7 +194,7 @@ function transformBody(md) {
       .join(''),
   );
 
-  out = transformPlaceholders(out);
+  out = transformPlaceholders(out, FIGURES);
 
   // Garis pemisah adalah penanda pergantian halaman cetak; tidak relevan di web.
   out = out.replace(/^---\s*$/gm, '');
@@ -277,43 +303,23 @@ function buildLampiran() {
 }
 
 /**
- * CSV data figure → modul TypeScript, supaya komponen grafik memakai angka yang
- * sama persis dengan yang dipakai naskah (bukan hasil ketik ulang).
+ * Salin figure hasil render naskah ke public/, supaya edisi web memakai visual
+ * yang persis sama dengan naskah cetak — bukan versi gambar ulang yang bisa
+ * menyimpang setiap naskah diperbarui.
  */
-function buildFigureData() {
-  const dataDir = path.join(BOOK, 'assets', 'data');
-  const files = fs.readdirSync(dataDir).filter((f) => f.endsWith('.csv'));
+function salinFigure() {
+  fs.rmSync(FIGURES_OUT, { recursive: true, force: true });
+  if (!fs.existsSync(FIGURES_SRC)) {
+    console.log('figure: folder assets/figures tidak ada, dilewati');
+    return;
+  }
 
-  const modul = files.map((file) => {
-    const rows = fs
-      .readFileSync(path.join(dataDir, file), 'utf8')
-      .trim()
-      .split('\n')
-      .map((l) => l.split(','));
-    const header = rows[0];
-    const records = rows.slice(1).map((cells) =>
-      Object.fromEntries(
-        cells.map((v, i) => {
-          const num = Number(v);
-          return [header[i], v !== '' && !Number.isNaN(num) ? num : v];
-        }),
-      ),
-    );
-    const name = file
-      .replace(/\.csv$/, '')
-      .replace(/[^a-zA-Z0-9]+(.)/g, (_m, c) => c.toUpperCase())
-      .replace(/^[0-9]+/, '');
-    return `export const ${name} = ${JSON.stringify(records, null, 2)} as const;`;
-  });
-
-  write(
-    path.join(ROOT, 'src', 'data', 'figures.ts'),
-    `// DIBUAT OTOMATIS oleh scripts/import-book.mjs — jangan diedit manual.\n` +
-      `// Sumber: buku-statistika-pariwisata-perkotaan/bab/assets/data/*.csv\n\n` +
-      modul.join('\n\n') +
-      '\n',
-  );
-  console.log(`data figure: ${files.length} CSV → src/data/figures.ts`);
+  fs.mkdirSync(FIGURES_OUT, { recursive: true });
+  const files = fs.readdirSync(FIGURES_SRC).filter((f) => f.endsWith('.png'));
+  for (const f of files) {
+    fs.copyFileSync(path.join(FIGURES_SRC, f), path.join(FIGURES_OUT, f));
+  }
+  console.log(`figure: ${files.length} PNG → public/figures/`);
 }
 
 function main() {
@@ -327,6 +333,9 @@ function main() {
   for (const p of [...PARTS.map((p) => p.dir), 'lampiran']) {
     fs.rmSync(path.join(OUT, p), { recursive: true, force: true });
   }
+
+  salinFigure();
+  FIGURES = petaFigure();
 
   let totalHalaman = 0;
   for (const part of PARTS) {
@@ -345,8 +354,6 @@ function main() {
 
   totalHalaman += buildLampiran();
   console.log(`lampiran: ok`);
-
-  buildFigureData();
 
   writeMeta(OUT, {
     title: 'Statistika Pariwisata Perkotaan',

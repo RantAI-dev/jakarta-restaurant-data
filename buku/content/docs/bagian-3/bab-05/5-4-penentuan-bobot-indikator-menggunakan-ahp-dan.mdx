@@ -88,7 +88,9 @@ Pemilihan tergantung pada tujuan dan ketersediaan data:
 - **Tujuan teknis dan eksplorasi**: PCA, karena PCA menemukan pola yang tidak terlihat secara intuitif.
 - **Kombinasi**: gunakan AHP untuk menetapkan bobot, lalu PCA sebagai pemeriksa. Perlu ditegaskan, kesepakatan antara keduanya **bukan** bukti bahwa bobotnya lebih akurat — keduanya menjawab pertanyaan yang berbeda. AHP menjawab "seberapa penting variabel ini menurut mereka yang memahami kebijakannya"; PCA menjawab "seberapa besar variabel ini membedakan kota satu dari yang lain". Ketidaksepakatan justru informatif: ia menandai variabel yang dianggap penting tetapi ternyata tidak membedakan apa pun, atau sebaliknya.
 
-Untuk pemeringkatan kota Indonesia, kombinasi AHP-PCA adalah pendekatan yang masuk akal. AHP memastikan bahwa variabel yang dianggap penting oleh *stakeholder* dimasukkan, dan PCA memastikan bahwa variabel yang sebenarnya paling membedakan kota mendapat bobot yang layak.
+<GambarBuku tipe="Tabel" id="5.3" src="/figures/tabel-5.3-ahp-vs-pca.png" lebar={1440} tinggi={852} alt="Perbandingan AHP vs PCA untuk pembobotan indeks; kolom: aspek, AHP, PCA; baris: pendekatan, kebutuhan data, interpretabilitas, subjektivitas, kompleksitas, aplikasi; sumber: kerangka teoretis, diolah" />
+
+Perbandingan di atas menegaskan mengapa kombinasi, bukan salah satu saja, adalah pendekatan yang masuk akal untuk pemeringkatan kota Indonesia: kelemahan satu metode pada satu baris (misalnya subjektivitas AHP) persis menjadi kekuatan metode lainnya pada baris yang sama (objektivitas PCA berbasis data), dan sebaliknya untuk interpretabilitas. AHP memastikan bahwa variabel yang dianggap penting oleh *stakeholder* dimasukkan, dan PCA memastikan bahwa variabel yang sebenarnya paling membedakan kota mendapat bobot yang layak.
 
 ## Validasi Akhir: Apakah Indeksnya *Robust*?
 
@@ -100,6 +102,10 @@ Setelah bobot ditentukan, indeks harus divalidasi. Pertanyaan yang diajukan:
 
 Untuk konteks Indonesia, validasi pemeringkatan akan memakan waktu, perlu beberapa tahun untuk menguji stabilitas dan validitas prediktif. Kuncinya adalah konsistensi: sekali metode ditetapkan, harus dijalankan dengan disiplin lintas waktu.
 
+<GambarBuku tipe="Grafik" id="5.2" src="/figures/grafik-5.2-pembangunan-indeks.png" lebar={3136} tinggi={324} alt="Diagram alir, proses pembangunan indeks kota dari identifikasi variabel hingga validasi akhir; sumber: kerangka teoretis, diolah" />
+
+Diagram ini merangkum jalur yang sudah ditempuh sepanjang bab: dari pemetaan variabel yang tersedia, konstruksi *proxy* untuk yang tidak, normalisasi agar semuanya bisa dibandingkan, hingga pembobotan dan validasi akhir seperti baru saja dibahas. Setiap tahap punya jebakannya sendiri, dan setiap jebakan sudah dibahas dengan contoh konkret. Yang tersisa adalah pertanyaan kesiapan: apa yang sebetulnya dibutuhkan sebuah kota Indonesia untuk menjalankan keseluruhan alur ini.
+
 ## Apa yang Diperlukan untuk Kota Indonesia?
 
 Kota-kota Indonesia yang ingin menggunakan pemeringkatan GCI/GPCI sebagai kerangka analisis memiliki beberapa kebutuhan spesifik:
@@ -109,8 +115,4 @@ Kota-kota Indonesia yang ingin menggunakan pemeringkatan GCI/GPCI sebagai kerang
 - **Akses ke data global**: variabel yang bersumber dari UNWTO, WEF, UNESCO, dan ICCA harus bisa diakses oleh analis kota.
 - **Kapasitas teknis**: mampu melakukan AHP, PCA, dan menghasilkan dokumentasi yang bisa di-*review*.
 
-Kebutuhan-kebutuhan ini bukan sesuatu yang muncul tiba-tiba; mereka harus dibangun dalam jangka panjang. *Toolkit* yang sudah dibahas memerlukan investasi yang konsisten untuk penerapannya.
-
-<VisualMenyusul tipe="Grafik" id="5.2" deskripsi="Diagram alir, proses pembangunan indeks kota dari identifikasi variabel hingga validasi akhir" sumber="kerangka teoretis, diolah" />
-
-<VisualMenyusul tipe="Tabel" id="5.3" deskripsi="Perbandingan AHP vs PCA untuk pembobotan indeks; kolom: aspek, AHP, PCA; baris: pendekatan, kebutuhan data, interpretabilitas, subjektivitas, kompleksitas, aplikasi" sumber="kerangka teoretis, diolah" />
+Kebutuhan-kebutuhan ini bukan sesuatu yang muncul tiba-tiba; mereka harus dibangun dalam jangka panjang. *Toolkit* yang sudah dibahas memerlukan investasi yang konsisten untuk penerapannya — bekal metodologis yang menutup pembahasan indikator dan pembobotan GCI.

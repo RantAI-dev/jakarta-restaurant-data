@@ -30,10 +30,10 @@ cd ../buku-statistika-pariwisata-perkotaan && git pull
 cd ../buku
 npm run import:book
 npm run build          # pastikan naskah baru tidak memecah MDX
-git add content src/data && git commit -m "sinkronisasi naskah"
+git add content public/figures && git commit -m "sinkronisasi naskah"
 ```
 
-Lalu redeploy stack di Portainer (lihat `DEPLOY.md`).
+Lalu deploy ulang (lihat `DEPLOY.md`).
 
 ## Apa yang dilakukan importer
 
@@ -41,12 +41,12 @@ Lalu redeploy stack di Portainer (lihat `DEPLOY.md`).
 
 1. Memetakan bab ke empat bagian sesuai `bab/kerangka.md`.
 2. Memecah tiap bab menjadi satu halaman per sub-bab, plus halaman pengantar.
-3. Mengubah `[INSERT GRAFIK 3.1: …]` menjadi komponen:
-   - enam visual yang datanya tersedia → grafik/tabel interaktif;
-   - sisanya → kartu `VisualMenyusul` berisi rancangan visual tersebut.
+3. Mengubah `[INSERT GRAFIK 3.1: …]` menjadi `<GambarBuku>` yang menunjuk ke
+   figure resmi naskah, dicocokkan lewat penamaan berkas
+   (`GRAFIK 3.1` → `grafik-3.1-moda-masuk.png`). Placeholder yang figure-nya
+   belum dirender jadi kartu `VisualMenyusul` berisi rancangan visualnya.
 4. Melindungi karakter yang menyalakan parser JSX (`<` dalam prosa, autolink).
-5. Menulis CSV di `bab/assets/data/` menjadi `src/data/figures.ts`, supaya
-   grafik memakai angka yang sama dengan naskah.
+5. Menyalin `bab/assets/figures/*.png` ke `public/figures/`.
 
 Yang sengaja tidak diimpor: `*-selfedit.md`, `kerangka.md`, `placeholders.md`,
 dan `state/` — semuanya dokumen kerja penyuntingan, bukan isi buku.
@@ -66,23 +66,25 @@ src/
 ├── app/
 │   ├── (home)/page.tsx      # sampul + daftar isi
 │   ├── docs/                # tata letak & halaman naskah
-│   └── global.css           # tema oranye + palet visualisasi data
+│   └── global.css           # tema oranye + tipografi naskah
 ├── components/
-│   ├── figure.tsx           # bingkai visual + pengalih grafik/tabel
-│   ├── figures/             # enam visual berbasis data
-│   ├── visual-menyusul.tsx  # kartu untuk visual yang belum ada datanya
+│   ├── gambar-buku.tsx      # bingkai figure resmi naskah
+│   ├── visual-menyusul.tsx  # kartu untuk visual yang belum dirender
 │   └── mdx.tsx              # registrasi komponen untuk MDX
-├── data/figures.ts          # DIBUAT OTOMATIS dari CSV naskah
 └── lib/
 content/docs/                # DIBUAT OTOMATIS dari naskah (kecuali index.mdx)
+public/figures/              # DIBUAT OTOMATIS — salinan figure naskah
 ```
 
 `content/docs/index.mdx` ditulis tangan — itu halaman pengantar edisi web, bukan
 bagian dari naskah cetak.
 
-## Warna grafik
+## Visual
 
-Palet visualisasi di `global.css` sudah divalidasi terhadap gate lightness,
-chroma, pemisahan buta warna, ambang penglihatan normal, dan kontras — untuk
-mode terang maupun gelap. Setiap grafik juga menyediakan tampilan tabel, jadi
-angkanya tetap terbaca tanpa mengandalkan warna.
+Semua grafik dan tabel diambil dari `bab/assets/figures/` — berkas yang dirender
+skrip matplotlib di repo naskah, sama persis dengan yang dipakai buku cetak.
+Keterangan dan sumber sudah tercetak di dalam gambar, sehingga edisi web tidak
+mengulangnya; deskripsi dari naskah dipakai sebagai teks alternatif.
+
+Edisi web sengaja tidak menggambar ulang visualnya sendiri: setiap naskah
+diperbarui, versi gambar ulang akan menyimpang dari bukunya.
